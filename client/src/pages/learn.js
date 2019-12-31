@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
+import { injectIntl, intlShape } from 'react-intl';
 
 import LearnLayout from '../components/layouts/Learn';
 import { dasherize } from '../../../utils/slugs';
@@ -45,6 +46,7 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   hash: PropTypes.string,
+  intl: intlShape.isRequired,
   isSignedIn: PropTypes.bool,
   location: PropTypes.object,
   navigate: PropTypes.func.isRequired,
@@ -77,12 +79,13 @@ export const LearnPage = ({
     },
     allChallengeNode: { edges },
     allMarkdownRemark: { edges: mdEdges }
-  }
+  },
+  intl
 }) => {
   const hashValue = hashValueSelector(state, hash);
   return (
     <LearnLayout>
-      <Helmet title='Learn | freeCodeCamp.org' />
+      <Helmet title={intl.formatMessage({ id: 'Learn | freeCodeCamp.org' })} />
       <Grid>
         <Intro
           complete={complete}
@@ -112,7 +115,7 @@ LearnPage.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LearnPage);
+)(injectIntl(LearnPage));
 
 export const query = graphql`
   query FirstChallenge {

@@ -4,8 +4,8 @@ function randomItem(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-export function randomQuote() {
-  return randomItem(words.motivationalQuotes);
+export function randomQuote(locale) {
+  return randomItem(words.motivationalQuotes[locale]);
 }
 
 export function randomPhrase() {

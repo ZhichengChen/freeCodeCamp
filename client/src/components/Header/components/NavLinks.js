@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '../../helpers';
+import { FormattedMessage } from 'react-intl';
 
 import PropTypes from 'prop-types';
 
@@ -16,16 +17,18 @@ function NavLinks({ displayMenu }) {
       >
         <li className='nav-news' role='menuitem'>
           <Link external={true} to='/news'>
-            /news
+            <FormattedMessage id='/news' />
           </Link>
         </li>
         <li className='nav-forum' role='menuitem'>
           <Link external={true} to='/forum'>
-            /forum
+            <FormattedMessage id='/forum' />
           </Link>
         </li>
         <li className='nav-projects' role='menuitem'>
-          <Link to='/learn'>/learn</Link>
+          <Link to='/learn'>
+            <FormattedMessage id='/learn' />
+          </Link>
         </li>
       </ul>
     </div>

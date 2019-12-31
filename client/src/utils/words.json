@@ -141,7 +141,7 @@
     "With coding power comes sharing responsibility",
     "Have you told your friends of your coding powers?"
   ],
-  "motivationalQuotes": [
+  "motivationalQuotes": {"en":[
     {
       "quote": "Never, never, never, never, never, never give up.",
       "author": "Winston Churchill"
@@ -1034,5 +1034,47 @@
       "quote": "Only put off until tomorrow what you are willing to die having left undone.",
       "author": "Pablo Picasso"
     }
-  ]
+  ],
+  "zh":[
+    {
+      "quote": "学而不厌，诲人不倦。",
+      "author": "论语"
+    },
+    {
+      "quote": "笨鸟先飞早入林，笨人勤学早成材。",
+      "author": "省世格言"
+    },
+    {
+      "quote": "吾生也有涯而，知也无涯。",
+      "author": "庄子"
+    },
+    {
+      "quote": "天行健，君子以自强不息。",
+      "author": "周易"
+    },
+    {
+      "quote": "行到水穷处，坐看云起时。",
+      "author": "王维"
+    },
+    {
+      "quote": "人生天地之间，若白驹之过隙，忽然而已。",
+      "author": "庄子"
+    },
+    {
+      "quote": "少年易老学难成，一寸光阴不可轻。",
+      "author": "朱熹"
+    },
+    {
+      "quote": "上善若水，水善利万物而不争。",
+      "author": "老子"
+    },
+    {
+      "quote": "质胜文则野，文胜质则史，文质彬彬，然后君子。",
+      "author": "论语"
+    },
+    {
+      "quote": "雄关漫道真如铁，而今迈步从头越。",
+      "author": "毛泽东"
+    }
+  ]}
 }

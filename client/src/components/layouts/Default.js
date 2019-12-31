@@ -5,6 +5,11 @@ import { bindActionCreators } from 'redux';
 import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import fontawesome from '@fortawesome/fontawesome';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import 'intl';
+import messages from '../../data/messages/zh';
+import zh from 'react-intl/locale-data/zh';
+import 'intl/locale-data/jsonp/zh';
 
 import ga from '../../analytics';
 import {
@@ -37,6 +42,8 @@ import robotoItalicURL from '../../../static/fonts/roboto-mono/RobotoMono-Italic
 import './fonts.css';
 import './global.css';
 import './variables.css';
+
+addLocaleData(zh);
 
 fontawesome.config = {
   autoAddCss: false
@@ -150,79 +157,84 @@ class DefaultLayout extends Component {
       useTheme = true
     } = this.props;
     return (
-      <Fragment>
-        <Helmet
-          bodyAttributes={{
-            class: useTheme
-              ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
-              : 'light-palette'
-          }}
-          meta={[
-            {
-              name: 'description',
-              content:
-                'Learn to code with free online courses, programming ' +
-                'projects, and interview preparation for developer jobs.'
-            },
-            { name: 'keywords', content: metaKeywords.join(', ') }
-          ]}
-        >
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={latoRegularURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={latoLightURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={latoBoldURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={robotoRegularURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={robotoBoldURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={robotoItalicURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <style>{fontawesome.dom.css()}</style>
-        </Helmet>
-        <WithInstantSearch>
-          <Header />
-          <div className={`default-layout`}>
-            <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
-            {hasMessage && flashMessage ? (
-              <Flash flashMessage={flashMessage} onClose={removeFlashMessage} />
-            ) : null}
-            {children}
-            {showFooter && <Footer />}
-          </div>
-        </WithInstantSearch>
-      </Fragment>
+      <IntlProvider locale={'zh'} messages={messages}>
+        <Fragment>
+          <Helmet
+            bodyAttributes={{
+              class: useTheme
+                ? `${theme === 'default' ? 'light-palette' : 'dark-palette'}`
+                : 'light-palette'
+            }}
+            meta={[
+              {
+                name: 'description',
+                content:
+                  'Learn to code with free online courses, programming ' +
+                  'projects, and interview preparation for developer jobs.'
+              },
+              { name: 'keywords', content: metaKeywords.join(', ') }
+            ]}
+          >
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={latoRegularURL}
+              rel='preload'
+              type='font/woff'
+            />
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={latoLightURL}
+              rel='preload'
+              type='font/woff'
+            />
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={latoBoldURL}
+              rel='preload'
+              type='font/woff'
+            />
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={robotoRegularURL}
+              rel='preload'
+              type='font/woff'
+            />
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={robotoBoldURL}
+              rel='preload'
+              type='font/woff'
+            />
+            <link
+              as='font'
+              crossOrigin='anonymous'
+              href={robotoItalicURL}
+              rel='preload'
+              type='font/woff'
+            />
+            <style>{fontawesome.dom.css()}</style>
+          </Helmet>
+          <WithInstantSearch>
+            <Header />
+            <div className={`default-layout`}>
+              <OfflineWarning isOnline={isOnline} isSignedIn={isSignedIn} />
+              {hasMessage && flashMessage ? (
+                <Flash
+                  flashMessage={flashMessage}
+                  onClose={removeFlashMessage}
+                />
+              ) : null}
+              {children}
+              {showFooter && <Footer />}
+            </div>
+          </WithInstantSearch>
+        </Fragment>
+      </IntlProvider>
     );
   }
 }

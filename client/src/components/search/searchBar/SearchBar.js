@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import { SearchBox } from 'react-instantsearch-dom';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
 import { isEqual } from 'lodash';
+import { injectIntl } from 'react-intl';
 
 import {
   isSearchDropdownEnabledSelector,
@@ -21,6 +22,7 @@ import './searchbar.css';
 
 const propTypes = {
   innerRef: PropTypes.object,
+  intl: PropTypes.object,
   isDropdownEnabled: PropTypes.bool,
   isSearchFocused: PropTypes.bool,
   toggleSearchDropdown: PropTypes.func.isRequired,
@@ -172,7 +174,7 @@ export class SearchBar extends Component {
   };
 
   render() {
-    const { isDropdownEnabled, isSearchFocused, innerRef } = this.props;
+    const { isDropdownEnabled, isSearchFocused, innerRef, intl } = this.props;
     const { index } = this.state;
 
     return (
@@ -189,7 +191,9 @@ export class SearchBar extends Component {
                 onFocus={this.handleFocus}
                 onSubmit={this.handleSearch}
                 showLoadingIndicator={true}
-                translations={{ placeholder }}
+                translations={{
+                  placeholder: intl.formatMessage({ id: placeholder })
+                }}
               />
             </ObserveKeys>
             {isDropdownEnabled && isSearchFocused && (
@@ -213,4 +217,4 @@ SearchBar.propTypes = propTypes;
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchBar);
+)(injectIntl(SearchBar));
