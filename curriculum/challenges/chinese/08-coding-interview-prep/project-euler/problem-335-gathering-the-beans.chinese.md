@@ -2,15 +2,25 @@
 id: 5900f4bd1000cf542c50ffce
 challengeType: 5
 title: 'Problem 335: Gathering the beans'
-videoUrl: ''
-localeTitle: 问题335：收集豆子
+forumTopicId: 301993
 ---
 
 ## Description
-<section id="description">每当彼得感到无聊时，他都会放一些碗，每个碗里都放一个豆子。在此之后，他将所有的豆子从一个碗中取出，然后顺时针将它们逐一放入碗中。他重复这一点，从碗里开始扔掉最后一根豆子，直到最初的情况再次出现。例如，有5个碗，他的行为如下： <p>所以有5个碗需要Peter 15的动作才能恢复到初始状态。 </p><p>设M（x）表示从x碗开始返回初始状态所需的移动次数。因此，M（5）= 15.还可以证实M（100）= 10920。 </p><p>找到M（2k + 1）。给出你的答案模数79。 </p></section>
+<section id='description'>
+Whenever Peter feels bored, he places some bowls, containing one bean each, in a circle. After this, he takes all the beans out of a certain bowl and drops them one by one in the bowls going clockwise. He repeats this, starting from the bowl he dropped the last bean in, until the initial situation appears again. For example with 5 bowls he acts as follows:
+
+
+
+So with 5 bowls it takes Peter 15 moves to return to the initial situation.
+
+Let M(x) represent the number of moves required to return to the initial situation, starting with x bowls. Thus, M(5) = 15. It can also be verified that M(100) = 10920.
+
+Find M(2k+1). Give your answer modulo 79.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题335：收集豆子
 
 ```yml
 tests:
-  - text: <code>euler335()</code>应返回5032316。
-    testString: 'assert.strictEqual(euler335(), 5032316, "<code>euler335()</code> should return 5032316.");'
+  - text: <code>euler335()</code> should return 5032316.
+    testString: assert.strictEqual(euler335(), 5032316);
 
 ```
 
@@ -37,7 +47,6 @@ function euler335() {
 }
 
 euler335();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler335();
 ```js
 // solution required
 ```
+
 </section>

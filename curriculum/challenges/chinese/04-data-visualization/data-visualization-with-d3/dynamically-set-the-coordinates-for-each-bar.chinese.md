@@ -2,39 +2,57 @@
 id: 587d7fa9367417b2b2512bce
 title: Dynamically Set the Coordinates for Each Bar
 challengeType: 6
-videoUrl: ''
-localeTitle: 动态设置每个条形的坐标
+forumTopicId: 301487
 ---
 
 ## Description
-<section id="description">最后一个挑战是为<code>dataset</code>每个点创建一个矩形并将其附加到<code>svg</code>元素以表示一个条形。不幸的是，它们都堆叠在一起。矩形的放置由<code>x</code>和<code>y</code>属性处理。他们告诉D3从哪里开始在<code>svg</code>区域中绘制形状。最后一个挑战将它们设置为0，因此每个栏都放在左上角。对于条形图，所有条形应位于相同的垂直水平，这意味着所有条形的<code>y</code>值保持不变（为0）。但是，在添加新柱时， <code>x</code>值需要更改。请记住，较大的<code>x</code>值会将项目推向更远的位置。当您浏览<code>dataset</code>的数组元素时，x值应该会增加。 D3中的<code>attr()</code>方法接受回调函数来动态设置该属性。回调函数有两个参数，一个用于数据点本身（通常为<code>d</code> ），另一个用于数组中数据点的索引。索引的第二个参数是可选的。这是格式： <blockquote> selection.attr（“property”，（d，i）=&gt; { <br> / * <br> * d是数据点值<br> * i是数组中数据点的索引<br> * / <br> }） </blockquote>重要的是要注意，您不需要编写<code>for</code>循环或使用<code>forEach()</code>来迭代数据集中的项。回想一下， <code>data()</code>方法解析数据集，并且<code>data()</code>之后链接的任何方法对数据集中的每个项目运行一次。 </section>
+<section id='description'>
+The last challenge created and appended a rectangle to the <code>svg</code> element for each point in <code>dataset</code> to represent a bar. Unfortunately, they were all stacked on top of each other.
+The placement of a rectangle is handled by the <code>x</code> and <code>y</code> attributes. They tell D3 where to start drawing the shape in the <code>svg</code> area. The last challenge set them each to 0, so every bar was placed in the upper-left corner.
+For a bar chart, all of the bars should sit on the same vertical level, which means the <code>y</code> value stays the same (at 0) for all bars. The <code>x</code> value, however, needs to change as you add new bars. Remember that larger <code>x</code> values push items farther to the right. As you go through the array elements in <code>dataset</code>, the x value should increase.
+The <code>attr()</code> method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually <code>d</code>) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:
+
+```js
+selection.attr("property", (d, i) => {
+  /* 
+  * d is the data point value
+  * i is the index of the data point in the array
+  */
+})
+```
+
+It's important to note that you do NOT need to write a <code>for</code> loop or use <code>forEach()</code> to iterate over the items in the data set. Recall that the <code>data()</code> method parses the data set, and any method that's chained after <code>data()</code> is run once for each item in the data set.
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>x</code>属性回调函数，使其返回索引时间30. <strong>注意</strong> <br>每个条的宽度为25，因此将每个<code>x</code>值增加30会在条之间增加一些空间。任何大于25的值都可以在此示例中使用。 </section>
+<section id='instructions'>
+Change the <code>x</code> attribute callback function so it returns the index times 30.
+<strong>Note</strong><br>Each bar has a width of 25, so increasing each <code>x</code> value by 30 adds some space between the bars. Any value greater than 25 would work in this example.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 第一个<code>rect</code>的<code>x</code>值应为0。
-    testString: 'assert($("rect").eq(0).attr("x") == "0", "The first <code>rect</code> should have an <code>x</code> value of 0.");'
-  - text: 第二个<code>rect</code>的<code>x</code>值应为30。
-    testString: 'assert($("rect").eq(1).attr("x") == "30", "The second <code>rect</code> should have an <code>x</code> value of 30.");'
-  - text: 第三个<code>rect</code>的<code>x</code>值应为60。
-    testString: 'assert($("rect").eq(2).attr("x") == "60", "The third <code>rect</code> should have an <code>x</code> value of 60.");'
-  - text: 第四个<code>rect</code>的<code>x</code>值应为90。
-    testString: 'assert($("rect").eq(3).attr("x") == "90", "The fourth <code>rect</code> should have an <code>x</code> value of 90.");'
-  - text: 第五个<code>rect</code>的<code>x</code>值应为120。
-    testString: 'assert($("rect").eq(4).attr("x") == "120", "The fifth <code>rect</code> should have an <code>x</code> value of 120.");'
-  - text: 第六个<code>rect</code>的<code>x</code>值应为150。
-    testString: 'assert($("rect").eq(5).attr("x") == "150", "The sixth <code>rect</code> should have an <code>x</code> value of 150.");'
-  - text: 第七个<code>rect</code>的<code>x</code>值应为180。
-    testString: 'assert($("rect").eq(6).attr("x") == "180", "The seventh <code>rect</code> should have an <code>x</code> value of 180.");'
-  - text: 第八个<code>rect</code>的<code>x</code>值应为210。
-    testString: 'assert($("rect").eq(7).attr("x") == "210", "The eighth <code>rect</code> should have an <code>x</code> value of 210.");'
-  - text: 第九个<code>rect</code>的<code>x</code>值应为240。
-    testString: 'assert($("rect").eq(8).attr("x") == "240", "The ninth <code>rect</code> should have an <code>x</code> value of 240.");'
+  - text: The first <code>rect</code> should have an <code>x</code> value of 0.
+    testString: assert($('rect').eq(0).attr('x') == '0');
+  - text: The second <code>rect</code> should have an <code>x</code> value of 30.
+    testString: assert($('rect').eq(1).attr('x') == '30');
+  - text: The third <code>rect</code> should have an <code>x</code> value of 60.
+    testString: assert($('rect').eq(2).attr('x') == '60');
+  - text: The fourth <code>rect</code> should have an <code>x</code> value of 90.
+    testString: assert($('rect').eq(3).attr('x') == '90');
+  - text: The fifth <code>rect</code> should have an <code>x</code> value of 120.
+    testString: assert($('rect').eq(4).attr('x') == '120');
+  - text: The sixth <code>rect</code> should have an <code>x</code> value of 150.
+    testString: assert($('rect').eq(5).attr('x') == '150');
+  - text: The seventh <code>rect</code> should have an <code>x</code> value of 180.
+    testString: assert($('rect').eq(6).attr('x') == '180');
+  - text: The eighth <code>rect</code> should have an <code>x</code> value of 210.
+    testString: assert($('rect').eq(7).attr('x') == '210');
+  - text: The ninth <code>rect</code> should have an <code>x</code> value of 240.
+    testString: assert($('rect').eq(8).attr('x') == '240');
 
 ```
 
@@ -74,7 +92,6 @@ tests:
        .attr("height", 100);
   </script>
 </body>
-
 ```
 
 </div>
@@ -89,4 +106,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

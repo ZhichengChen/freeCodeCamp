@@ -2,32 +2,58 @@
 id: 587d7b87367417b2b2512b3f
 title: Explore Differences Between the var and let Keywords
 challengeType: 1
-videoUrl: ''
-localeTitle: 探索var和let关键字之间的差异
+forumTopicId: 301202
 ---
 
-<section id="description">使用<code>var</code>关键字声明变量的最大问题之一是您可以在没有错误的情况下覆盖变量声明。
-<blockquote>var camper = 'James';<br>var camper = 'David';<br>console.log(camper);<br>// 输出 'David'</blockquote>
-正如您在上面的代码中看到的那样， <code>camper</code>变量最初被声明为<code>James</code> ，然后被重写为<code>David</code> 。在小型应用程序中，您可能不会遇到此类问题，但是当您的代码变大时，您可能会意外覆盖您不打算覆盖的变量。因为这种行为不会引发错误，所以搜索和修复错误变得更加困难。 <br>在ES6中引入了一个名为<code>let</code>的新关键字，用<code>var</code>关键字解决了这个潜在的问题。如果要在上面代码的变量声明中用<code>let</code>替换<code>var</code> ，结果将是一个错误。 
-<blockquote>let camper = 'James';<br>let camper = 'David'; // 抛出一个错误</blockquote>  
-您可以在浏览器的控制台中看到此错误。因此与<code>var</code>不同，使用<code>let</code> ，具有相同名称的变量只能声明一次。注意<code>&quot;use strict&quot;</code> 。这启用了严格模式，可以捕获常见的编码错误和“不安全”操作。例如： 
-<blockquote>"use strict";<br>x = 3.14; // 抛出一个错误，因为 x 未定义</blockquote>
+## Description
+<section id='description'>
+One of the biggest problems with declaring variables with the <code>var</code> keyword is that you can overwrite variable declarations without an error.
+
+```js
+var camper = 'James';
+var camper = 'David';
+console.log(camper);
+// logs 'David'
+```
+
+As you can see in the code above, the <code>camper</code> variable is originally declared as <code>James</code> and then overridden to be <code>David</code>.
+In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite.
+Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.<br>
+A new keyword called <code>let</code> was introduced in ES6 to solve this potential issue with the <code>var</code> keyword.
+If you were to replace <code>var</code> with <code>let</code> in the variable declarations of the code above, the result would be an error.
+
+```js
+let camper = 'James';
+let camper = 'David'; // throws an error
+```
+
+This error can be seen in the console of your browser.
+So unlike <code>var</code>, when using <code>let</code>, a variable with the same name can only be declared once.
+Note the <code>"use strict"</code>. This enables Strict Mode, which catches common coding mistakes and "unsafe" actions. For instance:
+
+```js
+"use strict";
+x = 3.14; // throws an error because x is not declared
+```
+
 </section>
 
 ## Instructions
-<section id="instructions">更新代码，使其仅使用<code>let</code>关键字。 </section>
+<section id='instructions'>
+Update the code so it only uses the <code>let</code> keyword.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>var</code>在代码中不存在。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in code.");'
-  - text: <code>catName</code>应该是<code>Oliver</code> 。
-    testString: 'assert(catName === "Oliver", "<code>catName</code> should be <code>Oliver</code>.");'
-  - text: <code>quote</code>应该是<code>&quot;Oliver says Meow!&quot;</code>
-    testString: 'assert(quote === "Oliver says Meow!", "<code>quote</code> should be <code>"Oliver says Meow!"</code>");'
+  - text: <code>var</code> should not exist in the code.
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
+  - text: <code>catName</code> should be <code>Oliver</code>.
+    testString: assert(catName === "Oliver");
+  - text: <code>quote</code> should be <code>"Oliver says Meow!"</code>
+    testString: assert(quote === "Oliver says Meow!");
 
 ```
 
@@ -49,7 +75,6 @@ function catTalk() {
 
 }
 catTalk();
-
 ```
 
 </div>
@@ -62,6 +87,15 @@ catTalk();
 <section id='solution'>
 
 ```js
-// solution required
+let catName;
+let quote;
+function catTalk() {
+  'use strict';
+
+  catName = 'Oliver';
+  quote = catName + ' says Meow!';
+}
+catTalk();
 ```
+
 </section>

@@ -2,15 +2,19 @@
 id: 5900f44b1000cf542c50ff5d
 challengeType: 5
 title: 'Problem 222: Sphere Packing'
-videoUrl: ''
-localeTitle: 问题222：球体包装
+forumTopicId: 301865
 ---
 
 ## Description
-<section id="description">什么是最短管道的长度，内径为50毫米，可以完全包含21个半径为30毫米，31毫米，......，50毫米的球？ <p>以微米（10-6米）四舍五入到最接近的整数给出答案。 </p></section>
+<section id='description'>
+What is the length of the shortest pipe, of internal radius 50mm, that can fully contain 21 balls of radii 30mm, 31mm, ..., 50mm?
+
+Give your answer in micrometres (10-6 m) rounded to the nearest integer.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题222：球体包装
 
 ```yml
 tests:
-  - text: <code>euler222()</code>应该返回1590933。
-    testString: 'assert.strictEqual(euler222(), 1590933, "<code>euler222()</code> should return 1590933.");'
+  - text: <code>euler222()</code> should return 1590933.
+    testString: assert.strictEqual(euler222(), 1590933);
 
 ```
 
@@ -37,7 +41,6 @@ function euler222() {
 }
 
 euler222();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler222();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,19 @@
 id: 5900f3e91000cf542c50fefc
 challengeType: 5
 title: 'Problem 125: Palindromic sums'
-videoUrl: ''
-localeTitle: 问题125：回文总和
+forumTopicId: 301752
 ---
 
 ## Description
-<section id="description">回文数595很有意思，因为它可以写成连续正方形的总和：62 + 72 + 82 + 92 + 102 + 112 + 122.正好有11个以下的回文可以写成连续的平方和，并且这些回文的总和是4164.注意，没有包括1 = 02 + 12，因为该问题涉及正整数的平方。找到小于108的所有数字的总和，这些数字都是回文并且可以写为连续正方形的总和。 </section>
+<section id='description'>
+The palindromic number 595 is interesting because it can be written as the sum of consecutive squares: 62 + 72 + 82 + 92 + 102 + 112 + 122.
+There are exactly eleven palindromes below one-thousand that can be written as consecutive square sums, and the sum of these palindromes is 4164. Note that 1 = 02 + 12 has not been included as this problem is concerned with the squares of positive integers.
+Find the sum of all the numbers less than 108 that are both palindromic and can be written as the sum of consecutive squares.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题125：回文总和
 
 ```yml
 tests:
-  - text: <code>euler125()</code>应该返回2906969179。
-    testString: 'assert.strictEqual(euler125(), 2906969179, "<code>euler125()</code> should return 2906969179.");'
+  - text: <code>euler125()</code> should return 2906969179.
+    testString: assert.strictEqual(euler125(), 2906969179);
 
 ```
 
@@ -37,7 +41,6 @@ function euler125() {
 }
 
 euler125();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler125();
 ```js
 // solution required
 ```
+
 </section>

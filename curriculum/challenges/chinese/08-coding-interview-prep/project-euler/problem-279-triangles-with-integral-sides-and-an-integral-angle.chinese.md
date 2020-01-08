@@ -2,15 +2,17 @@
 id: 5900f4841000cf542c50ff96
 challengeType: 5
 title: 'Problem 279: Triangles with integral sides and an integral angle'
-videoUrl: ''
-localeTitle: 问题279：具有整体边和整体角的三角形
+forumTopicId: 301929
 ---
 
 ## Description
-<section id="description">有多少个三角形有整体边，至少有一个整体角（以度为单位），周长不超过108？ </section>
+<section id='description'>
+How many triangles are there with integral sides, at least one integral angle (measured in degrees), and a perimeter that does not exceed 108?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +20,8 @@ localeTitle: 问题279：具有整体边和整体角的三角形
 
 ```yml
 tests:
-  - text: <code>euler279()</code>应该返回416577688。
-    testString: 'assert.strictEqual(euler279(), 416577688, "<code>euler279()</code> should return 416577688.");'
+  - text: <code>euler279()</code> should return 416577688.
+    testString: assert.strictEqual(euler279(), 416577688);
 
 ```
 
@@ -37,7 +39,6 @@ function euler279() {
 }
 
 euler279();
-
 ```
 
 </div>
@@ -52,4 +53,5 @@ euler279();
 ```js
 // solution required
 ```
+
 </section>

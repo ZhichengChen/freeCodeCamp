@@ -2,23 +2,35 @@
 id: 5900f50f1000cf542c510021
 challengeType: 5
 title: 'Problem 418: Factorisation triples'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 302087
 ---
 
 ## Description
-undefined
+<section id='description'>
+Let n be a positive integer. An integer triple (a, b, c) is called a factorisation triple of n if: 1 ≤ a ≤ b ≤ c
+ a·b·c = n.
+
+Define f(n) to be a + b + c for the factorisation triple (a, b, c) of n which minimises c / a. One can show that this triple is unique.
+
+
+For example, f(165) = 19, f(100100) = 142 and f(20!) = 4034872.
+
+
+Find f(43!).
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler418(), 1177163565297340400, "<code>euler418()</code> should return 1177163565297340400.");'
+  - text: <code>euler418()</code> should return 1177163565297340400.
+    testString: assert.strictEqual(euler418(), 1177163565297340400);
 
 ```
 
@@ -36,7 +48,6 @@ function euler418() {
 }
 
 euler418();
-
 ```
 
 </div>
@@ -51,4 +62,5 @@ euler418();
 ```js
 // solution required
 ```
+
 </section>

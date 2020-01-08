@@ -3,27 +3,30 @@ id: 5a24c314108439a4d403614e
 title: Define an Action Creator
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 定义一个Action Creator
+forumTopicId: 301441
 ---
 
 ## Description
-<section id="description">创建操作后，下一步是将操作发送到Redux存储，以便它可以更新其状态。在Redux中，您可以定义动作创建器来完成此任务。动作创建者只是一个返回动作的JavaScript函数。换句话说，动作创建者创建表示动作事件的对象。 </section>
+<section id='description'>
+After creating an action, the next step is sending the action to the Redux store so it can update its state. In Redux, you define action creators to accomplish this. An action creator is simply a JavaScript function that returns an action. In other words, action creators create objects that represent action events.
+</section>
 
 ## Instructions
-<section id="instructions">定义一个名为<code>actionCreator()</code>的函数，该函数在调用时返回<code>action</code>对象。 </section>
+<section id='instructions'>
+Define a function named <code>actionCreator()</code> that returns the <code>action</code> object when called.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 函数<code>actionCreator</code>应该存在。
-    testString: 'assert(typeof actionCreator === "function", "The function <code>actionCreator</code> should exist.");'
-  - text: 运行<code>actionCreator</code>函数应该返回操作对象。
-    testString: 'assert(typeof action === "object", "Running the <code>actionCreator</code> function should return the action object.");'
-  - text: 返回的操作应具有值为<code>LOGIN</code>的键属性类型。
-    testString: 'assert(action.type === "LOGIN", "The returned action should have a key property type with value <code>LOGIN</code>.");'
+  - text: The function <code>actionCreator</code> should exist.
+    testString: assert(typeof actionCreator === 'function');
+  - text: Running the <code>actionCreator</code> function should return the action object.
+    testString: assert(typeof action === 'object');
+  - text: The returned action should have a key property type with value <code>LOGIN</code>.
+    testString: assert(action.type === 'LOGIN');
 
 ```
 
@@ -51,7 +54,15 @@ const action = {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const action = {
+  type: 'LOGIN'
+}
+// Define an action creator here:
+const actionCreator = () => {
+  return action;
+};
 ```
+
 </section>

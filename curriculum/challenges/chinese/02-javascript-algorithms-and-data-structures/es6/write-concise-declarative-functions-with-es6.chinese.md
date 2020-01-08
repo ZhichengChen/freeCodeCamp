@@ -2,27 +2,51 @@
 id: 587d7b8b367417b2b2512b50
 title: Write Concise Declarative Functions with ES6
 challengeType: 1
-videoUrl: ''
-localeTitle: 用ES6编写简明的声明函数
+forumTopicId: 301224
 ---
 
 ## Description
-<section id="description">在ES5中定义对象内的函数时，我们必须使用关键字<code>function</code> ，如下所示： <blockquote> const person = { <br>名称：“泰勒”， <br> sayHello：function（）{ <br>回来`你好！我的名字是$ {this.name} .`; <br> } <br> }; </blockquote>使用ES6，您可以在定义对象中的函数时完全删除<code>function</code>关键字和冒号。以下是此语法的示例： <blockquote> const person = { <br>名称：“泰勒”， <br>问好（） { <br>回来`你好！我的名字是$ {this.name} .`; <br> } <br> }; </blockquote></section>
+<section id='description'>
+When defining functions within objects in ES5, we have to use the keyword <code>function</code> as follows:
+
+```js
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+
+With ES6, You can remove the <code>function</code> keyword and colon altogether when defining functions in objects. Here's an example of this syntax:
+
+```js
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">重构对象<code>bicycle</code>内的函数<code>setGear</code>以使用上述简写语法。 </section>
+<section id='instructions'>
+Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 未使用传统函数表达式。
-    testString: 'assert(!getUserInput("index").match(/function/),"Traditional <code>function</code> expression was not used.");'
-  - text: <code>setGear</code>是一个声明函数。
-    testString: 'assert(typeof bicycle.setGear === "function" && getUserInput("index").match(/setGear\s*\(.+\)\s*\{/), "<code>setGear</code> is a declarative function.");'
-  - text: ''
-    testString: 'assert((new bicycle.setGear(48)).gear === 48, "<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.");'
+  - text: Traditional function expression should not be used.
+    testString: getUserInput => assert(!removeJSComments(code).match(/function/));
+  - text: <code>setGear</code> should be a declarative function.
+    testString: assert(typeof bicycle.setGear === 'function' && code.match(/setGear\s*\(.+\)\s*\{/));
+  - text: <code>bicycle.setGear(48)</code> should change the <code>gear</code> value to 48.
+    testString: assert((new bicycle.setGear(48)).gear === 48);
 
 ```
 
@@ -38,19 +62,24 @@ tests:
 const bicycle = {
   gear: 2,
   setGear: function(newGear) {
-    "use strict";
     this.gear = newGear;
   }
 };
 // change code above this line
 bicycle.setGear(3);
 console.log(bicycle.gear);
-
 ```
 
 </div>
 
+### After Test
+<div id='js-teardown'>
 
+```js
+const removeJSComments = str => str.replace(/\/\*[\s\S]*?\*\/|\/\/.*$/gm, '');
+```
+
+</div>
 
 </section>
 
@@ -58,6 +87,13 @@ console.log(bicycle.gear);
 <section id='solution'>
 
 ```js
-// solution required
+const bicycle = {
+  gear: 2,
+  setGear(newGear) {
+    this.gear = newGear;
+  }
+};
+bicycle.setGear(3);
 ```
+
 </section>

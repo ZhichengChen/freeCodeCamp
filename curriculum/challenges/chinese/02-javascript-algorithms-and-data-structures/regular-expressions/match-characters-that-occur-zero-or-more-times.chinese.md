@@ -2,31 +2,48 @@
 id: 587d7db6367417b2b2512b9a
 title: Match Characters that Occur Zero or More Times
 challengeType: 1
-videoUrl: ''
-localeTitle: 匹配出现零次或多次的字符
+forumTopicId: 301351
 ---
 
 ## Description
-<section id="description">最后一项挑战使用加<code>+</code>号来查找出现一次或多次的字符。还有一个选项可以匹配出现零次或多次的字符。执行此操作的字符是<code>asterisk</code>或<code>star</code> <code>asterisk</code> ： <code>*</code> 。 <blockquote>让soccerWord =“gooooooooal！”; <br>让gPhrase =“直觉”; <br>让oPhrase =“越过月亮”; <br> let goRegex = / go * /; <br> soccerWord.match（goRegex）; //返回[“goooooooo”] <br> gPhrase.match（goRegex）; //返回[“g”] <br> oPhrase.match（goRegex）; //返回null </blockquote></section>
+<section id='description'>
+The last challenge used the plus <code>+</code> sign to look for characters that occur one or more times. There's also an option that matches characters that occur zero or more times.
+The character to do this is the asterisk or star: <code>*</code>.
+
+```js
+let soccerWord = "gooooooooal!";
+let gPhrase = "gut feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/;
+soccerWord.match(goRegex); // Returns ["goooooooo"]
+gPhrase.match(goRegex); // Returns ["g"]
+oPhrase.match(goRegex); // Returns null
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">创建一个正则表达式<code>chewieRegex</code>使用的<code>*</code>字符匹配所有上下<code>&quot;a&quot;</code>中的字符<code>chewieQuote</code> 。你的正则表达式不需要标志，它不应该与任何其他引号相匹配。 </section>
+<section id='instructions'>
+For this challenge, <code>chewieQuote</code> has been initialized as "Aaaaaaaaaaaaaaaarrrgh!" behind the scenes. Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match an uppercase <code>"A"</code> character immediately followed by zero or more lowercase <code>"a"</code> characters in <code>chewieQuote</code>. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您正则表达式<code>chewieRegex</code>应该使用<code>*</code>字符匹配零个或多个<code>a</code>字符。
-    testString: 'assert(/\*/.test(chewieRegex.source), "Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.");'
-  - text: 你的正则表达式<code>chewieRegex</code>应匹配16个字符。
-    testString: 'assert(result[0].length === 16, "Your regex <code>chewieRegex</code> should match 16 characters.");'
-  - text: 你的正则表达式应该匹配<code>&quot;Aaaaaaaaaaaaaaaa&quot;</code> 。
-    testString: 'assert(result[0] === "Aaaaaaaaaaaaaaaa", "Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.");'
-  - text: '你的正则表达式不应该与<code>&quot;He made a fair move. Screaming about it can&#39;t help you.&quot;</code>中的任何角色相匹配<code>&quot;He made a fair move. Screaming about it can&#39;t help you.&quot;</code>'
-    testString: 'assert(!"He made a fair move. Screaming about it can\"t help you.".match(chewieRegex), "Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>");'
-  - text: '你的正则表达式不应该与<code>&quot;Let him have it. It&#39;s not wise to upset a Wookiee.&quot;</code>中的任何角色相匹配<code>&quot;Let him have it. It&#39;s not wise to upset a Wookiee.&quot;</code>'
-    testString: 'assert(!"Let him have it. It\"s not wise to upset a Wookiee.".match(chewieRegex), "Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>");'
+  - text: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.
+    testString: assert(/\*/.test(chewieRegex.source));
+  - text: Your regex should match <code>"A"</code> in <code>chewieQuote</code>.
+    testString: assert(result[0][0] === 'A');
+  - text: Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code> in <code>chewieQuote</code>.
+    testString: assert(result[0] === 'Aaaaaaaaaaaaaaaa');
+  - text: Your regex <code>chewieRegex</code> should match 16 characters in <code>chewieQuote</code>.
+    testString: assert(result[0].length === 16);
+  - text: Your regex should not match any characters in "He made a fair move. Screaming about it can't help you."
+    testString: assert(!"He made a fair move. Screaming about it can't help you.".match(chewieRegex));
+  - text: Your regex should not match any characters in "Let him have it. It's not wise to upset a Wookiee."
+    testString: assert(!"Let him have it. It's not wise to upset a Wookiee.".match(chewieRegex));
 
 ```
 
@@ -38,15 +55,20 @@ tests:
 <div id='js-seed'>
 
 ```js
-let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-let chewieRegex = /change/; // Change this line
+let chewieRegex = /change/; // Only change this line
 let result = chewieQuote.match(chewieRegex);
-
 ```
 
 </div>
 
+## Before Test
+<div id='js-setup'>
 
+```js
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+```
+
+</div>
 
 </section>
 
@@ -54,6 +76,8 @@ let result = chewieQuote.match(chewieRegex);
 <section id='solution'>
 
 ```js
-// solution required
+  let chewieRegex = /Aa*/;
+  let result = chewieQuote.match(chewieRegex);
 ```
+
 </section>

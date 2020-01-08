@@ -2,15 +2,22 @@
 id: 5900f4391000cf542c50ff4c
 challengeType: 5
 title: 'Problem 205: Dice Game'
-videoUrl: ''
-localeTitle: 问题205：骰子游戏
+forumTopicId: 301846
 ---
 
 ## Description
-<section id="description">彼得有九个四面（金字塔）骰子，每个骰子都有编号为1,2,3,4的面孔。科林有六个六面（立方体）骰子，每个骰子都有编号为1,2,3,4,5,6的面孔。 <p>彼得和科林掷骰子并比较总数：总得分最高。如果总数相等，结果是平局。 </p><p>金字塔皮特击败立方科林的几率是多少？将您的答案四舍五入到0.abcdefg形式的七位小数</p></section>
+<section id='description'>
+Peter has nine four-sided (pyramidal) dice, each with faces numbered 1, 2, 3, 4.
+Colin has six six-sided (cubic) dice, each with faces numbered 1, 2, 3, 4, 5, 6.
+
+Peter and Colin roll their dice and compare totals: the highest total wins. The result is a draw if the totals are equal.
+
+What is the probability that Pyramidal Pete beats Cubic Colin? Give your answer rounded to seven decimal places in the form 0.abcdefg
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题205：骰子游戏
 
 ```yml
 tests:
-  - text: <code>euler205()</code>应该返回0.5731441。
-    testString: 'assert.strictEqual(euler205(), 0.5731441, "<code>euler205()</code> should return 0.5731441.");'
+  - text: <code>euler205()</code> should return 0.5731441.
+    testString: assert.strictEqual(euler205(), 0.5731441);
 
 ```
 
@@ -37,7 +44,6 @@ function euler205() {
 }
 
 euler205();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler205();
 ```js
 // solution required
 ```
+
 </section>

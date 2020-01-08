@@ -2,15 +2,25 @@
 id: 5900f52c1000cf542c51003f
 challengeType: 5
 title: 'Problem 448: Average least common multiple'
-videoUrl: ''
-localeTitle: 问题448：平均最小公倍数
+forumTopicId: 302120
 ---
 
 ## Description
-<section id="description">函数lcm（a，b）表示a和b的最小公倍数。设A（n）为1≤i≤n的lcm（n，i）的平均值。例如：A（2）=（2 + 2）/ 2 = 2且A（10）=（10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10）/ 10 = 32。 <p>令S（n）=ΣA（k）为1≤k≤n。 S（100）= 122726。 </p><p>找到S（99999999019）mod 999999017。 </p></section>
+<section id='description'>
+The function lcm(a,b) denotes the least common multiple of a and b.
+Let A(n) be the average of the values of lcm(n,i) for 1≤i≤n.
+E.g: A(2)=(2+2)/2=2 and A(10)=(10+10+30+20+10+30+70+40+90+10)/10=32.
+
+Let S(n)=∑A(k) for 1≤k≤n.
+S(100)=122726.
+
+
+Find S(99999999019) mod 999999017.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题448：平均最小公倍数
 
 ```yml
 tests:
-  - text: <code>euler448()</code>应该返回106467648。
-    testString: 'assert.strictEqual(euler448(), 106467648, "<code>euler448()</code> should return 106467648.");'
+  - text: <code>euler448()</code> should return 106467648.
+    testString: assert.strictEqual(euler448(), 106467648);
 
 ```
 
@@ -37,7 +47,6 @@ function euler448() {
 }
 
 euler448();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler448();
 ```js
 // solution required
 ```
+
 </section>

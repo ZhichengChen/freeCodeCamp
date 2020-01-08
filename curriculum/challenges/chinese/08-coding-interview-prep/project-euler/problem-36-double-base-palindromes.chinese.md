@@ -2,15 +2,19 @@
 id: 5900f3901000cf542c50fea3
 challengeType: 5
 title: 'Problem 36: Double-base palindromes'
-videoUrl: ''
-localeTitle: 问题36：双基回文
+forumTopicId: 302020
 ---
 
 ## Description
-<section id="description">十进制数，585 = 10010010012（二进制），在两个碱基中都是回文。找到所有数字的总和，小于n，而1000 &lt;= n &lt;= 1000000，它们在基数10和基数2中是回文的。（请注意，任一基数中的回文数可能不包括前导零。） </section>
+<section id='description'>
+The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.
+Find the sum of all numbers, less than n, whereas 1000 <= n <= 1000000, which are palindromic in base 10 and base 2.
+(Please note that the palindromic number, in either base, may not include leading zeros.)
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +22,14 @@ localeTitle: 问题36：双基回文
 
 ```yml
 tests:
-  - text: <code>doubleBasePalindromes(1000)</code>应该返回1772。
-    testString: 'assert(doubleBasePalindromes(1000) == 1772, "<code>doubleBasePalindromes(1000)</code> should return 1772.");'
-  - text: <code>doubleBasePalindromes(50000)</code>应该返回105795。
-    testString: 'assert(doubleBasePalindromes(50000) == 105795, "<code>doubleBasePalindromes(50000)</code> should return 105795.");'
-  - text: <code>doubleBasePalindromes(500000)</code>应该返回286602。
-    testString: 'assert(doubleBasePalindromes(500000) == 286602, "<code>doubleBasePalindromes(500000)</code> should return 286602.");'
-  - text: <code>doubleBasePalindromes(1000000)</code>应该返回872187。
-    testString: 'assert(doubleBasePalindromes(1000000) == 872187, "<code>doubleBasePalindromes(1000000)</code> should return 872187.");'
+  - text: <code>doubleBasePalindromes(1000)</code> should return 1772.
+    testString: assert(doubleBasePalindromes(1000) == 1772);
+  - text: <code>doubleBasePalindromes(50000)</code> should return 105795.
+    testString: assert(doubleBasePalindromes(50000) == 105795);
+  - text: <code>doubleBasePalindromes(500000)</code> should return 286602.
+    testString: assert(doubleBasePalindromes(500000) == 286602);
+  - text: <code>doubleBasePalindromes(1000000)</code> should return 872187.
+    testString: assert(doubleBasePalindromes(1000000) == 872187);
 
 ```
 
@@ -43,7 +47,6 @@ function doubleBasePalindromes(n) {
 }
 
 doubleBasePalindromes(1000000);
-
 ```
 
 </div>
@@ -58,4 +61,5 @@ doubleBasePalindromes(1000000);
 ```js
 // solution required
 ```
+
 </section>

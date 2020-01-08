@@ -2,15 +2,23 @@
 id: 5900f47d1000cf542c50ff8f
 challengeType: 5
 title: 'Problem 272: Modular Cubes, part 2'
-videoUrl: ''
-localeTitle: 问题272：模块化立方体，第2部分
+forumTopicId: 301922
 ---
 
 ## Description
-<section id="description">对于正数n，将C（n）定义为整数x的数量，为1 <p>当n = 91时，x有8个可能的值，即：9,16,22,29,53,74,79,81。因此，C（91）= 8。 </p><p>求出正数n≤1011的总和，其中C（n）= 242。 </p></section>
+<section id='description'>
+For a positive number n, define C(n) as the number of the integers x, for which 1<x<n andx3≡1 mod n.
+
+
+When n=91, there are 8 possible values for x, namely : 9, 16, 22, 29, 53, 74, 79, 81.
+Thus, C(91)=8.
+
+Find the sum of the positive numbers n≤1011 for which C(n)=242.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题272：模块化立方体，第2部分
 
 ```yml
 tests:
-  - text: <code>euler272()</code>应该返回8495585919506151000。
-    testString: 'assert.strictEqual(euler272(), 8495585919506151000, "<code>euler272()</code> should return 8495585919506151000.");'
+  - text: <code>euler272()</code> should return 8495585919506151000.
+    testString: assert.strictEqual(euler272(), 8495585919506151000);
 
 ```
 
@@ -37,7 +45,6 @@ function euler272() {
 }
 
 euler272();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler272();
 ```js
 // solution required
 ```
+
 </section>

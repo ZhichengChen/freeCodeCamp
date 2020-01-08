@@ -2,23 +2,30 @@
 id: 5900f4041000cf542c50ff17
 challengeType: 5
 title: 'Problem 152: Writing one half as a sum of inverse squares'
-videoUrl: ''
-localeTitle: 问题152：将一半写为倒数平方和
+forumTopicId: 301783
 ---
 
 ## Description
-undefined
+<section id='description'>
+There are several ways to write the number 1/2 as a sum of inverse squares using distinct integers.
+For instance, the numbers {2,3,4,5,7,12,15,20,28,35} can be used:
+
+In fact, only using integers between 2 and 45 inclusive, there are exactly three ways to do it, the remaining two being: {2,3,4,6,7,9,10,20,28,35,36,45} and {2,3,4,6,7,9,12,15,28,30,35,36,45}.
+How many ways are there to write the number 1/2 as a sum of inverse squares using distinct integers between 2 and 80 inclusive?
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler152(), 301, "<code>euler152()</code> should return 301.");'
+  - text: <code>euler152()</code> should return 301.
+    testString: assert.strictEqual(euler152(), 301);
 
 ```
 
@@ -36,7 +43,6 @@ function euler152() {
 }
 
 euler152();
-
 ```
 
 </div>
@@ -51,4 +57,5 @@ euler152();
 ```js
 // solution required
 ```
+
 </section>

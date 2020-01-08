@@ -2,15 +2,19 @@
 id: 5900f3911000cf542c50fea4
 challengeType: 5
 title: 'Problem 37: Truncatable primes'
-videoUrl: ''
-localeTitle: 问题37：可截断的素数
+forumTopicId: 302031
 ---
 
 ## Description
-<section id="description"> 3797号有一个有趣的财产。作为素数本身，可以从左到右连续删除数字，并在每个阶段保持素数：3797,797,97和7.同样，我们可以从右到左工作：3797,379,37和3。找到从左到右和从右到左都可截断的唯一n（8 &lt;= n &lt;= 11）个素数之和。注意：2,3,5和7不被认为是可截断的素数。 </section>
+<section id='description'>
+The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.
+Find the sum of the only n (8 <= n <= 11) primes that are both truncatable from left to right and right to left.
+NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +22,14 @@ localeTitle: 问题37：可截断的素数
 
 ```yml
 tests:
-  - text: <code>truncatablePrimes(8)</code>应该返回1986年。
-    testString: 'assert(truncatablePrimes(8) == 1986, "<code>truncatablePrimes(8)</code> should return 1986.");'
-  - text: <code>truncatablePrimes(9)</code>应该返回5123。
-    testString: 'assert(truncatablePrimes(9) == 5123, "<code>truncatablePrimes(9)</code> should return 5123.");'
-  - text: <code>truncatablePrimes(10)</code>应该返回8920。
-    testString: 'assert(truncatablePrimes(10) == 8920, "<code>truncatablePrimes(10)</code> should return 8920.");'
-  - text: <code>truncatablePrimes(11)</code>应该返回748317。
-    testString: 'assert(truncatablePrimes(11) == 748317, "<code>truncatablePrimes(11)</code> should return 748317.");'
+  - text: <code>truncatablePrimes(8)</code> should return 1986.
+    testString: assert(truncatablePrimes(8) == 1986);
+  - text: <code>truncatablePrimes(9)</code> should return 5123.
+    testString: assert(truncatablePrimes(9) == 5123);
+  - text: <code>truncatablePrimes(10)</code> should return 8920.
+    testString: assert(truncatablePrimes(10) == 8920);
+  - text: <code>truncatablePrimes(11)</code> should return 748317.
+    testString: assert(truncatablePrimes(11) == 748317);
 
 ```
 
@@ -43,7 +47,6 @@ function truncatablePrimes(n) {
 }
 
 truncatablePrimes(11);
-
 ```
 
 </div>
@@ -58,4 +61,5 @@ truncatablePrimes(11);
 ```js
 // solution required
 ```
+
 </section>

@@ -3,15 +3,34 @@ id: 587d7fa6367417b2b2512bc0
 title: Visualize Data with a Treemap Diagram
 isRequired: true
 challengeType: 3
-videoUrl: ''
-localeTitle: 使用树形图可视化数据
+forumTopicId: 301468
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/KaNGNR" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/KaNGNR</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a>并通过所有测试。给它你自己的个人风格。您可以使用HTML，JavaScript，CSS和基于D3 svg的可视化库。测试需要使用D3轴属性生成轴，该属性会自动生成沿轴的刻度。通过D3测试需要这些刻度，因为它们的位置用于确定绘制元素的对齐方式。有关生成轴的信息， <a href="https://github.com/d3/d3/blob/master/API.md#axes-d3-axis" target="_blank">请</a>访问<a href="https://github.com/d3/d3/blob/master/API.md#axes-d3-axis" target="_blank">https://github.com/d3/d3/blob/master/API.md#axes-d3-axis</a> 。在每次测试时查询必需（非虚拟）DOM元素。如果您使用前端框架（例如Vue），则测试结果可能对动态内容不准确。我们希望最终能够容纳它们，但D3项目目前不支持这些框架。 <strong>用户故事＃1：</strong>我的树图应该有一个标题，对应的<code>id=&quot;title&quot;</code> 。 <strong>用户故事＃2：</strong>我的树图应该有一个对应<code>id=&quot;description&quot;</code> 。 <strong>用户故事＃3：</strong>我的树形图应该有一个<code>rect</code>元素，并且对应的<code>class=&quot;tile&quot;</code>代表数据。 <strong>用户故事＃4：</strong>瓷砖应至少有2种不同的填充颜色。 <strong>用户故事＃5：</strong>每个瓷砖应具有属性<code>data-name</code> ， <code>data-category</code> ，和<code>data-value</code>包含其相应的名称，类别，和值。 <strong>用户故事＃6：</strong>每个图块的区域应对应于数据值量：具有较大数据值的图块应具有更大的区域。 <strong>用户故事＃7：</strong>我的树形图应该有一个对应<code>id=&quot;legend&quot;</code> 。 <strong>用户故事＃8：</strong>我的图例应该有一个带有相应<code>class=&quot;legend-item&quot;</code> <code>rect</code>元素。 <strong>用户故事＃9：</strong>图例中的<code>rect</code>元素应使用至少2种不同的填充颜色。 <strong>用户故事＃10：</strong>我可以将鼠标悬停在某个区域上，并查看带有相应<code>id=&quot;tooltip&quot;</code> ，其中显示有关该区域的更多信息。 <strong>用户故事＃11：</strong>我的工具提示应具有与活动区域的<code>data-value</code>对应的<code>data-value</code> <code>data-value</code>属性。对于此项目，您可以使用以下任何数据集： <br><ul><li> <strong>Kickstarter承诺：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json</code> <strong>：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json</code> </li><li> <strong>电影销售：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json</code> <strong>：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json</code> </li><li> <strong>视频游戏销售：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json</code> <strong>：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json</code> </li></ul>您可以通过分叉<a href="https://codepen.io/freeCodeCamp/pen/MJjpwO" target="_blank">此CodePen笔</a>来构建项目。或者您可以使用此CDN链接在您喜欢的任何环境中运行测试： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code> ： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>完成后，将URL提交给您的工作通过所有测试的项目。如果卡住，请记住使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>方法。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/KaNGNR' target='_blank'>https://codepen.io/freeCodeCamp/full/KaNGNR</a>.
+Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.
+You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <a href='https://github.com/d3/d3/blob/master/API.md#axes-d3-axis' target='_blank'>https://github.com/d3/d3/blob/master/API.md#axes-d3-axis</a>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+<strong>User Story #1:</strong> My tree map should have a title with a corresponding <code>id="title"</code>.
+<strong>User Story #2:</strong> My tree map should have a description with a corresponding <code>id="description"</code>.
+<strong>User Story #3:</strong> My tree map should have <code>rect</code> elements with a corresponding <code>class="tile"</code> that represent the data.
+<strong>User Story #4:</strong> There should be at least 2 different fill colors used for the tiles.
+<strong>User Story #5:</strong> Each tile should have the properties <code>data-name</code>, <code>data-category</code>, and <code>data-value</code> containing their corresponding name, category, and value.
+<strong>User Story #6:</strong> The area of each tile should correspond to the data-value amount: tiles with a larger data-value should have a bigger area.
+<strong>User Story #7:</strong> My tree map should have a legend with corresponding <code>id="legend"</code>.
+<strong>User Story #8:</strong> My legend should have <code>rect</code> elements with a corresponding <code>class="legend-item"</code>.
+<strong>User Story #9:</strong> The <code>rect</code> elements in the legend should use at least 2 different fill colors.
+<strong>User Story #10:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id="tooltip"</code> which displays more information about the area.
+<strong>User Story #11:</strong> My tooltip should have a <code>data-value</code> property that corresponds to the <code>data-value</code> of the active area.
+For this project you can use any of the following datasets:<br><ul><li><strong>Kickstarter Pledges:</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json</code></li><li><strong>Movie Sales:</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json</code></li><li><strong>Video Game Sales:</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json</code></li></ul>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+Once you're done, submit the URL to your working project with all its tests passing.
+Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +54,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

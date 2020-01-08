@@ -2,25 +2,39 @@
 id: 587d7b86367417b2b2512b3d
 title: Prevent Infinite Loops with a Valid Terminal Condition
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用有效的终端条件防止无限循环
+forumTopicId: 301192
 ---
 
 ## Description
-<section id="description">最后一个话题是可怕的无限循环。当您需要程序运行代码块一定次数或满足条件时，循环是很好的工具，但是它们需要终止条件来结束循环。无限循环可能会冻结或崩溃浏览器，并导致一般程序执行混乱，没有人想要。在本节的介绍中有一个无限循环的例子 - 它没有终止条件来摆脱<code>loopy()</code>内的<code>while</code>循环。不要叫这个功能！ <blockquote> function loopy（）{ <br> while（true）{ <br> console.log（“Hello，world！”）; <br> } <br> } </blockquote>程序员的工作是确保最终达到终止条件，该条件告诉程序何时突破循环代码。一个错误是从终端条件向错误方向递增或递减计数器变量。另一个是在循环代码中意外重置计数器或索引变量，而不是递增或递减它。 </section>
+<section id='description'>
+The final topic is the dreaded infinite loop. Loops are great tools when you need your program to run a code block a certain number of times or until a condition is met, but they need a terminal condition that ends the looping. Infinite loops are likely to freeze or crash the browser, and cause general program execution mayhem, which no one wants.
+There was an example of an infinite loop in the introduction to this section - it had no terminal condition to break out of the <code>while</code> loop inside <code>loopy()</code>. Do NOT call this function!
+
+```js
+function loopy() {
+  while(true) {
+    console.log("Hello, world!");
+  }
+}
+```
+
+It's the programmer's job to ensure that the terminal condition, which tells the program when to break out of the loop code, is eventually reached. One error is incrementing or decrementing a counter variable in the wrong direction from the terminal condition. Another one is accidentally resetting a counter or index variable within the loop code, instead of incrementing or decrementing it.
+</section>
 
 ## Instructions
-<section id="instructions"> <code>myFunc()</code>函数包含一个无限循环，因为终端条件<code>i != 4</code>将永远不会计算为<code>false</code> （并且会中断循环） - <code>i</code>将每次递增2，然后跳过4，因为<code>i</code>是奇数启动。固定在终端条件比较运算符因此该循环仅运行<code>i</code>小于或等于4。 </section>
+<section id='instructions'>
+The <code>myFunc()</code> function contains an infinite loop because the terminal condition <code>i != 4</code> will never evaluate to <code>false</code> (and break the looping) - <code>i</code> will increment by 2 each pass, and jump right over 4 since <code>i</code> is odd to start. Fix the comparison operator in the terminal condition so the loop only runs for <code>i</code> less than or equal to 4.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该更改<code>for</code>循环的终端条件（中间部分）中的比较运算符。
-    testString: 'assert(code.match(/i\s*?<=\s*?4;/g).length == 1, "Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.");'
-  - text: 您的代码应该在循环的终端条件中修复比较运算符。
-    testString: 'assert(!code.match(/i\s*?!=\s*?4;/g), "Your code should fix the comparison operator in the terminal condition of the loop.");'
+  - text: Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.
+    testString: assert(code.match(/i\s*?<=\s*?4;/g).length == 1);
+  - text: Your code should fix the comparison operator in the terminal condition of the loop.
+    testString: assert(!code.match(/i\s*?!=\s*?4;/g));
 
 ```
 
@@ -37,7 +51,6 @@ function myFunc() {
     console.log("Still going!");
   }
 }
-
 ```
 
 </div>
@@ -50,6 +63,11 @@ function myFunc() {
 <section id='solution'>
 
 ```js
-// solution required
+function myFunc() {
+ for (let i = 1; i <= 4; i += 2) {
+   console.log("Still going!");
+ }
+}
 ```
+
 </section>

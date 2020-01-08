@@ -2,15 +2,27 @@
 id: 5900f4701000cf542c50ff82
 challengeType: 5
 title: 'Problem 259: Reachable Numbers'
-videoUrl: ''
-localeTitle: 问题259：可达号码
+forumTopicId: 301907
 ---
 
 ## Description
-<section id="description">如果正整数可以由遵循以下规则的算术表达式产生，则称为正整数： <p>按顺序使用数字1到9，每个数字恰好一次。可以连接任何连续的数字（例如，使用数字2,3和4，我们获得数字234）。只允许四种常用的二进制算术运算（加法，减法，乘法和除法）。每个操作可以使用任何次数，或者根本不使用。不允许一元减号。可以使用任意数量（可能嵌套的）括号来定义操作的顺序。例如，42是可达的，因为（1/23） <em>（（4</em> 5）-6）*（78-9）= 42。 </p><p>所有正可达整数的总和是多少？ </p></section>
+<section id='description'>
+A positive integer will be called reachable if it can result from an arithmetic expression obeying the following rules:
+
+Uses the digits 1 through 9, in that order and exactly once each.
+Any successive digits can be concatenated (for example, using the digits 2, 3 and 4 we obtain the number 234).
+Only the four usual binary arithmetic operations (addition, subtraction, multiplication and division) are allowed.
+Each operation can be used any number of times, or not at all.
+Unary minus is not allowed.
+Any number of (possibly nested) parentheses may be used to define the order of operations.
+For example, 42 is reachable, since (1/23) * ((4*5)-6) * (78-9) = 42.
+
+What is the sum of all positive reachable integers?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题259：可达号码
 
 ```yml
 tests:
-  - text: <code>euler259()</code>应返回20101196798。
-    testString: 'assert.strictEqual(euler259(), 20101196798, "<code>euler259()</code> should return 20101196798.");'
+  - text: <code>euler259()</code> should return 20101196798.
+    testString: assert.strictEqual(euler259(), 20101196798);
 
 ```
 
@@ -37,7 +49,6 @@ function euler259() {
 }
 
 euler259();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler259();
 ```js
 // solution required
 ```
+
 </section>

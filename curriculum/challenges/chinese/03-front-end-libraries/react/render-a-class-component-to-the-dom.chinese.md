@@ -3,29 +3,34 @@ id: 5a24c314108439a4d4036167
 title: Render a Class Component to the DOM
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将类组件渲染到DOM
+forumTopicId: 301404
 ---
 
 ## Description
-<section id="description">您可能还记得在早期挑战中使用ReactDOM API将JSX元素呈现给DOM。渲染React组件的过程看起来非常相似。过去的几个挑战集中在组件和组合上，因此渲染是在幕后为您完成的。但是，您编写的React代码都不会在不调用ReactDOM API的情况下呈现给DOM。这是对语法的更新： <code>ReactDOM.render(componentToRender, targetNode)</code> 。第一个参数是要呈现的React组件。第二个参数是要在其中呈现该组件的DOM节点。 React组件传递到<code>ReactDOM.render()</code>与JSX元素略有不同。对于JSX元素，您传入要呈现的元素的名称。但是，对于React组件，您需要使用与渲染嵌套组件相同的语法，例如<code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code> 。您可以将此语法用于ES6类组件和功能组件。 </section>
+<section id='description'>
+You may remember using the ReactDOM API in an earlier challenge to render JSX elements to the DOM. The process for rendering React components will look very similar. The past few challenges focused on components and composition, so the rendering was done for you behind the scenes. However, none of the React code you write will render to the DOM without making a call to the ReactDOM API.
+Here's a refresher on the syntax: <code>ReactDOM.render(componentToRender, targetNode)</code>. The first argument is the React component that you want to render. The second argument is the DOM node that you want to render that component within.
+React components are passed into <code>ReactDOM.render()</code> a little differently than JSX elements. For JSX elements, you pass in the name of the element that you want to render. However, for React components, you need to use the same syntax as if you were rendering a nested component, for example <code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code>. You use this syntax for both ES6 class components and functional components.
+</section>
 
 ## Instructions
-<section id="instructions"> <code>Fruits</code>和<code>Vegetables</code>组件都是在幕后为您定义的。将两个组件渲染为<code>TypesOfFood</code>组件的<code>TypesOfFood</code>组件，然后将<code>TypesOfFood</code>呈现给DOM。有一个<code>div</code> ， <code>id=&#39;challenge-node&#39;</code>可供您使用。 </section>
+<section id='instructions'>
+Both the <code>Fruits</code> and <code>Vegetables</code> components are defined for you behind the scenes. Render both components as children of the <code>TypesOfFood</code> component, then render <code>TypesOfFood</code> to the DOM. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>TypesOfFood</code>组件应返回单个<code>div</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().type() === "div"; })(), "The <code>TypesOfFood</code> component should return a single <code>div</code> element.");'
-  - text: <code>TypesOfFood</code>组件应该在<code>h1</code>元素之后呈现<code>Fruits</code>组件。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(1).name() === "Fruits"; })(), "The <code>TypesOfFood</code> component should render the <code>Fruits</code> component after the <code>h1</code> element.");'
-  - text: <code>TypesOfFood</code>组件应该在<code>Fruits</code>之后呈现<code>Vegetables</code>组件。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === "Vegetables"; })(), "The <code>TypesOfFood</code> component should render the <code>Vegetables</code> component after <code>Fruits</code>.");'
-  - text: <code>TypesOfFood</code>组件应该使用id <code>challenge-node</code>呈现给<code>div</code>的DOM。
-    testString: 'assert((function() { const html = document.getElementById("challenge-node").childNodes[0].innerHTML; return (html === "<h1>Types of Food:</h1><div><h2>Fruits:</h2><h4>Non-Citrus:</h4><ul><li>Apples</li><li>Blueberries</li><li>Strawberries</li><li>Bananas</li></ul><h4>Citrus:</h4><ul><li>Lemon</li><li>Lime</li><li>Orange</li><li>Grapefruit</li></ul></div><div><h2>Vegetables:</h2><ul><li>Brussel Sprouts</li><li>Broccoli</li><li>Squash</li></ul></div>"); })(), "The <code>TypesOfFood</code> component should render to the DOM within the <code>div</code> with the id <code>challenge-node</code>.");'
+  - text: The <code>TypesOfFood</code> component should return a single <code>div</code> element.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().type() === 'div'; })());
+  - text: The <code>TypesOfFood</code> component should render the <code>Fruits</code> component after the <code>h1</code> element.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(1).name() === 'Fruits'; })());
+  - text: The <code>TypesOfFood</code> component should render the <code>Vegetables</code> component after <code>Fruits</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(TypesOfFood)); return mockedComponent.children().childAt(2).name() === 'Vegetables'; })());
+  - text: The <code>TypesOfFood</code> component should render to the DOM within the <code>div</code> with the id <code>challenge-node</code>.
+    testString: assert((function() { const html = document.getElementById('challenge-node').childNodes[0].innerHTML; return (html === '<h1>Types of Food:</h1><div><h2>Fruits:</h2><h4>Non-Citrus:</h4><ul><li>Apples</li><li>Blueberries</li><li>Strawberries</li><li>Bananas</li></ul><h4>Citrus:</h4><ul><li>Lemon</li><li>Lime</li><li>Orange</li><li>Grapefruit</li></ul></div><div><h2>Vegetables:</h2><ul><li>Brussel Sprouts</li><li>Broccoli</li><li>Squash</li></ul></div>'); })());
 
 ```
 
@@ -37,6 +42,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
+
 class TypesOfFood extends React.Component {
   constructor(props) {
     super(props);
@@ -63,6 +69,7 @@ class TypesOfFood extends React.Component {
 <div id='jsx-setup'>
 
 ```jsx
+
 const Fruits = () => {
   return (
     <div>
@@ -107,7 +114,27 @@ const Vegetables = () => {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+class TypesOfFood extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>Types of Food:</h1>
+        {/* change code below this line */}
+          <Fruits />
+           <Vegetables />
+         {/* change code above this line */}
+      </div>
+    );
+  }
+};
+
+// change code below this line
+ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
 ```
+
 </section>

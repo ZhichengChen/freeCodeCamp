@@ -2,15 +2,17 @@
 id: 5900f3fa1000cf542c50ff0d
 challengeType: 5
 title: 'Problem 142: Perfect Square Collection'
-videoUrl: ''
-localeTitle: 问题142：完美的方形集合
+forumTopicId: 301771
 ---
 
 ## Description
-<section id="description">找到具有整数x&gt; y&gt; z&gt; 0的最小x + y + z，使得x + y，x-y，x + z，x-z，y + z，y-z都是完美正方形。 </section>
+<section id='description'>
+Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y, x + z, x − z, y + z, y − z are all perfect squares.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +20,8 @@ localeTitle: 问题142：完美的方形集合
 
 ```yml
 tests:
-  - text: <code>euler142()</code>应返回1006193。
-    testString: 'assert.strictEqual(euler142(), 1006193, "<code>euler142()</code> should return 1006193.");'
+  - text: <code>euler142()</code> should return 1006193.
+    testString: assert.strictEqual(euler142(), 1006193);
 
 ```
 
@@ -37,7 +39,6 @@ function euler142() {
 }
 
 euler142();
-
 ```
 
 </div>
@@ -52,4 +53,5 @@ euler142();
 ```js
 // solution required
 ```
+
 </section>

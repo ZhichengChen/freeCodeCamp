@@ -3,27 +3,33 @@ id: 5a24c314108439a4d4036147
 title: Connect Redux to React
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将Redux连接到React
+forumTopicId: 301426
 ---
 
 ## Description
-<section id="description">现在您已经编写了<code>mapStateToProps()</code>和<code>mapDispatchToProps()</code>函数，您可以使用它们将<code>state</code>和<code>dispatch</code>映射到您的某个React组件的<code>props</code> 。 React Redux的<code>connect</code>方法可以处理此任务。此方法采用两个可选参数： <code>mapStateToProps()</code>和<code>mapDispatchToProps()</code> 。它们是可选的，因为您可能拥有只需要访问<code>state</code>但不需要分派任何操作的组件，反之亦然。要使用此方法，请将函数作为参数传递，并立即使用组件调用结果。这种语法有点不寻常，看起来像： <code>connect(mapStateToProps, mapDispatchToProps)(MyComponent)</code> <strong>注意：</strong>如果要省略<code>connect</code>方法的其中一个参数，则在其位置传递<code>null</code> 。 </section>
+<section id='description'>
+Now that you've written both the <code>mapStateToProps()</code> and the <code>mapDispatchToProps()</code> functions, you can use them to map <code>state</code> and <code>dispatch</code> to the <code>props</code> of one of your React components. The <code>connect</code> method from React Redux can handle this task. This method takes two optional arguments, <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code>. They are optional because you may have a component that only needs access to <code>state</code> but doesn't need to dispatch any actions, or vice versa.
+To use this method, pass in the functions as arguments, and immediately call the result with your component. This syntax is a little unusual and looks like:
+<code>connect(mapStateToProps, mapDispatchToProps)(MyComponent)</code>
+<strong>Note:</strong>&nbsp;If you want to omit one of the arguments to the <code>connect</code> method, you pass <code>null</code> in its place.
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器具有<code>mapStateToProps()</code>和<code>mapDispatchToProps()</code>函数以及一个名为<code>Presentational</code>的新React组件。使用<code>ReactRedux</code>全局对象中的<code>connect</code>方法将此组件连接到Redux，并立即在<code>Presentational</code>组件上调用它。将结果分配给名为<code>ConnectedComponent</code>的新<code>const</code> ，该<code>const</code>表示连接的组件。就是这样，现在你已经连接到Redux了！尝试将<code>connect</code>的参数更改为<code>null</code>并观察测试结果。 </section>
+<section id='instructions'>
+The code editor has the <code>mapStateToProps()</code> and <code>mapDispatchToProps()</code> functions and a new React component called <code>Presentational</code>. Connect this component to Redux with the <code>connect</code> method from the <code>ReactRedux</code> global object, and call it immediately on the <code>Presentational</code> component. Assign the result to a new <code>const</code> called <code>ConnectedComponent</code> that represents the connected component. That's it, now you're connected to Redux! Try changing either of <code>connect</code>'s arguments to <code>null</code> and observe the test results.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>Presentational</code>组件应该呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("Presentational").length === 1; })(), "The <code>Presentational</code> component should render.");'
-  - text: <code>Presentational</code>组件应通过<code>connect</code>接收prop <code>messages</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find("Presentational").props(); return props.messages === "__INITIAL__STATE__"; })(), "The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.");'
-  - text: <code>Presentational</code>组件应通过<code>connect</code>接收prop <code>submitNewMessage</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find("Presentational").props(); return typeof props.submitNewMessage === "function"; })(), "The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.");'
+  - text: The <code>Presentational</code> component should render.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })());
+  - text: The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })());
+  - text: The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })());
 
 ```
 
@@ -77,7 +83,20 @@ const connect = ReactRedux.connect;
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+
+const store = Redux.createStore(
+  (state = '__INITIAL__STATE__', action) => state
+);
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <ReactRedux.Provider store = {store}>
+        <ConnectedComponent/>
+      </ReactRedux.Provider>
+    );
+  }
+};
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
 </div>
@@ -87,7 +106,43 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const addMessage = (message) => {
+  return {
+    type: 'ADD',
+    message: message
+  }
+};
+
+const mapStateToProps = (state) => {
+  return {
+    messages: state
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    submitNewMessage: (message) => {
+      dispatch(addMessage(message));
+    }
+  }
+};
+
+class Presentational extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return <h3>This is a Presentational Component</h3>
+  }
+};
+
+const connect = ReactRedux.connect;
+// change code below this line
+
+const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational);
+
 ```
+
 </section>

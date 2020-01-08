@@ -2,31 +2,38 @@
 id: 56533eb9ac21ba0edf2244b0
 title: Compound Assignment With Augmented Subtraction
 challengeType: 1
-videoUrl: ''
-localeTitle: 具有增广减法的复合赋值
+videoUrl: 'https://scrimba.com/c/c2Qv7AV'
+forumTopicId: 16660
 ---
 
 ## Description
-<section id="description">与<code>+=</code>运算符一样， <code>-=</code>从变量中减去一个数字。 <code>myVar = myVar - 5;</code>将从<code>myVar</code>减去<code>5</code> 。这可以改写为： <code>myVar -= 5;</code> </section>
+<section id='description'>
+Like the <code>+=</code> operator, <code>-=</code> subtracts a number from a variable.
+<code>myVar = myVar - 5;</code>
+will subtract <code>5</code> from <code>myVar</code>. This can be rewritten as:
+<code>myVar -= 5;</code>
+</section>
 
 ## Instructions
-<section id="instructions">转换<code>a</code> ， <code>b</code>和<code>c</code>的赋值以使用<code>-=</code>运算符。 </section>
+<section id='instructions'>
+Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> to use the <code>-=</code> operator.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>a</code>应该等于<code>5</code>
-    testString: 'assert(a === 5, "<code>a</code> should equal <code>5</code>");'
-  - text: <code>b</code>应该等于<code>-6</code>
-    testString: 'assert(b === -6, "<code>b</code> should equal <code>-6</code>");'
-  - text: <code>c</code>应该等于<code>2</code>
-    testString: 'assert(c === 2, "<code>c</code> should equal <code>2</code>");'
-  - text: 您应该为每个变量使用<code>-=</code>运算符
-    testString: 'assert(code.match(/-=/g).length === 3, "You should use the <code>-=</code> operator for each variable");'
-  - text: 不要修改行上方的代码
-    testString: 'assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), "Do not modify the code above the line");'
+  - text: <code>a</code> should equal <code>5</code>.
+    testString: assert(a === 5);
+  - text: <code>b</code> should equal <code>-6</code>.
+    testString: assert(b === -6);
+  - text: <code>c</code> should equal <code>2</code>.
+    testString: assert(c === 2);
+  - text: You should use the <code>-=</code> operator for each variable.
+    testString: assert(code.match(/-=/g).length === 3);
+  - text: You should not modify the code above the specified comment.
+    testString: assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code));
 
 ```
 
@@ -48,6 +55,7 @@ a = a - 6;
 b = b - 15;
 c = c - 1;
 
+
 ```
 
 </div>
@@ -57,7 +65,7 @@ c = c - 1;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
 ```
 
 </div>
@@ -67,7 +75,17 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var a = 11;
+var b = 9;
+var c = 3;
+
+a -= 6;
+b -= 15;
+c -= 1;
+
+
 ```
+
 </section>

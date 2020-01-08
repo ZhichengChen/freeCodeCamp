@@ -2,15 +2,23 @@
 id: 5900f4241000cf542c50ff37
 challengeType: 5
 title: 'Problem 184: Triangles containing the origin'
-videoUrl: ''
-localeTitle: 问题184：包含原点的三角形
+forumTopicId: 301820
 ---
 
 ## Description
-<section id="description">考虑点（x，y）的集合Ir，其中半径为r的圆内部的整数坐标以原点为中心，即x2 + y2 &lt;r2。对于半径为2，I2包含九个点（0,0），（1,0），（1,1），（0,1），（ -  1,1），（ -  1,0），（ -1，-1），（0，-1）和（1，-1）。在I2中有八个三角形具有全部三个顶点，其中包含内部的原点。其中两个如下所示，其他通过旋转从这些中获得。 <p>对于半径为3，有360个三角形包含内部的原点并且所有顶点都在I3中，而对于I5，该数字是10600。 </p><p>有多少个三角形包含内部的原点并且在I105中包含所有三个顶点？ </p></section>
+<section id='description'>
+Consider the set Ir of points (x,y) with integer co-ordinates in the interior of the circle with radius r, centered at the origin, i.e. x2 + y2 < r2.
+For a radius of 2, I2 contains the nine points (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), (-1,-1), (0,-1) and (1,-1). There are eight triangles having all three vertices in I2 which contain the origin in the interior. Two of them are shown below, the others are obtained from these by rotation.
+
+
+For a radius of 3, there are 360 triangles containing the origin in the interior and having all vertices in I3 and for I5 the number is 10600.
+
+How many triangles are there containing the origin in the interior and having all three vertices in I105?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题184：包含原点的三角形
 
 ```yml
 tests:
-  - text: <code>euler184()</code>应返回1725323624056。
-    testString: 'assert.strictEqual(euler184(), 1725323624056, "<code>euler184()</code> should return 1725323624056.");'
+  - text: <code>euler184()</code> should return 1725323624056.
+    testString: assert.strictEqual(euler184(), 1725323624056);
 
 ```
 
@@ -37,7 +45,6 @@ function euler184() {
 }
 
 euler184();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler184();
 ```js
 // solution required
 ```
+
 </section>

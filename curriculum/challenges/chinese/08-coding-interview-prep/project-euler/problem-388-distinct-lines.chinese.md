@@ -2,15 +2,26 @@
 id: 5900f4f11000cf542c510002
 challengeType: 5
 title: 'Problem 388: Distinct Lines'
-videoUrl: ''
-localeTitle: 问题388：不同的线条
+forumTopicId: 302052
 ---
 
 ## Description
-<section id="description">考虑所有格点（a，b，c），其中0≤a，b，c≤N。 <p>从原点O（0,0,0）开始，所有线都被绘制到其他格点。设D（N）是不同的这种线的数量。 </p><p>您被给予D（1 000 000）= 831909254469114121。 </p><p>找到D（1010）。将前9位数字后跟最后9位数字作为答案。 </p></section>
+<section id='description'>
+Consider all lattice points (a,b,c) with 0 ≤ a,b,c ≤ N.
+
+
+From the origin O(0,0,0) all lines are drawn to the other lattice points.
+Let D(N) be the number of distinct such lines.
+
+
+You are given that D(1 000 000) = 831909254469114121.
+
+Find D(1010). Give as your answer the first nine digits followed by the last nine digits.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +29,8 @@ localeTitle: 问题388：不同的线条
 
 ```yml
 tests:
-  - text: <code>euler388()</code>应该返回831907372805130000。
-    testString: 'assert.strictEqual(euler388(), 831907372805130000, "<code>euler388()</code> should return 831907372805130000.");'
+  - text: <code>euler388()</code> should return 831907372805130000.
+    testString: assert.strictEqual(euler388(), 831907372805130000);
 
 ```
 
@@ -37,7 +48,6 @@ function euler388() {
 }
 
 euler388();
-
 ```
 
 </div>
@@ -52,4 +62,5 @@ euler388();
 ```js
 // solution required
 ```
+
 </section>

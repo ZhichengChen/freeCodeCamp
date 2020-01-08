@@ -2,15 +2,21 @@
 id: 5900f4461000cf542c50ff58
 challengeType: 5
 title: 'Problem 217: Balanced Numbers'
-videoUrl: ''
-localeTitle: 问题217：平衡数字
+forumTopicId: 301859
 ---
 
 ## Description
-<section id="description">具有k（十进制）数字的正整数称为平衡，如果其第一个⌈k/2⌉数字总和为与其最后的⌈k/2⌉数字相同的值，其中⌈x⌉，x的发音上限，是最小整数≥x，因此⌈π⌉= 4且⌈5⌉= 5.因此，例如，所有回文都是平衡的，如13722.设T（n）是所有平衡数小于10n的总和。因此：T（1）= 45，T（2）= 540，T（5）= 334795890.求T（47）mod 315 </section>
+<section id='description'>
+A positive integer with k (decimal) digits is called balanced if its first ⌈k/2⌉ digits sum to the same value as its last ⌈k/2⌉ digits, where ⌈x⌉, pronounced ceiling of x, is the smallest integer ≥ x, thus ⌈π⌉ = 4 and ⌈5⌉ = 5.
+So, for example, all palindromes are balanced, as is 13722.
+Let T(n) be the sum of all balanced numbers less than 10n.
+Thus: T(1) = 45, T(2) = 540 and T(5) = 334795890.
+Find T(47) mod 315
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题217：平衡数字
 
 ```yml
 tests:
-  - text: <code>euler217()</code>应该返回6273134。
-    testString: 'assert.strictEqual(euler217(), 6273134, "<code>euler217()</code> should return 6273134.");'
+  - text: <code>euler217()</code> should return 6273134.
+    testString: assert.strictEqual(euler217(), 6273134);
 
 ```
 
@@ -37,7 +43,6 @@ function euler217() {
 }
 
 euler217();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler217();
 ```js
 // solution required
 ```
+
 </section>

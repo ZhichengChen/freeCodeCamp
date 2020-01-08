@@ -2,25 +2,33 @@
 id: 587d78a9367417b2b2512ae8
 title: Learn How Bezier Curves Work
 challengeType: 0
-videoUrl: ''
-localeTitle: 了解Bezier曲线的工作原理
+videoUrl: 'https://scrimba.com/c/c9bDrs8'
+forumTopicId: 301058
 ---
 
 ## Description
-<section id="description">最后一项挑战引入了<code>animation-timing-function</code>属性和一些在其持续时间内改变动画速度的关键字。 CSS提供了除关键字之外的选项，通过使用贝塞尔曲线，可以更好地控制动画的播放方式。在CSS动画中，贝塞尔曲线与<code>cubic-bezier</code>函数一起使用。曲线的形状表示动画的播放方式。曲线位于1乘1坐标系上。此坐标系的X轴是动画的持续时间（将其视为时间刻度），Y轴是动画中的变化。 <code>cubic-bezier</code>函数由四个主要点组成，这些点位于1 x 1网格上： <code>p0</code> ， <code>p1</code> ， <code>p2</code>和<code>p3</code> 。为您设置<code>p0</code>和<code>p3</code> - 它们是始终分别位于原点（0,0）和（1,1）的起点和终点。您可以为其他两个点设置x和y值，并将它们放置在网格中的位置决定了要遵循的动画曲线的形状。这是在CSS中通过以下形式声明<code>p1</code>和<code>p2</code> “锚”点的x和y值来完成的： <code>(x1, y1, x2, y2)</code> 。将它们全部拉到一起，这里是CSS代码中Bezier曲线的一个例子： <code>animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>在上面的示例中，x和y值对于每个点都是等效的（x1 = 0.25 = y1和x2 = 0.75 = y2），如果您记得几何类，则会产生从原点延伸到点的线（1 ，1）。此动画是动画长度期间元素的线性变化，与使用<code>linear</code>关键字相同。换句话说，它以恒定的速度变化。 </section>
+<section id='description'>
+The last challenge introduced the <code>animation-timing-function</code> property and a few keywords that change the speed of an animation over its duration. CSS offers an option other than keywords that provides even finer control over how the animation plays out, through the use of Bezier curves.
+In CSS animations, Bezier curves are used with the <code>cubic-bezier</code> function. The shape of the curve represents how the animation plays out. The curve lives on a 1 by 1 coordinate system. The X-axis of this coordinate system is the duration of the animation (think of it as a time scale), and the Y-axis is the change in the animation.
+The <code>cubic-bezier</code> function consists of four main points that sit on this 1 by 1 grid: <code>p0</code>, <code>p1</code>, <code>p2</code>, and <code>p3</code>. <code>p0</code> and <code>p3</code> are set for you - they are the beginning and end points which are always located respectively at the origin (0, 0) and (1, 1). You set the x and y values for the other two points, and where you place them in the grid dictates the shape of the curve for the animation to follow. This is done in CSS by declaring the x and y values of the <code>p1</code> and <code>p2</code> "anchor" points in the form: <code>(x1, y1, x2, y2)</code>. Pulling it all together, here's an example of a Bezier curve in CSS code:
+<code>animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);</code>
+In the example above, the x and y values are equivalent for each point (x1 = 0.25 = y1 and x2 = 0.75 = y2), which if you remember from geometry class, results in a line that extends from the origin to point (1, 1). This animation is a linear change of an element during the length of an animation, and is the same as using the <code>linear</code> keyword. In other words, it changes at a constant speed.
+</section>
 
 ## Instructions
-<section id="instructions">对于id为<code>ball1</code>的元素，将<code>animation-timing-function</code>属性的值从<code>linear</code>更改为其等效的<code>cubic-bezier</code>函数值。使用上面示例中给出的点值。 </section>
+<section id='instructions'>
+For the element with the id of <code>ball1</code>, change the value of the <code>animation-timing-function</code> property from <code>linear</code> to its equivalent <code>cubic-bezier</code> function value. Use the point values given in the example above.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 具有id <code>ball1</code>的元素的<code>animation-timing-function</code>属性的值应该是线性等效的cubic-bezier函数。
-    testString: 'assert($("#ball1").css("animation-timing-function") == "cubic-bezier(0.25, 0.25, 0.75, 0.75)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.");'
-  - text: 具有id <code>ball2</code>的元素的<code>animation-timing-function</code>属性的<code>ball2</code>不应更改。
-    testString: 'assert($("#ball2").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.");'
+  - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.
+    testString: assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)');
+  - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.
+    testString: assert($('#ball2').css('animation-timing-function') == 'ease-out');
 
 ```
 
@@ -58,20 +66,19 @@ tests:
     animation-timing-function: ease-out;
   }
 
-@keyframes bounce {
-  0% {
-    top: 0px;
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
   }
-  100% {
-    top: 249px;
-  }
-}
 
 </style>
 
 <div class="balls" id="ball1"></div>
 <div class="balls" id="ball2"></div>
-
 ```
 
 </div>
@@ -83,7 +90,44 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+
+  .balls{
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left: 27%;
+    animation-timing-function: cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  }
+  #ball2 {
+    left: 56%;
+    animation-timing-function: ease-out;
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+</style>
+<div class="balls" id="ball1"></div>
+<div class="balls" id="ball2"></div>
 ```
+
 </section>

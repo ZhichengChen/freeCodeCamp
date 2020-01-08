@@ -2,15 +2,44 @@
 title: ABC Problem
 id: 594810f028c0303b75339acc
 challengeType: 5
-videoUrl: ''
-localeTitle: ABC问题
+forumTopicId: 302220
 ---
 
 ## Description
-<section id="description"><p>您将获得ABC块的集合（例如，童年字母块）。每个街区有20个街区，两个字母。块的所有侧面都保证有完整的字母表。块的样本集合： </p><p> （BO） </p><p> （XK） </p><p> （DQ） </p><p> （CP） </p><p> （NA） </p><p> （GT） </p><p> （回覆） </p><p> （TG） </p><p> （QD） </p><p> （FS） </p><p> （JW） </p><p> （HU） </p><p> （VI） </p><p> （一个） </p><p> （OB） </p><p> （ER） </p><p> （FS） </p><p> （LY） </p><p> （PC） </p><p> （ZM） </p><p>要记住一些规则： </p>一旦使用了块上的字母，就不能再使用该块。该函数应该不区分大小写。 <p>实现一个带字符串（单词）的函数，并确定该单词是否可以与给定的块集合拼写。 </p></section>
+<section id='description'>
+You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:
+<pre>
+(B O)
+(X K)
+(D Q)
+(C P)
+(N A)
+(G T)
+(R E)
+(T G)
+(Q D)
+(F S)
+(J W)
+(H U)
+(V I)
+(A N)
+(O B)
+(E R)
+(F S)
+(L Y)
+(P C)
+(Z M)
+</pre>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Implement a function that takes a string (word) and determines whether the word can be spelled with the given collection of blocks.
+Some rules to keep in mind:
+<ul>
+  <li>Once a letter on a block is used, that block cannot be used again.</li>
+  <li>The function should be case-insensitive.</li>
+</ul>
 </section>
 
 ## Tests
@@ -18,22 +47,22 @@ localeTitle: ABC问题
 
 ```yml
 tests:
-  - text: <code>canMakeWord</code>是一个功能。
-    testString: 'assert(typeof canMakeWord === "function", "<code>canMakeWord</code> is a function.");'
-  - text: <code>canMakeWord</code>应该返回一个布尔值。
-    testString: 'assert(typeof canMakeWord("hi") === "boolean", "<code>canMakeWord</code> should return a boolean.");'
-  - text: <code>canMakeWord(&quot;bark&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[0]), "<code>canMakeWord("bark")</code> should return true.");'
-  - text: <code>canMakeWord(&quot;BooK&quot;)</code>应该返回false。
-    testString: 'assert(!canMakeWord(words[1]), "<code>canMakeWord("BooK")</code> should return false.");'
-  - text: <code>canMakeWord(&quot;TReAT&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[2]), "<code>canMakeWord("TReAT")</code> should return true.");'
-  - text: <code>canMakeWord(&quot;COMMON&quot;)</code>应返回false。
-    testString: 'assert(!canMakeWord(words[3]), "<code>canMakeWord("COMMON")</code> should return false.");'
-  - text: <code>canMakeWord(&quot;squAD&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[4]), "<code>canMakeWord("squAD")</code> should return true.");'
-  - text: <code>canMakeWord(&quot;conFUSE&quot;)</code>应该返回true。
-    testString: 'assert(canMakeWord(words[5]), "<code>canMakeWord("conFUSE")</code> should return true.");'
+  - text: <code>canMakeWord</code> should be a function.
+    testString: assert(typeof canMakeWord === 'function');
+  - text: <code>canMakeWord</code> should return a boolean.
+    testString: assert(typeof canMakeWord('hi') === 'boolean');
+  - text: <code>canMakeWord("bark")</code> should return true.
+    testString: assert(canMakeWord(words[0]));
+  - text: <code>canMakeWord("BooK")</code> should return false.
+    testString: assert(!canMakeWord(words[1]));
+  - text: <code>canMakeWord("TReAT")</code> should return true.
+    testString: assert(canMakeWord(words[2]));
+  - text: <code>canMakeWord("COMMON")</code> should return false.
+    testString: assert(!canMakeWord(words[3]));
+  - text: <code>canMakeWord("squAD")</code> should return true.
+    testString: assert(canMakeWord(words[4]));
+  - text: <code>canMakeWord("conFUSE")</code> should return true.
+    testString: assert(canMakeWord(words[5]));
 
 ```
 
@@ -45,10 +74,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function canMakeWord (word) {
+function canMakeWord(word) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -58,7 +86,7 @@ function canMakeWord (word) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
 ```
 
 </div>
@@ -68,7 +96,30 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function canMakeWord(word) {
+  const characters = 'BO XK DQ CP NA GT RE TG QD FS JW HU VI AN OB ER FS LY PC ZM';
+  const blocks = characters.split(' ').map(pair => pair.split(''));
+
+  const letters = [...word.toUpperCase()];
+  let length = letters.length;
+  const copy = new Set(blocks);
+
+  letters.forEach(letter => {
+    for (let block of copy) {
+      const index = block.indexOf(letter);
+
+      if (index !== -1) {
+        length--;
+        copy.delete(block);
+        break;
+      }
+    }
+  });
+  return !length;
+}
+
 ```
+
 </section>

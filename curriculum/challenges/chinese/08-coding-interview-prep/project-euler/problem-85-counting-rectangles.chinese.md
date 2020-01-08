@@ -2,15 +2,20 @@
 id: 5900f3c11000cf542c50fed4
 challengeType: 5
 title: 'Problem 85: Counting rectangles'
-videoUrl: ''
-localeTitle: 问题85：计算矩形
+forumTopicId: 302199
 ---
 
 ## Description
-<section id="description">通过仔细计数可以看出，3×2的矩形网格包含十八个矩形： <p>虽然不存在包含正好两百万个矩形的矩形网格，但是找到最近解的网格区域。 </p></section>
+<section id='description'>
+By counting carefully it can be seen that a rectangular grid measuring 3 by 2 contains eighteen rectangles:
+
+
+Although there exists no rectangular grid that contains exactly two million rectangles, find the area of the grid with the nearest solution.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题85：计算矩形
 
 ```yml
 tests:
-  - text: <code>euler85()</code>应该返回2772。
-    testString: 'assert.strictEqual(euler85(), 2772, "<code>euler85()</code> should return 2772.");'
+  - text: <code>euler85()</code> should return 2772.
+    testString: assert.strictEqual(euler85(), 2772);
 
 ```
 
@@ -37,7 +42,6 @@ function euler85() {
 }
 
 euler85();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler85();
 ```js
 // solution required
 ```
+
 </section>

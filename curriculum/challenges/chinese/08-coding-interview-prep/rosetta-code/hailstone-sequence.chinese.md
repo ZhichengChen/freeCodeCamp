@@ -2,15 +2,32 @@
 title: Hailstone sequence
 id: 595608ff8bcd7a50bd490181
 challengeType: 5
-videoUrl: ''
-localeTitle: 冰雹序列
+forumTopicId: 302279
 ---
 
 ## Description
-<section id="description"><p> Hailstone数字序列可以从起始正整数n生成： </p>如果n为1，则序列结束。如果n是偶数，那么序列的下一个n <code>= n/2</code>如果n是奇数，那么序列的下一个n <code>= (3 * n) + 1</code> <p> （未经证实的） <a href="https://en.wikipedia.org/wiki/Collatz conjecture" title="wp：Collat​​z猜想">Collat​​z猜想</a>是任何起始编号的冰雹序列总是终止。 </p><p>冰雹序列也称为冰雹数（因为这些值通常受到多个下降和上升，如云中的冰雹），或者作为Collat​​z序列。 </p>任务：创建例程以生成数字的hailstone序列。使用例程表明，对于27号的冰雹序列具有开始与112个元件<code>27, 82, 41, 124</code> ，结束时用<code>8, 4, 2, 1</code>与显示具有最长冰雹序列的数目少于100,000一起序列的长度。 （但不要显示实际的序列！）参见： <a href="http://xkcd.com/710" title="链接：http：//xkcd.com/710">xkcd</a> （幽默）。 </section>
+<section id='description'>
+The Hailstone sequence of numbers can be generated from a starting positive integer, <code>n</code> by:
+<ul>
+  <li>If <code>n</code> is <code>1</code> then the sequence ends</li>
+  <li>If <code>n</code> is <code>even</code> then the next <code>n</code> of the sequence <code>= n/2</code></li>
+  <li>If <code>n</code> is <code>odd</code> then the next <code>n</code> of the sequence <code>= (3 * n) + 1</code></li>
+</ul>
+The (unproven) <a href="https://en.wikipedia.org/wiki/Collatz conjecture" title="wp: Collatz conjecture" target="_blank">Collatz conjecture</a> is that the hailstone sequence for any starting number always terminates.
+The hailstone sequence is also known as hailstone numbers (because the values are usually subject to multiple descents and ascents like hailstones in a cloud), or as the Collatz sequence.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+<ol>
+  <li>Create a routine to generate the hailstone sequence for a number</li>
+  <li>Use the routine to show that the hailstone sequence for the number 27 has 112 elements starting with <code>27, 82, 41, 124</code> and ending with <code>8, 4, 2, 1</code></li>
+  <li>Show the number less than 100,000 which has the longest hailstone sequence together with that sequence's length. (But don't show the actual sequence!)</li>
+</ol>
+<strong>See also:</strong>
+<ul>
+  <li><a href="https://xkcd.com/710" target="_blank">xkcd</a> (humourous).</li>
+</ul>
 </section>
 
 ## Tests
@@ -18,10 +35,10 @@ localeTitle: 冰雹序列
 
 ```yml
 tests:
-  - text: <code>hailstoneSequence</code>是一个函数。
-    testString: 'assert(typeof hailstoneSequence === "function", "<code>hailstoneSequence</code> is a function.");'
-  - text: '<code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code> <code>hailstoneSequence()</code>应返回<code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>'
-    testString: 'assert.deepEqual(hailstoneSequence(), res, "<code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>");'
+  - text: <code>hailstoneSequence</code> should be a function.
+    testString: assert(typeof hailstoneSequence === 'function');
+  - text: <code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>
+    testString: assert.deepEqual(hailstoneSequence(), res);
 
 ```
 
@@ -34,13 +51,12 @@ tests:
 
 ```js
 // noprotect
-function hailstoneSequence () {
+function hailstoneSequence() {
   const res = [];
   // Good luck!
 
   return res;
 }
-
 ```
 
 </div>
@@ -50,7 +66,7 @@ function hailstoneSequence () {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const res = [[27, 82, 41, 124, 8, 4, 2, 1], [351, 77031]];
 ```
 
 </div>
@@ -60,7 +76,41 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+// noprotect
+function hailstoneSequence () {
+  const res = [];
+
+  function hailstone(n) {
+    const seq = [n];
+    while (n > 1) {
+      n = n % 2 ? 3 * n + 1 : n / 2;
+      seq.push(n);
+    }
+    return seq;
+  }
+
+  const h = hailstone(27);
+  const hLen = h.length;
+  res.push([...h.slice(0, 4), ...h.slice(hLen - 4, hLen)]);
+
+  let n = 0;
+  let max = 0;
+  for (let i = 100000; --i;) {
+    const seq = hailstone(i);
+    const sLen = seq.length;
+
+    if (sLen > max) {
+      n = i;
+      max = sLen;
+    }
+  }
+  res.push([max, n]);
+
+  return res;
+}
+
 ```
+
 </section>

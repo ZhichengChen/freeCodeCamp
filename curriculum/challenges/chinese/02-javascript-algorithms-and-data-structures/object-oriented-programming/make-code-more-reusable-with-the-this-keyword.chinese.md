@@ -2,25 +2,42 @@
 id: 587d7dad367417b2b2512b76
 title: Make Code More Reusable with the this Keyword
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用此关键字使代码更可重用
+forumTopicId: 301321
 ---
 
 ## Description
-<section id="description">最后一个挑战为<code>duck</code>对象引入了一个<code>method</code> 。它使用<code>duck.name</code>点表示法来访问return语句中<code>name</code>属性的值： <code>sayName: function() {return &quot;The name of this duck is &quot; + duck.name + &quot;.&quot;;}</code>虽然这是有效的访问对象属性的方法，这里有一个陷阱。如果变量名称更改，则还需要更新引用原始名称的任何代码。在简短的对象定义中，它不是问题，但如果一个对象有很多对其属性的引用，则错误的可能性更大。避免这些问题的方法是使用<code>this</code>关键字： <blockquote>让duck = { <br>名称：“Aflac”， <br> numLegs：2， <br> sayName：function（）{return“这个鸭子的名字是”+ this.name +“。”;} <br> }; </blockquote> <code>this</code>是一个深刻的话题，上面的例子只是一种使用它的方法。在当前上下文中， <code>this</code>指的是与该方法相关联的对象： <code>duck</code> 。如果对象的名称更改为<code>mallard</code> ，则无需在代码中找到<code>duck</code>所有引用。它使代码可重用且易于阅读。 </section>
+<section id='description'>
+The last challenge introduced a method to the <code>duck</code> object. It used <code>duck.name</code> dot notation to access the value for the <code>name</code> property within the return statement:
+<code>sayName: function() {return "The name of this duck is " + duck.name + ".";}</code>
+While this is a valid way to access the object's property, there is a pitfall here. If the variable name changes, any code referencing the original name would need to be updated as well. In a short object definition, it isn't a problem, but if an object has many references to its properties there is a greater chance for error.
+A way to avoid these issues is with the <code>this</code> keyword:
+
+```js
+let duck = {
+  name: "Aflac",
+  numLegs: 2,
+  sayName: function() {return "The name of this duck is " + this.name + ".";}
+};
+```
+
+<code>this</code> is a deep topic, and the above example is only one way to use it. In the current context, <code>this</code> refers to the object that the method is associated with: <code>duck</code>.
+If the object's name is changed to <code>mallard</code>, it is not necessary to find all the references to <code>duck</code> in the code. It makes the code reusable and easier to read.
+</section>
 
 ## Instructions
-<section id="instructions">修改<code>dog.sayLegs</code>方法以删除对<code>dog</code>任何引用。使用<code>duck</code>示例进行指导。 </section>
+<section id='instructions'>
+Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog</code>. Use the <code>duck</code> example for guidance.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>dog.sayLegs()</code>应该返回给定的字符串。
-    testString: 'assert(dog.sayLegs() === "This dog has 4 legs.", "<code>dog.sayLegs()</code> should return the given string.");'
-  - text: 您的代码应使用<code>this</code>关键字来访问<code>dog</code>的<code>numLegs</code>属性。
-    testString: 'assert(code.match(/this\.numLegs/g), "Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.");'
+  - text: <code>dog.sayLegs()</code> should return the given string.
+    testString: assert(dog.sayLegs() === 'This dog has 4 legs.');
+  - text: Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.
+    testString: assert(code.match(/this\.numLegs/g));
 
 ```
 
@@ -39,7 +56,6 @@ let dog = {
 };
 
 dog.sayLegs();
-
 ```
 
 </div>
@@ -51,7 +67,17 @@ dog.sayLegs();
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs () {
+    return 'This dog has ' + this.numLegs + ' legs.';
+  }
+};
+
+dog.sayLegs();
 ```
+
 </section>

@@ -2,15 +2,32 @@
 id: 5900f4731000cf542c50ff85
 challengeType: 5
 title: 'Problem 262: Mountain Range'
-videoUrl: ''
-localeTitle: 问题262：山脉
+forumTopicId: 301911
 ---
 
 ## Description
-<section id="description">以下等式表示山区的连续地形，给出任意点（x，y）处的高程h： <p>蚊子打算从A（200,200）飞到B（1400,1400），而不会离开0≤x，y≤1600的区域。 </p><p>由于中间的山脉，它首先直线上升到A&#39;点，具有高度f。然后，在保持在相同高度f的同时，它在任何障碍物周围飞行，直到它到达B正上方的B&#39;点。 </p><p>首先，确定fmin，它是允许从A到B的这种行程的最小恒定高度，同时保持在指定区域。然后，找到A&#39;和B&#39;之间最短路径的长度，同时以恒定高度fmin飞行。 </p><p>将该长度作为答案，四舍五入到小数点后三位。 </p><p>注意：为方便起见，下面以适合大多数编程语言的形式重复上面显示的高程函数：h =（5000-0.005 <em>（x</em> x + y <em>y + x</em> y）+12.5 <em>（x + y））</em> exp（ - abs（0.000001 <em>（x</em> x + y <em>y）-0.0015</em> （x + y）+0.7）） </p></section>
+<section id='description'>
+The following equation represents the continuous topography of a mountainous region, giving the elevation h at any point (x,y):
+
+
+
+
+A mosquito intends to fly from A(200,200) to B(1400,1400), without leaving the area given by 0 ≤ x, y ≤ 1600.
+
+Because of the intervening mountains, it first rises straight up to a point A', having elevation f. Then, while remaining at the same elevation f, it flies around any obstacles until it arrives at a point B' directly above B.
+
+First, determine fmin which is the minimum constant elevation allowing such a trip from A to B, while remaining in the specified area.
+Then, find the length of the shortest path between A' and B', while flying at that constant elevation fmin.
+
+Give that length as your answer, rounded to three decimal places.
+
+Note: For convenience, the elevation function shown above is repeated below, in a form suitable for most programming languages:
+h=( 5000-0.005*(x*x+y*y+x*y)+12.5*(x+y) ) * exp( -abs(0.000001*(x*x+y*y)-0.0015*(x+y)+0.7) )
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +35,8 @@ localeTitle: 问题262：山脉
 
 ```yml
 tests:
-  - text: <code>euler262()</code>应返回2531.205。
-    testString: 'assert.strictEqual(euler262(), 2531.205, "<code>euler262()</code> should return 2531.205.");'
+  - text: <code>euler262()</code> should return 2531.205.
+    testString: assert.strictEqual(euler262(), 2531.205);
 
 ```
 
@@ -37,7 +54,6 @@ function euler262() {
 }
 
 euler262();
-
 ```
 
 </div>
@@ -52,4 +68,5 @@ euler262();
 ```js
 // solution required
 ```
+
 </section>

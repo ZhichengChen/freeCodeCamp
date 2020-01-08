@@ -2,27 +2,43 @@
 id: bad87fee1348bd9aedf08812
 title: Add Images to Your Website
 challengeType: 0
-videoUrl: ''
-localeTitle: 添加图片到您的网站
+videoUrl: 'https://scrimba.com/p/pVMPUv/c8EbJf2'
+forumTopicId: 16640
 ---
 
 ## Description
-<section id="description">您可以使用<code>img</code>元素将图像添加到网站，并使用<code>src</code>属性指向特定图像的URL。这方面的一个例子是： <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot;&gt;</code>请注意， <code>img</code>元素是自动关闭的。所有<code>img</code>元素都<strong>必须</strong>具有<code>alt</code>属性。 <code>alt</code>属性中的文本用于屏幕阅读器以提高可访问性，并在图像无法加载时显示。注意：如果图像纯粹是装饰性的，则使用空的<code>alt</code>属性是最佳做法。理想情况下，除非需要，否则<code>alt</code>属性不应包含特殊字符。让我们在上面的<code>img</code>示例中添加一个<code>alt</code>属性： <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot; alt=&quot;Author standing on a beach with two thumbs up.&quot;&gt;</code> </section>
+<section id='description'>
+You can add images to your website by using the <code>img</code> element, and point to a specific image's URL using the <code>src</code> attribute.
+An example of this would be:
+<code>&#60img src="https://www.your-image-source.com/your-image.jpg"&#62</code>
+Note that <code>img</code> elements are self-closing.
+All <code>img</code> elements <strong>must</strong> have an <code>alt</code> attribute. The text inside an <code>alt</code> attribute is used for screen readers to improve accessibility and is displayed if the image fails to load.
+<strong>Note:</strong> If the image is purely decorative, using an empty <code>alt</code> attribute is a best practice.
+Ideally the <code>alt</code> attribute should not contain special characters unless needed.
+Let's add an <code>alt</code> attribute to our <code>img</code> example above:
+<code>&#60img src="https://www.your-image-source.com/your-image.jpg" alt="Author standing on a beach with two thumbs up."&#62</code>
+</section>
 
 ## Instructions
-<section id="instructions">让我们尝试将图像添加到我们的网站：在<code>h2</code>元素之前插入<code>img</code>标记。现在设置<code>src</code>属性，使其指向此URL： <code>https://bit.ly/fcc-relaxing-cat</code> ： <code>https://bit.ly/fcc-relaxing-cat</code>最后不要忘记为您的图像添加<code>alt</code>文字。 </section>
+<section id='instructions'>
+Let's try to add an image to our website:
+Insert an <code>img</code> tag, after the <code>main</code> element.
+Now set the <code>src</code> attribute so that it points to this url:
+<code>https://bit.ly/fcc-relaxing-cat</code>
+Finally don't forget to give your image an <code>alt</code> text.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的页面应该有一个图像元素。
-    testString: 'assert($("img").length > 0, "Your page should have an image element.");'
-  - text: 您的图像应具有指向小猫图像的<code>src</code>属性。
-    testString: 'assert(new RegExp("\/\/bit.ly\/fcc-relaxing-cat|\/\/s3.amazonaws.com\/freecodecamp\/relaxing-cat.jpg", "gi").test($("img").attr("src")), "Your image should have a <code>src</code> attribute that points to the kitten image.");'
-  - text: 您的图片元素<strong>必须</strong>具有<code>alt</code>属性。
-    testString: 'assert(code.match(/alt\s*?=\s*?(\"|\").*(\"|\")/), "Your image element <strong>must</strong> have an <code>alt</code> attribute.");'
+  - text: Your page should have an image element.
+    testString: assert($("img").length);
+  - text: Your image should have a <code>src</code> attribute that points to the kitten image.
+    testString: assert(/^https:\/\/bit\.ly\/fcc-relaxing-cat$/i.test($("img").attr("src")));
+  - text: Your image element's <code>alt</code> attribute should not be empty.
+    testString: assert($("img").attr("alt") && $("img").attr("alt").length && /<img\S*alt=(['"])(?!\1|>)\S+\1\S*\/?>/.test(code.replace(/\s/g,'')));
 
 ```
 
@@ -41,7 +57,6 @@ tests:
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
-
 ```
 
 </div>
@@ -53,7 +68,13 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
 ```
+
 </section>

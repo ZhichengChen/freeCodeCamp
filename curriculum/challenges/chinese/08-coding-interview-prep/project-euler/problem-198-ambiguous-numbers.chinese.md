@@ -2,15 +2,23 @@
 id: 5900f4331000cf542c50ff45
 challengeType: 5
 title: 'Problem 198: Ambiguous Numbers'
-videoUrl: ''
-localeTitle: 问题198：模糊数字
+forumTopicId: 301836
 ---
 
 ## Description
-<section id="description">对于分母界限d的实数x的最佳近似是有理数r / s（以简化形式），其中s≤d，因此任何比r更接近x的有理数p / q具有q&gt; d。 <p>通常，对于所有分母边界唯一确定对实数的最佳近似。但是，有一些例外，例如9/40对分母界限6具有两个最佳近似值1/4和1/5。如果至少有一个分母绑定为x拥有，我们将称为实数x不明确两个最佳近似值。显然，模糊的数字必然是理性的。 </p><p>有多少个模糊数x = p / q,0 &lt;x &lt;1/100，其分母q是否不超过108？ </p></section>
+<section id='description'>
+A best approximation to a real number x for the denominator bound d is a rational number r/s (in reduced form) with s ≤ d, so that any rational number p/q which is closer to x than r/s has q > d.
+
+Usually the best approximation to a real number is uniquely determined for all denominator bounds. However, there are some exceptions, e.g. 9/40 has the two best approximations 1/4 and 1/5 for the denominator bound 6.
+We shall call a real number x ambiguous, if there is at least one denominator bound for which x possesses two best approximations. Clearly, an ambiguous number is necessarily rational.
+
+How many ambiguous numbers x = p/q,
+0 < x < 1/100, are there whose denominator q does not exceed 108?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题198：模糊数字
 
 ```yml
 tests:
-  - text: <code>euler198()</code>应该返回52374425。
-    testString: 'assert.strictEqual(euler198(), 52374425, "<code>euler198()</code> should return 52374425.");'
+  - text: <code>euler198()</code> should return 52374425.
+    testString: assert.strictEqual(euler198(), 52374425);
 
 ```
 
@@ -37,7 +45,6 @@ function euler198() {
 }
 
 euler198();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler198();
 ```js
 // solution required
 ```
+
 </section>

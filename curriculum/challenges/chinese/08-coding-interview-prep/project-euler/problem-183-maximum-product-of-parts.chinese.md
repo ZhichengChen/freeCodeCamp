@@ -2,15 +2,32 @@
 id: 5900f4231000cf542c50ff36
 challengeType: 5
 title: 'Problem 183: Maximum product of parts'
-videoUrl: ''
-localeTitle: 问题183：零件的最大产品
+forumTopicId: 301819
 ---
 
 ## Description
-<section id="description">令N为正整数，并且将N分成k个相等的部分，r = N / k，使得N = r + r + ... + r。设P是这些部分的乘积，P = r×r×...×r = rk。 <p>例如，如果11被分成五个相等的部分，11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2，那么P = 2.25 = 51.53632。 </p><p>对于给定的N值，设M（N）= Pmax。 </p><p>事实证明，N = 11的最大值是通过将11分成4个相等的部分得到的，这导致Pmax =（11/4）4;即，M（11）= 14641/256 = 57.19140625，这是终止小数。 </p><p>然而，对于N = 8，通过将其分成三个相等的部分来实现最大值，因此M（8）= 512/27，这是非终止小数。 </p><p>如果M（N）是非终止小数，则令D（N）= N，如果M（N）是终止小数，则D（N）= -N。 </p><p>例如，5≤N≤100的ΣD（N）是2438。 </p><p>求ΣD（N）为5≤N≤10000。 </p></section>
+<section id='description'>
+Let N be a positive integer and let N be split into k equal parts, r = N/k, so that N = r + r + ... + r.
+Let P be the product of these parts, P = r × r × ... × r = rk.
+
+For example, if 11 is split into five equal parts, 11 = 2.2 + 2.2 + 2.2 + 2.2 + 2.2, then P = 2.25 = 51.53632.
+
+Let M(N) = Pmax for a given value of N.
+
+It turns out that the maximum for N = 11 is found by splitting eleven into four equal parts which leads to Pmax = (11/4)4; that is, M(11) = 14641/256 = 57.19140625, which is a terminating decimal.
+
+However, for N = 8 the maximum is achieved by splitting it into three equal parts, so M(8) = 512/27, which is a non-terminating decimal.
+
+Let D(N) = N if M(N) is a non-terminating decimal and D(N) = -N if M(N) is a terminating decimal.
+
+For example, ΣD(N) for 5 ≤ N ≤ 100 is 2438.
+
+Find ΣD(N) for 5 ≤ N ≤ 10000.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +35,8 @@ localeTitle: 问题183：零件的最大产品
 
 ```yml
 tests:
-  - text: <code>euler183()</code>应该返回48861552。
-    testString: 'assert.strictEqual(euler183(), 48861552, "<code>euler183()</code> should return 48861552.");'
+  - text: <code>euler183()</code> should return 48861552.
+    testString: assert.strictEqual(euler183(), 48861552);
 
 ```
 
@@ -37,7 +54,6 @@ function euler183() {
 }
 
 euler183();
-
 ```
 
 </div>
@@ -52,4 +68,5 @@ euler183();
 ```js
 // solution required
 ```
+
 </section>

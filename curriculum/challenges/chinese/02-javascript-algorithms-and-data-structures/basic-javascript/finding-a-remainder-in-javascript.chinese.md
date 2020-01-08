@@ -2,27 +2,36 @@
 id: 56533eb9ac21ba0edf2244ae
 title: Finding a Remainder in JavaScript
 challengeType: 1
-videoUrl: ''
-localeTitle: 在JavaScript中查找剩余内容
+videoUrl: 'https://scrimba.com/c/cWP24Ub'
+forumTopicId: 18184
 ---
 
 ## Description
-<section id="description"> <dfn>余数</dfn>运算符<code>%</code>给出了两个数的除法的余数。 <strong>例</strong> <blockquote> 5％2 = 1因为<br> Math.floor（5/2）= 2（商数） <br> 2 * 2 = 4 <br> 5  -  4 = 1（剩余） </blockquote> <strong>用法</strong> <br>在数学中，通过检查数字除以<code>2</code>的余数，可以检查数字是偶数还是奇数。 <blockquote> 17％2 = 1（17为奇数） <br> 48％2 = 0（48为偶数） </blockquote> <strong>注意</strong> <br> <dfn>余数</dfn>运算符有时被错误地称为“模数”运算符。它与模数非常相似，但在负数下不能正常工作。 </section>
+<section id='description'>
+The <dfn>remainder</dfn> operator <code>%</code> gives the remainder of the division of two numbers.
+<strong>Example</strong>
+<blockquote>5 % 2 = 1 because<br>Math.floor(5 / 2) = 2 (Quotient)<br>2 * 2 = 4<br>5 - 4 = 1 (Remainder)</blockquote>
+<strong>Usage</strong><br>In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by <code>2</code>.
+<blockquote>17 % 2 = 1 (17 is Odd)<br>48 % 2 = 0 (48 is Even)</blockquote>
+<strong>Note</strong><br>The <dfn>remainder</dfn> operator is sometimes incorrectly referred to as  the "modulus" operator. It is very similar to modulus, but does not work properly with negative numbers.
+</section>
 
 ## Instructions
-<section id="instructions">使用<dfn>余数</dfn> （ <code>%</code> ）运算符将<code>remainder</code>设置为等于<code>11</code>的余数除以<code>3</code> 。 </section>
+<section id='instructions'>
+Set <code>remainder</code> equal to the remainder of <code>11</code> divided by <code>3</code> using the <dfn>remainder</dfn> (<code>%</code>) operator.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 应该初始化变量<code>remainder</code>
-    testString: 'assert(/var\s+?remainder/.test(code), "The variable <code>remainder</code> should be initialized");'
-  - text: <code>remainder</code>的值应为<code>2</code>
-    testString: 'assert(remainder === 2, "The value of <code>remainder</code> should be <code>2</code>");'
-  - text: 您应该使用<code>%</code>运算符
-    testString: 'assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code), "You should use the <code>%</code> operator");'
+  - text: The variable <code>remainder</code> should be initialized
+    testString: assert(/var\s+?remainder/.test(code));
+  - text: The value of <code>remainder</code> should be <code>2</code>
+    testString: assert(remainder === 2);
+  - text: You should use the <code>%</code> operator
+    testString: assert(/\s+?remainder\s*?=\s*?.*%.*;/.test(code));
 
 ```
 
@@ -47,7 +56,7 @@ var remainder;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y){return 'remainder = '+y;})(remainder);
 ```
 
 </div>
@@ -57,7 +66,9 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var remainder =  11 % 3;
 ```
+
 </section>

@@ -2,15 +2,24 @@
 id: 5900f44f1000cf542c50ff61
 challengeType: 5
 title: 'Problem 227: The Chase'
-videoUrl: ''
-localeTitle: 问题227：大通
+forumTopicId: 301870
 ---
 
 ## Description
-<section id="description"> “追逐”是一个玩两个骰子和偶数玩家的游戏。 <p>球员坐在桌子旁;游戏开始于两个相对的玩家，每个玩家有一个骰子。在每个回合中，两个玩家都会掷骰子。如果一名球员掷出一个1，他将骰子传给左边的邻居;如果他掷出一个6，他就把骰子传给右边的邻居;否则，他会为下一个回合保留死亡。游戏结束时，一个玩家在滚动并通过后都有两个骰子;那个玩家失败了。 </p><p>在拥有100名玩家的游戏中，游戏持续的预期轮数是多少？将您的答案四舍五入到十位有效数字。 </p></section>
+<section id='description'>
+"The Chase" is a game played with two dice and an even number of players.
+
+The players sit around a table; the game begins with two opposite players having one die each. On each turn, the two players with a die roll it.
+If a player rolls a 1, he passes the die to his neighbour on the left; if he rolls a 6, he passes the die to his neighbour on the right; otherwise, he keeps the die for the next turn.
+The game ends when one player has both dice after they have been rolled and passed; that player has then lost.
+
+In a game with 100 players, what is the expected number of turns the game lasts?
+Give your answer rounded to ten significant digits.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题227：大通
 
 ```yml
 tests:
-  - text: <code>euler227()</code>应返回3780.618622。
-    testString: 'assert.strictEqual(euler227(), 3780.618622, "<code>euler227()</code> should return 3780.618622.");'
+  - text: <code>euler227()</code> should return 3780.618622.
+    testString: assert.strictEqual(euler227(), 3780.618622);
 
 ```
 
@@ -37,7 +46,6 @@ function euler227() {
 }
 
 euler227();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler227();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,29 +2,42 @@
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
 challengeType: 6
-videoUrl: ''
-localeTitle: 为集合中的每个数据点创建一个条
+forumTopicId: 301482
 ---
 
 ## Description
-<section id="description">最后一个挑战只在<code>svg</code>元素中添加了一个矩形来表示一个条形。在这里，您将结合您迄今为止学习的有关<code>data()</code> ， <code>enter()</code>和SVG形状的内容，为数据<code>dataset</code>每个数据点创建和附加一个矩形。之前的挑战显示了如何为<code>dataset</code>每个项目创建和附加<code>div</code>的格式： <blockquote> d3.select（ “身体”）。全选（ “分区”） <br> 。数据（数据集） <br> 。输入（） <br> .append（ “分区”） </blockquote>使用<code>rect</code>元素而不是<code>divs</code>有一些差异。 <code>rects</code>必须附加到<code>svg</code>元素，而不是直接附加到<code>body</code> 。此外，您需要告诉D3在<code>svg</code>区域内放置每个<code>rect</code>位置。酒吧安置将在下一个挑战中涵盖。 </section>
+<section id='description'>
+The last challenge added only one rectangle to the <code>svg</code> element to represent a bar. Here, you'll combine what you've learned so far about <code>data()</code>, <code>enter()</code>, and SVG shapes to create and append a rectangle for each data point in <code>dataset</code>.
+A previous challenge showed the format for how to create and append a <code>div</code> for each item in <code>dataset</code>:
+
+```js
+d3.select("body").selectAll("div")
+  .data(dataset)
+  .enter()
+  .append("div")
+```
+
+There are a few differences working with <code>rect</code> elements instead of <code>divs</code>. The <code>rects</code> must be appended to an <code>svg</code> element, not directly to the <code>body</code>. Also, you need to tell D3 where to place each <code>rect</code> within the <code>svg</code> area. The bar placement will be covered in the next challenge.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>data()</code> ， <code>enter()</code>和<code>append()</code>方法为<code>dataset</code>每个项创建和附加<code>rect</code> 。条形图应该全部显示在一起，这将在下一个挑战中修复。 </section>
+<section id='instructions'>
+Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other, this will be fixed in the next challenge.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的文档应该有9个<code>rect</code>元素。
-    testString: 'assert($("rect").length == 9, "Your document should have 9 <code>rect</code> elements.");'
-  - text: 您的代码应该使用<code>data()</code>方法。
-    testString: 'assert(code.match(/\.data/g), "Your code should use the <code>data()</code> method.");'
-  - text: 您的代码应使用<code>enter()</code>方法。
-    testString: 'assert(code.match(/\.enter/g), "Your code should use the <code>enter()</code> method.");'
-  - text: 您的代码应使用<code>append()</code>方法。
-    testString: 'assert(code.match(/\.append/g), "Your code should use the <code>append()</code> method.");'
+  - text: Your document should have 9 <code>rect</code> elements.
+    testString: assert($('rect').length == 9);
+  - text: Your code should use the <code>data()</code> method.
+    testString: assert(code.match(/\.data/g));
+  - text: Your code should use the <code>enter()</code> method.
+    testString: assert(code.match(/\.enter/g));
+  - text: Your code should use the <code>append()</code> method.
+    testString: assert(code.match(/\.append/g));
 
 ```
 
@@ -60,7 +73,6 @@ tests:
        .attr("height", 100);
   </script>
 </body>
-
 ```
 
 </div>
@@ -75,4 +87,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

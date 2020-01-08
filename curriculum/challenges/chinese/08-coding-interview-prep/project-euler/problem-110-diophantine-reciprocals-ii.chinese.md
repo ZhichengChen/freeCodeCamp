@@ -2,15 +2,20 @@
 id: 5900f3db1000cf542c50feed
 challengeType: 5
 title: 'Problem 110: Diophantine Reciprocals II'
-videoUrl: ''
-localeTitle: 问题110：丢番图互惠II
+forumTopicId: 301735
 ---
 
 ## Description
-<section id="description">在下面的等式中，x，y和n是正整数。 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var>可以证实，当<var>n</var> = 1260时，存在113个不同的解，并且这是<var>n的</var>最小值，其中不同解的总数超过100。 <var>n的</var>最小值是多少，不同解决方案的数量超过四百万？ </section>
+<section id='description'>
+In the following equation x, y, and n are positive integers.
+1/<var>x</var> + 1/<var>y</var> = 1/<var>n</var>
+It can be verified that when <var>n</var> = 1260 there are 113 distinct solutions and this is the least value of <var>n</var> for which the total number of distinct solutions exceeds one hundred.
+What is the least value of <var>n</var> for which the number of distinct solutions exceeds four million?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题110：丢番图互惠II
 
 ```yml
 tests:
-  - text: <code>diophantineTwo</code>应该返回9350130049860600。
-    testString: 'assert.strictEqual(diophantineTwo(), 9350130049860600, "<code>diophantineTwo()</code> should return 9350130049860600.");'
+  - text: <code>diophantineTwo()</code> should return 9350130049860600.
+    testString: assert.strictEqual(diophantineTwo(), 9350130049860600);
 
 ```
 
@@ -37,7 +42,6 @@ function diophantineTwo() {
 }
 
 diophantineTwo();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ diophantineTwo();
 ```js
 // solution required
 ```
+
 </section>

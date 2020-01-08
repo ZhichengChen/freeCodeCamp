@@ -2,15 +2,23 @@
 id: 587d825c367417b2b2512c8f
 title: Implement Merge Sort
 challengeType: 1
-videoUrl: ''
-localeTitle: 实现合并排序
+forumTopicId: 301614
 ---
 
 ## Description
-<section id="description">另一种非常常见的中间排序算法是合并排序。像快速排序一样，合并排序也使用分而治之的递归方法对数组进行排序。它利用了这样一个事实：只要每个数组首先排序，就可以相对容易地对两个数组进行排序。但是我们只从一个数组作为输入开始，那么我们如何从中获得两个排序的数组呢？好吧，我们可以递归地将原始输入分成两部分，直到我们到达具有一个项目的数组的基本情况。单项数组是自然排序的，因此我们可以开始组合。这个组合将展开拆分原始数组的递归调用，最终生成所有元素的最终排序数组。然后，合并排序的步骤是： <strong>1）</strong>递归地将输入数组拆分为一半，直到产生仅具有一个元素的子数组。 <strong>2）将</strong>每个排序的子数组合并在一起以产生最终的排序数组。合并排序是一种有效的排序方法，时间复杂度为<i>O（nlog（n））</i> 。该算法很受欢迎，因为它性能高且易于实现。顺便说一句，这将是我们在此处介绍的最后一种排序算法。但是，稍后在关于树数据结构的部分中，我们将描述堆排序，这是另一种在其实现中需要二进制堆的有效排序方法。 <strong>说明：</strong>编写一个函数<code>mergeSort</code> ，它以整数数组作为输入，并按从最小到最大的排序顺序返回这些整数的数组。实现这一点的一个好方法是编写一个函数，例如<code>merge</code> ，它负责合并两个已排序的数组，另一个函数，例如<code>mergeSort</code> ，它负责递归，生成单项数组以提供给merge。祝你好运！ <strong>注意：</strong> <br>我们从幕后调用这个功能;我们使用的测试数组在编辑器中被注释掉了。尝试记录<code>array</code>以查看您的排序算法！ </section>
+<section id='description'>
+Another common intermediate sorting algorithm is merge sort. Like quick sort, merge sort also uses a divide-and-conquer, recursive methodology to sort an array. It takes advantage of the fact that it is relatively easy to sort two arrays as long as each is sorted in the first place. But we'll start with only one array as input, so how do we get to two sorted arrays from that? Well, we can recursively divide the original input in two until we reach the base case of an array with one item. A single-item array is naturally sorted, so then we can start combining. This combination will unwind the recursive calls that split the original array, eventually producing a final sorted array of all the elements. The steps of merge sort, then, are:
+<strong>1)</strong> Recursively split the input array in half until a sub-array with only one element is produced.
+<strong>2)</strong> Merge each sorted sub-array together to produce the final sorted array.
+Merge sort is an efficient sorting method, with time complexity of <i>O(nlog(n))</i>. This algorithm is popular because it is performant and relatively easy to implement.
+As an aside, this will be the last sorting algorithm we cover here. However, later in the section on tree data structures we will describe heap sort, another efficient sorting method that requires a binary heap in its implementation.
+<strong>Instructions:</strong> Write a function <code>mergeSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance <code>merge</code>, which is responsible for merging two sorted arrays, and another function, for instance <code>mergeSort</code>, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!
+<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +26,14 @@ localeTitle: 实现合并排序
 
 ```yml
 tests:
-  - text: <code>mergeSort</code>是一个函数。
-    testString: 'assert(typeof mergeSort == "function", "<code>mergeSort</code> is a function.");'
-  - text: <code>mergeSort</code>返回一个排序数组（从最小到最大）。
-    testString: 'assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>mergeSort</code> returns a sorted array (least to greatest).");'
-  - text: <code>mergeSort</code>返回一个除订单外没有变化的数组。
-    testString: 'assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>mergeSort</code> returns an array that is unchanged except for order.");'
-  - text: <code>mergeSort</code>不应使用内置的<code>.sort()</code>方法。
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>mergeSort</code> should not use the built-in <code>.sort()</code> method.");'
+  - text: <code>mergeSort</code> should be a function.
+    testString: assert(typeof mergeSort == 'function');
+  - text: <code>mergeSort</code> should return a sorted array (least to greatest).
+    testString: assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
+  - text: <code>mergeSort</code> should return an array that is unchanged except for order.
+    testString: assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
+  - text: <code>mergeSort</code> should not use the built-in <code>.sort()</code> method.
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 
@@ -44,9 +52,7 @@ function mergeSort(array) {
   return array;
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
-
+mergeSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -56,7 +62,10 @@ function mergeSort(array) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+function isSorted(arr) {
+  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
+  return check(0);
+};
 ```
 
 </div>
@@ -69,4 +78,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
+
 </section>

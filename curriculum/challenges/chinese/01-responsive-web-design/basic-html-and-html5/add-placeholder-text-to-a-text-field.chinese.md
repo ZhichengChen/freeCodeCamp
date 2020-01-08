@@ -2,28 +2,36 @@
 id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
-videoUrl: ''
-localeTitle: 将占位符文本添加到文本字段
+videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
+forumTopicId: 16647
 ---
 
 ## Description
-<section id="description">占位符文本是在用户输入任何内容之前在<code>input</code>元素中显示的内容。您可以像这样创建占位符文本： <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
+<section id='description'>
+Placeholder text is what is displayed in your <code>input</code> element before your user has inputted anything.
+You can create placeholder text like so:
+<code>&#60;input type="text" placeholder="this is placeholder text"&#62;</code><br>
+<strong>Note:</strong> Remember that <code>input</code> elements are self-closing.
+</section>
 
 ## Instructions
-<section id="instructions">将文本<code>input</code>的<code>placeholder</code>值设置为“cat photo URL”。 </section>
+<section id='instructions'>
+Set the <code>placeholder</code> value of your text <code>input</code> to "cat photo URL".
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 将<code>placeholder</code>属性添加到现有文本<code>input</code>元素。
-    testString: 'assert($("input[placeholder]").length > 0, "Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.");'
-  - text: 将占位符属性的值设置为“cat photo URL”。
-    testString: 'assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi), "Set the value of your placeholder attribute to "cat photo URL".");'
-  - text: 完成的<code>input</code>元素应该具有有效的语法。
-    testString: 'assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|".*?"|[\^"">\s]+))?)+\s*|\s*)\/?>/gi), "The finished <code>input</code> element should have valid syntax.");'
-
+  - text: You should add a <code>placeholder</code> attribute to the existing text <code>input</code> element.
+    testString: assert($("input[placeholder]").length > 0);
+  - text: You should set the value of your placeholder attribute to "cat photo URL".
+    testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi));
+  - text: The finished <code>input</code> element should not have a closing tag.
+    testString: assert(!code.match(/<input.*\/?>.*<\/input>/gi));
+  - text: The finished <code>input</code> element should have valid syntax.
+    testString: assert($("input[type=text]").length > 0);
 ```
 
 </section>
@@ -54,7 +62,6 @@ tests:
   </ol>
   <input type="text">
 </main>
-
 ```
 
 </div>
@@ -66,7 +73,27 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  
+  <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+  
+  <p>Things cats love:</p>
+  <ul>
+    <li>cat nip</li>
+    <li>laser pointers</li>
+    <li>lasagna</li>
+  </ul>
+  <p>Top 3 things cats hate:</p>
+  <ol>
+    <li>flea treatment</li>
+    <li>thunder</li>
+    <li>other cats</li>
+  </ol>
+  <input type="text" placeholder="cat photo URL">
+</main>
 ```
+
 </section>

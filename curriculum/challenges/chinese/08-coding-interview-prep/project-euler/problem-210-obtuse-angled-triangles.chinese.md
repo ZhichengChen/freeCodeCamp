@@ -2,15 +2,22 @@
 id: 5900f43e1000cf542c50ff50
 challengeType: 5
 title: 'Problem 210: Obtuse Angled Triangles'
-videoUrl: ''
-localeTitle: 问题210：钝角三角形
+forumTopicId: 301852
 ---
 
 ## Description
-<section id="description">考虑点（x，y）的集合S（r），其中整数坐标满足| x | + | y | ≤r。设O为点（0,0），C为点（r / 4，r / 4）。令N（r）为S（r）中的点B的数量，使得三角形OBC具有钝角，即最大角度α满足90°&lt;α&lt;180°。因此，例如，N（4）= 24并且N（8）= 100。 <p>什么是N（1,000,000,000）？ </p></section>
+<section id='description'>
+Consider the set S(r) of points (x,y) with integer coordinates satisfying |x| + |y| ≤ r.
+Let O be the point (0,0) and C the point (r/4,r/4).
+Let N(r) be the number of points B in S(r), so that the triangle OBC has an obtuse angle, i.e. the largest angle α satisfies 90°<α<180°.
+So, for example, N(4)=24 and N(8)=100.
+
+What is N(1,000,000,000)?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题210：钝角三角形
 
 ```yml
 tests:
-  - text: <code>euler210()</code>应该返回1598174770174689500。
-    testString: 'assert.strictEqual(euler210(), 1598174770174689500, "<code>euler210()</code> should return 1598174770174689500.");'
+  - text: <code>euler210()</code> should return 1598174770174689500.
+    testString: assert.strictEqual(euler210(), 1598174770174689500);
 
 ```
 
@@ -37,7 +44,6 @@ function euler210() {
 }
 
 euler210();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler210();
 ```js
 // solution required
 ```
+
 </section>

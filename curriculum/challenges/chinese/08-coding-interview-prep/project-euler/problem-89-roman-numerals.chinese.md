@@ -2,15 +2,28 @@
 id: 5900f3c51000cf542c50fed7
 challengeType: 5
 title: 'Problem 89: Roman numerals'
-videoUrl: ''
-localeTitle: 问题89：罗马数字
+forumTopicId: 302204
 ---
 
 ## Description
-<section id="description">对于以罗马数字书写的数字被认为有效，必须遵循基本规则。尽管规则允许以不止一种方式表达某些数字，但始终存在编写特定数字的“最佳”方式。例如，似乎至少有六种方式编写十六号：IIIIIIIIIIIIIII VIIIIIIIIII VVIIIIII XIIIIII VVVI XVI但是，根据规则，只有XIIIIII和XVI是有效的，最后一个例子被认为是最有效的，因为它使用最少数量的数字。 11K文本文件roman.txt（右键单击和&#39;Save Link / Target As ...&#39;）包含一千个用有效但不一定是最小的罗马数字写的数字;请参阅关于...罗马数字，了解此问题的明确规则。通过以最小的形式编写每个字符来查找保存的字符数。注意：您可以假设文件中的所有罗马数字包含不超过四个连续的相同单位。 </section>
+<section id='description'>
+For a number written in Roman numerals to be considered valid there are basic rules which must be followed. Even though the rules allow some numbers to be expressed in more than one way there is always a "best" way of writing a particular number.
+For example, it would appear that there are at least six ways of writing the number sixteen:
+IIIIIIIIIIIIIIII
+VIIIIIIIIIII
+VVIIIIII
+XIIIIII
+VVVI
+XVI
+However, according to the rules only XIIIIII and XVI are valid, and the last example is considered to be the most efficient, as it uses the least number of numerals.
+The 11K text file, roman.txt (right click and 'Save Link/Target As...'), contains one thousand numbers written in valid, but not necessarily minimal, Roman numerals; see About... Roman Numerals for the definitive rules for this problem.
+Find the number of characters saved by writing each of these in their minimal form.
+Note: You can assume that all the Roman numerals in the file contain no more than four consecutive identical units.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +31,8 @@ localeTitle: 问题89：罗马数字
 
 ```yml
 tests:
-  - text: <code>euler89()</code>应该返回743。
-    testString: 'assert.strictEqual(euler89(), 743, "<code>euler89()</code> should return 743.");'
+  - text: <code>euler89()</code> should return 743.
+    testString: assert.strictEqual(euler89(), 743);
 
 ```
 
@@ -37,7 +50,6 @@ function euler89() {
 }
 
 euler89();
-
 ```
 
 </div>
@@ -52,4 +64,5 @@ euler89();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,17 @@
 id: 5900f4111000cf542c50ff23
 challengeType: 5
 title: 'Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value'
-videoUrl: ''
-localeTitle: 问题164：没有三个连续数字的总和大于给定值的数字
+forumTopicId: 301798
 ---
 
 ## Description
-<section id="description">存在多少20个数字n（没有任何前导零），使得n的三个连续数字的总和不大于9？ </section>
+<section id='description'>
+How many 20 digit numbers n (without any leading zero) exist such that no three consecutive digits of n have a sum greater than 9?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +20,8 @@ localeTitle: 问题164：没有三个连续数字的总和大于给定值的数�
 
 ```yml
 tests:
-  - text: <code>euler164()</code>应该返回378158756814587。
-    testString: 'assert.strictEqual(euler164(), 378158756814587, "<code>euler164()</code> should return 378158756814587.");'
+  - text: <code>euler164()</code> should return 378158756814587.
+    testString: assert.strictEqual(euler164(), 378158756814587);
 
 ```
 
@@ -37,7 +39,6 @@ function euler164() {
 }
 
 euler164();
-
 ```
 
 </div>
@@ -52,4 +53,5 @@ euler164();
 ```js
 // solution required
 ```
+
 </section>

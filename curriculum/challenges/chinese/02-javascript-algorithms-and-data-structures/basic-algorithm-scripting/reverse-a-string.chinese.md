@@ -3,15 +3,20 @@ id: a202eed8fc186c8434cb6d61
 title: Reverse a String
 isRequired: true
 challengeType: 5
-videoUrl: ''
-localeTitle: 反转字符串
+forumTopicId: 16043
 ---
 
 ## Description
-<section id="description">反转提供的字符串。您可能需要先将字符串转换为数组，然后才能将其反转。您的结果必须是字符串。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。编写自己的代码。 </section>
+<section id='description'>
+Reverse the provided string.
+You may need to turn the string into an array before you can reverse it.
+Your result must be a string.
+Remember to use <a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> if you get stuck. Write your own code.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -19,14 +24,14 @@ localeTitle: 反转字符串
 
 ```yml
 tests:
-  - text: <code>reverseString(&quot;hello&quot;)</code>应该返回一个字符串。
-    testString: 'assert(typeof reverseString("hello") === "string", "<code>reverseString("hello")</code> should return a string.");'
-  - text: <code>reverseString(&quot;hello&quot;)</code>应该变成<code>&quot;olleh&quot;</code> 。
-    testString: 'assert(reverseString("hello") === "olleh", "<code>reverseString("hello")</code> should become <code>"olleh"</code>.");'
-  - text: <code>reverseString(&quot;Howdy&quot;)</code>应该变成<code>&quot;ydwoH&quot;</code> 。
-    testString: 'assert(reverseString("Howdy") === "ydwoH", "<code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.");'
-  - text: <code>reverseString(&quot;Greetings from Earth&quot;)</code>应返回<code>&quot;htraE morf sgniteerG&quot;</code> 。
-    testString: 'assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG", "<code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.");'
+  - text: <code>reverseString("hello")</code> should return a string.
+    testString: assert(typeof reverseString("hello") === "string");
+  - text: <code>reverseString("hello")</code> should become <code>"olleh"</code>.
+    testString: assert(reverseString("hello") === "olleh");
+  - text: <code>reverseString("Howdy")</code> should become <code>"ydwoH"</code>.
+    testString: assert(reverseString("Howdy") === "ydwoH");
+  - text: <code>reverseString("Greetings from Earth")</code> should return <code>"htraE morf sgniteerG"</code>.
+    testString: assert(reverseString("Greetings from Earth") === "htraE morf sgniteerG");
 
 ```
 
@@ -43,7 +48,6 @@ function reverseString(str) {
 }
 
 reverseString("hello");
-
 ```
 
 </div>
@@ -55,7 +59,14 @@ reverseString("hello");
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
+
+reverseString("hello");
+
 ```
+
 </section>

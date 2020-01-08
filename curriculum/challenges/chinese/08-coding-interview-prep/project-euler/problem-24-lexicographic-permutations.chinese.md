@@ -2,15 +2,19 @@
 id: 5900f3841000cf542c50fe97
 challengeType: 5
 title: 'Problem 24: Lexicographic permutations'
-videoUrl: ''
-localeTitle: 问题24：字典排列
+forumTopicId: 301885
 ---
 
 ## Description
-<section id="description">置换是对象的有序排列。例如，3124是数字1,2,3和4的一种可能的排列。如果所有排列都以数字或字母顺序列出，我们称之为词典顺序。字典排列0,1和2是： <div style="text-align: center;"> 012 021 102 120 201 210 </div>数字0,1,2,3,4,5,6,7,8和9的第<var>n</var>个词典排列是什么？ </section>
+<section id='description'>
+A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:
+<div style='text-align: center;'>012   021   102   120   201   210</div>
+What is the <var>n</var>th lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +22,14 @@ localeTitle: 问题24：字典排列
 
 ```yml
 tests:
-  - text: <code>lexicographicPermutations(699999)</code>应该返回1938246570。
-    testString: 'assert(lexicographicPermutations(699999) == 1938246570, "<code>lexicographicPermutations(699999)</code> should return 1938246570.");'
-  - text: <code>lexicographicPermutations(899999)</code>应该返回2536987410。
-    testString: 'assert(lexicographicPermutations(899999) == 2536987410, "<code>lexicographicPermutations(899999)</code> should return 2536987410.");'
-  - text: <code>lexicographicPermutations(900000)</code>应该返回2537014689。
-    testString: 'assert(lexicographicPermutations(900000) == 2537014689, "<code>lexicographicPermutations(900000)</code> should return 2537014689.");'
-  - text: <code>lexicographicPermutations(999999)</code>应该返回2783915460。
-    testString: 'assert(lexicographicPermutations(999999) == 2783915460, "<code>lexicographicPermutations(999999)</code> should return 2783915460.");'
+  - text: <code>lexicographicPermutations(699999)</code> should return 1938246570.
+    testString: assert(lexicographicPermutations(699999) == 1938246570);
+  - text: <code>lexicographicPermutations(899999)</code> should return 2536987410.
+    testString: assert(lexicographicPermutations(899999) == 2536987410);
+  - text: <code>lexicographicPermutations(900000)</code> should return 2537014689.
+    testString: assert(lexicographicPermutations(900000) == 2537014689);
+  - text: <code>lexicographicPermutations(999999)</code> should return 2783915460.
+    testString: assert(lexicographicPermutations(999999) == 2783915460);
 
 ```
 
@@ -43,7 +47,6 @@ function lexicographicPermutations(n) {
 }
 
 lexicographicPermutations(999999);
-
 ```
 
 </div>
@@ -58,4 +61,5 @@ lexicographicPermutations(999999);
 ```js
 // solution required
 ```
+
 </section>

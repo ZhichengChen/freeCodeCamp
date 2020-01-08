@@ -2,41 +2,65 @@
 id: 56533eb9ac21ba0edf2244d8
 title: Comparisons with the Logical And Operator
 challengeType: 1
-videoUrl: ''
-localeTitle: 与逻辑和运算符的比较
+videoUrl: 'https://scrimba.com/c/cvbRVtr'
+forumTopicId: 16799
 ---
 
 ## Description
-<section id="description">有时你需要一次测试多个东西。当且仅当其左侧和右侧的<dfn>操作数</dfn>为<code>true</code>时， <dfn>逻辑和</dfn>运算符（ <code>&amp;&amp;</code> ）才返回true。如果将if语句嵌套在另一个语句中，则可以实现相同的效果： <blockquote> if（num&gt; 5）{ <br> if（num &lt;10）{ <br>返回“是”; <br> } <br> } <br>返回“否”; </blockquote>如果<code>num</code>大于<code>5</code>且小于<code>10</code>则仅返回“Yes”。相同的逻辑可以写成： <blockquote> if（num&gt; 5 &amp;&amp; num &lt;10）{ <br>返回“是”; <br> } <br>返回“否”; </blockquote></section>
+<section id='description'>
+Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.
+The same effect could be achieved by nesting an if statement inside another if:
+
+```js
+if (num > 5) {
+  if (num < 10) {
+    return "Yes";
+  }
+}
+return "No";
+```
+
+will only return "Yes" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:
+
+```js
+if (num > 5 && num < 10) {
+  return "Yes";
+}
+return "No";
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将两个if语句合并为一个语句，如果<code>val</code>小于或等于<code>50</code>且大于或等于<code>25</code> ，则返回<code>&quot;Yes&quot;</code> 。否则，将返回<code>&quot;No&quot;</code> 。 </section>
+<section id='instructions'>
+Replace the two if statements with one statement, using the && operator, which will return <code>"Yes"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>"No"</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该使用一次<code>&amp;&amp;</code>运算符
-    testString: 'assert(code.match(/&&/g).length === 1, "You should use the <code>&&</code> operator once");'
-  - text: 你应该只有一个<code>if</code>语句
-    testString: 'assert(code.match(/if/g).length === 1, "You should only have one <code>if</code> statement");'
-  - text: <code>testLogicalAnd(0)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(0) === "No", "<code>testLogicalAnd(0)</code> should return "No"");'
-  - text: <code>testLogicalAnd(24)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(24) === "No", "<code>testLogicalAnd(24)</code> should return "No"");'
-  - text: <code>testLogicalAnd(25)</code>应返回“是”
-    testString: 'assert(testLogicalAnd(25) === "Yes", "<code>testLogicalAnd(25)</code> should return "Yes"");'
-  - text: <code>testLogicalAnd(30)</code>应该返回“是”
-    testString: 'assert(testLogicalAnd(30) === "Yes", "<code>testLogicalAnd(30)</code> should return "Yes"");'
-  - text: <code>testLogicalAnd(50)</code>应该返回“是”
-    testString: 'assert(testLogicalAnd(50) === "Yes", "<code>testLogicalAnd(50)</code> should return "Yes"");'
-  - text: <code>testLogicalAnd(51)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(51) === "No", "<code>testLogicalAnd(51)</code> should return "No"");'
-  - text: <code>testLogicalAnd(75)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(75) === "No", "<code>testLogicalAnd(75)</code> should return "No"");'
-  - text: <code>testLogicalAnd(80)</code>应返回“否”
-    testString: 'assert(testLogicalAnd(80) === "No", "<code>testLogicalAnd(80)</code> should return "No"");'
+  - text: You should use the <code>&&</code> operator once
+    testString: assert(code.match(/&&/g).length === 1);
+  - text: You should only have one <code>if</code> statement
+    testString: assert(code.match(/if/g).length === 1);
+  - text: <code>testLogicalAnd(0)</code> should return "No"
+    testString: assert(testLogicalAnd(0) === "No");
+  - text: <code>testLogicalAnd(24)</code> should return "No"
+    testString: assert(testLogicalAnd(24) === "No");
+  - text: <code>testLogicalAnd(25)</code> should return "Yes"
+    testString: assert(testLogicalAnd(25) === "Yes");
+  - text: <code>testLogicalAnd(30)</code> should return "Yes"
+    testString: assert(testLogicalAnd(30) === "Yes");
+  - text: <code>testLogicalAnd(50)</code> should return "Yes"
+    testString: assert(testLogicalAnd(50) === "Yes");
+  - text: <code>testLogicalAnd(51)</code> should return "No"
+    testString: assert(testLogicalAnd(51) === "No");
+  - text: <code>testLogicalAnd(75)</code> should return "No"
+    testString: assert(testLogicalAnd(75) === "No");
+  - text: <code>testLogicalAnd(80)</code> should return "No"
+    testString: assert(testLogicalAnd(80) === "No");
 
 ```
 
@@ -63,7 +87,6 @@ function testLogicalAnd(val) {
 
 // Change this value to test
 testLogicalAnd(10);
-
 ```
 
 </div>
@@ -75,7 +98,14 @@ testLogicalAnd(10);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function testLogicalAnd(val) {
+  if (val >= 25 && val <= 50) {
+    return "Yes";
+  }
+  return "No";
+}
 ```
+
 </section>

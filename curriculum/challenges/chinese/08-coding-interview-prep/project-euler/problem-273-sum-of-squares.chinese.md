@@ -2,15 +2,23 @@
 id: 5900f47e1000cf542c50ff90
 challengeType: 5
 title: 'Problem 273: Sum of Squares'
-videoUrl: ''
-localeTitle: 问题273：正方形的总和
+forumTopicId: 301923
 ---
 
 ## Description
-<section id="description">考虑以下形式的方程：a2 + b2 = N，0≤a≤b，a，b和N整数。 <p>对于N = 65，有两种解决方案：a = 1，b = 8，a = 4，b = 7。我们将S（N）称为a2 + b2 = N，0≤a≤b，a，b和N整数的所有解的a的值之和。因此，S（65）= 1 + 4 = 5.找到ΣS（N），对于所有无平均N，只能被4k + 1形式的素数整除，其中4k + 1 &lt;150。 </p></section>
+<section id='description'>
+Consider equations of the form: a2 + b2 = N, 0 ≤ a ≤ b, a, b and N integer.
+
+For N=65 there are two solutions:
+a=1, b=8 and a=4, b=7.
+We call S(N) the sum of the values of a of all solutions of a2 + b2 = N, 0 ≤ a ≤ b, a, b and N integer.
+Thus S(65) = 1 + 4 = 5.
+Find ∑S(N), for all squarefree N only divisible by primes of the form 4k+1 with 4k+1 < 150.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题273：正方形的总和
 
 ```yml
 tests:
-  - text: <code>euler273()</code>应该返回2032447591196869000。
-    testString: 'assert.strictEqual(euler273(), 2032447591196869000, "<code>euler273()</code> should return 2032447591196869000.");'
+  - text: <code>euler273()</code> should return 2032447591196869000.
+    testString: assert.strictEqual(euler273(), 2032447591196869000);
 
 ```
 
@@ -37,7 +45,6 @@ function euler273() {
 }
 
 euler273();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler273();
 ```js
 // solution required
 ```
+
 </section>

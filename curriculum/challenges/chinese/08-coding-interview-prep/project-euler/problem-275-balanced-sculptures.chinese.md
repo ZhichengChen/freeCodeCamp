@@ -2,15 +2,25 @@
 id: 5900f4801000cf542c50ff92
 challengeType: 5
 title: 'Problem 275: Balanced Sculptures'
-videoUrl: ''
-localeTitle: 问题275：平衡雕塑
+forumTopicId: 301925
 ---
 
 ## Description
-<section id="description">让我们如下定义n阶平衡雕塑：由n + 1个瓷砖组成的多边形，称为块（n个瓷砖）和底座（剩余瓷砖）;底座的中心位置（x = 0，y = 0）;块的y坐标大于零（所以底座是唯一的最低瓦片）;组合的所有块的质心具有等于零的x坐标。在对雕塑进行计数时，任何仅仅是关于y轴的反射的布置都不算是不同的。例如，6级平衡雕塑如下图所示;请注意，每对镜像（关于y轴）都算作一个雕塑： <p>有964个平衡雕塑，订单10和360505订单15.有多少平衡雕塑有18个订单？ </p></section>
+<section id='description'>
+Let us define a balanced sculpture of order n as follows:
+A polyomino made up of n+1 tiles known as the blocks (n tiles) and the plinth (remaining tile);
+the plinth has its centre at position (x = 0, y = 0);
+the blocks have y-coordinates greater than zero (so the plinth is the unique lowest tile);
+the centre of mass of all the blocks, combined, has x-coordinate equal to zero.
+When counting the sculptures, any arrangements which are simply reflections about the y-axis, are not counted as distinct. For example, the 18 balanced sculptures of order 6 are shown below; note that each pair of mirror images (about the y-axis) is counted as one sculpture:
+
+
+There are 964 balanced sculptures of order 10 and 360505 of order 15.How many balanced sculptures are there of order 18?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题275：平衡雕塑
 
 ```yml
 tests:
-  - text: <code>euler275()</code>应返回15030564。
-    testString: 'assert.strictEqual(euler275(), 15030564, "<code>euler275()</code> should return 15030564.");'
+  - text: <code>euler275()</code> should return 15030564.
+    testString: assert.strictEqual(euler275(), 15030564);
 
 ```
 
@@ -37,7 +47,6 @@ function euler275() {
 }
 
 euler275();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler275();
 ```js
 // solution required
 ```
+
 </section>

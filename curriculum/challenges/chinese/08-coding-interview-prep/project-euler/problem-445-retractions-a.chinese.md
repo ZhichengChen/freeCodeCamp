@@ -2,15 +2,28 @@
 id: 5900f52a1000cf542c51003c
 challengeType: 5
 title: 'Problem 445: Retractions A'
-videoUrl: ''
-localeTitle: 问题445：撤回A.
+forumTopicId: 302117
 ---
 
 ## Description
-<section id="description">对于每个整数n&gt; 1，函数族fn，a，b由fn，a，b（x）≡ax+ b mod n定义为a，b，x整数和0 <p>对于c = C（100 000，k），1≤k≤99999≡628701600（mod 1 000 000 007），给出ΣR（c）。 （C（n，k）是二项式系数）。 </p><p>找到ΣR（c）得c = C（10 000 000，k），1≤k≤9999 999.给出你的答案模1 000 000 007。 </p></section>
+<section id='description'>
+For every integer n>1, the family of functions fn,a,b  is defined
+by fn,a,b(x)≡ax+b mod n for a,b,x integer and  0<a<n, 0≤b<n, 0≤x<n.
+We will call fn,a,b a retraction if fn,a,b(fn,a,b(x))≡fn,a,b(x) mod n for every 0≤x<n.
+Let R(n) be the number of retractions for n.
+
+
+You are given that
+∑ R(c) for c=C(100 000,k), and 1 ≤ k ≤99 999 ≡628701600 (mod 1 000 000 007).
+(C(n,k) is the binomial coefficient).
+
+Find ∑ R(c) for c=C(10 000 000,k), and 1 ≤k≤ 9 999 999.
+Give your answer modulo 1 000 000 007.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +31,8 @@ localeTitle: 问题445：撤回A.
 
 ```yml
 tests:
-  - text: <code>euler445()</code>应该返回659104042。
-    testString: 'assert.strictEqual(euler445(), 659104042, "<code>euler445()</code> should return 659104042.");'
+  - text: <code>euler445()</code> should return 659104042.
+    testString: assert.strictEqual(euler445(), 659104042);
 
 ```
 
@@ -37,7 +50,6 @@ function euler445() {
 }
 
 euler445();
-
 ```
 
 </div>
@@ -52,4 +64,5 @@ euler445();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,25 +2,49 @@
 id: 587d7fac367417b2b2512bdc
 title: Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用d3.max和d3.min函数查找数据集中的最小值和最大值
+forumTopicId: 301496
 ---
 
 ## Description
-<section id="description"> D3方法<code>domain()</code>和<code>range()</code>根据数据为您的比例设置该信息。有几种方法可以使这更容易。通常在设置域时，您需要使用数据集中的最小值和最大值。尝试手动查找这些值，尤其是在大型数据集中，可能会导致错误。 D3有两种方法<code>min()</code>和<code>max()</code>来返回这些信息。这是一个例子： <blockquote> const exampleData = [34,234,73,90,6,52]; <br> d3.min（exampleData）//返回6 <br> d3.max（exampleData）//返回234 </blockquote>数据集可能具有嵌套数组，例如散点图示例中的[x，y]坐标对。在这种情况下，您需要告诉D3如何计算最大值和最小值。幸运的是， <code>min()</code>和<code>max()</code>方法都采用了回调函数。在此示例中，回调函数的参数<code>d</code>用于当前内部数组。回调需要从内部数组（x或y值）返回要计算最大值或最小值的元素。这是一个如何使用数组数组查找最小值和最大值的示例： <blockquote> const locationData = [[1,7]，[6,3]，[8,3]]; <br> //返回第一个元素中的最小数字<br> const minX = d3.min（locationData，（d）=&gt; d [0]）; <br> // minX比较1,6和8并设置为1 </blockquote></section>
+<section id='description'>
+The D3 methods <code>domain()</code> and <code>range()</code> set that information for your scale based on the data. There are a couple methods to make that easier.
+Often when you set the domain, you'll want to use the minimum and maximum values within the data set. Trying to find these values manually, especially in a large data set, may cause errors.
+D3 has two methods - <code>min()</code> and <code>max()</code> to return this information. Here's an example:
+
+```js
+const exampleData = [34, 234, 73, 90, 6, 52];
+d3.min(exampleData) // Returns 6
+d3.max(exampleData) // Returns 234
+```
+
+A dataset may have nested arrays, like the [x, y] coordinate pairs that were in the scatter plot example. In that case, you need to tell D3 how to calculate the maximum and minimum.
+Fortunately, both the <code>min()</code> and <code>max()</code> methods take a callback function.
+In this example, the callback function's argument <code>d</code> is for the current inner array. The callback needs to return the element from the inner array (the x or y value) over which you want to compute the maximum or minimum. Here's an example for how to find the min and max values with an array of arrays:
+
+```js
+const locationData = [[1, 7],[6, 3],[8, 3]];
+// Returns the smallest number out of the first elements
+const minX = d3.min(locationData, (d) => d[0]);
+// minX compared 1, 6, and 8 and is set to 1
+```
+
+</section>
 
 ## Instructions
-<section id="instructions"> <code>positionData</code>变量包含一个三维（3D）数组。使用D3方法从数组中查找z坐标（第三个值）的最大值，并将其保存在<code>output</code>变量中。 <strong>注意</strong> <br>有趣的事实 -  D3可以绘制3D阵列。 </section>
+<section id='instructions'>
+The <code>positionData</code> variable holds a 3-dimensional (3D) array. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the <code>output</code> variable.
+<strong>Note</strong><br>Fun fact - D3 can plot 3D arrays.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>h2</code>的文本应为8。
-    testString: 'assert(output == 8 && $("h2").text() == "8", "The text in the <code>h2</code> should be 8.");'
-  - text: 您的代码应使用<code>max()</code>方法。
-    testString: 'assert(code.match(/\.max/g), "Your code should use the <code>max()</code> method.")'
+  - text: The text in the <code>h2</code> should be 8.
+    testString: assert(output == 8 && $('h2').text() == '8');
+  - text: Your code should use the <code>max()</code> method.
+    testString: assert(code.match(/\.max/g), 'Your code should use the <code>max()</code> method.')
 
 ```
 
@@ -34,7 +58,7 @@ tests:
 ```html
 <body>
   <script>
-    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 9, 3]]
     // Add your code below this line
 
     const output = undefined; // Change this line
@@ -46,7 +70,6 @@ tests:
       .text(output)
   </script>
 </body>
-
 ```
 
 </div>
@@ -61,4 +84,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

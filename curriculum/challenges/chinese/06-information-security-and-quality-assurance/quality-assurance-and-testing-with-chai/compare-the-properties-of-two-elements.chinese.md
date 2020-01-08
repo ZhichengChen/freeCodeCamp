@@ -2,15 +2,18 @@
 id: 587d824c367417b2b2512c4d
 title: Compare the Properties of Two Elements
 challengeType: 2
-videoUrl: ''
-localeTitle: 比较两个元素的属性
+forumTopicId: 301588
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 .isAbove（）=&gt; a&gt; b，.isAtMost（）=&gt; a &lt;= b </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
+Use <code>assert.isAbove()</code>(i.e. greater) or <code>assert.isAtMost()</code> (i.e. less than or equal) to make the tests pass.
 </section>
 
 ## Tests
@@ -18,16 +21,16 @@ localeTitle: 比较两个元素的属性
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=7").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isAbove vs. isAtMost
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=7").then(data => {  assert.equal(data.assertions[0].method, "isAtMost", "5 is at most (<=) 5"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isAbove vs. isAtMost
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=7").then(data => {  assert.equal(data.assertions[1].method, "isAbove", "1 is greater than 0"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isAbove vs. isAtMost
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=7").then(data => {  assert.equal(data.assertions[2].method, "isAbove", "Math.PI = 3.14159265 is greater than 3"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isAbove vs. isAtMost
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=7").then(data => {  assert.equal(data.assertions[3].method, "isAtMost", "1 - Math.random() is > 0 and <= 1. It is atMost 1 !"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: All tests should pass.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - isAbove vs. isAtMost.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[0].method, 'isAtMost', '5 is at most (<=) 5'); }, xhr => { throw new Error(xhr.responseText); })
+  - text:  You should choose the right assertion - isAbove vs. isAtMost.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[1].method, 'isAbove', '1 is greater than 0'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - isAbove vs. isAtMost.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[2].method, 'isAbove', 'Math.PI = 3.14159265 is greater than 3'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - isAbove vs. isAtMost.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=7').then(data => {  assert.equal(data.assertions[3].method, 'isAtMost', '1 - Math.random() is > 0 and <= 1. It is atMost 1 !'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -42,6 +45,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

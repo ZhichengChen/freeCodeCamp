@@ -2,25 +2,30 @@
 id: 587d7fa7367417b2b2512bc6
 title: Add Inline Styling to Elements
 challengeType: 6
-videoUrl: ''
-localeTitle: 向元素添加内联样式
+forumTopicId: 301475
 ---
 
 ## Description
-<section id="description"> D3允许您使用<code>style()</code>方法在动态元素上添加内联CSS样式。 <code>style()</code>方法将逗号分隔的键值对作为参数。这是一个将选择的文本颜色设置为蓝色的示例： <code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code> </section>
+<section id='description'>
+D3 lets you add inline CSS styles on dynamic elements with the <code>style()</code> method.
+The <code>style()</code> method takes a comma-separated key-value pair as an argument. Here's an example to set the selection's text color to blue:
+<code>selection.style("color","blue");</code>
+</section>
 
 ## Instructions
-<section id="instructions">将<code>style()</code>方法添加到编辑器中的代码中，使所有显示的文本都具有<code>verdana</code>的<code>font-family</code> 。 </section>
+<section id='instructions'>
+Add the <code>style()</code> method to the code in the editor to make all the displayed text have a <code>font-family</code> of <code>verdana</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>h2</code>元素应该有verdana的<code>font-family</code> 。
-    testString: 'assert($("h2").css("font-family") == "verdana", "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.");'
-  - text: 您的代码应使用<code>style()</code>方法。
-    testString: 'assert(code.match(/\.style/g), "Your code should use the <code>style()</code> method.");'
+  - text: Your <code>h2</code> elements should have a <code>font-family</code> of verdana.
+    testString: assert($('h2').css('font-family') == 'verdana');
+  - text: Your code should use the <code>style()</code> method.
+    testString: assert(code.match(/\.style/g));
 
 ```
 
@@ -48,7 +53,6 @@ tests:
       // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -63,4 +67,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

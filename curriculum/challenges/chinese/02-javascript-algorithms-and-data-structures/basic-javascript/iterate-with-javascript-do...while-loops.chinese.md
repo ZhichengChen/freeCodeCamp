@@ -2,28 +2,68 @@
 id: 5a2efd662fb457916e1fe604
 title: Iterate with JavaScript Do...While Loops
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用JavaScript迭代...循环
+videoUrl: 'https://scrimba.com/c/cDqWGcp'
+forumTopicId: 301172
 ---
 
 ## Description
-<section id="description">您可以使用循环多次运行相同的代码。你将学习的下一个类型的循环称为“ <code>do...while</code> ”循环，因为它首先将“ <code>do</code> ”循环内部代码的一次传递，无论如何，然后它运行“ <code>while</code> ”指定条件为真一旦这种情况不再真实就停止。我们来看一个例子。 <blockquote> var ourArray = []; <br> var i = 0; <br>做{ <br> ourArray.push（ⅰ）; <br>我++; <br> } while（i &lt;5）; </blockquote>这与任何其他类型的循环一样正常，结果数组看起来像<code>[0, 1, 2, 3, 4]</code> 。然而，什么使得<code>do...while</code>与其他循环不同，但是当条件在第一次检查时失败时它的行为如何。让我们看看这个在行动。这是一个常规的while循环，只要<code>i &lt; 5</code> ，它就会在循环中运行代码。 <blockquote> var ourArray = []; <br> var i = 5; <br>而（i &lt;5）{ <br> ourArray.push（ⅰ）; <br>我++; <br> } </blockquote>请注意，我们将<code>i</code>的值初始化为5.当我们执行下一行时，我们注意到<code>i</code>不小于5.所以我们不执行循环内的代码。结果是<code>ourArray</code>最终没有添加任何内容，因此当上面示例中的所有代码完成运行时，它仍然看起来像这个<code>[]</code> 。现在，看一下<code>do...while</code>循环。 <blockquote> var ourArray = []; <br> var i = 5; <br>做{ <br> ourArray.push（ⅰ）; <br>我++; <br> } while（i &lt;5）; </blockquote>在这种情况下，我们将<code>i</code>的值初始化为5，就像我们使用while循环一样。当我们到达下一行时，没有检查<code>i</code>的值，所以我们转到花括号内的代码并执行它。我们将在数组中添加一个元素并在进行条件检查之前递增<code>i</code> 。然后，当我们检查<code>i &lt; 5</code>看到<code>i</code>现在是6，这不符合条件检查。所以我们退出循环并完成。在上面的例子的末尾， <code>ourArray</code>的值是<code>[5]</code> 。本质上， <code>do...while</code>循环确保循环内的代码至少运行一次。让我们尝试通过将值推送到数组来实现<code>do...while</code>循环。 </section>
+<section id='description'>
+The next type of loop you will learn is called a <code>do...while</code> loop.  It is called a <code>do...while</code> loop because it will first <code>do</code> one pass of the code inside the loop no matter what, and then continue to run the loop <code>while</code> the specified condition evaluates to <code>true</code>.
+
+```js
+var ourArray = [];
+var i = 0;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
+```
+
+The example above behaves similar to other types of loops, and the resulting array will look like <code>[0, 1, 2, 3, 4]</code>. However, what makes the <code>do...while</code> different from other loops is how it behaves when the condition fails on the first check. Let's see this in action:
+Here is a regular <code>while</code> loop that will run the code in the loop as long as <code>i < 5</code>:
+
+```js
+var ourArray = []; 
+var i = 5;
+while (i < 5) {
+  ourArray.push(i);
+  i++;
+}
+```
+
+In this example, we initialize the value of <code>ourArray</code> to an empty array and the value of <code>i</code> to 5. When we execute the <code>while</code> loop, the condition evaluates to <code>false</code> because <code>i</code> is not less than 5, so we do not execute the code inside the loop. The result is that <code>ourArray</code> will end up with no values added to it, and it will still look like <code>[]</code> when all of the code in the example above has completed running.
+Now, take a look at a <code>do...while</code> loop:
+
+```js
+var ourArray = []; 
+var i = 5;
+do {
+  ourArray.push(i);
+  i++;
+} while (i < 5);
+```
+
+In this case, we initialize the value of <code>i</code> to 5, just like we did with the <code>while</code> loop. When we get to the next line, there is no condition to evaluate, so we go to the code inside the curly braces and execute it.  We will add a single element to the array and then increment <code>i</code> before we get to the condition check. When we finally evaluate the condition <code>i < 5</code> on the last line, we see that <code>i</code> is now 6, which fails the conditional check, so we exit the loop and are done. At the end of the above example, the value of <code>ourArray</code> is <code>[5]</code>.
+Essentially, a <code>do...while</code> loop ensures that the code inside the loop will run at least once.
+Let's try getting a <code>do...while</code> loop to work by pushing values to an array.
+</section>
 
 ## Instructions
-<section id="instructions">将代码中的<code>while</code>循环更改为<code>do...while</code>循环，以便循环将数字10推送到<code>myArray</code> ，当代码完成运行时， <code>i</code>将等于<code>11</code> 。 </section>
+<section id='instructions'>
+Change the <code>while</code> loop in the code to a <code>do...while</code> loop so the loop will push only the number <code>10</code> to <code>myArray</code>, and <code>i</code> will be equal to <code>11</code> when your code has finished running.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该使用<code>do...while</code>循环。
-    testString: 'assert(code.match(/do/g), "You should be using a <code>do...while</code> loop for this.");'
-  - text: '<code>myArray</code>应该等于<code>[10]</code> 。'
-    testString: 'assert.deepEqual(myArray, [10], "<code>myArray</code> should equal <code>[10]</code>.");'
-  - text: <code>i</code>应该等于<code>11</code>
-    testString: 'assert.deepEqual(i, 11, "<code>i</code> should equal <code>11</code>");'
-
+  - text: You should be using a <code>do...while</code> loop for this exercise.
+    testString: assert(code.match(/do/g));
+  - text: <code>myArray</code> should equal <code>[10]</code>.
+    testString: assert.deepEqual(myArray, [10]);
+  - text: <code>i</code> should equal <code>11</code>
+    testString: assert.equal(i, 11);
 ```
 
 </section>
@@ -38,13 +78,11 @@ tests:
 var myArray = [];
 var i = 10;
 
-// Only change code below this line.
-
+// Only change code below this line
 while (i < 5) {
   myArray.push(i);
   i++;
 }
-
 ```
 
 </div>
@@ -54,7 +92,7 @@ while (i < 5) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>
@@ -64,7 +102,14 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [];
+var i = 10;
+do {
+  myArray.push(i);
+  i++;
+} while (i < 5)
 ```
+
 </section>

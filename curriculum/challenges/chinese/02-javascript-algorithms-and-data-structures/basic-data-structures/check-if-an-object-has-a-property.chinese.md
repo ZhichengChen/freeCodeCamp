@@ -2,28 +2,43 @@
 id: 587d7b7d367417b2b2512b1c
 title: Check if an Object has a Property
 challengeType: 1
-videoUrl: ''
-localeTitle: 检查对象是否具有属性
+forumTopicId: 301155
 ---
 
 ## Description
-<section id="description">现在我们可以添加，修改和删除对象中的键。但是，如果我们只是想知道某个对象是否具有特定属性呢？ JavaScript为我们提供了两种不同的方法。一个使用<code>hasOwnProperty()</code>方法，另一个使用<code>in</code>关键字。如果我们有一个具有<code>Alan</code>属性的对象<code>users</code> ，我们可以通过以下任一方式检查其存在： <blockquote> users.hasOwnProperty（ &#39;艾伦&#39;）; <br> &#39;艾伦&#39;在用户; <br> //都返回true </blockquote></section>
+<section id='description'>
+Now we can add, modify, and remove keys from objects. But what if we just wanted to know if an object has a specific property? JavaScript provides us with two different ways to do this. One uses the <code>hasOwnProperty()</code> method and the other uses the <code>in</code> keyword. If we have an object <code>users</code> with a property of <code>Alan</code>, we could check for its presence in either of the following ways:
+
+```js
+users.hasOwnProperty('Alan');
+'Alan' in users;
+// both return true
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">我们创建了一个对象， <code>users</code> ，其中包含一些用户和一个函数<code>isEveryoneHere</code> ，我们将<code>users</code>对象作为参数传递给它。完成编写此函数，以便仅当<code>users</code>对象包含所有四个名称（ <code>Alan</code> ， <code>Jeff</code> ， <code>Sarah</code>和<code>Ryan</code> ）作为键时才返回<code>true</code> ，否则返回<code>false</code> 。 </section>
+<section id='instructions'>
+We've created an object, <code>users</code>, with some users in it and a function <code>isEveryoneHere</code>, which we pass the <code>users</code> object to as an argument. Finish writing this function so that it returns <code>true</code> only if the <code>users</code> object contains all four names, <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>, as keys, and <code>false</code> otherwise.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>users</code>对象仅包含<code>Alan</code> ， <code>Jeff</code> ， <code>Sarah</code>和<code>Ryan</code>
-    testString: 'assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4, "The <code>users</code> object only contains the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>");'
-  - text: 如果<code>Alan</code> ， <code>Jeff</code> ， <code>Sarah</code>和<code>Ryan</code>是<code>users</code>对象的属性，则函数<code>isEveryoneHere</code>返回<code>true</code>
-    testString: 'assert(isEveryoneHere(users) === true, "The function <code>isEveryoneHere</code> returns <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object");'
-  - text: 如果<code>Alan</code> ， <code>Jeff</code> ， <code>Sarah</code>和<code>Ryan</code>不是<code>users</code>对象的属性，则函数<code>isEveryoneHere</code>返回<code>false</code>
-    testString: 'assert((function() { delete users.Alan; delete users.Jeff; delete users.Sarah; delete users.Ryan; return isEveryoneHere(users) })() === false, "The function <code>isEveryoneHere</code> returns <code>false</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are not properties on the <code>users</code> object");'
-
+  - text: The <code>users</code> object should only contain the keys <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code>
+    testString: assert("Alan" in users && "Jeff" in users && "Sarah" in users && "Ryan" in users && Object.keys(users).length === 4);
+  - text: The function <code>isEveryoneHere</code> should return <code>true</code> if <code>Alan</code>, <code>Jeff</code>, <code>Sarah</code>, and <code>Ryan</code> are properties on the <code>users</code> object
+    testString: assert(isEveryoneHere(users) === true);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Alan</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Alan; return isEveryoneHere(users) })() === false);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Jeff</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Jeff; return isEveryoneHere(users) })() === false);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Sarah</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Sarah; return isEveryoneHere(users) })() === false);
+  - text: The function <code>isEveryoneHere</code> should return <code>false</code> if <code>Ryan</code> is not a property on the <code>users</code> object
+    testString: assert((function() { delete users.Ryan; return isEveryoneHere(users) })() === false);
 ```
 
 </section>
@@ -60,7 +75,6 @@ function isEveryoneHere(obj) {
 }
 
 console.log(isEveryoneHere(users));
-
 ```
 
 </div>
@@ -73,6 +87,35 @@ console.log(isEveryoneHere(users));
 <section id='solution'>
 
 ```js
-// solution required
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  return [
+    'Alan',
+    'Jeff',
+    'Sarah',
+    'Ryan'
+  ].every(i => obj.hasOwnProperty(i));
+}
+
+console.log(isEveryoneHere(users));
 ```
+
 </section>

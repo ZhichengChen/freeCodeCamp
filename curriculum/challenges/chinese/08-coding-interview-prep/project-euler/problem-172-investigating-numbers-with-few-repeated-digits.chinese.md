@@ -2,15 +2,17 @@
 id: 5900f4181000cf542c50ff2b
 challengeType: 5
 title: 'Problem 172: Investigating numbers with few repeated digits'
-videoUrl: ''
-localeTitle: 问题172：调查重复数字很少的数字
+forumTopicId: 301807
 ---
 
 ## Description
-<section id="description">有多少个18位数字n（没有前导零），n中没有数字出现超过三次？ </section>
+<section id='description'>
+How many 18-digit numbers n (without leading zeros) are there such that no digit occurs more than three times in n?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +20,8 @@ localeTitle: 问题172：调查重复数字很少的数字
 
 ```yml
 tests:
-  - text: <code>euler172()</code>应返回227485267000992000。
-    testString: 'assert.strictEqual(euler172(), 227485267000992000, "<code>euler172()</code> should return 227485267000992000.");'
+  - text: <code>euler172()</code> should return 227485267000992000.
+    testString: assert.strictEqual(euler172(), 227485267000992000);
 
 ```
 
@@ -37,7 +39,6 @@ function euler172() {
 }
 
 euler172();
-
 ```
 
 </div>
@@ -52,4 +53,5 @@ euler172();
 ```js
 // solution required
 ```
+
 </section>

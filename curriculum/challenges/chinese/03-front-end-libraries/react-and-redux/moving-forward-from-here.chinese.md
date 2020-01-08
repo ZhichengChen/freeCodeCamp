@@ -3,23 +3,29 @@ id: 5a24c314108439a4d403614a
 title: Moving Forward From Here
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 从这里前进
+forumTopicId: 301434
 ---
 
 ## Description
-<section id="description">恭喜！你完成了React和Redux的课程。在继续之前，最后一项值得指出。通常，您不会在这样的代码编辑器中编写React应用程序。如果您在自己的计算机上使用npm和文件系统，这个挑战可以让您一瞥语法的样子。代码看起来应该类似，除了使用<code>import</code>语句（这些语句提取了在挑战中为您提供的所有依赖项）。 “使用npm管理包”部分更详细地介绍了npm。最后，编写React和Redux代码通常需要一些配置。这可能很快变得复杂。如果您有兴趣在自己的机器上进行实验，可以配置<a id="CRA" target="_blank" href="https://github.com/facebookincubator/create-react-app">Create React App</a>并准备就绪。或者，您可以在CodePen中启用Babel作为JavaScript预处理器，将React和ReactDOM添加为外部JavaScript资源，并在那里工作。 </section>
+<section id='description'>
+Congratulations! You finished the lessons on React and Redux. There's one last item worth pointing out before you move on. Typically, you won't write React apps in a code editor like this. This challenge gives you a glimpse of what the syntax looks like if you're working with npm and a file system on your own machine. The code should look similar, except for the use of <code>import</code> statements (these pull in all of the dependencies that have been provided for you in the challenges). The "Managing Packages with npm" section covers npm in more detail.
+Finally, writing React and Redux code generally requires some configuration. This can get complicated quickly. If you are interested in experimenting on your own machine, the
+<a id='CRA' target ='_blank' href='https://github.com/facebookincubator/create-react-app'>Create React App</a> comes configured and ready to go.
+Alternatively, you can enable Babel as a JavaScript Preprocessor in CodePen, add React and ReactDOM as external JavaScript resources, and work there as well.
+</section>
 
 ## Instructions
-<section id="instructions">记录消息<code>&#39;Now I know React and Redux!&#39;</code>到控制台。 </section>
+<section id='instructions'>
+Log the message <code>'Now I know React and Redux!'</code> to the console.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 消息<code>Now I know React and Redux!</code>应该登录到控制台。
-    testString: 'assert(editor.getValue().includes("console.log("Now I know React and Redux!")") || editor.getValue().includes("console.log(\"Now I know React and Redux!\")"), "The message <code>Now I know React and Redux!</code> should be logged to the console.");'
+  - text: The message <code>Now I know React and Redux!</code> should be logged to the console.
+    testString: getUserInput => assert(/console\s*\.\s*log\s*\(\s*('|"|`)Now I know React and Redux!\1\s*\)/.test(getUserInput('index')));
 
 ```
 
@@ -65,7 +71,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+console.log('Now I know React and Redux!');
 ```
+
 </section>

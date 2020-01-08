@@ -1,18 +1,19 @@
 ---
 id: 587d7fb0367417b2b2512bf0
 title: Serve Static Assets
-localeTitle: 服务静态资产
 challengeType: 2
+forumTopicId: 301518
 ---
 
 ## Description
-<section id='description'> 
-HTML服务器通常有一个或多个用户可以访问的目录。您可以放置应用程序所需的静态资产（样式表，脚本，图像）。在Express中，您可以使用中间件<code>express.static(path)</code>来实现此功能，其中参数是包含资产的文件夹的绝对路径。如果您不知道中间件是什么，请不要担心。我们稍后会详细讨论它。基本上，中间件是拦截路由处理程序，添加某种信息的函数。需要使用<code>app.use(path, middlewareFunction)</code>方法<code>app.use(path, middlewareFunction)</code> 。第一个路径参数是可选的。如果您没有通过它，将为所有请求执行中间件。 <code>0</code>使用<code>app.use()</code>为所有请求安装<code>express.static()</code>中间件。 assets文件夹的绝对路径是<code>__dirname + /public</code> 。 <code>0</code>现在，您的应用应该能够提供CSS样式表。从公共文件夹外部将显示挂载到根目录。你的头版现在应该看起来好一点！ 
+<section id='description'>
+An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images). In Express, you can put in place this functionality using the middleware <code>express.static(path)</code>, where the <code>path</code> parameter is the absolute path of the folder containing the assets. If you don’t know what middleware is... don’t worry, we will discuss in detail later. Basically, middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method <code>app.use(path, middlewareFunction)</code>. The first <code>path</code> argument is optional. If you don’t pass it, the middleware will be executed for all requests.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Mount the <code>express.static()</code> middleware for all requests with <code>app.use()</code>. The absolute path to the assets folder is <code>__dirname + /public</code>.
+Now your app should be able to serve a CSS stylesheet. From outside, the public folder will appear mounted to the root directory. Your front-page should look a little better now!
 </section>
 
 ## Tests
@@ -20,7 +21,7 @@ HTML服务器通常有一个或多个用户可以访问的目录。您可以放�
 
 ```yml
 tests:
-  - text: 您的应用应该从<code>/public</code>目录提供资产文件
+  - text: Your app should serve asset files from the <code>/public</code> directory
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/style.css'').then(data => { assert.match(data, /body\s*\{[^\}]*\}/, ''Your app does not serve static assets''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,6 +37,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

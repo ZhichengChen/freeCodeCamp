@@ -2,15 +2,20 @@
 id: 587d8249367417b2b2512c3f
 title: Set a Content Security Policy with helmet.contentSecurityPolicy()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.contentSecurityPolicy（）设置内容安全策略
+forumTopicId: 301585
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。这一挑战突出了一个有希望的新防御，它可以显着降低现代浏览器中许多类型攻击的风险和影响。通过设置和配置内容安全策略，您可以防止在页面中无意中注入任何内容。这样可以保护您的应用免受XSS漏洞，不受欢迎的跟踪，恶意帧等攻击。 CSP通过定义受信任的内容源的白名单来工作。您可以为网页可能需要的每种资源（脚本，样式表，字体，框架，媒体等等）配置它们。有多个指令可用，因此网站所有者可以拥有精细控制。有关详细信息，请参阅HTML 5 Rocks，KeyCDN。不幸的是旧版浏览器不支持CSP。默认情况下，指令是全开的，因此将defaultSrc指令设置为回退非常重要。 Helmet支持defaultSrc和default-src命名样式。回退适用于大多数未指定的指令。在本练习中，使用helmet.contentSecurityPolicy（），并将其配置为将defaultSrc指令设置为[“self”]（允许的源列表必须在数组中），以便默认只信任您的网站地址。同时设置scriptSrc指令，以便允许从您的网站和域“trusted-cdn.com”下载脚本。提示：在“&#39;self&#39;”关键字中，单引号是关键字本身的一部分，因此需要用双引号括起来才能生效。 </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
+This challenge highlights one promising new defense that can significantly reduce the risk and impact of many type of attacks in modern browsers. By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining a whitelist of content sources which are trusted. You can configure them for each kind of resource a web page may need (scripts, stylesheets, fonts, frames, media, and so on…). There are multiple directives available, so a website owner can have a granular control. See HTML 5 Rocks, KeyCDN for more details. Unfortunately CSP is unsupported by older browser.
+By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+In this exercise, use <code>helmet.contentSecurityPolicy()</code>, and configure it setting the <code>defaultSrc directive</code> to <code>["self"]</code> (the list of allowed sources must be in an array), in order to trust only your website address by default. Set also the <code>scriptSrc</code> directive so that you will allow scripts to be downloaded from your website, and from the domain 'trusted-cdn.com'.
+Hint: in the <code>self</code> keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working.
 </section>
 
 ## Tests
@@ -18,10 +23,10 @@ localeTitle: 使用helmet.contentSecurityPolicy（）设置内容安全策略
 
 ```yml
 tests:
-  - text: helmet.csp（）中间件应该正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "csp"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '你的csp配置不正确。 defaultSrc应该是[“”self“”]而scriptSrc应该是[“”self“”，“trusted-cdn.com”]'
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === "content-security-policy" || k === "x-webkit-csp" || k === "x-content-security-policy" })[0]; assert.equal(data.headers[cspHeader], "default-src "self"; script-src "self" trusted-cdn.com"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: helmet.csp() middleware should be mounted correctly
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'csp'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: Your csp config is not correct. defaultSrc should be ["'self'"] and scriptSrc should be ["'self'", 'trusted-cdn.com']
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === 'content-security-policy' || k === 'x-webkit-csp' || k === 'x-content-security-policy' })[0]; assert.equal(data.headers[cspHeader], "default-src 'self'; script-src 'self' trusted-cdn.com"); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -36,6 +41,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

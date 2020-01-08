@@ -2,15 +2,32 @@
 id: 5900f4481000cf542c50ff5b
 challengeType: 5
 title: 'Problem 220: Heighway Dragon'
-videoUrl: ''
-localeTitle: 问题220：高速公路龙
+forumTopicId: 301863
 ---
 
 ## Description
-<section id="description">设D0为双字母串“Fa”。对于n≥1，通过字符串重写规则从Dn-1导出Dn： <p> “a”→“aRbFR”“b”→“LFaLb” </p><p>因此，D0 =“Fa”，D1 =“FaRbFR”，D2 =“FaRbFRRLFaLbFR”，等等。 </p><p>这些字符串可以解释为计算机图形程序的指令，“F”表示“向前绘制一个单位”，“L”表示“向左转90度”，“R”表示“向右转90度”，和“a” “和”b“被忽略了。计算机光标的初始位置是（0,0），指向（0,1）。 </p><p>然后Dn是一种奇特的绘画，被称为n阶的Heighway Dragon。例如，D10如下所示;将每个“F”计为一步，（18,16）处的突出显示点是500步后达到的位置。 </p><p> D50中1012步后光标的位置是什么？以x，y的形式给出答案，没有空格。 </p></section>
+<section id='description'>
+Let D0 be the two-letter string "Fa".  For n≥1, derive Dn from Dn-1 by the string-rewriting rules:
+
+"a" → "aRbFR"
+"b" → "LFaLb"
+
+Thus, D0 = "Fa", D1 = "FaRbFR", D2 = "FaRbFRRLFaLbFR", and so on.
+
+These strings can be interpreted as instructions to a computer graphics program, with "F" meaning "draw forward one unit", "L" meaning "turn left 90 degrees", "R" meaning "turn right 90 degrees", and "a" and "b" being ignored.  The initial position of the computer cursor is (0,0), pointing up towards (0,1).
+
+Then Dn is an exotic drawing known as the Heighway Dragon of order n.  For example, D10 is shown below; counting each "F" as one step, the highlighted spot at (18,16) is the position reached after 500 steps.
+
+
+
+
+What is the position of the cursor after 1012 steps in D50 ?
+Give your answer in the form x,y with no spaces.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +35,8 @@ localeTitle: 问题220：高速公路龙
 
 ```yml
 tests:
-  - text: '<code>euler220()</code>应返回139776,963904。'
-    testString: 'assert.strictEqual(euler220(), 139776, 963904, "<code>euler220()</code> should return 139776, 963904.");'
+  - text: <code>euler220()</code> should return 139776, 963904.
+    testString: assert.strictEqual(euler220(), 139776, 963904);
 
 ```
 
@@ -37,7 +54,6 @@ function euler220() {
 }
 
 euler220();
-
 ```
 
 </div>
@@ -52,4 +68,5 @@ euler220();
 ```js
 // solution required
 ```
+
 </section>

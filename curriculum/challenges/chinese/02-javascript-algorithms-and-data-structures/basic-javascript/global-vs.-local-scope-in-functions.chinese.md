@@ -2,27 +2,42 @@
 id: 56533eb9ac21ba0edf2244c0
 title: Global vs. Local Scope in Functions
 challengeType: 1
-videoUrl: ''
-localeTitle: 功能中的全局与局部范围
+videoUrl: 'https://scrimba.com/c/c2QwKH2'
+forumTopicId: 18194
 ---
 
 ## Description
-<section id="description">可以使<dfn>本地</dfn>变量和<dfn>全局</dfn>变量具有相同的名称。执行此操作时， <code>local</code>变量优先于<code>global</code>变量。在这个例子中： <blockquote> var someVar =“帽子”; <br> function myFun（）{ <br> var someVar =“Head”; <br>返回someVar; <br> } </blockquote>函数<code>myFun</code>将返回<code>&quot;Head&quot;</code>因为存在变量的<code>local</code>版本。 </section>
+<section id='description'>
+It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.
+In this example:
+
+```js
+var someVar = "Hat";
+function myFun() {
+  var someVar = "Head";
+  return someVar;
+}
+```
+
+The function <code>myFun</code> will return <code>"Head"</code> because the <code>local</code> version of the variable is present.
+</section>
 
 ## Instructions
-<section id="instructions">将一个局部变量添加到<code>myOutfit</code>函数，以使用<code>&quot;sweater&quot;</code>覆盖<code>outerWear</code>的值。 </section>
+<section id='instructions'>
+Add a local variable to <code>myOutfit</code> function to override the value of <code>outerWear</code> with <code>"sweater"</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 不要更改全局<code>outerWear</code>的值
-    testString: 'assert(outerWear === "T-Shirt", "Do not change the value of the global <code>outerWear</code>");'
-  - text: <code>myOutfit</code>应该返回<code>&quot;sweater&quot;</code>
-    testString: 'assert(myOutfit() === "sweater", "<code>myOutfit</code> should return <code>"sweater"</code>");'
-  - text: 不要更改return语句
-    testString: 'assert(/return outerWear/.test(code), "Do not change the return statement");'
+  - text: You should not change the value of the global <code>outerWear</code>.
+    testString: assert(outerWear === "T-Shirt");
+  - text: <code>myOutfit</code> should return <code>"sweater"</code>.
+    testString: assert(myOutfit() === "sweater");
+  - text: You should not change the return statement.
+    testString: assert(/return outerWear/.test(code));
 
 ```
 
@@ -47,7 +62,6 @@ function myOutfit() {
 }
 
 myOutfit();
-
 ```
 
 </div>
@@ -59,7 +73,13 @@ myOutfit();
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var outerWear = "T-Shirt";
+function myOutfit() {
+  var outerWear = "sweater";
+  return outerWear;
+}
 ```
+
 </section>

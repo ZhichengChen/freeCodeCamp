@@ -2,15 +2,18 @@
 id: 5900f39c1000cf542c50feaf
 challengeType: 5
 title: 'Problem 48: Self powers'
-videoUrl: ''
-localeTitle: 问题48：自我权力
+forumTopicId: 302157
 ---
 
 ## Description
-<section id="description">系列，1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 10 <sup>10</sup> = 10405071317.查找该系列的最后十位数字，1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 1000 <sup>1000</sup> 。 </section>
+<section id='description'>
+The series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 10<sup>10</sup> = 10405071317.
+Find the last ten digits of the series, 1<sup>1</sup> + 2<sup>2</sup> + 3<sup>3</sup> + ... + 1000<sup>1000</sup>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +21,14 @@ localeTitle: 问题48：自我权力
 
 ```yml
 tests:
-  - text: '<code>selfPowers(10, 3)</code>应该返回317。'
-    testString: 'assert.strictEqual(selfPowers(10, 3), 317, "<code>selfPowers(10, 3)</code> should return 317.");'
-  - text: '<code>selfPowers(150, 6)</code>应返回29045。'
-    testString: 'assert.strictEqual(selfPowers(150, 6), 29045, "<code>selfPowers(150, 6)</code> should return 29045.");'
-  - text: '<code>selfPowers(673, 7)</code>应该返回2473989。'
-    testString: 'assert.strictEqual(selfPowers(673, 7), 2473989, "<code>selfPowers(673, 7)</code> should return 2473989.");'
-  - text: '<code>selfPowers(1000, 10)</code>应该返回9110846700。'
-    testString: 'assert.strictEqual(selfPowers(1000, 10), 9110846700, "<code>selfPowers(1000, 10)</code> should return 9110846700.");'
+  - text: <code>selfPowers(10, 3)</code> should return 317.
+    testString: assert.strictEqual(selfPowers(10, 3), 317);
+  - text: <code>selfPowers(150, 6)</code> should return 29045.
+    testString: assert.strictEqual(selfPowers(150, 6), 29045);
+  - text: <code>selfPowers(673, 7)</code> should return 2473989.
+    testString: assert.strictEqual(selfPowers(673, 7), 2473989);
+  - text: <code>selfPowers(1000, 10)</code> should return 9110846700.
+    testString: assert.strictEqual(selfPowers(1000, 10), 9110846700);
 
 ```
 
@@ -43,7 +46,6 @@ function selfPowers(power, lastDigits) {
 }
 
 selfPowers(1000, 10);
-
 ```
 
 </div>
@@ -55,7 +57,25 @@ selfPowers(1000, 10);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function selfPowers(power, lastDigits) {
+  let sum = 0;
+  const modulo = Math.pow(10, lastDigits);
+
+  for (let i = 1; i <= power; i++) {
+    let temp = i;
+    for (let j = 1; j < i; j++) {
+      temp *= i;
+      temp %= modulo;
+    }
+
+    sum += temp;
+    sum %= modulo;
+  }
+
+  return sum;
+}
 ```
+
 </section>

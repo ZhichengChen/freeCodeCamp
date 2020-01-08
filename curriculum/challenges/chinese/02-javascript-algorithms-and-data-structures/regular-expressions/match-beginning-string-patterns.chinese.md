@@ -2,29 +2,44 @@
 id: 587d7db7367417b2b2512b9d
 title: Match Beginning String Patterns
 challengeType: 1
-videoUrl: ''
-localeTitle: 匹配开始字符串模式
+forumTopicId: 301349
 ---
 
 ## Description
-<section id="description">先前的挑战表明，正则表达式可用于寻找许多匹配。它们还用于搜索字符串中特定位置的模式。在之前的挑战中，您使用<code>character set</code>内的<code>caret</code>符（ <code>^</code> ）来创建<code>[^thingsThatWillNotBeMatched]</code>形式的<code>negated character set</code> 。在<code>character set</code> ， <code>caret</code>用于在字符串的开头搜索模式。 <blockquote>让firstString =“Ricky是第一个，可以找到。”; <br>让firstRegex = / ^ Ricky /; <br> firstRegex.test（firstString）; <br> //返回true <br>让notFirst =“你现在找不到Ricky了。”; <br> firstRegex.test（notFirst）; <br> //返回false </blockquote></section>
+<section id='description'>
+Prior challenges showed that regular expressions can be used to look for a number of matches. They are also used to search for patterns in specific positions in strings.
+In an earlier challenge, you used the caret character (<code>^</code>) inside a character set to create a negated character set in the form <code>[^thingsThatWillNotBeMatched]</code>. Outside of a character set, the caret is used to search for patterns at the beginning of strings.
+
+```js
+let firstString = "Ricky is first and can be found.";
+let firstRegex = /^Ricky/;
+firstRegex.test(firstString);
+// Returns true
+let notFirst = "You can't find Ricky now.";
+firstRegex.test(notFirst);
+// Returns false
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用正则表达式中的<code>caret</code>只能在字符串<code>rickyAndCal</code>的开头找到<code>&quot;Cal&quot;</code> 。 </section>
+<section id='instructions'>
+Use the caret character in a regex to find <code>"Cal"</code> only in the beginning of the string <code>rickyAndCal</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的正则表达式应该用大写字母搜索<code>&quot;Cal&quot;</code> 。
-    testString: 'assert(calRegex.source == "^Cal", "Your regex should search for <code>"Cal"</code> with a capital letter.");'
-  - text: 你的正则表达式不应该使用任何标志。
-    testString: 'assert(calRegex.flags == "", "Your regex should not use any flags.");'
-  - text: 你的正则表达式应该匹配字符串开头的<code>&quot;Cal&quot;</code> 。
-    testString: 'assert(calRegex.test("Cal and Ricky both like racing."), "Your regex should match <code>"Cal"</code> at the beginning of the string.");'
-  - text: 您的正则表达式不应与字符串中间的<code>&quot;Cal&quot;</code>匹配。
-    testString: 'assert(!calRegex.test("Ricky and Cal both like racing."), "Your regex should not match <code>"Cal"</code> in the middle of a string.");'
+  - text: Your regex should search for <code>"Cal"</code> with a capital letter.
+    testString: assert(calRegex.source == "^Cal");
+  - text: Your regex should not use any flags.
+    testString: assert(calRegex.flags == "");
+  - text: Your regex should match <code>"Cal"</code> at the beginning of the string.
+    testString: assert(calRegex.test("Cal and Ricky both like racing."));
+  - text: Your regex should not match <code>"Cal"</code> in the middle of a string.
+    testString: assert(!calRegex.test("Ricky and Cal both like racing."));
 
 ```
 
@@ -39,7 +54,6 @@ tests:
 let rickyAndCal = "Cal and Ricky both like racing.";
 let calRegex = /change/; // Change this line
 let result = calRegex.test(rickyAndCal);
-
 ```
 
 </div>
@@ -52,6 +66,9 @@ let result = calRegex.test(rickyAndCal);
 <section id='solution'>
 
 ```js
-// solution required
+let rickyAndCal = "Cal and Ricky both like racing.";
+let calRegex = /^Cal/; // Change this line
+let result = calRegex.test(rickyAndCal);
 ```
+
 </section>

@@ -2,37 +2,42 @@
 id: 587d825a367417b2b2512c87
 title: Create a Doubly Linked List
 challengeType: 1
-videoUrl: ''
-localeTitle: 创建双向链接列表
+forumTopicId: 301626
 ---
 
 ## Description
-<section id="description">到目前为止，我们创建的所有链接列表都是单链表。在这里，我们将创建一个<dfn>双向链表</dfn> 。顾名思义，双向链表中的节点引用了列表中的下一个和上一个节点。这允许我们在两个方向上遍历列表，但它还需要使用更多内存，因为每个节点必须包含对列表中前一个节点的附加引用。 </section>
+<section id='description'>
+All of the linked lists we've created so far are singly linked lists. Here, we'll create a <dfn>doubly linked list</dfn>. As the name implies, nodes in a doubly linked list have references to the next and previous node in the list.
+This allows us to traverse the list in both directions but it also requires more memory to be used because every node must contain an additional reference to the previous node in the list.
+</section>
 
 ## Instructions
-<section id="instructions">我们提供了一个<code>Node</code>对象并启动了我们的<code>DoublyLinkedList</code> 。让我们将两个方法添加到名为<code>add</code> and <code>remove</code>双向链表<code>remove</code> 。 <code>add</code>方法应该将给定元素添加到列表中，而<code>remove</code>方法应该删除列表中所有出现的给定元素。编写这些方法时要小心处理任何可能的边缘情况，例如删除第一个或最后一个元素。此外，删除空列表中的任何项应返回<code>null</code> 。 </section>
+<section id='instructions'>
+We've provided a <code>Node</code> object and started our <code>DoublyLinkedList</code>. Let's add two methods to our doubly linked list called <code>add</code> and <code>remove</code>. The <code>add</code> method should add the given element to the list while the <code>remove</code> method should remove all occurrences of a given element in the list.
+Be careful to handle any possible edge cases when writing these methods, such as deletions for the first or last element. Also, removing any item on an empty list should return <code>null</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 存在DoublyLinkedList数据结构。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; return (typeof test == "object")})(), "The DoublyLinkedList data structure exists.");'
-  - text: DoublyLinkedList有一个名为add的方法。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == "function")})(), "The DoublyLinkedList has a method called add.");'
-  - text: DoublyLinkedList有一个名为remove的方法。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.remove == undefined) { return false; }; return (typeof test.remove == "function")})(), "The DoublyLinkedList has a method called remove.");'
-  - text: 从空列表中删除项目将返回null。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; return (test.remove(100) == null); })(), "Removing an item from an empty list returns null.");'
-  - text: add方法将项添加到列表中。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(5); test.add(6); test.add(723); return (test.print().join("") == "56723"); })(), "The add method adds items to the list.");'
-  - text: 每个节点都跟踪前一个节点。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(50); test.add(68); test.add(73); return (test.printReverse().join("") == "736850"); })(), "Each node keeps track of the previous node.");'
-  - text: 可以从列表中删除第一个项目。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(25); return ( test.print().join("") == "3560" ) })(), "The first item can be removed from the list.");'
-  - text: 最后一项可以从列表中删除。
-    testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(60); return ( test.print().join("") == "2535" ) })(), "The last item can be removed from the list.");'
+  - text: The DoublyLinkedList data structure should exist.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})());
+  - text: The DoublyLinkedList should have a method called add.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})());
+  - text: The DoublyLinkedList should have a method called remove.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.remove == undefined) { return false; }; return (typeof test.remove == 'function')})());
+  - text: Removing an item from an empty list should return null.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.remove(100) == null); })());
+  - text: The add method should add items to the list.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(5); test.add(6); test.add(723); return (test.print().join('') == '56723'); })());
+  - text: Each node should keep track of the previous node.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(50); test.add(68); test.add(73); return (test.printReverse().join('') == '736850'); })());
+  - text: The first item should be removable from the list.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(25); return ( test.print().join('') == '3560' ) })());
+  - text: The last item should be removable from the list.
+    testString: assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(60); return ( test.print().join('') == '2535' ) })());
 
 ```
 
@@ -40,7 +45,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -55,7 +59,6 @@ var DoublyLinkedList = function() {
   // change code below this line
   // change code above this line
 };
-
 ```
 
 </div>
@@ -65,11 +68,39 @@ var DoublyLinkedList = function() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+DoublyLinkedList.prototype = {
+  print() {
+    if (this.head == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.head;
+      while (node.next != null) {
+        result.push(node.data);
+        node = node.next;
+      };
+      result.push(node.data);
+      return result;
+    };
+  },
+  printReverse() {
+    if (this.tail == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.tail;
+      while (node.prev != null) {
+        result.push(node.data);
+        node = node.prev;
+      };
+      result.push(node.data);
+      return result;
+    };
+  } 
+};
 ```
 
 </div>
-
 </section>
 
 ## Solution
@@ -78,4 +109,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
+
 </section>

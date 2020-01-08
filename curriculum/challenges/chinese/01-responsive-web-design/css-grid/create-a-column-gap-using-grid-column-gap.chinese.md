@@ -2,23 +2,33 @@
 id: 5a9036ee38fddaf9a66b5d35
 title: Create a Column Gap Using grid-column-gap
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用grid-column-gap创建列间隙
+videoUrl: 'https://scrimba.com/p/pByETK/cVZ8vfD'
+forumTopicId: 301124
 ---
 
 ## Description
-<section id="description">到目前为止，在你创建的网格中，列都相互紧密相连。有时您希望列之间存在间隙。要在列之间添加间隙，请使用<code>grid-column-gap</code>属性，如下所示： <blockquote> grid-column-gap：10px; </blockquote>这会在我们所有列之间创建10px的空白空间。 </section>
+<section id='description'>
+So far in the grids you have created, the columns have all been tight up against each other. Sometimes you want a gap in between the columns. To add a gap between the columns, use the <code>grid-column-gap</code> property like this:
+
+```css
+grid-column-gap: 10px;
+```
+
+This creates 10px of empty space between all of our columns.
+</section>
 
 ## Instructions
-<section id="instructions">为网格中的列提供<code>20px</code>间隙。 </section>
+<section id='instructions'>
+Give the columns in the grid a <code>20px</code> gap.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code>类应该具有值为<code>20px</code>的<code>grid-column-gap</code>属性。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.");'
+  - text: <code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-column-gap\s*?:\s*?20px\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -59,7 +69,6 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
-
 ```
 
 </div>
@@ -71,7 +80,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".container {grid-column-gap: 20px;}"
 ```
+
 </section>

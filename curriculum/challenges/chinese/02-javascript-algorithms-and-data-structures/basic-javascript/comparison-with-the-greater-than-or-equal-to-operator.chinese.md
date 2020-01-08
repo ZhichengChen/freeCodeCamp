@@ -2,37 +2,51 @@
 id: 56533eb9ac21ba0edf2244d5
 title: Comparison with the Greater Than Or Equal To Operator
 challengeType: 1
-videoUrl: ''
-localeTitle: 与大于或等于运算符的比较
+videoUrl: 'https://scrimba.com/c/c6KBqtV'
+forumTopicId: 16785
 ---
 
 ## Description
-<section id="description"> <code>greater than or equal to</code>运算符（ <code>&gt;=</code> ）比较两个数字的值。如果左边的数字大于或等于右边的数字，则返回<code>true</code> 。否则，它返回<code>false</code> 。与等于运算符一样， <code>greater than or equal to</code>运算符将在比较时转换数据类型。 <strong>例子</strong> <blockquote> 6&gt; = 6 //是的<br> 7&gt; =&#39;3&#39;//是的<br> 2&gt; = 3 //假<br> &#39;7&#39;&gt; = 9 //假</blockquote></section>
+<section id='description'>
+The greater than or equal to operator (<code>&gt;=</code>) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>.
+Like the equality operator, <code>greater than or equal to</code> operator will convert data types while comparing.
+<strong>Examples</strong>
+
+```js
+6   >=  6   // true
+7   >= '3'  // true
+2   >=  3   // false
+'7' >=  9   // false
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将<code>greater than or equal to</code>运算符添加到指示的行，以便返回语句有意义。 </section>
+<section id='instructions'>
+Add the greater than or equal to operator to the indicated lines so that the return statements make sense.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>testGreaterOrEqual(0)</code>应返回“小于10”
-    testString: 'assert(testGreaterOrEqual(0) === "Less than 10", "<code>testGreaterOrEqual(0)</code> should return "Less than 10"");'
-  - text: <code>testGreaterOrEqual(9)</code>应返回“小于10”
-    testString: 'assert(testGreaterOrEqual(9) === "Less than 10", "<code>testGreaterOrEqual(9)</code> should return "Less than 10"");'
-  - text: <code>testGreaterOrEqual(10)</code>应返回“10或Over”
-    testString: 'assert(testGreaterOrEqual(10) === "10 or Over", "<code>testGreaterOrEqual(10)</code> should return "10 or Over"");'
-  - text: <code>testGreaterOrEqual(11)</code>应返回“10或Over”
-    testString: 'assert(testGreaterOrEqual(11) === "10 or Over", "<code>testGreaterOrEqual(11)</code> should return "10 or Over"");'
-  - text: <code>testGreaterOrEqual(19)</code>应返回“10或Over”
-    testString: 'assert(testGreaterOrEqual(19) === "10 or Over", "<code>testGreaterOrEqual(19)</code> should return "10 or Over"");'
-  - text: <code>testGreaterOrEqual(100)</code>应该返回“20或Over”
-    testString: 'assert(testGreaterOrEqual(100) === "20 or Over", "<code>testGreaterOrEqual(100)</code> should return "20 or Over"");'
-  - text: <code>testGreaterOrEqual(21)</code>应返回“20或Over”
-    testString: 'assert(testGreaterOrEqual(21) === "20 or Over", "<code>testGreaterOrEqual(21)</code> should return "20 or Over"");'
-  - text: 您应该使用<code>&gt;=</code>运算符至少两次
-    testString: 'assert(code.match(/val\s*>=\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&gt;=</code> operator at least twice");'
+  - text: <code>testGreaterOrEqual(0)</code> should return "Less than 10"
+    testString: assert(testGreaterOrEqual(0) === "Less than 10");
+  - text: <code>testGreaterOrEqual(9)</code> should return "Less than 10"
+    testString: assert(testGreaterOrEqual(9) === "Less than 10");
+  - text: <code>testGreaterOrEqual(10)</code> should return "10 or Over"
+    testString: assert(testGreaterOrEqual(10) === "10 or Over");
+  - text: <code>testGreaterOrEqual(11)</code> should return "10 or Over"
+    testString: assert(testGreaterOrEqual(11) === "10 or Over");
+  - text: <code>testGreaterOrEqual(19)</code> should return "10 or Over"
+    testString: assert(testGreaterOrEqual(19) === "10 or Over");
+  - text: <code>testGreaterOrEqual(100)</code> should return "20 or Over"
+    testString: assert(testGreaterOrEqual(100) === "20 or Over");
+  - text: <code>testGreaterOrEqual(21)</code> should return "20 or Over"
+    testString: assert(testGreaterOrEqual(21) === "20 or Over");
+  - text: You should use the <code>&gt;=</code> operator at least twice
+    testString: assert(code.match(/val\s*>=\s*('|")*\d+('|")*/g).length > 1);
 
 ```
 
@@ -58,7 +72,6 @@ function testGreaterOrEqual(val) {
 
 // Change this value to test
 testGreaterOrEqual(10);
-
 ```
 
 </div>
@@ -70,7 +83,19 @@ testGreaterOrEqual(10);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function testGreaterOrEqual(val) {
+  if (val >= 20) {  // Change this line
+    return "20 or Over";
+  }
+
+  if (val >= 10) {  // Change this line
+    return "10 or Over";
+  }
+
+  return "Less than 10";
+}
 ```
+
 </section>

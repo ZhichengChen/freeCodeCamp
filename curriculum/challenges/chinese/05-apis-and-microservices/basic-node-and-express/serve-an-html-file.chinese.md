@@ -1,17 +1,25 @@
 ---
 id: 587d7fb0367417b2b2512bef
 title: Serve an HTML File
-localeTitle: 提供HTML文件
 challengeType: 2
+forumTopicId: 301516
 ---
 
 ## Description
-<section id='description'> <code>0</code>我们可以使用<code>res.sendFile(path)</code>方法响应文件。 <code>0</code>您可以将它放在<code>app.get('/', ...)</code>路由处理程序中。在幕后，此方法将根据其类型设置适当的标头，以指示您的浏览器如何处理您要发送的文件。然后它将读取并发送文件。此方法需要绝对文件路径。我们建议您使用Node全局变量<code>__dirname</code>来计算路径。 <code>0</code>例如<code>absolutePath = __dirname + relativePath/file.ext</code> 。 <code>0</code>要发送的文件是<code>/views/index.html</code> 。尝试“显示”你的应用程序，你应该看到一个很大的HTML标题（以及我们稍后将使用的表单......），没有应用任何样式。 <code>0</code>注意：您可以编辑上一个挑战的解决方案，也可以创建一个新挑战。如果您创建新解决方案，请记住Express会从上到下评估路由。它执行第一个匹配的处理程序。您必须注释掉前面的解决方案，否则服务器将继续使用字符串进行响应。 
+<section id='description'>
+You can respond to requests with a file using the <code>res.sendFile(path)</code> method. You can put it inside the <code>app.get('/', ...)</code> route handler. Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file. This method needs an absolute file path. We recommend you to use the Node global variable <code>__dirname</code> to calculate the path like this:
+
+```js
+absolutePath = __dirname + relativePath/file.ext
+```
+
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
+Send the <code>/views/index.html</code> file as a response to GET requests to the <code>/</code> path. If you view your live app, you should see a big HTML heading (and a form that we will use later…), with no style applied.
 
+<strong>Note:</strong> You can edit the solution of the previous challenge or create a new one. If you create a new solution, keep in mind that Express evaluates routes from top to bottom, and executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string.
 </section>
 
 ## Tests
@@ -19,7 +27,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 您的应用应该提供文件views / index.html
+  - text: Your app should serve the file views/index.html
     testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.match(data, /<h1>.*<\/h1>/, ''Your app does not serve the expected HTML''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -35,6 +43,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

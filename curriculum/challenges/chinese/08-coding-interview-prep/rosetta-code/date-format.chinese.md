@@ -2,15 +2,22 @@
 title: Date format
 id: 59669d08d75b60482359409f
 challengeType: 5
-videoUrl: ''
-localeTitle: 日期格式
+forumTopicId: 302243
 ---
 
 ## Description
-<section id="description">任务： <p>返回包含以下格式的当前日期的数组： </p><p> -  2007-11-23和</p><p> -  2007年11月23日星期日</p><p>示例输出： <code>[&#39;2007-11-23&#39;, &#39;Sunday, November 23, 2007&#39;]</code> </p></section>
+<section id='description'>
+Return an array with the current date in the formats:
+<ul>
+  <li>2007-11-23</li>
+  <li>Sunday, November 23, 2007</li>
+</ul>
+Example output: <code>['2007-11-23', 'Sunday, November 23, 2007']</code>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +25,14 @@ localeTitle: 日期格式
 
 ```yml
 tests:
-  - text: <code>getDateFormats</code>是一个函数。
-    testString: 'assert(typeof getDateFormats === "function", "<code>getDateFormats</code> is a function.");'
-  - text: 应该返回一个对象。
-    testString: 'assert(typeof getDateFormats() === "object", "Should return an object.");'
-  - text: 应该返回一个包含2个元素的数组。
-    testString: 'assert(getDateFormats().length === 2, "Should returned an array with 2 elements.");'
-  - text: 应以正​​确的格式返回正确的日期
-    testString: 'assert.deepEqual(getDateFormats(), dates, equalsMessage);'
+  - text: <code>getDateFormats</code> should be a function.
+    testString: assert(typeof getDateFormats === 'function');
+  - text: <code>getDateFormats</code> should return an object.
+    testString: assert(typeof getDateFormats() === 'object');
+  - text: <code>getDateFormats</code> should return an array with 2 elements.
+    testString: assert(getDateFormats().length === 2);
+  - text: <code>getDateFormats</code> should return the correct date in the right format
+    testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
 
 ```
 
@@ -37,11 +44,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function getDateFormats () {
+function getDateFormats() {
   // Good luck!
   return true;
 }
-
 ```
 
 </div>
@@ -51,7 +57,17 @@ function getDateFormats () {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const getDateSolution = () => {
+  const date = new Date();
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;
+  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return [fmt1, fmt2];
+};
+
+const dates = getDateSolution();
+const equalsMessage = `message: <code>getDataFormats()</code> should return <code>["${dates[0]}", "${dates[1]}"]</code>.`;
 ```
 
 </div>
@@ -61,7 +77,17 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function getDateFormats() {
+  const date = new Date();
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;
+  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+  return [fmt1, fmt2];
+}
+
 ```
+
 </section>

@@ -2,27 +2,47 @@
 id: 587d7fad367417b2b2512bdf
 title: Add Axes to a Visualization
 challengeType: 6
-videoUrl: ''
-localeTitle: 将轴添加到可视化
+forumTopicId: 301472
 ---
 
 ## Description
-<section id="description">改善散点图的另一种方法是添加x轴和y轴。 D3有两种方法<code>axisLeft()</code>和<code>axisBottom()</code>分别渲染y轴和x轴。 （轴是轴的复数形式）。以下是在先前的挑战中基于<code>xScale</code>创建x轴的示例： <code>const xAxis = d3.axisBottom(xScale);</code>下一步是在SVG画布上渲染轴。为此，您可以使用常规SVG组件<code>g</code>元素。 <code>g</code>代表组。与<code>rect</code> ， <code>circle</code>和<code>text</code> ，轴在渲染时只是一条直线。因为它是一个简单的形状，使用<code>g</code>作品。最后一步是应用<code>transform</code>属性将轴定位在SVG画布上的正确位置。否则，该线将沿着SVG画布的边框渲染，并且不可见。 SVG支持不同类型的<code>transforms</code> ，但定位轴需要<code>translate</code> 。当它应用于<code>g</code>元素时，它会按给定的数量上下移动整个组。这是一个例子： <blockquote> const xAxis = d3.axisBottom（xScale）; <br><br> svg.append（ “G”） <br> .attr（“transform”，“translate（0，”+（h  -  padding）+“）”） <br> .CALL（x-轴）; </blockquote>上面的代码将x轴放在SVG画布的底部。然后它作为参数传递给<code>call()</code>方法。除了<code>translate</code>参数的形式为（x，0）之外，y轴的工作方式是相同的。因为<code>translate</code>是上面<code>attr()</code>方法中的字符串，所以可以使用连接来包含其参数的变量值。 </section>
+<section id='description'>
+Another way to improve the scatter plot is to add an x-axis and a y-axis.
+D3 has two methods <code>axisLeft()</code> and <code>axisBottom()</code> to render the y and x axes, respectively. (Axes is the plural form of axis). Here's an example to create the x-axis based on the <code>xScale</code> in the previous challenges:
+<code>const xAxis = d3.axisBottom(xScale);</code>
+The next step is to render the axis on the SVG canvas. To do so, you can use a general SVG component, the <code>g</code> element. The <code>g</code> stands for group.
+Unlike <code>rect</code>, <code>circle</code>, and <code>text</code>, an axis is just a straight line when it's rendered. Because it is a simple shape, using <code>g</code> works.
+The last step is to apply a <code>transform</code> attribute to position the axis on the SVG canvas in the right place. Otherwise, the line would render along the border of SVG canvas and wouldn't be visible.
+SVG supports different types of <code>transforms</code>, but positioning an axis needs <code>translate</code>. When it's applied to the <code>g</code> element, it moves the whole group over and down by the given amounts. Here's an example:
+
+```js
+const xAxis = d3.axisBottom(xScale);
+
+svg.append("g")
+   .attr("transform", "translate(0, " + (h - padding) + ")")
+   .call(xAxis);
+```
+
+The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the <code>call()</code> method.
+The y-axis works is the same way, except the <code>translate</code> argument is in the form (x, 0). Because <code>translate</code> is a string in the <code>attr()</code> method above, you can use concatenation to include variable values for its arguments.
+</section>
 
 ## Instructions
-<section id="instructions">散点图现在具有x轴。使用<code>axisLeft()</code>方法在名为<code>yAxis</code>的变量中创建y轴。然后使用<code>g</code>元素渲染轴。确保使用<code>transform</code>属性将轴转换为右边的填充单元数量，然后降低0个单位。记得<code>call()</code>轴。 </section>
+<section id='instructions'>
+The scatter plot now has an x-axis. Create a y-axis in a variable named <code>yAxis</code> using the <code>axisLeft()</code> method. Then render the axis using a <code>g</code> element. Make sure to use a <code>transform</code> attribute to translate the axis by the amount of padding units right, and 0 units down. Remember to <code>call()</code> the axis.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>axisLeft()</code>方法， <code>yScale</code>作为参数传递。
-    testString: 'assert(code.match(/\.axisLeft\(yScale\)/g), "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.");'
-  - text: 'y轴<code>g</code>元素应具有<code>transform</code>属性以将轴平移（60,0）。'
-    testString: 'assert($("g").eq(1).attr("transform").match(/translate\(60\s*?,\s*?0\)/g), "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).");'
-  - text: 您的代码应该调用<code>yAxis</code> 。
-    testString: 'assert(code.match(/\.call\(yAxis\)/g), "Your code should call the <code>yAxis</code>.");'
+  - text: Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.
+    testString: assert(code.match(/\.axisLeft\(yScale\)/g));
+  - text: The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).
+    testString: assert($('g').eq(10).attr('transform').match(/translate\(60\s*?,\s*?0\)/g));
+  - text: Your code should call the <code>yAxis</code>.
+    testString: assert(code.match(/\.call\(\s*yAxis\s*\)/g));
 
 ```
 
@@ -99,7 +119,6 @@ tests:
 
   </script>
 </body>
-
 ```
 
 </div>
@@ -114,4 +133,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

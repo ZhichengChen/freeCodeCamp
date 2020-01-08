@@ -2,23 +2,36 @@
 id: 587d8254367417b2b2512c71
 title: Remove items from a set in ES6
 challengeType: 1
-videoUrl: ''
-localeTitle: 从ES6中的集中删除项目
+forumTopicId: 301713
 ---
 
 ## Description
-<section id="description">让我们使用<code>delete</code>方法练习从ES6集中<code>delete</code> 。首先，创建一个ES6 Set <code>var set = new Set([1,2,3]);</code>现在使用<code>delete</code>方法从Set中删除一个项目。 <blockquote> set.delete（1）; <br> console.log（[... set]）//应该返回[2,3] <blockquote></blockquote></blockquote></section>
+<section id='description'>
+Let's practice removimg items from an ES6 Set using the <code>delete</code> method.
+First, create an ES6 Set
+<code>var set = new Set([1,2,3]);</code>
+Now remove an item from your Set with the <code>delete</code> method.
+
+```js
+set.delete(1);
+console.log([...set]) // should return [ 2, 3 ]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">现在，创建一个整数为1,2,3,4和5的集合。删除值2和5，然后返回集合。 </section>
+<section id='instructions'>
+Now, create a set with the integers 1, 2, 3, 4, & 5.
+ Remove the values 2 and 5, and then return the set.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '您的集应包含值1,3和4'
-    testString: 'assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, "Your Set should contain the values 1, 3, & 4");'
+  - text: Your Set should contain the values 1, 3, & 4
+    testString: assert((function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3;})());
 
 ```
 
@@ -26,7 +39,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -37,19 +49,20 @@ function checkSet(){
    //Return the set
    return set;
 }
-
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function checkSet(){
+var set = new Set([1,2,3,4,5]);
+set.delete(2);
+set.delete(5);
+return set;}
 ```
+
 </section>

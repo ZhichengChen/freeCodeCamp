@@ -2,39 +2,45 @@
 id: 587d7faa367417b2b2512bd2
 title: Add Labels to D3 Elements
 challengeType: 6
-videoUrl: ''
-localeTitle: 将标签添加到D3元素
+forumTopicId: 301476
 ---
 
 ## Description
-<section id="description"> D3允许您使用SVG <code>text</code>元素标记图形元素，例如条形图。与<code>rect</code>元素一样， <code>text</code>元素需要具有<code>x</code>和<code>y</code>属性，以将其放在SVG画布上。它还需要访问数据以显示这些值。 D3让您可以高度控制标杆的标注方式。 </section>
+<section id='description'>
+D3 lets you label a graph element, such as a bar, using the SVG <code>text</code> element.
+Like the <code>rect</code> element, a <code>text</code> element needs to have <code>x</code> and <code>y</code> attributes, to place it on the SVG canvas. It also needs to access the data to display those values.
+D3 gives you a high level of control over how you label your bars.
+</section>
 
 ## Instructions
-<section id="instructions">编辑器中的代码已将数据绑定到每个新<code>text</code>元素。首先，将<code>text</code>节点附加到<code>svg</code> 。接下来，添加<code>x</code>和<code>y</code>坐标的属性。应该以与<code>rect</code>相同的方式计算它们，除了<code>text</code>的<code>y</code>值应该使标签比条形高3个单位。最后，使用D3 <code>text()</code>方法将标签设置为等于数据点值。 <strong>注意</strong> <br>对于标签比坐吧较高，决定是否<code>y</code>为值<code>text</code>应比少3个或大或3 <code>y</code>了吧价值。 </section>
+<section id='instructions'>
+The code in the editor already binds the data to each new <code>text</code> element. First, append <code>text</code> nodes to the <code>svg</code>. Next, add attributes for the <code>x</code> and <code>y</code> coordinates. They should be calculated the same way as the <code>rect</code> ones, except the <code>y</code> value for the <code>text</code> should make the label sit 3 units higher than the bar. Finally, use the D3 <code>text()</code> method to set the label equal to the data point value.
+<strong>Note</strong><br>For the label to sit higher than the bar, decide if the <code>y</code> value for the <code>text</code> should be 3 greater or 3 less than the <code>y</code> value for the bar.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 第一个<code>text</code>元素的标签应为12， <code>y</code>值应为61。
-    testString: 'assert($("text").eq(0).text() == "12" && $("text").eq(0).attr("y") == "61", "The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.");'
-  - text: 第二个<code>text</code>元素的标签应为31， <code>y</code>值应为4。
-    testString: 'assert($("text").eq(1).text() == "31" && $("text").eq(1).attr("y") == "4", "The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.");'
-  - text: 第三个<code>text</code>元素的标签应为22， <code>y</code>值应为31。
-    testString: 'assert($("text").eq(2).text() == "22" && $("text").eq(2).attr("y") == "31", "The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.");'
-  - text: 第四个<code>text</code>元素的标签应为17， <code>y</code>值应为46。
-    testString: 'assert($("text").eq(3).text() == "17" && $("text").eq(3).attr("y") == "46", "The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.");'
-  - text: 第五个<code>text</code>元素的标签应为25， <code>y</code>值应为22。
-    testString: 'assert($("text").eq(4).text() == "25" && $("text").eq(4).attr("y") == "22", "The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.");'
-  - text: 第六个<code>text</code>元素的标签应为18， <code>y</code>值应为43。
-    testString: 'assert($("text").eq(5).text() == "18" && $("text").eq(5).attr("y") == "43", "The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.");'
-  - text: 第七个<code>text</code>元素的标签应为29， <code>y</code>值应为10。
-    testString: 'assert($("text").eq(6).text() == "29" && $("text").eq(6).attr("y") == "10", "The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.");'
-  - text: 第八个<code>text</code>元素的标签应为14， <code>y</code>值应为55。
-    testString: 'assert($("text").eq(7).text() == "14" && $("text").eq(7).attr("y") == "55", "The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.");'
-  - text: 第九个<code>text</code>元素的标签应为9， <code>y</code>值应为70。
-    testString: 'assert($("text").eq(8).text() == "9" && $("text").eq(8).attr("y") == "70", "The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.");'
+  - text: The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.
+    testString: assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61');
+  - text: The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.
+    testString: assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4');
+  - text: The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.
+    testString: assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31');
+  - text: The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.
+    testString: assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46');
+  - text: The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.
+    testString: assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22');
+  - text: The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.
+    testString: assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43');
+  - text: The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.
+    testString: assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10');
+  - text: The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.
+    testString: assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55');
+  - text: The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.
+    testString: assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70');
 
 ```
 
@@ -79,7 +85,6 @@ tests:
        // Add your code above this line
   </script>
 <body>
-
 ```
 
 </div>
@@ -94,4 +99,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

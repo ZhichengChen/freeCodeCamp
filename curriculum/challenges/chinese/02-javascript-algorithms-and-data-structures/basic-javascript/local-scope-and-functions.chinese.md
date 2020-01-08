@@ -2,25 +2,43 @@
 id: 56533eb9ac21ba0edf2244bf
 title: Local Scope and Functions
 challengeType: 1
-videoUrl: ''
-localeTitle: 本地范围和功能
+videoUrl: 'https://scrimba.com/c/cd62NhM'
+forumTopicId: 18227
 ---
 
 ## Description
-<section id="description">在函数内声明的变量，以及函数参数都具有<dfn>局部</dfn>范围。这意味着，它们仅在该功能中可见。这是一个函数<code>myTest</code>带有一个名为<code>loc</code>的局部变量。 <blockquote> function myTest（）{ <br> var loc =“foo”; <br>的console.log（LOC）; <br> } <br> MYTEST（）; //记录“foo” <br>的console.log（LOC）; // loc未定义</blockquote> <code>loc</code>未在函数外定义。 </section>
+<section id='description'>
+Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.
+Here is a function <code>myTest</code> with a local variable called <code>loc</code>.
+
+```js
+function myTest() {
+  var loc = "foo";
+  console.log(loc);
+}
+myTest(); // logs "foo"
+console.log(loc); // loc is not defined
+```
+
+<code>loc</code> is not defined outside of the function.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>myLocalScope</code>声明一个局部变量<code>myVar</code> 。运行测试，然后按照编辑器中注释的说明进行操作。 <strong>暗示</strong> <br>如果您遇到问题，刷新页面可能会有所帮助。 </section>
+<section id='instructions'>
+Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.
+<strong>Hint</strong><br>Refreshing the page may help if you get stuck.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 没有全局<code>myVar</code>变量
-    testString: 'assert(typeof myVar === "undefined", "No global <code>myVar</code> variable");'
-  - text: 添加本地<code>myVar</code>变量
-    testString: 'assert(/var\s+myVar/.test(code), "Add a local <code>myVar</code> variable");'
+  - text: The code should not contain a global <code>myVar</code> variable.
+    testString: assert(typeof myVar === 'undefined');
+  - text: You should add a local <code>myVar</code> variable.
+    testString: assert(/function\s+myLocalScope\s*\(\s*\)\s*\{\s[\s\S]+\s*var\s*myVar\s*(\s*|=[\s\S]+)\s*;[\s\S]+}/.test(code));
+
 
 ```
 
@@ -80,7 +98,8 @@ function uncapture() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
+(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>
@@ -90,7 +109,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function myLocalScope() {
+  'use strict';
+
+  var myVar;
+  console.log(myVar);
+}
+myLocalScope();
 ```
+
 </section>

@@ -2,23 +2,35 @@
 id: 5900f52c1000cf542c51003d
 challengeType: 5
 title: 'Problem 446: Retractions B'
-videoUrl: ''
-localeTitle: 问题446：撤回B.
+forumTopicId: 302118
 ---
 
 ## Description
-<section id="description">对于每个整数n&gt; 1，函数族fn，a，b由fn，a，b（x）≡ax+ b mod n定义为a，b，x整数和0 <p>对于1≤n≤N，F（N）=ΣR（n4 + 4）。 F（1024）= 77532377300600。 </p><p>求F（107）（mod 1 000 000 007） </p></section>
+<section id='description'>
+For every integer n>1, the family of functions fn,a,b  is defined
+by fn,a,b(x)≡ax+b mod n for a,b,x integer and  0<a<n, 0≤b<n, 0≤x<n.
+We will call fn,a,b a retraction if fn,a,b(fn,a,b(x))≡fn,a,b(x) mod n for every 0≤x<n.
+Let R(n) be the number of retractions for n.
+
+
+F(N)=∑R(n4+4) for 1≤n≤N.
+F(1024)=77532377300600.
+
+Find F(107) (mod 1 000 000 007)
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler446(), 907803852, "<code>euler446()</code> should return 907803852.");'
+  - text: <code>euler446()</code> should return 907803852.
+    testString: assert.strictEqual(euler446(), 907803852);
 
 ```
 
@@ -36,7 +48,6 @@ function euler446() {
 }
 
 euler446();
-
 ```
 
 </div>
@@ -51,4 +62,5 @@ euler446();
 ```js
 // solution required
 ```
+
 </section>

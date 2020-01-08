@@ -2,15 +2,24 @@
 id: 5900f40a1000cf542c50ff1d
 challengeType: 5
 title: 'Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left'
-videoUrl: ''
-localeTitle: 问题158：探索在其邻居之后只有一个字符按字典顺序出现的字符串
+forumTopicId: 301789
 ---
 
 ## Description
-<section id="description">从字母表的26个字母中取三个不同的字母，可以形成长度为3的字符串。例如&#39;abc&#39;，&#39;hat&#39;和&#39;zyx&#39;。当我们研究这三个例子时，我们看到对于&#39;abc&#39;，两个字符在其左边的邻居之后以字典方式出现。对于“帽子”，只有一个字符在其左边的邻居之后按字典顺序排列。对于&#39;zyx&#39;，在左边的邻居之后，字典上有零个字符。总共有10400个长度为3的字符串，其中一个字符在其左边的邻居之后按字典顺序排列。我们现在考虑字母表中n≤26个不同字符的字符串。对于每个n，p（n）是长度为n的字符串的数量，正好一个字符在其左边的邻居之后按字典顺序排列。 p（n）的最大值是多少？ </section>
+<section id='description'>
+Taking three different letters from the 26 letters of the alphabet, character strings of length three can be formed.
+Examples are 'abc', 'hat' and 'zyx'.
+When we study these three examples we see that for 'abc' two characters come lexicographically after its neighbour to the left.
+For 'hat' there is exactly one character that comes lexicographically after its neighbour to the left. For 'zyx' there are zero characters that come lexicographically after its neighbour to the left.
+In all there are 10400 strings of length 3 for which exactly one character comes lexicographically after its neighbour to the left.
+We now consider strings of n ≤ 26 different characters from the alphabet.
+For every n, p(n) is the number of strings of length n for which exactly one character comes lexicographically after its neighbour to the left.
+What is the maximum value of p(n)?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题158：探索在其邻居之后只有一个字符按字典顺�
 
 ```yml
 tests:
-  - text: <code>euler158()</code>应该返回409511334375。
-    testString: 'assert.strictEqual(euler158(), 409511334375, "<code>euler158()</code> should return 409511334375.");'
+  - text: <code>euler158()</code> should return 409511334375.
+    testString: assert.strictEqual(euler158(), 409511334375);
 
 ```
 
@@ -37,7 +46,6 @@ function euler158() {
 }
 
 euler158();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler158();
 ```js
 // solution required
 ```
+
 </section>

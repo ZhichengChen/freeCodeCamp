@@ -2,15 +2,29 @@
 id: 5900f3ec1000cf542c50fefe
 challengeType: 5
 title: 'Problem 127: abc-hits'
-videoUrl: ''
-localeTitle: 问题127：abc-hits
+forumTopicId: 301754
 ---
 
 ## Description
-<section id="description"> n，rad（n）的基数是n的不同素因子的乘积。例如，504 = 23×32×7，因此rad（504）= 2×3×7 = 42.如果出现以下情况，我们将正整数（a，b，c）的三元组定义为abc-hit：GCD（ a，b）= GCD（a，c）= GCD（b，c）= 1 a &lt;ba + b = c rad（abc）&lt;c例如，（5,27,32）是abc-hit，因为：GCD（5,27）= GCD（5,32）= GCD（27,32）= 1 5 &lt;27 5 + 27 = 32 rad（4320）= 30 &lt;32事实证明abc-hits是非常罕见的c &lt;1000只有31次abc命中，Σc= 12523。查找Σc表示c &lt;120000。 </section>
+<section id='description'>
+The radical of n, rad(n), is the product of distinct prime factors of n. For example, 504 = 23 × 32 × 7, so rad(504) = 2 × 3 × 7 = 42.
+We shall define the triplet of positive integers (a, b, c) to be an abc-hit if:
+GCD(a, b) = GCD(a, c) = GCD(b, c) = 1
+a < b
+a + b = c
+rad(abc) < c
+For example, (5, 27, 32) is an abc-hit, because:
+GCD(5, 27) = GCD(5, 32) = GCD(27, 32) = 1
+5 < 27
+5 + 27 = 32
+rad(4320) = 30 < 32
+It turns out that abc-hits are quite rare and there are only thirty-one abc-hits for c < 1000, with ∑c = 12523.
+Find ∑c for c < 120000.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +32,8 @@ localeTitle: 问题127：abc-hits
 
 ```yml
 tests:
-  - text: <code>euler127()</code>应该返回18407904。
-    testString: 'assert.strictEqual(euler127(), 18407904, "<code>euler127()</code> should return 18407904.");'
+  - text: <code>euler127()</code> should return 18407904.
+    testString: assert.strictEqual(euler127(), 18407904);
 
 ```
 
@@ -37,7 +51,6 @@ function euler127() {
 }
 
 euler127();
-
 ```
 
 </div>
@@ -52,4 +65,5 @@ euler127();
 ```js
 // solution required
 ```
+
 </section>

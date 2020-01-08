@@ -2,25 +2,28 @@
 id: 587d7faa367417b2b2512bd3
 title: Style D3 Labels
 challengeType: 6
-videoUrl: ''
-localeTitle: 风格D3标签
+forumTopicId: 301492
 ---
 
 ## Description
-<section id="description"> D3方法可以为条形标签添加样式。 <code>fill</code>属性设置<code>text</code>节点的文本颜色。 <code>style()</code>方法为其他样式设置CSS规则，例如“font-family”或“font-size”。 </section>
+<section id='description'>
+D3 methods can add styles to the bar labels. The <code>fill</code> attribute sets the color of the text for a <code>text</code> node. The <code>style()</code> method sets CSS rules for other styles, such as "font-family" or "font-size".
+</section>
 
 ## Instructions
-<section id="instructions">将<code>text</code>元素的<code>font-size</code>设置为25px，将文本颜色设置为红色。 </section>
+<section id='instructions'>
+Set the <code>font-size</code> of the <code>text</code> elements to 25px, and the color of the text to red.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 标签应该都具有红色的<code>fill</code>颜色。
-    testString: 'assert($("text").css("fill") == "rgb(255, 0, 0)", "The labels should all have a <code>fill</code> color of red.");'
-  - text: 标签应该都具有25像素的<code>font-size</code> 。
-    testString: 'assert($("text").css("font-size") == "25px", "The labels should all have a <code>font-size</code> of 25 pixels.");'
+  - text: The labels should all have a <code>fill</code> color of red.
+    testString: assert($('text').css('fill') == 'rgb(255, 0, 0)');
+  - text: The labels should all have a <code>font-size</code> of 25 pixels.
+    testString: assert($('text').css('font-size') == '25px');
 
 ```
 
@@ -68,7 +71,6 @@ tests:
        // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -83,4 +85,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

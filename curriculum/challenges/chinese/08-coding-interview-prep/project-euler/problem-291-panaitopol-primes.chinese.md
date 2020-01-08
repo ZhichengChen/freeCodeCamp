@@ -2,23 +2,29 @@
 id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 title: 'Problem 291: Panaitopol Primes'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 301943
 ---
 
 ## Description
-undefined
+<section id='description'>
+A prime number p is called a Panaitopol prime if  for some positive integersx and y.
+
+
+Find how many Panaitopol primes are less than 5×1015.
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler291(), 4037526, "<code>euler291()</code> should return 4037526.");'
+  - text: <code>euler291()</code> should return 4037526.
+    testString: assert.strictEqual(euler291(), 4037526);
 
 ```
 
@@ -36,7 +42,6 @@ function euler291() {
 }
 
 euler291();
-
 ```
 
 </div>
@@ -51,4 +56,5 @@ euler291();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,29 +2,52 @@
 id: 587d7fa7367417b2b2512bc4
 title: Work with Data in D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 在D3中使用数据
+forumTopicId: 301497
 ---
 
 ## Description
-<section id="description"> D3库专注于数据驱动的方法。当您拥有一组数据时，可以应用D3方法在页面上显示它。数据有多种格式，但这一挑战使用了一组简单的数字。第一步是让D3知道数据。 <code>data()</code>方法用于选择DOM元素以将数据附加到这些元素。数据集作为参数传递给方法。常见的工作流模式是在文档中为集合中的每个数据创建一个新元素。 D3为此目的使用了<code>enter()</code>方法。当<code>enter()</code>与<code>data()</code>方法结合使用时，它会查看页面中的选定元素，并将它们与集合中的数据项数量进行比较。如果元素少于数据项，则会创建缺少的元素。下面是一个示例，它选择一个<code>ul</code>元素并根据数组中的条目数创建一个新的列表项： <blockquote> &lt;BODY&gt; <br> &lt;UL&gt; &lt;/ UL&gt; <br> &lt;SCRIPT&gt; <br> const dataset = [“a”，“b”，“c”]; <br> d3.select（ “UL”）。全选（ “礼”） <br> 。数据（数据集） <br> 。输入（） <br> .append（ “里”） <br> .text（“新项目”）; <br> &lt;/ SCRIPT&gt; <br> &lt;/ BODY&gt; </blockquote>选择尚不存在的元素似乎令人困惑。此代码告诉D3首先选择页面上的<code>ul</code> 。接下来，选择所有列表项，返回空选择。然后<code>data()</code>方法检查数据集并运行以下代码三次，对于数组中的每个项目运行一次。 <code>enter()</code>方法看到页面上没有<code>li</code>元素，但它需要3（数据<code>dataset</code>每个数据对应一个）。新的<code>li</code>元素被附加到<code>ul</code>并具有文本“New item”。 </section>
+<section id='description'>
+The D3 library focuses on a data-driven approach. When you have a set of data, you can apply D3 methods to display it on the page. Data comes in many formats, but this challenge uses a simple array of numbers.
+The first step is to make D3 aware of the data. The <code>data()</code> method is used on a selection of DOM elements to attach the data to those elements. The data set is passed as an argument to the method.
+A common workflow pattern is to create a new element in the document for each piece of data in the set. D3 has the <code>enter()</code> method for this purpose.
+When <code>enter()</code> is combined with the <code>data()</code> method, it looks at the selected elements from the page and compares them to the number of data items in the set. If there are fewer elements than data items, it creates the missing elements.
+Here is an example that selects a <code>ul</code> element and creates a new list item based on the number of entries in the array:
+
+```html
+<body>
+  <ul></ul>
+  <script>
+    const dataset = ["a", "b", "c"];
+    d3.select("ul").selectAll("li")
+      .data(dataset)
+      .enter()
+      .append("li")
+      .text("New item");
+  </script>
+</body>
+```
+
+It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the <code>ul</code> on the page. Next, select all list items, which returns an empty selection. Then the <code>data()</code> method reviews the dataset and runs the following code three times, once for each item in the array. The <code>enter()</code> method sees there are no <code>li</code> elements on the page, but it needs 3 (one for each piece of data in <code>dataset</code>). New <code>li</code> elements are appended to the <code>ul</code> and have the text "New item".
+</section>
 
 ## Instructions
-<section id="instructions">选择<code>body</code>节点，然后选择所有<code>h2</code>元素。让D3为<code>dataset</code>数组中的每个项创建并附加<code>h2</code>标记。 <code>h2</code>的文字应该说“新标题”。您的代码应使用<code>data()</code>和<code>enter()</code>方法。 </section>
+<section id='instructions'>
+Select the <code>body</code> node, then select all <code>h2</code> elements. Have D3 create and append an <code>h2</code> tag for each item in the <code>dataset</code> array. The text in the <code>h2</code> should say "New Title". Your code should use the <code>data()</code> and <code>enter()</code> methods.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的文档应该有9个<code>h2</code>元素。
-    testString: 'assert($("h2").length == 9, "Your document should have 9 <code>h2</code> elements.");'
-  - text: <code>h2</code>元素中的文本应该是“New Title”。大写和间距应完全匹配。
-    testString: 'assert($("h2").text().match(/New Title/g).length == 9, "The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.");'
-  - text: 您的代码应该使用<code>data()</code>方法。
-    testString: 'assert(code.match(/\.data/g), "Your code should use the <code>data()</code> method.");'
-  - text: 您的代码应使用<code>enter()</code>方法。
-    testString: 'assert(code.match(/\.enter/g), "Your code should use the <code>enter()</code> method.");'
+  - text: Your document should have 9 <code>h2</code> elements.
+    testString: assert($('h2').length == 9);
+  - text: The text in the <code>h2</code> elements should say "New Title". The capitalization and spacing should match exactly.
+    testString: assert($('h2').text().match(/New Title/g).length == 9);
+  - text: Your code should use the <code>data()</code> method.
+    testString: assert(code.match(/\.data/g));
+  - text: Your code should use the <code>enter()</code> method.
+    testString: assert(code.match(/\.enter/g));
 
 ```
 
@@ -47,7 +70,6 @@ tests:
     // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -62,4 +84,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

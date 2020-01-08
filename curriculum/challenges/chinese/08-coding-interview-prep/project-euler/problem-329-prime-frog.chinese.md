@@ -2,15 +2,28 @@
 id: 5900f4b51000cf542c50ffc8
 challengeType: 5
 title: 'Problem 329: Prime Frog'
-videoUrl: ''
-localeTitle: 问题329：Prime Frog
+forumTopicId: 301986
 ---
 
 ## Description
-<section id="description">苏珊有一只青蛙。她的青蛙跳过500个正方形，编号为1到500.他只能以相同的概率跳到左边或右边的一个方格，并且他不能超出范围[1; 500]。（如果它落在任何一个结束时，它会在下一步移动时自动跳转到唯一可用的方格。） <p>当他在一个带有素数的正方形上时，他在跳到下一个正方形之前以概率1/3以概率2/3或“N”（不是PRIME）弯曲&#39;P&#39;（PRIME）。当他在一个上面有一个不是素数的数字的正方形时，他会在跳到下一个正方形之前以概率为1/3或&#39;N&#39;以概率2/3歪曲&#39;P&#39;。 </p><p>鉴于青蛙的起始位置是随机的，每个方格具有相同的概率，并且考虑到她听到他的前15个呱呱声，她听到PPPPNNPPPNPPNPN序列的概率是多少？ </p><p>以简化形式给出你的答案作为p / q的分数。 </p></section>
+<section id='description'>
+Susan has a prime frog.
+Her frog is jumping around over 500 squares numbered 1 to 500.
+He can only jump one square to the left or to the right, with equal probability, and he cannot jump outside the range [1;500].(if it lands at either end, it automatically jumps to the only available square on the next move.)
+
+
+When he is on a square with a prime number on it, he croaks 'P' (PRIME) with probability 2/3 or 'N' (NOT PRIME) with probability 1/3 just before jumping to the next square.
+When he is on a square with a number on it that is not a prime he croaks 'P' with probability 1/3 or 'N' with probability 2/3 just before jumping to the next square.
+
+
+Given that the frog's starting position is random with the same probability for every square, and given that she listens to his first 15 croaks, what is the probability that she hears the sequence PPPPNNPPPNPPNPN?
+
+Give your answer as a fraction p/q in reduced form.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +31,8 @@ localeTitle: 问题329：Prime Frog
 
 ```yml
 tests:
-  - text: <code>euler329()</code>应返回199740353/29386561536000。
-    testString: 'assert.strictEqual(euler329(), 199740353 / 29386561536000, "<code>euler329()</code> should return 199740353 / 29386561536000.");'
+  - text: <code>euler329()</code> should return 199740353 / 29386561536000.
+    testString: assert.strictEqual(euler329(), 199740353 / 29386561536000);
 
 ```
 
@@ -37,7 +50,6 @@ function euler329() {
 }
 
 euler329();
-
 ```
 
 </div>
@@ -52,4 +64,5 @@ euler329();
 ```js
 // solution required
 ```
+
 </section>

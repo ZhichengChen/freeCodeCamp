@@ -2,15 +2,38 @@
 id: 5900f4fc1000cf542c51000e
 challengeType: 5
 title: 'Problem 399: Squarefree Fibonacci Numbers'
-videoUrl: ''
-localeTitle: 问题399：无自由斐波纳契数
+forumTopicId: 302064
 ---
 
 ## Description
-<section id="description">前15个斐波纳契数是：1,1,2,3,5,8,13,21,34,55,89,144,233,377,610。可以看出8和144不是无方形的：8可以被4整除，144可以被4和9整除。所以前13个无方形的斐波纳契数是：1,1,2,3,5,13,​​21， 34,55,89,233,377和610。 <p>第200平方免费斐波那契数是：971183874599339129547649988289594072811608739584170445。该数字的最后16位数字是：1608739584170445，并且在科学记数法中，该数字可以写为9.7e53。 </p><p>找到第100 000个squarefree fibonacci数。给出你的答案，它的最后十六位数后跟一个逗号，后跟科学记数法的数字（四舍五入到小数点后的一位数）。对于第200平方免费数字，答案应该是：1608739584170445,9.7e53 </p><p>注意：对于这个问题，假设对于每个素数p，可被p整除的第一个斐波纳契数不能被p2整除（这是沃尔猜想的一部分）。这已被证实适用于≤3·1015的质数，但一般尚未得到证实。 </p><p>如果猜测是假的，那么这个问题的接受答案不能保证是第1万个无平方的斐波纳契数，而只是它代表了该数的下限。 </p></section>
+<section id='description'>
+The first 15 fibonacci numbers are:
+1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.
+It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9.
+So the first 13 squarefree fibonacci numbers are:
+1,1,2,3,5,13,21,34,55,89,233,377 and 610.
+
+
+The 200th squarefree fibonacci number is:
+971183874599339129547649988289594072811608739584170445.
+The last sixteen digits of this number are: 1608739584170445 and in scientific notation this number can be written as 9.7e53.
+
+
+Find the 100 000 000th squarefree fibonacci number.
+Give as your answer its last sixteen digits followed by a comma followed by the number in scientific notation (rounded to one digit after the decimal point).
+For the 200th squarefree number the answer would have been: 1608739584170445,9.7e53
+
+
+
+Note:
+For this problem, assume that for every prime p, the first fibonacci number divisible by p is not divisible by p2 (this is part of Wall's conjecture). This has been verified for primes ≤ 3·1015, but has not been proven in general.
+
+If it happens that the conjecture is false, then the accepted answer to this problem isn't guaranteed to be the 100 000 000th squarefree fibonacci number, rather it represents only a lower bound for that number.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +41,8 @@ localeTitle: 问题399：无自由斐波纳契数
 
 ```yml
 tests:
-  - text: '<code>euler399()</code>应返回1508395636674243,6.5e27330467。'
-    testString: 'assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467, "<code>euler399()</code> should return 1508395636674243, 6.5e27330467.");'
+  - text: <code>euler399()</code> should return 1508395636674243, 6.5e27330467.
+    testString: assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467);
 
 ```
 
@@ -37,7 +60,6 @@ function euler399() {
 }
 
 euler399();
-
 ```
 
 </div>
@@ -52,4 +74,5 @@ euler399();
 ```js
 // solution required
 ```
+
 </section>

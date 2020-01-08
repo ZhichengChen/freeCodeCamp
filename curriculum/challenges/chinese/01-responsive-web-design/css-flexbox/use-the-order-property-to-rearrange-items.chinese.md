@@ -2,25 +2,29 @@
 id: 587d78ae367417b2b2512aff
 title: Use the order Property to Rearrange Items
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用order属性重新排列项目
+videoUrl: 'https://scrimba.com/p/pVaDAv/cMbvNAG'
+forumTopicId: 301116
 ---
 
 ## Description
-<section id="description"> <code>order</code>属性用于告诉CSS Flex项目在Flex容器中的显示顺序。默认情况下，项目将以与源HTML相同的顺序显示。该属性将数字作为值，可以使用负数。 </section>
+<section id='description'>
+The <code>order</code> property is used to tell CSS the order of how flex items appear in the flex container. By default, items will appear in the same order they come in the source HTML. The property takes numbers as values, and negative numbers can be used.
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>order</code>添加到<code>#box-1</code>和<code>#box-2</code> 。给<code>#box-1</code>一个值2，给<code>#box-2</code>一个值1。 </section>
+<section id='instructions'>
+Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#box-2</code>. Give <code>#box-1</code> a value of 2 and give <code>#box-2</code> a value of 1.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#box-1</code>元素的<code>order</code>属性应设置为值2。'
-    testString: 'assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");'
-  - text: '<code>#box-2</code>元素应该将<code>order</code>属性设置为值1。'
-    testString: 'assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");'
+  - text: The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.
+    testString: assert($('#box-1').css('order') == '2');
+  - text: The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.
+    testString: assert($('#box-2').css('order') == '1');
 
 ```
 
@@ -56,7 +60,6 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
-
 ```
 
 </div>
@@ -68,7 +71,31 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    order: 2;
+    height: 200px;
+    width: 200px;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    order: 1;
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

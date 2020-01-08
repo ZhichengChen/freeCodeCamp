@@ -2,29 +2,40 @@
 id: 5a9d727a424fe3d0e10cad12
 title: Use a custom CSS Variable
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用自定义CSS变量
+videoUrl: 'https://scrimba.com/c/cM989ck'
+forumTopicId: 301090
 ---
 
 ## Description
-<section id="description">创建变量后，可以通过引用您提供的名称将其值分配给其他CSS属性。 <blockquote>背景：var（ -  penguin-skin）; </blockquote>这会将您要定位的任何元素的背景更改为灰色，因为这是<code>--penguin-skin</code>变量的值。请注意，除非变量名称完全匹配，否则不会应用样式。 </section>
+<section id='description'>
+After you create your variable, you can assign its value to other CSS properties by referencing the name you gave it.
+
+```css
+background: var(--penguin-skin);
+```
+
+This will change the background of whatever element you are targeting to gray because that is the value of the <code>--penguin-skin</code> variable.
+Note that styles will not be applied unless the variable names are an exact match.
+</section>
 
 ## Instructions
-<section id="instructions">将<code>--penguin-skin</code>变量应用于<code>penguin-top</code> ， <code>penguin-bottom</code> ， <code>right-hand</code>和<code>left-hand</code>类的<code>background</code>属性。 </section>
+<section id='instructions'>
+Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code>, <code>penguin-bottom</code>, <code>right-hand</code> and <code>left-hand</code> classes.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 将<code>--penguin-skin</code>变量应用于<code>penguin-top</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.");'
-  - text: 将<code>--penguin-skin</code>变量应用于<code>penguin-bottom</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
-  - text: 将<code>--penguin-skin</code>变量应用于<code>right-hand</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.");'
-  - text: 将<code>--penguin-skin</code>变量应用于<code>left-hand</code>类的<code>background</code>属性。
-    testString: 'assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi), "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.");'
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>penguin-top</code> class.
+    testString: assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi));
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>penguin-bottom</code> class.
+    testString: assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.right-hand\s{/gi));
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>right-hand</code> class.
+    testString: assert(code.match(/.right-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}[\s\S]*.left-hand\s{/gi));
+  - text: The <code>--penguin-skin</code> variable should be applied to the <code>background</code> property of the <code>left-hand</code> class.
+    testString: assert(code.match(/.left-hand\s*?{[\s\S]*background\s*?:\s*?var\s*?\(\s*?--penguin-skin\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -246,7 +257,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -258,7 +268,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".penguin-top {background: var(--penguin-skin);} .penguin-bottom {background: var(--penguin-skin);} .right-hand {background: var(--penguin-skin);} .left-hand {background: var(--penguin-skin);}"
 ```
+
 </section>

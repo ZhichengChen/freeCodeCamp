@@ -2,29 +2,37 @@
 id: 56533eb9ac21ba0edf2244ad
 title: Decrement a Number with JavaScript
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用JavaScript减少数字
+videoUrl: 'https://scrimba.com/c/cM2KeS2'
+forumTopicId: 17558
 ---
 
 ## Description
-<section id="description">您可以使用<code>--</code>运算符轻松地将变量<dfn>减1</dfn>或减1。 <code>i--;</code>相当于<code>i = i - 1;</code> <strong>注意</strong> <br>整条线变成了<code>i--;</code> ，消除了对等号的需要。 </section>
+<section id='description'>
+You can easily <dfn>decrement</dfn> or decrease a variable by one with the <code>--</code> operator.
+<code>i--;</code>
+is the equivalent of
+<code>i = i - 1;</code>
+<strong>Note</strong><br>The entire line becomes <code>i--;</code>, eliminating the need for the equal sign.
+</section>
 
 ## Instructions
-<section id="instructions">更改代码以在<code>myVar</code>上使用<code>--</code>运算符。 </section>
+<section id='instructions'>
+Change the code to use the <code>--</code> operator on <code>myVar</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myVar</code>应该等于<code>10</code>
-    testString: 'assert(myVar === 10, "<code>myVar</code> should equal <code>10</code>");'
-  - text: <code>myVar = myVar - 1;</code>应该改变
-    testString: 'assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code), "<code>myVar = myVar - 1;</code> should be changed");'
-  - text: 在<code>myVar</code>上使用<code>--</code>运算符
-    testString: 'assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code), "Use the <code>--</code> operator on <code>myVar</code>");'
-  - text: 不要更改行上方的代码
-    testString: 'assert(/var myVar = 11;/.test(code), "Do not change code above the line");'
+  - text: <code>myVar</code> should equal <code>10</code>.
+    testString: assert(myVar === 10);
+  - text: <code>myVar = myVar - 1;</code> should be changed.
+    testString: assert(/var\s*myVar\s*=\s*11;\s*\/*.*\s*([-]{2}\s*myVar|myVar\s*[-]{2});/.test(code));
+  - text: You should use the <code>--</code> operator on <code>myVar</code>.
+    testString: assert(/[-]{2}\s*myVar|myVar\s*[-]{2}/.test(code));
+  - text: You should not change code above the specified comment.
+    testString: assert(/var myVar = 11;/.test(code));
 
 ```
 
@@ -50,7 +58,7 @@ myVar = myVar - 1;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'myVar = ' + z;})(myVar);
 ```
 
 </div>
@@ -60,7 +68,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myVar = 11;
+myVar--;
 ```
+
 </section>

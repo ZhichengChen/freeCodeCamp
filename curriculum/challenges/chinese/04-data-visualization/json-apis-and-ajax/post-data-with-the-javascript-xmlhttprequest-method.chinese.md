@@ -2,33 +2,56 @@
 id: 587d7faf367417b2b2512be9
 title: Post Data with the JavaScript XMLHttpRequest Method
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用JavaScript XMLHttpRequest方法发布数据
+forumTopicId: 301504
 ---
 
 ## Description
-<section id="description">在前面的示例中，您从外部资源接收数据。您也可以将数据发送到外部资源，只要该资源支持AJAX请求并且您知道URL。 JavaScript的<code>XMLHttpRequest</code>方法也用于将数据发布到服务器。这是一个例子： <blockquote> req = new XMLHttpRequest（）; <br> req.open（ “POST”，网址，真实）; <br> req.setRequestHeader（ &#39;内容 - 类型&#39;， &#39;文本/纯&#39;）; <br> req.onreadystatechange =函数（）{ <br> if（req.readyState == 4 &amp;&amp; req.status == 200）{ <br> document.getElementsByClassName（ &#39;信息&#39;）[0] = .innerHTML req.responseText; <br> } <br> }; <br> req.send（用户名）; </blockquote>你以前见过其中几种方法。这里<code>open</code>方法将请求初始化为对外部资源的给定URL的“POST”，并使用<code>true</code>布尔值使其异步。 <code>setRequestHeader</code>方法设置HTTP请求标头的值，该标头包含有关发件人和请求的信息。它必须在<code>open</code>方法之后调用，但在<code>send</code>方法之前调用。这两个参数是标题的名称和要设置为该标题正文的值。接下来， <code>onreadystatechange</code>事件侦听器处理请求状态的更改。 <code>readyState</code>为4表示操作已完成， <code>status</code>为200表示该操作成功。文档的HTML可以更新。最后， <code>send</code>方法使用<code>userName</code>值发送请求，该值由用户在<code>input</code>字段中给出。 </section>
+<section id='description'>
+In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.
+JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:
+
+```js
+const xhr = new XMLHttpRequest();
+xhr.open('POST', url, true);
+xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+xhr.onreadystatechange = function () {
+  if (xhr.readyState === 4 && xhr.status === 201){
+    const serverResponse = JSON.parse(xhr.response);
+    document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
+  }
+};
+const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
+xhr.send(body);
+```
+
+You've seen several of these methods before. Here the <code>open</code> method initializes the request as a "POST" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.
+The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.
+Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 201 means it was a successful request. The document's HTML can be updated.
+Finally, the <code>send</code> method sends the request with the <code>body</code> value, which the <code>userName</code> key was given by the user in the <code>input</code> field.
+</section>
 
 ## Instructions
-<section id="instructions">更新代码以创建并发送“POST”请求。然后在输入框中输入您的姓名，然后单击“发送消息”。您的AJAX功能将取代“来自服务器的回复将在这里”。与服务器的回复。在这种情况下，你的名字附加“爱猫”。 </section>
+<section id='instructions'>
+Update the code to create and send a "POST" request. Then enter your name in input box and click "Send Message". Your AJAX function will replace "Reply from Server will be here." with the reply of the server. In this case, it is your name appended with " loves cats".
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该创建一个新的<code>XMLHttpRequest</code> 。
-    testString: 'assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g), "Your code should create a new <code>XMLHttpRequest</code>.");'
-  - text: 您的代码应使用<code>open</code>方法初始化对服务器的“POST”请求。
-    testString: 'assert(code.match(/\.open\(\s*?("|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g), "Your code should use the <code>open</code> method to initialize a "POST" request to the server.");'
-  - text: 您的代码应使用<code>setRequestHeader</code>方法。
-    testString: 'assert(code.match(/\.setRequestHeader\(\s*?("|")Content-Type\1\s*?,\s*?("|")text\/plain\2\s*?\)/g), "Your code should use the <code>setRequestHeader</code> method.");'
-  - text: 您的代码应该将<code>onreadystatechange</code>事件处理程序设置为函数。
-    testString: 'assert(code.match(/\.onreadystatechange\s*?=/g), "Your code should have an <code>onreadystatechange</code> event handler set to a function.");'
-  - text: 您的代码应该获取带有类<code>message</code>的元素，并将其内部HTML更改为<code>responseText</code> 。
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.innerHTML\s*?=\s*?.+?\.responseText/g), "Your code should get the element with class <code>message</code> and change its inner HTML to the <code>responseText</code>.");'
-  - text: 您的代码应使用<code>send</code>方法。
-    testString: 'assert(code.match(/\.send\(\s*?userName\s*?\)/g), "Your code should use the <code>send</code> method.");'
+  - text: Your code should create a new <code>XMLHttpRequest</code>.
+    testString: assert(code.match(/new\s+?XMLHttpRequest\(\s*?\)/g));
+  - text: Your code should use the <code>open</code> method to initialize a "POST" request to the server.
+    testString: assert(code.match(/\.open\(\s*?('|")POST\1\s*?,\s*?url\s*?,\s*?true\s*?\)/g));
+  - text: Your code should use the <code>setRequestHeader</code> method.
+    testString: assert(code.match(/\.setRequestHeader\(\s*?('|")Content-Type\1\s*?,\s*?('|")application\/json;\s*charset=UTF-8\2\s*?\)/g));
+  - text: Your code should have an <code>onreadystatechange</code> event handler set to a function.
+    testString: assert(code.match(/\.onreadystatechange\s*?=/g));
+  - text: Your code should get the element with class <code>message</code> and change its <code>textContent</code> to "<code>userName</code> loves cats"
+    testString: assert(code.match(/document\.getElementsByClassName\(\s*?('|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?.+?\.userName\s*?\+\s*?.+?\.suffix/g));
+  - text: Your code should use the <code>send</code> method.
+    testString: assert(code.match(/\.send\(\s*?body\s*?\)/g));
 
 ```
 
@@ -41,10 +64,11 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('sendMessage').onclick=function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('sendMessage').onclick = function(){
 
-      var userName=document.getElementById('name').value;
+      const userName = document.getElementById('name').value;
+      const url = 'https://jsonplaceholder.typicode.com/posts';
       // Add your code below this line
 
 
@@ -52,6 +76,7 @@ tests:
     };
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -78,8 +103,9 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
+
 <h1>Cat Friends</h1>
-<p class="message">
+<p class="message box">
   Reply from Server will be here
 </p>
 <p>
@@ -90,7 +116,6 @@ tests:
     Send Message
   </button>
 </p>
-
 ```
 
 </div>
@@ -103,6 +128,68 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('sendMessage').onclick = function(){
+
+      const userName = document.getElementById('name').value;
+      const url = 'https://jsonplaceholder.typicode.com/posts';
+      // Add your code below this line
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', url, true);
+      xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 201){
+          const serverResponse = JSON.parse(xhr.response);
+          document.getElementsByClassName('message')[0].textContent = serverResponse.userName + serverResponse.suffix;
+       }
+     };
+     const body = JSON.stringify({ userName: userName, suffix: ' loves cats!' });
+     xhr.send(body);
+      // Add your code above this line
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Friends</h1>
+<p class="message">
+  Reply from Server will be here
+</p>
+<p>
+  <label for="name">Your name:
+    <input type="text" id="name"/>
+  </label>
+  <button id="sendMessage">
+    Send Message
+  </button>
+</p>
 ```
+
 </section>

@@ -2,27 +2,62 @@
 id: 587d7fae367417b2b2512be5
 title: Convert JSON Data to HTML
 challengeType: 6
-videoUrl: ''
-localeTitle: 将JSON数据转换为HTML
+forumTopicId: 16807
 ---
 
 ## Description
-<section id="description">现在您正在从JSON API获取数据，您可以在HTML中显示它。您可以使用<code>forEach</code>方法循环数据，因为cat照片对象保存在数组中。当您到达每个项目时，您可以修改HTML元素。首先，使用<code>var html = &quot;&quot;;</code>声明一个html变量<code>var html = &quot;&quot;;</code> 。然后，遍历JSON，将HTML添加到包含<code>strong</code>标记中的键名的变量，然后是值。循环结束后，渲染它。这是执行此操作的代码： <blockquote> json.forEach（function（val）{ <br> var keys = Object.keys（val）; <br> html + =“&lt;div class =&#39;cat&#39;&gt;”; <br> keys.forEach（function（key）{ <br> html + =“&lt;strong&gt;”+ key +“&lt;/ strong&gt;：”+ val [key] +“&lt;br&gt;”; <br> }）; <br> html + =“&lt;/ div&gt; &lt;br&gt;”; <br> }）; </blockquote></section>
+<section id='description'>
+Now that you're getting data from a JSON API, you can display it in the HTML.
+You can use a <code>forEach</code> method to loop through the data since the cat photo objects are held in an array. As you get to each item, you can modify the HTML elements.
+First, declare an html variable with <code>var html = "";</code>.
+Then, loop through the JSON, adding HTML to the variable that wraps the key names in <code>strong</code> tags, followed by the value. When the loop is finished, you render it.
+Here's the code that does this:
+
+```js
+let html = "";
+json.forEach(function(val) {
+  const keys = Object.keys(val);
+  html += "<div class = 'cat'>";
+  keys.forEach(function(key) {
+    html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+  });
+  html += "</div><br>";
+});
+```
+
+<strong>Note:</strong> For this challenge, you need to add new HTML elements to the page, so you cannot rely on `textContent`. Instead, you need to use `innerHTML`, which can make a site vulnerable to Cross-site scripting attacks.
+</section>
 
 ## Instructions
-<section id="instructions">添加<code>forEach</code>方法以循环JSON数据并创建HTML元素以显示它。这是一些JSON示例<blockquote> [ <br> { <br> “ID”：0， <br> “IMAGELINK”： “https://s3.amazonaws.com/freecodecamp/funny-cat.jpg” <br> “altText”：“头上戴着绿色头盔形状瓜的白猫。”， <br> “codeNames”：[“Juggernaut”，“华莱士夫人”，“毛茛” <br> ] <br> } <br> ] </blockquote></section>
+<section id='instructions'>
+Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.
+Here is some example JSON
+
+```json
+[
+  {
+    "id":0,
+      "imageLink":"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg",
+      "altText":"A white cat wearing a green helmet shaped melon on its head. ",
+      "codeNames":[ "Juggernaut", "Mrs. Wallace", "Buttercup"
+    ]
+  }
+]
+```
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该将数据存储在<code>html</code>变量中
-    testString: 'assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g), "Your code should store the data in the <code>html</code> variable");'
-  - text: 您的代码应该使用<code>forEach</code>方法来循环API中的JSON数据。
-    testString: 'assert(code.match(/json\.forEach/g), "Your code should use a <code>forEach</code> method to loop over the JSON data from the API.");'
-  - text: 您的代码应将密钥名称包装在<code>strong</code>标记中。
-    testString: 'assert(code.match(/<strong>.+<\/strong>/g), "Your code should wrap the key names in <code>strong</code> tags.");'
+  - text: Your code should store the data in the <code>html</code> variable
+    testString: assert(code.match(/html\s+?(\+=|=\shtml\s\+)/g));
+  - text: Your code should use a <code>forEach</code> method to loop over the JSON data from the API.
+    testString: assert(code.match(/json\.forEach/g));
+  - text: Your code should wrap the key names in <code>strong</code> tags.
+    testString: assert(code.match(/<strong>.+<\/strong>/g));
 
 ```
 
@@ -35,24 +70,24 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('getMessage').onclick=function(){
-      req=new XMLHttpRequest();
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
       req.open("GET",'/json/cats.json',true);
       req.send();
-      req.onload=function(){
-        json=JSON.parse(req.responseText);
-        var html = "";
+      req.onload = function(){
+        const json = JSON.parse(req.responseText);
+        let html = "";
         // Add your code below this line
 
 
-
         // Add your code above this line
-        document.getElementsByClassName('message')[0].innerHTML=html;
+        document.getElementsByClassName('message')[0].innerHTML = html;
       };
     };
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -79,6 +114,78 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message box">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
+```
+
+</div>
+
+</section>
+
+## Solution
+<section id='solution'>
+
+```html
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json',true);
+      req.send();
+      req.onload = function(){
+        const json = JSON.parse(req.responseText);
+        let html = "";
+        // Add your code below this line
+        json.forEach(function(val) {
+          var keys = Object.keys(val);
+          html += "<div class = 'cat'>";
+          keys.forEach(function(key) {
+          html += "<strong>" + key + "</strong>: " + val[key] + "<br>";
+        });
+        html += "</div><br>";
+        });
+        // Add your code above this line
+        document.getElementsByClassName('message')[0].innerHTML = html;
+      };
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
 <h1>Cat Photo Finder</h1>
 <p class="message">
   The message will go here
@@ -88,19 +195,6 @@ tests:
     Get Message
   </button>
 </p>
-
 ```
 
-</div>
-
-
-
-</section>
-
-## Solution
-<section id='solution'>
-
-```js
-// solution required
-```
 </section>

@@ -2,39 +2,47 @@
 id: 587d7fa7367417b2b2512bc5
 title: Work with Dynamic Data in D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 在D3中使用动态数据
+forumTopicId: 301498
 ---
 
 ## Description
-<section id="description">最后两个挑战涵盖了使用<code>data()</code>和<code>enter()</code>方法使用D3动态显示数据的基础知识。这些方法采用数据集，并与<code>append()</code>方法一起为数据集中的每个条目创建一个新的DOM元素。在上一个挑战中，您为<code>dataset</code>数组中的每个项创建了一个新的<code>h2</code>元素，但它们都包含相同的文本“New Title”。这是因为您没有使用绑定到每个<code>h2</code>元素的数据。 D3 <code>text()</code>方法可以将字符串或回调函数作为参数： <code>selection.text((d) =&gt; d)</code>在上面的示例中，参数<code>d</code>指的是数据集中绑定选择的单个条目至。使用当前示例作为上下文，第一个<code>h2</code>元素绑定到12，第二个<code>h2</code>元素绑定到31，第三个<code>h2</code>元素绑定到22，依此类推。 </section>
+<section id='description'>
+The last two challenges cover the basics of displaying data dynamically with D3 using the <code>data()</code> and <code>enter()</code> methods. These methods take a data set and, together with the <code>append()</code> method, create a new DOM element for each entry in the data set.
+In the previous challenge, you created a new <code>h2</code> element for each item in the <code>dataset</code> array, but they all contained the same text, "New Title". This is because you have not made use of the data that is bound to each of the <code>h2</code> elements.
+The D3 <code>text()</code> method can take a string or a callback function as an argument:
+<code>selection.text((d) => d)</code>
+In the example above, the parameter <code>d</code> refers to a single entry in the dataset that a selection is bound to.
+Using the current example as context, the first <code>h2</code> element is bound to 12, the second <code>h2</code> element is bound to 31, the third <code>h2</code> element is bound to 22, and so on.
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>text()</code>方法，以便每个<code>h2</code>元素显示<code>dataset</code>数组中具有单个空格和“USD”的相应值。例如，第一个标题应为“12美元”。 </section>
+<section id='instructions'>
+Change the <code>text()</code> method so that each <code>h2</code> element displays the corresponding value from the <code>dataset</code> array with a single space and "USD". For example, the first heading should be "12 USD".
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 第一个<code>h2</code>应该有“12美元”的文字。
-    testString: 'assert($("h2").eq(0).text() == "12 USD", "The first <code>h2</code> should have the text "12 USD".");'
-  - text: 第二个<code>h2</code>应该有“31美元”的文字。
-    testString: 'assert($("h2").eq(1).text() == "31 USD", "The second <code>h2</code> should have the text "31 USD".");'
-  - text: 第三个<code>h2</code>应该有“22美元”的文字。
-    testString: 'assert($("h2").eq(2).text() == "22 USD", "The third <code>h2</code> should have the text "22 USD".");'
-  - text: 第四个<code>h2</code>应该有“17美元”的文字。
-    testString: 'assert($("h2").eq(3).text() == "17 USD", "The fourth <code>h2</code> should have the text "17 USD".");'
-  - text: 第五个<code>h2</code>应该有“25美元”的文字。
-    testString: 'assert($("h2").eq(4).text() == "25 USD", "The fifth <code>h2</code> should have the text "25 USD".");'
-  - text: 第六个<code>h2</code>应该有“18美元”的文字。
-    testString: 'assert($("h2").eq(5).text() == "18 USD", "The sixth <code>h2</code> should have the text "18 USD".");'
-  - text: 第七个<code>h2</code>应该有“29美元”的文字。
-    testString: 'assert($("h2").eq(6).text() == "29 USD", "The seventh <code>h2</code> should have the text "29 USD".");'
-  - text: 第八个<code>h2</code>应该有“14美元”的文字。
-    testString: 'assert($("h2").eq(7).text() == "14 USD", "The eighth <code>h2</code> should have the text "14 USD".");'
-  - text: 第九个<code>h2</code>应该有“9美元”的文字。
-    testString: 'assert($("h2").eq(8).text() == "9 USD", "The ninth <code>h2</code> should have the text "9 USD".");'
+  - text: The first <code>h2</code> should have the text "12 USD".
+    testString: assert($('h2').eq(0).text() == "12 USD");
+  - text: The second <code>h2</code> should have the text "31 USD".
+    testString: assert($('h2').eq(1).text() == "31 USD");
+  - text: The third <code>h2</code> should have the text "22 USD".
+    testString: assert($('h2').eq(2).text() == "22 USD");
+  - text: The fourth <code>h2</code> should have the text "17 USD".
+    testString: assert($('h2').eq(3).text() == "17 USD");
+  - text: The fifth <code>h2</code> should have the text "25 USD".
+    testString: assert($('h2').eq(4).text() == "25 USD");
+  - text: The sixth <code>h2</code> should have the text "18 USD".
+    testString: assert($('h2').eq(5).text() == "18 USD");
+  - text: The seventh <code>h2</code> should have the text "29 USD".
+    testString: assert($('h2').eq(6).text() == "29 USD");
+  - text: The eighth <code>h2</code> should have the text "14 USD".
+    testString: assert($('h2').eq(7).text() == "14 USD");
+  - text: The ninth <code>h2</code> should have the text "9 USD".
+    testString: assert($('h2').eq(8).text() == "9 USD");
 
 ```
 
@@ -61,7 +69,6 @@ tests:
       // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -76,4 +83,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

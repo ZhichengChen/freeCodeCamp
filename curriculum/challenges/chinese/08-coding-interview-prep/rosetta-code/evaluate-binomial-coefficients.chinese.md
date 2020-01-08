@@ -2,15 +2,19 @@
 title: Evaluate binomial coefficients
 id: 598de241872ef8353c58a7a2
 challengeType: 5
-videoUrl: ''
-localeTitle: 评估二项式系数
+forumTopicId: 302259
 ---
 
 ## Description
-<section id="description"><p>写一个函数来计算给定n和k值的二项式系数。 </p><p>推荐这个公式： </p> $ \ binom {n} {k} = \ frac {n！} {（nk）！k！} = \ frac {n（n-1）（n-2）\ ldots（n-k + 1）} { k（k-1）（k-2）\ ldots 1} $ </section>
+<section id='description'>
+Write a function to calculate the binomial coefficient for the given value of n and k.
+This formula is recommended:
+$\binom{n}{k} = \frac{n!}{(n-k)!k!} = \frac{n(n-1)(n-2)\ldots(n-k+1)}{k(k-1)(k-2)\ldots 1}$
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,18 +22,18 @@ localeTitle: 评估二项式系数
 
 ```yml
 tests:
-  - text: <code>binom</code>是一个功能。
-    testString: 'assert(typeof binom === "function", "<code>binom</code> is a function.");'
-  - text: '<code>binom(5,3)</code>应该返回10。'
-    testString: 'assert.equal(binom(5, 3), 10, "<code>binom(5,3)</code> should return 10.");'
-  - text: '<code>binom(7,2)</code>应该返回21。'
-    testString: 'assert.equal(binom(7, 2), 21, "<code>binom(7,2)</code> should return 21.");'
-  - text: '<code>binom(10,4)</code>应该返回210。'
-    testString: 'assert.equal(binom(10, 4), 210, "<code>binom(10,4)</code> should return 210.");'
-  - text: '<code>binom(6,1)</code>应该返回6。'
-    testString: 'assert.equal(binom(6, 1), 6, "<code>binom(6,1)</code> should return 6.");'
-  - text: '<code>binom(12,8)</code>应该返回495。'
-    testString: 'assert.equal(binom(12, 8), 495, "<code>binom(12,8)</code> should return 495.");'
+  - text: <code>binom</code> should be a function.
+    testString: assert(typeof binom === 'function');
+  - text: <code>binom(5,3)</code> should return 10.
+    testString: assert.equal(binom(5, 3), 10);
+  - text: <code>binom(7,2)</code> should return 21.
+    testString: assert.equal(binom(7, 2), 21);
+  - text: <code>binom(10,4)</code> should return 210.
+    testString: assert.equal(binom(10, 4), 210);
+  - text: <code>binom(6,1)</code> should return 6.
+    testString: assert.equal(binom(6, 1), 6);
+  - text: <code>binom(12,8)</code> should return 495.
+    testString: assert.equal(binom(12, 8), 495);
 
 ```
 
@@ -41,10 +45,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function binom (n, k) {
+function binom(n, k) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -56,7 +59,15 @@ function binom (n, k) {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function binom(n, k) {
+  let coeff = 1;
+  for (let i = n - k + 1; i <= n; i++) coeff *= i;
+  for (let i = 1; i <= k; i++) coeff /= i;
+  return coeff;
+}
+
 ```
+
 </section>

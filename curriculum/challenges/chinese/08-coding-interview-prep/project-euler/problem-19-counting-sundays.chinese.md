@@ -2,15 +2,19 @@
 id: 5900f37f1000cf542c50fe92
 challengeType: 5
 title: 'Problem 19: Counting Sundays'
-videoUrl: ''
-localeTitle: 问题19：计算星期日
+forumTopicId: 301827
 ---
 
 ## Description
-<section id="description">您将获得以下信息，但您可能更愿意为自己做一些研究。 <ul><li> 1900年1月1日是星期一。 </li><li>九月是三十天<br>四月，六月和十一月。 <br>其余的都有三十一个， <br>仅拯救二月， <br>其中有二十八，风雨无阻。 <br>在闰年，二十九岁。 </li><li>闰年发生在任何一年，可被4整除，但除非可被400整除，否则不会在一个世纪上。 </li>在二十世纪的第一个月（1901年1月1日至2000年12月31日），有多少个星期日下降？ </ul></section>
+<section id='description'>
+You are given the following information, but you may prefer to do some research for yourself.
+<ul><li>1 Jan 1900 was a Monday.</li><li>Thirty days has September,<br>April, June and November.<br>All the rest have thirty-one,<br>Saving February alone,<br>Which has twenty-eight, rain or shine.<br>And on leap years, twenty-nine.</li><li>A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.</li>
+How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +22,12 @@ localeTitle: 问题19：计算星期日
 
 ```yml
 tests:
-  - text: '<code>countingSundays(1943, 1946)</code>应该返回6。'
-    testString: 'assert.strictEqual(countingSundays(1943, 1946), 6, "<code>countingSundays(1943, 1946)</code> should return 6.");'
-  - text: '<code>countingSundays(1995, 2000)</code>应该返回9。'
-    testString: 'assert.strictEqual(countingSundays(1995, 2000), 9, "<code>countingSundays(1995, 2000)</code> should return 9.");'
-  - text: '<code>countingSundays(1901, 2000)</code>应该返回171。'
-    testString: 'assert.strictEqual(countingSundays(1901, 2000), 171, "<code>countingSundays(1901, 2000)</code> should return 171.");'
+  - text: <code>countingSundays(1943, 1946)</code> should return 6.
+    testString: assert.strictEqual(countingSundays(1943, 1946), 6);
+  - text: <code>countingSundays(1995, 2000)</code> should return 10.
+    testString: assert.strictEqual(countingSundays(1995, 2000), 10);
+  - text: <code>countingSundays(1901, 2000)</code> should return 171.
+    testString: assert.strictEqual(countingSundays(1901, 2000), 171);
 
 ```
 
@@ -41,7 +45,6 @@ function countingSundays(firstYear, lastYear) {
 }
 
 countingSundays(1943, 1946);
-
 ```
 
 </div>
@@ -53,7 +56,21 @@ countingSundays(1943, 1946);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function countingSundays(firstYear, lastYear) {
+  let sundays = 0;
+
+  for (let year = firstYear; year <= lastYear; year++) {
+    for (let month = 0; month <= 11; month++) {
+      const thisDate = new Date(year, month, 1);
+      if (thisDate.getDay() === 0) {
+        sundays++;
+      }
+    }
+  }
+  return sundays;
+}
 ```
+
 </section>

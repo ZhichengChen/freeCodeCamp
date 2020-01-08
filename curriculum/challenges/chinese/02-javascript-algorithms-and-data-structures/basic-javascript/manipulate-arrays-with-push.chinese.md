@@ -2,23 +2,35 @@
 id: 56bbb991ad1ed5201cd392cb
 title: Manipulate Arrays With push()
 challengeType: 1
-videoUrl: ''
-localeTitle: 用push（）操纵数组
+videoUrl: 'https://scrimba.com/c/cnqmVtJ'
+forumTopicId: 18237
 ---
 
 ## Description
-<section id="description">将数据附加到数组末尾的简单方法是通过<code>push()</code>函数。 <code>.push()</code>接受一个或多个<dfn>参数</dfn>并将它们“推”到数组的末尾。 <blockquote> var arr = [1,2,3]; <br> arr.push（4）; <br> // arr现在是[1,2,3,4] </blockquote></section>
+<section id='description'>
+An easy way to append data to the end of an array is via the <code>push()</code> function.
+<code>.push()</code> takes one or more <dfn>parameters</dfn> and "pushes" them onto the end of the array.
+
+```js
+var arr = [1,2,3];
+arr.push(4);
+// arr is now [1,2,3,4]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将<code>[&quot;dog&quot;, 3]</code>推到<code>myArray</code>变量的末尾。 </section>
+<section id='instructions'>
+Push <code>["dog", 3]</code> onto the end of the <code>myArray</code> variable.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>myArray</code>现在应该等于<code>[[&quot;John&quot;, 23], [&quot;cat&quot;, 2], [&quot;dog&quot;, 3]]</code> 。'
-    testString: 'assert((function(d){if(d[2] != undefined && d[0][0] == "John" && d[0][1] === 23 && d[2][0] == "dog" && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray), "<code>myArray</code> should now equal <code>[["John", 23], ["cat", 2], ["dog", 3]]</code>.");'
+  - text: <code>myArray</code> should now equal <code>[["John", 23], ["cat", 2], ["dog", 3]]</code>.
+    testString: assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] === 23 && d[2][0] == 'dog' && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray));
 
 ```
 
@@ -40,6 +52,7 @@ var myArray = [["John", 23], ["cat", 2]];
 
 // Only change code below this line.
 
+
 ```
 
 </div>
@@ -49,7 +62,7 @@ var myArray = [["John", 23], ["cat", 2]];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);
 ```
 
 </div>
@@ -59,7 +72,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog",3]);
 ```
+
 </section>

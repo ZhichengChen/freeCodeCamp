@@ -2,29 +2,70 @@
 id: 587d7dbf367417b2b2512bba
 title: Use @each to Map Over Items in a List
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用@each映射列表中的项目
+forumTopicId: 301461
 ---
 
 ## Description
-<section id="description">最后一个挑战显示了<code>@for</code>指令如何使用起始值和结束值循环一定次数。 Sass还提供了<code>@each</code>指令，它循环遍历列表或映射中的每个项目。在每次迭代时，变量将从列表或映射分配给当前值。 <blockquote> @each $颜色为蓝色，红色，绿色{ <br> 。＃{$ color} -text {color：$ color;} <br> } </blockquote>地图的语法略有不同。这是一个例子： <blockquote> $ colors：（color1：blue，color2：red，color3：green）; <br><br> @each $ key，$ colors in colors { <br> 。＃{$ color} -text {color：$ color;} <br> } </blockquote>请注意，需要<code>$key</code>变量来引用地图中的键。否则，编译后的CSS将有<code>color1</code> ， <code>color2</code> ...在里面。以上两个代码示例都转换为以下CSS： <blockquote> .blue-text { <br>颜色：蓝色; <br> } <br><br> .red-text { <br>红色; <br> } <br><br> .green-text { <br>颜色：绿色; <br> } </blockquote></section>
+<section id='description'>
+
+The last challenge showed how the <code>@for</code> directive uses a starting and ending value to loop a certain number of times. Sass also offers the <code>@each</code> directive which loops over each item in a list or map.
+On each iteration, the variable gets assigned to the current value from the list or map.
+
+```scss
+@each $color in blue, red, green {
+  .#{$color}-text {color: $color;}
+}
+```
+
+A map has slightly different syntax. Here's an example:
+
+```scss
+$colors: (color1: blue, color2: red, color3: green);
+
+@each $key, $color in $colors {
+  .#{$color}-text {color: $color;}
+}
+```
+
+Note that the <code>$key</code> variable is needed to reference the keys in the map. Otherwise, the compiled CSS would have <code>color1</code>, <code>color2</code>... in it.
+Both of the above code examples are converted into the following CSS:
+
+```scss
+.blue-text {
+  color: blue;
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">编写一个<code>@each</code>列表的<code>@each</code>指令： <code>blue, black, red</code> ，并将每个变量分配给<code>.color-bg</code>类，其中“颜色”部分为每个项目更改。每个类应该将<code>background-color</code>设置为相应的颜色。 </section>
+<section id='instructions'>
+
+Write an <code>@each</code> directive that goes through a list: <code>blue, black, red</code> and assigns each variable to a <code>.color-bg</code> class, where the "color" part changes for each item.
+Each class should set the <code>background-color</code> the respective color.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应该使用<code>@each</code>指令。
-    testString: 'assert(code.match(/@each /g), "Your code should use the <code>@each</code> directive.");'
-  - text: 您的<code>.blue-bg</code>类应该具有蓝色的<code>background-color</code> 。
-    testString: 'assert($(".blue-bg").css("background-color") == "rgb(0, 0, 255)", "Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.");'
-  - text: 你的<code>.black-bg</code>类的<code>background-color</code>为黑色。
-    testString: 'assert($(".black-bg").css("background-color") == "rgb(0, 0, 0)", "Your <code>.black-bg</code> class should have a <code>background-color</code> of black.");'
-  - text: 您的<code>.red-bg</code>类应该具有红色的<code>background-color</code> 。
-    testString: 'assert($(".red-bg").css("background-color") == "rgb(255, 0, 0)", "Your <code>.red-bg</code> class should have a <code>background-color</code> of red.");'
+  - text: Your code should use the <code>@each</code> directive.
+    testString: assert(code.match(/@each /g));
+  - text: Your <code>.blue-bg</code> class should have a <code>background-color</code> of blue.
+    testString: assert($('.blue-bg').css('background-color') == 'rgb(0, 0, 255)');
+  - text: Your <code>.black-bg</code> class should have a <code>background-color</code> of black.
+    testString: assert($('.black-bg').css('background-color') == 'rgb(0, 0, 0)');
+  - text: Your <code>.red-bg</code> class should have a <code>background-color</code> of red.
+    testString: assert($('.red-bg').css('background-color') == 'rgb(255, 0, 0)');
 
 ```
 
@@ -49,19 +90,57 @@ tests:
 <div class="blue-bg"></div>
 <div class="black-bg"></div>
 <div class="red-bg"></div>
-
 ```
 
 </div>
-
-
 
 </section>
 
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+The solution requires using the $color variable twice: once for the class name and once for setting the background color. You can use either the list or map data type.
+
+### List Data type
+
+```html
+<style type='text/sass'>
+
+  @each $color in blue, black, red {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
 ```
+
+### Map Data type
+
+```html
+<style type='text/sass'>
+
+  $colors: (color1: blue, color2: black, color3: red);
+
+  @each $key, $color in $colors {
+    .#{$color}-bg {background-color: $color;}
+  }
+
+  div {
+    height: 200px;
+    width: 200px;
+  }
+</style>
+
+<div class="blue-bg"></div>
+<div class="black-bg"></div>
+<div class="red-bg"></div>
+```
+
 </section>

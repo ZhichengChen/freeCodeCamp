@@ -2,15 +2,27 @@
 id: 5900f4e81000cf542c50fffa
 challengeType: 5
 title: 'Problem 379: Least common multiple count'
-videoUrl: ''
-localeTitle: 问题379：最少共同的多重计数
+forumTopicId: 302041
 ---
 
 ## Description
-<section id="description">设f（n）为具有x和y正整数的耦合数（x，y），x≤y，x和y的最小公倍数等于n。 <p>令g为f的求和函数，即：g（n）=Σf（i），1≤i≤n。 </p><p>你得到g（106）= 37429395。 </p><p>找到g（1012）。 </p></section>
+<section id='description'>
+Let f(n) be the number of couples (x,y) with x and y positive integers, x ≤ y and the least common multiple of x and y equal to n.
+
+
+Let g be the summatory function of f, i.e.:
+g(n) = ∑ f(i)  for 1 ≤ i ≤ n.
+
+
+You are given that g(106) = 37429395.
+
+
+Find g(1012).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题379：最少共同的多重计数
 
 ```yml
 tests:
-  - text: <code>euler379()</code>应该返回132314136838185。
-    testString: 'assert.strictEqual(euler379(), 132314136838185, "<code>euler379()</code> should return 132314136838185.");'
+  - text: <code>euler379()</code> should return 132314136838185.
+    testString: assert.strictEqual(euler379(), 132314136838185);
 
 ```
 
@@ -37,7 +49,6 @@ function euler379() {
 }
 
 euler379();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler379();
 ```js
 // solution required
 ```
+
 </section>

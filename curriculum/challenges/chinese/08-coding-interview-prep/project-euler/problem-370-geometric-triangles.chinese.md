@@ -2,15 +2,23 @@
 id: 5900f4de1000cf542c50fff1
 challengeType: 5
 title: 'Problem 370: Geometric triangles'
-videoUrl: ''
-localeTitle: 问题370：几何三角形
+forumTopicId: 302032
 ---
 
 ## Description
-<section id="description">让我们将几何三角形定义为具有边a≤b≤c的整数边三角形，使得其边形成几何级数，即b2 = a·c。 <p>这种几何三角形的一个例子是边长为a = 144，b = 156和c = 169的三角形。 </p><p>有861805个几何三角形，周长≤106。 </p><p>有多少个几何三角形，周长≤2.5·1013？ </p></section>
+<section id='description'>
+Let us define a geometric triangle as an integer sided triangle with sides a ≤ b ≤ c so that its sides form a geometric progression, i.e. b2 = a · c . 
+
+An example of such a geometric triangle is the triangle with sides a = 144, b = 156 and c = 169.
+
+There are 861805 geometric triangles with perimeter ≤ 106 .
+
+How many geometric triangles exist with perimeter ≤ 2.5·1013 ?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题370：几何三角形
 
 ```yml
 tests:
-  - text: <code>euler370()</code>应该返回41791929448408。
-    testString: 'assert.strictEqual(euler370(), 41791929448408, "<code>euler370()</code> should return 41791929448408.");'
+  - text: <code>euler370()</code> should return 41791929448408.
+    testString: assert.strictEqual(euler370(), 41791929448408);
 
 ```
 
@@ -37,7 +45,6 @@ function euler370() {
 }
 
 euler370();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler370();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,33 @@
 id: 5900f4f11000cf542c510003
 challengeType: 5
 title: 'Problem 387: Harshad Numbers'
-videoUrl: ''
-localeTitle: 问题387：Harshad数字
+forumTopicId: 302051
 ---
 
 ## Description
-<section id="description"> Harshad或Niven数字是可以被其数字之和整除的数字。 201是一个Harshad数，因为它可以被3整数（它的数字之和）。当我们截断201的最后一个数字时，我们得到20，这是一个Harshad数。当我们截断20的最后一位数时，我们得到2，这也是一个Harshad数。让我们调用一个Harshad数字，在递归截断最后一个数字的同时，总是会产生一个Harshad数字，一个正可截断的Harshad数字。 <p>另外：201/3 = 67这是素数。让我们称一个Harshad数，当它除以它的数字之和时，得到一个强Harshad数的素数。 </p><p>现在取2011年的数字。当我们截断它的最后一位数时，我们得到201，一个强大的Harshad数也是可以截断的。让我们称这样的素数强大，正确的可截断的哈尔沙德素数。 </p><p>你得到的是，强度小，可截断的Harshad素数小于10000的总和是90619。 </p><p>找到小于1014的强可，可截断的Harshad素数的总和。 </p></section>
+<section id='description'>
+A Harshad or Niven number is a number that is divisible by the sum of its digits.
+201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
+When we truncate the last digit from 201, we get 20, which is a Harshad number.
+When we truncate the last digit from 20, we get 2, which is also a Harshad number.
+Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
+
+Also:
+201/3=67 which is prime.
+Let's call a Harshad number that, when divided by the sum of its digits, results in a prime a strong Harshad number.
+
+Now take the number 2011 which is prime.
+When we truncate the last digit from it we get 201, a strong Harshad number that is also right truncatable.
+Let's call such primes strong, right truncatable Harshad primes.
+
+You are given that the sum of the strong, right truncatable Harshad primes less than 10000 is 90619.
+
+Find the sum of the strong, right truncatable Harshad primes less than 1014.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +36,8 @@ localeTitle: 问题387：Harshad数字
 
 ```yml
 tests:
-  - text: <code>euler387()</code>应该返回696067597313468。
-    testString: 'assert.strictEqual(euler387(), 696067597313468, "<code>euler387()</code> should return 696067597313468.");'
+  - text: <code>euler387()</code> should return 696067597313468.
+    testString: assert.strictEqual(euler387(), 696067597313468);
 
 ```
 
@@ -37,7 +55,6 @@ function euler387() {
 }
 
 euler387();
-
 ```
 
 </div>
@@ -52,4 +69,5 @@ euler387();
 ```js
 // solution required
 ```
+
 </section>

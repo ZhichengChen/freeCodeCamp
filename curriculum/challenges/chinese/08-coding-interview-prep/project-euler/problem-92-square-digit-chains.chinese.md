@@ -2,15 +2,22 @@
 id: 5900f3c81000cf542c50fedb
 challengeType: 5
 title: 'Problem 92: Square digit chains'
-videoUrl: ''
-localeTitle: 问题92：方形数字链
+forumTopicId: 302209
 ---
 
 ## Description
-<section id="description">通过在数字中连续添加数字的平方来创建数字链，以形成新的数字，直到之前看到它为止。例如，44→32→13→10→1→1 85→89→145→42→20→4→16→37→58→89因此，任何到达1或89的链条都会卡在无限循环中。最令人惊讶的是，每个起始号码最终都会达到1或89.低于一千万的起始号码将达到89个？ </section>
+<section id='description'>
+A number chain is created by continuously adding the square of the digits in a number to form a new number until it has been seen before.
+For example,
+44 → 32 → 13 → 10 → 1 → 1
+85 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89
+Therefore any chain that arrives at 1 or 89 will become stuck in an endless loop. What is most amazing is that EVERY starting number will eventually arrive at 1 or 89.
+How many starting numbers below ten million will arrive at 89?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题92：方形数字链
 
 ```yml
 tests:
-  - text: <code>euler92()</code>应返回8581146。
-    testString: 'assert.strictEqual(euler92(), 8581146, "<code>euler92()</code> should return 8581146.");'
+  - text: <code>euler92()</code> should return 8581146.
+    testString: assert.strictEqual(euler92(), 8581146);
 
 ```
 
@@ -37,7 +44,6 @@ function euler92() {
 }
 
 euler92();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler92();
 ```js
 // solution required
 ```
+
 </section>

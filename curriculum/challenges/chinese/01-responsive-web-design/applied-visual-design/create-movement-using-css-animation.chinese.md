@@ -2,27 +2,50 @@
 id: 587d78a7367417b2b2512ae1
 title: Create Movement Using CSS Animation
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS动画创建运动
+videoUrl: 'https://scrimba.com/c/c7amZfW'
+forumTopicId: 301051
 ---
 
 ## Description
-<section id="description">当元素具有指定<code>position</code> （例如<code>fixed</code>或<code>relative</code> ，可以在动画规则中使用<code>right</code> ， <code>left</code> ， <code>top</code>和<code>bottom</code>的CSS偏移属性来创建移动。如下面的示例所示，您可以通过将<code>50%</code>关键帧的<code>top</code>属性设置为50px向下然后向上推动项目，但将第一个（ <code>0%</code> ）和最后一个（ <code>100%</code> ）关键帧设置为0px。 <blockquote> @keyframes rainbow { <br> 0％{ <br>背景颜色：蓝色; <br>顶部：0px; <br> } <br> 50％{ <br>背景颜色：绿色; <br>上：50px; <br> } <br> 100％{ <br>背景颜色：黄色; <br>顶部：0px; <br> } <br> } </blockquote></section>
+<section id='description'>
+When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code> can be used in animation rules to create movement.
+As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.
+
+```css
+@keyframes rainbow {
+  0% {
+    background-color: blue;
+    top: 0px;
+  }
+  50% {
+    background-color: green;
+    top: 50px;
+  }
+  100% {
+    background-color: yellow;
+    top: 0px;
+  }
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">为<code>div</code>动画添加水平运动。使用<code>left</code>偏移属性，添加到<code>@keyframes</code>规则，因此彩虹从<code>0%</code> 0像素开始，在<code>50%</code>移动到25像素，在<code>100%</code>以-25像素结束。不要替换编辑器中的<code>top</code>属性 - 动画应该具有垂直和水平运动。 </section>
+<section id='instructions'>
+Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>. Don't replace the <code>top</code> property in the editor - the animation should have both vertical and horizontal motion.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>0%</code>的<code>@keyframes</code>规则应使用0px的<code>left</code>偏移量。
-    testString: 'assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?top:\s*?0(px)?;\s*?left:\s*?0(px)?;\s*?}/gi), "The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.");'
-  - text: <code>50%</code>的<code>@keyframes</code>规则应该使用25px的<code>left</code>偏移量。
-    testString: 'assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?top:\s*?50px;\s*?left:\s*?25px;\s*?}/gi), "The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.");'
-  - text: <code>100%</code>的<code>@keyframes</code>规则应使用-25px的<code>left</code>偏移量。
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?top:\s*?0(px)?;\s*?left:\s*?-25px;\s*?}/gi), "The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.");'
+  - text: The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.
+    testString: assert(code.match(/0%\s*?{\s*?background-color:\s*?blue;\s*?top:\s*?0(px)?;\s*?left:\s*?0(px)?;\s*?}/gi));
+  - text: The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.
+    testString: assert(code.match(/50%\s*?{\s*?background-color:\s*?green;\s*?top:\s*?50px;\s*?left:\s*?25px;\s*?}/gi));
+  - text: The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.
+    testString: assert(code.match(/100%\s*?{\s*?background-color:\s*?yellow;\s*?top:\s*?0(px)?;\s*?left:\s*?-25px;\s*?}/gi));
 
 ```
 
@@ -44,32 +67,31 @@ tests:
     position: relative;
   }
 
-#rect {
-  animation-name: rainbow;
-  animation-duration: 4s;
-}
-
-@keyframes rainbow {
-  0% {
-    background-color: blue;
-    top: 0px;
-
+  #rect {
+    animation-name: rainbow;
+    animation-duration: 4s;
   }
-  50% {
-    background-color: green;
-    top: 50px;
 
-  }
-  100% {
-    background-color: yellow;
-    top: 0px;
+  @keyframes rainbow {
+    0% {
+      background-color: blue;
+      top: 0px;
 
+    }
+    50% {
+      background-color: green;
+      top: 50px;
+
+    }
+    100% {
+      background-color: yellow;
+      top: 0px;
+
+    }
   }
-}
 </style>
 
 <div id="rect"></div>
-
 ```
 
 </div>
@@ -81,7 +103,42 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+
+```html
+<style>
+  div {
+    height: 40px;
+    width: 70%;
+    background: black;
+    margin: 50px auto;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  #rect {
+    animation-name: rainbow;
+    animation-duration: 4s;
+  }
+
+  @keyframes rainbow {
+    0% {
+      background-color: blue;
+      top: 0px;
+      left: 0px;
+    }
+    50% {
+      background-color: green;
+      top: 50px;
+      left: 25px;
+    }
+    100% {
+      background-color: yellow;
+      top: 0px;
+      left: -25px;
+    }
+  }
+</style>
+<div id="rect"></div>
 ```
+
 </section>

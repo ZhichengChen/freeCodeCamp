@@ -2,15 +2,20 @@
 id: 587d8257367417b2b2512c7c
 title: Check if an Element is Present in a Binary Search Tree
 challengeType: 1
-videoUrl: ''
-localeTitle: 检查二进制搜索树中是否存在元素
+forumTopicId: 301623
 ---
 
 ## Description
-<section id="description">现在我们对二进制搜索树有了一般意义，让我们更详细地讨论它。二进制搜索树为平均情况下的查找，插入和删除的常见操作提供对数时间，并且在最坏情况下提供线性时间。为什么是这样？这些基本操作中的每一个都要求我们在树中找到一个项目（或者在插入的情况下找到它应该去的地方），并且由于每个父节点处的树结构，我们向左或向右分支并且有效地排除了一半的大小剩下的树。这使得搜索与树中节点数的对数成比例，这在平均情况下为这些操作创建对数时间。好的，但最坏的情况呢？那么，可考虑从以下值建构一棵树，将它们从左至右： <code>10</code> ， <code>12</code> ， <code>17</code> ， <code>25</code> 。根据我们的规则二叉搜索树，我们将增加<code>12</code>到右侧<code>10</code> ， <code>17</code> ，以这样的权利，以及<code>25</code>到这一权利。现在我们的树类似于一个链表，并且遍历它以找到<code>25</code>将要求我们以线性方式遍历所有项目。因此，在最坏的情况下，线性时间。这里的问题是树是不平衡的。我们将更多地了解这在以下挑战中意味着什么。说明：在此挑战中，我们将为树创建一个实用程序。编写一个方法<code>isPresent</code> ，它接受一个整数值作为输入，并在二叉搜索树中返回该值是否存在的布尔值。 </section>
+<section id='description'>
+
+Now that we have a general sense of what a binary search tree is let's talk about it in a little more detail. Binary search trees provide logarithmic time for the common operations of lookup, insertion, and deletion in the average case, and linear time in the worst case. Why is this? Each of those basic operations requires us to find an item in the tree (or in the case of insertion to find where it should go) and because of the tree structure at each parent node we are branching left or right and effectively excluding half the size of the remaining tree. This makes the search proportional to the logarithm of the number of nodes in the tree, which creates logarithmic time for these operations in the average case.
+Ok, but what about the worst case? Well, consider constructing a tree from the following values, adding them left to right: <code>10</code>, <code>12</code>, <code>17</code>, <code>25</code>. Following our rules for a binary search tree, we will add <code>12</code> to the right of <code>10</code>, <code>17</code> to the right of this, and <code>25</code> to the right of this. Now our tree resembles a linked list and traversing it to find <code>25</code> would require us to traverse all the items in linear fashion. Hence, linear time in the worst case. The problem here is that the tree is unbalanced. We'll look a little more into what this means in the following challenges.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
+In this challenge, we will create a utility for our tree. Write a method <code>isPresent</code> which takes an integer value as input and returns a boolean value for the presence or absence of that value in the binary search tree.
 </section>
 
 ## Tests
@@ -18,15 +23,14 @@ localeTitle: 检查二进制搜索树中是否存在元素
 
 ```yml
 tests:
-  - text: 存在<code>BinarySearchTree</code>数据结构。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
-  - text: 二叉搜索树有一个名为<code>isPresent</code>的方法。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == "function")})(), "The binary search tree has a method called <code>isPresent</code>.");'
-  - text: <code>isPresent</code>方法正确检查添加到树中的元素是否存在。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== "function") { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })(), "The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.");'
-  - text: <code>isPresent</code>处理树为空的情况。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== "function") { return false; }; return test.isPresent(5) == false; })(), "<code>isPresent</code> handles cases where the tree is empty.");'
-
+  - text: The <code>BinarySearchTree</code> data structure should exist.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
+  - text: The binary search tree should have a method called <code>isPresent</code>.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == 'function')})());
+  - text: The <code>isPresent</code> method should correctly check for the presence or absence of elements added to the tree.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })());
+  - text: <code>isPresent</code> should handle cases where the tree is empty.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })());
 ```
 
 </section>
@@ -37,38 +41,84 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 function BinarySearchTree() {
-    this.root = null;
-    // change code below this line
-    // change code above this line
+  this.root = null;
+  // change code below this line
+  // change code above this line
 }
-
 ```
 
 </div>
 
-
 ### After Test
+
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+  add: function(value) {
+    var node = this.root;
+    if (node == null) {
+      this.root = new Node(value);
+      return;
+    } else {
+      function searchTree(node) {
+        if (value < node.value) {
+          if (node.left == null) {
+            node.left = new Node(value);
+            return;
+          } else if (node.left != null) {
+            return searchTree(node.left);
+          }
+        } else if (value > node.value) {
+          if (node.right == null) {
+            node.right = new Node(value);
+            return;
+          } else if (node.right != null) {
+            return searchTree(node.right);
+          }
+        } else {
+          return null;
+        }
+      }
+      return searchTree(node);
+    }
+  }
+};
 ```
 
 </div>
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+function Node(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
+}
+function BinarySearchTree() {
+  this.root = null;
+  this.isPresent = function (value) {
+    var current = this.root
+    while (current) {
+      if (value === current.value) {
+        return true;
+      }
+      current = value < current.value ? current.left : current.right;
+    }
+    return false;
+  }
+}
 ```
+
 </section>

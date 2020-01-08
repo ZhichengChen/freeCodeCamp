@@ -1,16 +1,23 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
 challengeType: 5
-title: 'Problem 349: Langton"s ant'
-videoUrl: ''
-localeTitle: 问题349：兰顿的蚂蚁
+title: 'Problem 349: Langton''s ant'
+forumTopicId: 302008
 ---
 
 ## Description
-<section id="description">蚂蚁在规则的方格网格上移动，方格网格为黑色或白色。蚂蚁总是朝向一个主要方向（左，右，上或下），并根据以下规则从正方形移动到相邻正方形： - 如果它在黑色方块上，它将方形的颜色翻转为白色，逆时针旋转90度，向前移动一个方格。 - 如果它在白色方块上，它将方块的颜色翻转为黑色，顺时针旋转90度并向前移动一个方格。 <p>从一个完全是白色的网格开始，在蚂蚁1018次移动后，有多少个方块是黑色的？ </p></section>
+<section id='description'>
+An ant moves on a regular grid of squares that are coloured either black or white.
+The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
+- if it is on a black square, it flips the color of the square to white, rotates 90 degrees counterclockwise and moves forward one square.
+- if it is on a white square, it flips the color of the square to black, rotates 90 degrees clockwise and moves forward one square.
+
+Starting with a grid that is entirely white, how many squares are black after 1018 moves of the ant?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题349：兰顿的蚂蚁
 
 ```yml
 tests:
-  - text: <code>euler349()</code>应该返回115384615384614940。
-    testString: 'assert.strictEqual(euler349(), 115384615384614940, "<code>euler349()</code> should return 115384615384614940.");'
+  - text: <code>euler349()</code> should return 115384615384614940.
+    testString: assert.strictEqual(euler349(), 115384615384614940);
 
 ```
 
@@ -37,7 +44,6 @@ function euler349() {
 }
 
 euler349();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler349();
 ```js
 // solution required
 ```
+
 </section>

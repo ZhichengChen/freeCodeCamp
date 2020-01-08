@@ -2,15 +2,23 @@
 id: 5900f5061000cf542c510017
 challengeType: 5
 title: 'Problem 409: Nim Extreme'
-videoUrl: ''
-localeTitle: 问题409：Nim Extreme
+forumTopicId: 302077
 ---
 
 ## Description
-<section id="description">设n是正整数。考虑nim位置：有n个非空桩。每堆的尺寸小于2n。没有两个桩具有相同的尺寸。设W（n）是满足上述条件的获胜nim位置的数量（如果第一个玩家具有获胜策略，则获胜的位置）。例如，W（1）= 1，W（2）= 6，W（3）= 168，W（5）= 19764360，W（100）mod 1 000 000 007 = 384777056。 <p>求W（10 000 000）mod 1 000 000 007。 </p></section>
+<section id='description'>
+Let n be a positive integer. Consider nim positions where:There are n non-empty piles.
+Each pile has size less than 2n.
+No two piles have the same size.
+Let W(n) be the number of winning nim positions satisfying the above
+conditions (a position is winning if the first player has a winning strategy). For example, W(1) = 1, W(2) = 6, W(3) = 168, W(5) = 19764360 and W(100) mod 1 000 000 007 = 384777056.
+
+Find W(10 000 000) mod 1 000 000 007.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题409：Nim Extreme
 
 ```yml
 tests:
-  - text: <code>euler409()</code>应该返回253223948。
-    testString: 'assert.strictEqual(euler409(), 253223948, "<code>euler409()</code> should return 253223948.");'
+  - text: <code>euler409()</code> should return 253223948.
+    testString: assert.strictEqual(euler409(), 253223948);
 
 ```
 
@@ -37,7 +45,6 @@ function euler409() {
 }
 
 euler409();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler409();
 ```js
 // solution required
 ```
+
 </section>

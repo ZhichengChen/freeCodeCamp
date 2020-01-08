@@ -2,15 +2,25 @@
 id: 5900f54b1000cf542c51005d
 challengeType: 5
 title: 'Problem 479: Roots on the Rise'
-videoUrl: ''
-localeTitle: 问题479：崛起的根源
+forumTopicId: 302156
 ---
 
 ## Description
-<section id="description">设ak，bk和ck表示表达式1 / x =（k / x）2（k + x2）-kx的三个解（实数或复数）。 <p>例如，对于k = 5，我们看到{a5，b5，c5}约为{5.727244，-0.363622 + 2.057397i，-0.363622-2.057397i}。 </p><p>令所有整数p，k的S（n）=Σ（ak + bk）p（bk + ck）p（ck + ak）p，使得1≤p，k≤n。 </p><p>有趣的是，S（n）总是一个整数。例如，S（4）= 51160。 </p><p>求S（106）modulo 1 000 000 007。 </p></section>
+<section id='description'>
+Let ak, bk, and ck represent the three solutions (real or complex numbers) to the expression 1/x = (k/x)2(k+x2) - kx.
+
+For instance, for k = 5, we see that {a5, b5, c5} is approximately {5.727244, -0.363622+2.057397i, -0.363622-2.057397i}.
+
+Let S(n) = Σ (ak+bk)p(bk+ck)p(ck+ak)p for all integers p, k such that 1 ≤ p, k ≤ n.
+
+Interestingly, S(n) is always an integer. For example, S(4) = 51160.
+
+Find S(106) modulo 1 000 000 007.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题479：崛起的根源
 
 ```yml
 tests:
-  - text: <code>euler479()</code>应该返回191541795。
-    testString: 'assert.strictEqual(euler479(), 191541795, "<code>euler479()</code> should return 191541795.");'
+  - text: <code>euler479()</code> should return 191541795.
+    testString: assert.strictEqual(euler479(), 191541795);
 
 ```
 
@@ -37,7 +47,6 @@ function euler479() {
 }
 
 euler479();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler479();
 ```js
 // solution required
 ```
+
 </section>

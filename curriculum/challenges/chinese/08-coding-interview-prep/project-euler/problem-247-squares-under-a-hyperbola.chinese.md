@@ -2,15 +2,32 @@
 id: 5900f4641000cf542c50ff76
 challengeType: 5
 title: 'Problem 247: Squares under a hyperbola'
-videoUrl: ''
-localeTitle: 问题247：双曲线下的正方形
+forumTopicId: 301894
 ---
 
 ## Description
-<section id="description">考虑受1≤x且0≤y≤1/ x约束的区域。 <p>设S1是可以适应曲线的最大正方形。设S2是适合其余区域的最大正方形，依此类推。设Sn的指数是表示Sn左边的方格数和Sn以下的方格数的对（左下）。 </p><p>该图显示了一些用数字标记的方格。 S2左边有一个正方形，下面没有正方形，所以S2的索引是（1,0）。可以看出，S32的索引是（1,1），也是S50的索引。 50是Sn的指数为（1,1）的最大n。 </p><p> Sn指数为（3,3）的最大n是多少？ </p></section>
+<section id='description'>
+Consider the region constrained by 1 ≤ x and 0 ≤ y ≤ 1/x.
+
+Let S1 be the largest square that can fit under the curve.
+Let S2 be the largest square that fits in the remaining area, and so on.
+Let the index of Sn be the pair (left, below) indicating the number of squares to the left of Sn and the number of squares below Sn.
+
+
+
+
+The diagram shows some such squares labelled by number.
+S2 has one square to its left and none below, so the index of S2 is (1,0).
+It can be seen that the index of S32 is (1,1) as is the index of S50.
+50 is the largest n for which the index of Sn is (1,1).
+
+
+What is the largest n for which the index of Sn is (3,3)?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +35,8 @@ localeTitle: 问题247：双曲线下的正方形
 
 ```yml
 tests:
-  - text: <code>euler247()</code>应该返回782252。
-    testString: 'assert.strictEqual(euler247(), 782252, "<code>euler247()</code> should return 782252.");'
+  - text: <code>euler247()</code> should return 782252.
+    testString: assert.strictEqual(euler247(), 782252);
 
 ```
 
@@ -37,7 +54,6 @@ function euler247() {
 }
 
 euler247();
-
 ```
 
 </div>
@@ -52,4 +68,5 @@ euler247();
 ```js
 // solution required
 ```
+
 </section>

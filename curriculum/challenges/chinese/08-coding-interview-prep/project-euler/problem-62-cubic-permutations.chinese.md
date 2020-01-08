@@ -2,15 +2,18 @@
 id: 5900f3aa1000cf542c50febd
 challengeType: 5
 title: 'Problem 62: Cubic permutations'
-videoUrl: ''
-localeTitle: 问题62：立方排列
+forumTopicId: 302174
 ---
 
 ## Description
-<section id="description">可以置换立方体41063625（3453）以产生另外两个立方体：56623104（3843）和66430125（4053）。实际上，41063625是最小的立方体，其正好具有三个排列的数字也是立方体。找到最小的立方体，其数字的五个排列正好是立方体。 </section>
+<section id='description'>
+The cube, 41063625 (3453), can be permuted to produce two other cubes: 56623104 (3843) and 66430125 (4053). In fact, 41063625 is the smallest cube which has exactly three permutations of its digits which are also cube.
+Find the smallest cube for which exactly five permutations of its digits are cube.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 问题62：立方排列
 
 ```yml
 tests:
-  - text: <code>euler62()</code>应该返回127035954683。
-    testString: 'assert.strictEqual(euler62(), 127035954683, "<code>euler62()</code> should return 127035954683.");'
+  - text: <code>euler62()</code> should return 127035954683.
+    testString: assert.strictEqual(euler62(), 127035954683);
 
 ```
 
@@ -37,7 +40,6 @@ function euler62() {
 }
 
 euler62();
-
 ```
 
 </div>
@@ -52,4 +54,5 @@ euler62();
 ```js
 // solution required
 ```
+
 </section>

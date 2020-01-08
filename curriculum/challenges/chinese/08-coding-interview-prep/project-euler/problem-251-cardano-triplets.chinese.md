@@ -2,15 +2,27 @@
 id: 5900f4671000cf542c50ff7a
 challengeType: 5
 title: 'Problem 251: Cardano Triplets'
-videoUrl: ''
-localeTitle: 问题251：卡尔达诺三胞胎
+forumTopicId: 301899
 ---
 
 ## Description
-<section id="description">如果满足条件，则正整数（a，b，c）的三元组称为Cardano三元组： <p>例如，（2,1,5）是Cardano Triplet。 </p><p>存在149个Cardano三胞胎，其中a + b +c≤1000。 </p><p>找出有多少卡尔达诺三胞胎存在，使a + b +c≤110,000,000。 </p></section>
+<section id='description'>
+A triplet of positive integers (a,b,c) is called a Cardano Triplet if it satisfies the condition:
+
+
+
+For example, (2,1,5) is a Cardano Triplet.
+
+
+There exist 149 Cardano Triplets for which a+b+c ≤ 1000.
+
+
+Find how many Cardano Triplets exist such that a+b+c ≤ 110,000,000.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题251：卡尔达诺三胞胎
 
 ```yml
 tests:
-  - text: <code>euler251()</code>应该返回18946051。
-    testString: 'assert.strictEqual(euler251(), 18946051, "<code>euler251()</code> should return 18946051.");'
+  - text: <code>euler251()</code> should return 18946051.
+    testString: assert.strictEqual(euler251(), 18946051);
 
 ```
 
@@ -37,7 +49,6 @@ function euler251() {
 }
 
 euler251();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler251();
 ```js
 // solution required
 ```
+
 </section>

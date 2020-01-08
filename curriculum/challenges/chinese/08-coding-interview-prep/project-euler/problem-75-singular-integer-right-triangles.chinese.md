@@ -2,15 +2,21 @@
 id: 5900f3b71000cf542c50feca
 challengeType: 5
 title: 'Problem 75: Singular integer right triangles'
-videoUrl: ''
-localeTitle: 问题75：奇异整数直角三角形
+forumTopicId: 302188
 ---
 
 ## Description
-<section id="description">事实证明，12厘米是最小的导线长度，可以弯曲形成一个完整的直角三角形，只有一种方式，但还有更多的例子。 12 cm：（3,4,5）24 cm：（6,8,10）30 cm：（5,12,13）36 cm：（9,12,15）40 cm：（8,15,17） 48厘米：（12,16,20）相比之下，一些长度的线，如20厘米，不能弯曲形成整数个直角三角形，其他长度允许找到多个解决方案;例如，使用120厘米，可以精确地形成三个不同的整数侧直角三角形。 120厘米：（30,40,50），（20,48,52），（24,45,51）假设L是线的长度，L≤1,500,000的多少个数值恰好可以是一个整数的右边角三角形成？ </section>
+<section id='description'>
+It turns out that 12 cm is the smallest length of wire that can be bent to form an integer sided right angle triangle in exactly one way, but there are many more examples.
+12 cm: (3,4,5)24 cm: (6,8,10)30 cm: (5,12,13)36 cm: (9,12,15)40 cm: (8,15,17)48 cm: (12,16,20)
+In contrast, some lengths of wire, like 20 cm, cannot be bent to form an integer sided right angle triangle, and other lengths allow more than one solution to be found; for example, using 120 cm it is possible to form exactly three different integer sided right angle triangles.
+120 cm: (30,40,50), (20,48,52), (24,45,51)
+Given that L is the length of the wire, for how many values of L ≤ 1,500,000 can exactly one integer sided right angle triangle be formed?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题75：奇异整数直角三角形
 
 ```yml
 tests:
-  - text: <code>euler75()</code>应返回161667。
-    testString: 'assert.strictEqual(euler75(), 161667, "<code>euler75()</code> should return 161667.");'
+  - text: <code>euler75()</code> should return 161667.
+    testString: assert.strictEqual(euler75(), 161667);
 
 ```
 
@@ -37,7 +43,6 @@ function euler75() {
 }
 
 euler75();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler75();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,31 +2,38 @@
 id: 587d7fa8367417b2b2512bcc
 title: Display Shapes with SVG
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用SVG显示形状
+forumTopicId: 301485
 ---
 
 ## Description
-<section id="description">最后一个挑战创建了一个具有给定宽度和高度的<code>svg</code>元素，这是可见的，因为它在<code>style</code>标记中应用了<code>background-color</code> 。代码为给定的宽度和高度创建了空间。下一步是创建一个放入<code>svg</code>区域的形状。 SVG中有许多支持的形状，例如矩形和圆形。它们用于显示数据。例如，矩形（ <code>&lt;rect&gt;</code> ）SVG形状可以在条形图中创建条形。将形状放入<code>svg</code>区域时，可以指定<code>x</code>和<code>y</code>坐标的位置。 （0,0）的原点位于左上角。 <code>x</code>正值将形状推向右侧， <code>y</code>正值将形状从原点向下推。要将形状放置在距离上次挑战的500（宽度）x 100（高度） <code>svg</code>的中间， <code>x</code>坐标将为250， <code>y</code>坐标将为50. SVG <code>rect</code>具有四个属性。它位于<code>svg</code>区域的位置有<code>x</code>和<code>y</code>坐标。它还有一个<code>height</code>和<code>width</code>来指定大小。 </section>
+<section id='description'>
+The last challenge created an <code>svg</code> element with a given width and height, which was visible because it had a <code>background-color</code> applied to it in the <code>style</code> tag. The code made space for the given width and height.
+The next step is to create a shape to put in the <code>svg</code> area. There are a number of supported shapes in SVG, such as rectangles and circles. They are used to display data. For example, a rectangle (<code>&lt;rect&gt;</code>) SVG shape could create a bar in a bar chart.
+When you place a shape into the <code>svg</code> area, you can specify where it goes with <code>x</code> and <code>y</code> coordinates. The origin point of (0, 0) is in the upper-left corner. Positive values for <code>x</code> push the shape to the right, and positive values for <code>y</code> push the shape down from the origin point.
+To place a shape in the middle of the 500 (width) x 100 (height) <code>svg</code> from last challenge, the <code>x</code> coordinate would be 250 and the <code>y</code> coordinate would be 50.
+An SVG <code>rect</code> has four attributes. There are the <code>x</code> and <code>y</code> coordinates for where it is placed in the <code>svg</code> area. It also has a <code>height</code> and <code>width</code> to specify the size.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>append()</code>为<code>svg</code>添加一个<code>rect</code>形状，并为其赋予<code>width</code>属性25和<code>height</code>属性100.此外，将每个设置的<code>rect</code> <code>x</code>和<code>y</code>属性设置为0。 </section>
+<section id='instructions'>
+Add a <code>rect</code> shape to the <code>svg</code> using <code>append()</code>, and give it a <code>width</code> attribute of 25 and <code>height</code> attribute of 100. Also, give the <code>rect</code> <code>x</code> and <code>y</code> attributes each set to 0.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的文档应该有1个<code>rect</code>元素。
-    testString: 'assert($("rect").length == 1, "Your document should have 1 <code>rect</code> element.");'
-  - text: <code>rect</code>元素的<code>width</code>属性应设置为25。
-    testString: 'assert($("rect").attr("width") == "25", "The <code>rect</code> element should have a <code>width</code> attribute set to 25.");'
-  - text: <code>rect</code>元素的<code>height</code>属性应设置为100。
-    testString: 'assert($("rect").attr("height") == "100", "The <code>rect</code> element should have a <code>height</code> attribute set to 100.");'
-  - text: <code>rect</code>元素的<code>x</code>属性应设置为0。
-    testString: 'assert($("rect").attr("x") == "0", "The <code>rect</code> element should have an <code>x</code> attribute set to 0.");'
-  - text: <code>rect</code>元素的<code>y</code>属性应设置为0。
-    testString: 'assert($("rect").attr("y") == "0", "The <code>rect</code> element should have a <code>y</code> attribute set to 0.");'
+  - text: Your document should have 1 <code>rect</code> element.
+    testString: assert($('rect').length == 1);
+  - text: The <code>rect</code> element should have a <code>width</code> attribute set to 25.
+    testString: assert($('rect').attr('width') == '25');
+  - text: The <code>rect</code> element should have a <code>height</code> attribute set to 100.
+    testString: assert($('rect').attr('height') == '100');
+  - text: The <code>rect</code> element should have an <code>x</code> attribute set to 0.
+    testString: assert($('rect').attr('x') == '0');
+  - text: The <code>rect</code> element should have a <code>y</code> attribute set to 0.
+    testString: assert($('rect').attr('y') == '0');
 
 ```
 
@@ -56,7 +63,6 @@ tests:
                   // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -71,4 +77,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,22 @@
 id: 5900f3cc1000cf542c50fede
 challengeType: 5
 title: 'Problem 95: Amicable chains'
-videoUrl: ''
-localeTitle: 问题95：友好的链条
+forumTopicId: 302212
 ---
 
 ## Description
-<section id="description">一个数的适当除数是除数字本身之外的所有除数。例如，28的正确除数是1,2,4,7和14.由于这些除数的总和等于28，我们称之为完全数。有趣的是，220的适当除数之和为284，284的适当除数之和为220，形成两个数的链。出于这个原因，220和284被称为友好对。也许鲜为人知的是较长的链条。例如，从12496开始，我们形成一个五个数字的链：12496→14288→15472→14536→14264（→12496→...）由于该链返回其起始点，因此称为友好链。找到最长友好链中最小的成员，没有超过一百万的元素。 </section>
+<section id='description'>
+The proper divisors of a number are all the divisors excluding the number itself. For example, the proper divisors of 28 are 1, 2, 4, 7, and 14. As the sum of these divisors is equal to 28, we call it a perfect number.
+Interestingly the sum of the proper divisors of 220 is 284 and the sum of the proper divisors of 284 is 220, forming a chain of two numbers. For this reason, 220 and 284 are called an amicable pair.
+Perhaps less well known are longer chains. For example, starting with 12496, we form a chain of five numbers:
+12496 → 14288 → 15472 → 14536 → 14264 (→ 12496 → ...)
+Since this chain returns to its starting point, it is called an amicable chain.
+Find the smallest member of the longest amicable chain with no element exceeding one million.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题95：友好的链条
 
 ```yml
 tests:
-  - text: <code>euler95()</code>应返回14316。
-    testString: 'assert.strictEqual(euler95(), 14316, "<code>euler95()</code> should return 14316.");'
+  - text: <code>euler95()</code> should return 14316.
+    testString: assert.strictEqual(euler95(), 14316);
 
 ```
 
@@ -37,7 +44,6 @@ function euler95() {
 }
 
 euler95();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler95();
 ```js
 // solution required
 ```
+
 </section>

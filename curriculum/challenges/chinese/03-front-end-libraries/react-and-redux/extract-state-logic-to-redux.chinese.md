@@ -3,33 +3,37 @@ id: 5a24c314108439a4d4036143
 title: Extract State Logic to Redux
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将状态逻辑提取到Redux
+forumTopicId: 301429
 ---
 
 ## Description
-<section id="description">现在您已完成React组件，您需要将其在其<code>state</code>本地执行的逻辑移动到Redux中。这是将简单的React应用程序连接到Redux的第一步。您的应用程序的唯一功能是将用户的新消息添加到无序列表中。该示例很简单，以演示React和Redux如何协同工作。 </section>
+<section id='description'>
+Now that you finished the React component, you need to move the logic it's performing locally in its <code>state</code> into Redux. This is the first step to connect the simple React app to Redux. The only functionality your app has is to add new messages from the user to an unordered list. The example is simple in order to demonstrate how React and Redux work together.
+</section>
 
 ## Instructions
-<section id="instructions">首先，定义一个动作类型&#39;ADD&#39;并将其设置为const <code>ADD</code> 。接下来，定义一个动作创建器<code>addMessage()</code> ，它创建添加消息的动作。您需要将<code>message</code>给此操作创建者，并在返回的<code>action</code>包含该消息。然后创建一个名为<code>messageReducer()</code>的reducer来处理消息的状态。初始状态应该等于空数组。此reducer应向状态中保存的消息数组添加消息，或返回当前状态。最后，创建Redux存储并将其传递给reducer。 </section>
+<section id='instructions'>
+First, define an action type 'ADD' and set it to a const <code>ADD</code>. Next, define an action creator <code>addMessage()</code> which creates the action to add a message. You'll need to pass a <code>message</code> to this action creator and include the message in the returned <code>action</code>.
+Then create a reducer called <code>messageReducer()</code> that handles the state for the messages. The initial state should equal an empty array. This reducer should add a message to the array of messages held in state, or return the current state. Finally, create your Redux store and pass it the reducer.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: const <code>ADD</code>应该存在并保持一个等于字符串<code>ADD</code>的值
-    testString: 'assert(ADD === "ADD", "The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>");'
-  - text: 动作创建者<code>addMessage</code>应返回<code>type</code>等于<code>ADD</code>的对象，并且消息等于传入的消息。
-    testString: 'assert((function() { const addAction = addMessage("__TEST__MESSAGE__"); return addAction.type === ADD && addAction.message === "__TEST__MESSAGE__"; })(), "The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.");'
-  - text: <code>messageReducer</code>应该是一个函数。
-    testString: 'assert(typeof messageReducer === "function", "<code>messageReducer</code> should be a function.");'
-  - text: 存储应该存在并且初始状态设置为空数组。
-    testString: 'assert((function() { const initialState = store.getState(); return typeof store === "object" && initialState.length === 0; })(), "The store should exist and have an initial state set to an empty array.");'
-  - text: 对商店调度<code>addMessage</code>应该<code>addMessage</code>向状态中保存的消息数组添加新消息。
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage("__A__TEST__MESSAGE")); const addState = store.getState(); return (isFrozen && addState[0] === "__A__TEST__MESSAGE"); })(), "Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.");'
-  - text: 如果使用任何其他操作调用， <code>messageReducer</code>应返回当前状态。
-    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: "FAKE_ACTION"}); const testState = store.getState(); return (addState === testState); })(), "The <code>messageReducer</code> should return the current state if called with any other actions.");'
+  - text: The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>
+    testString: assert(ADD === 'ADD');
+  - text: The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and <code>message</code> equal to the message that is passed in.
+    testString: assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })());
+  - text: <code>messageReducer</code> should be a function.
+    testString: assert(typeof messageReducer === 'function');
+  - text: The store should exist and have an initial state set to an empty array.
+    testString: assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })());
+  - text: Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.
+    testString: assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })());
+  - text: The <code>messageReducer</code> should return the current state if called with any other actions.
+    testString: 'assert((function() { const addState = store.getState(); store.dispatch({type: ''FAKE_ACTION''}); const testState = store.getState(); return (addState === testState); })());'
 
 ```
 
@@ -54,7 +58,30 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const ADD = 'ADD';
+
+const addMessage = (message) => {
+  return {
+    type: ADD,
+    message
+  }
+};
+
+const messageReducer = (state = [], action) => {
+  switch (action.type) {
+    case ADD:
+      return [
+        ...state,
+        action.message
+      ];
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(messageReducer);
 ```
+
 </section>

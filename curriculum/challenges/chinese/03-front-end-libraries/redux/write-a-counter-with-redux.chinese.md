@@ -3,33 +3,36 @@ id: 5a24c314108439a4d4036157
 title: Write a Counter with Redux
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 用Redux写一个计数器
+forumTopicId: 301453
 ---
 
 ## Description
-<section id="description">现在您已经了解了Redux的所有核心原则！您已经了解了如何创建操作和操作创建器，创建Redux存储，针对存储分派操作以及使用纯reducer设计状态更新。您甚至已经了解了如何使用reducer组合管理复杂状态并处理异步操作。这些示例过于简单，但这些概念是Redux的核心原则。如果您理解它们，那么您已准备好开始构建自己的Redux应用程序。接下来的挑战涵盖了有关<code>state</code>不变性的一些细节，但首先，这里是对迄今为止所学到的所有内容的回顾。 </section>
+<section id='description'>
+Now you've learned all the core principles of Redux! You've seen how to create actions and action creators, create a Redux store, dispatch your actions against the store, and design state updates with pure reducers. You've even seen how to manage complex state with reducer composition and handle asynchronous actions. These examples are simplistic, but these concepts are the core principles of Redux. If you understand them well, you're ready to start building your own Redux app. The next challenges cover some of the details regarding <code>state</code> immutability, but first, here's a review of everything you've learned so far.
+</section>
 
 ## Instructions
-<section id="instructions">在本课程中，您将从头开始使用Redux实现一个简单的计数器。代码编辑器中提供了基础知识，但您必须填写详细信息！使用提供的名称并定义<code>incAction</code>和<code>decAction</code>操作创建者， <code>decAction</code> <code>counterReducer()</code> ， <code>INCREMENT</code>和<code>DECREMENT</code>操作类型，最后定义Redux <code>store</code> 。一旦完成，您应该能够发送<code>INCREMENT</code>或<code>DECREMENT</code>操作来增加或减少<code>store</code>保存的状态。祝你好运第一个Redux应用程序！ </section>
+<section id='instructions'>
+In this lesson, you'll implement a simple counter with Redux from scratch. The basics are provided in the code editor, but you'll have to fill in the details! Use the names that are provided and define <code>incAction</code> and <code>decAction</code> action creators, the <code>counterReducer()</code>, <code>INCREMENT</code> and <code>DECREMENT</code> action types, and finally the Redux <code>store</code>. Once you're finished you should be able to dispatch <code>INCREMENT</code> or <code>DECREMENT</code> actions to increment or decrement the state held in the <code>store</code>. Good luck building your first Redux app!
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 动作创建者<code>incAction</code>应返回<code>type</code>等于<code>INCREMENT</code>值的动作对象
-    testString: 'assert(incAction().type ===INCREMENT, "The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>");'
-  - text: 动作创建者<code>decAction</code>应与返回动作对象<code>type</code>等于的值<code>DECREMENT</code>
-    testString: 'assert(decAction().type === DECREMENT, "The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>");'
-  - text: Redux存储应该以0 <code>state</code>初始化。
-    testString: 'assert(store.getState() === 0, "The Redux store should initialize with a <code>state</code> of 0.");'
-  - text: 在Redux存储上调度<code>incAction</code>应该将<code>state</code>增加1。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })(), "Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.");'
-  - text: 在Redux存储上调度<code>decAction</code>应该将<code>state</code>减1。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })(), "Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.");'
-  - text: <code>counterReducer</code>应该是一个函数
-    testString: 'assert(typeof counterReducer === "function", "<code>counterReducer</code> should be a function");'
+  - text: The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>
+    testString: assert(incAction().type ===INCREMENT);
+  - text: The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>
+    testString: assert(decAction().type === DECREMENT);
+  - text: The Redux store should initialize with a <code>state</code> of 0.
+    testString: assert(store.getState() === 0);
+  - text: Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })());
+  - text: Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.
+    testString: assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })());
+  - text: <code>counterReducer</code> should be a function
+    testString: assert(typeof counterReducer === 'function');
 
 ```
 
@@ -51,7 +54,6 @@ const incAction = null; // define an action creator for incrementing
 const decAction = null; // define an action creator for decrementing
 
 const store = null; // define the Redux store here, passing in your reducers
-
 ```
 
 </div>
@@ -63,7 +65,35 @@ const store = null; // define the Redux store here, passing in your reducers
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const incAction = () => {
+  return {
+    type: INCREMENT
+  }
+};
+
+const decAction = () => {
+  return {
+    type: DECREMENT
+  }
+};
+
+const store = Redux.createStore(counterReducer);
 ```
+
 </section>

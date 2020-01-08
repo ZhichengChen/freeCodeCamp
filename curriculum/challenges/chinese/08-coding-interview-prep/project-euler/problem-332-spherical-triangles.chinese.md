@@ -2,15 +2,30 @@
 id: 5900f4b91000cf542c50ffcb
 challengeType: 5
 title: 'Problem 332: Spherical triangles'
-videoUrl: ''
-localeTitle: 问题332：球形三角形
+forumTopicId: 301990
 ---
 
 ## Description
-<section id="description">球面三角形是通过在三个顶点中成对交叉的三个大圆弧形成在球体表面上的图形。 <p>设C（r）为具有中心（0,0,0）和半径r的球体。设Z（r）为具有整数坐标的C（r）表面上的点集。令T（r）为顶点为Z（r）的球形三角形的集合。由相同大弧上的三个点形成的简并球面三角形不包括在T（r）中。设A（r）为T（r）中最小球面三角形的面积。 </p><p>例如，A（14）是3.294040四舍五入到小数点后六位。 </p><p>找到A（r）。将您的答案四舍五入到小数点后六位。 </p></section>
+<section id='description'>
+A spherical triangle is a figure formed on the surface of a sphere by three great circular arcs intersecting pairwise in three vertices.
+
+
+
+
+Let C(r) be the sphere with the centre (0,0,0) and radius r.
+Let Z(r) be the set of points on the surface of C(r) with integer coordinates.
+Let T(r) be the set of spherical triangles with vertices in Z(r).
+Degenerate spherical triangles, formed by three points on the same great arc, are not included in T(r).
+Let A(r) be the area of the smallest spherical triangle in T(r).
+
+For example A(14) is 3.294040 rounded to six decimal places.
+
+Find  A(r). Give your answer rounded to six decimal places.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +33,8 @@ localeTitle: 问题332：球形三角形
 
 ```yml
 tests:
-  - text: <code>euler332()</code>应该返回2717.751525。
-    testString: 'assert.strictEqual(euler332(), 2717.751525, "<code>euler332()</code> should return 2717.751525.");'
+  - text: <code>euler332()</code> should return 2717.751525.
+    testString: assert.strictEqual(euler332(), 2717.751525);
 
 ```
 
@@ -37,7 +52,6 @@ function euler332() {
 }
 
 euler332();
-
 ```
 
 </div>
@@ -52,4 +66,5 @@ euler332();
 ```js
 // solution required
 ```
+
 </section>

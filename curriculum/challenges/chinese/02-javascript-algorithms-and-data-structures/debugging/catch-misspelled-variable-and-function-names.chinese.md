@@ -2,31 +2,35 @@
 id: 587d7b84367417b2b2512b35
 title: Catch Misspelled Variable and Function Names
 challengeType: 1
-videoUrl: ''
-localeTitle: 捕获拼错的变量和函数名称
+forumTopicId: 301186
 ---
 
 ## Description
-<section id="description"> <code>console.log()</code>和<code>typeof</code>方法是检查中间值和程序输出类型的两种主要方法。现在是时候进入错误所采用的常见形式了。快速打字机可以同意的一个语法级问题是简单的拼写错误。变量或函数名称中的转置，丢失或错误大写字符将使浏览器查找不存在的对象 - 并以引用错误的形式进行抱怨。 JavaScript变量和函数名称区分大小写。 </section>
+<section id='description'>
+The <code>console.log()</code> and <code>typeof</code> methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.
+Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript variable and function names are case-sensitive.
+</section>
 
 ## Instructions
-<section id="instructions">修复代码中的两个拼写错误，以便<code>netWorkingCapital</code>计算有效。 </section>
+<section id='instructions'>
+Fix the two spelling errors in the code so the <code>netWorkingCapital</code> calculation works.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 检查netWorkingCapital计算中使用的两个变量的拼写，控制台输出应显示“净营运资金为：2”。
-    testString: 'assert(netWorkingCapital === 2, "Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".");'
-  - text: 代码中不应存在拼写错误的变量。
-    testString: 'assert(!code.match(/recievables/g), "There should be no instances of mis-spelled variables in the code.");'
-  - text: <code>receivables</code>在代码中声明并正确使用应<code>receivables</code>变量。
-    testString: 'assert(code.match(/receivables/g).length == 2, "The <code>receivables</code> variable should be declared and used properly in the code.");'
-  - text: 代码中不应存在拼写错误的变量。
-    testString: 'assert(!code.match(/payable;/g), "There should be no instances of mis-spelled variables in the code.");'
-  - text: 应在组织中声明并正确使用<code>payables</code>变量。
-    testString: 'assert(code.match(/payables/g).length == 2, "The <code>payables</code> variable should be declared and used properly in the code.");'
+  - text: 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that "Net working capital is: 2".'
+    testString: 'assert(netWorkingCapital === 2);'
+  - text: There should be no instances of mis-spelled variables in the code.
+    testString: assert(!code.match(/recievables/g));
+  - text: The <code>receivables</code> variable should be declared and used properly in the code.
+    testString: assert(code.match(/receivables/g).length == 2);
+  - text: There should be no instances of mis-spelled variables in the code.
+    testString: assert(!code.match(/payable;/g));
+  - text: The <code>payables</code> variable should be declared and used properly in the code.
+    testString: assert(code.match(/payables/g).length == 2);
 
 ```
 
@@ -42,7 +46,6 @@ let receivables = 10;
 let payables = 8;
 let netWorkingCapital = recievables - payable;
 console.log(`Net working capital is: ${netWorkingCapital}`);
-
 ```
 
 </div>
@@ -55,6 +58,10 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 <section id='solution'>
 
 ```js
-// solution required
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+console.log(`Net working capital is: ${netWorkingCapital}`);
 ```
+
 </section>

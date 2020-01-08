@@ -3,15 +3,28 @@ id: 5a5d02bd919fcf9ca8cf46cb
 title: Build a Light-Bright App
 challengeType: 3
 isRequired: false
-videoUrl: ''
-localeTitle: 构建一个明亮的应用程序
+forumTopicId: 302350
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/eyLYXE" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/eyLYXE</a> 。 <strong>规则＃1：</strong>不要查看示例项目的代码。自己搞清楚。 <strong>规则＃2：</strong>完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a> 。使用您需要的任何库或API。给它你自己的个人风格。 <strong>用户故事：</strong>我可以单击或拖动鼠标光标为圆圈着色。 <strong>用户故事：</strong>我可以双击彩色圆圈去除颜色。 <strong>用户故事：</strong>我可以点击彩色圆圈来改变它的颜色。 <strong>用户故事：</strong>每次点击我都会得到一个不同颜色的圆圈。 <strong>用户故事：</strong>我可以点击“重置”按钮删除最近的颜色。 <strong>用户故事：</strong>我可以单击“全部重置”按钮删除圆圈中的所有颜色。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。完成后，单击“我已完成此挑战”按钮并包含指向CodePen的链接。您可以通过Facebook上的朋友分享您的项目反馈。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/eyLYXE' target='_blank'>https://codepen.io/freeCodeCamp/full/eyLYXE</a>.
+<strong>Rule #1:</strong> Don't look at the example project's code. Figure it out for yourself.
+<strong>Rule #2:</strong> Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.
+<strong>User Story:</strong> I can click or drag the mouse cursor to color the circles.
+<strong>User Story:</strong> I can double-click on a colored circle to remove the color.
+<strong>User Story:</strong> I can click on a colored circle to change its color.
+<strong>User Story:</strong> I should get a circle of different color on each click.
+<strong>User Story:</strong> I can click on the 'Reset' button to remove the recent color.
+<strong>User Story:</strong> I can click on the 'Reset All' button to remove all the colors from the circles.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
+When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
+You can get feedback on your project by sharing it with your friends on Facebook.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +48,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

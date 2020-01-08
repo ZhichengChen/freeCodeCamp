@@ -2,31 +2,50 @@
 id: 56533eb9ac21ba0edf2244c8
 title: Accessing Object Properties with Bracket Notation
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用括号表示法访问对象属性
+videoUrl: 'https://scrimba.com/c/cBvmEHP'
+forumTopicId: 16163
 ---
 
 ## Description
-<section id="description">访问对象属性的第二种方法是括号表示法（ <code>[]</code> ）。如果您尝试访问的对象的属性在其名称中有空格，则需要使用括号表示法。但是，您仍然可以在没有空格的对象属性上使用括号表示法。以下是使用括号表示法读取对象属性的示例： <blockquote> var myObj = { <br> “太空名称”：“柯克”， <br> “更多空间”：“Spock”​​， <br> “NoSpace”：“USS Enterprise” <br> }; <br> myObj [“空间名称”]; //柯克<br> myObj [&#39;更多空间&#39;]; // Spock <br> MyObj中[ “无空间”]; // USS Enterprise </blockquote>请注意，其中包含空格的属性名称必须使用引号（单引号或双引号）。 </section>
+<section id='description'>
+The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.
+However, you can still use bracket notation on object properties without spaces.
+Here is a sample of using bracket notation to read an object's property:
+
+```js
+var myObj = {
+  "Space Name": "Kirk",
+  "More Space": "Spock",
+  "NoSpace": "USS Enterprise"
+};
+myObj["Space Name"]; // Kirk
+myObj['More Space']; // Spock
+myObj["NoSpace"];    // USS Enterprise
+```
+
+Note that property names with spaces in them must be in quotes (single or double).
+</section>
 
 ## Instructions
-<section id="instructions">使用括号表示法<code>testObj</code>属性<code>&quot;an entree&quot;</code> <code>testObj</code> <code>&quot;an entree&quot;</code>和<code>&quot;the drink&quot;</code>的<code>testObj</code> ，并分别将它们分配给<code>entreeValue</code>和<code>drinkValue</code> 。 </section>
+<section id='instructions'>
+Read the values of the properties <code>"an entree"</code> and <code>"the drink"</code> of <code>testObj</code> using bracket notation and assign them to <code>entreeValue</code> and <code>drinkValue</code> respectively.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>entreeValue</code>应该是一个字符串
-    testString: 'assert(typeof entreeValue === "string" , "<code>entreeValue</code> should be a string");'
-  - text: <code>entreeValue</code>的值应该是<code>&quot;hamburger&quot;</code>
-    testString: 'assert(entreeValue === "hamburger" , "The value of <code>entreeValue</code> should be <code>"hamburger"</code>");'
-  - text: <code>drinkValue</code>应该是一个字符串
-    testString: 'assert(typeof drinkValue === "string" , "<code>drinkValue</code> should be a string");'
-  - text: <code>drinkValue</code>的值应该是<code>&quot;water&quot;</code>
-    testString: 'assert(drinkValue === "water" , "The value of <code>drinkValue</code> should be <code>"water"</code>");'
-  - text: 您应该使用括号表示法两次
-    testString: 'assert(code.match(/testObj\s*?\[("|")[^""]+\1\]/g).length > 1, "You should use bracket notation twice");'
+  - text: <code>entreeValue</code> should be a string
+    testString: assert(typeof entreeValue === 'string' );
+  - text: The value of <code>entreeValue</code> should be <code>"hamburger"</code>
+    testString: assert(entreeValue === 'hamburger' );
+  - text: <code>drinkValue</code> should be a string
+    testString: assert(typeof drinkValue === 'string' );
+  - text: The value of <code>drinkValue</code> should be <code>"water"</code>
+    testString: assert(drinkValue === 'water' );
+  - text: You should use bracket notation twice
+    testString: assert(code.match(/testObj\s*?\[('|")[^'"]+\1\]/g).length > 1);
 
 ```
 
@@ -49,7 +68,6 @@ var testObj = {
 
 var entreeValue = testObj;   // Change this line
 var drinkValue = testObj;    // Change this line
-
 ```
 
 </div>
@@ -59,7 +77,7 @@ var drinkValue = testObj;    // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b) { return "entreeValue = '" + a + "', drinkValue = '" + b + "'"; })(entreeValue,drinkValue);
 ```
 
 </div>
@@ -69,7 +87,15 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var testObj = {
+  "an entree": "hamburger",
+  "my side": "veggies",
+  "the drink": "water"
+};
+var entreeValue = testObj["an entree"];
+var drinkValue = testObj['the drink'];
 ```
+
 </section>

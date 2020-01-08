@@ -2,41 +2,56 @@
 id: 587d7dbb367417b2b2512baa
 title: Reuse Patterns Using Capture Groups
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用捕获组重用模式
+forumTopicId: 301364
 ---
 
 ## Description
-<section id="description">您搜索的某些模式将在字符串中多次出现。手动重复该正则表达式是浪费的。有一种更好的方法可以指定何时在字符串中有多个重复子字符串。您可以使用<code>capture groups</code>搜索重复子字符串。括号<code>(</code>和<code>)</code>用于查找重复子串。你把模式的正则表达式重复在括号之间。要指定重复字符串的显示位置，请使用反斜杠（ <code>\</code> ），然后使用数字。此数字从1开始，随着您使用的每个其他捕获组而增加。一个例子是<code>\1</code>来匹配第一组。下面的示例匹配以空格分隔的两次出现的任何单词： <blockquote>让repeatStr =“正则表达式正则表达式”; <br> let repeatRegex = /（\ w +）\ s \ 1 /; <br> repeatRegex.test（repeatStr）; //返回true <br> repeatStr.match（repeatRegex）; //返回[“regex regex”，“regex”] </blockquote>对字符串使用<code>.match()</code>方法将返回一个数组，其中包含与其匹配的字符串及其捕获组。 </section>
+<section id='description'>
+Some patterns you search for will occur multiple times in a string. It is wasteful to manually repeat that regex. There is a better way to specify when you have multiple repeat substrings in your string.
+You can search for repeat substrings using <dfn>capture groups</dfn>. Parentheses, <code>(</code> and <code>)</code>, are used to find repeat substrings. You put the regex of the pattern that will repeat in between the parentheses.
+To specify where that repeat string will appear, you use a backslash (<code>\</code>) and then a number. This number starts at 1 and increases with each additional capture group you use. An example would be <code>\1</code> to match the first group.
+The example below matches any word that occurs twice separated by a space:
+
+```js
+let repeatStr = "regex regex";
+let repeatRegex = /(\w+)\s\1/;
+repeatRegex.test(repeatStr); // Returns true
+repeatStr.match(repeatRegex); // Returns ["regex regex", "regex"]
+```
+
+Using the <code>.match()</code> method on a string will return an array with the string it matches, along with its capture group.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>reRegex</code>使用<code>capture groups</code>来匹配在字符串中仅重复三次的数字，每个数字用空格分隔。 </section>
+<section id='instructions'>
+Use capture groups in <code>reRegex</code> to match numbers that are repeated only three times in a string, each separated by a space.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的正则表达式应该使用数字的速记字符类。
-    testString: 'assert(reRegex.source.match(/\\d/), "Your regex should use the shorthand character class for digits.");'
-  - text: 您的正则表达式应该重复使用捕获组两次。
-    testString: 'assert(reRegex.source.match(/\\\d/g).length === 2, "Your regex should reuse the capture group twice.");'
-  - text: 你的正则表达式应该有两个空格来分隔这三个数字。
-    testString: 'assert(reRegex.source.match(/\\s/g).length === 2, "Your regex should have two spaces separating the three numbers.");'
-  - text: 你的正则表达式应该匹配<code>&quot;42 42 42&quot;</code> 。
-    testString: 'assert(reRegex.test("42 42 42"), "Your regex should match <code>"42 42 42"</code>.");'
-  - text: 你的正则表达式应该匹配<code>&quot;100 100 100&quot;</code> 。
-    testString: 'assert(reRegex.test("100 100 100"), "Your regex should match <code>"100 100 100"</code>.");'
-  - text: 你的正则表达式不应该匹配<code>&quot;42 42 42 42&quot;</code> 。
-    testString: 'assert.equal(("42 42 42 42").match(reRegex.source), null, "Your regex should not match <code>"42 42 42 42"</code>.");'
-  - text: 你的正则表达式不应该匹配<code>&quot;42 42&quot;</code> 。
-    testString: 'assert.equal(("42 42").match(reRegex.source), null, "Your regex should not match <code>"42 42"</code>.");'
-  - text: 你的正则表达式不应该匹配<code>&quot;101 102 103&quot;</code> 。
-    testString: 'assert(!reRegex.test("101 102 103"), "Your regex should not match <code>"101 102 103"</code>.");'
-  - text: 你的正则表达式不应该匹配<code>&quot;1 2 3&quot;</code> 。
-    testString: 'assert(!reRegex.test("1 2 3"), "Your regex should not match <code>"1 2 3"</code>.");'
-  - text: 你的正则表达式应匹配<code>&quot;10 10 10&quot;</code> 。
-    testString: 'assert(reRegex.test("10 10 10"), "Your regex should match <code>"10 10 10"</code>.");'
+  - text: Your regex should use the shorthand character class for digits.
+    testString: assert(reRegex.source.match(/\\d/));
+  - text: Your regex should reuse a capture group twice.
+    testString: assert(reRegex.source.match(/\\1|\\2/g).length >= 2);
+  - text: Your regex should have two spaces separating the three numbers.
+    testString: assert(reRegex.source.match(/ |\\s/g).length === 2 || reRegex.source.match(/\(\\s\)(?=.*\\(1|2))/g));
+  - text: Your regex should match <code>"42 42 42"</code>.
+    testString: assert(reRegex.test("42 42 42"));
+  - text: Your regex should match <code>"100 100 100"</code>.
+    testString: assert(reRegex.test("100 100 100"));
+  - text: Your regex should not match <code>"42 42 42 42"</code>.
+    testString: assert.equal(("42 42 42 42").match(reRegex.source), null);
+  - text: Your regex should not match <code>"42 42"</code>.
+    testString: assert.equal(("42 42").match(reRegex.source), null);
+  - text: Your regex should not match <code>"101 102 103"</code>.
+    testString: assert(!reRegex.test("101 102 103"));
+  - text: Your regex should not match <code>"1 2 3"</code>.
+    testString: assert(!reRegex.test("1 2 3"));
+  - text: Your regex should match <code>"10 10 10"</code>.
+    testString: assert(reRegex.test("10 10 10"));
 
 ```
 
@@ -51,7 +66,6 @@ tests:
 let repeatNum = "42 42 42";
 let reRegex = /change/; // Change this line
 let result = reRegex.test(repeatNum);
-
 ```
 
 </div>
@@ -64,6 +78,9 @@ let result = reRegex.test(repeatNum);
 <section id='solution'>
 
 ```js
-// solution required
+let repeatNum = "42 42 42";
+let reRegex = /^(\d+)\s\1\s\1$/;
+let result = reRegex.test(repeatNum);
 ```
+
 </section>

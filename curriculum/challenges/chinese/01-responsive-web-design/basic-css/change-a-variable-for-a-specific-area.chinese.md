@@ -2,23 +2,28 @@
 id: 5a9d72a1424fe3d0e10cad15
 title: Change a variable for a specific area
 challengeType: 0
-videoUrl: ''
-localeTitle: 更改特定区域的变量
+videoUrl: 'https://scrimba.com/c/cdRwbuW'
+forumTopicId: 301085
 ---
 
 ## Description
-<section id="description">当您在创建变量<code>:root</code> ，他们将设置可变整个页面的价值。然后，您可以通过在特定元素中再次设置它们来覆盖这些变量。 </section>
+<section id='description'>
+When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.
+You can then over-write these variables by setting them again within a specific element.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>penguin</code>类<code>--penguin-belly</code>的值更改为<code>white</code> 。 </section>
+<section id='instructions'>
+Change the value of <code>--penguin-belly</code> to <code>white</code> in the <code>penguin</code> class.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应该将<code>--penguin-belly</code>变量重新分配为<code>white</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
+  - text: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -234,7 +239,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -246,7 +250,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".penguin {--penguin-belly: white;}"
 ```
+
 </section>

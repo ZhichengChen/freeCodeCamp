@@ -2,15 +2,21 @@
 id: 5900f3d91000cf542c50feeb
 challengeType: 5
 title: 'Problem 108: Diophantine Reciprocals I'
-videoUrl: ''
-localeTitle: 问题108：丢番图互惠I
+forumTopicId: 301732
 ---
 
 ## Description
-<section id="description">在下面的等式中，x，y和n是正整数。 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var>对于<var>n</var> = 4，恰好有三种不同的解：1/5 + 1/20 = 1/4 <br> 1/6 + 1/12 = 1/4 <br> 1/8 + 1/8 = 1/4不同解的数量超过一千的<var>n的</var>最小值是多少？ </section>
+<section id='description'>
+In the following equation x, y, and n are positive integers.
+1/<var>x</var> + 1/<var>y</var> = 1/<var>n</var>
+For <var>n</var> = 4 there are exactly three distinct solutions:
+1/5 + 1/20 = 1/4<br />1/6 + 1/12 = 1/4<br />1/8 + 1/8 = 1/4
+What is the least value of <var>n</var> for which the number of distinct solutions exceeds one-thousand?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题108：丢番图互惠I
 
 ```yml
 tests:
-  - text: diophantineOne <code>diophantineOne()</code>应返回180180。
-    testString: 'assert.strictEqual(diophantineOne(), 180180, "<code>diophantineOne()</code> should return 180180.");'
+  - text: <code>diophantineOne()</code> should return 180180.
+    testString: assert.strictEqual(diophantineOne(), 180180);
 
 ```
 
@@ -37,7 +43,6 @@ function diophantineOne() {
 }
 
 diophantineOne();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ diophantineOne();
 ```js
 // solution required
 ```
+
 </section>

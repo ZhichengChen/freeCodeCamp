@@ -2,15 +2,34 @@
 id: 5900f4b71000cf542c50ffca
 challengeType: 5
 title: 'Problem 331: Cross flips'
-videoUrl: ''
-localeTitle: 问题331：交叉翻转
+forumTopicId: 301989
 ---
 
 ## Description
-<section id="description"> N×N个盘放在方形游戏板上。每个磁盘都有黑色和白色。 <p>在每个回合中，您可以选择一个磁盘并翻转与该磁盘相同的行和同一列中的所有磁盘：因此翻转2×N-1个磁盘。当所有磁盘显示其白色边时，游戏结束。以下示例显示了5×5板上的游戏。 </p><p>可以证明3是完成这个游戏的最小转弯次数。 </p><p> N×N板上的左下盘具有坐标（0,0）;右下盘具有坐标（N-1,0），左上盘具有坐标（0，N-1）。 </p><p> CN为具有N×N个盘的板的以下配置：（x，y）处的盘满足，表示其黑色侧;否则，它显示其白色的一面。 C5如上所示。 </p><p>设T（N）是从配置CN开始完成游戏的最小圈数，如果配置CN不可解，则为0。我们已经证明T（5）= 3。你还得到T（10）= 29和T（1 000）= 395253。 </p><p>找 。 </p></section>
+<section id='description'>
+N×N disks are placed on a square game board. Each disk has a black side and white side.
+
+At each turn, you may choose a disk and flip all the disks in the same row and the same column as this disk: thus 2×N-1 disks are flipped. The game ends when all disks show their white side. The following example shows a game on a 5×5 board.
+
+
+
+It can be proven that 3 is the minimal number of turns to finish this game.
+
+The bottom left disk on the N×N board has coordinates (0,0);
+the bottom right disk has coordinates (N-1,0) and the top left disk has coordinates (0,N-1).
+
+Let CN be the following configuration of a board with N×N disks:
+A disk at (x,y) satisfying , shows its black side; otherwise, it shows its white side. C5 is shown above.
+
+Let T(N) be the minimal number of turns to finish a game starting from configuration CN or 0 if configuration CN is unsolvable.
+We have shown that T(5)=3. You are also given that T(10)=29 and T(1 000)=395253.
+
+Find .
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +37,8 @@ localeTitle: 问题331：交叉翻转
 
 ```yml
 tests:
-  - text: <code>euler331()</code>应该返回467178235146843500。
-    testString: 'assert.strictEqual(euler331(), 467178235146843500, "<code>euler331()</code> should return 467178235146843500.");'
+  - text: <code>euler331()</code> should return 467178235146843500.
+    testString: assert.strictEqual(euler331(), 467178235146843500);
 
 ```
 
@@ -37,7 +56,6 @@ function euler331() {
 }
 
 euler331();
-
 ```
 
 </div>
@@ -52,4 +70,5 @@ euler331();
 ```js
 // solution required
 ```
+
 </section>

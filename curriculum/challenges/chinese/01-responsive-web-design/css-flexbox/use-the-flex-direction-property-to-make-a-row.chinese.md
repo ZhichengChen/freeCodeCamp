@@ -2,23 +2,29 @@
 id: 587d78ab367417b2b2512af2
 title: Use the flex-direction Property to Make a Row
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用flex-direction属性创建一行
+videoUrl: 'https://scrimba.com/p/pVaDAv/cBEkbfJ'
+forumTopicId: 301110
 ---
 
 ## Description
-<section id="description">添加<code>display: flex</code> to a element将其转换为flex容器。这使得可以将该元素的任何子节点对齐成行或列。您可以通过将<code>flex-direction</code>属性添加到父项并将其设置为行或列来完成此操作。创建行将水平对齐子项，创建列将垂直对齐子项。 <code>flex-direction</code>其他选项是row-reverse和column-reverse。 <strong>注意</strong> <br> <code>flex-direction</code>属性的默认值为row。 </section>
+<section id='description'>
+Adding <code>display: flex</code> to an element turns it into a flex container. This makes it possible to align any children of that element into rows or columns. You do this by adding the <code>flex-direction</code> property to the parent item and setting it to row or column. Creating a row will align the children horizontally, and creating a column will align the children vertically.
+Other options for <code>flex-direction</code> are row-reverse and column-reverse.
+<strong>Note:</strong> The default value for the <code>flex-direction</code> property is <code>row</code>.
+</section>
 
 ## Instructions
-<section id="instructions">将CSS属性<code>flex-direction</code>添加到<code>#box-container</code>元素，并为其赋值row-reverse。 </section>
+<section id='instructions'>
+Add the CSS property <code>flex-direction</code> to the <code>#box-container</code> element, and give it a value of <code>row-reverse</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>#box-container</code>元素的<code>flex-direction</code>属性应设置为row-reverse。'
-    testString: 'assert($("#box-container").css("flex-direction") == "row-reverse", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.");'
+  - text: The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.
+    testString: assert($('#box-container').css('flex-direction') == 'row-reverse');
 
 ```
 
@@ -53,7 +59,6 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
-
 ```
 
 </div>
@@ -65,7 +70,30 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  #box-container {
+    display: flex;
+    height: 500px;
+    flex-direction: row-reverse;
+  }
+  #box-1 {
+    background-color: dodgerblue;
+    width: 50%;
+    height: 50%;
+  }
+
+  #box-2 {
+    background-color: orangered;
+    width: 50%;
+    height: 50%;
+  }
+</style>
+
+<div id="box-container">
+  <div id="box-1"></div>
+  <div id="box-2"></div>
+</div>
 ```
+
 </section>

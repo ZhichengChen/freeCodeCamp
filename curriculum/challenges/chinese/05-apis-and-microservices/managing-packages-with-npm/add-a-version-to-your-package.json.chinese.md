@@ -1,18 +1,23 @@
 ---
 id: 587d7fb4367417b2b2512bff
 title: Add a Version to Your package.json
-localeTitle: 在package.json中添加一个版本
 challengeType: 2
+forumTopicId: 301525
 ---
 
 ## Description
-<section id='description'> <code>0</code>该版本与package.json中必填字段之一一起。该字段描述了项目的当前版本。 <code>0</code>示例
-<code>"version": "1.2",</code> <code>0</code>说明<code>0</code>在Glitch项目中向package.json添加版本。 
+<section id='description'>
+A <code>version</code> is one of the required fields of your package.json file. This field describes the current version of your project. Here's an example:
+
+```json
+"version": "1.2.0",
+```
+
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Add a <code>version</code> to the package.json file of your project.
 </section>
 
 ## Tests
@@ -20,7 +25,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“版本”密钥
+  - text: package.json should have a valid "version" key
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.version, ''"version" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,6 +41,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -2,15 +2,18 @@
 id: 5900f3a81000cf542c50febb
 challengeType: 5
 title: 'Problem 60: Prime pair sets'
-videoUrl: ''
-localeTitle: 问题60：素数对设置
+forumTopicId: 302172
 ---
 
 ## Description
-<section id="description">素数3,7,109和673非常值得注意。通过取任何两个素数并以任何顺序连接它们，结果将始终是素数。例如，取7和109，7109和1097都是素数。这四个素数的总和，792，代表具有此属性的一组四个素数的最低和。找到一组五个素数的最低和，其中任何两个素数连接以产生另一个素数。 </section>
+<section id='description'>
+The primes 3, 7, 109, and 673, are quite remarkable. By taking any two primes and concatenating them in any order the result will always be prime. For example, taking 7 and 109, both 7109 and 1097 are prime. The sum of these four primes, 792, represents the lowest sum for a set of four primes with this property.
+Find the lowest sum for a set of five primes for which any two primes concatenate to produce another prime.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 问题60：素数对设置
 
 ```yml
 tests:
-  - text: <code>euler60()</code>应返回26033。
-    testString: 'assert.strictEqual(euler60(), 26033, "<code>euler60()</code> should return 26033.");'
+  - text: <code>euler60()</code> should return 26033.
+    testString: assert.strictEqual(euler60(), 26033);
 
 ```
 
@@ -37,7 +40,6 @@ function euler60() {
 }
 
 euler60();
-
 ```
 
 </div>
@@ -52,4 +54,5 @@ euler60();
 ```js
 // solution required
 ```
+
 </section>

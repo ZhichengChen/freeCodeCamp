@@ -2,25 +2,32 @@
 id: 587d778f367417b2b2512aae
 title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
-videoUrl: ''
-localeTitle: 通过使用描述性链接文本给出链接含义
+videoUrl: 'https://scrimba.com/c/c437DcV'
+forumTopicId: 301013
 ---
 
 ## Description
-<section id="description">屏幕阅读器用户对其设备读取的内容类型有不同的选择。这包括跳过（或覆盖）地标元素，跳转到主要内容或从标题中获取页面摘要。另一种选择是仅听取页面上可用的链接。屏幕阅读器通过阅读链接文本或锚（ <code>a</code> ）标签之间的内容来完成此操作。列出“点击此处”或“阅读更多”链接的作用不大。相反，您应该在<code>a</code>标签中使用简短但具有描述性的文本，以便为这些用户提供更多资讯。 </section>
+<section id='description'>
+Screen reader users have different options for what type of content their device reads. This includes skipping to (or over) landmark elements, jumping to the main content, or getting a page summary from the headings. Another option is to only hear the links available on a page.
+Screen readers do this by reading the link text, or what's between the anchor (<code>a</code>) tags. Having a list of "click here" or "read more" links isn't helpful. Instead, you should use brief but descriptive text within the <code>a</code> tags to provide more meaning for these users.
+</section>
 
 ## Instructions
-<section id="instructions">如果没有上下文，Camper Cat正在使用的链接文字不是很具描述性。移动 <code>a</code> 标签，使它们环绕文本“有关电池的信息”而不是环绕着“点击此处”。 </section>
+<section id='instructions'>
+The link text that Camper Cat is using is not very descriptive without the surrounding context. Move the anchor (<code>a</code>) tags so they wrap around the text "information about batteries" instead of "Click here".
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您应将<code>a</code>标签从“点击这里”移动，让其环绕在“关于电池的信息”。
-    testString: 'assert($("a").text().match(/^(information about batteries)$/g), "Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".");'
-  - text: 确保您<code>a</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(""|"")>/g).length, "Make sure your <code>a</code> element has a closing tag.");'
+  - text: Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".
+    testString: assert($('a').text().match(/^(information about batteries)$/g));
+  - text: The <code>a</code> element should have an <code>href</code> attribute with a value of an empty string <code>""</code>.
+    testString: assert($('a').attr('href') === '');
+  - text: The <code>a</code> element should have a closing tag.
+    testString: assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(''|"")>/g).length);
 
 ```
 
@@ -41,7 +48,6 @@ tests:
     <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. <a href="">Click here</a> for information about batteries</p>
   </article>
 </body>
-
 ```
 
 </div>
@@ -53,7 +59,16 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<body>
+  <header>
+    <h1>Deep Thoughts with Master Camper Cat</h1>
+  </header>
+  <article>
+    <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+    <p>Felines the world over have been waging war on the most persistent of foes. This red nemesis combines both cunning stealth and lightening speed. But chin up, fellow fighters, our time for victory may soon be near. Click here for <a href="">information about batteries</a></p>
+  </article>
+</body>
 ```
+
 </section>

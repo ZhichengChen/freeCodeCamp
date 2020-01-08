@@ -2,15 +2,19 @@
 id: 5900f3f11000cf542c50ff03
 challengeType: 5
 title: 'Problem 132: Large repunit factors'
-videoUrl: ''
-localeTitle: 问题132：大的重新安置因素
+forumTopicId: 301760
 ---
 
 ## Description
-<section id="description">完全由1组成的数字称为repunit。我们将R（k）定义为长度k的重新定位。例如，R（10）= 1111111111 = 11×41×271×9091，并且这些素因子的总和是9414.求出R（109）的前40个素因子的总和。 </section>
+<section id='description'>
+A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k.
+For example, R(10) = 1111111111 = 11×41×271×9091, and the sum of these prime factors is 9414.
+Find the sum of the first forty prime factors of R(109).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题132：大的重新安置因素
 
 ```yml
 tests:
-  - text: <code>euler132()</code>应返回843296。
-    testString: 'assert.strictEqual(euler132(), 843296, "<code>euler132()</code> should return 843296.");'
+  - text: <code>euler132()</code> should return 843296.
+    testString: assert.strictEqual(euler132(), 843296);
 
 ```
 
@@ -37,7 +41,6 @@ function euler132() {
 }
 
 euler132();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler132();
 ```js
 // solution required
 ```
+
 </section>

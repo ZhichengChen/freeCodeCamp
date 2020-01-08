@@ -2,15 +2,29 @@
 id: 5900f4281000cf542c50ff39
 challengeType: 5
 title: 'Problem 186: Connectedness of a network'
-videoUrl: ''
-localeTitle: 问题186：网络的连通性
+forumTopicId: 301822
 ---
 
 ## Description
-<section id="description">以下是来自拥有100万用户的繁忙电话系统的记录： <p> RecNrCallerCalled120000710005326001835004393600863701497 .........来电者的电话号码和记录n中的被叫号码是来电者（n）= S2n-1和被叫（n）= S2n，其中S1,2,3，...来来自“Lagged Fibonacci Generator”： </p><p>对于1≤k≤55，Sk = [100003  -  200003k + 300007k3]（模1000000）对于56≤k，Sk = [Sk-24 + Sk-55]（模1000000） </p><p>如果Caller（n）= Called（n），则假定用户误操作并且呼叫失败;否则通话成功。 </p><p>从记录的开头，我们说如果X调用Y，则任何一对用户X和Y都是朋友，反之亦然。类似地，如果X是Y的朋友并且Y是Z的朋友，则X是Z的朋友的朋友;等等更长的链条。 </p><p>总理的电话号码是524287.经过多少次成功的电话，不计算误操作，99％的用户（包括PM）将成为总理的朋友，朋友的朋友等？ </p></section>
+<section id='description'>
+Here are the records from a busy telephone system with one million users:
+
+RecNrCallerCalled120000710005326001835004393600863701497.........
+The telephone number of the caller and the called number in record n are Caller(n) = S2n-1 and Called(n) = S2n where S1,2,3,... come from the "Lagged Fibonacci Generator":
+
+For 1 ≤ k ≤ 55, Sk = [100003 - 200003k + 300007k3] (modulo 1000000)
+For 56 ≤ k, Sk = [Sk-24 + Sk-55] (modulo 1000000)
+
+If Caller(n) = Called(n) then the user is assumed to have misdialled and the call fails; otherwise the call is successful.
+
+From the start of the records, we say that any pair of users X and Y are friends if X calls Y or vice-versa. Similarly, X is a friend of a friend of Z if X is a friend of Y and Y is a friend of Z; and so on for longer chains.
+
+The Prime Minister's phone number is 524287. After how many successful calls, not counting misdials, will 99% of the users (including the PM) be a friend, or a friend of a friend etc., of the Prime Minister?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +32,8 @@ localeTitle: 问题186：网络的连通性
 
 ```yml
 tests:
-  - text: <code>euler186()</code>应返回2325629。
-    testString: 'assert.strictEqual(euler186(), 2325629, "<code>euler186()</code> should return 2325629.");'
+  - text: <code>euler186()</code> should return 2325629.
+    testString: assert.strictEqual(euler186(), 2325629);
 
 ```
 
@@ -37,7 +51,6 @@ function euler186() {
 }
 
 euler186();
-
 ```
 
 </div>
@@ -52,4 +65,5 @@ euler186();
 ```js
 // solution required
 ```
+
 </section>

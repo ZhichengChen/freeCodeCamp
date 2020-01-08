@@ -2,15 +2,17 @@
 id: 587d8253367417b2b2512c6c
 title: Perform a Union on Two Sets
 challengeType: 1
-videoUrl: ''
-localeTitle: 在两个集上执行联合
+forumTopicId: 301708
 ---
 
 ## Description
-<section id="description">在本练习中，我们将对两组数据执行联合。我们将在我们的<code>Set</code>数据结构上创建一个名为<code>union</code> 。此方法应将另一个<code>Set</code>作为参数，并返回两个集合的<code>union</code>集，不包括任何重复值。例如，如果<code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code>和<code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> ，则setA和setB的并集为： <code>setA.union(setB) = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</code> 。 </section>
+<section id='description'>
+In this exercise we are going to perform a union on two sets of data. We will create a method on our <code>Set</code> data structure called <code>union</code>. This method should take another <code>Set</code> as an argument and return the <code>union</code> of the two sets, excluding any duplicate values.
+For example, if <code>setA = ['a','b','c']</code> and <code>setB = ['a','b','d','e']</code>, then the union of setA and setB is: <code>setA.union(setB) = ['a', 'b', 'c', 'd', 'e']</code>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
 </section>
 
 ## Tests
@@ -18,10 +20,10 @@ localeTitle: 在两个集上执行联合
 
 ```yml
 tests:
-  - text: 你的<code>Set</code>类应该有一个<code>union</code>方法。
-    testString: 'assert((function(){var test = new Set(); return (typeof test.union === "function")})(), "Your <code>Set</code> class should have a <code>union</code> method.");'
-  - text: 收回了适当的收藏
-    testString: 'assert((function(){var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf("a") !== -1 && final.indexOf("b") !== -1 && final.indexOf("c") !== -1 && final.indexOf("d") !== -1 && final.length === 4)})(), "The proper collection was returned");'
+  - text: Your <code>Set</code> class should have a <code>union</code> method.
+    testString: assert((function(){var test = new Set(); return (typeof test.union === 'function')})());
+  - text: The union of <code>["a", "b", "c"]</code> and <code>["c", "d"]</code> should return <code>["a", "b", "c", "d"]</code>.
+    testString: assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})());
 
 ```
 
@@ -29,7 +31,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -69,19 +70,55 @@ function Set() {
 
     // change code above this line
 }
-
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function Set() {
+    var collection = [];
+
+    this.has = function(element) {
+        return (collection.indexOf(element) !== -1);
+    };
+
+    this.values = function() {
+        return collection;
+    };
+
+    this.add = function(element) {
+        if(!this.has(element)){
+            collection.push(element);
+            return true;
+        }
+        return false;
+    };
+
+    this.remove = function(element) {
+        if(this.has(element)){
+           var index = collection.indexOf(element);
+            collection.splice(index,1);
+            return true;
+        }
+        return false;
+    };
+
+    this.size = function() {
+        return collection.length;
+    };
+
+    this.union = function(anotherSet){
+        const newSet = new Set();
+        const addToSet = el => newSet.add(el);
+        this.values().forEach(addToSet);
+        anotherSet.values().forEach(addToSet);
+        return newSet;
+    };
+}
 ```
+
 </section>

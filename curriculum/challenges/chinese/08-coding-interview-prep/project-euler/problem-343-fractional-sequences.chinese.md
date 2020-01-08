@@ -2,15 +2,38 @@
 id: 5900f4c41000cf542c50ffd6
 challengeType: 5
 title: 'Problem 343: Fractional Sequences'
-videoUrl: ''
-localeTitle: 问题343：分数序列
+forumTopicId: 302002
 ---
 
 ## Description
-<section id="description">对于任何正整数k，分数xi / yi的有限序列ai由以下定义：a1 = 1 / k且ai =（xi-1 + 1）/（yi-1-1）减少到最低项i&gt; 1 。当ai达到某个整数n时，序列停止。 （即，当yi = 1时。）定义f（k）= n。例如，对于k = 20： <p> 1/20→2/19→3/18 = 1/6→2/5→3/4→4/3→5/2→6/1 = 6 </p><p>所以f（20）= 6。 </p><p>对于1≤k≤100，f（1）= 1，f（2）= 2，f（3）= 1且Σf（k3）= 118937。 </p><p>找Σf（k3）为1≤k≤2×106。 </p></section>
+<section id='description'>
+For any positive integer k, a finite sequence ai of fractions xi/yi is defined by:
+a1 = 1/k and
+ai = (xi-1+1)/(yi-1-1) reduced to lowest terms for i>1.
+When ai reaches some integer n, the sequence stops. (That is, when yi=1.)
+Define f(k) = n.
+For example, for k = 20:
+
+
+
+1/20 → 2/19 → 3/18 = 1/6 → 2/5 → 3/4 → 4/3 → 5/2 → 6/1 = 6
+
+
+
+So f(20) = 6.
+
+
+
+Also f(1) = 1, f(2) = 2, f(3) = 1 and Σf(k3) = 118937 for 1 ≤ k ≤ 100.
+
+
+
+Find Σf(k3) for 1 ≤ k ≤ 2×106.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +41,8 @@ localeTitle: 问题343：分数序列
 
 ```yml
 tests:
-  - text: <code>euler343()</code>应该返回269533451410884200。
-    testString: 'assert.strictEqual(euler343(), 269533451410884200, "<code>euler343()</code> should return 269533451410884200.");'
+  - text: <code>euler343()</code> should return 269533451410884200.
+    testString: assert.strictEqual(euler343(), 269533451410884200);
 
 ```
 
@@ -37,7 +60,6 @@ function euler343() {
 }
 
 euler343();
-
 ```
 
 </div>
@@ -52,4 +74,5 @@ euler343();
 ```js
 // solution required
 ```
+
 </section>

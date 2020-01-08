@@ -2,31 +2,42 @@
 id: 587d8251367417b2b2512c65
 title: Remove Elements from a Linked List by Index
 challengeType: 1
-videoUrl: ''
-localeTitle: 按索引从链接列表中删除元素
+forumTopicId: 301711
 ---
 
 ## Description
-<section id="description">在我们继续讨论另一个数据结构之前，让我们先了解链接列表的最后几点练习。让我们编写一个<code>removeAt</code>方法，删除给定<code>index</code>处的<code>element</code> 。该方法应该称为<code>removeAt(index)</code> 。要删除某个<code>index</code>处的<code>element</code> ，我们需要在沿着链表移动时保持每个节点的运行计数。用于遍历链表的元素的常用技术涉及<dfn>“转轮”</dfn>或“哨兵”，它们“指向”代码所比较的节点。在我们的情况下，开始于<code>head</code>我们的名单中，我们先从一个<code>currentIndex</code>始于变量<code>0</code> 。对于我们传递的每个节点， <code>currentIndex</code>应该增加1。就像我们的<code>remove(element)</code>方法一样，当我们在removeAt（index）方法中删除节点时，我们需要注意不要孤立列表的其余部分。我们通过确保引用已删除节点的节点具有对下一节点的引用来保持节点连续。 </section>
+<section id='description'>
+Before we move on to another data structure, let's get a couple of last bits of practice with linked lists.
+Let's write a <code>removeAt</code> method that removes the <code>element</code> at a given <code>index</code>. The method should be called <code>removeAt(index)</code>. To remove an <code>element</code> at a certain <code>index</code>, we'll need to keep a running count of each node as we move along the linked list.
+A common technique used to iterate through the elements of a linked list involves a <dfn>'runner'</dfn>, or sentinel, that 'points' at the nodes that your code is comparing. In our case, starting at the <code>head</code> of our list, we start with a <code>currentIndex</code> variable that starts at <code>0</code>. The <code>currentIndex</code> should increment by one for each node we pass.
+Just like our <code>remove(element)</code> method, which <a href="learn/coding-interview-prep/data-structures/remove-elements-from-a-linked-list" target="_blank">we covered in a previous lesson</a>, we need to be careful not to orphan the rest of our list when we remove the node in our <code>removeAt(index)</code> method. We keep our nodes contiguous by making sure that the node that has reference to the removed node has a reference to the next node.
+</section>
 
 ## Instructions
-<section id="instructions">编写<code>removeAt(index)</code>方法，删除并返回给定<code>index</code>处的节点。如果给定<code>index</code>为负数，或者大于或等于链表<code>length</code> ，则该方法应返回<code>null</code> 。注意请记住保持<code>currentIndex</code>计数。 </section>
+<section id='instructions'>
+Write a <code>removeAt(index)</code> method that removes and returns a node at a given <code>index</code>. The method should return <code>null</code> if the given <code>index</code> is either negative, or greater than or equal to the <code>length</code> of the linked list.
+<strong>Note:</strong> Remember to keep count of the <code>currentIndex</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>LinkedList</code>类应该有一个<code>removeAt</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.removeAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>removeAt</code> method.");'
-  - text: 您的<code>removeAt</code>方法应该减少链表的<code>length</code>
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); test.removeAt(1); return test.size() === 2}()), "Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list");'
-  - text: 您的<code>removeAt</code>方法还应该返回已删除节点的元素。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return test.removeAt(1) === "dog"}()), "Your <code>removeAt</code> method should also return the element of the removed node.");'
-  - text: 如果给定索引小于<code>0</code>则<code>removeAt</code>方法也应返回<code>null</code>
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return (test.removeAt(-1) === null)}()), "Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>");'
-  - text: 如果给定索引等于或大于链表的<code>length</code> ，则<code>removeAt</code>方法也应返回<code>null</code> 。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return (test.removeAt(3) === null)}()), "Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.");'
+  - text: Your <code>LinkedList</code> class should have a <code>removeAt</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()));
+  - text: Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list by one.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()));
+  - text: Your <code>removeAt</code> method should remove the element at the specified index from the linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.add('bird');test.removeAt(1); return JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"kitten","next":{"element":"bird","next":null}}}'}())); 
+  - text: When only one element is present in the linked list, your <code>removeAt</code> method should remove and return the element at specified index, and reduce the length of the linked list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); var removedItem = test.removeAt(0); return test.head() === null && test.size() === 0 && removedItem === 'cat';}()));        
+  - text: Your <code>removeAt</code> method should return the element of the removed node.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()));
+  - text: Your <code>removeAt</code> method should return <code>null</code> and the linked list should not change if the given index is less than <code>0</code>.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  var removedItem = test.removeAt(-1); return removedItem === null && JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'}()));
+  - text: Your <code>removeAt</code> method should return <code>null</code> and the linked list should not change if the given index is greater than or equal to the <code>length</code> of the list.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  var removedItem = test.removeAt(3); return removedItem === null && JSON.stringify(test.head()) === '{"element":"cat","next":{"element":"dog","next":{"element":"kitten","next":null}}}'}()));
 
 ```
 
@@ -34,7 +45,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -72,33 +82,13 @@ function LinkedList() {
     length++;
   };
 
-  this.remove = function(element){
-    var currentNode = head;
-    var previousNode;
-    if(currentNode.element === element){
-        head = currentNode.next;
-    } else {
-        while(currentNode.element !== element) {
-            previousNode = currentNode;
-            currentNode = currentNode.next;
-        }
-
-        previousNode.next = currentNode.next;
-    }
-
-    length --;
-  };
-
   // Only change code below this line
 
   // Only change code above this line
 }
-
 ```
 
 </div>
-
-
 
 </section>
 
@@ -106,6 +96,63 @@ function LinkedList() {
 <section id='solution'>
 
 ```js
-// solution required
+function LinkedList() {
+  var length = 0;
+  var head = null;
+
+  var Node = function (element) { // {1}
+    this.element = element;
+    this.next = null;
+  };
+
+  this.size = function () {
+    return length;
+  };
+
+  this.head = function () {
+    return head;
+  };
+
+  this.add = function (element) {
+    var node = new Node(element);
+    if (head === null) {
+      head = node;
+    } else {
+      var currentNode = head;
+
+      while (currentNode.next) {
+        currentNode = currentNode.next;
+      }
+
+      currentNode.next = node;
+    }
+
+    length++;
+  };
+
+  this.removeAt = function (index) {
+    var currentNode = head;
+    var previous = head;
+    var count = 0;
+    if (index >= length || index < 0) {
+      return null;
+    }
+    if (index === 0) {
+      var removed = head.element;
+      head = currentNode.next;
+    } else {
+      while (count < index) {
+        previous = currentNode;
+        currentNode = currentNode.next;
+        count++;
+      }
+      var removed = previous.next.element;
+      previous.next = currentNode.next;
+    }
+    length--;
+    return removed;
+  };
+}
 ```
+
 </section>

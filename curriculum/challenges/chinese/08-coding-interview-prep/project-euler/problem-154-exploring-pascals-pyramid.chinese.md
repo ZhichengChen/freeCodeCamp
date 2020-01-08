@@ -1,16 +1,25 @@
 ---
 id: 5900f4071000cf542c50ff19
 challengeType: 5
-title: 'Problem 154: Exploring Pascal"s pyramid'
-videoUrl: ''
-localeTitle: ''
+title: 'Problem 154: Exploring Pascal''s pyramid'
+forumTopicId: 301785
 ---
 
 ## Description
-<section id="description">使用球形球构造三角形金字塔，使得每个球恰好位于下一个较低水平的三个球上。 <p>然后，我们计算从顶点到每个位置的路径数量：路径从顶点开始并向下前进到当前位置正下方的三个球体中的任何一个。因此，到达某个位置的路径数是紧接在其上方的数字的总和（取决于位置，在其上方最多有三个数字）。结果是Pascal的金字塔，每个级别n的数字是三项式展开（x + y + z）n的系数。 （x + y + z）200000的扩展中有多少个系数是1012的倍数？ </p></section>
+<section id='description'>
+A triangular pyramid is constructed using spherical balls so that each ball rests on exactly three balls of the next lower level.
+
+Then, we calculate the number of paths leading from the apex to each position:
+A path starts at the apex and progresses downwards to any of the three spheres directly below the current position.
+Consequently, the number of paths to reach a certain position is the sum of the numbers immediately above it (depending on the position, there are up to three numbers above it).
+The result is Pascal's pyramid and the numbers at each level n are the coefficients of the trinomial expansion
+(x + y + z)n.
+How many coefficients in the expansion of (x + y + z)200000 are multiples of 1012?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: <code>euler154()</code>应该返回479742450。
-    testString: 'assert.strictEqual(euler154(), 479742450, "<code>euler154()</code> should return 479742450.");'
+  - text: <code>euler154()</code> should return 479742450.
+    testString: assert.strictEqual(euler154(), 479742450);
 
 ```
 
@@ -37,7 +46,6 @@ function euler154() {
 }
 
 euler154();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler154();
 ```js
 // solution required
 ```
+
 </section>

@@ -1,18 +1,26 @@
 ---
 id: 587d7fb5367417b2b2512c02
 title: Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
-localeTitle: 使用Tilde-Character始终使用依赖项的最新修补程序版本
 challengeType: 2
+forumTopicId: 301532
 ---
 
 ## Description
-<section id='description'> <code>0</code>在上一次挑战中，我们告诉npm只包含特定版本的软件包。如果您需要确保项目的不同部分保持彼此兼容，那么这是一种冻结依赖关系的有用方法。但在大多数用例中，您不希望错过错误修复，因为它们通常包含重要的安全补丁，并且（希望）不会破坏这样做。 <code>0</code>要允许npm依赖项更新到最新的PATCH版本，可以使用波形符（〜）为依赖项的版本添加前缀。在package.json中，我们关于npm如何升级时刻的当前规则是仅使用特定版本（2.10.2），但我们希望允许最新的2.10.x版本。 <code>0</code>示例
-<code>"some-package-name": "~1.3.8" allows updates to any 1.3.x version.</code> <code>0</code>指令<code>0</code>使用波形符（〜）为依赖项中的时刻版本添加前缀，并允许npm将其更新为任何新的PATCH版本。 <code>0</code>请注意，不应更改版本号本身。 
+<section id='description'>
+In the last challenge, you told npm to only include a specific version of a package. That’s a useful way to freeze your dependencies if you need to make sure that different parts of your project stay compatible with each other. But in most use cases, you don’t want to miss bug fixes since they often include important security patches and (hopefully) don’t break things in doing so.
+To allow an npm dependency to update to the latest PATCH version, you can prefix the dependency’s version with the tilde (<code>~</code>) character. Here's an example of how to allow updates to any 1.3.x version.
+
+```json
+"package": "~1.3.8"
+```
+
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+In the package.json file, your current rule for how npm may upgrade moment is to use a specific version (2.10.2). But now, you want to allow the latest 2.10.x version.
+Use the tilde (<code>~</code>) character to prefix the version of moment in your dependencies, and allow npm to update it to any new PATCH release.
+<strong>Note:</strong> The version numbers themselves should not be changed.
 </section>
 
 ## Tests
@@ -20,9 +28,9 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: '“依赖”应该包括“时刻”'
+  - text: '"dependencies" should include "moment"'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''moment'', ''"dependencies" does not include "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“时刻”版本应匹配“~2.10.2”'
+  - text: '"moment" version should match "~2.10.2"'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\~2\.10\.2/, ''Wrong version of "moment". It should be ~2.10.2''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -38,6 +46,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

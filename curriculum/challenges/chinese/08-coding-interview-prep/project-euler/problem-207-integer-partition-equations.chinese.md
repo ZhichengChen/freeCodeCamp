@@ -2,15 +2,38 @@
 id: 5900f43c1000cf542c50ff4e
 challengeType: 5
 title: 'Problem 207: Integer partition equations'
-videoUrl: ''
-localeTitle: 问题207：整数分区方程
+forumTopicId: 301848
 ---
 
 ## Description
-<section id="description">对于一些正整数k，存在形式为4t = 2t + k的整数分区，其中4t，2t和k都是正整数而t是实数。 <p>前两个这样的分区是41 = 21 + 2和41.5849625 ...... = 21.5849625 ... + 6。 </p><p> t也是整数的分区称为完美。对于任何m≥1，让P（m）为k≤m的完美分区的比例。因此P（6）= 1/2。 </p><p>在下表中列出了一些P（m）P（5）= 1/1 P（10）= 1/2 P（15）= 2/3 P（20）= 1/2 P（25）= 1/2 P（30）= 2/5 ... P（180）= 1/4 P（185）= 3/13 </p><p>找到P（m）&lt;1/12345的最小m </p></section>
+<section id='description'>
+For some positive integers k, there exists an integer partition of the form   4t = 2t + k,
+where 4t, 2t, and k are all positive integers and t is a real number.
+
+The first two such partitions are 41 = 21 + 2 and 41.5849625... = 21.5849625... + 6.
+
+Partitions where t is also an integer are called perfect.
+For any m ≥ 1 let P(m) be the proportion of such partitions that are perfect with k ≤ m.
+Thus P(6) = 1/2.
+
+In the following table are listed some values of P(m)
+   P(5) = 1/1
+   P(10) = 1/2
+   P(15) = 2/3
+   P(20) = 1/2
+   P(25) = 1/2
+   P(30) = 2/5
+   ...
+   P(180) = 1/4
+   P(185) = 3/13
+
+
+Find the smallest m for which P(m) < 1/12345
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +41,8 @@ localeTitle: 问题207：整数分区方程
 
 ```yml
 tests:
-  - text: <code>euler207()</code>应该返回44043947822。
-    testString: 'assert.strictEqual(euler207(), 44043947822, "<code>euler207()</code> should return 44043947822.");'
+  - text: <code>euler207()</code> should return 44043947822.
+    testString: assert.strictEqual(euler207(), 44043947822);
 
 ```
 
@@ -37,7 +60,6 @@ function euler207() {
 }
 
 euler207();
-
 ```
 
 </div>
@@ -52,4 +74,5 @@ euler207();
 ```js
 // solution required
 ```
+
 </section>

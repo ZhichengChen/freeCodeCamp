@@ -2,15 +2,20 @@
 id: 5900f3f51000cf542c50ff07
 challengeType: 5
 title: 'Problem 136: Singleton difference'
-videoUrl: ''
-localeTitle: 问题136：单身人士差异
+forumTopicId: 301764
 ---
 
 ## Description
-<section id="description">正整数x，y和z是算术级数的连续项。假设n是一个正整数，当n = 20时，方程x2  -  y2  -  z2 = n恰好有一个解：132  -  102  -  72 = 20实际上有二十五个n低于一百的值，其中方程有一个独特的解决方案。 n小于五千万的有多少个值只有一个解？ </section>
+<section id='description'>
+The positive integers, x, y, and z, are consecutive terms of an arithmetic progression. Given that n is a positive integer, the equation, x2 − y2 − z2 = n, has exactly one solution when n = 20:
+132 − 102 − 72 = 20
+In fact there are twenty-five values of n below one hundred for which the equation has a unique solution.
+How many values of n less than fifty million have exactly one solution?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题136：单身人士差异
 
 ```yml
 tests:
-  - text: <code>euler136()</code>应返回2544559。
-    testString: 'assert.strictEqual(euler136(), 2544559, "<code>euler136()</code> should return 2544559.");'
+  - text: <code>euler136()</code> should return 2544559.
+    testString: assert.strictEqual(euler136(), 2544559);
 
 ```
 
@@ -37,7 +42,6 @@ function euler136() {
 }
 
 euler136();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler136();
 ```js
 // solution required
 ```
+
 </section>

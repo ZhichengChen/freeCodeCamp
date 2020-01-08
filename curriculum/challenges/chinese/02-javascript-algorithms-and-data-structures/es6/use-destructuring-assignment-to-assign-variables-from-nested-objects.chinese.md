@@ -2,63 +2,101 @@
 id: 587d7b89367417b2b2512b4a
 title: Use Destructuring Assignment to Assign Variables from Nested Objects
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用解构分配从嵌套对象分配变量
+forumTopicId: 301214
 ---
 
 ## Description
-<section id="description">我们可以类似地将<em>嵌套</em>对象解构为变量。请考虑以下代码： <blockquote> const a = { <br>开始：{x：5，y：6}， <br>结束：{x：6，y：-9} <br> }; <br> const {start：{x：startX，y：startY}} = a; <br> console.log（startX，startY）; // 5,6 </blockquote>在上面的示例中，变量<code>start</code>被赋予<code>a.start</code>的值，该值也是一个对象。 </section>
+<section id='description'>
+You can use the same principles from the previous two lessons to destructure values from nested objects.
+
+Using an object similar to previous examples:
+
+```js
+const user = {
+  johnDoe: { 
+    age: 34,
+    email: 'johnDoe@freeCodeCamp.com'
+  }
+};
+```
+
+Here's how to extract the values of object properties and assign them to variables with the same name:
+
+```js
+const { johnDoe: { age, email }} = user;
+```
+
+And here's how you can assign an object properties' values to variables with different names:
+
+```js
+const { johnDoe: { age: userAge, email: userEmail }} = user;
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">用解构赋值来获得<code>max</code>的<code>forecast.tomorrow</code>并将其分配给<code>maxOfTomorrow</code> 。 </section>
+<section id='instructions'>
+Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables <code>lowToday</code> and <code>highToday</code> the values of <code>today.low</code> and <code>today.high</code> from the <code>LOCAL_FORECAST</code> object.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>maxOfTomorrow</code>等于<code>84.6</code>
-    testString: 'assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, "<code>maxOfTomorrow</code> equals <code>84.6</code>");'
-  - text: 使用嵌套解构
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),"nested destructuring was used");'
-
+  - text: You should remove the ES5 assignment syntax.
+    testString: assert(!code.match(/lowToday = LOCAL_FORECAST\.today\.low/g) && !code.match(/highToday = LOCAL_FORECAST\.today.high/g))
+  - text: You should use destructuring to create the <code>lowToday</code> variable.
+    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(low\s*:\s*lowToday[^}]*|[^,]*,\s*low\s*:\s*lowToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
+  - text: You should use destructuring to create the <code>highToday</code> variable.
+    testString: assert(code.match(/(var|const|let)\s*{\s*today\s*:\s*{\s*(high\s*:\s*highToday[^}]*|[^,]*,\s*high\s*:\s*highToday\s*)}\s*}\s*=\s*LOCAL_FORECAST(;|\s+|\/\/)/g));
 ```
 
 </section>
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 const LOCAL_FORECAST = {
-  today: { min: 72, max: 83 },
-  tomorrow: { min: 73.3, max: 84.6 }
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
 };
 
-function getMaxOfTmrw(forecast) {
-  "use strict";
-  // change code below this line
-  const maxOfTomorrow = undefined; // change this line
-  // change code above this line
-  return maxOfTomorrow;
-}
+// change code below this line
+  
+const lowToday = LOCAL_FORECAST.today.low;
+const highToday = LOCAL_FORECAST.today.high;
 
-console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+// change code above this line
 
+console.log(lowToday); // should be 64
+console.log(highToday); // should be 77
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+const LOCAL_FORECAST = {
+  yesterday: { low: 61, high: 75 },
+  today: { low: 64, high: 77 },
+  tomorrow: { low: 68, high: 80 }
+};
+
+// change code below this line
+  
+const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
+
+// change code above this line
+
+console.log(highToday); // should be 77
+console.log(highTomorrow); // should be 80
 ```
+
 </section>

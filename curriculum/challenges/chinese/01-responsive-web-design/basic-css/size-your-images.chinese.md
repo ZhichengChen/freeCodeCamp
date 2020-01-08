@@ -2,25 +2,40 @@
 id: bad87fee1348bd9acdf08812
 title: Size Your Images
 challengeType: 0
-videoUrl: ''
-localeTitle: 调整图像大小
+videoUrl: 'https://scrimba.com/c/cM9MmCP'
+forumTopicId: 18282
 ---
 
 ## Description
-<section id="description"> CSS有一个名为<code>width</code>的属性，用于控制元素的宽度。就像字体一样，我们将使用<code>px</code> （像素）来指定图像的宽度。例如，如果我们想要创建一个名为<code>larger-image</code>的CSS类，它给HTML元素的宽度为500像素，我们将使用： <blockquote> &lt;风格&gt; <br> .larger-image { <br>宽度：500px; <br> } <br> &lt;/样式&gt; </blockquote></section>
+<section id='description'>
+CSS has a property called <code>width</code> that controls an element's width. Just like with fonts, we'll use <code>px</code> (pixels) to specify the image's width.
+For example, if we wanted to create a CSS class called <code>larger-image</code> that gave HTML elements a width of 500 pixels, we'd use:
+
+```html
+<style>
+  .larger-image {
+    width: 500px;
+  }
+</style>
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">创建一个名为<code>smaller-image</code>的类，并使用它来调整图像大小，使其只有100像素宽。 <strong>注意</strong> <br>由于浏览器实现的差异，您可能需要100％缩放才能通过此挑战的测试。 </section>
+<section id='instructions'>
+Create a class called <code>smaller-image</code> and use it to resize the image so that it's only 100 pixels wide.
+<strong>Note:</strong> Due to browser implementation differences, you may need to be at 100% zoom to pass the tests on this challenge.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>img</code>元素应该具有<code>smaller-image</code>类。
-    testString: 'assert($("img[src="https://bit.ly/fcc-relaxing-cat"]").attr("class") === "smaller-image", "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
-  - text: 您的图片应为100像素宽。浏览器缩放应为100％。
-    testString: 'assert($("img").width() === 100, "Your image should be 100 pixels wide. Browser zoom should be at 100%.");'
+  - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
+    testString: assert($("img[src='https://bit.ly/fcc-relaxing-cat']").attr('class') === "smaller-image");
+  - text: Your image should be 100 pixels wide. Browser zoom should be at 100%.
+    testString: assert($("img").width() === 100);
 
 ```
 
@@ -79,7 +94,6 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
-
 ```
 
 </div>
@@ -144,4 +158,5 @@ tests:
   </form>
 </main>
 ```
+
 </section>

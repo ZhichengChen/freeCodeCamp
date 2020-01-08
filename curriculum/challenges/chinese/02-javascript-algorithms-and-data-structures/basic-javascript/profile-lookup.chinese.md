@@ -2,15 +2,23 @@
 id: 5688e62ea601b2482ff8422b
 title: Profile Lookup
 challengeType: 1
-videoUrl: ''
-localeTitle: 个人资料查询
+videoUrl: 'https://scrimba.com/c/cDqW2Cg'
+forumTopicId: 18259
 ---
 
 ## Description
-<section id="description">我们的联系人列表中有一组代表不同人的对象。已经为您预先编写了一个以<code>name</code>和属性（ <code>prop</code> ）作为参数的<code>lookUpProfile</code>函数。该函数应检查<code>name</code>是否是实际联系人的<code>firstName</code> ，并且给定属性（ <code>prop</code> ）是该联系人的属性。如果两者都为真，则返回该属性的“值”。如果<code>name</code>与任何联系人不对应，则返回<code>&quot;No such contact&quot;</code>如果<code>prop</code>不符合找到匹配<code>name</code>的联系人的任何有效属性，则返回<code>&quot;No such property&quot;</code> </section>
+<section id='description'>
+We have an array of objects representing different people in our contacts lists.
+A <code>lookUpProfile</code> function that takes <code>name</code> and a property (<code>prop</code>) as arguments has been pre-written for you.
+The function should check if <code>name</code> is an actual contact's <code>firstName</code> and the given property (<code>prop</code>) is a property of that contact.
+If both are true, then return the "value" of that property.
+If <code>name</code> does not correspond to any contacts then return <code>"No such contact"</code>.
+If <code>prop</code> does not correspond to any valid properties of a contact found to match <code>name</code> then return <code>"No such property"</code>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,18 +26,18 @@ localeTitle: 个人资料查询
 
 ```yml
 tests:
-  - text: '<code>&quot;Kristian&quot;, &quot;lastName&quot;</code>应该返回<code>&quot;Vos&quot;</code>'
-    testString: 'assert(lookUpProfile("Kristian","lastName") === "Vos", "<code>"Kristian", "lastName"</code> should return <code>"Vos"</code>");'
-  - text: '<code>&quot;Sherlock&quot;, &quot;likes&quot;</code>应该回归<code>[&quot;Intriguing Cases&quot;, &quot;Violin&quot;]</code>'
-    testString: 'assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"], "<code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>");'
-  - text: '<code>&quot;Harry&quot;,&quot;likes&quot;</code>应该返回一个阵列'
-    testString: 'assert(typeof lookUpProfile("Harry", "likes") === "object", "<code>"Harry","likes"</code> should return an array");'
-  - text: '<code>&quot;Bob&quot;, &quot;number&quot;</code>应该返回“没有这样的联系”'
-    testString: 'assert(lookUpProfile("Bob", "number") === "No such contact", "<code>"Bob", "number"</code> should return "No such contact"");'
-  - text: '<code>&quot;Bob&quot;, &quot;potato&quot;</code>应该返回“没有这样的联系”'
-    testString: 'assert(lookUpProfile("Bob", "potato") === "No such contact", "<code>"Bob", "potato"</code> should return "No such contact"");'
-  - text: '<code>&quot;Akira&quot;, &quot;address&quot;</code>应该返回“没有这样的财产”'
-    testString: 'assert(lookUpProfile("Akira", "address") === "No such property", "<code>"Akira", "address"</code> should return "No such property"");'
+  - text: <code>"Kristian", "lastName"</code> should return <code>"Vos"</code>
+    testString: assert(lookUpProfile('Kristian','lastName') === "Vos");
+  - text: <code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>
+    testString: assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"]);
+  - text: <code>"Harry","likes"</code> should return an array
+    testString: assert(typeof lookUpProfile("Harry", "likes") === "object");
+  - text: <code>"Bob", "number"</code> should return "No such contact"
+    testString: assert(lookUpProfile("Bob", "number") === "No such contact");
+  - text: <code>"Bob", "potato"</code> should return "No such contact"
+    testString: assert(lookUpProfile("Bob", "potato") === "No such contact");
+  - text: <code>"Akira", "address"</code> should return "No such property"
+    testString: assert(lookUpProfile("Akira", "address") === "No such property");
 
 ```
 
@@ -78,7 +86,6 @@ function lookUpProfile(name, prop){
 
 // Change these values to test your function
 lookUpProfile("Akira", "likes");
-
 ```
 
 </div>
@@ -90,7 +97,48 @@ lookUpProfile("Akira", "likes");
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["JavaScript", "Gaming", "Foxes"]
+    },
+];
+
+
+//Write your function in between these comments
+function lookUpProfile(name, prop){
+    for(var i in contacts){
+      if(contacts[i].firstName === name) {
+        return contacts[i][prop] || "No such property";
+      }
+    }
+   return "No such contact";
+}
+//Write your function in between these comments
+
+lookUpProfile("Akira", "likes");
 ```
+
 </section>

@@ -2,15 +2,35 @@
 id: 5900f4621000cf542c50ff75
 challengeType: 5
 title: 'Problem 246: Tangents to an ellipse'
-videoUrl: ''
-localeTitle: 问题246：切线到椭圆
+forumTopicId: 301893
 ---
 
 ## Description
-<section id="description">椭圆的定义是：给定一个圆心c，其中心为M，半径为r，点G为d（G，M） <p>椭圆点的构造如下所示。 </p><p>给定的是M（-2000,1500）和G（8000,1500）。给定也是具有中心M和半径15000的圆c。与G和c等距的点的轨迹形成椭圆e。从外部的点P开始，绘制两个切线t1和t2到椭圆。让t1和t2接触椭圆的点为R和S. </p><p>对于多少格点P，角度RPS是否大于45度？ </p></section>
+<section id='description'>
+A definition for an ellipse is:
+Given a circle c with centre M and radius r and a point G such that d(G,M)<r, the locus of the points that are equidistant from c and G form an ellipse.
+
+The construction of the points of the ellipse is shown below.
+
+
+
+
+
+Given are the points M(-2000,1500) and G(8000,1500).
+Given is also the circle c with centre M and radius 15000.
+The locus of the points that are equidistant from G and c form an ellipse e.
+From a point P outside e the two tangents t1 and t2 to the ellipse are drawn.
+Let the points where t1 and t2 touch the ellipse be R and S.
+
+
+
+
+For how many lattice points P is angle RPS greater than 45 degrees?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +38,8 @@ localeTitle: 问题246：切线到椭圆
 
 ```yml
 tests:
-  - text: <code>euler246()</code>应该返回810834388。
-    testString: 'assert.strictEqual(euler246(), 810834388, "<code>euler246()</code> should return 810834388.");'
+  - text: <code>euler246()</code> should return 810834388.
+    testString: assert.strictEqual(euler246(), 810834388);
 
 ```
 
@@ -37,7 +57,6 @@ function euler246() {
 }
 
 euler246();
-
 ```
 
 </div>
@@ -52,4 +71,5 @@ euler246();
 ```js
 // solution required
 ```
+
 </section>

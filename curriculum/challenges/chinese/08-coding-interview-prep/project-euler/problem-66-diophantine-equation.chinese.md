@@ -2,15 +2,27 @@
 id: 5900f3ae1000cf542c50fec1
 challengeType: 5
 title: 'Problem 66: Diophantine equation'
-videoUrl: ''
-localeTitle: 问题66：丢番图方程
+forumTopicId: 302178
 ---
 
 ## Description
-<section id="description">考虑形式的二次丢番图方程：x2  -  Dy2 = 1例如，当D = 13时，x中的最小解是6492  -  13×1802 = 1.可以假设当D是正整数时没有解广场。通过在D中找到D = {2,3,5,6,7}的最小解，我们得到以下结果：32  -  2×22 = 1 22  -  3×12 = 192  -  5×42 = 1 52  -  6× 22 = 1 82  -  7×32 = 1因此，通过考虑D中对于D≤7的最小解，当D = 5时获得最大的x。在x的最小解中找到D≤1000的值，其中获得x的最大值。 </section>
+<section id='description'>
+Consider quadratic Diophantine equations of the form:
+x2 – Dy2 = 1
+For example, when D=13, the minimal solution in x is 6492 – 13×1802 = 1.
+It can be assumed that there are no solutions in positive integers when D is square.
+By finding minimal solutions in x for D = {2, 3, 5, 6, 7}, we obtain the following:
+32 – 2×22 = 1
+22 – 3×12 = 192 – 5×42 = 1
+52 – 6×22 = 1
+82 – 7×32 = 1
+Hence, by considering minimal solutions in x for D ≤ 7, the largest x is obtained when D=5.
+Find the value of D ≤ 1000 in minimal solutions of x for which the largest value of x is obtained.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题66：丢番图方程
 
 ```yml
 tests:
-  - text: <code>euler66()</code>应返回661。
-    testString: 'assert.strictEqual(euler66(), 661, "<code>euler66()</code> should return 661.");'
+  - text: <code>euler66()</code> should return 661.
+    testString: assert.strictEqual(euler66(), 661);
 
 ```
 
@@ -37,7 +49,6 @@ function euler66() {
 }
 
 euler66();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler66();
 ```js
 // solution required
 ```
+
 </section>

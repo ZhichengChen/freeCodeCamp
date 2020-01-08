@@ -2,23 +2,34 @@
 id: 587d78a5367417b2b2512ad9
 title: Use the CSS Transform scale Property to Change the Size of an Element
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS Transform scale属性更改元素的大小
+videoUrl: 'https://scrimba.com/c/c2MZVSg'
+forumTopicId: 301076
 ---
 
 ## Description
-<section id="description">要更改元素的比例，CSS具有<code>transform</code>属性及其<code>scale()</code>函数。以下代码示例将页面上所有段落元素的大小加倍： <blockquote> p { <br>变换：比例（2）; <br> } </blockquote></section>
+<section id='description'>
+To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:
+
+```css
+p {
+  transform: scale(2);
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>ball2</code>的id将元素的大小<code>ball2</code>原始大小的1.5倍。 </section>
+<section id='instructions'>
+Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '设置<code>#ball2</code>的<code>transform</code>属性，将其缩放为其大小的1.5倍。'
-    testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.");'
+  - text: The <code>transform</code> property for <code>#ball2</code> should be set to scale it to 1.5 times its size.
+    testString: assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi));
 
 ```
 
@@ -56,7 +67,6 @@ tests:
 
 <div class="ball" id= "ball1"></div>
 <div class="ball" id= "ball2"></div>
-
 ```
 
 </div>
@@ -68,7 +78,31 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+
+```html
+<style>
+  .ball {
+    width: 40px;
+    height: 40px;
+    margin: 50 auto;
+    position: fixed;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    border-radius: 50%;
+  }
+  #ball1 {
+    left: 20%;
+  }
+  #ball2 {
+    left: 65%;
+    transform: scale(1.5);
+  }
+</style>
+<div class="ball" id= "ball1"></div>
+<div class="ball" id= "ball2"></div>
 ```
+
 </section>

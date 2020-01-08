@@ -2,23 +2,28 @@
 id: 587d78a7367417b2b2512ae2
 title: Create Visual Direction by Fading an Element from Left to Right
 challengeType: 0
-videoUrl: ''
-localeTitle: 通过从左到右淡化元素来创建视觉方向
+videoUrl: 'https://scrimba.com/c/cGJqqAE'
+forumTopicId: 301054
 ---
 
 ## Description
-<section id="description">对于此挑战，您将更改动画元素的<code>opacity</code> ，使其在到达屏幕右侧时逐渐变淡。在显示的动画中，具有渐变背景的圆形元素按照<code>@keyframes</code>规则向右移动动画的50％标记。 </section>
+<section id='description'>
+For this challenge, you'll change the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.
+In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.
+</section>
 
 ## Instructions
-<section id="instructions">使用id为<code>ball</code>定位元素，并将<code>opacity</code>属性设置为0.1（ <code>50%</code> ，因此元素向右移动时会逐渐消失。 </section>
+<section id='instructions'>
+Target the element with the id of <code>ball</code> and add the <code>opacity</code> property set to 0.1 at <code>50%</code>, so the element fades as it moves to the right.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: fade的<code>keyframes</code>规则应将<code>opacity</code>属性设置为0.1为50％。
-    testString: 'assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi), "The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.");'
+  - text: The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.
+    testString: assert(code.match(/@keyframes fade\s*?{\s*?50%\s*?{\s*?(?:left:\s*?60%;\s*?opacity:\s*?0?\.1;|opacity:\s*?0?\.1;\s*?left:\s*?60%;)/gi));
 
 ```
 
@@ -58,7 +63,6 @@ tests:
 </style>
 
 <div id="ball"></div>
-
 ```
 
 </div>
@@ -70,7 +74,33 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+
+```html
+<style>
+  #ball {
+    width: 70px;
+    height: 70px;
+    margin: 50px auto;
+    position: fixed;
+    left: 20%;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: fade;
+    animation-duration: 3s;
+  }
+
+  @keyframes fade {
+    50% {
+      left: 60%;
+      opacity: 0.1;
+    }
+  }
+</style>
+<div id="ball"></div>
 ```
+
 </section>

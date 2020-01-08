@@ -2,15 +2,24 @@
 id: 5900f47c1000cf542c50ff8e
 challengeType: 5
 title: 'Problem 270: Cutting Squares'
-videoUrl: ''
-localeTitle: 问题270：切割方块
+forumTopicId: 301920
 ---
 
 ## Description
-<section id="description">放置具有整数尺寸N×N的正方形纸，在原点处具有拐角，并且沿x轴和y轴具有两个侧面。然后，我们按照以下规则进行切割：我们只在位于正方形不同侧面的两个点之间进行直线切割，并且具有整数坐标。两个切口不能交叉，但是几个切口可以在相同的边界点处相遇。继续进行，直到不再进行合法削减。将任何反射或旋转计数为不同，我们将C（N）称为切割N×N平方的方式的数量。例如，C（1）= 2且C（2）= 30（如下所示）。 <p>什么是C（30）mod 108？ </p></section>
+<section id='description'>
+A square piece of paper with integer dimensions N×N is placed with a corner at the origin and two of its sides along the x- and y-axes. Then, we cut it up respecting the following rules:
+We only make straight cuts between two points lying on different sides of the square, and having integer coordinates.
+Two cuts cannot cross, but several cuts can meet at the same border point.
+Proceed until no more legal cuts can be made.
+Counting any reflections or rotations as distinct, we call C(N) the number of ways to cut an N×N square. For example, C(1) = 2 and C(2) = 30 (shown below).
+
+
+What is C(30) mod 108 ?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题270：切割方块
 
 ```yml
 tests:
-  - text: <code>euler270()</code>应该返回82282080。
-    testString: 'assert.strictEqual(euler270(), 82282080, "<code>euler270()</code> should return 82282080.");'
+  - text: <code>euler270()</code> should return 82282080.
+    testString: assert.strictEqual(euler270(), 82282080);
 
 ```
 
@@ -37,7 +46,6 @@ function euler270() {
 }
 
 euler270();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler270();
 ```js
 // solution required
 ```
+
 </section>

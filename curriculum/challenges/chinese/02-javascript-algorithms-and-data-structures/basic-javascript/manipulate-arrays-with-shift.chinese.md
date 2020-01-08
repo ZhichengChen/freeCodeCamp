@@ -2,25 +2,30 @@
 id: 56bbb991ad1ed5201cd392cd
 title: Manipulate Arrays With shift()
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用shift（）操纵数组
+videoUrl: 'https://scrimba.com/c/cRbVETW'
+forumTopicId: 18238
 ---
 
 ## Description
-<section id="description"> <code>pop()</code>总是删除数组的最后一个元素。如果你想删除第一个怎么办？这就是<code>.shift()</code>用武之地。它就像<code>.pop()</code>一样工作，除了它删除了第一个元素而不是最后一个元素。 </section>
+<section id='description'>
+<code>pop()</code> always removes the last element of an array. What if you want to remove the first?
+That's where <code>.shift()</code> comes in. It works just like <code>.pop()</code>, except it removes the first element instead of the last.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>.shift()</code>函数从<code>myArray</code>删除第一项，将“shift off”值分配给<code>removedFromMyArray</code> 。 </section>
+<section id='instructions'>
+Use the <code>.shift()</code> function to remove the first item from <code>myArray</code>, assigning the "shifted off" value to <code>removedFromMyArray</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>myArray</code>现在应该等于<code>[[&quot;dog&quot;, 3]]</code> 。'
-    testString: 'assert((function(d){if(d[0][0] == "dog" && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray), "<code>myArray</code> should now equal <code>[["dog", 3]]</code>.");'
-  - text: '<code>removedFromMyArray</code>应该包含<code>[&quot;John&quot;, 23]</code> 。'
-    testString: 'assert((function(d){if(d[0] == "John" && d[1] === 23 && typeof removedFromMyArray === "object"){return true;}else{return false;}})(removedFromMyArray), "<code>removedFromMyArray</code> should contain <code>["John", 23]</code>.");'
+  - text: <code>myArray</code> should now equal <code>[["dog", 3]]</code>.
+    testString: assert((function(d){if(d[0][0] == 'dog' && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray));
+  - text: <code>removedFromMyArray</code> should contain <code>["John", 23]</code>.
+    testString: assert((function(d){if(d[0] == 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray));
 
 ```
 
@@ -43,6 +48,7 @@ var myArray = [["John", 23], ["dog", 3]];
 // Only change code below this line.
 var removedFromMyArray;
 
+
 ```
 
 </div>
@@ -52,7 +58,7 @@ var removedFromMyArray;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 </div>
@@ -62,7 +68,12 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [["John", 23], ["dog", 3]];
+
+// Only change code below this line.
+var removedFromMyArray = myArray.shift();
 ```
+
 </section>

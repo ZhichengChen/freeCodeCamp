@@ -1,16 +1,31 @@
 ---
 title: Fractran
 id: 5a7dad05be01840e1778a0d1
-challengeType: 3
-videoUrl: ''
-localeTitle: Fractran
+challengeType: 5
+forumTopicId: 302270
 ---
 
 ## Description
-<section id="description"><div class="rosetta"><p class="rosetta__paragraph"> <span class="rosetta__text--bold"><a class="rosetta__link--wiki" href="https://en.wikipedia.org/wiki/FRACTRAN" title="wp：FRACTRAN">FRACTRAN</a></span>是由数学家<a class="rosetta__link--wiki" href="https://en.wikipedia.org/wiki/John Horton Conway" title="wp：John Horton Conway">John Horton Conway</a>发明的图灵完备的深奥编程语言。 </p><br><p class="rosetta__paragraph"> FRACTRAN程序是正分数$ P =（f_1，f_2，\ ldots，f_m）$的有序列表，以及初始正整数输入$ n $。 </p><br><p class="rosetta__paragraph">该程序通过更新整数$ n $来运行，如下所示： </p><br><ul class="rosetta__unordered-list"><li class="rosetta__list-item--unordered">对于第一个分数$ f_i $，在$ nf_i $为整数的列表中，用$ nf_i $替换$ n $; </li><li class="rosetta__list-item--unordered">重复此规则，直到列表中没有分数乘以$ n $时产生整数，然后停止。 </li></ul><br><p class="rosetta__paragraph">康威为FRACTRAN提供了素数计划： </p><br><p class="rosetta__paragraph"> <span class="rosetta__text--indented">$ 17/91 $，$ 78/85 $，$ 19/51 $，$ 23/38 $，$ 29/33 $，$ 77/29 $，$ 95/23 $，$ 77/19 $，$ 1/17 $，$ 11/13 $， $ 13/11 $ $，$ 15/14 $，$ 15/2 $，$ 55/1 $</span> </p><br><p class="rosetta__paragraph">从$ n = 2 $开始，此FRACTRAN程序将$ n $更改为$ 15 = 2 \ times（15/2）$，然后$ 825 = 15 \ times（55/1）$，生成以下整数序列： </p><br><p class="rosetta__paragraph"> <span class="rosetta__text--indented">$ 2 $，$ 15 $，$ 825 $，$ 725 $，$ 1925 $，$ 2275 $，$ 425 $，$ 390 $，$ 330 $，$ 290 $，$ 770 $，$ \ ldots $</span> </p><br><p class="rosetta__paragraph"> 2之后，此序列包含以下2的幂： </p><br><p class="rosetta__paragraph"> <span class="rosetta__text--indented">$ 2 ^ 2 = 4 $，$ 2 ^ 3 = 8 $，$ 2 ^ 5 = 32 $，$ 2 ^ 7 = 128 $，$ 2 ^ {11} = 2048 $，$ 2 ^ {13} = 8192 $，$ 2 ^ {17 } = 131072 $，$ 2 ^ {19} = 524288 $，$ \ ldots $</span> </p><br><p class="rosetta__paragraph">这是2的主要权力。 </p><br><dl class="rosetta__description-list"><dt class="rosetta__description-title">任务： </dt></dl><p class="rosetta__paragraph">编写一个函数，将fractran程序作为字符串参数，并将程序的前10个数字作为数组返回。如果结果没有10个数字，则按原样返回数字。 </p></div></section>
+<section id='description'>
+<a href="https://en.wikipedia.org/wiki/FRACTRAN" title="wp: FRACTRAN" target="_blank">FRACTRAN</a> is a Turing-complete esoteric programming language invented by the mathematician <a href="https://en.wikipedia.org/wiki/John Horton Conway" title="wp: John Horton Conway" target="_blank">John Horton Conway</a>.
+A FRACTRAN program is an ordered list of positive fractions $P = (f_1, f_2, \ldots, f_m)$, together with an initial positive integer input $n$.
+The program is run by updating the integer $n$ as follows:
+<ul>
+  <li>for the first fraction, $f_i$, in the list for which $nf_i$ is an integer, replace $n$ with $nf_i$ ;</li>
+  <li>repeat this rule until no fraction in the list produces an integer when multiplied by $n$, then halt.</li>
+</ul>
+Conway gave a program for primes in FRACTRAN:
+<span style="margin-left: 1em;">$\dfrac{17}{91}$, $\dfrac{78}{85}$, $\dfrac{19}{51}$, $\dfrac{23}{38}$, $\dfrac{29}{33}$, $\dfrac{77}{29}$, $\dfrac{95}{23}$, $\dfrac{77}{19}$, $\dfrac{1}{17}$, $\dfrac{11}{13}$, $\dfrac{13}{11}$, $\dfrac{15}{14}$, $\dfrac{15}{2}$, $\dfrac{55}{1}$</span>
+Starting with $n=2$, this FRACTRAN program will change $n$ to $15=2\times (\frac{15}{2})$, then $825=15\times (\frac{55}{1})$, generating the following sequence of integers:
+<span style="margin-left: 1em;">$2$, $15$, $825$, $725$, $1925$, $2275$, $425$, $390$, $330$, $290$, $770$, $\ldots$</span>
+After 2, this sequence contains the following powers of 2:
+<span style="margin-left: 1em;">$2^2=4$, $2^3=8$, $2^5=32$, $2^7=128$, $2^{11}=2048$, $2^{13}=8192$, $2^{17}=131072$, $2^{19}=524288$, $\ldots$</span>
+which are the prime powers of 2.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write a function that takes a fractran program as a string parameter and returns the first 10 numbers of the program as an array. If the result does not have 10 numbers then return the numbers as is.
 </section>
 
 ## Tests
@@ -18,20 +33,20 @@ localeTitle: Fractran
 
 ```yml
 tests:
-  - text: <code>fractran</code>应该是一个功能。
-    testString: 'assert(typeof fractran=="function","<code>fractran</code> should be a function.");'
-  - text: '<code>fractran(&quot;&quot;+tests[0]+&quot;&quot;)</code>应该返回一个数组。'
-    testString: 'assert(Array.isArray(fractran(tests[0])),"<code>fractran(""+tests[0]+"")</code> should return an array.");'
-  - text: '<code>fractran(&quot;&quot;+tests[0]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[0])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[0]),results[0],"<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[1]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[1])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[1]),results[1],"<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[2]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[2])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[2]),results[2],"<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[3]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[3])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[3]),results[3],"<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
-  - text: '<code>fractran(&quot;&quot;+tests[4]+&quot;&quot;)</code>应返回<code>&quot;+JSON.stringify(results[4])+&quot;</code> 。'
-    testString: 'assert.deepEqual(fractran(tests[4]),results[4],"<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
+  - text: <code>fractran</code> should be a function.
+    testString: assert(typeof fractran=='function');
+  - text: <code>fractran("3/2, 1/3")</code> should return an array.
+    testString: assert(Array.isArray(fractran('3/2, 1/3')));
+  - text: <code>fractran("3/2, 1/3")</code> should return <code>[ 2, 3, 1 ]</code>.
+    testString: assert.deepEqual(fractran('3/2, 1/3'), [ 2, 3, 1 ]);
+  - text: <code>fractran("3/2, 5/3, 1/5")</code> should return <code>[ 2, 3, 5, 1 ]</code>.
+    testString: assert.deepEqual(fractran('3/2, 5/3, 1/5'), [ 2, 3, 5, 1 ]);
+  - text: <code>fractran("3/2, 6/3")</code> should return <code>[ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]</code>.
+    testString: assert.deepEqual(fractran('3/2, 6/3'), [ 2, 3, 6, 9, 18, 27, 54, 81, 162, 243 ]);
+  - text: <code>fractran("2/7, 7/2")</code> should return <code>[ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]</code>.
+    testString: assert.deepEqual(fractran('2/7, 7/2'), [ 2, 7, 2, 7, 2, 7, 2, 7, 2, 7 ]);
+  - text: <code>fractran("17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1")</code> should return <code>[ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]</code>.
+    testString: assert.deepEqual(fractran('17/91, 78/85, 19/51, 23/38, 29/33, 77/29, 95/23, 77/19, 1/17, 11/13, 13/11, 15/14, 15/2, 55/1'), [ 2, 15, 825, 725, 1925, 2275, 425, 390, 330, 290 ]);
 
 ```
 
@@ -43,20 +58,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function fractran (progStr) {
+function fractran(progStr) {
   // Good luck!
 }
-
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>
@@ -66,7 +70,46 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function fractran(progStr){
+  var num = new Array();
+  var den = new Array();
+  var val ;
+  var out="";
+  function compile(prog){
+    var regex = /\s*(\d*)\s*\/\s*(\d*)\s*(.*)/m;
+    while(regex.test(prog)){
+      num.push(regex.exec(prog)[1]);
+      den.push(regex.exec(prog)[2]);
+      prog = regex.exec(prog)[3];
+    }
+  }
+
+  function step(val){
+    var i=0;
+    while(i<den.length && val%den[i] != 0) i++;
+    return num[i]*val/den[i];
+  }
+
+  var seq=[]
+
+  function exec(val){
+    var i = 0;
+    while(val && i<limit){
+      seq.push(val)
+      val = step(val);
+      i ++;
+    }
+  }
+
+  // Main
+  compile(progStr);
+  var limit = 10;
+  exec(2);
+  return seq;
+}
+
 ```
+
 </section>

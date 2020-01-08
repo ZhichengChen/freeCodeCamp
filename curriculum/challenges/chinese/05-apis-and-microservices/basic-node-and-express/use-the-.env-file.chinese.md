@@ -1,18 +1,20 @@
 ---
 id: 587d7fb1367417b2b2512bf2
 title: Use the .env File
-localeTitle: 使用.env文件
 challengeType: 2
+forumTopicId: 301521
 ---
 
 ## Description
-<section id='description'> 
-<code>.env</code>文件是一个隐藏文件，用于将环境变量传递给应用程序。这个文件是秘密的，没有人可以访问它，它可以用来存储你想保密或隐藏的数据。例如，您可以存储来自外部服务或数据库URI的API密钥。您还可以使用它来存储配置选项。通过设置配置选项，您可以更改应用程序的行为，而无需重写某些代码。 <code>0</code>可以从应用程序访问环境变量<code>process.env.VAR_NAME</code> 。 <code>process.env</code>对象是一个全局Node对象，变量作为字符串传递。按照惯例，变量名都是大写的，单词用下划线分隔。 <code>.env</code>是一个shell文件，因此您不需要在引号中包装名称或值。同样重要的是要注意，当您为变量赋值时，等号周围不能有空格，例如<code>VAR_NAME=value</code> 。通常，您将每个变量定义放在单独的行上。 <code>0</code>让我们添加一个环境变量作为配置选项。将变量<code>MESSAGE_STYLE=uppercase</code>存储在<code>.env</code>文件中。然后告诉您在上一次质询中创建的GET <code>/json</code>路由处理程序，如果<code>process.env.MESSAGE_STYLE</code>等于<code>uppercase</code>则将响应对象的消息转换为<code>uppercase</code> 。响应对象应该成为<code>{"message": "HELLO JSON"}</code> 。 
+<section id='description'>
+The <code>.env</code> file is a hidden file that is used to pass environment variables to your application. This file is secret, no one but you can access it, and it can be used to store data that you want to keep private or hidden. For example, you can store API keys from external services or your database URI. You can also use it to store configuration options. By setting configuration options, you can change the behavior of your application, without the need to rewrite some code.
+The environment variables are accessible from the app as <code>process.env.VAR_NAME</code>. The <code>process.env</code> object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The <code>.env</code> is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. <code>VAR_NAME=value</code>. Usually, you will put each variable definition on a separate line.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Let's add an environment variable as a configuration option.
+Store the variable <code>MESSAGE_STYLE=uppercase</code> in the <code>.env</code> file. Then tell the GET <code>/json</code> route handler that you created in the last challenge to transform the response object’s message to uppercase if <code>process.env.MESSAGE_STYLE</code> equals <code>uppercase</code>. The response object should become <code>{"message": "HELLO JSON"}</code>.
 </section>
 
 ## Tests
@@ -20,7 +22,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 端点<code>/json</code>的响应应根据环境变量<code>MESSAGE_STYLE</code>
+  - text: The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/use-env-vars'').then(data => { assert.isTrue(data.passed, ''The response of "/json" does not change according to MESSAGE_STYLE''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,6 +38,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

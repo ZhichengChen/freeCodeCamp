@@ -2,15 +2,21 @@
 id: 5900f4311000cf542c50ff44
 challengeType: 5
 title: 'Problem 197: Investigating the behaviour of a recursively defined sequence'
-videoUrl: ''
-localeTitle: 问题197：研究递归定义的序列的行为
+forumTopicId: 301835
 ---
 
 ## Description
-<section id="description">给定函数f（x）=⌊230.403243784-x2⌋×10-9（⌊⌊是floor函数），序列un由u0 = -1和un + 1 = f（un）定义。 <p>找到n + 1012的un + un + 1.在小数点后面给出9位数的答案。 </p></section>
+<section id='description'>
+Given is the function f(x) = ⌊230.403243784-x2⌋ × 10-9 ( ⌊ ⌋ is the floor-function),
+the sequence un is defined by u0 = -1 and un+1 = f(un).
+
+Find un + un+1 for n = 1012.
+Give your answer with 9 digits after the decimal point.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题197：研究递归定义的序列的行为
 
 ```yml
 tests:
-  - text: <code>euler197()</code>应该返回1.710637717。
-    testString: 'assert.strictEqual(euler197(), 1.710637717, "<code>euler197()</code> should return 1.710637717.");'
+  - text: <code>euler197()</code> should return 1.710637717.
+    testString: assert.strictEqual(euler197(), 1.710637717);
 
 ```
 
@@ -37,7 +43,6 @@ function euler197() {
 }
 
 euler197();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler197();
 ```js
 // solution required
 ```
+
 </section>

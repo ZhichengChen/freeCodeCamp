@@ -1,17 +1,20 @@
 ---
 id: bd7158d8c443edefaeb5bdff
 title: Request Header Parser Microservice
-localeTitle: 请求Header Parser Microservice
 challengeType: 4
 isRequired: true
+forumTopicId: 301507
 ---
 
 ## Description
-<section id='description'> <code>0</code>构建一个功能类似于此的完整堆栈JavaScript应用程序： <a href='https://dandelion-roar.glitch.me/' target='_blank'>https</a> ： <a href='https://dandelion-roar.glitch.me/' target='_blank'>//dandelion-roar.glitch.me/</a> 。 <code>0</code>在这个项目上工作将涉及您在我们的入门项目上的Glitch上编写代码。完成此项目后，您可以将公共故障网址（到应用程序的主页）复制到此屏幕进行测试！您可以选择在另一个平台上编写项目，但必须公开显示我们的测试。 <code>0</code>使用<a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/' target='_blank'>此链接</a>在Glitch上启动此项目或在GitHub上克隆<a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>此存储库</a> ！如果您使用Glitch，请记住将项目链接保存到安全的地方！ 
+<section id='description'>
+Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a>.
+Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.
+Start this project on Glitch using <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-project-headerparser/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -20,7 +23,7 @@ isRequired: true
 
 ```yml
 tests:
-  - text: “我可以为我的浏览器获取IP地址，语言和操作系统。”
+  - text: 'I can get the IP address, language and operating system for my browser.'
     testString: ''
 
 ```
@@ -36,6 +39,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

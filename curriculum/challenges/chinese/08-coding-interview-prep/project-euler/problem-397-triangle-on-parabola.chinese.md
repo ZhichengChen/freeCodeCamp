@@ -2,15 +2,24 @@
 id: 5900f4f91000cf542c51000c
 challengeType: 5
 title: 'Problem 397: Triangle on parabola'
-videoUrl: ''
-localeTitle: 问题397：抛物线上的三角形
+forumTopicId: 302062
 ---
 
 ## Description
-<section id="description">在抛物线y = x2 / k上，选择三个点A（a，a2 / k），B（b，b2 / k）和C（c，c2 / k）。 <p>令F（K，X）为整数四元组（k，a，b，c）的数量，使得三角形ABC的至少一个角度为45度，其中1≤k≤K且-X≤a&lt; b &lt;c≤X。 </p><p>例如，F（1,10）= 41并且F（10,100）= 12492.找到F（106,109）。 </p></section>
+<section id='description'>
+On the parabola y = x2/k, three points A(a, a2/k), B(b, b2/k) and C(c, c2/k) are chosen.
+
+
+Let F(K, X) be the number of the integer quadruplets (k, a, b, c) such that at least one angle of the triangle ABC is 45-degree, with 1 ≤ k ≤ K and -X ≤ a < b < c ≤ X.
+
+
+For example, F(1, 10) = 41 and F(10, 100) = 12492.
+Find F(106, 109).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题397：抛物线上的三角形
 
 ```yml
 tests:
-  - text: <code>euler397()</code>应该返回141630459461893730。
-    testString: 'assert.strictEqual(euler397(), 141630459461893730, "<code>euler397()</code> should return 141630459461893730.");'
+  - text: <code>euler397()</code> should return 141630459461893730.
+    testString: assert.strictEqual(euler397(), 141630459461893730);
 
 ```
 
@@ -37,7 +46,6 @@ function euler397() {
 }
 
 euler397();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler397();
 ```js
 // solution required
 ```
+
 </section>

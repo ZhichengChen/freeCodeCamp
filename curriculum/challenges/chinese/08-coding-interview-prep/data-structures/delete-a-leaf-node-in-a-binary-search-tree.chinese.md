@@ -2,15 +2,26 @@
 id: 587d8258367417b2b2512c80
 title: Delete a Leaf Node in a Binary Search Tree
 challengeType: 1
-videoUrl: ''
-localeTitle: 删除二进制搜索树中的叶节点
+forumTopicId: 301637
 ---
 
 ## Description
-<section id="description">这是我们将在二叉搜索树中实现更难操作的三个挑战中的第一个：删除。删除很困难，因为删除节点会破坏树中的链接。必须仔细重新建立这些链接以确保维护二叉树结构。对于某些删除，这意味着必须重新排列树。通常，在尝试删除节点时，您将遇到以下三种情况之一：叶节点：要删除的目标没有子节点。一个孩子：要删除的目标只有一个孩子。两个子节点：要删除的目标有两个子节点。删除叶节点很简单，我们只需删除它。删除具有一个子节点的节点也相对容易，我们只需删除它并将其父节点链接到我们删除的节点的子节点。但是，删除具有两个子节点的节点更加困难，因为这会创建两个需要重新连接到父树的子节点。我们将在第三个挑战中看到如何处理这个案例。此外，在处理删除时，您需要注意一些边缘情况。如果树是空的怎么办？如果要删除的节点是根节点怎么办？如果树中只有两个元素怎么办？现在，让我们处理第一种删除叶节点的情况。说明：在我们的二叉树上创建一个名为<code>remove</code> 。我们将在这里为我们的删除操作构建逻辑。首先，您需要在remove中创建一个函数，该函数在当前树中找到我们尝试删除的节点。如果树中不存在该节点，则<code>remove</code>应返回<code>null</code> 。现在，如果目标节点是没有子节点的叶节点，则应将其父节点引用设置为<code>null</code> 。这有效地从树中删除节点。为此，您必须跟踪我们尝试删除的节点的父节点。创建一种跟踪目标节点具有的子节点数的方法也很有用，因为这将确定我们的删除属于哪种情况。我们将在下一次挑战中处理第二和第三个案例。祝你好运！ </section>
+
+<section id='description'>
+
+This is the first of three challenges where we will implement a more difficult operation in binary search trees: deletion. Deletion is difficult because removing nodes breaks links in the tree. These links must be carefully reestablished to ensure the binary tree structure is maintained. For some deletions, this means the tree must be rearranged. In general, you will encounter one of three cases when trying to delete a node:
+Leaf Node: The target to delete has zero children.
+One Child: The target to delete only has one child.
+Two Children: The target to delete has two child nodes.
+Removing a leaf node is easy, we simply remove it. Deleting a node with one child is also relatively easy, we simply remove it and link its parent to child of the node we deleted. Removing a node with two children is more difficult, however, because this creates two child nodes that need to be reconnected to the parent tree. We'll see how to deal with this case in the third challenge. Additionally, you need to be mindful of some edge cases when handling deletion. What if the tree is empty? What if the node to delete is the root node? What if there are only two elements in the tree? For now, let's handle the first case where we delete a leaf node.
+</section>
 
 ## Instructions
-<section id="instructions">
+
+<section id='instructions'>
+
+Create a method on our binary tree called <code>remove</code>. We'll build the logic for our deletion operation in here. First, you'll want to create a function within remove that finds the node we are trying to delete in the current tree. If the node is not present in the tree, <code>remove</code> should return <code>null</code>. Now, if the target node is a leaf node with no children, then the parent reference to it should be set to <code>null</code>. This effectively deletes the node from the tree. To do this, you will have to keep track of the parent of the node we are trying to delete as well. It will also be useful to create a way to track the number of children the target node has, as this will determine which case our deletion falls under.
+We will handle the second and third cases in the next challenges. Good luck!
 </section>
 
 ## Tests
@@ -18,17 +29,16 @@ localeTitle: 删除二进制搜索树中的叶节点
 
 ```yml
 tests:
-  - text: 存在<code>BinarySearchTree</code>数据结构。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
-  - text: 二叉搜索树有一个名为<code>remove</code>的方法。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == "function")})(), "The binary search tree has a method called <code>remove</code>.");'
-  - text: 尝试删除不存在的元素将返回<code>null</code> 。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== "function") { return false; }; return (test.remove(100) == null); })(), "Trying to remove an element that does not exist returns <code>null</code>.");'
-  - text: 如果根节点没有子节点，则删除它会将根节点设置为<code>null</code> 。
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== "function") { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), "If the root node has no children, deleting it sets the root to <code>null</code>.");'
-  - text: <code>remove</code>方法从树中删除叶节点
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== "function") { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join("") == "567"); })(), "The <code>remove</code> method removes leaf nodes from the tree");'
-
+  - text: The <code>BinarySearchTree</code> data structure should exist.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})());
+  - text: The binary search tree should have a method called <code>remove</code>.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})());
+  - text: Trying to remove an element that does not exist should return <code>null</code>.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })());
+  - text: If the root node has no children, deleting it should set the root to <code>null</code>.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })());
+  - text: The <code>remove</code> method should remove leaf nodes from the tree.
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })());
 ```
 
 </section>
@@ -39,32 +49,103 @@ tests:
 <div id='js-seed'>
 
 ```js
-var displayTree = (tree) => console.log(JSON.stringify(tree, null, 2));
+var displayTree = tree => console.log(JSON.stringify(tree, null, 2));
 function Node(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 
 function BinarySearchTree() {
-    this.root = null;
-    // case 1: target has no children, change code below this line
+  this.root = null;
+  // case 1: target has no children, change code below this line
 }
-
 ```
 
 </div>
-
 
 ### After Test
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+  add: function(value) {
+    var node = this.root;
+    if (node == null) {
+      this.root = new Node(value);
+      return;
+    } else {
+      function searchTree(node) {
+        if (value < node.value) {
+          if (node.left == null) {
+            node.left = new Node(value);
+            return;
+          } else if (node.left != null) {
+            return searchTree(node.left);
+          }
+        } else if (value > node.value) {
+          if (node.right == null) {
+            node.right = new Node(value);
+            return;
+          } else if (node.right != null) {
+            return searchTree(node.right);
+          }
+        } else {
+          return null;
+        }
+      }
+      return searchTree(node);
+    }
+  },
+  inorder: function() {
+    if (this.root == null) {
+      return null;
+    } else {
+      var result = new Array();
+      function traverseInOrder(node) {
+        if (node.left != null) {
+          traverseInOrder(node.left);
+        }
+        result.push(node.value);
+        if (node.right != null) {
+          traverseInOrder(node.right);
+        }
+      }
+      traverseInOrder(this.root);
+      return result;
+    }
+  },
+  isBinarySearchTree() {
+    if (this.root == null) {
+      return null;
+    } else {
+      var check = true;
+      function checkTree(node) {
+        if (node.left != null) {
+          var left = node.left;
+          if (left.value > node.value) {
+            check = false;
+          } else {
+            checkTree(left);
+          }
+        }
+        if (node.right != null) {
+          var right = node.right;
+          if (right.value < node.value) {
+            check = false;
+          } else {
+            checkTree(right);
+          }
+        }
+      }
+      checkTree(this.root);
+      return check;
+    }
+  }
+};
 ```
 
 </div>
-
 </section>
 
 ## Solution
@@ -73,4 +154,5 @@ console.info('after the test');
 ```js
 // solution required
 ```
+
 </section>

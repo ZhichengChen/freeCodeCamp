@@ -2,25 +2,44 @@
 id: 56592a60ddddeae28f7aa8e1
 title: Access Multi-Dimensional Arrays With Indexes
 challengeType: 1
-videoUrl: ''
-localeTitle: 访问带索引的多维数组
+videoUrl: 'https://scrimba.com/c/ckND4Cq'
+forumTopicId: 16159
 ---
 
 ## Description
-<section id="description">考虑<dfn>多维</dfn>数组的一种方法是作为<em>数组的数组</em> 。使用括号访问数组时，第一组括号引用最外层（第一级）数组中的条目，另外一对括号引用内部的下一级条目。 <strong>例</strong> <blockquote> var arr = [ <br> [1,2,3]， <br> [4,5,6] <br> [7,8,9] <br> [[10,11,12]，13,14] <br> ]。 <br> ARR [3]; //等于[[10,11,12]，13,14] <br> ARR [3] [0]; //等于[10,11,12] <br> ARR [3] [0] [1]; //等于11 </blockquote> <strong>注意</strong> <br>数组名称和方括号之间不应该有任何空格，如<code>array [0][0]</code> ，甚至不允许使用此<code>array [0] [0]</code> 。尽管JavaScript能够正确处理，但这可能会让其他程序员在阅读代码时感到困惑。 </section>
+<section id='description'>
+One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.
+<strong>Example</strong>
+
+```js
+var arr = [
+  [1,2,3],
+  [4,5,6],
+  [7,8,9],
+  [[10,11,12], 13, 14]
+];
+arr[3]; // equals [[10,11,12], 13, 14]
+arr[3][0]; // equals [10,11,12]
+arr[3][0][1]; // equals 11
+```
+
+<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0][0]</code> and even this <code>array [0] [0]</code> is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+</section>
 
 ## Instructions
-<section id="instructions">使用括号表示法从<code>myArray</code>选择一个元素，使<code>myData</code>等于<code>8</code> 。 </section>
+<section id='instructions'>
+Using bracket notation select an element from <code>myArray</code> such that <code>myData</code> is equal to <code>8</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myData</code>应该等于<code>8</code> 。
-    testString: 'assert(myData === 8, "<code>myData</code> should be equal to <code>8</code>.");'
-  - text: 您应该使用括号表示法从<code>myArray</code>读取正确的值。
-    testString: 'assert(/myArray\[2\]\[1\]/g.test(code) && !/myData\s*=\s*(?:.*[-+*/%]|\d)/g.test(code), "You should be using bracket notation to read the correct value from <code>myArray</code>.");'
+  - text: <code>myData</code> should be equal to <code>8</code>.
+    testString: assert(myData === 8);
+  - text: You should be using bracket notation to read the correct value from <code>myArray</code>.
+    testString: assert(/myData=myArray\[2\]\[1\]/.test(code.replace(/\s/g, '')));
 
 ```
 
@@ -47,7 +66,7 @@ var myData = myArray[0][0];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return "myData: " + myData + " myArray: " + JSON.stringify(myArray);})();}
 ```
 
 </div>
@@ -57,7 +76,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];
+var myData = myArray[2][1];
 ```
+
 </section>

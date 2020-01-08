@@ -2,15 +2,21 @@
 id: 5900f39e1000cf542c50feb1
 challengeType: 5
 title: 'Problem 50: Consecutive prime sum'
-videoUrl: ''
-localeTitle: 问题50：连续的总和
+forumTopicId: 302161
 ---
 
 ## Description
-<section id="description">素数41可以写成六个连续素数的总和：41 = 2 + 3 + 5 + 7 + 11 + 13这是连续素数的最长和，它加到低于一百的素数。连续素数低于1000的连续素数加上一个素数，包含21个项，等于953.哪个素数低于一百万，可以写成最连续素数的总和？ </section>
+<section id='description'>
+The prime 41, can be written as the sum of six consecutive primes:
+41 = 2 + 3 + 5 + 7 + 11 + 13
+This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+Which prime, below one-million, can be written as the sum of the most consecutive primes?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,10 +24,10 @@ localeTitle: 问题50：连续的总和
 
 ```yml
 tests:
-  - text: <code>consecutivePrimeSum(1000)</code>应该返回953。
-    testString: 'assert.strictEqual(consecutivePrimeSum(1000), 953, "<code>consecutivePrimeSum(1000)</code> should return 953.");'
-  - text: <code>consecutivePrimeSum(1000000)</code>应该返回997651。
-    testString: 'assert.strictEqual(consecutivePrimeSum(1000000), 997651, "<code>consecutivePrimeSum(1000000)</code> should return 997651.");'
+  - text: <code>consecutivePrimeSum(1000)</code> should return 953.
+    testString: assert.strictEqual(consecutivePrimeSum(1000), 953);
+  - text: <code>consecutivePrimeSum(1000000)</code> should return 997651.
+    testString: assert.strictEqual(consecutivePrimeSum(1000000), 997651);
 
 ```
 
@@ -39,7 +45,6 @@ function consecutivePrimeSum(limit) {
 }
 
 consecutivePrimeSum(1000000);
-
 ```
 
 </div>
@@ -51,7 +56,46 @@ consecutivePrimeSum(1000000);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function consecutivePrimeSum(limit) {
+  function isPrime(num) {
+    if (num < 2) {
+      return false;
+    } else if (num === 2) {
+      return true;
+    }
+    const sqrtOfNum = Math.floor(num ** 0.5);
+    for (let i = 2; i <= sqrtOfNum + 1; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  function getPrimes(limit) {
+    const primes = [];
+    for (let i = 0; i <= limit; i++) {
+      if (isPrime(i)) primes.push(i);
+    }
+    return primes;
+  }
+
+  const primes = getPrimes(limit);
+  let primeSum = [...primes];
+  primeSum.reduce((acc, n, i) => {
+    primeSum[i] += acc;
+    return acc += n;
+  }, 0);
+
+  for (let j = primeSum.length - 1; j >= 0; j--) {
+    for (let i = 0; i < j; i++) {
+      const sum = primeSum[j] - primeSum[i];
+      if (sum > limit) break;
+      if (isPrime(sum) && primes.indexOf(sum) > -1) return sum;
+    }
+  }
+}
 ```
+
 </section>

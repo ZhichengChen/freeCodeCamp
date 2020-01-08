@@ -2,15 +2,25 @@
 id: 5900f5361000cf542c510048
 challengeType: 5
 title: 'Problem 457: A polynomial modulo the square of a prime'
-videoUrl: ''
-localeTitle: 问题457：多项式以素数的平方为模
+forumTopicId: 302131
 ---
 
 ## Description
-<section id="description">设f（n）= n2  -  3n  -  1.设p为素数。令R（p）是最小的正整数n，使得如果存在这样的整数n则f（n）mod p2 = 0，否则R（p）= 0。 <p>对于不超过L的所有素数，令SR（L）为ΣR（p）。 </p><p>找到SR（107）。 </p></section>
+<section id='description'>
+Let f(n) = n2 - 3n - 1.
+Let p be a prime.
+Let R(p) be the smallest positive integer n such that f(n) mod p2 = 0 if such an integer n exists, otherwise R(p) = 0.
+
+
+Let SR(L) be ∑R(p) for all primes not exceeding L.
+
+
+Find SR(107).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题457：多项式以素数的平方为模
 
 ```yml
 tests:
-  - text: <code>euler457()</code>应该返回2647787126797397000。
-    testString: 'assert.strictEqual(euler457(), 2647787126797397000, "<code>euler457()</code> should return 2647787126797397000.");'
+  - text: <code>euler457()</code> should return 2647787126797397000.
+    testString: assert.strictEqual(euler457(), 2647787126797397000);
 
 ```
 
@@ -37,7 +47,6 @@ function euler457() {
 }
 
 euler457();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler457();
 ```js
 // solution required
 ```
+
 </section>

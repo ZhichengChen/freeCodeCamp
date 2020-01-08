@@ -2,15 +2,22 @@
 id: 58a25c98f9fc0f352b528e7f
 title: Hashing Your Passwords
 challengeType: 2
-videoUrl: ''
-localeTitle: 哈希密码
+forumTopicId: 301553
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。回到信息安全部分，您​​可能还记得存储明文密码<em>永远不会</em>好。现在是时候实施BCrypt来解决这个问题了。 <hr>将BCrypt添加为依赖项并在服务器中将其需要。您需要在两个关键区域处理散列：您在哪里处理注册/保存新帐户以及在登录时检查密码是否正确。目前在我们的注册路线上，您将用户的密码插入数据库，如下所示： <code>password: req.body.password</code> 。实现保存哈希的一种简单方法是在数据库逻辑<code>var hash = bcrypt.hashSync(req.body.password, 12);</code>之前添加以下内容<code>var hash = bcrypt.hashSync(req.body.password, 12);</code>并使用<code>password: hash</code>替换数据库保存中的<code>req.body.password</code> 。最后在我们的身份验证策略中，我们在完成流程之前在代码中检查以下内容： <code>if (password !== user.password) { return done(null, false); }</code> 。完成之前的更改后，现在<code>user.password</code>是一个哈希。在更改现有代码之前，请注意语句如何检查密码是否不相等，然后返回未经过身份验证的密码。考虑到这一点，您的代码可能如下所示，以正确检查针对哈希输入的密码： <code>if (!bcrypt.compareSync(password, user.password)) { return done(null, false); }</code>这是所有需要实现的最重要的安全功能之一，当你有来存储密码！当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+Going back to the information security section you may remember that storing plaintext passwords is <em>never</em> okay. Now it is time to implement BCrypt to solve this issue.
+<hr>Add BCrypt as a dependency and require it in your server. You will need to handle hashing in 2 key areas: where you handle registering/saving a new account and when you check to see that a password is correct on login.
+Currently on our registeration route, you insert a user's password into the database like the following: <code>password: req.body.password</code>. An easy way to implement saving a hash instead is to add the following before your database logic <code>var hash = bcrypt.hashSync(req.body.password, 12);</code> and replacing the <code>req.body.password</code> in the database saving with just <code>password: hash</code>.
+Finally on our authentication strategy we check for the following in our code before completing the process: <code>if (password !== user.password) { return done(null, false); }</code>. After making the previous changes, now <code>user.password</code> is a hash. Before making a change to the existing code, notice how the statement is checking if the password is NOT equal then return non-authenticated. With this in mind your code could look as follows to properly check the password entered against the hash: <code>if (!bcrypt.compareSync(password, user.password)) { return done(null, false); }</code>
+That is all it takes to implement one of the most important security features when you have to store passwords! Submit your page when you think you've got it right.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,10 +25,10 @@ localeTitle: 哈希密码
 
 ```yml
 tests:
-  - text: BCrypt是一种依赖
-    testString: ' getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "bcrypt", "Your project should list "bcrypt" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: BCrypt正确需要并实施
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /require.*("|")bcrypt("|")/gi, "You should have required bcrypt"); assert.match(data, /bcrypt.hashSync/gi, "You should use hash the password in the registration"); assert.match(data, /bcrypt.compareSync/gi, "You should compare the password to the hash in your strategy"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: BCrypt should be a dependency.
+    testString:  getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'bcrypt', 'Your project should list "bcrypt" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: BCrypt should be correctly required and implemented.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /require.*("|')bcrypt("|')/gi, 'You should have required bcrypt'); assert.match(data, /bcrypt.hashSync/gi, 'You should use hash the password in the registration'); assert.match(data, /bcrypt.compareSync/gi, 'You should compare the password to the hash in your strategy'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -36,6 +43,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -2,15 +2,20 @@
 id: 58a25bcef9fc0f352b528e7c
 title: Understand BCrypt Hashes
 challengeType: 2
-videoUrl: ''
-localeTitle: 了解BCrypt Hashes
+forumTopicId: 301586
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-bcrypt/">GitHub</a>克隆的。 BCrypt哈希非常安全。哈希基本上是原始数据的指纹 - 始终是唯一的。这是通过将原始数据馈送到算法中并返回固定长度的结果来实现的。为了进一步使这个过程复杂化并使其更安全，您还可以<em>加入哈希</em>值。对哈希进行盐析涉及在哈希处理之前将随机数据添加到原始数据，这使得更难破解哈希。 BCrypt哈希总是看起来像<code>$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>确实有一个结构。第一小部分数据<code>$2a</code>定义了使用何种哈希算法。下一部分<code>$13</code>定义了<em>成本</em> 。成本是计算哈希值所需的功率。它具有2 ^成本的对数标度，并确定通过散列算法放置数据的次数。例如，以10为代价，您可以在普通计算机上每秒散列10个密码，但是每个散列需要花费3秒才能进行散乱...并且需要花费更多时间，成本为31需要多天才能完成哈希。目前，12的成本被认为是非常安全的。哈希<code>$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>的最后一部分看起来像<code>$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>数字，句号和字母，但它实际上是两条独立的信息。前22个字符是纯文本的盐，其余的是哈希密码！ <hr>要开始使用BCrypt，请将其作为项目中的依赖项添加，并在服务器中将其命名为“bcrypt”。当您认为自己已经做对时，请提交您的页面。 </section>
+<section id='description'>
+For the following challenges, you will be working with a new starter project that is different from earlier challenges. This project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-bcrypt/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>GitHub</a>.
+BCrypt hashes are very secure. A hash is basically a fingerprint of the original data- always unique. This is accomplished by feeding the original data into an algorithm and returning a fixed length result. To further complicate this process and make it more secure, you can also <em>salt</em> your hash. Salting your hash involves adding random data to the original data before the hashing process which makes it even harder to crack the hash.
+BCrypt hashes will always looks like <code>$2a$13$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code> which does have a structure. The first small bit of data <code>$2a</code> is defining what kind of hash algorithm was used. The next portion <code>$13</code> defines the <em>cost</em>. Cost is about how much power it takes to compute the hash. It is on a logarithmic scale of 2^cost and determines how many times the data is put through the hashing algorithm. For example, at a cost of 10 you are able to hash 10 passwords a second on an average computer, however at a cost of 15 it takes 3 seconds per hash... and to take it further, at a cost of 31 it would takes multiple days to complete a hash. A cost of 12 is considered very secure at this time. The last portion of your hash <code>$ZyprE5MRw2Q3WpNOGZWGbeG7ADUre1Q8QO.uUUtcbqloU0yvzavOm</code>, looks like one large string of numbers, periods, and letters but it is actually two separate pieces of information. The first 22 characters is the salt in plain text, and the rest is the hashed password!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.
+Submit your page when you think you've got it right.
 </section>
 
 ## Tests
@@ -18,10 +23,10 @@ localeTitle: 了解BCrypt Hashes
 
 ```yml
 tests:
-  - text: BCrypt是一个依赖
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "bcrypt", "Your project should list "bcrypt" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
-  - text: 已经适当地要求BCrypt
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js").then(data => {assert.match(data, /bcrypt.*=.*require.*("|")bcrypt("|")/gi, "You should correctly require and instantiate socket.io as io.");}, xhr => { throw new Error(xhr.statusText); })'
+  - text: BCrypt should be a dependency.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/package.json') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, 'bcrypt', 'Your project should list "bcrypt" as a dependency'); }, xhr => { throw new Error(xhr.statusText); })
+  - text: BCrypt should be properly required.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js').then(data => {assert.match(data, /bcrypt.*=.*require.*('|")bcrypt('|")/gi, 'You should correctly require and instantiate socket.io as io.');}, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -36,6 +41,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -2,15 +2,18 @@
 id: 5900f3ab1000cf542c50febe
 challengeType: 5
 title: 'Problem 63: Powerful digit counts'
-videoUrl: ''
-localeTitle: 问题63：强大的数字计数
+forumTopicId: 302175
 ---
 
 ## Description
-<section id="description"> 5位数字，16807 = 75，也是第五种力量。类似地，9位数字134217728 = 89是第九次幂。存在多少个n位正整数，它们也是n次幂？ </section>
+<section id='description'>
+The 5-digit number, 16807=75, is also a fifth power. Similarly, the 9-digit number, 134217728=89, is a ninth power.
+How many n-digit positive integers exist which are also an nth power?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 问题63：强大的数字计数
 
 ```yml
 tests:
-  - text: <code>euler63()</code>应该返回49。
-    testString: 'assert.strictEqual(euler63(), 49, "<code>euler63()</code> should return 49.");'
+  - text: <code>euler63()</code> should return 49.
+    testString: assert.strictEqual(euler63(), 49);
 
 ```
 
@@ -37,7 +40,6 @@ function euler63() {
 }
 
 euler63();
-
 ```
 
 </div>
@@ -52,4 +54,5 @@ euler63();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,26 @@
 id: 5900f50a1000cf542c51001c
 challengeType: 5
 title: 'Problem 413: One-child Numbers'
-videoUrl: ''
-localeTitle: 问题413：独生子女号码
+forumTopicId: 302082
 ---
 
 ## Description
-<section id="description">我们说如果其子串中的一个子串可被d整除，则d位正数（无前导零）是一个子数。 <p>例如，5671是一个4位数的单子号码。在其所有子串5,6,7,1,56,67,71,567,671和5671中，只有56可被4整除。类似地，104是3位单子数，因为只有0可被整除3. 1132451是一个7位数的单子号码，因为只有245可被7整除。 </p><p>设F（N）是小于N的一子数的数。我们可以验证F（10）= 9，F（103）= 389和F（107）= 277674。 </p><p>找到F（1019）。 </p></section>
+<section id='description'>
+We say that a d-digit positive number (no leading zeros) is a one-child number if exactly one of its sub-strings is divisible by d.
+
+For example, 5671 is a 4-digit one-child number. Among all its sub-strings 5, 6, 7, 1, 56, 67, 71, 567, 671 and 5671, only 56 is divisible by 4.
+Similarly, 104 is a 3-digit one-child number because only 0 is divisible by 3.
+1132451 is a 7-digit one-child number because only 245 is divisible by 7.
+
+Let F(N) be the number of the one-child numbers less than N.
+We can verify that F(10) = 9, F(103) = 389 and F(107) = 277674.
+
+Find F(1019).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +29,8 @@ localeTitle: 问题413：独生子女号码
 
 ```yml
 tests:
-  - text: <code>euler413()</code>应该返回3079418648040719。
-    testString: 'assert.strictEqual(euler413(), 3079418648040719, "<code>euler413()</code> should return 3079418648040719.");'
+  - text: <code>euler413()</code> should return 3079418648040719.
+    testString: assert.strictEqual(euler413(), 3079418648040719);
 
 ```
 
@@ -37,7 +48,6 @@ function euler413() {
 }
 
 euler413();
-
 ```
 
 </div>
@@ -52,4 +62,5 @@ euler413();
 ```js
 // solution required
 ```
+
 </section>

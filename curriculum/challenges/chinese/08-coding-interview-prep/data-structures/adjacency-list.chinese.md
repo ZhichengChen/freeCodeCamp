@@ -2,30 +2,57 @@
 id: 587d8256367417b2b2512c77
 title: Adjacency List
 challengeType: 1
-videoUrl: ''
-localeTitle: 邻接名单
+forumTopicId: 301620
 ---
 
 ## Description
-<section id="description">图表可以以不同方式表示。这里我们描述一种方法，称为<dfn>邻接列表</dfn> 。邻接列表本质上是项目符号列表，其中左侧是节点，右侧列出它所连接的所有其他节点。下面是邻接列表的表示。 <blockquote> Node1：Node2，Node3 <br> Node2：Node1 <br> Node3：Node1 </blockquote>以上是无向图，因为<code>Node1</code>连接到<code>Node2</code>和<code>Node3</code> ，并且该信息与<code>Node2</code>和<code>Node3</code>显示的连接一致。有向图的邻接列表意味着列表的每一行都显示方向。如果指示上述内容，那么<code>Node2: Node1</code>将意味着有向边缘从<code>Node2</code>指向<code>Node1</code> 。我们可以将上面的无向图表示为邻接列表，方法是将其放在JavaScript对象中。 <blockquote> var undirectedG = { <br>节点1：[“Node2”，“Node3”]， <br> Node2：[“Node1”]， <br> Node3：[“Node1”] <br> }; </blockquote>这也可以更简单地表示为一个数组，其中节点只有数字而不是字符串标签。 <blockquote> var undirectedGArr = [ <br> [1,2]，＃Node1 <br> [0]，＃Node2 <br> [0] #Node3 <br> ]。 </blockquote></section>
+<section id='description'>
+
+Graphs can be represented in different ways. Here we describe one way, which is called an <dfn>adjacency list</dfn>.
+An adjacency list is essentially a bulleted list where the left side is the node and the right side lists all the other nodes it's connected to. Below is a representation of an adjacency list.
+<blockquote>Node1: Node2, Node3<br>Node2: Node1<br>Node3: Node1</blockquote>
+Above is an undirected graph because <code>Node1</code> is connected to <code>Node2</code> and <code>Node3</code>, and that information is consistent with the connections <code>Node2</code> and <code>Node3</code> show. An adjacency list for a directed graph would mean each row of the list shows direction. If the above was directed, then <code>Node2: Node1</code> would mean there the directed edge is pointing from <code>Node2</code> towards <code>Node1</code>.
+We can represent the undirected graph above as an adjacency list by putting it within a JavaScript object.
+
+```js
+var undirectedG = {
+  Node1: ["Node2", "Node3"],
+  Node2: ["Node1"],
+  Node3: ["Node1"]
+};
+```
+
+This can also be more simply represented as an array where the nodes just have numbers rather than string labels.
+
+```js
+var undirectedGArr = [
+  [1, 2], // Node1
+  [0],    // Node2
+  [0]     // Node3
+];
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">创建一个社交网络作为无向图，其中有4个节点/人名为<code>James</code> ， <code>Jill</code> ， <code>Jenny</code>和<code>Jeff</code> 。詹姆斯和杰夫，吉尔和珍妮以及杰夫和珍妮之间存在边缘/关系。 </section>
+<section id='instructions'>
+
+Create a social network as an undirected graph with 4 nodes/people named <code>James</code>, <code>Jill</code>, <code>Jenny</code>, and <code>Jeff</code>. There are edges/relationships between James and Jeff, Jill and Jenny, and Jeff and Jenny.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>undirectedAdjList</code>应该只包含四个节点。
-    testString: 'assert(Object.keys(undirectedAdjList).length === 4, "<code>undirectedAdjList</code> should only contain four nodes.");'
-  - text: <code>Jeff</code>和<code>James</code>之间应该有优势。
-    testString: 'assert(undirectedAdjList.James.indexOf("Jeff") !== -1 && undirectedAdjList.Jeff.indexOf("James") !== -1, "There should be an edge between <code>Jeff</code> and <code>James</code>.");'
-  - text: <code>Jill</code>和<code>Jenny</code>之间应该有一个优势。
-    testString: 'assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1, "There should be an edge between <code>Jill</code> and <code>Jenny</code>.");'
-  - text: <code>Jeff</code>和<code>Jenny</code>之间应该有优势。
-    testString: 'assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, "There should be an edge between <code>Jeff</code> and <code>Jenny</code>.");'
-
+  - text: <code>undirectedAdjList</code> should only contain four nodes.
+    testString: assert(Object.keys(undirectedAdjList).length === 4);
+  - text: There should be an edge between <code>Jeff</code> and <code>James</code>.
+    testString: assert(undirectedAdjList.James.indexOf("Jeff") !== -1 && undirectedAdjList.Jeff.indexOf("James") !== -1);
+  - text: There should be an edge between <code>Jill</code> and <code>Jenny</code>.
+    testString: assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1);
+  - text: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.
+    testString: assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1);
 ```
 
 </section>
@@ -36,21 +63,22 @@ tests:
 <div id='js-seed'>
 
 ```js
-var undirectedAdjList = {
-};
-
+var undirectedAdjList = {};
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+var undirectedAdjList = {
+  James: ['Jeff'],
+  Jill: ['Jenny'],
+  Jenny: ['Jill', 'Jeff'],
+  Jeff: ['James', 'Jenny']
+};
 ```
+
 </section>

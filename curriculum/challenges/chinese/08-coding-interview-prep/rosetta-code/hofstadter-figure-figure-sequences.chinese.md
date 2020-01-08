@@ -2,15 +2,33 @@
 title: Hofstadter Figure-Figure sequences
 id: 59622f89e4e137560018a40e
 challengeType: 5
-videoUrl: ''
-localeTitle: Hofstadter图 - 图序列
+forumTopicId: 302286
 ---
 
 ## Description
-<section id="description"><p>这两个正整数序列定义为： </p><p> <big>$$ R（1）= 1 \; \ S（1）= 2 \\ R（n）= R（n-1）+ S（n-1），\ quad n&gt; 1. $$</big> </p><p>序列<big>$ S（n）$</big>进一步定义为<big>$ R（n）$中</big>不存在的正整数序列。 </p><p>序列<big>$ R $</big>开始： </p><p> 1,3,7,12,18 ...... </p><p>序列<big>$ S $</big>开始： </p><p> 2,4,5,6,8 ...... </p>任务：创建两个名为ffr和ffs的函数，当给定n分别返回R（n）或S（n）时（注意R（1）= 1且S（1）= 2以避免逐个错误） 。不应假设n的最大值。 Sloane的<a href="http://oeis.org/A005228" title="链接：http：//oeis.org/A005228">A005228</a>和<a href="http://oeis.org/A030124" title="链接：http：//oeis.org/A030124">A030124</a> 。 <a href="http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" title="链接：http：//mathworld.wolfram.com/HofstadterFigure-FigureSequence.html">Wolfram MathWorld</a>维基百科： <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp：Hofstadter_sequence＃Hofstadter_Figure-Figure_sequences">Hofstadter图 - 图序列</a> 。 </section>
+<section id='description'>
+These two sequences of positive integers are defined as:
+<span style="margin-left: 2em;"><big>$R(1)=1\ ;\ S(1)=2 \\R(n)=R(n-1)+S(n-1), \quad n>1.$</big></span>
+The sequence <big>$S(n)$</big> is further defined as the sequence of positive integers not present in <big>$R(n)$</big>.
+Sequence <big>$R$</big> starts:
+<pre>1, 3, 7, 12, 18, ...</pre>
+Sequence <big>$S$</big> starts:
+<pre>2, 4, 5, 6, 8, ...</pre>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Create two functions named <code>ffr</code> and <code>ffs</code>  that when given <code>n</code> return <code>R(n)</code> or <code>S(n)</code> respectively. (Note that R(1) = 1 and S(1) = 2 to avoid off-by-one errors).
+No maximum value for <code>n</code> should be assumed.
+<strong>References</strong>
+<ul>
+  <li>
+    Sloane's <a href="https://oeis.org/A005228" target="_blank">A005228</a> and <a href="https://oeis.org/A030124" target="_blank">A030124</a>.
+  </li>
+  <li>
+    Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" target="_blank">Hofstadter Figure-Figure sequences</a>.
+  </li>
+</ul>
 </section>
 
 ## Tests
@@ -18,30 +36,30 @@ localeTitle: Hofstadter图 - 图序列
 
 ```yml
 tests:
-  - text: <code>ffr</code>是一个功能。
-    testString: 'assert(typeof ffr === "function", "<code>ffr</code> is a function.");'
-  - text: <code>ffs</code>是一个函数。
-    testString: 'assert(typeof ffs === "function", "<code>ffs</code> is a function.");'
-  - text: <code>ffr</code>应该返回整数。
-    testString: 'assert(Number.isInteger(ffr(1)), "<code>ffr</code> should return integer.");'
-  - text: <code>ffs</code>应该返回整数。
-    testString: 'assert(Number.isInteger(ffs(1)), "<code>ffs</code> should return integer.");'
-  - text: <code>ffr()</code>应该返回<code>69</code>
-    testString: 'assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1], "<code>ffr()</code> should return <code>69</code>");'
-  - text: <code>ffr()</code>应返回<code>1509</code>
-    testString: 'assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1], "<code>ffr()</code> should return <code>1509</code>");'
-  - text: <code>ffr()</code>应返回<code>5764</code>
-    testString: 'assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1], "<code>ffr()</code> should return <code>5764</code>");'
-  - text: <code>ffr()</code>应返回<code>526334</code>
-    testString: 'assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1], "<code>ffr()</code> should return <code>526334</code>");'
-  - text: <code>ffs()</code>应该返回<code>14</code>
-    testString: 'assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1], "<code>ffs()</code> should return <code>14</code>");'
-  - text: <code>ffs()</code>应该返回<code>59</code>
-    testString: 'assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1], "<code>ffs()</code> should return <code>59</code>");'
-  - text: <code>ffs()</code>应该返回<code>112</code>
-    testString: 'assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1], "<code>ffs()</code> should return <code>112</code>");'
-  - text: <code>ffs()</code>应该返回<code>1041</code>
-    testString: 'assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1], "<code>ffs()</code> should return <code>1041</code>");'
+  - text: <code>ffr</code> should be a function.
+    testString: assert(typeof ffr === 'function');
+  - text: <code>ffs</code> should be a function.
+    testString: assert(typeof ffs === 'function');
+  - text: <code>ffr</code> should return integer.
+    testString: assert(Number.isInteger(ffr(1)));
+  - text: <code>ffs</code> should return integer.
+    testString: assert(Number.isInteger(ffs(1)));
+  - text: <code>ffr()</code> should return <code>69</code>
+    testString: assert.equal(ffr(ffrParamRes[0][0]), ffrParamRes[0][1]);
+  - text: <code>ffr()</code> should return <code>1509</code>
+    testString: assert.equal(ffr(ffrParamRes[1][0]), ffrParamRes[1][1]);
+  - text: <code>ffr()</code> should return <code>5764</code>
+    testString: assert.equal(ffr(ffrParamRes[2][0]), ffrParamRes[2][1]);
+  - text: <code>ffr()</code> should return <code>526334</code>
+    testString: assert.equal(ffr(ffrParamRes[3][0]), ffrParamRes[3][1]);
+  - text: <code>ffs()</code> should return <code>14</code>
+    testString: assert.equal(ffs(ffsParamRes[0][0]), ffsParamRes[0][1]);
+  - text: <code>ffs()</code> should return <code>59</code>
+    testString: assert.equal(ffs(ffsParamRes[1][0]), ffsParamRes[1][1]);
+  - text: <code>ffs()</code> should return <code>112</code>
+    testString: assert.equal(ffs(ffsParamRes[2][0]), ffsParamRes[2][1]);
+  - text: <code>ffs()</code> should return <code>1041</code>
+    testString: assert.equal(ffs(ffsParamRes[3][0]), ffsParamRes[3][1]);
 
 ```
 
@@ -61,7 +79,6 @@ function ffr(n) {
 function ffs(n) {
   return n;
 }
-
 ```
 
 </div>
@@ -71,7 +88,9 @@ function ffs(n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const ffrParamRes = [[10, 69], [50, 1509], [100, 5764], [1000, 526334]];
+const ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];
+
 ```
 
 </div>
@@ -81,7 +100,36 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+// noprotect
+const R = [null, 1];
+const S = [null, 2];
+
+function extendSequences (n) {
+  let current = Math.max(R[R.length - 1], S[S.length - 1]);
+  let i;
+  while (R.length <= n || S.length <= n) {
+    i = Math.min(R.length, S.length) - 1;
+    current += 1;
+    if (current === R[i] + S[i]) {
+      R.push(current);
+    } else {
+      S.push(current);
+    }
+  }
+}
+
+function ffr (n) {
+  extendSequences(n);
+  return R[n];
+}
+
+function ffs (n) {
+  extendSequences(n);
+  return S[n];
+}
+
 ```
+
 </section>

@@ -2,25 +2,30 @@
 id: cf1391c1c11feddfaeb4bdef
 title: Create Decimal Numbers with JavaScript
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用JavaScript创建十进制数
+videoUrl: 'https://scrimba.com/c/ca8GEuW'
+forumTopicId: 16826
 ---
 
 ## Description
-<section id="description">我们也可以在变量中存储十进制数。十进制数有时称为<dfn>浮点数</dfn>或<dfn>浮点数</dfn> 。 <strong>注意</strong> <br>并非所有实数都可以准确地以<dfn>浮点</dfn>表示。这可能导致舍入错误。 <a href="https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems" target="_blank">细节在这里</a> 。 </section>
+<section id='description'>
+We can store decimal numbers in variables too. Decimal numbers are sometimes referred to as <dfn>floating point</dfn> numbers or <dfn>floats</dfn>.
+<strong>Note</strong><br>Not all real numbers can accurately be represented in <dfn>floating point</dfn>. This can lead to rounding errors. <a href="https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems" target="_blank">Details Here</a>.
+</section>
 
 ## Instructions
-<section id="instructions">创建一个变量<code>myDecimal</code>并给它一个带小数部分的十进制值（例如<code>5.7</code> ）。 </section>
+<section id='instructions'>
+Create a variable <code>myDecimal</code> and give it a decimal value with a fractional part (e.g. <code>5.7</code>).
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myDecimal</code>应该是一个数字。
-    testString: 'assert(typeof myDecimal === "number", "<code>myDecimal</code> should be a number.");'
-  - text: <code>myDecimal</code>应该有一个小数点
-    testString: 'assert(myDecimal % 1 != 0, "<code>myDecimal</code> should have a decimal point"); '
+  - text: <code>myDecimal</code> should be a number.
+    testString: assert(typeof myDecimal === "number");
+  - text: <code>myDecimal</code> should have a decimal point
+    testString: assert(myDecimal % 1 != 0);
 
 ```
 
@@ -36,6 +41,7 @@ var ourDecimal = 5.7;
 
 // Only change code below this line
 
+
 ```
 
 </div>
@@ -45,7 +51,7 @@ var ourDecimal = 5.7;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){if(typeof myDecimal !== "undefined"){return myDecimal;}})();
 ```
 
 </div>
@@ -55,7 +61,9 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myDecimal = 9.9;
 ```
+
 </section>

@@ -2,15 +2,20 @@
 id: 5900f3811000cf542c50fe94
 challengeType: 5
 title: 'Problem 21: Amicable numbers'
-videoUrl: ''
-localeTitle: 问题21：友好的数字
+forumTopicId: 301851
 ---
 
 ## Description
-<section id="description">设d（ <var>n</var> ）定义为<var>n</var>的适当除数之<var>和</var> （小于<var>n的</var>数均匀分成<var>n</var> ）。如果d（ <var>a</var> ）= <var>b</var>并且d（ <var>b</var> ）= <var>a</var> ，其中<var>a</var> ≠ <var>b</var> ，则<var>a</var>和<var>b</var>是友好对，并且<var>a</var>和<var>b</var>中的每<var>一个</var>被称为友好数字。例如，220的适当除数是1,2,4,5,10,11,20,22,44,55和110;因此d（220）= 284. 284的适当除数是1,2,4,71和142;所以d（284）= 220.评估<var>n</var>下所有友好数字的总和。 </section>
+<section id='description'>
+Let d(<var>n</var>) be defined as the sum of proper divisors of <var>n</var> (numbers less than <var>n</var> which divide evenly into <var>n</var>).
+If d(<var>a</var>) = <var>b</var> and d(<var>b</var>) = <var>a</var>, where <var>a</var> ≠ <var>b</var>, then <var>a</var> and <var>b</var> are an amicable pair and each of <var>a</var> and <var>b</var> are called amicable numbers.
+For example, the proper divisors of 220 are 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 and 110; therefore d(220) = 284. The proper divisors of 284 are 1, 2, 4, 71 and 142; so d(284) = 220.
+Evaluate the sum of all the amicable numbers under <var>n</var>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +23,14 @@ localeTitle: 问题21：友好的数字
 
 ```yml
 tests:
-  - text: <code>sumAmicableNum(1000)</code>应返回504。
-    testString: 'assert.strictEqual(sumAmicableNum(1000), 504, "<code>sumAmicableNum(1000)</code> should return 504.");'
-  - text: <code>sumAmicableNum(2000)</code>应该返回2898。
-    testString: 'assert.strictEqual(sumAmicableNum(2000), 2898, "<code>sumAmicableNum(2000)</code> should return 2898.");'
-  - text: <code>sumAmicableNum(5000)</code>应该返回8442。
-    testString: 'assert.strictEqual(sumAmicableNum(5000), 8442, "<code>sumAmicableNum(5000)</code> should return 8442.");'
-  - text: <code>sumAmicableNum(10000)</code>应返回31626。
-    testString: 'assert.strictEqual(sumAmicableNum(10000), 31626, "<code>sumAmicableNum(10000)</code> should return 31626.");'
+  - text: <code>sumAmicableNum(1000)</code> should return 504.
+    testString: assert.strictEqual(sumAmicableNum(1000), 504);
+  - text: <code>sumAmicableNum(2000)</code> should return 2898.
+    testString: assert.strictEqual(sumAmicableNum(2000), 2898);
+  - text: <code>sumAmicableNum(5000)</code> should return 8442.
+    testString: assert.strictEqual(sumAmicableNum(5000), 8442);
+  - text: <code>sumAmicableNum(10000)</code> should return 31626.
+    testString: assert.strictEqual(sumAmicableNum(10000), 31626);
 
 ```
 
@@ -43,7 +48,6 @@ function sumAmicableNum(n) {
 }
 
 sumAmicableNum(10000);
-
 ```
 
 </div>
@@ -55,7 +59,25 @@ sumAmicableNum(10000);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const sumAmicableNum = (n) => {
+  const fsum = (n) => {
+    let sum = 1;
+    for (let i = 2; i <= Math.floor(Math.sqrt(n)); i++)
+      if (Math.floor(n % i) === 0)
+        sum += i + Math.floor(n / i);
+    return sum;
+  };
+  let d = [];
+  let amicableSum = 0;
+  for (let i=2; i<n; i++) d[i] = fsum(i);
+  for (let i=2; i<n; i++) {
+    let dsum = d[i];
+    if (d[dsum]===i && i!==dsum) amicableSum += i+dsum;
+  }
+  return amicableSum/2;
+};
 ```
+
 </section>

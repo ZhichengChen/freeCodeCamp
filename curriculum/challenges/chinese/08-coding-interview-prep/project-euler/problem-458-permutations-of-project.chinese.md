@@ -2,15 +2,23 @@
 id: 5900f5361000cf542c510049
 challengeType: 5
 title: 'Problem 458: Permutations of Project'
-videoUrl: ''
-localeTitle: 问题458：项目的排列
+forumTopicId: 302132
 ---
 
 ## Description
-<section id="description">考虑由“项目”一词的字母组成的字母A：A = {c，e，j，o，p，r，t}。令T（n）为长度为n的字符串数，该字符串由来自A的字母组成，其中没有子字符串，该子字符串是“项目”的5040个排列之一。 <p> T（7）= 77-7！= 818503。 </p><p>找到T（1012）。给出答案的最后9位数字。 </p></section>
+<section id='description'>
+Consider the alphabet A made out of the letters of the word "project": A={c,e,j,o,p,r,t}.
+Let T(n) be the number of strings of length n consisting of letters from A that do not have a substring that is one of the 5040 permutations of "project".
+
+T(7)=77-7!=818503.
+
+
+Find T(1012). Give the last 9 digits of your answer.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题458：项目的排列
 
 ```yml
 tests:
-  - text: <code>euler458()</code>应该返回423341841。
-    testString: 'assert.strictEqual(euler458(), 423341841, "<code>euler458()</code> should return 423341841.");'
+  - text: <code>euler458()</code> should return 423341841.
+    testString: assert.strictEqual(euler458(), 423341841);
 
 ```
 
@@ -37,7 +45,6 @@ function euler458() {
 }
 
 euler458();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler458();
 ```js
 // solution required
 ```
+
 </section>

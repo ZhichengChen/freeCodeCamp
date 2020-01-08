@@ -3,15 +3,37 @@ id: 587d78af367417b2b2512b04
 title: Build a Product Landing Page
 isRequired: true
 challengeType: 3
-videoUrl: ''
-localeTitle: 建立产品登陆页面
+forumTopicId: 301144
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/RKRbwL" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/RKRbwL</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a>并通过所有测试。给它你自己的个人风格。您可以使用HTML，JavaScript和CSS来完成此项目。建议使用纯CSS，因为这是迄今为止所涵盖的课程，您应该使用纯CSS进行一些练习。如果您愿意，可以使用Bootstrap或SASS。此项目不建议使用其他技术（例如jQuery，React，Angular或Vue），使用它们需要您自担风险。其他项目将使您有机会使用不同的技术堆栈，如React。我们将接受并尝试修复所有使用建议的技术堆栈的问题报告。快乐的编码！ <strong>用户故事＃1：</strong>我的产品登录页面应该有一个带有相应<code>id=&quot;header&quot;</code>的<code>header</code>元素。 <strong>用户故事＃2：</strong>我可以在<code>header</code>元素中看到一个带有相应<code>id=&quot;header-img&quot;</code> 。公司徽标会在这里形成良好的形象。 <strong>用户故事＃3：</strong>在<code>#header</code>元素中，我可以看到一个带有相应<code>id=&quot;nav-bar&quot;</code>的<code>nav</code>元素。 <strong>用户故事＃4：</strong>我可以在<code>nav</code>元素中看到至少三个可点击的元素，每个元素都有一个<code>nav-link</code>类。 <strong>用户故事＃5：</strong>当我点击<code>nav</code>元素中的<code>.nav-link</code>按钮时，我将被带到目标网页的相应部分。 <strong>用户故事＃6：</strong>我可以观看<code>id=&quot;video&quot;</code>的嵌入式产品视频。 <strong>用户故事＃7：</strong>我的目标网页有一个<code>form</code>元素，其对应的<code>id=&quot;form&quot;</code> 。 <strong>用户故事＃8：</strong>在表单中，有一个<code>id=&quot;email&quot;</code>的<code>input</code>字段，我可以在其中输入电子邮件地址。 <strong>用户故事＃9：</strong> <code>#email</code>输入字段应该有占位符文本，让用户知道该字段的用途。 <strong>用户故事＃10：</strong> <code>#email</code>输入字段使用HTML5验证来确认输入的文本是电子邮件地址。 <strong>用户故事＃11：</strong>在表单中，有一个提交<code>input</code> ，其对应的<code>id=&quot;submit&quot;</code> 。 <strong>用户故事＃12：</strong>当我单击<code>#submit</code>元素时，电子邮件将被提交到静态页面（使用此模拟URL： <a href="https://www.freecodecamp.com/email-submit" target="_blank">https</a> ： <code>#submit</code> ），确认已输入电子邮件地址，并且它发布成功。 <strong>用户故事＃13：</strong>导航栏应始终位于视口的顶部。 <strong>用户故事＃14：</strong>我的产品登录页面应至少有一个媒体查询。 <strong>用户故事＃15：</strong>我的产品登陆页面应至少使用一次CSS flexbox。您可以通过分叉<a href="http://codepen.io/freeCodeCamp/full/MJjpwO" target="_blank">此CodePen笔</a>来构建项目。或者您可以使用此CDN链接在您喜欢的任何环境中运行测试： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code> ： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>完成后，将URL提交给您的工作通过所有测试的项目。如果卡住，请记住使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>方法。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/RKRbwL' target='_blank'>https://codepen.io/freeCodeCamp/full/RKRbwL</a>.
+Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+<strong>User Story #1:</strong> My product landing page should have a <code>header</code> element with a corresponding <code>id="header"</code>.
+<strong>User Story #2:</strong> I can see an image within the <code>header</code> element with a corresponding <code>id="header-img"</code>. A company logo would make a good image here.
+<strong>User Story #3:</strong> Within the <code>#header</code> element I can see a <code>nav</code> element with a corresponding <code>id="nav-bar"</code>.
+<strong>User Story #4:</strong> I can see at least three clickable elements inside the <code>nav</code> element, each with the class <code>nav-link</code>.
+<strong>User Story #5:</strong> When I click a <code>.nav-link</code> button in the <code>nav</code> element, I am taken to the corresponding section of the landing page.
+<strong>User Story #6:</strong> I can watch an embedded product video with <code>id="video"</code>.
+<strong>User Story #7:</strong> My landing page has a <code>form</code> element with a corresponding <code>id="form"</code>.
+<strong>User Story #8:</strong> Within the form, there is an <code>input</code> field with <code>id="email"</code> where I can enter an email address.
+<strong>User Story #9:</strong> The <code>#email</code> input field should have placeholder text to let the user know what the field is for.
+<strong>User Story #10:</strong> The <code>#email</code> input field uses HTML5 validation to confirm that the entered text is an email address.
+<strong>User Story #11:</strong> Within the form, there is a submit <code>input</code> with a corresponding <code>id="submit"</code>.
+<strong>User Story #12:</strong> When I click the <code>#submit</code> element, the email is submitted to a static page (use this mock URL: <a href='https://www.freecodecamp.com/email-submit' target='_blank'>https://www.freecodecamp.com/email-submit</a>) that confirms the email address was entered and that it posted successfully.
+<strong>User Story #13:</strong> The navbar should always be at the top of the viewport.
+<strong>User Story #14:</strong> My product landing page should have at least one media query.
+<strong>User Story #15:</strong> My product landing page should utilize CSS flexbox at least once.
+You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+Once you're done, submit the URL to your working project with all its tests passing.
+Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +57,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

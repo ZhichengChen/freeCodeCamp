@@ -2,15 +2,19 @@
 title: Hofstadter Q sequence
 id: 59637c4d89f6786115efd814
 challengeType: 5
-videoUrl: ''
-localeTitle: Hofstadter Q序列
+forumTopicId: 302287
 ---
 
 ## Description
-<section id="description"><p> <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp：Hofstadter_sequence＃Hofstadter_Q_sequence">Hofstadter Q序列</a>定义为： </p><p> $ Q（1）= Q（2）= 1，\\ Q（n）= Q \ big（nQ（n-1）\ big）+ Q \ big（nQ（n-2）），\ quad n&gt; 2. $ </p><p>它定义为<a href="http://rosettacode.org/wiki/Fibonacci sequence" title="斐波那契序列">Fibonacci序列</a> ，但<a href="http://rosettacode.org/wiki/Fibonacci sequence" title="斐波那契序列">Fibonacci序列中</a>的下一个术语是前两个术语的总和，在Q序列中，前两个术语告诉您在Q序列中返回多远以找到两个数字总结以制作序列的下一个术语。 </p>任务：将Hofstadter Q Sequence方程实现为JavaScript </section>
+<section id='description'>
+The <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence#Hofstadter_Q_sequence" target="_blank">Hofstadter Q sequence</a> is defined as:
+<span style="left-margin: 2em;">$Q(1)=Q(2)=1, \\ Q(n)=Q\big(n-Q(n-1)\big)+Q\big(n-Q(n-2)), \quad n>2.$</span>
+It is defined like the <a href="https://rosettacode.org/wiki/Fibonacci sequence" title="Fibonacci sequence" target="_blank">Fibonacci sequence</a>, but whereas the next term in the Fibonacci sequence is the sum of the previous two terms, in the Q sequence the previous two terms tell you how far to go back in the Q sequence to find the two numbers to sum to make the next term of the sequence.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Implement the Hofstadter Q Sequence equation as a function. The function should accept number, <code>n</code>, and return an integer.
 </section>
 
 ## Tests
@@ -18,18 +22,18 @@ localeTitle: Hofstadter Q序列
 
 ```yml
 tests:
-  - text: <code>hofstadterQ</code>是一个函数。
-    testString: 'assert(typeof hofstadterQ === "function", "<code>hofstadterQ</code> is a function.");'
-  - text: <code>hofstadterQ()</code>应该返回<code>integer</code>
-    testString: 'assert(Number.isInteger(hofstadterQ(1000)), "<code>hofstadterQ()</code> should return <code>integer</code>");'
-  - text: <code>hofstadterQ(1000)</code>应该返回<code>502</code>
-    testString: 'assert.equal(hofstadterQ(testCase[0]), res[0], "<code>hofstadterQ(1000)</code> should return <code>502</code>");'
-  - text: <code>hofstadterQ(1500)</code>应该返回<code>755</code>
-    testString: 'assert.equal(hofstadterQ(testCase[1]), res[1], "<code>hofstadterQ(1500)</code> should return <code>755</code>");'
-  - text: <code>hofstadterQ(2000)</code>应该返回<code>1005</code>
-    testString: 'assert.equal(hofstadterQ(testCase[2]), res[2], "<code>hofstadterQ(2000)</code> should return <code>1005</code>");'
-  - text: <code>hofstadterQ(2500)</code>应该返回<code>1261</code>
-    testString: 'assert.equal(hofstadterQ(testCase[3]), res[3], "<code>hofstadterQ(2500)</code> should return <code>1261</code>");'
+  - text: <code>hofstadterQ</code> should be a function.
+    testString: assert(typeof hofstadterQ === 'function');
+  - text: <code>hofstadterQ()</code> should return <code>integer</code>
+    testString: assert(Number.isInteger(hofstadterQ(1000)));
+  - text: <code>hofstadterQ(1000)</code> should return <code>502</code>
+    testString: assert.equal(hofstadterQ(testCase[0]), res[0]);
+  - text: <code>hofstadterQ(1500)</code> should return <code>755</code>
+    testString: assert.equal(hofstadterQ(testCase[1]), res[1]);
+  - text: <code>hofstadterQ(2000)</code> should return <code>1005</code>
+    testString: assert.equal(hofstadterQ(testCase[2]), res[2]);
+  - text: <code>hofstadterQ(2500)</code> should return <code>1261</code>
+    testString: assert.equal(hofstadterQ(testCase[3]), res[3]);
 
 ```
 
@@ -41,11 +45,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function hofstadterQ (n) {
+function hofstadterQ(n) {
   // Good luck!
   return n;
 }
-
 ```
 
 </div>
@@ -55,7 +58,8 @@ function hofstadterQ (n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCase = [1000, 1500, 2000, 2500];
+const res = [502, 755, 1005, 1261];
 ```
 
 </div>
@@ -65,7 +69,21 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function hofstadterQ (n) {
+  const memo = [1, 1, 1];
+  const Q = function (i) {
+    let result = memo[i];
+    if (typeof result !== 'number') {
+      result = Q(i - Q(i - 1)) + Q(i - Q(i - 2));
+      memo[i] = result;
+    }
+    return result;
+  };
+  return Q(n);
+}
+
 ```
+
 </section>

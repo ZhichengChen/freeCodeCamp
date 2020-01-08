@@ -2,28 +2,57 @@
 id: 587d7b8a367417b2b2512b4e
 title: Create Strings using Template Literals
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用模板文字创建字符串
+forumTopicId: 301200
 ---
 
 ## Description
-<section id="description"> ES6的一个新功能是<dfn>模板文字</dfn> 。这是一种特殊类型的字符串，可以更轻松地创建复杂字符串。模板文字允许您创建多行字符串并使用字符串插值功能来创建字符串。考虑以下代码： <blockquote> const person = { <br>name: "Zodiac Hasbro"， <br>age: 56<br> }; <br><br> //具有多行和字符串插值的模板文字<br> const greeting =`您好，我的名字是${person.name}！ <br>我是${person.age}岁。` <br><br>的console.log(greeting); //打印<br> //你好，我的名字是Zodiac Hasbro！ <br> //我今年56岁<br></blockquote>那里发生了很多事情。首先，例如使用反引号（ <code>`</code> ），而不是引号（ <code>&#39;</code>或<code>&quot;</code> ），换行字符串。其次，请注意，该字符串是多线，无论是在代码和输出。这节省了插入<code>\n</code>串内。上面使用的<code>${variable}</code>语法是占位符。基本上，您不必再使用<code>+</code>运算符连接。要将变量添加到字符串，只需将变量放在模板字符串中并用<code>${</code>包装它<code>}</code>同样，您可以在您的字符串表达式的其他文字，例如<code>${a + b}</code>这个新创建的字符串的方式为您提供了更大的灵活性，以创建强大的字符串。 </section>
+<section id='description'>
+A new feature of ES6 is the <dfn>template literal</dfn>. This is a special type of string that makes creating complex strings easier.
+Template literals allow you to create multi-line strings and to use string interpolation features to create strings.
+Consider the code below:
+
+```js
+const person = {
+  name: "Zodiac Hasbro",
+  age: 56
+};
+
+// Template literal with multi-line and string interpolation
+const greeting = `Hello, my name is ${person.name}!
+I am ${person.age} years old.`;
+
+console.log(greeting); // prints
+// Hello, my name is Zodiac Hasbro!
+// I am 56 years old.
+
+```
+
+A lot of things happened there.
+Firstly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>"</code>), to wrap the string.
+Secondly, notice that the string is multi-line, both in the code and the output. This saves inserting <code>\n</code> within strings.
+The <code>${variable}</code> syntax used above is a placeholder. Basically, you won't have to use concatenation with the <code>+</code> operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with <code>${</code> and <code>}</code>. Similarly, you can include other expressions in your string literal, for example <code>${a + b}</code>.
+This new way of creating strings gives you more flexibility to create robust strings.
+</section>
 
 ## Instructions
-<section id="instructions">使用带有反引号的模板文字语法来显示<code>result</code>对象的<code>failure</code>数组的每个条目。每个条目都应该包含在一个带有class属性<code>text-warning</code>的<code>li</code>元素中，并列在<code>resultDisplayArray</code> 。 </section>
+<section id='instructions'>
+Use template literal syntax with backticks to display each entry of the <code>result</code> object's <code>failure</code> array. Each entry should be wrapped inside an <code>li</code> element with the class attribute <code>text-warning</code>, and listed within the <code>resultDisplayArray</code>.
+Use an iterator method (any kind of loop) to get the desired output.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>resultDisplayArray</code>是一个包含<code>result failure</code>消息的数组。
-    testString: 'assert(typeof makeList(result.failure) === "object" && resultDisplayArray.length === 3, "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.");'
-  - text: <code>resultDisplayArray</code>是所需的输出。
-    testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class="text-warning">${result.failure[i]}</li>`), "<code>resultDisplayArray</code> is the desired output.");'
-  - text: 使用了模板字符串
-    testString: 'getUserInput => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
-
+  - text: <code>resultDisplayArray</code> should be an array containing <code>result failure</code> messages.
+    testString: assert(typeof makeList(result.failure) === 'object' && resultDisplayArray.length === 3);
+  - text: <code>resultDisplayArray</code> should be equal to the specified output.
+    testString: assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class='text-warning'>${result.failure[i]}</li>`));
+  - text: Template strings and expression interpolation should be used.
+    testString: getUserInput => assert(getUserInput('index').match(/(`.*\${.*}.*`)/));
+  - text: An iterator should be used.
+    testString: getUserInput => assert(getUserInput('index').match(/for|map|reduce|forEach|while/));
 ```
 
 </section>
@@ -55,7 +84,6 @@ function makeList(arr) {
  *   `<li class="text-warning">linebreak</li>` ]
  **/
 const resultDisplayArray = makeList(result.failure);
-
 ```
 
 </div>
@@ -68,6 +96,25 @@ const resultDisplayArray = makeList(result.failure);
 <section id='solution'>
 
 ```js
-// solution required
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+  
+  const resultDisplayArray = arr.map(val => `<li class="text-warning">${val}</li>`);
+  
+  return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`,
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
 ```
+
 </section>

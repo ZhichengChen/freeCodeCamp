@@ -2,15 +2,27 @@
 id: 5900f4ed1000cf542c50ffff
 challengeType: 5
 title: 'Problem 383: Divisibility comparison between factorials'
-videoUrl: ''
-localeTitle: 问题383：阶乘之间的可比性比较
+forumTopicId: 302047
 ---
 
 ## Description
-<section id="description">设f5（n）是最大整数x，其中5x除以n。例如，f5（625000）= 7。 <p>令T5（n）为满足f5（（2·i-1）！）&lt;2·f5（i！）且1≤i≤n的整数i。可以证实T5（103）= 68并且T5（109）= 2408210。 </p><p>找到T5（1018）。 </p></section>
+<section id='description'>
+Let f5(n) be the largest integer x for which 5x divides n.
+For example, f5(625000) = 7.
+
+
+
+Let T5(n) be the number of integers i which satisfy f5((2·i-1)!) < 2·f5(i!) and 1 ≤ i ≤ n.
+It can be verified that T5(103) = 68 and T5(109) = 2408210.
+
+
+
+Find T5(1018).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题383：阶乘之间的可比性比较
 
 ```yml
 tests:
-  - text: <code>euler383()</code>应该返回22173624649806。
-    testString: 'assert.strictEqual(euler383(), 22173624649806, "<code>euler383()</code> should return 22173624649806.");'
+  - text: <code>euler383()</code> should return 22173624649806.
+    testString: assert.strictEqual(euler383(), 22173624649806);
 
 ```
 
@@ -37,7 +49,6 @@ function euler383() {
 }
 
 euler383();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler383();
 ```js
 // solution required
 ```
+
 </section>

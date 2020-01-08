@@ -2,15 +2,19 @@
 id: 5900f3bb1000cf542c50fece
 challengeType: 5
 title: 'Problem 79: Passcode derivation'
-videoUrl: ''
-localeTitle: 问题79：密码派生
+forumTopicId: 302192
 ---
 
 ## Description
-<section id="description">用于在线银行业务的常见安全方法是向用户询问密码中的三个随机字符。例如，如果密码是531278，他们可能会要求输入第2，第3和第5个字符;预期的回复是：317。文本文件keylog.txt包含50次成功的登录尝试。鉴于总是按顺序询问三个字符，分析该文件以确定未知长度的最短可能秘密密码。 </section>
+<section id='description'>
+A common security method used for online banking is to ask the user for three random characters from a passcode. For example, if the passcode was 531278, they may ask for the 2nd, 3rd, and 5th characters; the expected reply would be: 317.
+The text file, keylog.txt, contains fifty successful login attempts.
+Given that the three characters are always asked for in order, analyse the file so as to determine the shortest possible secret passcode of unknown length.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题79：密码派生
 
 ```yml
 tests:
-  - text: <code>euler79()</code>应该返回73162890。
-    testString: 'assert.strictEqual(euler79(), 73162890, "<code>euler79()</code> should return 73162890.");'
+  - text: <code>euler79()</code> should return 73162890.
+    testString: assert.strictEqual(euler79(), 73162890);
 
 ```
 
@@ -37,7 +41,6 @@ function euler79() {
 }
 
 euler79();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler79();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,20 +2,26 @@
 title: Zig-zag matrix
 id: 594810f028c0303b75339ad8
 challengeType: 5
-videoUrl: ''
-localeTitle: 之字形矩阵
+forumTopicId: 302348
 ---
 
 ## Description
-<section id="description"> “zig-zag”数组是第一个$ N ^ 2 $整数的正方形排列，当数组沿着数组的<a href="https://en.wiktionary.org/wiki/antidiagonal">反对角线</a>曲折时，数字会逐渐增加。例如，给定“&#39;5”&#39;，产生这个数组： <pre> 0 1 5 6 14
- 2 4 7 13 15
- 3 8 12 16 21
+<section id='description'>
+A 'zig-zag' array is a square arrangement of the first $N^2$ integers, where the numbers increase sequentially as you zig-zag along the array's <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
+
+For example, for the input <code>5</code>, the following result should be produced:
+<pre>
+ 0  1  5  6 14
+ 2  4  7 13 15
+ 3  8 12 16 21
  9 11 17 20 22
 10 18 19 23 24
-</pre>编写一个采用Z字形矩阵大小的函数，并将相应的矩阵作为二维数组返回。 </section>
+</pre>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write a function that takes the size of the zig-zag matrix, and returns the corresponding matrix as two-dimensional array.
 </section>
 
 ## Tests
@@ -23,18 +29,18 @@ localeTitle: 之字形矩阵
 
 ```yml
 tests:
-  - text: ZigZagMatrix必须是一个功能
-    testString: 'assert.equal(typeof ZigZagMatrix, "function", "ZigZagMatrix must be a function");'
-  - text: ZigZagMatrix应该返回数组
-    testString: 'assert.equal(typeof ZigZagMatrix(1), "object", "ZigZagMatrix should return array");'
-  - text: ZigZagMatrix应该返回一个nestes数组的数组
-    testString: 'assert.equal(typeof ZigZagMatrix(1)[0], "object", "ZigZagMatrix should return an array of nestes arrays");'
-  - text: 'ZigZagMatrix（1）应返回[[0]]'
-    testString: 'assert.deepEqual(ZigZagMatrix(1), zm1, "ZigZagMatrix(1) should return [[0]]");'
-  - text: 'ZigZagMatrix（2）应返回[[0,1]，[2,3]]'
-    testString: 'assert.deepEqual(ZigZagMatrix(2), zm2, "ZigZagMatrix(2) should return [[0, 1], [2, 3]]");'
-  - text: ZigZagMatrix（5）必须返回指定的矩阵
-    testString: 'assert.deepEqual(ZigZagMatrix(5), zm5, "ZigZagMatrix(5) must return specified matrix");'
+  - text: ZigZagMatrix should be a function.
+    testString: assert.equal(typeof ZigZagMatrix, 'function');
+  - text: ZigZagMatrix should return array.
+    testString: assert.equal(typeof ZigZagMatrix(1), 'object');
+  - text: ZigZagMatrix should return an array of nested arrays.
+    testString: assert.equal(typeof ZigZagMatrix(1)[0], 'object');
+  - text: ZigZagMatrix(1) should return [[0]].
+    testString: assert.deepEqual(ZigZagMatrix(1), zm1);
+  - text: ZigZagMatrix(2) should return [[0, 1], [2, 3]].
+    testString: assert.deepEqual(ZigZagMatrix(2), zm2);
+  - text: ZigZagMatrix(5) should return specified matrix.
+    testString: assert.deepEqual(ZigZagMatrix(5), zm5);
 
 ```
 
@@ -50,7 +56,6 @@ function ZigZagMatrix(n) {
   // Good luck!
   return [[], []];
 }
-
 ```
 
 </div>
@@ -60,7 +65,15 @@ function ZigZagMatrix(n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const zm1 = [[0]];
+const zm2 = [[0, 1], [2, 3]];
+const zm5 = [
+  [0, 1, 5, 6, 14],
+  [2, 4, 7, 13, 15],
+  [3, 8, 12, 16, 21],
+  [9, 11, 17, 20, 22],
+  [10, 18, 19, 23, 24]
+];
 ```
 
 </div>
@@ -70,7 +83,33 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function ZigZagMatrix(n) {
+  const mtx = [];
+  for (let i = 0; i < n; i++) {
+    mtx[i] = [];
+  }
+
+  let i = 1;
+  let j = 1;
+  for (let e = 0; e < n * n; e++) {
+    mtx[i - 1][j - 1] = e;
+    if ((i + j) % 2 === 0) {
+      // Even stripes
+      if (j < n) j++;
+      else i += 2;
+      if (i > 1) i--;
+    } else {
+      // Odd stripes
+      if (i < n) i++;
+      else j += 2;
+      if (j > 1) j--;
+    }
+  }
+  return mtx;
+}
+
 ```
+
 </section>

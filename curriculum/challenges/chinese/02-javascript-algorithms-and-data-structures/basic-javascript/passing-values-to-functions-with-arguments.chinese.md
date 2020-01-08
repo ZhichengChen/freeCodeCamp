@@ -2,29 +2,44 @@
 id: 56533eb9ac21ba0edf2244bd
 title: Passing Values to Functions with Arguments
 challengeType: 1
-videoUrl: ''
-localeTitle: 将值传递给带参数的函数
+videoUrl: 'https://scrimba.com/c/cy8rahW'
+forumTopicId: 18254
 ---
 
 ## Description
-<section id="description"> <dfn>参数</dfn>是变量，它们作为调用函数时要输入到函数的值的占位符。定义函数时，通常将其与一个或多个参数一起定义。调用函数时输入（或<dfn>“传递”</dfn> ）的实际值称为<dfn>参数</dfn> 。这是一个带有两个参数的函数， <code>param1</code>和<code>param2</code> ： <blockquote> function testFun（param1，param2）{ <br> console.log（param1，param2）; <br> } </blockquote>然后我们可以调用<code>testFun</code> ： <code>testFun(&quot;Hello&quot;, &quot;World&quot;);</code>我们通过了两个论点， <code>&quot;Hello&quot;</code>和<code>&quot;World&quot;</code> 。在函数内部， <code>param1</code>将等于“Hello”， <code>param2</code>将等于“World”。请注意，您可以使用不同的参数再次调用<code>testFun</code> ，并且参数将采用新参数的值。 </section>
+<section id='description'>
+<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>"passed"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.
+Here is a function with two parameters, <code>param1</code> and <code>param2</code>:
+
+```js
+function testFun(param1, param2) {
+  console.log(param1, param2);
+}
+```
+
+Then we can call <code>testFun</code>:
+<code>testFun("Hello", "World");</code>
+We have passed two arguments, <code>"Hello"</code> and <code>"World"</code>. Inside the function, <code>param1</code> will equal "Hello" and <code>param2</code> will equal "World". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.
+</section>
 
 ## Instructions
-<section id="instructions"><ol><li>创建一个名为<code>functionWithArgs</code> ，该函数接受两个参数并将其总和输出到开发控制台。 </li><li>使用两个数字作为参数调用该函数。 </li></ol></section>
+<section id='instructions'>
+<ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>functionWithArgs</code>应该是一个函数
-    testString: 'assert(typeof functionWithArgs === "function", "<code>functionWithArgs</code> should be a function");'
-  - text: '<code>functionWithArgs(1,2)</code>应该输出<code>3</code>'
-    testString: 'if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3, "<code>functionWithArgs(1,2)</code> should output <code>3</code>");'
-  - text: '<code>functionWithArgs(7,9)</code>应该输出<code>16</code>'
-    testString: 'if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16, "<code>functionWithArgs(7,9)</code> should output <code>16</code>");'
-  - text: 定义后，使用两个数字调用<code>functionWithArgs</code> 。
-    testString: 'assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*;/m.test(code), "Call <code>functionWithArgs</code> with two numbers after you define it.");'
+  - text: <code>functionWithArgs</code> should be a function.
+    testString: assert(typeof functionWithArgs === 'function');
+  - text: <code>functionWithArgs(1,2)</code> should output <code>3</code>.
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(1,2); uncapture(); } assert(logOutput == 3);
+  - text: <code>functionWithArgs(7,9)</code> should output <code>16</code>.
+    testString: if(typeof functionWithArgs === "function") { capture(); functionWithArgs(7,9); uncapture(); } assert(logOutput == 16);
+  - text: You should call <code>functionWithArgs</code> with two numbers after you define it.
+    testString: assert(/^\s*functionWithArgs\s*\(\s*\d+\s*,\s*\d+\s*\)\s*/m.test(code));
 
 ```
 
@@ -43,6 +58,7 @@ function ourFunctionWithArgs(a, b) {
 ourFunctionWithArgs(10, 5); // Outputs 5
 
 // Only change code below this line.
+
 
 ```
 
@@ -72,7 +88,6 @@ function uncapture() {
 }
 
 capture();
-
 ```
 
 </div>
@@ -81,7 +96,13 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+uncapture();
+
+if (typeof functionWithArgs !== "function") { 
+  (function() { return "functionWithArgs is not defined"; })();
+} else {
+  (function() { return logOutput || "console.log never called"; })();
+}
 ```
 
 </div>
@@ -91,7 +112,12 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function functionWithArgs(a, b) {
+  console.log(a + b);
+}
+functionWithArgs(10, 5);
 ```
+
 </section>

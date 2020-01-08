@@ -3,27 +3,34 @@ id: 5a24c314108439a4d4036171
 title: Render State in the User Interface
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 在用户界面中渲染状态
+forumTopicId: 301409
 ---
 
 ## Description
-<section id="description">定义组件的初始状态后，可以在呈现的UI中显示它的任何部分。如果组件是有状态的，它将始终可以访问其<code>render()</code>方法中的<code>state</code>数据。您可以使用<code>this.state</code>访问数据。如果要在render方法的<code>return</code>中访问状态值，则必须将值括在花括号中。 <code>State</code>是React中组件最强大的功能之一。它允许您跟踪应用程序中的重要数据并呈现UI以响应此数据中的更改。如果您的数据发生变化，您的UI将会发生变化React使用所谓的虚拟DOM来跟踪幕后的变化。当状态数据更新时，它会触发使用该数据重新呈现组件 - 包括作为道具接收数据的子组件。 React更新实际的DOM，但仅在必要时更新。这意味着您不必担心更改DOM。您只需声明UI应该是什么样子。请注意，如果使组件有状态，则其他组件不会知道其<code>state</code> 。它的<code>state</code>是完全封装的，或者是该组件的本地状态，除非您将状态数据作为<code>props</code>传递给子组件。这种封装<code>state</code>概念非常重要，因为它允许您编写某些逻辑，然后在代码中的某个位置包含和隔离该逻辑。 </section>
+<section id='description'>
+Once you define a component's initial state, you can display any part of it in the UI that is rendered. If a component is stateful, it will always have access to the data in <code>state</code> in its <code>render()</code> method. You can access the data with <code>this.state</code>.
+If you want to access a state value within the <code>return</code> of the render method, you have to enclose the value in curly braces.
+<code>State</code> is one of the most powerful features of components in React. It allows you to track important data in your app and render a UI in response to changes in this data. If your data changes, your UI will change. React uses what is called a virtual DOM, to keep track of changes behind the scenes. When state data updates, it triggers a re-render of the components using that data - including child components that received the data as a prop. React updates the actual DOM, but only where necessary. This means you don't have to worry about changing the DOM. You simply declare what the UI should look like.
+Note that if you make a component stateful, no other components are aware of its <code>state</code>. Its <code>state</code> is completely encapsulated, or local to that component, unless you pass state data to a child component as <code>props</code>. This notion of encapsulated <code>state</code> is very important because it allows you to write certain logic, then have that logic contained and isolated in one place in your code.
+</section>
 
 ## Instructions
-<section id="instructions">在代码编辑器中， <code>MyComponent</code>已经是有状态的。在组件的render方法中定义<code>h1</code>标记，该方法从组件的状态呈现<code>name</code>的值。 <strong>注意：</strong> <code>h1</code>应该只从<code>state</code>呈现值而不是其他内容。在JSX中，您使用花括号<code>{ }</code>编写的任何代码都将被视为JavaScript。因此，要从<code>state</code>访问值，只需将引用括在花括号中。 </section>
+<section id='instructions'>
+In the code editor, <code>MyComponent</code> is already stateful. Define an <code>h1</code> tag in the component's render method which renders the value of <code>name</code> from the component's state.
+<strong>Note:</strong>&nbsp;The <code>h1</code> should only render the value from <code>state</code> and nothing else. In JSX, any code you write with curly braces <code>{ }</code> will be treated as JavaScript. So to access the value from <code>state</code> just enclose the reference in curly braces.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>MyComponent</code>应该有一个键<code>name</code> ，其<code>freeCodeCamp</code>值存储在其状态中。
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state("name") === "freeCodeCamp", "<code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.");'
-  - text: <code>MyComponent</code>应该渲染一个包含在单个<code>div</code>的<code>h1</code>标头。
-    testString: 'assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), "<code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.");'
-  - text: 渲染的<code>h1</code>标头应包含从组件状态呈现的文本。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: "TestName" });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === "<div><h1>TestName</h1></div>", "The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.");};'
+  - text: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.
+    testString: assert(Enzyme.mount(React.createElement(MyComponent)).state('name') === 'freeCodeCamp');
+  - text: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.
+    testString: assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()));
+  - text: The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === ''<div><h1>TestName</h1></div>'');};'
 
 ```
 
@@ -52,7 +59,6 @@ class MyComponent extends React.Component {
     );
   }
 };
-
 ```
 
 </div>
@@ -62,7 +68,7 @@ class MyComponent extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
 </div>
@@ -72,7 +78,25 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* change code below this line */ }
+        <h1>{this.state.name}</h1>
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
 ```
+
 </section>

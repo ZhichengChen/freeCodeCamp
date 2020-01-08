@@ -2,15 +2,19 @@
 id: 5900f3e41000cf542c50fef7
 challengeType: 5
 title: 'Problem 120: Square remainders'
-videoUrl: ''
-localeTitle: 问题120：方形剩余部分
+forumTopicId: 301747
 ---
 
 ## Description
-<section id="description">设r是（a-1）n +（a + 1）n除以a2时的余数。例如，如果a = 7且n = 3，则r = 42：63 + 83 =728≡42mod 49.并且当n变化时，r也将变化，但是对于a = 7，结果是rmax = 42。对于3≤a≤1000，找到Σrmax。 </section>
+<section id='description'>
+Let r be the remainder when (a−1)n + (a+1)n is divided by a2.
+For example, if a = 7 and n = 3, then r = 42: 63 + 83 = 728 ≡ 42 mod 49. And as n varies, so too will r, but for a = 7 it turns out that rmax = 42.
+For 3 ≤ a ≤ 1000, find ∑ rmax.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题120：方形剩余部分
 
 ```yml
 tests:
-  - text: <code>euler120()</code>应返回333082500。
-    testString: 'assert.strictEqual(euler120(), 333082500, "<code>euler120()</code> should return 333082500.");'
+  - text: <code>euler120()</code> should return 333082500.
+    testString: assert.strictEqual(euler120(), 333082500);
 
 ```
 
@@ -37,7 +41,6 @@ function euler120() {
 }
 
 euler120();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler120();
 ```js
 // solution required
 ```
+
 </section>

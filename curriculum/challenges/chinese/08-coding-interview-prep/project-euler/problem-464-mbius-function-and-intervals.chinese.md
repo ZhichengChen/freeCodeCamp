@@ -2,15 +2,36 @@
 id: 5900f53d1000cf542c51004f
 challengeType: 5
 title: 'Problem 464: Möbius function and intervals'
-videoUrl: ''
-localeTitle: 问题464：莫比乌斯函数和区间
+forumTopicId: 302139
 ---
 
 ## Description
-<section id="description"> Möbius函数，表示为μ（n），定义为：μ（n）=（ -  1）ω（n），如果n是无平方（其中ω（n）是n的不同素因子的数量）μ（n） ）如果n不是无平方，则= 0。 <p>令P（a，b）为区间[a，b]中的整数n，使得μ（n）= 1.设N（a，b）为区间[a，b]中的整数n这样μ（n）= -1。例如，P（2,10）= 2且N（2,10）= 4。 </p><p>令C（n）为整数对（a，b）的数目，使得：1≤a≤b≤n，99·N（a，b）≤100·P（a，b），和99·P（ a，b）≤100·N（a，b）。 </p><p>例如，C（10）= 13，C（500）= 16676和C（10000）= 20155319。 </p><p>找C（2 000 000）。 </p></section>
+<section id='description'>
+The Möbius function, denoted μ(n), is defined as:
+μ(n) = (-1)ω(n) if n is squarefree (where ω(n) is the number of distinct prime factors of n)
+μ(n) = 0 if n is not squarefree.
+
+Let P(a,b) be the number of integers n in the interval [a,b] such that μ(n) = 1.
+Let N(a,b) be the number of integers n in the interval [a,b] such that μ(n) = -1.
+For example, P(2,10) = 2 and N(2,10) = 4.
+
+
+
+Let C(n) be the number of integer pairs (a,b) such that:
+ 1 ≤ a ≤ b ≤ n,
+ 99·N(a,b) ≤ 100·P(a,b), and
+ 99·P(a,b) ≤ 100·N(a,b).
+
+For example, C(10) = 13, C(500) = 16676 and C(10 000) = 20155319.
+
+
+
+Find C(20 000 000).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +39,8 @@ localeTitle: 问题464：莫比乌斯函数和区间
 
 ```yml
 tests:
-  - text: <code>euler464()</code>应返回198775297232878。
-    testString: 'assert.strictEqual(euler464(), 198775297232878, "<code>euler464()</code> should return 198775297232878.");'
+  - text: <code>euler464()</code> should return 198775297232878.
+    testString: assert.strictEqual(euler464(), 198775297232878);
 
 ```
 
@@ -37,7 +58,6 @@ function euler464() {
 }
 
 euler464();
-
 ```
 
 </div>
@@ -52,4 +72,5 @@ euler464();
 ```js
 // solution required
 ```
+
 </section>

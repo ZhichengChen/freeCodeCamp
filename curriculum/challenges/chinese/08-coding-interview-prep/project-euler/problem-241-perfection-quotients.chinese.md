@@ -2,15 +2,25 @@
 id: 5900f45d1000cf542c50ff70
 challengeType: 5
 title: 'Problem 241: Perfection Quotients'
-videoUrl: ''
-localeTitle: 问题241：完美商数
+forumTopicId: 301888
 ---
 
 ## Description
-<section id="description">对于正整数n，令σ（n）为n的所有除数之和，因此例如σ（6）= 1 + 2 + 3 + 6 = 12。 <p>正如您所知，一个完美的数字是σ（n）= 2n的数字。 </p><p>让我们定义正整数asp（n）=σ（n）n的完美商。求出所有正整数n≤1018的和，其中p（n）的形式为k + 1/2，其中k是整数。 </p></section>
+<section id='description'>
+For a positive integer n, let σ(n) be the sum of all divisors of n, so e.g. σ(6) = 1 + 2 + 3 + 6 = 12.
+
+
+A perfect number, as you probably know, is a number with σ(n) = 2n.
+
+Let us define the perfection quotient of a positive integer asp(n)= 
+σ(n)n
+.
+Find the sum of all positive integers n ≤ 1018 for which p(n) has the form k + 1⁄2, where k is an integer.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题241：完美商数
 
 ```yml
 tests:
-  - text: <code>euler241()</code>应该返回482316491800641150。
-    testString: 'assert.strictEqual(euler241(), 482316491800641150, "<code>euler241()</code> should return 482316491800641150.");'
+  - text: <code>euler241()</code> should return 482316491800641150.
+    testString: assert.strictEqual(euler241(), 482316491800641150);
 
 ```
 
@@ -37,7 +47,6 @@ function euler241() {
 }
 
 euler241();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler241();
 ```js
 // solution required
 ```
+
 </section>

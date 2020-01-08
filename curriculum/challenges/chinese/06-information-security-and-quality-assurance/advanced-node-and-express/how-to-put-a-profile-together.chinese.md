@@ -2,15 +2,21 @@
 id: 5895f70ef9fc0f352b528e6b
 title: How to Put a Profile Together
 challengeType: 2
-videoUrl: ''
-localeTitle: 如何将配置文件放在一起
+forumTopicId: 301554
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a>克隆的。现在我们可以确保访问<em>/ profile</em>的用户已经过身份验证，我们可以使用页面上“req.user”中包含的信息！继续将包含变量<em>username</em> equaling&#39;req.user.username&#39;的对象传递到配置文件视图的render方法中。然后转到你的&#39;profile.pug&#39;视图并添加第<code>h2.center#welcome Welcome, #{username}!</code>行<code>h2.center#welcome Welcome, #{username}!</code>使用“center”类创建h2元素，并使用包含文本“Welcome”和用户名的id“welcome”创建！同样在配置文件中，添加指向<em>/ logout</em>的链接。该路由将托管用于取消身份验证用户的逻辑。 <code>a(href=&#39;/logout&#39;) Logout</code>当您认为自己正确时，请提交您的页面。 </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-advancednode/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a>.
+Now that we can ensure the user accessing the <em>/profile</em> is authenticated, we can use the information contained in 'req.user' on our page!
+Go ahead and pass the object containing the variable <em>username</em> equaling 'req.user.username' into the render method of the profile view. Then go to your 'profile.pug' view and add the line <code>h2.center#welcome Welcome, #{username}!</code> creating the h2 element with the class 'center' and id 'welcome' containing the text 'Welcome, ' and the username!
+Also in the profile, add a link to <em>/logout</em>. That route will host the logic to unauthenticate a user. <code>a(href='/logout') Logout</code>
+Submit your page when you think you've got it right.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 如何将配置文件放在一起
 
 ```yml
 tests:
-  - text: 正确地将Pug渲染变量添加到/ profile
-    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /\/views\/pug\/profile[^]*username:( |)req.user.username/gi, "You should be passing the variable username with req.user.username into the render function of the profile page"); }, xhr => { throw new Error(xhr.statusText); })'
+  - text: You should correctly add a Pug render variable to /profile.
+    testString: getUserInput => $.get(getUserInput('url')+ '/_api/server.js') .then(data => { assert.match(data, /\/views\/pug\/profile[^]*username:( |)req.user.username/gi, 'You should be passing the variable username with req.user.username into the render function of the profile page'); }, xhr => { throw new Error(xhr.statusText); })
 
 ```
 
@@ -34,6 +40,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -2,29 +2,49 @@
 id: 587d7db4367417b2b2512b93
 title: Find More Than the First Match
 challengeType: 1
-videoUrl: ''
-localeTitle: 找到比第一场比赛更多的东西
+forumTopicId: 301342
 ---
 
 ## Description
-<section id="description">到目前为止，您只能提取或搜索一次模式。 <blockquote>让testStr =“重复，重复，重复”; <br>让ourRegex = /重复/; <br> testStr.match（ourRegex）; <br> //返回[“重复”] </blockquote>要多次搜索或提取模式，可以使用<code>g</code>标志。 <blockquote> let repeatRegex = / Repeat / g; <br> testStr.match（repeatRegex）; <br> //返回[“重复”，“重复”，“重复”] </blockquote></section>
+<section id='description'>
+So far, you have only been able to extract or search a pattern once.
+
+```js
+let testStr = "Repeat, Repeat, Repeat";
+let ourRegex = /Repeat/;
+testStr.match(ourRegex);
+// Returns ["Repeat"]
+```
+
+To search or extract a pattern more than once, you can use the <code>g</code> flag.
+
+```js
+let repeatRegex = /Repeat/g;
+testStr.match(repeatRegex);
+// Returns ["Repeat", "Repeat", "Repeat"]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用正则表达式<code>starRegex</code> ，找到并提取字符串<code>twinkleStar</code> <code>&quot;Twinkle&quot;</code>单词。 <strong>注意</strong> <br>你可以在你的正则表达式上有多个标志，比如<code>/search/gi</code> </section>
+<section id='instructions'>
+Using the regex <code>starRegex</code>, find and extract both <code>"Twinkle"</code> words from the string <code>twinkleStar</code>.
+<strong>Note</strong><br>You can have multiple flags on your regex like <code>/search/gi</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的正则表达式<code>starRegex</code>应该使用全局标志<code>g</code>
-    testString: 'assert(starRegex.flags.match(/g/).length == 1, "Your regex <code>starRegex</code> should use the global flag <code>g</code>");'
-  - text: 你的正则表达式<code>starRegex</code>应该使用不区分大小写的标志<code>i</code>
-    testString: 'assert(starRegex.flags.match(/i/).length == 1, "Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>");'
-  - text: 您的匹配应匹配<code>&quot;Twinkle&quot;</code>一词的出现次数
-    testString: 'assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), "Your match should match both occurrences of the word <code>"Twinkle"</code>");'
-  - text: 您的匹配<code>result</code>应该包含两个元素。
-    testString: 'assert(result.length == 2, "Your match <code>result</code> should have two elements in it.");'
+  - text: Your regex <code>starRegex</code> should use the global flag <code>g</code>
+    testString: assert(starRegex.flags.match(/g/).length == 1);
+  - text: Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>
+    testString: assert(starRegex.flags.match(/i/).length == 1);
+  - text: Your match should match both occurrences of the word <code>"Twinkle"</code>
+    testString: assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join());
+  - text: Your match <code>result</code> should have two elements in it.
+    testString: assert(result.length == 2);
 
 ```
 
@@ -39,7 +59,6 @@ tests:
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /change/; // Change this line
 let result = twinkleStar; // Change this line
-
 ```
 
 </div>
@@ -52,6 +71,9 @@ let result = twinkleStar; // Change this line
 <section id='solution'>
 
 ```js
-// solution required
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex);
 ```
+
 </section>

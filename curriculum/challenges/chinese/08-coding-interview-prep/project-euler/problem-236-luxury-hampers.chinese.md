@@ -2,15 +2,29 @@
 id: 5900f4591000cf542c50ff6b
 challengeType: 5
 title: 'Problem 236: Luxury Hampers'
-videoUrl: ''
-localeTitle: 问题236：豪华礼篮
+forumTopicId: 301881
 ---
 
 ## Description
-<section id="description">供应商&#39;A&#39;和&#39;B&#39;为奢侈品篮子市场提供以下数量的产品： <p> Product&#39;A“B&#39;Beluga Caviar5248640Christmas Cake13121888Gammon Joint26243776Vintage Port57603776Champagne Truffles39365664 </p><p>虽然供应商非常努力地将货物运送到完美的状态，但不可避免地会有一些变质 - 即产品变坏了。 </p><p>供应商使用两种类型的统计数据来比较他们的表现：每个供应商的五个每个产品的腐败率等于坏的产品数量除以供应的产品数量，依次为五个产品中的每一个。每个供应商的整体腐败率等于坏的产品总数除以该供应商提供的产品总数。令他们惊讶的是，供应商发现五种每种产品的腐败率都更差（更高） ）对于&#39;B&#39;而不是&#39;A&#39;由相同的因子（腐败率的比率），m&gt; 1;然而，矛盾的是，&#39;A&#39;的整体腐败率比&#39;B&#39;更差，也是m倍。 </p><p>有三十五米&gt; 1，这个惊人的结果可能会发生，其中最小的是1476/1475。 </p><p> m的最大可能值是多少？以u / v的形式将答案缩小到最低值。 </p></section>
+<section id='description'>
+Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
+
+Product'A''B'Beluga Caviar5248640Christmas Cake13121888Gammon Joint26243776Vintage Port57603776Champagne Truffles39365664
+
+Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.
+
+The suppliers compare their performance using two types of statistic:The five per-product spoilage rates for each supplier are equal to the number of products gone bad divided by the number of products supplied, for each of the five products in turn.
+  The overall spoilage rate for each supplier is equal to the total number of products gone bad divided by the total number of products provided by that supplier.To their surprise, the suppliers found that each of the five per-product spoilage rates was worse (higher) for 'B' than for 'A' by the same factor (ratio of spoilage rates), m>1; and yet, paradoxically, the overall spoilage rate was worse for 'A' than for 'B', also by a factor of m.
+
+There are thirty-five m>1 for which this surprising result could have occurred, the smallest of which is 1476/1475.
+
+What's the largest possible value of m?
+Give your answer as a fraction reduced to its lowest terms, in the form u/v.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +32,8 @@ localeTitle: 问题236：豪华礼篮
 
 ```yml
 tests:
-  - text: <code>euler236()</code>应返回<code>euler236()</code> 。
-    testString: 'assert.strictEqual(euler236(), 123 / 59, "<code>euler236()</code> should return 123 / 59.");'
+  - text: <code>euler236()</code> should return 123 / 59.
+    testString: assert.strictEqual(euler236(), 123 / 59);
 
 ```
 
@@ -37,7 +51,6 @@ function euler236() {
 }
 
 euler236();
-
 ```
 
 </div>
@@ -52,4 +65,5 @@ euler236();
 ```js
 // solution required
 ```
+
 </section>

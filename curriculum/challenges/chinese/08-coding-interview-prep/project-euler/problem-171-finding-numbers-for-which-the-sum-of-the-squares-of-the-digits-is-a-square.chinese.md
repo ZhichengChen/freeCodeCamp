@@ -2,15 +2,21 @@
 id: 5900f4181000cf542c50ff2a
 challengeType: 5
 title: 'Problem 171: Finding numbers for which the sum of the squares of the digits is a square'
-videoUrl: ''
-localeTitle: 问题171：找到数字的平方和为正方形的数字
+forumTopicId: 301806
 ---
 
 ## Description
-<section id="description">对于正整数n，令f（n）为n的数字（在基数10中）的平方和，例如f（3）= 32 = 9，f（25）= 22 + 52 = 4 + 25 = 29，f（442）= 42 + 42 + 22 = 16 + 16 + 4 = 36找到所有n的总和的最后九位数，0 &lt;n &lt;1020，使得f（n）是一个完美的平方。 </section>
+<section id='description'>
+For a positive integer n, let f(n) be the sum of the squares of the digits (in base 10) of n, e.g.
+f(3) = 32 = 9,
+f(25) = 22 + 52 = 4 + 25 = 29,
+f(442) = 42 + 42 + 22 = 16 + 16 + 4 = 36
+Find the last nine digits of the sum of all n, 0 < n < 1020, such that f(n) is a perfect square.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题171：找到数字的平方和为正方形的数字
 
 ```yml
 tests:
-  - text: <code>euler171()</code>应该返回142989277。
-    testString: 'assert.strictEqual(euler171(), 142989277, "<code>euler171()</code> should return 142989277.");'
+  - text: <code>euler171()</code> should return 142989277.
+    testString: assert.strictEqual(euler171(), 142989277);
 
 ```
 
@@ -37,7 +43,6 @@ function euler171() {
 }
 
 euler171();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler171();
 ```js
 // solution required
 ```
+
 </section>

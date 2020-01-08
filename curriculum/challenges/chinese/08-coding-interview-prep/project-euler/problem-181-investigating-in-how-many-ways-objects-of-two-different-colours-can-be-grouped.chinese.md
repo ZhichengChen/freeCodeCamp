@@ -2,15 +2,20 @@
 id: 5900f4231000cf542c50ff34
 challengeType: 5
 title: 'Problem 181: Investigating in how many ways objects of two different colours can be grouped'
-videoUrl: ''
-localeTitle: 问题181：调查两种不同颜色的对象可以分组的方式
+forumTopicId: 301817
 ---
 
 ## Description
-<section id="description">有三个黑色物体B和一个白色物体W它们可以用7种方式分组：（BBBW）（B，BBW）（B，B，BW）（B，B，B，W）（B，BB，W） （BBB，W）（BB，BW）在六十个黑色物体B和四十个白色物体W的分组方式中有多少种？ </section>
+<section id='description'>
+Having three black objects B and one white object W they can be grouped in 7 ways like this:
+(BBBW)(B,BBW)(B,B,BW)(B,B,B,W)
+(B,BB,W)(BBB,W)(BB,BW)
+In how many ways can sixty black objects B and forty white objects W be  thus grouped?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题181：调查两种不同颜色的对象可以分组的方式
 
 ```yml
 tests:
-  - text: <code>euler181()</code>应该返回83735848679360670。
-    testString: 'assert.strictEqual(euler181(), 83735848679360670, "<code>euler181()</code> should return 83735848679360670.");'
+  - text: <code>euler181()</code> should return 83735848679360670.
+    testString: assert.strictEqual(euler181(), 83735848679360670);
 
 ```
 
@@ -37,7 +42,6 @@ function euler181() {
 }
 
 euler181();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler181();
 ```js
 // solution required
 ```
+
 </section>

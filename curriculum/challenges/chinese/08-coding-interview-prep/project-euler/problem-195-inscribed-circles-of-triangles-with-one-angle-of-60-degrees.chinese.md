@@ -2,15 +2,23 @@
 id: 5900f4311000cf542c50ff43
 challengeType: 5
 title: 'Problem 195: Inscribed circles of triangles with one angle of 60 degrees'
-videoUrl: ''
-localeTitle: 问题195：内切三角形的圆形，一个角度为60度
+forumTopicId: 301833
 ---
 
 ## Description
-<section id="description">让我们称一个整数边三角形，其中一个角度为60度，一个60度的三角形。设r是这样的60度三角形的内切圆的半径。有1234个60度三角形，其中r≤100。设T（n）是60度三角形的数量，其中r≤n，因此T（100）= 1234，T（1000）= 22767，和T（ 10000）= 359912。 <p>找到T（1053779）。 </p></section>
+<section id='description'>
+Let's call an integer sided triangle with exactly one angle of 60 degrees a 60-degree triangle.
+Let r be the radius of the inscribed circle of such a 60-degree triangle.
+There are 1234 60-degree triangles for which r ≤ 100.
+Let T(n) be the number of 60-degree triangles for which r ≤ n, so
+ T(100) = 1234,  T(1000) = 22767, and  T(10000) = 359912.
+
+Find T(1053779).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题195：内切三角形的圆形，一个角度为60度
 
 ```yml
 tests:
-  - text: <code>euler195()</code>应返回75085391。
-    testString: 'assert.strictEqual(euler195(), 75085391, "<code>euler195()</code> should return 75085391.");'
+  - text: <code>euler195()</code> should return 75085391.
+    testString: assert.strictEqual(euler195(), 75085391);
 
 ```
 
@@ -37,7 +45,6 @@ function euler195() {
 }
 
 euler195();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler195();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,27 @@
 title: I before E except after C
 id: 5a23c84252665b21eecc7eb0
 challengeType: 5
-videoUrl: ''
-localeTitle: 我在E之前除了C之后
+forumTopicId: 302288
 ---
 
 ## Description
-<section id="description">短语<a href="https://en.wikipedia.org/wiki/I before E except after C">“我在E之前，除了C之后”</a>是一个广为人知的助记符，它应该有助于拼写英语单词。使用提供的单词，检查短语的两个子句是否合理： <ol><li style="margin-bottom: 5px;"> <i>“我在E之前没有前面的C”。</i> </li><li> <i>“在我之前的C之前是C”。</i> </li></ol>如果两个子短语都是合理的，则原始短语可以说是合理的。编写一个接受单词的函数，并检查单词是否遵循此规则。如果该函数遵循规则，则该函数应返回true，否则返回false。 </section>
+<section id='description'>
+The phrase   <a href="https://en.wikipedia.org/wiki/I before E except after C" target="_blank"> "I before E, except after C"</a> is a widely known mnemonic which is supposed to help when spelling English words.
+Using the words provided, check if the two sub-clauses of the phrase are plausible individually:
+<ol>
+  <li>
+    <i>"I before E when not preceded by C".</i>
+  </li>
+  <li>
+    <i>"E before I when preceded by C".</i>
+  </li>
+</ol>
+If both sub-phrases are plausible then the original phrase can be said to be plausible.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write a function that accepts a word and check if the word follows this rule. The function should return true if the word follows the rule and false if it does not.
 </section>
 
 ## Tests
@@ -18,22 +30,22 @@ localeTitle: 我在E之前除了C之后
 
 ```yml
 tests:
-  - text: <code>IBeforeExceptC</code>应该是一个函数。
-    testString: 'assert(typeof IBeforeExceptC=="function","<code>IBeforeExceptC</code> should be a function.");'
-  - text: <code>IBeforeExceptC(&quot;receive&quot;)</code>应该返回一个布尔值。
-    testString: 'assert(typeof IBeforeExceptC("receive")=="boolean","<code>IBeforeExceptC("receive")</code> should return a boolean.");'
-  - text: <code>IBeforeExceptC(&quot;receive&quot;)</code>应该返回<code>true</code> 。
-    testString: 'assert.equal(IBeforeExceptC("receive"),true,"<code>IBeforeExceptC("receive")</code> should return <code>true</code>.");'
-  - text: <code>IBeforeExceptC(&quot;science&quot;)</code>应该返回<code>false</code> 。
-    testString: 'assert.equal(IBeforeExceptC("science"),false,"<code>IBeforeExceptC("science")</code> should return <code>false</code>.");'
-  - text: <code>IBeforeExceptC(&quot;imperceivable&quot;)</code>应该返回<code>true</code> 。
-    testString: 'assert.equal(IBeforeExceptC("imperceivable"),true,"<code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>.");'
-  - text: <code>IBeforeExceptC(&quot;inconceivable&quot;)</code>应该返回<code>true</code> 。
-    testString: 'assert.equal(IBeforeExceptC("inconceivable"),true,"<code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>.");'
-  - text: <code>IBeforeExceptC(&quot;insufficient&quot;)</code>应返回<code>false</code> 。
-    testString: 'assert.equal(IBeforeExceptC("insufficient"),false,"<code>IBeforeExceptC("insufficient")</code> should return <code>false</code>.");'
-  - text: <code>IBeforeExceptC(&quot;omniscient&quot;)</code>应该返回<code>false</code> 。
-    testString: 'assert.equal(IBeforeExceptC("omniscient"),false,"<code>IBeforeExceptC("omniscient")</code> should return <code>false</code>.");'
+  - text: <code>IBeforeExceptC</code> should be a function.
+    testString: assert(typeof IBeforeExceptC=='function');
+  - text: <code>IBeforeExceptC("receive")</code> should return a boolean.
+    testString: assert(typeof IBeforeExceptC("receive")=='boolean');
+  - text: <code>IBeforeExceptC("receive")</code> should return <code>true</code>.
+    testString: assert.equal(IBeforeExceptC("receive"),true);
+  - text: <code>IBeforeExceptC("science")</code> should return <code>false</code>.
+    testString: assert.equal(IBeforeExceptC("science"),false);
+  - text: <code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>.
+    testString: assert.equal(IBeforeExceptC("imperceivable"),true);
+  - text: <code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>.
+    testString: assert.equal(IBeforeExceptC("inconceivable"),true);
+  - text: <code>IBeforeExceptC("insufficient")</code> should return <code>false</code>.
+    testString: assert.equal(IBeforeExceptC("insufficient"),false);
+  - text: <code>IBeforeExceptC("omniscient")</code> should return <code>false</code>.
+    testString: assert.equal(IBeforeExceptC("omniscient"),false);
 
 ```
 
@@ -45,10 +57,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function IBeforeExceptC (word) {
+function IBeforeExceptC(word) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -60,7 +71,17 @@ function IBeforeExceptC (word) {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function IBeforeExceptC(word)
+{
+	if(word.indexOf("c")==-1 && word.indexOf("ie")!=-1)
+		return true;
+	else if(word.indexOf("cei")!=-1)
+		return true;
+	return false;
+}
+
 ```
+
 </section>

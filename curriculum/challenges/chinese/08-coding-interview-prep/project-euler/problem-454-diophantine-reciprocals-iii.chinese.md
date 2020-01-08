@@ -2,15 +2,25 @@
 id: 5900f5331000cf542c510045
 challengeType: 5
 title: 'Problem 454: Diophantine reciprocals III'
-videoUrl: ''
-localeTitle: 问题454：丢番图倒数III
+forumTopicId: 302127
 ---
 
 ## Description
-<section id="description">在下面的等式中，x，y和n是正整数。 <p> 1x + 1y = 1n </p><p>对于极限L，我们将F（L）定义为满足x &lt;y≤L的解的数量。 </p><p>我们可以验证F（15）= 4和F（1000）= 1069.找到F（1012）。 </p></section>
+<section id='description'>
+
+In the following equation x, y, and n are positive integers.
+1/x + 1/y= 1/n
+<!-- TODO Use MathJax -->
+
+For a limit L we define F(L) as the number of solutions which satisfy x < y ≤ L.
+
+We can verify that F(15) = 4 and F(1000) = 1069.
+Find F(1012).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题454：丢番图倒数III
 
 ```yml
 tests:
-  - text: <code>euler454()</code>应该返回5435004633092。
-    testString: 'assert.strictEqual(euler454(), 5435004633092, "<code>euler454()</code> should return 5435004633092.");'
+  - text: <code>euler454()</code> should return 5435004633092.
+    testString: assert.strictEqual(euler454(), 5435004633092);
 
 ```
 
@@ -37,7 +47,6 @@ function euler454() {
 }
 
 euler454();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler454();
 ```js
 // solution required
 ```
+
 </section>

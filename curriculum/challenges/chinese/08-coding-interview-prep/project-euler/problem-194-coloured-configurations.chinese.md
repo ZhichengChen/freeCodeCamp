@@ -2,15 +2,27 @@
 id: 5900f42f1000cf542c50ff40
 challengeType: 5
 title: 'Problem 194: Coloured Configurations'
-videoUrl: ''
-localeTitle: 问题194：彩色配置
+forumTopicId: 301832
 ---
 
 ## Description
-<section id="description">考虑使用单位A：和B：构建的图形，其中单位沿着垂直边缘粘合，如图中所示。 <p>类型（a，b，c）的配置是由单元A和b单元B构成的图，其中图的顶点使用多达c种颜色着色，使得没有两个相邻顶点具有相同的颜色。上面的化合物图是类型（2,2,6）的配置的实例，实际上对于所有c≥4的类型（2,2，c）。 </p><p>令N（a，b，c）为类型（a，b，c）的配置数。例如，N（1,0,3）= 24，N（0,2,4）= 92928，N（2,2,3）= 20736。 </p><p>找到N（25,75,1984）的最后8位数。 </p></section>
+<section id='description'>
+Consider graphs built with the units A:
+and B: , where the units are glued along
+the vertical edges as in the graph .
+
+A configuration of type (a,b,c) is a graph thus built of a units A and b units B, where the graph's vertices are coloured using up to c colours, so that no two adjacent vertices have the same colour.
+The compound graph above is an example of a configuration of type (2,2,6), in fact of type (2,2,c) for all c ≥ 4.
+
+Let N(a,b,c) be the number of configurations of type (a,b,c).
+For example, N(1,0,3) = 24, N(0,2,4) = 92928 and N(2,2,3) = 20736.
+
+Find the last 8 digits of N(25,75,1984).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题194：彩色配置
 
 ```yml
 tests:
-  - text: <code>euler194()</code>应该返回61190912。
-    testString: 'assert.strictEqual(euler194(), 61190912, "<code>euler194()</code> should return 61190912.");'
+  - text: <code>euler194()</code> should return 61190912.
+    testString: assert.strictEqual(euler194(), 61190912);
 
 ```
 
@@ -37,7 +49,6 @@ function euler194() {
 }
 
 euler194();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler194();
 ```js
 // solution required
 ```
+
 </section>

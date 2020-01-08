@@ -2,15 +2,18 @@
 id: 587d8247367417b2b2512c37
 title: Hide Potentially Dangerous Information Using helmet.hidePoweredBy()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.hidePoweredBy（）隐藏潜在的危险信息
+forumTopicId: 301580
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。如果黑客看到您的网站由Express提供支持，他们可以利用Express / Node中的已知漏洞。 X-Powered-By：Express默认发送来自Express的每个请求。 helmet.hidePoweredBy（）中间件将删除X-Powered-By标头。您还可以将标头显式设置为其他内容，以便让人们离开。例如app.use（helmet.hidePoweredBy（{setTo：&#39;PHP 4.2.0&#39;}）） </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
+Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express. X-Powered-By: Express is sent in every request coming from Express by default. The <code>helmet.hidePoweredBy()</code> middleware will remove the X-Powered-By header. You can also explicitly set the header to something else, to throw people off. e.g. <code>app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))</code>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 使用helmet.hidePoweredBy（）隐藏潜在的危险信息
 
 ```yml
 tests:
-  - text: helmet.hidePoweredBy（）中间件应正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "hidePoweredBy"); assert.notEqual(data.headers["x-powered-by"], "Express")}, xhr => { throw new Error(xhr.responseText); })'
+  - text: helmet.hidePoweredBy() middleware should be mounted correctly
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'hidePoweredBy'); assert.notEqual(data.headers['x-powered-by'], 'Express')}, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -34,6 +37,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

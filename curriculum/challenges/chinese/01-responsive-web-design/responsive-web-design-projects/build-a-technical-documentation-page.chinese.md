@@ -3,15 +3,37 @@ id: 587d78b0367417b2b2512b05
 title: Build a Technical Documentation Page
 isRequired: true
 challengeType: 3
-videoUrl: ''
-localeTitle: 建立技术文档页面
+forumTopicId: 301146
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/NdrKKL" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/NdrKKL</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a>并通过所有测试。给它你自己的个人风格。您可以使用HTML，JavaScript和CSS来完成此项目。建议使用纯CSS，因为这是迄今为止所涵盖的课程，您应该使用纯CSS进行一些练习。如果您愿意，可以使用Bootstrap或SASS。此项目不建议使用其他技术（例如jQuery，React，Angular或Vue），使用它们需要您自担风险。其他项目将使您有机会使用不同的技术堆栈，如React。我们将接受并尝试修复所有使用建议的技术堆栈的问题报告。快乐的编码！ <strong>用户故事＃1：</strong>我可以看到一个<code>main</code>元素，其中包含相应的<code>id=&quot;main-doc&quot;</code> ，其中包含页面的主要内容（技术文档）。 <strong>用户故事＃2：</strong>在<code>#main-doc</code>元素中，我可以看到几个<code>section</code>元素，每个元素都有一个<code>main-section</code>类。应该至少为5. <strong>用户故事＃3：</strong>每个<code>.main-section</code>的第一个元素应该是一个<code>header</code>元素，其中包含描述该部分主题的文本。 <strong>用户故事＃4：</strong>每个具有<code>main-section</code>类的<code>section</code>元素也应该具有与其中包含的每个<code>header</code>文本对应的id。任何空格应用下划线被替换（例如该<code>section</code>包含报头“JavaScript和Java”应具有相应的<code>id=&quot;Javascript_and_Java&quot;</code> ）。 <strong>用户故事＃5：</strong> <code>.main-section</code>元素应至少包含10个<code>p</code>元素（不是每个元素）。 <strong>用户故事＃6：</strong> <code>.main-section</code>元素应至少包含5个<code>code</code>元素（不是每个）。 <strong>用户故事＃7：</strong> <code>.main-section</code>元素应至少包含5个<code>li</code>项（不是每个）。 <strong>用户故事＃8：</strong>我可以看到一个带有相应<code>id=&quot;navbar&quot;</code>的<code>nav</code>元素。 <strong>用户故事＃9：</strong> navbar元素应包含一个<code>header</code>元素，其中包含描述技术文档主题的文本。 <strong>用户故事＃10：</strong>此外，导航栏应包含带有<code>nav-link</code>类的链接（ <code>a</code> ）元素。对于具有类<code>main-section</code>每个元素，应该有一个。 <strong>用户故事＃11：</strong>导航栏中的<code>header</code>元素必须位于导航栏中的任何链接（ <code>a</code> ）元素之前。 <strong>用户故事＃12：</strong>每个带有<code>nav-link</code>类的元素都应该包含与每个<code>section</code>的<code>header</code>文本相对应的文本（例如，如果你有一个“Hello world”部分/标题，你的导航栏应该有一个包含文本的元素“你好，世界”）。 <strong>用户故事＃13：</strong>当我点击导航栏元素时，页面应该导航到<code>main-doc</code>元素的相应部分（例如，如果我点击包含文本“Hello world”的<code>nav-link</code>元素，页面导航到一个<code>section</code> ，其具有ID和包含相应的元件<code>header</code> <strong>用户故事＃14：</strong>在正常尺寸的设备（笔记本电脑，台式机），与元件<code>id=&quot;navbar&quot;</code>应该被显示在屏幕的左侧，应始终用户可以看到<strong>用户故事＃15：</strong>我的技术文档页面应至少使用一个媒体查询。您可以通过分叉<a href="http://codepen.io/freeCodeCamp/pen/MJjpwO" target="_blank">此CodePen笔</a>来构建项目。或者您可以使用此CDN链接在您喜欢的任何环境中运行测试： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code> ： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>完成后，将URL提交给工作项目并通过所有测试。请记住使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>方法，如果你卡住了。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/NdrKKL' target='_blank'>https://codepen.io/freeCodeCamp/full/NdrKKL</a>.
+Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.
+You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!
+<strong>User Story #1:</strong> I can see a <code>main</code> element with a corresponding <code>id="main-doc"</code>, which contains the page's main content (technical documentation).
+<strong>User Story #2:</strong> Within the <code>#main-doc</code> element, I can see several <code>section</code> elements, each with a class of <code>main-section</code>. There should be a minimum of 5.
+<strong>User Story #3:</strong> The first element within each <code>.main-section</code> should be a <code>header</code> element which contains text that describes the topic of that section.
+<strong>User Story #4:</strong> Each <code>section</code> element with the class of <code>main-section</code> should also have an id that corresponds with the text of each <code>header</code> contained within it. Any spaces should be replaced with underscores (e.g. The <code>section</code> that contains the header "JavaScript and Java" should have a corresponding <code>id="JavaScript_and_Java"</code>).
+<strong>User Story #5:</strong> The <code>.main-section</code> elements should contain at least 10 <code>p</code> elements total (not each).
+<strong>User Story #6:</strong> The <code>.main-section</code> elements should contain at least 5 <code>code</code> elements total (not each).
+<strong>User Story #7:</strong> The <code>.main-section</code> elements should contain at least 5 <code>li</code> items total (not each).
+<strong>User Story #8:</strong> I can see a <code>nav</code> element with a corresponding <code>id="navbar"</code>.
+<strong>User Story #9:</strong> The navbar element should contain one <code>header</code> element which contains text that describes the topic of the technical documentation.
+<strong>User Story #10:</strong> Additionally, the navbar should contain link (<code>a</code>) elements with the class of <code>nav-link</code>. There should be one for every element with the class <code>main-section</code>.
+<strong>User Story #11:</strong> The <code>header</code> element in the navbar must come before any link (<code>a</code>) elements in the navbar.
+<strong>User Story #12:</strong> Each element with the class of <code>nav-link</code> should contain text that corresponds to the <code>header</code> text within each <code>section</code> (e.g. if you have a "Hello world" section/header, your navbar should have an element which contains the text "Hello world").
+<strong>User Story #13:</strong> When I click on a navbar element, the page should navigate to the corresponding section of the <code>main-doc</code> element (e.g. If I click on a <code>nav-link</code> element that contains the text "Hello world", the page navigates to a <code>section</code> element that has that id and contains the corresponding <code>header</code>.
+<strong>User Story #14:</strong> On regular sized devices (laptops, desktops), the element with <code>id="navbar"</code> should be shown on the left side of the screen and should always be visible to the user.
+<strong>User Story #15:</strong> My Technical Documentation page should use at least one media query.
+You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+Once you're done, submit the URL to your working project with all its tests passing.
+Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +57,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

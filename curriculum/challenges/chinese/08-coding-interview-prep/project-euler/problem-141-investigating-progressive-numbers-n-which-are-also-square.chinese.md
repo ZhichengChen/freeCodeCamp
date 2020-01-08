@@ -2,15 +2,21 @@
 id: 5900f3f91000cf542c50ff0b
 challengeType: 5
 title: 'Problem 141: Investigating progressive numbers, n, which are also square'
-videoUrl: ''
-localeTitle: 问题141：调查渐进数n，它们也是正方形
+forumTopicId: 301770
 ---
 
 ## Description
-<section id="description">正整数n除以d，商和余数分别为q和r。另外，d，q和r是几何序列中的连续正整数项，但不一定是该顺序。例如，58除以6具有商9和余数4.还可以看出，4,6,9是几何序列中的连续项（公共比率3/2）。我们将这样的数字称为n，进步。一些渐进的数字，例如9和10404 = 1022，恰好也是完美的正方形。所有渐进完美正方形的总和低于十万是124657.找到所有渐进完美正方形的总和低于一万亿（1012）。 </section>
+<section id='description'>
+A positive integer, n, is divided by d and the quotient and remainder are q and r respectively. In addition d, q, and r are consecutive positive integer terms in a geometric sequence, but not necessarily in that order.
+For example, 58 divided by 6 has quotient 9 and remainder 4. It can also be seen that 4, 6, 9 are consecutive terms in a geometric sequence (common ratio 3/2).
+We will call such numbers, n, progressive.
+Some progressive numbers, such as 9 and 10404 = 1022, happen to also be perfect squares. The sum of all progressive perfect squares below one hundred thousand is 124657.
+Find the sum of all progressive perfect squares below one trillion (1012).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题141：调查渐进数n，它们也是正方形
 
 ```yml
 tests:
-  - text: <code>euler141()</code>应该返回878454337159。
-    testString: 'assert.strictEqual(euler141(), 878454337159, "<code>euler141()</code> should return 878454337159.");'
+  - text: <code>euler141()</code> should return 878454337159.
+    testString: assert.strictEqual(euler141(), 878454337159);
 
 ```
 
@@ -37,7 +43,6 @@ function euler141() {
 }
 
 euler141();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler141();
 ```js
 // solution required
 ```
+
 </section>

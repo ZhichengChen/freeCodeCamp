@@ -2,23 +2,34 @@
 id: 5a9d726c424fe3d0e10cad11
 title: Create a custom CSS Variable
 challengeType: 0
-videoUrl: ''
-localeTitle: 创建自定义CSS变量
+videoUrl: 'https://scrimba.com/c/cQd27Hr'
+forumTopicId: 301086
 ---
 
 ## Description
-<section id="description">要创建一个CSS变量，你只需要给它一个<code>name</code>有<code>two dashes</code>在它前面，并为其分配一个<code>value</code>是这样的： <blockquote> -  penguin-skin：灰色; </blockquote>这将创建一个名为<code>--penguin-skin</code>的变量，并为其赋值为<code>gray</code> 。现在，您可以在CSS中的其他位置使用该变量将其他元素的值更改为灰色。 </section>
+<section id='description'>
+To create a CSS variable, you just need to give it a name with two hyphens in front of it and assign it a value like this:
+
+```css
+--penguin-skin: gray;
+```
+
+This will create a variable named <code>--penguin-skin</code> and assign it the value of <code>gray</code>.
+Now you can use that variable elsewhere in your CSS to change the value of other elements to gray.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>penguin</code>类中，创建一个变量名称<code>--penguin-skin</code>并赋予它一个<code>gray</code>值</section>
+<section id='instructions'>
+In the <code>penguin</code> class, create a variable name <code>--penguin-skin</code> and give it a value of <code>gray</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应声明<code>--penguin-skin</code>变量并将其指定为<code>gray</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
+  - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -227,7 +238,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -239,7 +249,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".penguin {--penguin-skin: gray;}"
 ```
+
 </section>

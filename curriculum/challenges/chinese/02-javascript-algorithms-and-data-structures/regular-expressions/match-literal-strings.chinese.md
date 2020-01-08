@@ -2,27 +2,47 @@
 id: 587d7db3367417b2b2512b8f
 title: Match Literal Strings
 challengeType: 1
-videoUrl: ''
-localeTitle: 匹配文字字符串
+forumTopicId: 301355
 ---
 
 ## Description
-<section id="description">在上一次挑战中，您使用正则表达式<code>/Hello/</code>搜索了单词<code>&quot;Hello&quot;</code> 。该正则表达式搜索字符串<code>&quot;Hello&quot;</code>的文字匹配。这是另一个搜索字符串<code>&quot;Kevin&quot;</code>的文字匹配的示例： <blockquote>让testStr =“你好，我的名字是凯文。”; <br>让testRegex = / Kevin /; <br> testRegex.test（testStr）; <br> //返回true </blockquote>任何其他形式的<code>&quot;Kevin&quot;</code>都不匹配。例如，正则表达式<code>/Kevin/</code>将不匹配<code>&quot;kevin&quot;</code>或<code>&quot;KEVIN&quot;</code> 。 <blockquote> let wrongRegex = / kevin /; <br> wrongRegex.test（testStr）; <br> //返回false </blockquote>未来的挑战将展示如何匹配其他形式。 </section>
+<section id='description'>
+In the last challenge, you searched for the word <code>"Hello"</code> using the regular expression <code>/Hello/</code>. That regex searched for a literal match of the string <code>"Hello"</code>. Here's another example searching for a literal match of the string <code>"Kevin"</code>:
+
+```js
+let testStr = "Hello, my name is Kevin.";
+let testRegex = /Kevin/;
+testRegex.test(testStr);
+// Returns true
+```
+
+Any other forms of <code>"Kevin"</code> will not match. For example, the regex <code>/Kevin/</code> will not match <code>"kevin"</code> or <code>"KEVIN"</code>.
+
+```js
+let wrongRegex = /kevin/;
+wrongRegex.test(testStr);
+// Returns false
+```
+
+A future challenge will show how to match those other forms as well.
+</section>
 
 ## Instructions
-<section id="instructions">完成正则表达式<code>waldoRegex</code>在字符串<code>waldoIsHiding</code>使用文字匹配查找<code>&quot;Waldo&quot;</code> 。 </section>
+<section id='instructions'>
+Complete the regex <code>waldoRegex</code> to find <code>"Waldo"</code> in the string <code>waldoIsHiding</code> with a literal match.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的正则表达式<code>waldoRegex</code>应该找到<code>&quot;Waldo&quot;</code>
-    testString: 'assert(waldoRegex.test(waldoIsHiding), "Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>");'
-  - text: 你的正则表达式<code>waldoRegex</code>不应该搜索任何其他内容。
-    testString: 'assert(!waldoRegex.test("Somewhere is hiding in this text."), "Your regex <code>waldoRegex</code> should not search for anything else.");'
-  - text: 您应该与正则表达式执行文字字符串匹配。
-    testString: 'assert(!/\/.*\/i/.test(code), "You should perform a literal string match with your regex.");'
+  - text: Your regex <code>waldoRegex</code> should find <code>"Waldo"</code>
+    testString: assert(waldoRegex.test(waldoIsHiding));
+  - text: Your regex <code>waldoRegex</code> should not search for anything else.
+    testString: assert(!waldoRegex.test('Somewhere is hiding in this text.'));
+  - text: You should perform a literal string match with your regex.
+    testString: assert(!/\/.*\/i/.test(code));
 
 ```
 
@@ -37,7 +57,6 @@ tests:
 let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
 let waldoRegex = /search/; // Change this line
 let result = waldoRegex.test(waldoIsHiding);
-
 ```
 
 </div>
@@ -50,6 +69,9 @@ let result = waldoRegex.test(waldoIsHiding);
 <section id='solution'>
 
 ```js
-// solution required
+let waldoIsHiding = "Somewhere Waldo is hiding in this text.";
+let waldoRegex = /Waldo/; // Change this line
+let result = waldoRegex.test(waldoIsHiding);
 ```
+
 </section>

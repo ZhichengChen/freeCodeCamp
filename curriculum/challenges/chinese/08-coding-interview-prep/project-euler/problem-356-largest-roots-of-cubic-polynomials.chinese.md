@@ -2,15 +2,24 @@
 id: 5900f4d01000cf542c50ffe3
 challengeType: 5
 title: 'Problem 356: Largest roots of cubic polynomials'
-videoUrl: ''
-localeTitle: 问题356：三次多项式的最大根
+forumTopicId: 302016
 ---
 
 ## Description
-<section id="description">设a是多项式的最大实根g（x）= x3  -  2n·x2 + n。例如，a2 = 3.86619826 ...... <p>找到最后八位数字。 </p><p>注意：代表楼层功能。 </p></section>
+<section id='description'>
+Let an be the largest real root of a polynomial g(x) = x3 - 2n·x2 + n.
+For example, a2 = 3.86619826...
+
+
+Find the last eight digits of.
+
+
+Note:  represents the floor function.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题356：三次多项式的最大根
 
 ```yml
 tests:
-  - text: <code>euler356()</code>应该返回28010159。
-    testString: 'assert.strictEqual(euler356(), 28010159, "<code>euler356()</code> should return 28010159.");'
+  - text: <code>euler356()</code> should return 28010159.
+    testString: assert.strictEqual(euler356(), 28010159);
 
 ```
 
@@ -37,7 +46,6 @@ function euler356() {
 }
 
 euler356();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler356();
 ```js
 // solution required
 ```
+
 </section>

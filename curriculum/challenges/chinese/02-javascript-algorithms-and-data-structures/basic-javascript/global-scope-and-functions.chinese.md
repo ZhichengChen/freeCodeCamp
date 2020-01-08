@@ -2,29 +2,35 @@
 id: 56533eb9ac21ba0edf2244be
 title: Global Scope and Functions
 challengeType: 1
-videoUrl: ''
-localeTitle: 全球范围和职能
+videoUrl: 'https://scrimba.com/c/cQM7mCN'
+forumTopicId: 18193
 ---
 
 ## Description
-<section id="description">在JavaScript中， <dfn>范围</dfn>是指变量的可见性。在功能块之外定义的变量具有<dfn>全局</dfn>范围。这意味着，它们可以在JavaScript代码中随处可见。在没有<code>var</code>关键字的情况下使用的变量将在<code>global</code>范围内自动创建。这可能会在代码中的其他位置或再次运行函数时产生意外后果。您应该始终使用<code>var</code>声明变量。 </section>
+<section id='description'>
+In JavaScript, <dfn>scope</dfn> refers to the visibility of variables. Variables which are defined outside of a function block have <dfn>Global</dfn> scope. This means, they can be seen everywhere in your JavaScript code.
+Variables which are used without the <code>var</code> keyword are automatically created in the <code>global</code> scope. This can create unintended consequences elsewhere in your code or when running a function again. You should always declare your variables with <code>var</code>.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>var</code> ，在任何函数之外声明一个<code>global</code>变量<code>myGlobal</code> 。使用值<code>10</code>初始化它。在函数<code>fun1</code>内部，在<strong><em>不</em></strong>使用<code>var</code>关键字的<strong><em>情况下</em></strong>为<code>oopsGlobal</code>分配<code>5</code> 。 </section>
+<section id='instructions'>
+Using <code>var</code>, declare a <code>global</code> variable <code>myGlobal</code> outside of any function. Initialize it with a value of <code>10</code>.
+Inside function <code>fun1</code>, assign <code>5</code> to <code>oopsGlobal</code> <strong><em>without</em></strong> using the <code>var</code> keyword.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 应该定义<code>myGlobal</code>
-    testString: 'assert(typeof myGlobal != "undefined", "<code>myGlobal</code> should be defined");'
-  - text: <code>myGlobal</code>的值应为<code>10</code>
-    testString: 'assert(myGlobal === 10, "<code>myGlobal</code> should have a value of <code>10</code>");'
-  - text: 应使用<code>var</code>关键字声明<code>myGlobal</code>
-    testString: 'assert(/var\s+myGlobal/.test(code), "<code>myGlobal</code> should be declared using the <code>var</code> keyword");'
-  - text: <code>oopsGlobal</code>应该是一个全局变量，其值为<code>5</code>
-    testString: 'assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5, "<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>");'
+  - text: <code>myGlobal</code> should be defined
+    testString: assert(typeof myGlobal != "undefined");
+  - text: <code>myGlobal</code> should have a value of <code>10</code>
+    testString: assert(myGlobal === 10);
+  - text: <code>myGlobal</code> should be declared using the <code>var</code> keyword
+    testString: assert(/var\s+myGlobal/.test(code));
+  - text: <code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>
+    testString: assert(typeof oopsGlobal != "undefined" && oopsGlobal === 5);
 
 ```
 
@@ -55,7 +61,6 @@ function fun2() {
   }
   console.log(output);
 }
-
 ```
 
 </div>
@@ -84,7 +89,6 @@ function uncapture() {
 }
 var oopsGlobal;
 capture();
-
 ```
 
 </div>
@@ -93,7 +97,10 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+fun1();
+fun2();
+uncapture();
+(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>
@@ -103,7 +110,27 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+// Declare your variable here
+var myGlobal = 10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+  oopsGlobal = 5;
+}
+
+// Only change code above this line
+function fun2() {
+  var output = "";
+  if(typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if(typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
 ```
+
 </section>

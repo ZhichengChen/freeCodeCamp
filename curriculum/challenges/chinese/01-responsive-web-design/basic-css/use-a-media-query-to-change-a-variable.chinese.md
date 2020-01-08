@@ -2,25 +2,30 @@
 id: 5a9d72ad424fe3d0e10cad16
 title: Use a media query to change a variable
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用媒体查询更改变量
+videoUrl: 'https://scrimba.com/c/cWmL8UP'
+forumTopicId: 301091
 ---
 
 ## Description
-<section id="description"> CSS变量可以简化您使用媒体查询的方式。例如，当您的屏幕小于或大于媒体查询断点时，您可以更改变量的值，并且无论在何处使用它都将应用其样式。 </section>
+<section id='description'>
+CSS Variables can simplify the way you use media queries.
+For instance, when your screen is smaller or larger than your media query break point, you can change the value of a variable, and it will apply its style wherever it is used.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>media query</code>的<code>:root</code>选择器中，对其进行更改，以便重新定义<code>--penguin-size</code>并赋值为<code>200px</code> 。此外，重新定义<code>--penguin-skin</code>并赋予其<code>black</code>值。然后调整预览大小以查看此更改的操作。 </section>
+<section id='instructions'>
+In the <code>:root</code> selector of the <code>media query</code>, change it so <code>--penguin-size</code> is redefined and given a value of <code>200px</code>. Also, redefine <code>--penguin-skin</code> and give it a value of <code>black</code>. Then resize the preview to see this change in action.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>:root</code>应该将<code>--penguin-size</code>变量重新分配给<code>200px</code> 。'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.");'
-  - text: '<code>:root</code>应该将<code>--penguin-skin</code>变量重新分配给<code>black</code> 。'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.");'
+  - text: <code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi));
+  - text: <code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.
+    testString: assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi));
 
 ```
 
@@ -262,7 +267,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -274,7 +278,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = "@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}"
 ```
+
 </section>

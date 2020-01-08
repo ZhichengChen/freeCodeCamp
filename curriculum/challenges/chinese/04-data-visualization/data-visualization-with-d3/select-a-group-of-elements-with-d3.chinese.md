@@ -2,27 +2,32 @@
 id: 587d7fa6367417b2b2512bc3
 title: Select a Group of Elements with D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用D3选择一组元素
+forumTopicId: 301490
 ---
 
 ## Description
-<section id="description"> D3还有<code>selectAll()</code>方法来选择一组元素。它返回文档中与输入字符串匹配的所有项目的HTML节点数组。这是一个选择文档中所有锚标记的示例： <code>const anchors = d3.selectAll(&quot;a&quot;);</code>与<code>select()</code>方法一样， <code>selectAll()</code>支持方法链接，您可以将其与其他方法一起使用。 </section>
+<section id='description'>
+D3 also has the <code>selectAll()</code> method to select a group of elements. It returns an array of HTML nodes for all the items in the document that match the input string. Here's an example to select all the anchor tags in a document:
+<code>const anchors = d3.selectAll("a");</code>
+Like the <code>select()</code> method, <code>selectAll()</code> supports method chaining, and you can use it with other methods.
+</section>
 
 ## Instructions
-<section id="instructions">选择文档中的所有<code>li</code>标签，并通过链接<code>.text()</code>方法将其文本更改为“list item”。 </section>
+<section id='instructions'>
+Select all of the <code>li</code> tags in the document, and change their text to "list item" by chaining the <code>.text()</code> method.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 页面上应该有3个<code>li</code>元素，每个元素中的文本应该是“list item”。大写和间距应完全匹配。
-    testString: 'assert($("li").text().match(/list item/g).length == 3, "There should be 3 <code>li</code> elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.");'
-  - text: 您的代码应该访问<code>d3</code>对象。
-    testString: 'assert(code.match(/d3/g), "Your code should access the <code>d3</code> object.");'
-  - text: 您的代码应该使用<code>selectAll</code>方法。
-    testString: 'assert(code.match(/\.selectAll/g), "Your code should use the <code>selectAll</code> method.");'
+  - text: There should be 3 <code>li</code> elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.
+    testString: assert($('li').text().match(/list item/g).length == 3);
+  - text: Your code should access the <code>d3</code> object.
+    testString: assert(code.match(/d3/g));
+  - text: Your code should use the <code>selectAll</code> method.
+    testString: assert(code.match(/\.selectAll/g));
 
 ```
 
@@ -48,7 +53,6 @@ tests:
     // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -63,4 +67,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

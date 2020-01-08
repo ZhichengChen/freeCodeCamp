@@ -3,29 +3,41 @@ id: 5a24c314108439a4d4036170
 title: Create a Stateful Component
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 创建一个有状态组件
+forumTopicId: 301391
 ---
 
 ## Description
-<section id="description"> React最重要的主题之一是<code>state</code> 。 State包含应用程序需要了解的任何数据，这些数据可能会随时间而变化。您希望应用程序响应状态更改并在必要时显示更新的UI。 React为现代Web应用程序的状态管理提供了一个很好的解决方案。您可以通过在<code>constructor</code>声明组件类的<code>state</code>属性来在React组件中创建状态。这与初始化该组件<code>state</code>被创建时。 <code>state</code>属性必须设置为JavaScript <code>object</code> 。声明它看起来像这样： <blockquote> this.state = { <br> //在这里描述你的州<br>您可以在组件的整个生命周期内访问<code>state</code>对象。您可以更新它，在UI中呈现它，并将其作为道具传递给子组件。 <code>state</code>对象可以像您需要的那样复杂或简单。请注意，您必须通过扩展<code>React.Component</code>来创建类组件，以便创建这样的<code>state</code> 。 </blockquote></section>
+<section id='description'>
+One of the most important topics in React is <code>state</code>. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.
+You create state in a React component by declaring a <code>state</code> property on the component class in its <code>constructor</code>. This initializes the component with <code>state</code> when it is created. The <code>state</code> property must be set to a JavaScript <code>object</code>. Declaring it looks like this:
+
+```jsx
+this.state = {
+  // describe your state here
+}
+```
+
+You have access to the <code>state</code> object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The <code>state</code> object can be as complex or as simple as you need it to be. Note that you must create a class component by extending <code>React.Component</code> in order to create <code>state</code> like this.
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器中有一个组件试图从其<code>state</code>呈现<code>name</code>属性。但是，没有定义<code>state</code> 。初始化与组件<code>state</code>的<code>constructor</code> ，并指定你的名字的属性<code>name</code> 。 </section>
+<section id='instructions'>
+There is a component in the code editor that is trying to render a <code>name</code> property from its <code>state</code>. However, there is no <code>state</code> defined. Initialize the component with <code>state</code> in the <code>constructor</code> and assign your name to a property of <code>name</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>StatefulComponent</code>应该存在并呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find("StatefulComponent").length === 1; })(), "<code>StatefulComponent</code> should exist and render.");'
-  - text: <code>StatefulComponent</code>应该呈现<code>div</code>和<code>h1</code>元素。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find("div").length === 1 && mockedComponent.find("h1").length === 1; })(), "<code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.");'
-  - text: 应使用设置为字符串的属性<code>name</code>初始化<code>StatefulComponent</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === "object" && typeof initialState.name === "string"); })(), "The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.");'
-  - text: <code>StatefulComponent</code>的属性<code>name</code>应在<code>h1</code>元素中呈现。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find("h1").text() === initialState.name; })(), "The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.");'
+  - text: <code>StatefulComponent</code> should exist and render.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('StatefulComponent').length === 1; })());
+  - text: <code>StatefulComponent</code> should render a <code>div</code> and an <code>h1</code> element.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h1').length === 1; })());
+  - text: The state of <code>StatefulComponent</code> should be initialized with a property <code>name</code> set to a string.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && typeof initialState.name === 'string'); })());
+  - text: The property <code>name</code> in the state of <code>StatefulComponent</code> should render in the <code>h1</code> element.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(StatefulComponent)); const initialState = mockedComponent.state(); return mockedComponent.find('h1').text() === initialState.name; })());
 
 ```
 
@@ -37,6 +49,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
+
 class StatefulComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +64,6 @@ class StatefulComponent extends React.Component {
     );
   }
 };
-
 ```
 
 </div>
@@ -61,7 +73,7 @@ class StatefulComponent extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<StatefulComponent />, document.getElementById('root'))
 ```
 
 </div>
@@ -71,7 +83,23 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+class StatefulComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp!'
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.name}</h1>
+      </div>
+    );
+  }
+};
 ```
+
 </section>

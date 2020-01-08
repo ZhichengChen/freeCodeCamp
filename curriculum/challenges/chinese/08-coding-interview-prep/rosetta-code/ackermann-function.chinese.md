@@ -2,15 +2,20 @@
 title: Ackermann function
 id: 594810f028c0303b75339acf
 challengeType: 5
-videoUrl: ''
-localeTitle: 阿克曼功能
+forumTopicId: 302223
 ---
 
 ## Description
-<section id="description"><p> Ackermann函数是递归函数的典型示例，尤其值得注意的是它不是原始递归函数。它的值增长非常快，其调用树的大小也是如此。 </p><p> Ackermann函数通常定义如下： </p> $$ A（m，n）= \ begin {cases} n + 1＆\ mbox {if} m = 0 \\ A（m-1,1）＆\ mbox {if} m&gt; 0 \ mbox {和} n = 0 \\ A（m-1，A（m，n-1））＆\ mbox {if} m&gt; 0 \ mbox {和} n&gt; 0. \ end {cases} $$ <p>它的论点永远不会消极，它总是终止。编写一个返回$ A（m，n）$的值的函数。任意精度是首选（因为函数增长如此之快），但不是必需的。 </p></section>
+<section id='description'>
+The Ackermann function is a classic example of a recursive function, notable especially because it is not a primitive recursive function. It grows very quickly in value, as does the size of its call tree.
+The Ackermann function is usually defined as follows:
+$A(m, n) = \begin{cases} n+1 & \mbox{if } m = 0 \\ A(m-1, 1) & \mbox{if } m > 0 \mbox{ and } n = 0 \\ A(m-1, A(m, n-1)) & \mbox{if } m > 0 \mbox{ and } n > 0. \end{cases}$
+Its arguments are never negative and it always terminates.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write a function which returns the value of $A(m, n)$. Arbitrary precision is preferred (since the function grows so quickly), but not required.
 </section>
 
 ## Tests
@@ -18,16 +23,16 @@ localeTitle: 阿克曼功能
 
 ```yml
 tests:
-  - text: <code>ack</code>是一个功能。
-    testString: 'assert(typeof ack === "function", "<code>ack</code> is a function.");'
-  - text: '<code>ack(0, 0)</code>应该返回1。'
-    testString: 'assert(ack(0, 0) === 1, "<code>ack(0, 0)</code> should return 1.");'
-  - text: '<code>ack(1, 1)</code>应该返回3。'
-    testString: 'assert(ack(1, 1) === 3, "<code>ack(1, 1)</code> should return 3.");'
-  - text: '<code>ack(2, 5)</code>应该返回13。'
-    testString: 'assert(ack(2, 5) === 13, "<code>ack(2, 5)</code> should return 13.");'
-  - text: '<code>ack(3, 3)</code>应该返回61。'
-    testString: 'assert(ack(3, 3) === 61, "<code>ack(3, 3)</code> should return 61.");'
+  - text: <code>ack</code> should be a function.
+    testString: assert(typeof ack === 'function');
+  - text: <code>ack(0, 0)</code> should return 1.
+    testString: assert(ack(0, 0) === 1);
+  - text: <code>ack(1, 1)</code> should return 3.
+    testString: assert(ack(1, 1) === 3);
+  - text: <code>ack(2, 5)</code> should return 13.
+    testString: assert(ack(2, 5) === 13);
+  - text: <code>ack(3, 3)</code> should return 61.
+    testString: assert(ack(3, 3) === 61);
 
 ```
 
@@ -39,10 +44,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function ack (m, n) {
+function ack(m, n) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -54,7 +58,12 @@ function ack (m, n) {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function ack(m, n) {
+  return m === 0 ? n + 1 : ack(m - 1, n === 0 ? 1 : ack(m, n - 1));
+}
+
 ```
+
 </section>

@@ -4,15 +4,22 @@ title: Target a Specific Child of an Element Using jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用jQuery定位元素的特定子元素
+forumTopicId: 18315
 ---
 
 ## Description
-<section id="description">您已经了解了为什么id属性对于使用jQuery选择器进行定位非常方便。但是你不会总是有这么整洁的ids。幸运的是，jQuery还有一些其他技巧可用于定位正确的元素。 jQuery使用CSS选择器来定位元素。 <code>target:nth-child(n)</code> CSS选择器允许您选择具有目标类或元素类型的所有第n个元素。以下是如何给每个井中的第三个元素提供反弹类： <code>$(&quot;.target:nth-child(3)&quot;).addClass(&quot;animated bounce&quot;);</code>让每个井元素中的第二个孩子反弹。您必须选择具有<code>target</code>类的元素子项。 </section>
+<section id='description'>
+You've seen why id attributes are so convenient for targeting with jQuery selectors. But you won't always have such neat ids to work with.
+Fortunately, jQuery has some other tricks for targeting the right elements.
+jQuery uses CSS Selectors to target elements. The <code>target:nth-child(n)</code> CSS selector allows you to select all the nth elements with the target class or element type.
+Here's how you would give the third element in each well the bounce class:
+<code>$(".target:nth-child(3)").addClass("animated bounce");</code>
+Make the second child in each of your well elements bounce. You must select the elements' children with the <code>target</code> class.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -20,14 +27,14 @@ localeTitle: 使用jQuery定位元素的特定子元素
 
 ```yml
 tests:
-  - text: <code>target</code>元素中的第二个元素应该反弹。
-    testString: 'assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"), "The second element in your <code>target</code> elements should bounce.");'
-  - text: 只有两个元素应该反弹。
-    testString: 'assert($(".animated.bounce").length === 2, "Only two elements should bounce.");'
-  - text: '您应该使用<code>:nth-child()</code>选择器来修改这些元素。'
-    testString: 'assert(code.match(/\:nth-child\(/g), "You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.");'
-  - text: 只使用jQuery将这些类添加到元素中。
-    testString: 'assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g), "Only use jQuery to add these classes to the element.");'
+  - text: The second element in your <code>target</code> elements should bounce.
+    testString: assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"));
+  - text: Only two elements should bounce.
+    testString: assert($(".animated.bounce").length === 2);
+  - text: You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.
+    testString: assert(code.match(/\:nth-child\(/g));
+  - text: You should only use jQuery to add these classes to the element.
+    testString: assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\('.target:nth-child\(2\)'\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\('.target'\).filter\(':nth-child\(2\)'\)/g));
 
 ```
 
@@ -75,7 +82,6 @@ tests:
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -87,7 +93,43 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<script>
+  $(document).ready(function() {
+    $("#target1").css("color", "red");
+    $("#target1").prop("disabled", true);
+    $("#target4").remove();
+    $("#target2").appendTo("#right-well");
+    $("#target5").clone().appendTo("#left-well");
+    $("#target1").parent().css("background-color", "red");
+    $("#right-well").children().css("color", "orange");
+    $(".target:nth-child(2)").addClass("animated bounce");
+  });
+</script>
+
+<!-- Only change code above this line. -->
+
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <h4>#left-well</h4>
+      <div class="well" id="left-well">
+        <button class="btn btn-default target" id="target1">#target1</button>
+        <button class="btn btn-default target" id="target2">#target2</button>
+        <button class="btn btn-default target" id="target3">#target3</button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <h4>#right-well</h4>
+      <div class="well" id="right-well">
+        <button class="btn btn-default target" id="target4">#target4</button>
+        <button class="btn btn-default target" id="target5">#target5</button>
+        <button class="btn btn-default target" id="target6">#target6</button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
+
 </section>

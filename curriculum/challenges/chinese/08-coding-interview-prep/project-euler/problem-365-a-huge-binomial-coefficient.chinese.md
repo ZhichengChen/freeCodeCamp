@@ -2,15 +2,23 @@
 id: 5900f4da1000cf542c50ffec
 challengeType: 5
 title: 'Problem 365: A huge binomial coefficient'
-videoUrl: ''
-localeTitle: 问题365：巨大的二项式系数
+forumTopicId: 302026
 ---
 
 ## Description
-<section id="description">二项式系数C（1018,109）是具有超过90亿（9×109）个数字的数字。 <p>令M（n，k，m）表示二项式系数C（n，k）模m。 </p><p>计算ΣM（1018,109，p <em>q</em> r）为1000 &lt;p &lt;q &lt;r &lt;5000和p，q，r prime。 </p></section>
+<section id='description'>
+The binomial coefficient C(1018,109) is a number with more than 9 billion (9×109) digits.
+
+
+Let M(n,k,m) denote the binomial coefficient C(n,k) modulo m.
+
+
+Calculate ∑M(1018,109,p*q*r) for 1000<p<q<r<5000 and p,q,r prime.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题365：巨大的二项式系数
 
 ```yml
 tests:
-  - text: <code>euler365()</code>应该返回162619462356610300。
-    testString: 'assert.strictEqual(euler365(), 162619462356610300, "<code>euler365()</code> should return 162619462356610300.");'
+  - text: <code>euler365()</code> should return 162619462356610300.
+    testString: assert.strictEqual(euler365(), 162619462356610300);
 
 ```
 
@@ -37,7 +45,6 @@ function euler365() {
 }
 
 euler365();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler365();
 ```js
 // solution required
 ```
+
 </section>

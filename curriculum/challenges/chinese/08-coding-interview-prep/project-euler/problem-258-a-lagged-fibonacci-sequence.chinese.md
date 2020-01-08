@@ -2,15 +2,21 @@
 id: 5900f46e1000cf542c50ff81
 challengeType: 5
 title: 'Problem 258: A lagged Fibonacci sequence'
-videoUrl: ''
-localeTitle: 问题258：滞后的斐波那契序列
+forumTopicId: 301906
 ---
 
 ## Description
-<section id="description">序列定义为： <p> gk = 1，对于0≤k≤1999gk = gk-2000 + gk-1999，对于k≥2000。对于k = 1018，找到gk mod 20092010。 </p></section>
+<section id='description'>
+A sequence is defined as:
+
+gk = 1, for 0 ≤ k ≤ 1999
+gk = gk-2000 + gk-1999, for k ≥ 2000.
+Find gk mod 20092010 for k = 1018.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题258：滞后的斐波那契序列
 
 ```yml
 tests:
-  - text: <code>euler258()</code>应该返回12747994。
-    testString: 'assert.strictEqual(euler258(), 12747994, "<code>euler258()</code> should return 12747994.");'
+  - text: <code>euler258()</code> should return 12747994.
+    testString: assert.strictEqual(euler258(), 12747994);
 
 ```
 
@@ -37,7 +43,6 @@ function euler258() {
 }
 
 euler258();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler258();
 ```js
 // solution required
 ```
+
 </section>

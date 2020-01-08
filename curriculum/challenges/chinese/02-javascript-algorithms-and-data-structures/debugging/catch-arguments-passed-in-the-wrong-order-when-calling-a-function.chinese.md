@@ -2,25 +2,28 @@
 id: 587d7b85367417b2b2512b3a
 title: Catch Arguments Passed in the Wrong Order When Calling a Function
 challengeType: 1
-videoUrl: ''
-localeTitle: 调用函数时捕获以错误顺序传递的参数
+forumTopicId: 301184
 ---
 
 ## Description
-<section id="description">继续讨论调用函数，需要注意的下一个错误是函数的参数是以错误的顺序提供的。如果参数是不同的类型，例如期望数组和整数的函数，则可能会引发运行时错误。如果参数是相同的类型（例如，所有整数），那么代码的逻辑将没有意义。确保以正确的顺序提供所有必需的参数以避免这些问题。 </section>
+<section id='description'>
+Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.
+</section>
 
 ## Instructions
-<section id="instructions">函数<code>raiseToPower</code>将基数提升为指数。不幸的是，它没有被正确调用 - 修复代码，因此<code>power</code>值是预期的8。 </section>
+<section id='instructions'>
+The function <code>raiseToPower</code> raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的代码应该固定可变<code>power</code>因此它等于2提升到3功率，而不是3增加到2功率。
-    testString: 'assert(power == 8, "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.");'
-  - text: 您的代码应使用<code>raiseToPower</code>函数调用的正确参数顺序。
-    testString: 'assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g), "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.");'
+  - text: Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.
+    testString: assert(power == 8);
+  - text: Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.
+    testString: assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g));
 
 ```
 
@@ -40,7 +43,6 @@ let base = 2;
 let exp = 3;
 let power = raiseToPower(exp, base);
 console.log(power);
-
 ```
 
 </div>
@@ -53,6 +55,14 @@ console.log(power);
 <section id='solution'>
 
 ```js
-// solution required
+function raiseToPower(b, e) {
+ return Math.pow(b, e);
+}
+
+let base = 2;
+let exp = 3;
+let power = raiseToPower(base, exp);
+console.log(power);
 ```
+
 </section>

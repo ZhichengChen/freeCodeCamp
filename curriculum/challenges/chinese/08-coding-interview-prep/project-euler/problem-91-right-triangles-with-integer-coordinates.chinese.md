@@ -2,15 +2,27 @@
 id: 5900f3c71000cf542c50feda
 challengeType: 5
 title: 'Problem 91: Right triangles with integer coordinates'
-videoUrl: ''
-localeTitle: 问题91：带有整数坐标的直角三角形
+forumTopicId: 302208
 ---
 
 ## Description
-<section id="description">点P（x1，y1）和Q（x2，y2）绘制在整数坐标处并连接到原点O（0,0），以形成ΔOPQ。 <p>正好有十四个三角形包含一个直角，当每个坐标位于0和2之间时，可以形成直角;即，0≤x1，y1，x2，y2≤2。 </p><p>假设0≤x1，y1，x2，y2≤50，可以形成多少个直角三角形？ </p></section>
+<section id='description'>
+The points P (x1, y1) and Q (x2, y2) are plotted at integer co-ordinates and are joined to the origin, O(0,0), to form ΔOPQ.
+
+
+
+
+There are exactly fourteen triangles containing a right angle that can be formed when each co-ordinate lies between 0 and 2 inclusive; that is,0 ≤ x1, y1, x2, y2 ≤ 2.
+
+
+
+
+Given that 0 ≤ x1, y1, x2, y2 ≤ 50, how many right triangles can be formed?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题91：带有整数坐标的直角三角形
 
 ```yml
 tests:
-  - text: <code>euler91()</code>应返回<code>euler91()</code> 。
-    testString: 'assert.strictEqual(euler91(), 14234, "<code>euler91()</code> should return 14234.");'
+  - text: <code>euler91()</code> should return 14234.
+    testString: assert.strictEqual(euler91(), 14234);
 
 ```
 
@@ -37,7 +49,6 @@ function euler91() {
 }
 
 euler91();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler91();
 ```js
 // solution required
 ```
+
 </section>

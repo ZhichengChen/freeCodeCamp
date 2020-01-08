@@ -2,15 +2,34 @@
 id: 5900f5451000cf542c510057
 challengeType: 5
 title: 'Problem 472: Comfortable Distance II'
-videoUrl: ''
-localeTitle: 问题472：舒适的距离II
+forumTopicId: 302149
 ---
 
 ## Description
-<section id="description">连续N个座位。 N人按照以下规则一个接一个地来到座位：没有人坐在另一个人旁边。第一个人选择任何座位。只要不违反规则1，每个后续人员选择离已经就座的人最远的座位。如果满足该条件的选择不止一个，则该人选择最左边的选择。请注意，由于规则1，某些座位肯定会未被占用，并且可以坐着的最大人数小于N（对于N&gt; 1）。 <p>以下是N = 15的可能座位安排： </p><p>我们看到，如果第一个人选择正确，15个座位最多可容纳7人。我们还可以看到第一个人有9个选择来最大化可能坐着的人数。 </p><p>设f（N）是第一个人必须选择的数量，以最大化连续N个座位的占用者数量。因此，f（1）= 1，f（15）= 9，f（20）= 6，并且f（500）= 16。 </p><p>此外，对于1≤N≤20，Σf（N）= 83，对于1≤N≤500，Σf（N）= 13343。 </p><p>找到Σf（N）为1≤N≤1012。给出答案的最后8位数字。 </p></section>
+<section id='description'>
+There are N seats in a row. N people come one after another to fill the seats according to the following rules:
+No person sits beside another.
+The first person chooses any seat.
+Each subsequent person chooses the seat furthest from anyone else already seated, as long as it does not violate rule 1. If there is more than one choice satisfying this condition, then the person chooses the leftmost choice.
+Note that due to rule 1, some seats will surely be left unoccupied, and the maximum number of people that can be seated is less than N (for N > 1).
+
+Here are the possible seating arrangements for N = 15:
+
+
+
+We see that if the first person chooses correctly, the 15 seats can seat up to 7 people.
+We can also see that the first person has 9 choices to maximize the number of people that may be seated.
+
+Let f(N) be the number of choices the first person has to maximize the number of occupants for N seats in a row. Thus, f(1) = 1, f(15) = 9, f(20) = 6, and f(500) = 16.
+
+Also, ∑f(N) = 83 for 1 ≤ N ≤ 20 and  ∑f(N) = 13343 for 1 ≤ N ≤ 500.
+
+Find ∑f(N) for 1 ≤ N ≤ 1012. Give the last 8 digits of your answer.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +37,8 @@ localeTitle: 问题472：舒适的距离II
 
 ```yml
 tests:
-  - text: <code>euler472()</code>应该返回73811586。
-    testString: 'assert.strictEqual(euler472(), 73811586, "<code>euler472()</code> should return 73811586.");'
+  - text: <code>euler472()</code> should return 73811586.
+    testString: assert.strictEqual(euler472(), 73811586);
 
 ```
 
@@ -37,7 +56,6 @@ function euler472() {
 }
 
 euler472();
-
 ```
 
 </div>
@@ -52,4 +70,5 @@ euler472();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,29 +3,43 @@ id: 5a24c314108439a4d4036154
 title: Combine Multiple Reducers
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 结合多个减速器
+forumTopicId: 301436
 ---
 
 ## Description
-<section id="description">当您的应用程序的状态开始变得更加复杂时，可能很容易将状态分成多个部分。相反，请记住Redux的第一个原则：所有应用程序状态都保存在商店中的单个状态对象中。因此，Redux提供减速器组合作为复杂状态模型的解决方案。您可以定义多个reducers来处理应用程序状态的不同部分，然后将这些reducer组合成一个根reducer。然后将根reducer传递给Redux <code>createStore()</code>方法。为了让我们将多个reducer组合在一起，Redux提供了<code>combineReducers()</code>方法。此方法接受一个对象作为参数，您可以在其中定义将键与特定reducer函数关联的属性。 Redux将使用您为密钥指定的名称作为相关状态的名称。通常，当每个应用程序状态以某种方式不同或唯一时，为每个应用程序状态创建一个减速器是一个好习惯。例如，在具有用户身份验证的笔记记录应用程序中，一个reducer可以处理身份验证，而另一个reducer处理用户正在提交的文本和备注。对于这样的应用程序，我们可能会像这样编写<code>combineReducers()</code>方法： <blockquote> const rootReducer = Redux.combineReducers（{ <br> auth：authenticationReducer， <br>笔记：notesReducer <br> }）; </blockquote>现在，关键<code>notes</code>将包含与我们的注释相关联的所有状态，并由<code>notesReducer</code>处理。这就是如何组合多个reducers来管理更复杂的应用程序状态。在此示例中，Redux存储中保存的状态将是包含<code>auth</code>和<code>notes</code>属性的单个对象。 </section>
+<section id='description'>
+When the state of your app begins to grow more complex, it may be tempting to divide state into multiple pieces. Instead, remember the first principle of Redux: all app state is held in a single state object in the store. Therefore, Redux provides reducer composition as a solution for a complex state model. You define multiple reducers to handle different pieces of your application's state, then compose these reducers together into one root reducer. The root reducer is then passed into the Redux <code>createStore()</code> method.
+In order to let us combine multiple reducers together, Redux provides the <code>combineReducers()</code> method. This method accepts an object as an argument in which you define properties which associate keys to specific reducer functions. The name you give to the keys will be used by Redux as the name for the associated piece of state.
+Typically, it is a good practice to create a reducer for each piece of application state when they are distinct or unique in some way. For example, in a note-taking app with user authentication, one reducer could handle authentication while another handles the text and notes that the user is submitting. For such an application, we might write the <code>combineReducers()</code> method like this:
+
+```js
+const rootReducer = Redux.combineReducers({
+  auth: authenticationReducer,
+  notes: notesReducer
+});
+```
+
+Now, the key <code>notes</code> will contain all of the state associated with our notes and handled by our <code>notesReducer</code>. This is how multiple reducers can be composed to manage more complex application state. In this example, the state held in the Redux store would then be a single object containing <code>auth</code> and <code>notes</code> properties.
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器中提供了<code>authReducer()</code> <code>counterReducer()</code>和<code>authReducer()</code>函数以及Redux存储。使用<code>Redux.combineReducers()</code>方法完成<code>rootReducer()</code>函数的<code>Redux.combineReducers()</code> 。指定<code>counterReducer</code>一键叫<code>count</code>和<code>authReducer</code>一个叫关键<code>auth</code> 。 </section>
+<section id='instructions'>
+There are <code>counterReducer()</code> and <code>authReducer()</code> functions provided in the code editor, along with a Redux store. Finish writing the <code>rootReducer()</code> function using the <code>Redux.combineReducers()</code> method. Assign <code>counterReducer</code> to a key called <code>count</code> and <code>authReducer</code> to a key called <code>auth</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>counterReducer</code>应该递增和递减<code>state</code> 。
-    testString: 'assert((function() { const initalState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); const firstState = store.getState().count; store.dispatch({type: DECREMENT}); const secondState = store.getState().count; return firstState === initalState + 2 && secondState === firstState - 1  })(), "The <code>counterReducer</code> should increment and decrement the <code>state</code>.");'
-  - text: <code>authReducer</code>应切换在<code>true</code>和<code>false</code>之间进行<code>authenticated</code>的<code>state</code> 。
-    testString: 'assert((function() {  store.dispatch({type: LOGIN}); const loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); const loggedOut = store.getState().auth.authenticated; return loggedIn === true && loggedOut === false  })(), "The <code>authReducer</code> should toggle the <code>state</code> of <code>authenticated</code> between <code>true</code> and <code>false</code>.");'
-  - text: 存储<code>state</code>应该有两个键： <code>count</code> ，它包含一个数字， <code>auth</code> ，它包含一个对象。 <code>auth</code>对象应具有<code>authenticated</code>属性，该属性包含布尔值。
-    testString: 'assert((function() { const state = store.getState(); return typeof state.auth === "object" && typeof state.auth.authenticated === "boolean" && typeof state.count === "number" })(), "The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.");'
-  - text: 该<code>rootReducer</code>应该是结合了功能<code>counterReducer</code>和<code>authReducer</code> 。
-    testString: 'getUserInput => assert((function() {  const noWhiteSpace = getUserInput("index").replace(/\s/g,""); return typeof rootReducer === "function" && noWhiteSpace.includes("Redux.combineReducers")  })(), "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.");'
+  - text: The <code>counterReducer</code> should increment and decrement the <code>state</code>.
+    testString: 'assert((function() { const initalState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); const firstState = store.getState().count; store.dispatch({type: DECREMENT}); const secondState = store.getState().count; return firstState === initalState + 2 && secondState === firstState - 1  })());'
+  - text: The <code>authReducer</code> should toggle the <code>state</code> of <code>authenticated</code> between <code>true</code> and <code>false</code>.
+    testString: 'assert((function() {  store.dispatch({type: LOGIN}); const loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); const loggedOut = store.getState().auth.authenticated; return loggedIn === true && loggedOut === false  })());'
+  - text: 'The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.'
+    testString: "assert((function() { const state = store.getState(); return typeof state.auth === 'object' && typeof state.auth.authenticated === 'boolean' && typeof state.count === 'number' })());"
+  - text: The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.
+    testString: getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').replace(/\s/g,''); return typeof rootReducer === 'function' && noWhiteSpace.includes('Redux.combineReducers')  })());
 
 ```
 
@@ -84,7 +98,46 @@ const store = Redux.createStore(rootReducer);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+
+const counterReducer = (state = 0, action) => {
+  switch(action.type) {
+    case INCREMENT:
+      return state + 1;
+    case DECREMENT:
+      return state - 1;
+    default:
+      return state;
+  }
+};
+
+const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
+
+const authReducer = (state = {authenticated: false}, action) => {
+  switch(action.type) {
+    case LOGIN:
+      return {
+        authenticated: true
+      }
+    case LOGOUT:
+      return {
+        authenticated: false
+      }
+    default:
+      return state;
+  }
+};
+
+const rootReducer = Redux.combineReducers({
+  count: counterReducer,
+  auth: authReducer
+});
+
+const store = Redux.createStore(rootReducer);
 ```
+
 </section>

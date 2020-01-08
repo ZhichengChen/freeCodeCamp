@@ -2,25 +2,31 @@
 id: bd7123c9c444eddfaeb5bdef
 title: Declare String Variables
 challengeType: 1
-videoUrl: ''
-localeTitle: 声明字符串变量
+videoUrl: 'https://scrimba.com/c/c2QvWU6'
+forumTopicId: 17557
 ---
 
 ## Description
-<section id="description">以前我们使用过代码<code>var myName = &quot;your name&quot;;</code> <code>&quot;your name&quot;</code>被称为<dfn>字符串</dfn> <dfn>文字</dfn> 。它是一个字符串，因为它是用单引号或双引号括起来的一系列零个或多个字符。 </section>
+<section id='description'>
+Previously we have used the code
+<code>var myName = "your name";</code>
+<code>"your name"</code> is called a <dfn>string</dfn> <dfn>literal</dfn>. It is a string because it is a series of zero or more characters enclosed in single or double quotes.
+</section>
 
 ## Instructions
-<section id="instructions">创建两个新的<code>string</code>变量： <code>myFirstName</code>和<code>myLastName</code>并分别为它们分配<code>myFirstName</code>和<code>myLastName</code>的值。 </section>
+<section id='instructions'>
+Create two new <code>string</code> variables: <code>myFirstName</code> and <code>myLastName</code> and assign them the values of your first and last name, respectively.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myFirstName</code>应该是一个至少包含一个字符的字符串。
-    testString: 'assert((function(){if(typeof myFirstName !== "undefined" && typeof myFirstName === "string" && myFirstName.length > 0){return true;}else{return false;}})(), "<code>myFirstName</code> should be a string with at least one character in it.");'
-  - text: <code>myLastName</code>应该是一个至少包含一个字符的字符串。
-    testString: 'assert((function(){if(typeof myLastName !== "undefined" && typeof myLastName === "string" && myLastName.length > 0){return true;}else{return false;}})(), "<code>myLastName</code> should be a string with at least one character in it.");'
+  - text: <code>myFirstName</code> should be a string with at least one character in it.
+    testString: assert((function(){if(typeof myFirstName !== "undefined" && typeof myFirstName === "string" && myFirstName.length > 0){return true;}else{return false;}})());
+  - text: <code>myLastName</code> should be a string with at least one character in it.
+    testString: assert((function(){if(typeof myLastName !== "undefined" && typeof myLastName === "string" && myLastName.length > 0){return true;}else{return false;}})());
 
 ```
 
@@ -38,6 +44,7 @@ var lastName = "Turing";
 
 // Only change code below this line
 
+
 ```
 
 </div>
@@ -47,7 +54,7 @@ var lastName = "Turing";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(function(){return myFirstName + ', ' + myLastName;})();}
 ```
 
 </div>
@@ -57,7 +64,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myFirstName = "Alan";
+var myLastName = "Turing";
 ```
+
 </section>

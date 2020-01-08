@@ -66,14 +66,15 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
     required = [],
     template,
     challengeType,
-    id
+    id,
+    lang
   } = node;
   if (challengeType === 7) {
     return null;
   }
 
   return createPage({
-    path: slug,
+    path: lang === 'chinese' ? '/zh' : '' + slug,
     component: getTemplateComponent(challengeType),
     context: {
       challengeMeta: {

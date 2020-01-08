@@ -2,15 +2,22 @@
 id: 5900f4d11000cf542c50ffe4
 challengeType: 5
 title: 'Problem 357: Prime generating integers'
-videoUrl: ''
-localeTitle: 问题357：Prime生成整数
+forumTopicId: 302017
 ---
 
 ## Description
-<section id="description">考虑30：1,2,3,5,6,10,15,30的除数。可以看出，对于每个除数d为30，d + 30 / d是素数。 <p>找出所有正整数n的总和不超过100 000 000，这样对于n的每个除数d，d + n / d是素数。 </p></section>
+<section id='description'>
+Consider the divisors of 30: 1,2,3,5,6,10,15,30.
+It can be seen that for every divisor d of 30, d+30/d is prime.
+
+
+Find the sum of all positive integers n not exceeding 100 000 000such that
+for every divisor d of n, d+n/d is prime.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题357：Prime生成整数
 
 ```yml
 tests:
-  - text: <code>euler357()</code>应该返回1739023853137。
-    testString: 'assert.strictEqual(euler357(), 1739023853137, "<code>euler357()</code> should return 1739023853137.");'
+  - text: <code>euler357()</code> should return 1739023853137.
+    testString: assert.strictEqual(euler357(), 1739023853137);
 
 ```
 
@@ -37,7 +44,6 @@ function euler357() {
 }
 
 euler357();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler357();
 ```js
 // solution required
 ```
+
 </section>

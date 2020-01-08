@@ -3,15 +3,24 @@ id: bd7158d8c442eedfaeb5bd1c
 title: Build a Tic Tac Toe Game
 challengeType: 3
 isRequired: false
-videoUrl: ''
-localeTitle: 建立一个Tic Tac Toe游戏
+forumTopicId: 302358
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/KzXQgy/" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/KzXQgy/</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a> 。使用您需要的任何库或API。给它你自己的个人风格。 <strong>用户故事：</strong>我可以用电脑玩Tic Tac Toe游戏。 <strong>用户故事：</strong>我的游戏一旦结束就会重置，所以我可以再玩一次。 <strong>用户故事：</strong>我可以选择是否要播放为X或O.如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。完成后，单击“我已完成此挑战”按钮并包含指向CodePen的链接。您可以通过Facebook上的朋友分享您的项目反馈。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/KzXQgy/' target='_blank'>https://codepen.io/freeCodeCamp/full/KzXQgy/</a>.
+Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.
+<strong>User Story:</strong> I can play a game of Tic Tac Toe with the computer.
+<strong>User Story:</strong> My game will reset as soon as it's over so I can play again.
+<strong>User Story:</strong> I can choose whether I want to play as X or O.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
+When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
+You can get feedback on your project by sharing it with your friends on Facebook.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +44,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

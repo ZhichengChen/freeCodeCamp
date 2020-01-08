@@ -2,15 +2,32 @@
 title: Count the coins
 id: 59713bd26bdeb8a594fb9413
 challengeType: 5
-videoUrl: ''
-localeTitle: 计算硬币
+forumTopicId: 302238
 ---
 
 ## Description
-<section id="description"><p> <a href="https://en.wikipedia.org/wiki/United_States" title="链接：https：//en.wikipedia.org/wiki/United_States">美国</a>货币有四种常见硬币： </p>季度（25美分）硬币（10美分）镍（5美分）和便士（1美分） <p>有六种方法可以换15美分： </p>一角钱和一角钱一角钱和5便士3镍2镍和5便士一镍和10便士15便士任务： <p>实现一个功能，以确定使用这些普通硬币改变一美元的方式有多少？ （1美元= 100美分）。 </p>参考： <a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" title="链接：http：//mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52">麻省理工学院出版社的算法</a> 。 </section>
+<section id='description'>
+There are four types of common coins in <a href="https://en.wikipedia.org/wiki/United_States" target="_blank">US</a> currency:
+<ul>
+  <li>quarters (25 cents)</li>
+  <li>dimes (10 cents)</li>
+  <li>nickels (5 cents), and</li>
+  <li>pennies (1 cent)</li>
+</ul>
+<p>There are six ways to make change for 15 cents:</p>
+<ul>
+  <li>A dime and a nickel</li>
+  <li>A dime and 5 pennies</li>
+  <li>3 nickels</li>
+  <li>2 nickels and 5 pennies</li>
+  <li>A nickel and 10 pennies</li>
+  <li>15 pennies</li>
+</ul>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Implement a function to determine how many ways there are to make change for a dollar using these common coins (1 dollar = 100 cents)
 </section>
 
 ## Tests
@@ -18,10 +35,10 @@ localeTitle: 计算硬币
 
 ```yml
 tests:
-  - text: <code>countCoins</code>是一个函数。
-    testString: 'assert(typeof countCoins === "function", "<code>countCoins</code> is a function.");'
-  - text: <code>countCoints()</code>应该返回242。
-    testString: 'assert.equal(countCoins(), 242, "<code>countCoints()</code> should return 242.");'
+  - text: <code>countCoins</code> should be a function.
+    testString: assert(typeof countCoins === 'function');
+  - text: <code>countCoints()</code> should return 242.
+    testString: assert.equal(countCoins(), 242);
 
 ```
 
@@ -33,11 +50,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function countCoins () {
+function countCoins() {
   // Good luck!
   return true;
 }
-
 ```
 
 </div>
@@ -49,7 +65,28 @@ function countCoins () {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function countCoins() {
+  let t = 100;
+  const operands = [1, 5, 10, 25];
+  const targetsLength = t + 1;
+  const operandsLength = operands.length;
+  t = [1];
+
+  for (let a = 0; a < operandsLength; a++) {
+    for (let b = 1; b < targetsLength; b++) {
+      // initialise undefined target
+      t[b] = t[b] ? t[b] : 0;
+
+      // accumulate target + operand ways
+      t[b] += (b < operands[a]) ? 0 : t[b - operands[a]];
+    }
+  }
+
+  return t[targetsLength - 1];
+}
+
 ```
+
 </section>

@@ -2,15 +2,24 @@
 id: 5900f3b81000cf542c50fecb
 challengeType: 5
 title: 'Problem 76: Counting summations'
-videoUrl: ''
-localeTitle: 问题76：计算总结
+forumTopicId: 302189
 ---
 
 ## Description
-<section id="description">可以用六种不同的方式将五个作为总和写成：4 + 1 3 + 2 3 + 1 + 1 2 + 2 + 1 2 + 1 + 1 + 1 1 + 1 + 1 + 1 + 1多少个不同一百种方式可以写成至少两个正整数的总和？ </section>
+<section id='description'>
+It is possible to write five as a sum in exactly six different ways:
+4 + 1
+3 + 2
+3 + 1 + 1
+2 + 2 + 1
+2 + 1 + 1 + 1
+1 + 1 + 1 + 1 + 1
+How many different ways can one hundred be written as a sum of at least two positive integers?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题76：计算总结
 
 ```yml
 tests:
-  - text: <code>euler76()</code>应该返回190569291。
-    testString: 'assert.strictEqual(euler76(), 190569291, "<code>euler76()</code> should return 190569291.");'
+  - text: <code>euler76()</code> should return 190569291.
+    testString: assert.strictEqual(euler76(), 190569291);
 
 ```
 
@@ -37,7 +46,6 @@ function euler76() {
 }
 
 euler76();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler76();
 ```js
 // solution required
 ```
+
 </section>

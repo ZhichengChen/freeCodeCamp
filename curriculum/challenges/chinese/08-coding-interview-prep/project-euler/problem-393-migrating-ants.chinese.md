@@ -2,15 +2,23 @@
 id: 5900f4f61000cf542c510008
 challengeType: 5
 title: 'Problem 393: Migrating ants'
-videoUrl: ''
-localeTitle: 问题393：迁移蚂蚁
+forumTopicId: 302058
 ---
 
 ## Description
-<section id="description"> n×n正方形网格包含n2个蚂蚁，每平方一个蚂蚁。所有蚂蚁决定同时移动到相邻的广场（通常有4种可能，除了网格边缘或角落处的蚂蚁）。我们将f（n）定义为在没有任何蚂蚁在同一个正方形上结束并且没有任何两个蚂蚁穿过两个正方形之间的相同边缘时可以发生的方式的数量。 <p>给出f（4）= 88.求f（10）。 </p></section>
+<section id='description'>
+An  n×n grid of squares contains  n2 ants, one ant per square.
+All ants decide to move simultaneously to an adjacent square (usually 4 possibilities, except for ants on the edge of the grid or at the corners).
+We define f(n) to be the number of ways this can happen without any ants ending on the same square and without any two ants crossing the same edge between two squares.
+
+
+You are given that f(4) = 88.
+Find  f(10).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题393：迁移蚂蚁
 
 ```yml
 tests:
-  - text: <code>euler393()</code>应该返回112398351350823100。
-    testString: 'assert.strictEqual(euler393(), 112398351350823100, "<code>euler393()</code> should return 112398351350823100.");'
+  - text: <code>euler393()</code> should return 112398351350823100.
+    testString: assert.strictEqual(euler393(), 112398351350823100);
 
 ```
 
@@ -37,7 +45,6 @@ function euler393() {
 }
 
 euler393();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler393();
 ```js
 // solution required
 ```
+
 </section>

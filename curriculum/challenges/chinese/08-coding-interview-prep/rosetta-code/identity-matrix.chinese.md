@@ -2,15 +2,20 @@
 title: Identity matrix
 id: 5a23c84252665b21eecc7eb1
 challengeType: 5
-videoUrl: ''
-localeTitle: 身份矩阵
+forumTopicId: 302290
 ---
 
 ## Description
-<section id="description"> <i>单位矩阵</i>是大小为\（n \次n \）的方阵，其中对角元素都是<b>1</b> s（1），所有其他元素都是<b>0</b> s（零）。 \ begin {bmatrix} 1＆0＆0 \ cr 0＆1＆0 \ cr 0＆0＆1 \ cr \ end {bmatrix}编写一个以数字&#39;n&#39;作为参数并返回单位矩阵的函数订单nx n。 </section>
+<section id='description'>
+An <i>identity matrix</i> is a square matrix of size \( n \times n \), where the diagonal elements are all <code>1</code>s (ones), and all the other elements are all <code>0</code>s (zeroes).
+<ul>
+  <li style="list-style: none;">\(\displaystyle I_{n}=\begin{bmatrix} 1 & 0 & 0 \cr 0 & 1 & 0 \cr 0 & 0 & 1 \cr \end{bmatrix}\)</li>
+</ul>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write a function that takes a number <code>n</code> as a parameter and returns the identity matrix of order \( n \times n \).
 </section>
 
 ## Tests
@@ -18,18 +23,18 @@ localeTitle: 身份矩阵
 
 ```yml
 tests:
-  - text: <code>idMatrix</code>应该是一个功能。
-    testString: 'assert(typeof idMatrix=="function","<code>idMatrix</code> should be a function.");'
-  - text: <code>idMatrix(1)</code>应该返回一个数组。
-    testString: 'assert(Array.isArray(idMatrix(1)),"<code>idMatrix(1)</code> should return an array.");'
-  - text: '<code>idMatrix(1)</code>应返回<code>&quot;+JSON.stringify(results[0])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(1),results[0],"<code>idMatrix(1)</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: '<code>idMatrix(2)</code>应返回<code>&quot;+JSON.stringify(results[1])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(2),results[1],"<code>idMatrix(2)</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: '<code>idMatrix(3)</code>应返回<code>&quot;+JSON.stringify(results[2])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(3),results[2],"<code>idMatrix(3)</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: '<code>idMatrix(4)</code>应返回<code>&quot;+JSON.stringify(results[3])+&quot;</code> 。'
-    testString: 'assert.deepEqual(idMatrix(4),results[3],"<code>idMatrix(4)</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
+  - text: <code>idMatrix</code> should be a function.
+    testString: assert(typeof idMatrix=='function');
+  - text: <code>idMatrix(1)</code> should return an array.
+    testString: assert(Array.isArray(idMatrix(1)));
+  - text: <code>idMatrix(1)</code> should return <code>[ [ 1 ] ]</code>.
+    testString: assert.deepEqual(idMatrix(1),results[0]);
+  - text: <code>idMatrix(2)</code> should return <code>[ [ 1, 0 ], [ 0, 1 ] ]</code>.
+    testString: assert.deepEqual(idMatrix(2),results[1]);
+  - text: <code>idMatrix(3)</code> should return <code>[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ]</code>.
+    testString: assert.deepEqual(idMatrix(3),results[2]);
+  - text: <code>idMatrix(4)</code> should return <code>[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]</code>.
+    testString: assert.deepEqual(idMatrix(4),results[3]);
 
 ```
 
@@ -41,10 +46,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function idMatrix (n) {
+function idMatrix(n) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -54,7 +58,10 @@ function idMatrix (n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+let results=[[ [ 1 ] ],
+[ [ 1, 0 ], [ 0, 1 ] ],
+[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],
+[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]]
 ```
 
 </div>
@@ -64,7 +71,16 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function idMatrix(n) {
+	return Array.apply(null, new Array(n)).map(function (x, i, xs) {
+		return xs.map(function (_, k) {
+			return i === k ? 1 : 0;
+		})
+	});
+}
+
 ```
+
 </section>

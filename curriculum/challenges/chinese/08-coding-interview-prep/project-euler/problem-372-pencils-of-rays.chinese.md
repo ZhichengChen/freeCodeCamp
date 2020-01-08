@@ -2,15 +2,23 @@
 id: 5900f4e11000cf542c50fff3
 challengeType: 5
 title: 'Problem 372: Pencils of rays'
-videoUrl: ''
-localeTitle: 问题372：光线笔
+forumTopicId: 302034
 ---
 
 ## Description
-<section id="description">令R（M，N）为满足M的格点（x，y）的数量<p>注意：代表楼层功能。 </p></section>
+<section id='description'>
+Let R(M, N) be the number of lattice points (x, y) which satisfy M<x≤N, M<y≤N and  is odd.
+We can verify that R(0, 100) = 3019 and R(100, 10000) = 29750422.
+Find R(2·106, 109).
+
+
+
+Note:  represents the floor function.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题372：光线笔
 
 ```yml
 tests:
-  - text: <code>euler372()</code>应该返回301450082318807040。
-    testString: 'assert.strictEqual(euler372(), 301450082318807040, "<code>euler372()</code> should return 301450082318807040.");'
+  - text: <code>euler372()</code> should return 301450082318807040.
+    testString: assert.strictEqual(euler372(), 301450082318807040);
 
 ```
 
@@ -37,7 +45,6 @@ function euler372() {
 }
 
 euler372();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler372();
 ```js
 // solution required
 ```
+
 </section>

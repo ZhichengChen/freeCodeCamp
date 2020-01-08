@@ -2,33 +2,51 @@
 id: 587d7fa6367417b2b2512bc2
 title: Add Document Elements with D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用D3添加文档元素
+forumTopicId: 301474
 ---
 
 ## Description
-<section id="description"> D3有几种方法可以让您在文档中添加和更改元素。 <code>select()</code>方法从文档中选择一个元素。它接受所需元素名称的参数，并返回文档中与名称匹配的第一个元素的HTML节点。这是一个例子： <code>const anchor = d3.select(&quot;a&quot;);</code>上面的示例在页面上查找第一个锚标记，并在变量<code>anchor</code>为其保存HTML节点。您可以使用其他方法进行选择。示例的“d3”部分是对D3对象的引用，这是您访问D3方法的方式。另外两个有用的方法是<code>append()</code>和<code>text()</code> 。 <code>append()</code>方法为要添加到文档的元素接受参数。它将HTML节点附加到选定项目，并返回该节点的句柄。 <code>text()</code>方法可以设置所选节点的文本，也可以获取当前文本。要设置该值，请在方法的括号内传递一个字符串作为参数。这是一个选择无序列表，附加列表项和添加文本的示例： <blockquote> d3.select（ “UL”） <br> .append（ “里”） <br> .text（“非常重要的项目”）; </blockquote> D3允许您将多个方法与句点链接在一起以连续执行多个操作。 </section>
+<section id='description'>
+D3 has several methods that let you add and change elements in your document.
+The <code>select()</code> method selects one element from the document. It takes an argument for the name of the element you want and returns an HTML node for the first element in the document that matches the name. Here's an example:
+<code>const anchor = d3.select("a");</code>
+The above example finds the first anchor tag on the page and saves an HTML node for it in the variable <code>anchor</code>. You can use the selection with other methods. The "d3" part of the example is a reference to the D3 object, which is how you access D3 methods.
+Two other useful methods are <code>append()</code> and <code>text()</code>.
+The <code>append()</code> method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.
+The <code>text()</code> method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.
+Here's an example that selects an unordered list, appends a list item, and adds text:
+
+```js
+d3.select("ul")
+  .append("li")
+  .text("Very important item");
+```
+
+D3 allows you to chain several methods together with periods to perform a number of actions in a row.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>select</code>方法选择文档中的<code>body</code>标签。然后为其<code>append</code>一个<code>h1</code>标签，并将文本“Learning D3”添加到<code>h1</code>元素中。 </section>
+<section id='instructions'>
+Use the <code>select</code> method to select the <code>body</code> tag in the document. Then <code>append</code> an <code>h1</code> tag to it, and add the text "Learning D3" into the <code>h1</code> element.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>body</code>应该有一个<code>h1</code>元素。
-    testString: 'assert($("body").children("h1").length == 1, "The <code>body</code> should have one <code>h1</code> element.");'
-  - text: <code>h1</code>元素应该包含文本“Learning D3”。
-    testString: 'assert($("h1").text() == "Learning D3", "The <code>h1</code> element should have the text "Learning D3" in it.");'
-  - text: 您的代码应该访问<code>d3</code>对象。
-    testString: 'assert(code.match(/d3/g), "Your code should access the <code>d3</code> object.");'
-  - text: 您的代码应该使用<code>select</code>方法。
-    testString: 'assert(code.match(/\.select/g), "Your code should use the <code>select</code> method.");'
-  - text: 您的代码应该使用<code>append</code>方法。
-    testString: 'assert(code.match(/\.append/g), "Your code should use the <code>append</code> method.");'
-  - text: 您的代码应该使用<code>text</code>方法。
-    testString: 'assert(code.match(/\.text/g), "Your code should use the <code>text</code> method.");'
+  - text: The <code>body</code> should have one <code>h1</code> element.
+    testString: assert($('body').children('h1').length == 1);
+  - text: The <code>h1</code> element should have the text "Learning D3" in it.
+    testString: assert($('h1').text() == "Learning D3");
+  - text: Your code should access the <code>d3</code> object.
+    testString: assert(code.match(/d3/g));
+  - text: Your code should use the <code>select</code> method.
+    testString: assert(code.match(/\.select/g));
+  - text: Your code should use the <code>append</code> method.
+    testString: assert(code.match(/\.append/g));
+  - text: Your code should use the <code>text</code> method.
+    testString: assert(code.match(/\.text/g));
 
 ```
 
@@ -49,7 +67,6 @@ tests:
     // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -64,4 +81,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

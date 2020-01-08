@@ -3,29 +3,34 @@ id: 5a24c314108439a4d403617e
 title: Add Event Listeners
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 添加事件监听器
+forumTopicId: 301377
 ---
 
 ## Description
-<section id="description"> <code>componentDidMount()</code>方法也是附加您需要为特定功能添加的任何事件侦听器的最佳位置。 React提供了一个合成事件系统，它包装了浏览器中的本机事件系统。这意味着无论用户的浏览器如何，合成事件系统的行为都完全相同 - 即使本机事件在不同浏览器之间的行为可能不同。您已经使用了一些合成事件处理程序，如<code>onClick()</code> 。 React的合成事件系统非常适合用于您在DOM元素上管理的大多数交互。但是，如果要将事件处理程序附加到文档或窗口对象，则必须直接执行此操作。 </section>
+<section id='description'>
+The <code>componentDidMount()</code> method is also the best place to attach any event listeners you need to add for specific functionality. React provides a synthetic event system which wraps the native event system present in browsers. This means that the synthetic event system behaves exactly the same regardless of the user's browser - even if the native events may behave differently between different browsers.
+You've already been using some of these synthetic event handlers such as <code>onClick()</code>. React's synthetic event system is great to use for most interactions you'll manage on DOM elements. However, if you want to attach an event handler to the document or window objects, you have to do this directly.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>componentDidMount()</code>方法中为<code>keydown</code>事件附加事件侦听器，并让这些事件触发回调<code>handleKeyPress()</code> 。您可以使用<code>document.addEventListener()</code> ，它将事件（在引号中）作为第一个参数，将回调作为第二个参数。然后，在<code>componentWillUnmount()</code> ，删除此相同的事件侦听器。您可以将相同的参数传递给<code>document.removeEventListener()</code> 。在卸载和销毁之前，使用此生命周期方法对React组件进行任何清理是一种很好的做法。删除事件侦听器就是一个这样的清理操作的示例。 </section>
+<section id='instructions'>
+Attach an event listener in the <code>componentDidMount()</code> method for <code>keydown</code> events and have these events trigger the callback <code>handleKeyPress()</code>. You can use <code>document.addEventListener()</code> which takes the event (in quotes) as the first argument and the callback as the second argument.
+Then, in <code>componentWillUnmount()</code>, remove this same event listener. You can pass the same arguments to <code>document.removeEventListener()</code>. It's good practice to use this lifecycle method to do any clean up on React components before they are unmounted and destroyed. Removing event listeners is an example of one such clean up action.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>MyComponent</code>应该呈现一个包含<code>h1</code>标记的<code>div</code>元素。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").children().find("h1").length === 1; })(), "<code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.");'
-  - text: keydown侦听器应附加到<code>componentDidMount</code>的文档。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp("document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(didMountString); })(), "A keydown listener should be attached to the document in <code>componentDidMount</code>.");'
-  - text: 应该从<code>componentWillUnmount</code>的文档中删除keydown侦听器。
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp("document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress").test(willUnmountString); })(), "The keydown listener should be removed from the document in <code>componentWillUnmount</code>.");'
-  - text: 组件安装完成后，按<code>enter</code>应更新其状态和渲染的<code>h1</code>标签。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state("message"); const beforeText = mockedComponent.find("h1").text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state("message"), text: mockedComponent.find("h1").text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text, "Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag."); }; '
+  - text: <code>MyComponent</code> should render a <code>div</code> element which wraps an <code>h1</code> tag.
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find('div').children().find('h1').length === 1; })());
+  - text: A keydown listener should be attached to the document in <code>componentDidMount</code>.
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const didMountString = mockedComponent.instance().componentDidMount.toString(); return new RegExp('document\.addEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(didMountString); })());
+  - text: The keydown listener should be removed from the document in <code>componentWillUnmount</code>.
+    testString: assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const willUnmountString = mockedComponent.instance().componentWillUnmount.toString(); return new RegExp('document\.removeEventListener(.|\n|\r)+keydown(.|\n|\r)+this\.handleKeyPress').test(willUnmountString); })());
+  - text: Once the component has mounted, pressing <code>enter</code> should update its state and the rendered <code>h1</code> tag.
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const beforeState = mockedComponent.state(''message''); const beforeText = mockedComponent.find(''h1'').text(); const pressEnterKey = () => { mockedComponent.instance().handleKeyPress({ keyCode: 13 }); return waitForIt(() => { mockedComponent.update(); return { state: mockedComponent.state(''message''), text: mockedComponent.find(''h1'').text()}; });}; const afterKeyPress = await pressEnterKey(); assert(beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text); }; '
 
 ```
 
@@ -41,7 +46,7 @@ class MyComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: "
+      message: ''
     };
     this.handleEnter = this.handleEnter.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
@@ -72,7 +77,6 @@ class MyComponent extends React.Component {
     );
   }
 };
-
 ```
 
 </div>
@@ -82,7 +86,7 @@ class MyComponent extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
 </div>
@@ -92,7 +96,44 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      message: ''
+    };
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);  }
+  componentDidMount() {
+    // change code below this line
+    document.addEventListener('keydown', this.handleKeyPress);
+    // change code above this line
+  }
+  componentWillUnmount() {
+    // change code below this line
+    document.removeEventListener('keydown', this.handleKeyPress);
+    // change code above this line
+  }
+  handleEnter() {
+    this.setState({
+      message: this.state.message + 'You pressed the enter key! '
+    });
+  }
+  handleKeyPress(event) {
+    if (event.keyCode === 13) {
+      this.handleEnter();
+    }
+  }
+  render() {
+    return (
+      <div>
+        <h1>{this.state.message}</h1>
+      </div>
+    );
+  }
+};
 ```
+
 </section>

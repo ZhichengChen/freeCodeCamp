@@ -2,15 +2,19 @@
 id: 587d8259367417b2b2512c86
 title: Implement Insertion Sort
 challengeType: 1
-videoUrl: ''
-localeTitle: 实现插入排序
+forumTopicId: 301613
 ---
 
 ## Description
-<section id="description">我们将看到的下一个排序方法是插入排序。此方法通过在列表的开头构建排序数组来工作。它以第一个元素开始排序数组。然后它检查下一个元素并将其向后交换到已排序的数组，直到它处于排序位置。它继续遍历列表并将新项目向后交换到已排序的部分，直到它到达结尾。该算法在平均和最差情况下具有二次时间复杂度。 <strong>说明：</strong>编写一个函数<code>insertionSort</code> ，它将一个整数数组作为输入，并按照从最小到最大的排序顺序返回这些整数的数组。 <strong>注意：</strong> <br>我们从幕后调用这个功能;我们使用的测试数组在编辑器中被注释掉了。尝试记录<code>array</code>以查看您的排序算法！ </section>
+<section id='description'>
+The next sorting method we'll look at is insertion sort. This method works by building up a sorted array at the beginning of the list. It begins the sorted array with the first element. Then it inspects the next element and swaps it backwards into the sorted array until it is in sorted position. It continues iterating through the list and swapping new items backwards into the sorted portion until it reaches the end. This algorithm has quadratic time complexity in the average and worst cases.
+<strong>Instructions:</strong> Write a function <code>insertionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +22,14 @@ localeTitle: 实现插入排序
 
 ```yml
 tests:
-  - text: <code>insertionSort</code>是一个函数。
-    testString: 'assert(typeof insertionSort == "function", "<code>insertionSort</code> is a function.");'
-  - text: <code>insertionSort</code>返回一个排序数组（从最小到最大）。
-    testString: 'assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>insertionSort</code> returns a sorted array (least to greatest).");'
-  - text: <code>insertionSort</code>返回一个除订单外没有变化的数组。
-    testString: 'assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>insertionSort</code> returns an array that is unchanged except for order.");'
-  - text: <code>insertionSort</code>不应使用内置的<code>.sort()</code>方法。
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>insertionSort</code> should not use the built-in <code>.sort()</code> method.");'
+  - text: <code>insertionSort</code> should be a function.
+    testString: assert(typeof insertionSort == 'function');
+  - text: <code>insertionSort</code> should return a sorted array (least to greatest).
+    testString: assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
+  - text: <code>insertionSort</code> should return an array that is unchanged except for order.
+    testString: assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
+  - text: <code>insertionSort</code> should not use the built-in <code>.sort()</code> method.
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 
@@ -39,14 +43,11 @@ tests:
 ```js
 function insertionSort(array) {
   // change code below this line
-
-  // change code above this line
   return array;
+  // change code above this line
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
-
+insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -56,7 +57,10 @@ function insertionSort(array) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+function isSorted(arr) {
+  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
+  return check(0);
+};
 ```
 
 </div>
@@ -67,6 +71,18 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+function insertionSort (array) {
+  for (let currentIndex = 0; currentIndex < array.length; currentIndex++) {
+    let current = array[currentIndex];
+    let j = currentIndex - 1;
+    while (j > -1 && array[j] > current) {
+      array[j + 1] = array[j];
+      j--;
+    }
+    array[j + 1] = current;
+  }
+  return array;
+}
 ```
+
 </section>

@@ -2,15 +2,30 @@
 id: 5900f4cb1000cf542c50ffdd
 challengeType: 5
 title: 'Problem 350: Constraining the least greatest and the greatest least'
-videoUrl: ''
-localeTitle: 问题350：约束最小和最小
+forumTopicId: 302010
 ---
 
 ## Description
-<section id="description">大小为n的列表是n个自然数的序列。实例是（2,4,6），（2,6,4），（10,6,15,6）和（11）。 <p>列表的最大公约数（或gcd）是划分列表中所有条目的最大自然数。例子：gcd（2,6,4）= 2，gcd（10,6,15,6）= 1，gcd（11）= 11。 </p><p>列表的最小公倍数或lcm是列表的每个条目可分割的最小自然数。实例：1cm（2,6,4）= 12,1cm（10,6,15,6）= 30和1cm（11）= 11。 </p><p>设f（G，L，N）为大小为N的列表数，gcd≥G且lcm≤L。例如： </p><p> f（10,100,1）= 91.f（10,100,2）= 327.f（10,100,3）= 1135.f（10,100,1000）mod 1014 = 3286053。 </p><p>找到f（106,1012,1018）mod 1014。 </p></section>
+<section id='description'>
+A list of size n is a sequence of n natural numbers. Examples are (2,4,6), (2,6,4), (10,6,15,6), and (11).
+
+The greatest common divisor, or gcd, of a list is the largest natural number that divides all entries of the list. Examples: gcd(2,6,4) = 2, gcd(10,6,15,6) = 1 and gcd(11) = 11.
+
+The least common multiple, or lcm, of a list is the smallest natural number divisible by each entry of the list. Examples: lcm(2,6,4) = 12, lcm(10,6,15,6) = 30 and lcm(11) = 11.
+
+Let f(G, L, N) be the number of lists of size N with gcd ≥ G and lcm ≤ L. For example:
+
+f(10, 100, 1) = 91.
+f(10, 100, 2) = 327.
+f(10, 100, 3) = 1135.
+f(10, 100, 1000) mod 1014 = 3286053.
+
+Find f(106, 1012, 1018) mod 1014.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +33,8 @@ localeTitle: 问题350：约束最小和最小
 
 ```yml
 tests:
-  - text: <code>euler350()</code>应该返回84664213。
-    testString: 'assert.strictEqual(euler350(), 84664213, "<code>euler350()</code> should return 84664213.");'
+  - text: <code>euler350()</code> should return 84664213.
+    testString: assert.strictEqual(euler350(), 84664213);
 
 ```
 
@@ -37,7 +52,6 @@ function euler350() {
 }
 
 euler350();
-
 ```
 
 </div>
@@ -52,4 +66,5 @@ euler350();
 ```js
 // solution required
 ```
+
 </section>

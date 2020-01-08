@@ -2,25 +2,56 @@
 id: 587d7dad367417b2b2512b78
 title: Use a Constructor to Create Objects
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用构造函数创建对象
+forumTopicId: 18233
 ---
 
 ## Description
-<section id="description">这是上一次挑战中的<code>Bird</code>构造函数： <blockquote> function Bird（）{ <br> this.name =“阿尔伯特”; <br> this.color =“blue”; <br> this.numLegs = 2; <br> //构造函数中的“this”始终引用正在创建的对象<br> } <br><br>让blueBird = new Bird（）; </blockquote>请注意，在调用构造函数时使用<code>new</code>运算符。这告诉JavaScript创建一个名为<code>blueBird</code>的<code>Bird</code>新<code>instance</code> 。如果没有<code>new</code>运营商， <code>this</code>在构造函数中不会指向新创建的对象，给人意想不到的效果。现在， <code>blueBird</code>具有在<code>Bird</code>构造函数中定义的所有属性： <blockquote> blueBird.name; // =&gt;艾伯特<br> blueBird.color; // =&gt;蓝色<br> blueBird.numLegs; // =&gt; 2 </blockquote>就像任何其他对象一样，可以访问和修改其属性： <blockquote> blueBird.name =&#39;Elvira&#39;; <br> blueBird.name; // =&gt;埃尔维拉</blockquote></section>
+<section id='description'>
+Here's the <code>Bird</code> constructor from the previous challenge:
+
+```js
+function Bird() {
+  this.name = "Albert";
+  this.color  = "blue";
+  this.numLegs = 2;
+  // "this" inside the constructor always refers to the object being created
+}
+
+let blueBird = new Bird();
+```
+
+Notice that the <code>new</code> operator is used when calling a constructor. This tells JavaScript to create a new instance of <code>Bird</code> called <code>blueBird</code>. Without the <code>new</code> operator, <code>this</code> inside the constructor would not point to the newly created object, giving unexpected results.
+Now <code>blueBird</code> has all the properties defined inside the <code>Bird</code> constructor:
+
+```js
+blueBird.name; // => Albert
+blueBird.color; // => blue
+blueBird.numLegs; // => 2
+```
+
+Just like any other object, its properties can be accessed and modified:
+
+```js
+blueBird.name = 'Elvira';
+blueBird.name; // => Elvira
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用上一课中的<code>Dog</code>构造函数创建<code>Dog</code>的新实例，将其分配给变量<code>hound</code> 。 </section>
+<section id='instructions'>
+Use the <code>Dog</code> constructor from the last lesson to create a new instance of <code>Dog</code>, assigning it to a variable <code>hound</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 应该使用<code>Dog</code>构造函数创建<code>hound</code> 。
-    testString: 'assert(hound instanceof Dog, "<code>hound</code> should be created using the <code>Dog</code> constructor.");'
-  - text: 您的代码应该使用<code>new</code>运算符来创建<code>Dog</code>的<code>instance</code> 。
-    testString: 'assert(code.match(/new/g), "Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.");'
+  - text: <code>hound</code> should be created using the <code>Dog</code> constructor.
+    testString: assert(hound instanceof Dog);
+  - text: Your code should use the <code>new</code> operator to create an instance of <code>Dog</code>.
+    testString: assert(code.match(/new/g));
 
 ```
 
@@ -39,6 +70,7 @@ function Dog() {
 }
 // Add your code below this line
 
+
 ```
 
 </div>
@@ -50,7 +82,14 @@ function Dog() {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+const hound = new Dog();
 ```
+
 </section>

@@ -2,15 +2,20 @@
 id: 5900f3f21000cf542c50ff04
 challengeType: 5
 title: 'Problem 133: Repunit nonfactors'
-videoUrl: ''
-localeTitle: 问题133：重新计算非因素
+forumTopicId: 301761
 ---
 
 ## Description
-<section id="description">完全由1组成的数字称为repunit。我们将R（k）定义为长度k的重新定位;例如，R（6）= 111111.让我们考虑R（10n）形式的重新组合。虽然R（10），R（100）或R（1000）不能被17整除，但R（10000）可被17整除。但是没有n的值，R（10n）将除以19。事实上，值得注意的是，11,17,41和73是低于100的唯一四个素数，可以是R（10n）的因子。求出十万以下所有素数的总和，这些素数永远不会是R（10n）的因子。 </section>
+<section id='description'>
+A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k; for example, R(6) = 111111.
+Let us consider repunits of the form R(10n).
+Although R(10), R(100), or R(1000) are not divisible by 17, R(10000) is divisible by 17. Yet there is no value of n for which R(10n) will divide by 19. In fact, it is remarkable that 11, 17, 41, and 73 are the only four primes below one-hundred that can  be a factor of R(10n).
+Find the sum of all the primes below one-hundred thousand that will never be a factor of R(10n).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题133：重新计算非因素
 
 ```yml
 tests:
-  - text: <code>euler133()</code>应返回453647705。
-    testString: 'assert.strictEqual(euler133(), 453647705, "<code>euler133()</code> should return 453647705.");'
+  - text: <code>euler133()</code> should return 453647705.
+    testString: assert.strictEqual(euler133(), 453647705);
 
 ```
 
@@ -37,7 +42,6 @@ function euler133() {
 }
 
 euler133();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler133();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,25 +2,40 @@
 id: 587d781e367417b2b2512ac9
 title: Change an Element's Relative Position
 challengeType: 0
-videoUrl: ''
-localeTitle: 更改元素的相对位置
+videoUrl: 'https://scrimba.com/c/czVmMtZ'
+forumTopicId: 301044
 ---
 
 ## Description
-<section id="description"> CSS将每个HTML元素视为自己的框，通常称为<code>CSS Box Model</code> 。块级项目自动从新行开始（想想标题，段落和div），而内联项目位于周围内容（如图像或跨度）中。以这种方式的元素的默认布局称为文档的<code>normal flow</code> ，但CSS提供position属性来覆盖它。当元素的位置设置为<code>relative</code> ，它允许您指定CSS应如何<i>相</i>对于页面正常流中的当前位置移动它。它与<code>left</code>或<code>right</code>以及<code>top</code>或<code>bottom</code>的CSS偏移属性配对。这些表示将物品从通常定位的位置<i>移开的</i>像素，百分比或ems的数量。以下示例将段落从底部移开10个像素： <blockquote> p { <br>位置：相对; <br>底部：10px; <br> } </blockquote>将元素的位置更改为相对位置不会将其从正常流中移除 - 其周围的其他元素仍然表现为该项位于其默认位置。 <strong>注意</strong> <br>定位为页面的可视化布局提供了很大的灵活性和强大功能。值得记住的是，无论元素的位置如何，底层的HTML标记都应该有条理，从上到下阅读时才有意义。这就是具有视觉障碍的用户（依赖屏幕阅读器等辅助设备）访问您的内容的方式。 </section>
+<section id='description'>
+CSS treats each HTML element as its own box, which is usually referred to as the <dfn>CSS Box Model</dfn>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <dfn>normal flow</dfn> of a document, but CSS offers the position property to override it.
+When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it <i>relative</i> to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>. These say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:
+
+```css
+p {
+  position: relative;
+  bottom: 10px;
+}
+```
+
+Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.
+<strong>Note:</strong> Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.
+</section>
 
 ## Instructions
-<section id="instructions">将<code>h2</code>的<code>position</code>更改为<code>relative</code> <code>position</code> ，并使用CSS偏移将其移动到距离正常流动位置<code>top</code> 15个像素的位置。请注意，周围的h1和p元素的位置没有影响。 </section>
+<section id='instructions'>
+Change the <code>position</code> of the <code>h2</code> to <code>relative</code>, and use a CSS offset to move it 15 pixels away from the <code>top</code> of where it sits in the normal flow. Notice there is no impact on the positions of the surrounding h1 and p elements.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>h2</code>元素的<code>position</code>属性应设置为<code>relative</code> 。
-    testString: 'assert($("h2").css("position") == "relative", "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.");'
-  - text: 您的代码应该使用CSS偏移来相对地将<code>h2</code> 15px定位在远离其正常位置的<code>top</code> 。
-    testString: 'assert($("h2").css("top") == "15px", "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.");'
+  - text: The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.
+    testString: assert($('h2').css('position') == 'relative');
+  - text: Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.
+    testString: assert($('h2').css('top') == '15px');
 
 ```
 
@@ -43,7 +58,6 @@ tests:
   <h2>Move me!</h2>
   <p>I still think the h2 is where it normally sits.</p>
 </body>
-
 ```
 
 </div>
@@ -55,7 +69,18 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  h2 {
+    position: relative;
+    top: 15px;
+  }
+</style>
+<body>
+  <h1>On Being Well-Positioned</h1>
+  <h2>Move me!</h2>
+  <p>I still think the h2 is where it normally sits.</p>
+</body>
 ```
+
 </section>

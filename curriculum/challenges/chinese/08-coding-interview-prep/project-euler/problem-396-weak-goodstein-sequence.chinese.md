@@ -2,15 +2,41 @@
 id: 5900f4f81000cf542c51000b
 challengeType: 5
 title: 'Problem 396: Weak Goodstein sequence'
-videoUrl: ''
-localeTitle: 问题396：弱Goodstein序列
+forumTopicId: 302061
 ---
 
 ## Description
-<section id="description">对于任何正整数n，第n个弱Goodstein序列{g1，g2，g3，...}定义为：g1 = n，对于k&gt; 1，gk是通过在基k中写gk-1获得的，将其解释为a基数k + 1，减去1。 <p>当gk变为0时，序列终止。 </p><p>例如，第6个弱Goodstein序列是{6,11,17,25，...}：g1 = 6. g2 = 11，因为6 = 1102,1103 = 12，12  -  1 = 11. g3 = 17 11 = 1023,1024 = 18,18-1 = 17.g4 = 25，因为17 = 1014,1015 = 26,26-1 = 25。 </p><p>等等。 </p><p>可以证明，每个弱的Goodstein序列都会终止。 </p><p>设G（n）为第n个弱Goodstein序列中的非零元素的数量。可以证实G（2）= 3，G（4）= 21和G（6）= 381.还可以证实ΣG（n）= 2517，1≤n&lt;8。 </p><p>找到ΣG（n）的最后9位数，1≤n&lt;16。 </p></section>
+<section id='description'>
+For any positive integer n, the nth weak Goodstein sequence {g1, g2, g3, ...} is defined as:
+ g1 = n
+ for k > 1, gk is obtained by writing gk-1 in base k, interpreting it as a base k + 1 number, and subtracting 1.
+
+The sequence terminates when gk becomes 0.
+
+
+For example, the 6th weak Goodstein sequence is {6, 11, 17, 25, ...}:
+ g1 = 6.
+ g2 = 11 since 6 = 1102, 1103 = 12, and 12 - 1 = 11.
+ g3 = 17 since 11 = 1023, 1024 = 18, and 18 - 1 = 17.
+ g4 = 25 since 17 = 1014, 1015 = 26, and 26 - 1 = 25.
+
+and so on.
+
+
+It can be shown that every weak Goodstein sequence terminates.
+
+
+Let G(n) be the number of nonzero elements in the nth weak Goodstein sequence.
+It can be verified that G(2) = 3, G(4) = 21 and G(6) = 381.
+It can also be verified that ΣG(n) = 2517 for 1 ≤ n < 8.
+
+
+Find the last 9 digits of ΣG(n) for 1 ≤ n < 16.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +44,8 @@ localeTitle: 问题396：弱Goodstein序列
 
 ```yml
 tests:
-  - text: <code>euler396()</code>应该返回173214653。
-    testString: 'assert.strictEqual(euler396(), 173214653, "<code>euler396()</code> should return 173214653.");'
+  - text: <code>euler396()</code> should return 173214653.
+    testString: assert.strictEqual(euler396(), 173214653);
 
 ```
 
@@ -37,7 +63,6 @@ function euler396() {
 }
 
 euler396();
-
 ```
 
 </div>
@@ -52,4 +77,5 @@ euler396();
 ```js
 // solution required
 ```
+
 </section>

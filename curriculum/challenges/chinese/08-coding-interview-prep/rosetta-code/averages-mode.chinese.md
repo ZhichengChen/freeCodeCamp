@@ -1,16 +1,20 @@
 ---
-title: Averages-Mode
+title: Averages/Mode
 id: 594d8d0ab97724821379b1e6
 challengeType: 5
-videoUrl: ''
-localeTitle: 平均值模式
+forumTopicId: 302226
 ---
 
 ## Description
-<section id="description"><p>编写程序以查找集合的<a href="https://en.wikipedia.org/wiki/Mode (statistics)" title="wp：模式（统计）">模式</a>值。 </p><p>可以忽略集合为空的情况。必须小心处理模式不唯一的情况。 </p><p>如果不适合或不可能支持常规集合，请尽可能使用向量（数组）。如果不适合或不可能支持未指定的值类型，请使用整数。 </p></section>
+<section id='description'>
+Write a program to find the <a href='https://en.wikipedia.org/wiki/Mode (statistics)' title='wp: Mode (statistics)' target='_blank'>mode</a> value of a collection.
+The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.
+If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +22,12 @@ localeTitle: 平均值模式
 
 ```yml
 tests:
-  - text: <code>mode</code>是一种功能。
-    testString: 'assert(typeof mode === "function", "<code>mode</code> is a function.");'
-  - text: '<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code>应该相等<code>[6]</code>'
-    testString: 'assert.deepEqual(mode(arr1), [6], "<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>");'
-  - text: '<code>mode([1, 2, 4, 4, 1])</code>应该等于<code>[1, 4]</code> 。'
-    testString: 'assert.deepEqual(mode(arr2).sort(), [1, 4], "<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.");'
+  - text: <code>mode</code> should be a function.
+    testString: assert(typeof mode === 'function');
+  - text: <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>
+    testString: assert.deepEqual(mode(arr1), [6]);
+  - text: <code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.
+    testString: assert.deepEqual(mode(arr2).sort(), [1, 4]);
 
 ```
 
@@ -35,11 +39,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function mode (arr) {
+function mode(arr) {
   // Good luck!
   return true;
 }
-
 ```
 
 </div>
@@ -49,7 +52,8 @@ function mode (arr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];
+const arr2 = [1, 2, 4, 4, 1];
 ```
 
 </div>
@@ -59,7 +63,30 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function mode(arr) {
+  const counter = {};
+  let result = [];
+  let max = 0;
+  // for (const i in arr) {
+  arr.forEach(el => {
+    if (!(el in counter)) {
+      counter[el] = 0;
+    }
+    counter[el]++;
+
+    if (counter[el] === max) {
+      result.push(el);
+    }
+    else if (counter[el] > max) {
+      max = counter[el];
+      result = [el];
+    }
+  });
+  return result;
+}
+
 ```
+
 </section>

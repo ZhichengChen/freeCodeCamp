@@ -2,15 +2,69 @@
 title: Euler method
 id: 59880443fb36441083c6c20e
 challengeType: 5
-videoUrl: ''
-localeTitle: 欧拉方法
+forumTopicId: 302258
 ---
 
 ## Description
-<section id="description"><p>欧拉方法在数值上近似具有给定初始值的一阶常微分方程（ODE）的解。它是解决初始值问题（IVP）的一种显式方法，如<a href="https://en.wikipedia.org/wiki/Euler method" title="wp：欧拉方法">维基百科页面中所述</a> 。 </p><p> ODE必须以下列形式提供： </p><p> :: <big>$ \ frac {dy（t）} {dt} = f（t，y（t））$</big> </p><p>具有初始值</p><p> :: <big>$ y（t_0）= y_0 $</big> </p><p>为了得到数值解，我们用有限差分近似替换LHS上的导数： </p><p> :: <big>$ \ frac {dy（t）} {dt} \ approx \ frac {y（t + h）-y（t）} {h} $</big> </p><p>然后解决$ y（t + h）$： </p><p> :: <big>$ y（t + h）\ about y（t）+ h \，\ frac {dy（t）} {dt} $</big> </p><p>这是一样的</p><p> :: <big>$ y（t + h）\ about y（t）+ h \，f（t，y（t））$</big> </p><p>然后迭代解决方案规则是： </p><p> :: <big>$ y_ {n + 1} = y_n + h \，f（t_n，y_n）$</big> </p><p>其中<big>$ h $</big>是步长，是解决方案准确性最相关的参数。较小的步长会提高精度，但也会增加计算成本，因此必须根据手头的问题手工挑选。 </p><p>示例：牛顿冷却法</p><p> Newton的冷却定律描述了在温度<big>$ T_R $</big>的环境中初始温度<big>$ T（t_0）= T_0 $</big>的对象如何冷却： </p><p> :: <big>$ \ frac {dT（t）} {dt} = -k \，\ Delta T $</big> </p><p>要么</p><p> :: <big>$ \ frac {dT（t）} {dt} = -k \，（T（t） -  T_R）$</big> </p><p>它表示物体的冷却速率<big>$ \ frac {dT（t）} {dt} $</big>与周围环境的当前温差<big>$ \ Delta T =（T（t） -  T_R）$成正比</big> 。 </p><p>我们将与数值近似进行比较的解析解是</p><p> :: <big>$ T（t）= T_R +（T_0  -  T_R）\; Ë^ { -克拉} $</big> </p>任务： <p>实现欧拉方法的一个例程，然后用它来解决牛顿冷却定律的给定例子，它有三种不同的步长： </p><p> :: * 2秒</p><p> :: * 5秒和</p><p> :: * 10秒</p><p>并与分析解决方案进行比较。 </p>初始值： <p> :: *初始温度<big>$ T_0 $</big>应为100°C </p><p> :: *室温<big>$ T_R $</big>应为20°C </p><p> :: *冷却常数<big>$ k $</big>应为0.07 </p><p> :: *计算的时间间隔应为0s──►100s </p></section>
+<section id='description'>
+Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value. It is an explicit method for solving initial value problems (IVPs), as described in <a href="https://en.wikipedia.org/wiki/Euler method" title="wp: Euler method" target="_blank">the wikipedia page</a>.
+The ODE has to be provided in the following form:
+<ul style="list-style: none;">
+  <li><big>$\frac{dy(t)}{dt} = f(t,y(t))$</big></li>
+</ul>
+with an initial value
+<ul style="list-style: none;">
+  <li><big>$y(t_0) = y_0$</big></li>
+</ul>
+To get a numeric solution, we replace the derivative on the  LHS  with a finite difference approximation:
+<ul style="list-style: none;">
+  <li><big>$\frac{dy(t)}{dt}  \approx \frac{y(t+h)-y(t)}{h}$</big></li>
+</ul>
+then solve for $y(t+h)$:
+<ul style="list-style: none;">
+  <li><big>$y(t+h) \approx y(t) + h \, \frac{dy(t)}{dt}$</big></li>
+</ul>
+which is the same as
+<ul style="list-style: none;">
+  <li><big>$y(t+h) \approx y(t) + h \, f(t,y(t))$</big></li>
+</ul>
+The iterative solution rule is then:
+<ul style="list-style: none;">
+  <li><big>$y_{n+1} = y_n + h \, f(t_n, y_n)$</big></li>
+</ul>
+where <big>$h$</big> is the step size, the most relevant parameter for accuracy of the solution.  A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.
+<strong>Example: Newton's Cooling Law</strong>
+Newton's cooling law describes how an object of initial temperature <big>$T(t_0) = T_0$</big> cools down in an environment of temperature  <big>$T_R$</big>:
+<ul style="list-style: none;">
+  <li><big>$\frac{dT(t)}{dt} = -k \, \Delta T$</big></li>
+</ul>
+or
+<ul style="list-style: none;">
+  <li><big>$\frac{dT(t)}{dt} = -k \, (T(t) - T_R)$</big></li>
+</ul>
+It says that the cooling rate  <big>$\frac{dT(t)}{dt}$</big>  of the object is proportional to the current temperature difference <big>$\Delta T = (T(t) - T_R)$</big> to the surrounding environment.
+The analytical solution, which we will compare to the numerical approximation, is
+<ul style="list-style: none;">
+  <li><big>$T(t) = T_R + (T_0 - T_R) \; e^{-k t}$</big></li>
+</ul>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Implement a routine of Euler's method and then to use it to solve the given example of Newton's cooling law with it for three different step sizes of:
+<ul>
+  <li><code>2 s</code></li>
+  <li><code>5 s</code> and</li>
+  <li><code>10 s</code></li>
+</ul>
+and to compare with the analytical solution.
+<strong>Initial values:</strong>
+<ul>
+  <li>initial temperature <big>$T_0$</big> shall be <code>100 °C</code></li>
+  <li>room temperature <big>$T_R$</big> shall be <code>20 °C</code></li>
+  <li>cooling constant <big>$k$</big> shall be <code>0.07</code></li>
+  <li>time interval to calculate shall be from <code>0 s</code> to <code>100 s</code></li>
+</ul> 
 </section>
 
 ## Tests
@@ -18,16 +72,16 @@ localeTitle: 欧拉方法
 
 ```yml
 tests:
-  - text: <code>eulersMethod</code>是一个函数。
-    testString: 'assert(typeof eulersMethod === "function", "<code>eulersMethod</code> is a function.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code>应该返回一个数字。'
-    testString: 'assert(typeof eulersMethod(0, 100, 100, 10) === "number", "<code>eulersMethod(0, 100, 100, 10)</code> should return a number.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code>应返回20.0424631833732。'
-    testString: 'assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732, "<code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code>应返回20.01449963666907。'
-    testString: 'assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907, "<code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.");'
-  - text: '<code>eulersMethod(0, 100, 100, 10)</code>应返回20.000472392。'
-    testString: 'assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392, "<code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.");'
+  - text: <code>eulersMethod</code> should be a function.
+    testString: assert(typeof eulersMethod === 'function');
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return a number.
+    testString: assert(typeof eulersMethod(0, 100, 100, 10) === 'number');
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.0424631833732.
+    testString: assert.equal(eulersMethod(0, 100, 100, 2), 20.0424631833732);
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.01449963666907.
+    testString: assert.equal(eulersMethod(0, 100, 100, 5), 20.01449963666907);
+  - text: <code>eulersMethod(0, 100, 100, 10)</code> should return 20.000472392.
+    testString: assert.equal(eulersMethod(0, 100, 100, 10), 20.000472392);
 
 ```
 
@@ -39,10 +93,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function eulersMethod (x1, y1, x2, h) {
+function eulersMethod(x1, y1, x2, h) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -54,7 +107,20 @@ function eulersMethod (x1, y1, x2, h) {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function eulersMethod(x1, y1, x2, h) {
+  let x = x1;
+  let y = y1;
+
+  while ((x < x2 && x1 < x2) || (x > x2 && x1 > x2)) {
+    y += h * (-0.07 * (y - 20));
+    x += h;
+  }
+
+  return y;
+}
+
 ```
+
 </section>

@@ -2,25 +2,37 @@
 id: 587d7db2367417b2b2512b8b
 title: Understand the Immediately Invoked Function Expression (IIFE)
 challengeType: 1
-videoUrl: ''
-localeTitle: 理解立即调用的函数表达式（IIFE）
+forumTopicId: 301328
 ---
 
 ## Description
-<section id="description"> JavaScript中的一个常见模式是在声明函数后立即执行： <blockquote> （function（）{ <br> console.log（“Chirp，chirp！”）; <br> }）（）; //这是一个立即执行的匿名函数表达式<br> //输出“Chirp，chirp！”立即</blockquote>请注意，该函数没有名称，也没有存储在变量中。函数表达式末尾的两个括号（）会立即执行或调用它。此模式称为<code>immediately invoked function expression</code>或<code>IIFE</code> 。 </section>
+<section id='description'>
+A common pattern in JavaScript is to execute a function as soon as it is declared:
+
+```js
+(function () {
+  console.log("Chirp, chirp!");
+})(); // this is an anonymous function expression that executes right away
+// Outputs "Chirp, chirp!" immediately
+```
+
+Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an <dfn>immediately invoked function expression</dfn> or <dfn>IIFE</dfn>.
+</section>
 
 ## Instructions
-<section id="instructions">重写函数<code>makeNest</code>并删除它的调用，所以它是一个匿名的<code>immediately invoked function expression</code> （ <code>IIFE</code> ）。 </section>
+<section id='instructions'>
+Rewrite the function <code>makeNest</code> and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 该功能应该是匿名的。
-    testString: 'assert(/\(\s*?function\s*?\(\s*?\)\s*?{/.test(code), "The function should be anonymous.");'
-  - text: 您的函数应在表达式的末尾加上括号以立即调用它。
-    testString: 'assert(/}\s*?\)\s*?\(\s*?\)/.test(code), "Your function should have parentheses at the end of the expression to call it immediately.");'
+  - text: The function should be anonymous.
+    testString: assert(/\((function|\(\))(=>|\(\)){/.test(code.replace(/\s/g, "")));
+  - text: Your function should have parentheses at the end of the expression to call it immediately.
+    testString: assert(/}\)\(\)/.test(code.replace(/\s/g, "")));
 
 ```
 
@@ -37,7 +49,6 @@ function makeNest() {
 }
 
 makeNest();
-
 ```
 
 </div>
@@ -49,7 +60,11 @@ makeNest();
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+(function () {
+  console.log("A cozy nest is ready");
+})();
 ```
+
 </section>

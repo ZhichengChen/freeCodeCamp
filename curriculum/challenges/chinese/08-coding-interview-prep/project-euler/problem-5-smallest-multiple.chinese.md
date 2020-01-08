@@ -2,15 +2,18 @@
 id: 5900f3711000cf542c50fe84
 challengeType: 5
 title: 'Problem 5: Smallest multiple'
-videoUrl: ''
-localeTitle: 问题5：最小的倍数
+forumTopicId: 302160
 ---
 
 ## Description
-<section id="description"> 2520是可以除以1到10中的每个数字而没有任何余数的最小数字。从1到<code>n</code>所有数字均可被整除的最小正数是多少？ </section>
+<section id='description'>
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to <code>n</code>?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,16 +21,16 @@ localeTitle: 问题5：最小的倍数
 
 ```yml
 tests:
-  - text: <code>smallestMult(5)</code>应该返回60。
-    testString: 'assert.strictEqual(smallestMult(5), 60, "<code>smallestMult(5)</code> should return 60.");'
-  - text: <code>smallestMult(7)</code>应该返回420。
-    testString: 'assert.strictEqual(smallestMult(7), 420, "<code>smallestMult(7)</code> should return 420.");'
-  - text: <code>smallestMult(10)</code>应返回2520。
-    testString: 'assert.strictEqual(smallestMult(10), 2520, "<code>smallestMult(10)</code> should return 2520.");'
-  - text: <code>smallestMult(13)</code>应返回360360。
-    testString: 'assert.strictEqual(smallestMult(13), 360360, "<code>smallestMult(13)</code> should return 360360.");'
-  - text: <code>smallestMult(20)</code>应该返回232792560。
-    testString: 'assert.strictEqual(smallestMult(20), 232792560, "<code>smallestMult(20)</code> should return 232792560.");'
+  - text: <code>smallestMult(5)</code> should return 60.
+    testString: assert.strictEqual(smallestMult(5), 60);
+  - text: <code>smallestMult(7)</code> should return 420.
+    testString: assert.strictEqual(smallestMult(7), 420);
+  - text: <code>smallestMult(10)</code> should return 2520.
+    testString: assert.strictEqual(smallestMult(10), 2520);
+  - text: <code>smallestMult(13)</code> should return 360360.
+    testString: assert.strictEqual(smallestMult(13), 360360);
+  - text: <code>smallestMult(20)</code> should return 232792560.
+    testString: assert.strictEqual(smallestMult(20), 232792560);
 
 ```
 
@@ -45,7 +48,6 @@ function smallestMult(n) {
 }
 
 smallestMult(20);
-
 ```
 
 </div>
@@ -57,7 +59,22 @@ smallestMult(20);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function smallestMult(n){
+  function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a%b); // Euclidean algorithm
+  }
+
+  function lcm(a, b) {
+    return a * b / gcd(a, b);
+  }
+  var result = 1;
+  for(var i = 2; i <= n; i++) {
+    result = lcm(result, i);
+  }
+  return result;
+}
 ```
+
 </section>

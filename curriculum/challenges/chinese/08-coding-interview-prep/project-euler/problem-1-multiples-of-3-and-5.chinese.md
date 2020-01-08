@@ -2,18 +2,18 @@
 id: 5900f36e1000cf542c50fe80
 challengeType: 5
 title: 'Problem 1: Multiples of 3 and 5'
-videoUrl: ''
-localeTitle: 问题1：3和5的倍数
+forumTopicId: 301722
 ---
 
 ## Description
-<section id="description">
-  如果我们列出所有10以下是3或5的倍数的自然数，我们会得到3，5，6和9。这些倍数的总和是23。
-  求出所有在<code>number</code>以下的3或5的倍数的总和。
+<section id='description'>
+If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5 below the provided parameter value <code>number</code>.
 </section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -21,14 +21,14 @@ localeTitle: 问题1：3和5的倍数
 
 ```yml
 tests:
-  - text: <code>multiplesOf3and5(1000)</code>应该返回233168。
-    testString: 'assert.strictEqual(multiplesOf3and5(1000), 233168, "<code>multiplesOf3and5(1000)</code> should return 233168.");'
-  - text: <code>multiplesOf3and5(49)</code>应该返回543。
-    testString: 'assert.strictEqual(multiplesOf3and5(49), 543, "<code>multiplesOf3and5(49)</code> should return 543.");'
-  - text: <code>multiplesOf3and5(19564)</code>应该返回89301183。
-    testString: 'assert.strictEqual(multiplesOf3and5(19564), 89301183, "<code>multiplesOf3and5(19564)</code> should return 89301183.");'
-  - text: 您的函数未使用我们的测试值返回正确的结果。
-    testString: 'assert.strictEqual(multiplesOf3and5(8456), 16687353, "Your function is not returning the correct result using our tests values.");'
+  - text: <code>multiplesOf3and5(1000)</code> should return 233168.
+    testString: assert.strictEqual(multiplesOf3and5(1000), 233168);
+  - text: <code>multiplesOf3and5(49)</code> should return 543.
+    testString: assert.strictEqual(multiplesOf3and5(49), 543);
+  - text: <code>multiplesOf3and5(19564)</code> should return 89301183.
+    testString: assert.strictEqual(multiplesOf3and5(19564), 89301183);
+  - text: <code>multiplesOf3and5(8456)</code> should return 16687353.
+    testString: assert.strictEqual(multiplesOf3and5(8456), 16687353);
 
 ```
 
@@ -46,7 +46,6 @@ function multiplesOf3and5(number) {
 }
 
 multiplesOf3and5(1000);
-
 ```
 
 </div>
@@ -58,7 +57,18 @@ multiplesOf3and5(1000);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const multiplesOf3and5 = (number) => {
+  var total = 0;
+
+  for(var i = 0; i < number; i++) {
+    if(i % 3 == 0 || i % 5 == 0) {
+      total += i;
+    }
+  }
+  return total;
+};
 ```
+
 </section>

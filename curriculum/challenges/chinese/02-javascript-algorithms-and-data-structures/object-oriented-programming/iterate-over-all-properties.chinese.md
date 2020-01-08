@@ -1,28 +1,60 @@
----
+﻿---
 id: 587d7daf367417b2b2512b7d
 title: Iterate Over All Properties
 challengeType: 1
-videoUrl: ''
-localeTitle: 迭代所有属性
+forumTopicId: 301320
 ---
 
 ## Description
-<section id="description">您现在已经看到了两种属性： <code>own</code>属性和<code>prototype</code>属性。 <code>Own</code>属性直接在对象实例本身上定义。和<code>prototype</code>属性所定义的<code>prototype</code> 。 <blockquote> function Bird（name）{ <br> this.name = name; //拥有财产<br> } <br><br> Bird.prototype.numLegs = 2; //原型属性<br><br>让鸭子=新鸟（“唐纳德”）; </blockquote>以下是如何将<code>duck</code> <code>own</code>属性添加到数组<code>ownProps</code>和<code>prototype</code>属性到数组<code>prototypeProps</code> ： <blockquote>让ownProps = []; <br>让prototypeProps = []; <br><br> for（let duck in duck）{ <br> if（duck.hasOwnProperty（property））{ <br> ownProps.push（属性）; <br> } else { <br> prototypeProps.push（属性）; <br> } <br> } <br><br>的console.log（ownProps）; //打印[“名称”] <br>的console.log（prototypeProps）; //打印[“numLegs”] </blockquote></section>
+<section id='description'>
+You have now seen two kinds of properties: <code>own</code> properties and <code>prototype</code> properties. <code>Own</code> properties are defined directly on the object instance itself. And <code>prototype</code> properties are defined on the <code>prototype</code>.
+
+```js
+function Bird(name) {
+  this.name = name;  //own property
+}
+
+Bird.prototype.numLegs = 2; // prototype property
+
+let duck = new Bird("Donald");
+```
+
+Here is how you add <code>duck</code>'s <code>own</code> properties to the array <code>ownProps</code> and <code>prototype</code> properties to the array <code>prototypeProps</code>:
+
+```js
+let ownProps = [];
+let prototypeProps = [];
+
+for (let property in duck) {
+  if(duck.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
+
+console.log(ownProps); // prints ["name"]
+console.log(prototypeProps); // prints ["numLegs"]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">所有添加<code>own</code>的属性<code>beagle</code>到数组<code>ownProps</code> 。将<code>Dog</code>所有<code>prototype</code>属性添加到数组<code>prototypeProps</code> 。 </section>
+<section id='instructions'>
+Add all of the <code>own</code> properties of <code>beagle</code> to the array <code>ownProps</code>. Add all of the <code>prototype</code> properties of <code>Dog</code> to the array <code>prototypeProps</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>ownProps</code>数组应包含<code>&quot;name&quot;</code> 。
-    testString: 'assert(ownProps.indexOf("name") !== -1, "The <code>ownProps</code> array should include <code>"name"</code>.");'
-  - text: <code>prototypeProps</code>数组应该包含<code>&quot;numLegs&quot;</code> 。
-    testString: 'assert(prototypeProps.indexOf("numLegs") !== -1, "The <code>prototypeProps</code> array should include <code>"numLegs"</code>.");'
-  - text: 无需使用内置方法<code>Object.keys()</code>即可解决此挑战。
-    testString: 'assert(!/\Object.keys/.test(code), "Solve this challenge without using the built in method <code>Object.keys()</code>.");'
+  - text: The <code>ownProps</code> array should include <code>"name"</code>.
+    testString: assert(ownProps.indexOf('name') !== -1);
+  - text: The <code>prototypeProps</code> array should include <code>"numLegs"</code>.
+    testString: assert(prototypeProps.indexOf('numLegs') !== -1);
+  - text: You should solve this challenge without using the built in method <code>Object.keys()</code>.
+    testString: assert(!/\Object.keys/.test(code));
 
 ```
 
@@ -47,6 +79,8 @@ let prototypeProps = [];
 
 // Add your code below this line
 
+
+
 ```
 
 </div>
@@ -58,7 +92,25 @@ let prototypeProps = [];
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+for (let prop in beagle) {
+  if (beagle.hasOwnProperty(prop)) {
+    ownProps.push(prop);
+  } else {
+    prototypeProps.push(prop);
+  }
+}
 ```
+
 </section>

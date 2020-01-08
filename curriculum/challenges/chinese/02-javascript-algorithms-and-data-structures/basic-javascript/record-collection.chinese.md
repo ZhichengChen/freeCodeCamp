@@ -2,15 +2,28 @@
 id: 56533eb9ac21ba0edf2244cf
 title: Record Collection
 challengeType: 1
-videoUrl: ''
-localeTitle: 记录收集
+videoUrl: 'https://scrimba.com/c/c4mpysg'
+forumTopicId: 18261
 ---
 
 ## Description
-<section id="description">您将获得一个JSON对象，表示您的音乐专辑集合的一部分。每张专辑都有几个属性和一个唯一的ID号作为其关键。并非所有相册都有完整的信息。写一个功能，它取一个专辑的<code>id</code> （如<code>2548</code> ），一个属性<code>prop</code> （如<code>&quot;artist&quot;</code>或<code>&quot;tracks&quot;</code> ），以及一个<code>value</code> （如<code>&quot;Addicted to Love&quot;</code> ）来修改此集合中的数据。如果<code>prop</code>不是<code>&quot;tracks&quot;</code>且<code>value</code>不为空（ <code>&quot;&quot;</code> ），则更新或设置该记录专辑属性的<code>value</code> 。您的函数必须始终返回整个集合对象。处理不完整数据有几个规则：如果<code>prop</code>是<code>&quot;tracks&quot;</code>但是相册没有<code>&quot;tracks&quot;</code>属性，则在将新值添加到相册的相应属性之前创建一个空数组。如果<code>prop</code>是<code>&quot;tracks&quot;</code>且<code>value</code>不为空（ <code>&quot;&quot;</code> ），则将<code>value</code>推到专辑现有<code>tracks</code>数组的末尾。如果<code>value</code>为空（ <code>&quot;&quot;</code> ），则从相册中删除给定的<code>prop</code>属性。 <strong>提示</strong> <br>使用<a href="learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank">变量访问对象属性</a>时使用<code>bracket notation</code> 。 Push是一种可以在<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">Mozilla Developer Network</a>上阅读的数组方法。您可以参考<a href="learn/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank">操作复杂对象</a>介绍JavaScript对象表示法（JSON）进行复习。 </section>
+<section id='description'>
+You are given a JSON object representing a part of your musical album collection. Each album has several properties and a unique id number as its key. Not all albums have complete information.
+Write a function which takes an album's <code>id</code> (like <code>2548</code>), a property <code>prop</code> (like <code>"artist"</code> or <code>"tracks"</code>), and a <code>value</code> (like <code>"Addicted to Love"</code>) to modify the data in this collection.
+If <code>prop</code> isn't <code>"tracks"</code> and <code>value</code> isn't empty (<code>""</code>), update or set the <code>value</code> for that record album's property.
+Your function must always return the entire collection object.
+There are several rules for handling incomplete data:
+If <code>prop</code> is <code>"tracks"</code> but the album doesn't have a <code>"tracks"</code> property, create an empty array before adding the new value to the album's corresponding property.
+If <code>prop</code> is <code>"tracks"</code> and <code>value</code> isn't empty (<code>""</code>), push the <code>value</code> onto the end of the album's existing <code>tracks</code> array.
+If <code>value</code> is empty (<code>""</code>), delete the given <code>prop</code> property from the album.
+<strong>Hints</strong><br>Use <code>bracket notation</code> when <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-variables" target="_blank">accessing object properties with variables</a>.
+Push is an array method you can read about on <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push" target="_blank">Mozilla Developer Network</a>.
+You may refer back to <a href="learn/javascript-algorithms-and-data-structures/basic-javascript/manipulating-complex-objects" target="_blank">Manipulating Complex Objects</a> Introducing JavaScript Object Notation (JSON) for a refresher.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,20 +31,22 @@ localeTitle: 记录收集
 
 ```yml
 tests:
-  - text: '在<code>updateRecords(5439, &quot;artist&quot;, &quot;ABBA&quot;)</code> ， <code>artist</code>应该是<code>&quot;ABBA&quot;</code>'
-    testString: 'collection = collectionCopy; assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA", "After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>");'
-  - text: '在<code>updateRecords(5439, &quot;tracks&quot;, &quot;Take a Chance on Me&quot;)</code> ， <code>tracks</code>应该以<code>&quot;Take a Chance on Me&quot;</code>作为最后一个元素。'
-    testString: 'assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me", "After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.");'
-  - text: '在<code>updateRecords(2548, &quot;artist&quot;, &quot;&quot;)</code> ，不应该设置<code>artist</code>'
-    testString: 'updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"), "After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set");'
-  - text: '在<code>updateRecords(1245, &quot;tracks&quot;, &quot;Addicted to Love&quot;)</code> ， <code>tracks</code>应该将<code>&quot;Addicted to Love&quot;</code>作为最后一个元素。'
-    testString: 'assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love", "After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.");'
-  - text: '在<code>updateRecords(2468, &quot;tracks&quot;, &quot;Free&quot;)</code> ， <code>tracks</code>应该以<code>&quot;1999&quot;</code>作为第一个元素。'
-    testString: 'assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999", "After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.");'
-  - text: '在<code>updateRecords(2548, &quot;tracks&quot;, &quot;&quot;)</code> ，不应设置<code>tracks</code>'
-    testString: 'updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"), "After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set");'
-  - text: '在<code>updateRecords(1245, &quot;album&quot;, &quot;Riptide&quot;)</code> ， <code>album</code>应该是<code>&quot;Riptide&quot;</code>'
-    testString: 'assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide", "After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>");'
+  - text: You should not change the <code>collection</code> object's initialization
+    testString: 'assert(code.match(/var collection = {\s*2548: {\s*album: "Slippery When Wet",\s*artist: "Bon Jovi",\s*tracks: \[\s*"Let It Rock",\s*"You Give Love a Bad Name"\s*\]\s*},\s*2468: {\s*album: "1999",\s*artist: "Prince",\s*tracks: \[\s*"1999",\s*"Little Red Corvette"\s*\]\s*},\s*1245: {\s*artist: "Robert Palmer",\s*tracks: \[ \]\s*},\s*5439: {\s*album: "ABBA Gold"\s*}\s*};/g));'
+  - text: After <code>updateRecords(5439, "artist", "ABBA")</code>, <code>artist</code> should be <code>"ABBA"</code>
+    testString: assert(updateRecords(5439, "artist", "ABBA")[5439]["artist"] === "ABBA");
+  - text: After <code>updateRecords(5439, "tracks", "Take a Chance on Me")</code>, <code>tracks</code> should have <code>"Take a Chance on Me"</code> as the last element.
+    testString: assert(updateRecords(5439, "tracks", "Take a Chance on Me")[5439]["tracks"].pop() === "Take a Chance on Me");
+  - text: After <code>updateRecords(2548, "artist", "")</code>, <code>artist</code> should not be set
+    testString: updateRecords(2548, "artist", ""); assert(!collection[2548].hasOwnProperty("artist"));
+  - text: After <code>updateRecords(1245, "tracks", "Addicted to Love")</code>, <code>tracks</code> should have <code>"Addicted to Love"</code> as the last element.
+    testString: assert(updateRecords(1245, "tracks", "Addicted to Love")[1245]["tracks"].pop() === "Addicted to Love");
+  - text: After <code>updateRecords(2468, "tracks", "Free")</code>, <code>tracks</code> should have <code>"1999"</code> as the first element.
+    testString: assert(updateRecords(2468, "tracks", "Free")[2468]["tracks"][0] === "1999");
+  - text: After <code>updateRecords(2548, "tracks", "")</code>, <code>tracks</code> should not be set
+    testString: updateRecords(2548, "tracks", ""); assert(!collection[2548].hasOwnProperty("tracks"));
+  - text: After <code>updateRecords(1245, "album", "Riptide")</code>, <code>album</code> should be <code>"Riptide"</code>
+    testString: assert(updateRecords(1245, "album", "Riptide")[1245]["album"] === "Riptide");
 
 ```
 
@@ -39,38 +54,35 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 // Setup
 var collection = {
-    "2548": {
-      "album": "Slippery When Wet",
-      "artist": "Bon Jovi",
-      "tracks": [
-        "Let It Rock",
-        "You Give Love a Bad Name"
-      ]
-    },
-    "2468": {
-      "album": "1999",
-      "artist": "Prince",
-      "tracks": [
-        "1999",
-        "Little Red Corvette"
-      ]
-    },
-    "1245": {
-      "artist": "Robert Palmer",
-      "tracks": [ ]
-    },
-    "5439": {
-      "album": "ABBA Gold"
-    }
+  2548: {
+    album: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: [
+      "Let It Rock",
+      "You Give Love a Bad Name"
+    ]
+  },
+  2468: {
+    album: "1999",
+    artist: "Prince",
+    tracks: [
+      "1999",
+      "Little Red Corvette"
+    ]
+  },
+  1245: {
+    artist: "Robert Palmer",
+    tracks: [ ]
+  },
+  5439: {
+    album: "ABBA Gold"
+  }
 };
-// Keep a copy of the collection for tests
-var collectionCopy = JSON.parse(JSON.stringify(collection));
 
 // Only change code below this line
 function updateRecords(id, prop, value) {
@@ -85,23 +97,50 @@ updateRecords(5439, "artist", "ABBA");
 ```
 
 </div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
-```
-
-</div>
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+var collection = {
+  2548: {
+    album: "Slippery When Wet",
+    artist: "Bon Jovi",
+    tracks: [
+      "Let It Rock",
+      "You Give Love a Bad Name"
+    ]
+  },
+  2468: {
+    album: "1999",
+    artist: "Prince",
+    tracks: [
+      "1999",
+      "Little Red Corvette"
+    ]
+  },
+  1245: {
+    artist: "Robert Palmer",
+    tracks: [ ]
+  },
+  5439: {
+    album: "ABBA Gold"
+  }
+};
+
+// Only change code below this line
+function updateRecords(id, prop, value) {
+  if(value === "") delete collection[id][prop];
+  else if(prop === "tracks") {
+    collection[id][prop] = collection[id][prop] || [];
+    collection[id][prop].push(value);
+  } else {
+    collection[id][prop] = value;
+  }
+
+  return collection;
+}
 ```
+
 </section>

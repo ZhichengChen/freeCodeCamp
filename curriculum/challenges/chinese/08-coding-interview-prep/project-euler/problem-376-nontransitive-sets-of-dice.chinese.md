@@ -2,15 +2,53 @@
 id: 5900f4e51000cf542c50fff7
 challengeType: 5
 title: 'Problem 376: Nontransitive sets of dice'
-videoUrl: ''
-localeTitle: 问题376：不可传递的骰子集
+forumTopicId: 302038
 ---
 
 ## Description
-<section id="description">考虑以下一组具有非标准点的骰子： <p>模具A：1 4 4 4 4 4模具B：2 2 2 5 5 5模具C：3 3 3 3 3 6 </p><p>两个玩家轮流挑选骰子并滚动它来玩游戏。赢得最高价值的玩家获胜。 </p><p>如果第一个玩家选择A和第二个玩家选择B，我们得到P（第二个玩家获胜）= 7/12&gt; 1/2 </p><p>如果第一个玩家选择死亡B并且第二个玩家选择死亡C我们得到P（第二个玩家获胜）= 7/12&gt; 1/2 </p><p>如果第一个玩家选择死C并且第二个玩家选择死A我们得到P（第二个玩家获胜）= 25/36&gt; 1/2 </p><p>因此，无论第一个玩家选择什么模特，第二个玩家都可以选择另一个模具并获得超过50％的获胜机会。具有此属性的一组骰子称为非传递骰子组。 </p><p>我们希望研究存在多少组非传递性骰子。我们将假设以下条件：有三个六面骰子，每边有1到N个点，包括1和N点。具有相同点数的骰子是相等的，无论骰子位于骰子的哪一侧。相同的点值可能出现在多个骰子上;如果两个玩家都滚动相同的值，则玩家不会获胜。骰子{A，B，C}，{B，C，A}和{C，A，B}的集合是相同的集合。 </p><p>对于N = 7，我们发现有9780个这样的集合。 N = 30有多少？ </p></section>
+<section id='description'>
+Consider the following set of dice with nonstandard pips:
+
+
+
+Die A: 1 4 4 4 4 4
+Die B: 2 2 2 5 5 5
+Die C: 3 3 3 3 3 6
+
+
+A game is played by two players picking a die in turn and rolling it. The player who rolls the highest value wins.
+
+
+
+If the first player picks die A and the second player picks die B we get
+P(second player wins) = 7/12 > 1/2
+
+
+If the first player picks die B and the second player picks die C we get
+P(second player wins) = 7/12 > 1/2
+
+
+If the first player picks die C and the second player picks die A we get
+P(second player wins) = 25/36 > 1/2
+
+
+So whatever die the first player picks, the second player can pick another die and have a larger than 50% chance of winning.
+A set of dice having this property is called a nontransitive set of dice.
+
+
+
+We wish to investigate how many sets of nontransitive dice exist. We will assume the following conditions:There are three six-sided dice with each side having between 1 and N pips, inclusive.
+Dice with the same set of pips are equal, regardless of which side on the die the pips are located.
+The same pip value may appear on multiple dice; if both players roll the same value neither player wins.
+The sets of dice {A,B,C}, {B,C,A} and {C,A,B} are the same set.
+
+For N = 7 we find there are 9780 such sets.
+How many are there for N = 30 ?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +56,8 @@ localeTitle: 问题376：不可传递的骰子集
 
 ```yml
 tests:
-  - text: <code>euler376()</code>应该返回973059630185670。
-    testString: 'assert.strictEqual(euler376(), 973059630185670, "<code>euler376()</code> should return 973059630185670.");'
+  - text: <code>euler376()</code> should return 973059630185670.
+    testString: assert.strictEqual(euler376(), 973059630185670);
 
 ```
 
@@ -37,7 +75,6 @@ function euler376() {
 }
 
 euler376();
-
 ```
 
 </div>
@@ -52,4 +89,5 @@ euler376();
 ```js
 // solution required
 ```
+
 </section>

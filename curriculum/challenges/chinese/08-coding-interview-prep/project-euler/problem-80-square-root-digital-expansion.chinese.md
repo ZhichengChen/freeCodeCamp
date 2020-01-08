@@ -2,15 +2,19 @@
 id: 5900f3bc1000cf542c50fecf
 challengeType: 5
 title: 'Problem 80: Square root digital expansion'
-videoUrl: ''
-localeTitle: 问题80：平方根数字扩展
+forumTopicId: 302194
 ---
 
 ## Description
-<section id="description">众所周知，如果自然数的平方根不是整数，那么它是不合理的。这种平方根的十进制扩展是无限的，没有任何重复模式。二的平方根是1.41421356237309504880 ...，前一百个十进制数字的数字和是475.对于前一百个自然数，找到所有的前一百个十进制数字的数字总和的总和。不合理的平方根。 </section>
+<section id='description'>
+It is well known that if the square root of a natural number is not an integer, then it is irrational. The decimal expansion of such square roots is infinite without any repeating pattern at all.
+The square root of two is 1.41421356237309504880..., and the digital sum of the first one hundred decimal digits is 475.
+For the first one hundred natural numbers, find the total of the digital sums of the first one hundred decimal digits for all the irrational square roots.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题80：平方根数字扩展
 
 ```yml
 tests:
-  - text: <code>euler80()</code>应返回40886。
-    testString: 'assert.strictEqual(euler80(), 40886, "<code>euler80()</code> should return 40886.");'
+  - text: <code>euler80()</code> should return 40886.
+    testString: assert.strictEqual(euler80(), 40886);
 
 ```
 
@@ -37,7 +41,6 @@ function euler80() {
 }
 
 euler80();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler80();
 ```js
 // solution required
 ```
+
 </section>

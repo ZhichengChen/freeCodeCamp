@@ -30,10 +30,22 @@ exports.buildChallenges = async function buildChallenges() {
       return blocks.concat(_.flatten(currentBlocks));
     }, []);
 
-  const builtChallenges = blocks
+  let builtChallenges = blocks
     .filter(block => !block.isPrivate)
     .map(({ challenges }) => challenges.map(prepareChallenge))
     .reduce((accu, current) => accu.concat(current), []);
+  // const langArr = locale.split(',');
+  // for (var i=0;i<langArr.length;i++) {
+  //   if (langArr[i]!=='english') {
+  //     const tempbuiltChallenges = blocks
+  //       .filter(block => !block.isPrivate)
+  //       .map(({ challenges_chinese:challenges }) =>
+  //          challenges.map(prepareChallenge))
+  //       .reduce((accu, current) => accu.concat(current), [])
+  //     builtChallenges = [...builtChallenges, ...tempbuiltChallenges];
+  //   }
+  // }
+
   return builtChallenges;
 };
 

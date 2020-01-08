@@ -2,23 +2,27 @@
 id: 5a90376038fddaf9a66b5d3c
 title: Align All Items Horizontally using justify-items
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用对齐项目水平对齐所有项目
+videoUrl: 'https://scrimba.com/p/pByETK/cJbpECn'
+forumTopicId: 301120
 ---
 
 ## Description
-<section id="description">有时您希望CSS Grid中的所有项目共享相同的对齐方式。您可以使用以前学过的属性并单独对齐它们，也可以使用网格容器上的<code>justify-items</code>将它们全部水平<code>justify-items</code> 。此属性可以接受您在前两个挑战中学到的所有相同值，不同之处在于它会将网格中的<b>所有</b>项目移动到所需的对齐方式。 </section>
+<section id='description'>
+Sometimes you want all the items in your CSS Grid to share the same alignment. You can use the previously learned properties and align them individually, or you can align them all at once horizontally by using <code>justify-items</code> on your grid container. This property can accept all the same values you learned about in the previous two challenges, the difference being that it will move <b>all</b> the items in our grid to the desired alignment.
+</section>
 
 ## Instructions
-<section id="instructions">使用此属性可以水平居中所有项目。 </section>
+<section id='instructions'>
+Use this property to center all our items horizontally.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code>类应该有一个具有<code>center</code>值的<code>justify-items</code>属性。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.");'
+  - text: <code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -60,7 +64,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -72,7 +75,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".container {justify-items: center;}"
 ```
+
 </section>

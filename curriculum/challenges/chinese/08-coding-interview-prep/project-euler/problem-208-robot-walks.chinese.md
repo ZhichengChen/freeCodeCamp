@@ -2,15 +2,24 @@
 id: 5900f43f1000cf542c50ff51
 challengeType: 5
 title: 'Problem 208: Robot Walks'
-videoUrl: ''
-localeTitle: 问题208：机器人走路
+forumTopicId: 301849
 ---
 
 ## Description
-<section id="description">机器人以一系列五分之一圆弧（72°）移动，每个步骤可自由选择顺时针或逆时针弧，但不能转动现场。 <p>从北向南开始的70932条可能的闭合路径之一是</p><p>鉴于机器人开始面向北方，在最终弧线之后，可以将多少70个弧长的行程返回到其起始位置？ （任何弧都可以多次遍历。） </p></section>
+<section id='description'>
+A robot moves in a series of one-fifth circular arcs (72°), with a free choice of a clockwise or an anticlockwise arc for each step, but no turning on the spot.
+
+One of 70932 possible closed paths of 25 arcs starting northward is
+
+
+
+Given that the robot starts facing North, how many journeys of 70 arcs in length can it take that return it, after the final arc, to its starting position?
+(Any arc may be traversed multiple times.)
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题208：机器人走路
 
 ```yml
 tests:
-  - text: <code>euler208()</code>应该返回331951449665644800。
-    testString: 'assert.strictEqual(euler208(), 331951449665644800, "<code>euler208()</code> should return 331951449665644800.");'
+  - text: <code>euler208()</code> should return 331951449665644800.
+    testString: assert.strictEqual(euler208(), 331951449665644800);
 
 ```
 
@@ -37,7 +46,6 @@ function euler208() {
 }
 
 euler208();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler208();
 ```js
 // solution required
 ```
+
 </section>

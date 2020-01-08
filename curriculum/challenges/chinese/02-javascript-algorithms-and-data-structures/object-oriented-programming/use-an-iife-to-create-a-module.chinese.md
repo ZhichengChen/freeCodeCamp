@@ -2,27 +2,71 @@
 id: 587d7db2367417b2b2512b8c
 title: Use an IIFE to Create a Module
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用IIFE创建模块
+forumTopicId: 301332
 ---
 
 ## Description
-<section id="description"> <code>immediately invoked function expression</code> （ <code>IIFE</code> ）通常用于将相关功能分组到单个对象或<code>module</code> 。例如，早期的挑战定义了两个mixins： <blockquote> function glideMixin（obj）{ <br> obj.glide = function（）{ <br> console.log（“在水面上滑行”）; <br> }; <br> } <br> function flyMixin（obj）{ <br> obj.fly = function（）{ <br> console.log（“Flying，wooosh！”）; <br> }; <br> } </blockquote>我们可以将这些<code>mixins</code>分组到一个模块中，如下所示： <blockquote>让motionModule =（function（）{ <br>返回{ <br> glideMixin：function（obj）{ <br> obj.glide = function（）{ <br> console.log（“在水面上滑行”）; <br> }; <br> }， <br> flyMixin：function（obj）{ <br> obj.fly = function（）{ <br> console.log（“Flying，wooosh！”）; <br> }; <br> } <br> } <br> }）（）; //两个括号使得函数立即被调用</blockquote>请注意，您有一个<code>immediately invoked function expression</code> （ <code>IIFE</code> ），它返回一个对象<code>motionModule</code> 。此返回对象包含作为对象属性的所有<code>mixin</code>行为。 <code>module</code>模式的优点是可以将所有运动行为打包到单个对象中，然后可以由代码的其他部分使用。以下是使用它的示例： <blockquote> motionModule.glideMixin（鸭）; <br> duck.glide（）; </blockquote></section>
+<section id='description'>
+An immediately invoked function expression (IIFE) is often used to group related functionality into a single object or <dfn>module</dfn>. For example, an earlier challenge defined two mixins:
+
+```js
+function glideMixin(obj) {
+  obj.glide = function() {
+    console.log("Gliding on the water");
+  };
+}
+function flyMixin(obj) {
+  obj.fly = function() {
+    console.log("Flying, wooosh!");
+  };
+}
+```
+
+We can group these mixins into a module as follows:
+
+```js
+let motionModule = (function () {
+  return {
+    glideMixin: function(obj) {
+      obj.glide = function() {
+        console.log("Gliding on the water");
+      };
+    },
+    flyMixin: function(obj) {
+      obj.fly = function() {
+        console.log("Flying, wooosh!");
+      };
+    }
+  }
+})(); // The two parentheses cause the function to be immediately invoked
+```
+
+Note that you have an immediately invoked function expression (IIFE) that returns an object <code>motionModule</code>. This returned object contains all of the mixin behaviors as properties of the object.
+The advantage of the module pattern is that all of the motion behaviors can be packaged into a single object that can then be used by other parts of your code. Here is an example using it:
+
+```js
+motionModule.glideMixin(duck);
+duck.glide();
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">创建一个名为<code>funModule</code>的<code>module</code>来包装两个<code>mixins</code> <code>isCuteMixin</code>和<code>singMixin</code> 。 <code>funModule</code>应该返回一个对象。 </section>
+<section id='instructions'>
+Create a module named <code>funModule</code> to wrap the two mixins <code>isCuteMixin</code> and <code>singMixin</code>. <code>funModule</code> should return an object.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 应该定义<code>funModule</code>并返回一个对象。
-    testString: 'assert(typeof funModule === "object", "<code>funModule</code> should be defined and return an object.");'
-  - text: <code>funModule.isCuteMixin</code>应该访问一个函数。
-    testString: 'assert(typeof funModule.isCuteMixin === "function", "<code>funModule.isCuteMixin</code> should access a function.");'
-  - text: <code>funModule.singMixin</code>应该访问一个函数。
-    testString: 'assert(typeof funModule.singMixin === "function", "<code>funModule.singMixin</code> should access a function.");'
+  - text: <code>funModule</code> should be defined and return an object.
+    testString: assert(typeof funModule === "object");
+  - text: <code>funModule.isCuteMixin</code> should access a function.
+    testString: assert(typeof funModule.isCuteMixin === "function");
+  - text: <code>funModule.singMixin</code> should access a function.
+    testString: assert(typeof funModule.singMixin === "function");
 
 ```
 
@@ -44,7 +88,6 @@ let singMixin = function(obj) {
     console.log("Singing to an awesome tune");
   };
 };
-
 ```
 
 </div>
@@ -56,7 +99,18 @@ let singMixin = function(obj) {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const funModule = (function () {
+  return {
+    isCuteMixin: obj => {
+      obj.isCute = () => true;
+    },
+    singMixin: obj => {
+      obj.sing = () => console.log("Singing to an awesome tune");
+    }
+  };
+})();
 ```
+
 </section>

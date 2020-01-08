@@ -2,15 +2,25 @@
 title: Count occurrences of a substring
 id: 596fda99c69f779975a1b67d
 challengeType: 5
-videoUrl: ''
-localeTitle: 计算子字符串的出现次数
+forumTopicId: 302237
 ---
 
 ## Description
-<section id="description">任务： <p>创建函数或显示内置函数，以计算字符串中子字符串的非重叠出现次数。 </p><p>该函数应该有两个参数： </p>第一个参数是要搜索的字符串，第二个参数是要搜索的子字符串。 <p>它应该返回一个整数计数。 </p><p>匹配应产生最多数量的非重叠匹配。 </p><p>通常，这实质上意味着从左到右或从右到左匹配。 </p></section>
+<section id='description'>
+Create a function, or show a built-in function, to count the number of non-overlapping occurrences of a substring inside a string.
+The function should take two arguments:
+<ul>
+  <li>the first argument being the string to search, and</li>
+  <li>the second a substring to be searched for.</li>
+</ul>
+It should return an integer count.
+The matching should yield the highest number of non-overlapping matches.
+In general, this essentially means matching from left-to-right or right-to-left.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +28,14 @@ localeTitle: 计算子字符串的出现次数
 
 ```yml
 tests:
-  - text: <code>countSubstring</code>是一个函数。
-    testString: 'assert(typeof countSubstring === "function", "<code>countSubstring</code> is a function.");'
-  - text: '<code>countSubstring(&quot;the three truths&quot;, &quot;th&quot;)</code>应该返回<code>3</code> 。'
-    testString: 'assert.equal(countSubstring(testCases[0], searchString[0]), results[0], "<code>countSubstring("the three truths", "th")</code> should return <code>3</code>.");'
-  - text: '<code>countSubstring(&quot;ababababab&quot;, &quot;abab&quot;)</code>应返回<code>2</code> 。'
-    testString: 'assert.equal(countSubstring(testCases[1], searchString[1]), results[1], "<code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.");'
-  - text: '<code>countSubstring(&quot;abaabba*bbaba*bbab&quot;, &quot;a*b&quot;)</code>应返回<code>2</code> 。'
-    testString: 'assert.equal(countSubstring(testCases[2], searchString[2]), results[2], "<code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.");'
+  - text: <code>countSubstring</code> should be a function.
+    testString: assert(typeof countSubstring === 'function');
+  - text: <code>countSubstring("the three truths", "th")</code> should return <code>3</code>.
+    testString: assert.equal(countSubstring(testCases[0], searchString[0]), results[0]);
+  - text: <code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.
+    testString: assert.equal(countSubstring(testCases[1], searchString[1]), results[1]);
+  - text: <code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.
+    testString: assert.equal(countSubstring(testCases[2], searchString[2]), results[2]);
 
 ```
 
@@ -37,11 +47,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function countSubstring (str, subStr) {
+function countSubstring(str, subStr) {
   // Good luck!
   return true;
 }
-
 ```
 
 </div>
@@ -51,7 +60,9 @@ function countSubstring (str, subStr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = ['the three truths', 'ababababab', 'abaabba*bbaba*bbab'];
+const searchString = ['th', 'abab', 'a*b'];
+const results = [3, 2, 2];
 ```
 
 </div>
@@ -61,7 +72,14 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function countSubstring(str, subStr) {
+  const escapedSubStr = subStr.replace(/[.+*?^$[\]{}()|/]/g, '\\$&');
+  const matches = str.match(new RegExp(escapedSubStr, 'g'));
+  return matches ? matches.length : 0;
+}
+
 ```
+
 </section>

@@ -2,15 +2,23 @@
 id: 5900f3b91000cf542c50fecc
 challengeType: 5
 title: 'Problem 77: Prime summations'
-videoUrl: ''
-localeTitle: 问题77：总结
+forumTopicId: 302190
 ---
 
 ## Description
-<section id="description">可以用五种不同的方式将十个作为素数之和：7 + 3 5 + 5 5 + 3 + 2 3 + 3 + 2 + 2 2 + 2 + 2 + 2 + 2第一个值是多少可以用五千多种不同的方式写成素数之和？ </section>
+<section id='description'>
+It is possible to write ten as the sum of primes in exactly five different ways:
+7 + 3
+5 + 5
+5 + 3 + 2
+3 + 3 + 2 + 2
+2 + 2 + 2 + 2 + 2
+What is the first value which can be written as the sum of primes in over five thousand different ways?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题77：总结
 
 ```yml
 tests:
-  - text: <code>euler77()</code>应该返回71。
-    testString: 'assert.strictEqual(euler77(), 71, "<code>euler77()</code> should return 71.");'
+  - text: <code>euler77()</code> should return 71.
+    testString: assert.strictEqual(euler77(), 71);
 
 ```
 
@@ -37,7 +45,6 @@ function euler77() {
 }
 
 euler77();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler77();
 ```js
 // solution required
 ```
+
 </section>

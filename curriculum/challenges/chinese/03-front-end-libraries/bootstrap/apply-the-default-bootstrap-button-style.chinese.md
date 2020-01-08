@@ -2,15 +2,18 @@
 id: bad87fee1348bd9aec908850
 title: Apply the Default Bootstrap Button Style
 challengeType: 0
-videoUrl: ''
-localeTitle: 应用默认引导按钮样式
+forumTopicId: 16657
 ---
 
 ## Description
-<section id="description"> Bootstrap有另一个名为<code>btn-default</code>按钮类。将<code>btn</code>和<code>btn-default</code>类同时应用于每个<code>button</code>元素。 </section>
+<section id='description'>
+Bootstrap has another button class called <code>btn-default</code>.
+Apply both the <code>btn</code> and <code>btn-default</code> classes to each of your <code>button</code> elements.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,10 +21,10 @@ localeTitle: 应用默认引导按钮样式
 
 ```yml
 tests:
-  - text: 将<code>btn</code>类应用于每个<code>button</code>元素。
-    testString: 'assert($(".btn").length > 5, "Apply the <code>btn</code> class to each of your <code>button</code> elements.");'
-  - text: 将<code>btn-default</code>类应用于每个<code>button</code>元素。
-    testString: 'assert($(".btn-default").length > 5, "Apply the <code>btn-default</code> class to each of your <code>button</code> elements.");'
+  - text: You should apply the <code>btn</code> class to each of your <code>button</code> elements.
+    testString: assert($(".btn").length > 5);
+  - text: You should apply the <code>btn-default</code> class to each of your <code>button</code> elements.
+    testString: assert($(".btn-default").length > 5);
 
 ```
 
@@ -52,7 +55,6 @@ tests:
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -64,7 +66,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+        <button class="btn btn-default"></button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
+
 </section>

@@ -2,29 +2,58 @@
 id: 587d7b8b367417b2b2512b53
 title: Use class Syntax to Define a Constructor Function
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用类语法定义构造函数
+forumTopicId: 301212
 ---
 
 ## Description
-<section id="description"> ES6使用关键字<dfn>class</dfn>提供了一种帮助创建对象的新语法。需要注意的是， <code>class</code>语法只是一种语法，而不是面向对象范例的完整的基于类的实现，不像Java，Python或Ruby等语言。在ES5中，我们通常定义一个构造函数function，并使用<code>new</code>关键字实例化一个对象。 <blockquote> var SpaceShuttle = function（targetPlanet）{ <br> this.targetPlanet = targetPlanet; <br> } <br> var zeus = new SpaceShuttle（&#39;Jupiter&#39;）; </blockquote>类语法只是替换构造函数创建： <blockquote> class SpaceShuttle { <br>构造（targetPlanet）{ <br> this.targetPlanet = targetPlanet; <br> } <br> } <br> const zeus = new SpaceShuttle（&#39;Jupiter&#39;）; </blockquote>请注意， <code>class</code>关键字声明了一个新函数，并添加了一个构造函数，该函数将在调用<code>new</code>调用 - 以创建新对象。 </section>
+<section id='description'>
+ES6 provides a new syntax to create objects, using the <dfn>class</dfn> keyword.
+It should be noted that the <code>class</code> syntax is just syntax, and not a full-fledged class-based implementation of an object-oriented paradigm, unlike in languages such as Java, Python, Ruby, etc.
+In ES5, we usually define a constructor function and use the <code>new</code> keyword to instantiate an object.
+
+```js
+var SpaceShuttle = function(targetPlanet){
+  this.targetPlanet = targetPlanet;
+}
+var zeus = new SpaceShuttle('Jupiter');
+```
+
+The <code>class</code> syntax simply replaces the constructor function creation:
+
+```js
+class SpaceShuttle {
+  constructor(targetPlanet) {
+    this.targetPlanet = targetPlanet;
+  }
+}
+const zeus = new SpaceShuttle('Jupiter');
+```
+
+It should be noted that the <code>class</code> keyword declares a new function, to which a constructor is added. This constructor is invoked when <code>new</code> is called to create a new object.<br>
+<strong>Notes:</strong><br><ul>
+<li> UpperCamelCase should be used by convention for ES6 class names, as in <code>SpaceShuttle</code> used above.</li>
+<li> The constructor method is a special method for creating and initializing an object created with a class. You will learn more about it in the Object Oriented Programming section of the JavaScript Algorithms And Data Structures Certification.</li></ul>
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>class</code>关键字并编写适当的构造函数来创建<code>Vegetable</code>类。使用<code>Vegetable</code>可以创建具有属性<code>name</code>的蔬菜对象，以传递给构造函数。 </section>
+<section id='instructions'>
+Use the <code>class</code> keyword and write a constructor to create the <code>Vegetable</code> class.
+The <code>Vegetable</code> class allows you to create a vegetable object with a property <code>name</code> that gets passed to the constructor.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>Vegetable</code>应该是一个<code>class</code>具有限定<code>constructor</code>方法。
-    testString: 'assert(typeof Vegetable === "function" && typeof Vegetable.constructor === "function", "<code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.");'
-  - text: <code>class</code>关键字。
-    testString: 'getUserInput => assert(getUserInput("index").match(/class/g),"<code>class</code> keyword was used.");'
-  - text: <code>Vegetable</code>可以实例化。
-    testString: 'assert(() => {const a = new Vegetable("apple"); return typeof a === "object";},"<code>Vegetable</code> can be instantiated.");'
-  - text: <code>carrot.name</code>应该返回<code>carrot</code> 。
-    testString: 'assert(carrot.name=="carrot","<code>carrot.name</code> should return <code>carrot</code>.");'
+  - text: <code>Vegetable</code> should be a <code>class</code> with a defined <code>constructor</code> method.
+    testString: assert(typeof Vegetable === 'function' && typeof Vegetable.constructor === 'function');
+  - text: <code>class</code> keyword should be used.
+    testString: assert(code.match(/class/g));
+  - text: <code>Vegetable</code> should be able to be instantiated.
+    testString: assert(() => {const a = new Vegetable("apple"); return typeof a === 'object';});
+  - text: <code>carrot.name</code> should return <code>carrot</code>.
+    testString: assert(carrot.name=='carrot');
 
 ```
 
@@ -36,17 +65,12 @@ tests:
 <div id='js-seed'>
 
 ```js
-function makeClass() {
-  "use strict";
-  /* Alter code below this line */
+/* Alter code below this line */
 
-  /* Alter code above this line */
-  return Vegetable;
-}
-const Vegetable = makeClass();
+/* Alter code above this line */
+
 const carrot = new Vegetable('carrot');
 console.log(carrot.name); // => should be 'carrot'
-
 ```
 
 </div>
@@ -59,6 +83,12 @@ console.log(carrot.name); // => should be 'carrot'
 <section id='solution'>
 
 ```js
-// solution required
+class Vegetable {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const carrot = new Vegetable('carrot');
 ```
+
 </section>

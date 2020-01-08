@@ -2,25 +2,43 @@
 id: cf1111c1c11feddfaeb1bdef
 title: Iterate with JavaScript While Loops
 challengeType: 1
-videoUrl: ''
-localeTitle: 在循环时使用JavaScript进行迭代
+videoUrl: 'https://scrimba.com/c/c8QbnCM'
+forumTopicId: 18220
 ---
 
 ## Description
-<section id="description">您可以使用循环多次运行相同的代码。我们将学习的第一种类型的循环称为“ <code>while</code> ”循环，因为它在“while”运行时指定的条件为true，并且一旦该条件不再为真就停止。 <blockquote> var ourArray = []; <br> var i = 0; <br>而（i &lt;5）{ <br> ourArray.push（ⅰ）; <br>我++; <br> } </blockquote>让我们尝试通过将值推送到数组来实现while循环。 </section>
+<section id='description'>
+You can run the same code multiple times by using a loop.
+The first type of loop we will learn is called a <code>while</code> loop because it runs "while" a specified condition is true and stops once that condition is no longer true.
+
+```js
+var ourArray = [];
+var i = 0;
+while(i < 5) {
+  ourArray.push(i);
+  i++;
+}
+```
+
+In the code example above, the <code>while</code> loop will execute 5 times and append the numbers 0 through 4 to <code>ourArray</code>.
+
+Let's try getting a while loop to work by pushing values to an array.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>while</code>循环将数字0到4推送到<code>myArray</code> 。 </section>
+<section id='instructions'>
+Add the numbers 5 through 0 (inclusive) in descending order to <code>myArray</code> using a <code>while</code> loop.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你应该使用<code>while</code>循环。
-    testString: 'assert(code.match(/while/g), "You should be using a <code>while</code> loop for this.");'
-  - text: '<code>myArray</code>应该等于<code>[0,1,2,3,4]</code> 。'
-    testString: 'assert.deepEqual(myArray, [0,1,2,3,4], "<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.");'
+  - text: You should be using a <code>while</code> loop for this.
+    testString: assert(code.match(/while/g));
+  - text: <code>myArray</code> should equal <code>[5,4,3,2,1,0]</code>.
+    testString: assert.deepEqual(myArray, [5,4,3,2,1,0]);
 
 ```
 
@@ -37,6 +55,7 @@ var myArray = [];
 
 // Only change code below this line.
 
+
 ```
 
 </div>
@@ -46,7 +65,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>
@@ -56,7 +75,14 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [];
+var i = 5;
+while(i >= 0) {
+  myArray.push(i);
+  i--;
+}
 ```
+
 </section>

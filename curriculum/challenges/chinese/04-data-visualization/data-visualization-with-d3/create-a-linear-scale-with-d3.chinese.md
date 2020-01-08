@@ -2,27 +2,36 @@
 id: 587d7fab367417b2b2512bda
 title: Create a Linear Scale with D3
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用D3创建线性比例
+forumTopicId: 301483
 ---
 
 ## Description
-<section id="description">条形图和散点图图表都将数据直接绘制到SVG画布上。但是，如果条形或其中一个数据点的高度大于SVG高度或宽度值，则它将超出SVG区域。在D3中，有一些比例可以帮助绘制数据。 <code>Scales</code>是告诉程序如何将一组原始数据点映射到SVG画布的像素上的函数。例如，假设您有一个100x500大小的SVG画布，并且您想绘制许多国家的国内生产总值（GDP）。这组数字将在数十亿或万亿美元的范围内。您提供D3一种比例来告诉它如何将大的GDP值放入100x500大小的区域。您不太可能按原样绘制原始数据。在绘制之前，您可以设置整个数据集的比例，以便<code>x</code>和<code>y</code>值适合您的画布宽度和高度。 D3有几种比例类型。对于线性标度（通常与定量数据一起使用），有D3方法<code>scaleLinear()</code> ： <code>const scale = d3.scaleLinear()</code>默认情况下，标度使用标识关系。输入的值与输出的值相同。单独的挑战包括如何改变这一点。 </section>
+<section id='description'>
+The bar and scatter plot charts both plotted data directly onto the SVG canvas. However, if the height of a bar or one of the data points were larger than the SVG height or width values, it would go outside the SVG area.
+In D3, there are scales to help plot data. <code>Scales</code> are functions that tell the program how to map a set of raw data points onto the pixels of the SVG canvas.
+For example, say you have a 100x500-sized SVG canvas and you want to plot Gross Domestic Product (GDP) for a number of countries. The set of numbers would be in the billion or trillion-dollar range. You provide D3 a type of scale to tell it how to place the large GDP values into that 100x500-sized area.
+It's unlikely you would plot raw data as-is. Before plotting it, you set the scale for your entire data set, so that the <code>x</code> and <code>y</code> values fit your canvas width and height.
+D3 has several scale types. For a linear scale (usually used with quantitative data), there is the D3 method <code>scaleLinear()</code>:
+<code> const scale = d3.scaleLinear()</code>
+By default, a scale uses the identity relationship. The value of the input is the same as the value of the output. A separate challenge covers how to change this.
+</section>
 
 ## Instructions
-<section id="instructions">更改<code>scale</code>变量以创建线性比例。然后将<code>output</code>变量设置为使用输入参数50调用的比例。 </section>
+<section id='instructions'>
+Change the <code>scale</code> variable to create a linear scale. Then set the <code>output</code> variable to the scale called with an input argument of 50.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>h2</code>的文本应为50。
-    testString: 'assert($("h2").text() == "50", "The text in the <code>h2</code> should be 50.");'
-  - text: 您的代码应使用<code>scaleLinear()</code>方法。
-    testString: 'assert(code.match(/\.scaleLinear/g), "Your code should use the <code>scaleLinear()</code> method.");'
-  - text: <code>output</code>变量应该使用参数50调用<code>scale</code> 。
-    testString: 'assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g), "The <code>output</code> variable should call <code>scale</code> with an argument of 50.");'
+  - text: The text in the <code>h2</code> should be 50.
+    testString: assert($('h2').text() == '50');
+  - text: Your code should use the <code>scaleLinear()</code> method.
+    testString: assert(code.match(/\.scaleLinear/g));
+  - text: The <code>output</code> variable should call <code>scale</code> with an argument of 50.
+    testString: assert(output == 50 && code.match(/scale\(\s*?50\s*?\)/g));
 
 ```
 
@@ -49,7 +58,6 @@ tests:
 
   </script>
 </body>
-
 ```
 
 </div>
@@ -64,4 +72,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

@@ -2,27 +2,41 @@
 id: 56bbb991ad1ed5201cd392cc
 title: Manipulate Arrays With pop()
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用pop（）操作数组
+videoUrl: 'https://scrimba.com/c/cRbVZAB'
+forumTopicId: 18236
 ---
 
 ## Description
-<section id="description">更改数组中数据的另一种方法是使用<code>.pop()</code>函数。 <code>.pop()</code>用于“弹出”数组末尾的值。我们可以通过将其赋值给变量来存储这个“弹出”值。换句话说， <code>.pop()</code>从数组中删除最后一个元素并返回该元素。任何类型的条目都可以从数组“弹出” - 数字，字符串，甚至嵌套数组。 <blockquote> <code>var threeArr = [1, 4, 6]; <br> var oneDown = threeArr.pop(); <br> console.log(oneDown); // Returns 6 <br> console.log(threeArr); // Returns [1, 4]</code> </blockquote> </section>
+<section id='description'>
+Another way to change the data in an array is with the <code>.pop()</code> function.
+<code>.pop()</code> is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. In other words, <code>.pop()</code> removes the last element from an array and returns that element.
+Any type of entry can be "popped" off of an array - numbers, strings, even nested arrays.
+
+```js
+var threeArr = [1, 4, 6];
+var oneDown = threeArr.pop();
+console.log(oneDown); // Returns 6
+console.log(threeArr); // Returns [1, 4]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>.pop()</code>函数从<code>myArray</code>删除最后一项，将“弹出”值分配给<code>removedFromMyArray</code> 。 </section>
+<section id='instructions'>
+Use the <code>.pop()</code> function to remove the last item from <code>myArray</code>, assigning the "popped off" value to <code>removedFromMyArray</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>myArray</code>应该只包含<code>[[&quot;John&quot;, 23]]</code> 。'
-    testString: 'assert((function(d){if(d[0][0] == "John" && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray), "<code>myArray</code> should only contain <code>[["John", 23]]</code>.");'
-  - text: 在<code>myArray</code>上使用<code>pop()</code>
-    testString: 'assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code), "Use <code>pop()</code> on <code>myArray</code>");'
-  - text: '<code>removedFromMyArray</code>应该只包含<code>[&quot;cat&quot;, 2]</code> 。'
-    testString: 'assert((function(d){if(d[0] == "cat" && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), "<code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.");'
+  - text: <code>myArray</code> should only contain <code>[["John", 23]]</code>.
+    testString: assert((function(d){if(d[0][0] == 'John' && d[0][1] === 23 && d[1] == undefined){return true;}else{return false;}})(myArray));
+  - text: You should use <code>pop()</code> on <code>myArray</code>.
+    testString: assert(/removedFromMyArray\s*=\s*myArray\s*.\s*pop\s*(\s*)/.test(code));
+  - text: <code>removedFromMyArray</code> should only contain <code>["cat", 2]</code>.
+    testString: assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray));
 
 ```
 
@@ -45,6 +59,7 @@ var myArray = [["John", 23], ["cat", 2]];
 // Only change code below this line.
 var removedFromMyArray;
 
+
 ```
 
 </div>
@@ -54,7 +69,7 @@ var removedFromMyArray;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y, z){return 'myArray = ' + JSON.stringify(y) + ' & removedFromMyArray = ' + JSON.stringify(z);})(myArray, removedFromMyArray);
 ```
 
 </div>
@@ -64,7 +79,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [["John", 23], ["cat", 2]];
+var removedFromMyArray = myArray.pop();
 ```
+
 </section>

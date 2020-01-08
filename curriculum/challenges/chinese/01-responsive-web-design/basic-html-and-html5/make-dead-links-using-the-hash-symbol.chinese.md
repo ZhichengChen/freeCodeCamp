@@ -2,23 +2,29 @@
 id: bad87fee1348bd9aedf08817
 title: Make Dead Links Using the Hash Symbol
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用哈希符号制作死链接
+videoUrl: 'https://scrimba.com/p/pVMPUv/cMdkytL'
+forumTopicId: 18230
 ---
 
 ## Description
-<section id="description">有时你想添加<code>a</code>元素到你的网站，你知道他们会链接之前。当您使用<code>JavaScript</code>更改链接的行为时，这也很方便，我们将在稍后了解。 </section>
+<section id='description'>
+Sometimes you want to add <code>a</code> elements to your website before you know where they will link.
+This is also handy when you're changing the behavior of a link using <code>JavaScript</code>, which we'll learn about later.
+</section>
 
 ## Instructions
-<section id="instructions"> <code>href</code>属性的当前值是指向“http://freecatphotoapp.com”的链接。将<code>href</code>属性值替换为<code>#</code> （也称为哈希符号）以创建死链接。例如： <code>href=&quot;#&quot;</code> </section>
+<section id='instructions'>
+The current value of the <code>href</code> attribute is a link that points to "http://freecatphotoapp.com". Replace the <code>href</code> attribute value with a <code>#</code>, also known as a hash symbol, to create a dead link.
+For example: <code>href="#"</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您<code>a</code>元素应该是一个死链接， <code>href</code>属性的值设置为“＃”。
-    testString: 'assert($("a").attr("href") === "#", "Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".");'
+  - text: Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".
+    testString: assert($("a").attr("href") === "#");
 
 ```
 
@@ -39,7 +45,6 @@ tests:
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
-
 ```
 
 </div>
@@ -51,7 +56,16 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h2>CatPhotoApp</h2>
+<main>
+  <p>Click here to view more <a href="#" target="_blank">cat photos</a>.</p>
+  
+  <img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back.">
+  
+  <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+  <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
+</main>
 ```
+
 </section>

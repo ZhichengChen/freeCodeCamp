@@ -2,15 +2,35 @@
 id: 5900f5411000cf542c510052
 challengeType: 5
 title: 'Problem 467: Superinteger'
-videoUrl: ''
-localeTitle: 问题467：超级整数
+forumTopicId: 302142
 ---
 
 ## Description
-<section id="description">如果n的数字形成s的数字的子序列，则整数s被称为另一整数n的超级整数。例如，2718281828是18828的超级整数，而314159不是151的超级整数。 <p>令p（n）为第n个素数，并且令c（n）为第n个复合数。例如，p（1）= 2，p（10）= 29，c（1）= 4且c（10）= 18. {p（i）：i≥1} = {2,3,5,7 ，11,13,17,19,23,29，...} {c（i）：i≥1} = {4,6,8,9,10,12,14,15,16,18，.... ..} </p><p>设PD为{p（i）}的数字根的序列（CD对{c（i）}的定义类似）：PD = {2,3,5,7,2,4,8,1,5， 2，...} CD = {4,6,8,9,1,3,5,6,7,9 ......} </p><p>令Pn为通过连接PD的前n个元素形成的整数（Cn类似地定义为CD）。 P10 = 2357248152 C10 = 4689135679 </p><p>设f（n）是最小的正整数，它是Pn和Cn的共同超整数。例如，f（10）= 2357246891352679，并且f（100）mod 1 000 000 007 = 771661825。 </p><p>求f（10 000）mod 1 000 000 007。 </p></section>
+<section id='description'>
+An integer s is called a superinteger of another integer n if the digits of n form a subsequence of the digits of s.
+For example, 2718281828 is a superinteger of 18828, while 314159 is not a superinteger of 151.
+
+
+Let p(n) be the nth prime number, and let c(n) be the nth composite number. For example, p(1) = 2, p(10) = 29, c(1) = 4 and c(10) = 18.
+{p(i) : i ≥ 1} = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ...}
+{c(i) : i ≥ 1} = {4, 6, 8, 9, 10, 12, 14, 15, 16, 18, ...}
+
+Let PD the sequence of the digital roots of {p(i)} (CD is defined similarly for {c(i)}):
+PD = {2, 3, 5, 7, 2, 4, 8, 1, 5, 2, ...}
+CD = {4, 6, 8, 9, 1, 3, 5, 6, 7, 9, ...}
+
+Let Pn be the integer formed by concatenating the first n elements of PD (Cn is defined similarly for CD).
+P10 = 2357248152
+C10 = 4689135679
+
+Let f(n) be the smallest positive integer that is a common superinteger of Pn and Cn. For example, f(10) = 2357246891352679, and f(100) mod 1 000 000 007 = 771661825.
+
+Find f(10 000) mod 1 000 000 007.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +38,8 @@ localeTitle: 问题467：超级整数
 
 ```yml
 tests:
-  - text: <code>euler467()</code>应该返回775181359。
-    testString: 'assert.strictEqual(euler467(), 775181359, "<code>euler467()</code> should return 775181359.");'
+  - text: <code>euler467()</code> should return 775181359.
+    testString: assert.strictEqual(euler467(), 775181359);
 
 ```
 
@@ -37,7 +57,6 @@ function euler467() {
 }
 
 euler467();
-
 ```
 
 </div>
@@ -52,4 +71,5 @@ euler467();
 ```js
 // solution required
 ```
+
 </section>

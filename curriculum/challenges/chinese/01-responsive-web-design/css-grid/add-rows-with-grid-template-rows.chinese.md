@@ -2,23 +2,27 @@
 id: 5a9036e138fddaf9a66b5d33
 title: Add Rows with grid-template-rows
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用grid-template-rows添加行
+videoUrl: 'https://scrimba.com/p/pByETK/cbp9Pua'
+forumTopicId: 301119
 ---
 
 ## Description
-<section id="description">您在上一次挑战中创建的网格将自动设置行数。要手动调整行，请使用<code>grid-template-rows</code>属性，方法<code>grid-template-columns</code>在先前挑战中使用<code>grid-template-columns</code>方式相同。 </section>
+<section id='description'>
+The grid you created in the last challenge will set the number of rows automatically. To adjust the rows manually, use the <code>grid-template-rows</code> property in the same way you used <code>grid-template-columns</code> in previous challenge.
+</section>
 
 ## Instructions
-<section id="instructions">在网格中添加两行，每行高<code>50px</code> 。 </section>
+<section id='instructions'>
+Add two rows to the grid that are <code>50px</code> tall each.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code>类应该有一个<code>grid-template-rows</code>属性，其中两个单元为<code>50px</code> 。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.");'
+  - text: <code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -57,7 +61,6 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
-
 ```
 
 </div>
@@ -69,7 +72,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".container {grid-template-rows: 50px 50px;}"
 ```
+
 </section>

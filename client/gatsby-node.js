@@ -91,6 +91,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                 superBlock
                 superOrder
                 template
+                lang
               }
             }
           }
@@ -100,7 +101,7 @@ exports.createPages = function createPages({ graphql, actions, reporter }) {
                 fields {
                   slug
                   nodeIdentity
-                  component
+                  langKey
                 }
                 frontmatter {
                   block

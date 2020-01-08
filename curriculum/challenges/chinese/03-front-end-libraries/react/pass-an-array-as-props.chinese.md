@@ -3,35 +3,50 @@ id: 5a24c314108439a4d403616a
 title: Pass an Array as Props
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将数组作为道具传递
+forumTopicId: 301401
 ---
 
 ## Description
-<section id="description">最后一项挑战演示了如何将信息从父组件传递到子组件作为<code>props</code>或属性。这个挑战着眼于如何将数组作为<code>props</code>传递。要将数组传递给JSX元素，必须将其视为JavaScript并用大括号括起来。 <blockquote> &lt;为父级&gt; <br> &lt;ChildComponent colors = {[“green”，“blue”，“red”]} /&gt; <br> &lt;/为父级&gt; </blockquote>然后子组件可以访问数组属性<code>colors</code> 。访问属性时可以使用诸如<code>join()</code>类的数组方法。 <code>const ChildComponent = (props) =&gt; &lt;p&gt;{props.colors.join(&#39;, &#39;)}&lt;/p&gt;</code>这会将所有<code>colors</code>数组项连接成逗号分隔的字符串并生成： <code>&lt;p&gt;green, blue, red&lt;/p&gt;</code>稍后，我们将了解在React中呈现数据数组的其他常用方法。 </section>
+<section id='description'>
+The last challenge demonstrated how to pass information from a parent component to a child component as <code>props</code> or properties. This challenge looks at how arrays can be passed as <code>props</code>.  To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.
+
+```jsx
+<ParentComponent>
+  <ChildComponent colors={["green", "blue", "red"]} />
+</ParentComponent>
+```
+
+The child component then has access to the array property <code>colors</code>.  Array methods such as <code>join()</code> can be used when accessing the property.
+<code>const ChildComponent = (props) => &lt;p&gt{props.colors.join(', ')}&lt;/p&gt</code>
+This will join all <code>colors</code> array items into a comma separated string and produce:
+ <code> &lt;p&gt;green, blue, red&lt;/p&gt;</code>
+Later, we will learn about other common methods to render arrays of data in React.
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器中有<code>List</code>和<code>ToDo</code>组件。从<code>ToDo</code>组件渲染每个<code>List</code> ，传入分配给待办任务数组的<code>tasks</code>属性，例如<code>[&quot;walk dog&quot;, &quot;workout&quot;]</code> 。然后在<code>List</code>组件中访问此<code>tasks</code>数组，在<code>p</code>元素中显示其值。使用<code>join(&quot;, &quot;)</code>以逗号分隔列表的形式显示<code>p</code>元素中的<code>props.tasks</code>数组。今天的列表应该至少有2个任务，明天应该至少有3个任务。 </section>
+<section id='instructions'>
+There are <code>List</code> and <code>ToDo</code> components in the code editor. When rendering each <code>List</code> from the <code>ToDo</code> component, pass in a <code>tasks</code> property assigned to an array of to-do tasks, for example <code>["walk dog", "workout"]</code>. Then access this <code>tasks</code> array in the <code>List</code> component, showing its value within the <code>p</code> element.  Use <code>join(", ")</code> to display the <code>props.tasks</code>array in the <code>p</code> element as a comma separated list. Today's list should have at least 2 tasks and tomorrow's should have at least 3 tasks.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>ToDo</code>组件应返回单个外部<code>div</code> 。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === "div"; })(), "The <code>ToDo</code> component should return a single outer <code>div</code>.");'
-  - text: <code>ToDo</code>组件的第三个子<code>ToDo</code>应该是<code>List</code>组件的实例。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === "List"; })(), "The third child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.");'
-  - text: <code>ToDo</code>组件的第五个子<code>ToDo</code>应该是<code>List</code>组件的一个实例。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === "List"; })(), "The fifth child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.");'
-  - text: <code>List</code>组件的两个实例都应该有一个名为<code>tasks</code>的属性，而<code>tasks</code>应该是array类型。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find("List").get(0).props.tasks) && Array.isArray(mockedComponent.find("List").get(1).props.tasks); })(), "Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.");'
-  - text: 表示今天任务的第一个<code>List</code>组件应该有2个或更多项。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("List").get(0).props.tasks.length >= 2; })(), "The first <code>List</code> component representing the tasks for today should have 2 or more items.");'
-  - text: 表示明天任务的第二个<code>List</code>组件应该有3个或更多项。
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("List").get(1).props.tasks.length >= 3; })(), "The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.");'
-  - text: '<code>List</code>组件应该将<code>p</code>标记中的<code>tasks</code> prop的值呈现为以逗号分隔的列表，例如<code>walk dog, workout</code> 。'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find("p").get(0).props.children === mockedComponent.find("List").get(0).props.tasks.join(", ") && mockedComponent.find("p").get(1).props.children === mockedComponent.find("List").get(1).props.tasks.join(", "); })(), "The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag as a comma separated list, for example <code>walk dog, workout</code>.");'
+  - text: The <code>ToDo</code> component should return a single outer <code>div</code>.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().type() === 'div'; })());
+  - text: The third child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(2).name() === 'List'; })());
+  - text: The fifth child of the <code>ToDo</code> component should be an instance of the <code>List</code> component.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.children().first().childAt(4).name() === 'List'; })());
+  - text: Both instances of the <code>List</code> component should have a property called <code>tasks</code> and <code>tasks</code> should be of type array.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return Array.isArray(mockedComponent.find('List').get(0).props.tasks) && Array.isArray(mockedComponent.find('List').get(1).props.tasks); })());
+  - text: The first <code>List</code> component representing the tasks for today should have 2 or more items.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(0).props.tasks.length >= 2; })());
+  - text: The second <code>List</code> component representing the tasks for tomorrow should have 3 or more items.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('List').get(1).props.tasks.length >= 3; })());
+  - text: The <code>List</code> component should render the value from the <code>tasks</code> prop in the <code>p</code> tag.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ToDo)); return mockedComponent.find('p').get(0).props.children === mockedComponent.find('List').get(0).props.tasks.join(', ') && mockedComponent.find('p').get(1).props.children === mockedComponent.find('List').get(1).props.tasks.join(', '); })());
 
 ```
 
@@ -43,7 +58,7 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-const List= (props) => {
+const List = (props) => {
   { /* change code below this line */ }
   return <p>{}</p>
   { /* change code above this line */ }
@@ -67,7 +82,6 @@ class ToDo extends React.Component {
     );
   }
 };
-
 ```
 
 </div>
@@ -77,7 +91,7 @@ class ToDo extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ToDo />, document.getElementById('root'))
 ```
 
 </div>
@@ -87,7 +101,28 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const List= (props) => {
+  return <p>{props.tasks.join(', ')}</p>
+};
+
+class ToDo extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    return (
+      <div>
+        <h1>To Do Lists</h1>
+        <h2>Today</h2>
+        <List tasks={['study', 'exercise']} />
+        <h2>Tomorrow</h2>
+        <List tasks={['call Sam', 'grocery shopping', 'order tickets']} />
+      </div>
+    );
+  }
+};
 ```
+
 </section>

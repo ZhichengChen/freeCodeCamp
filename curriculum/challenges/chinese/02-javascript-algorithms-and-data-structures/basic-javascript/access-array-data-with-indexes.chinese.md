@@ -2,25 +2,40 @@
 id: 56bbb991ad1ed5201cd392ca
 title: Access Array Data with Indexes
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用索引访问数组数据
+videoUrl: 'https://scrimba.com/c/cBZQbTz'
+forumTopicId: 16158
 ---
 
 ## Description
-<section id="description">我们可以使用<code>indexes</code>访问数组内部的数据。数组索引使用字符串使用的相同括号表示法编写，但不是指定字符，而是指定数组中的条目。与字符串一样，数组使用<dfn>从零开始的</dfn>索引，因此数组中的第一个元素是元素<code>0</code> 。 <strong>例</strong> <blockquote> var array = [50,60,70]; <br>阵列[0]; //等于50 <br> var data = array [1]; //等于60 </blockquote> <strong>注意</strong> <br>数组名称和方括号之间不应有任何空格，如<code>array [0]</code> 。尽管JavaScript能够正确处理，但这可能会让其他程序员在阅读代码时感到困惑。 </section>
+<section id='description'>
+We can access the data inside arrays using <dfn>indexes</dfn>.
+Array indexes are written in the same bracket notation that strings use, except that instead of specifying a character, they are specifying an entry in the array. Like strings, arrays use <dfn>zero-based</dfn> indexing, so the first element in an array has an index of <code>0</code>.
+<br />
+<strong>Example</strong>
+
+```js
+var array = [50,60,70];
+array[0]; // equals 50
+var data = array[1];  // equals 60
+```
+
+<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0]</code>. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.
+</section>
 
 ## Instructions
-<section id="instructions">创建一个名为<code>myData</code>的变量，并使用括号表示法将其设置为等于<code>myArray</code>的第一个值。 </section>
+<section id='instructions'>
+Create a variable called <code>myData</code> and set it to equal the first value of <code>myArray</code> using bracket notation.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 变量<code>myData</code>应该等于<code>myArray</code>的第一个值。
-    testString: 'assert((function(){if(typeof myArray !== "undefined" && typeof myData !== "undefined" && myArray[0] === myData){return true;}else{return false;}})(), "The variable <code>myData</code> should equal the first value of <code>myArray</code>.");'
-  - text: 应使用括号表示法访问变量<code>myArray</code>的数据。
-    testString: 'assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})(), "The data in variable <code>myArray</code> should be accessed using bracket notation.");'
+  - text: The variable <code>myData</code> should equal the first value of <code>myArray</code>.
+    testString: assert((function(){if(typeof myArray !== 'undefined' && typeof myData !== 'undefined' && myArray[0] === myData){return true;}else{return false;}})());
+  - text: The data in variable <code>myArray</code> should be accessed using bracket notation.
+    testString: assert((function(){if(code.match(/\s*=\s*myArray\[0\]/g)){return true;}else{return false;}})());
 
 ```
 
@@ -50,7 +65,7 @@ var myArray = [50,60,70];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}
 ```
 
 </div>
@@ -60,7 +75,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myArray = [50,60,70];
+var myData = myArray[0];
 ```
+
 </section>

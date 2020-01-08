@@ -2,15 +2,18 @@
 title: JortSort
 id: 5a23c84252665b21eecc7ec4
 challengeType: 5
-videoUrl: ''
-localeTitle: JortSort
+forumTopicId: 302293
 ---
 
 ## Description
-<section id="description"> jortSort是一个排序工具集，它使用户可以完成工作并保证效率，因为您不必再​​次排序。它最初是由着名的<a href="https://www.youtube.com/watch?v=pj4U_W0OFoE">JSConf的</a> Jenn“Moneydollars”Schiffer <a href="https://www.youtube.com/watch?v=pj4U_W0OFoE">提出的</a> 。 jortSort是一个函数，它将一个可比较对象数组作为其参数。然后它按升序对数组进行排序，并将排序后的数组与最初提供的数组进行比较。如果数组匹配（即原始数组已经排序），则该函数返回true。如果数组不匹配（即原始数组未排序），则该函数返回false。 </section>
+<section id='description'>
+jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn "Moneydollars" Schiffer at the prestigious <a href="https://www.youtube.com/watch?v=pj4U_W0OFoE" target="_blank">JSConf</a>.
+jortSort should be a function that takes a single array of comparable objects as its argument. It then sorts the array in ascending order and compares the sorted array to the originally provided array. If the arrays match (i.e. the original array was already sorted), the function returns true. If the arrays do not match (i.e. the original array was not sorted), the function returns false.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,22 +21,22 @@ localeTitle: JortSort
 
 ```yml
 tests:
-  - text: <code>jortsort</code>应该是一个功能。
-    testString: 'assert(typeof jortsort=="function","<code>jortsort</code> should be a function.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[0])+&quot;)</code>应该返回一个布尔值。'
-    testString: 'assert(typeof jortsort(tests[0].slice())=="boolean","<code>jortsort("+JSON.stringify(tests[0])+")</code> should return a boolean.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[0])+&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(jortsort(tests[0].slice()),true,"<code>jortsort("+JSON.stringify(tests[0])+")</code> should return <code>true</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[1])+&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(jortsort(tests[1].slice()),false,"<code>jortsort("+JSON.stringify(tests[1])+")</code> should return <code>false</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[2])+&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(jortsort(tests[2].slice()),false,"<code>jortsort("+JSON.stringify(tests[2])+")</code> should return <code>false</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[3])+&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(jortsort(tests[3].slice()),true,"<code>jortsort("+JSON.stringify(tests[3])+")</code> should return <code>true</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[4])+&quot;)</code>应该返回<code>false</code> 。'
-    testString: 'assert.equal(jortsort(tests[4].slice()),false,"<code>jortsort("+JSON.stringify(tests[4])+")</code> should return <code>false</code>.");'
-  - text: '<code>jortsort(&quot;+JSON.stringify(tests[5])+&quot;)</code>应该返回<code>true</code> 。'
-    testString: 'assert.equal(jortsort(tests[5].slice()),true,"<code>jortsort("+JSON.stringify(tests[5])+")</code> should return <code>true</code>.");'
+  - text: <code>jortsort</code> should be a function.
+    testString: assert(typeof jortsort=='function');
+  - text: <code>jortsort([1,2,3,4,5])</code> should return a boolean.
+    testString: assert(typeof jortsort([1,2,3,4,5])=='boolean');
+  - text: <code>jortsort([1,2,3,4,5])</code> should return <code>true</code>.
+    testString: assert.equal(jortsort([1,2,3,4,5]),true);
+  - text: <code>jortsort([1,2,13,4,5])</code> should return <code>false</code>.
+    testString: assert.equal(jortsort([1,2,13,4,5]),false);
+  - text: <code>jortsort([12,4,51,2,4])</code> should return <code>false</code>.
+    testString: assert.equal(jortsort([12,4,51,2,4]),false);
+  - text: <code>jortsort([1,2])</code> should return <code>true</code>.
+    testString: assert.equal(jortsort([1,2]),true);
+  - text: <code>jortsort([5,4,3,2,1])</code> should return <code>false</code>.
+    testString: assert.equal(jortsort([5,4,3,2,1]),false);
+  - text: <code>jortsort([1,1,1,1,1])</code> should return <code>true</code>.
+    testString: assert.equal(jortsort([1,1,1,1,1]),true);
 
 ```
 
@@ -45,20 +48,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function jortsort (array) {
+function jortsort(array) {
   // Good luck!
 }
-
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>
@@ -68,7 +60,21 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function jortsort(array) {
+  // sort the array
+  var originalArray = array.slice(0);
+  array.sort( function(a,b){return a - b} );
+
+  // compare to see if it was originally sorted
+  for (var i = 0; i < originalArray.length; ++i) {
+    if (originalArray[i] !== array[i]) return false;
+  }
+
+  return true;
+};
+
 ```
+
 </section>

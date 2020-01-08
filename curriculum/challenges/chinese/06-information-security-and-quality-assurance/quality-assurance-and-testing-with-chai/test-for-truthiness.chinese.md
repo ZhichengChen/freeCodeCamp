@@ -2,15 +2,28 @@
 id: 587d824b367417b2b2512c49
 title: Test for Truthiness
 challengeType: 2
-videoUrl: ''
-localeTitle: 测试真实性
+forumTopicId: 301596
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。使用assert.isTrue（）或assert.isNotTrue（）来使测试通过。 .isTrue（true）和.isNotTrue（其他所有内容）都将通过。 .isFalse（）和.isNotFalse（）也存在。 </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+
+<code>isTrue()</code> will test for the boolean value true and <code>isNotTrue()</code> will pass when given anything but the boolean value of true.
+
+```js
+assert.isTrue(true, 'this will pass with the boolean value true');
+assert.isTrue('true', 'this will NOT pass with the string value 'true');
+assert.isTrue(1, 'this will NOT pass with the number value 1');
+```
+
+
+<code>isFalse()</code> and <code>isNotFalse()</code> also exist and behave similary to their true counterparts except they look for the boolean value of false. 
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Use <code>assert.isTrue()</code> or <code>assert.isNotTrue()</code> to make the tests pass.
 </section>
 
 ## Tests
@@ -18,14 +31,14 @@ localeTitle: 测试真实性
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=3").then(data => {assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isTrue vs. isNotTrue
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=3").then(data => {  assert.equal(data.assertions[0].method, "isTrue", "True is true"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isTrue vs. isNotTrue
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=3").then(data => {  assert.equal(data.assertions[1].method, "isTrue", "Double negation of a truthy value is true"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  isTrue vs. isNotTrue
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=3").then(data => {  assert.equal(data.assertions[2].method, "isNotTrue", "A truthy object is not true - neither is a false one"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: All tests should pass.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - isTrue vs. isNotTrue.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[0].method, 'isTrue', 'True is true'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - isTrue vs. isNotTrue.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[1].method, 'isTrue', 'Double negation of a truthy value is true'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - isTrue vs. isNotTrue.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=3').then(data => {  assert.equal(data.assertions[2].method, 'isNotTrue', 'A truthy object is not true - neither is a false one'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -40,6 +53,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

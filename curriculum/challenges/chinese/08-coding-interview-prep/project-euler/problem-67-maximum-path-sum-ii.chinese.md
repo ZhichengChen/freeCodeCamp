@@ -2,15 +2,23 @@
 id: 5900f3b01000cf542c50fec2
 challengeType: 5
 title: 'Problem 67: Maximum path sum II'
-videoUrl: ''
-localeTitle: 问题67：最大路径总和II
+forumTopicId: 302179
 ---
 
 ## Description
-<section id="description">从下面三角形的顶部开始并移动到下面一行的相邻数字，从上到下的最大总数为23. 37 4 2 4 6 8 5 9 3即3 + 7 + 4 + 9 = 23 。在triangle.txt（右键单击和&#39;Save Link / Target As ...&#39;）中找到从上到下的最大总数，这是一个包含一百行三角形的15K文本文件。注意：这是问题18的一个更难的版本。不可能尝试每条路线来解决这个问题，因为共有299个！如果你每秒可以检查一万亿（1012）条路线，则需要花费超过二百亿年才能检查它们。有一种有效的算法可以解决它。 ; O） </section>
+<section id='description'>
+By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+37 4
+2 4 6
+8 5 9 3
+That is, 3 + 7 + 4 + 9 = 23.
+Find the maximum total from top to bottom in triangle.txt (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.
+NOTE: This is a much more difficult version of Problem 18. It is not possible to try every route to solve this problem, as there are 299 altogether! If you could check one trillion (1012) routes every second it would take over twenty billion years to check them all. There is an efficient algorithm to solve it. ;o)
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题67：最大路径总和II
 
 ```yml
 tests:
-  - text: <code>euler67()</code>应该返回7273。
-    testString: 'assert.strictEqual(euler67(), 7273, "<code>euler67()</code> should return 7273.");'
+  - text: <code>euler67()</code> should return 7273.
+    testString: assert.strictEqual(euler67(), 7273);
 
 ```
 
@@ -37,7 +45,6 @@ function euler67() {
 }
 
 euler67();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler67();
 ```js
 // solution required
 ```
+
 </section>

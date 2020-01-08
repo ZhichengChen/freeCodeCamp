@@ -137,8 +137,34 @@ module.exports = {
       options: {
         langKeyForNull: 'any',
         useLangKeyLayout: true,
-        prefixDefault: false,
-        langKeyDefault: 'zh'
+        prefixDefault: true,
+        langKeyDefault: 'zh',
+        markdownRemark: {
+          postPage: 'src/templates/Introduction/Intro.js',
+          query: `
+            {
+              allMarkdownRemark {
+                edges {
+                  node {
+                    fields {
+                      slug
+                      nodeIdentity
+                      langKey
+                    }
+                    frontmatter {
+                      block
+                      superBlock
+                      title
+                    }
+                    htmlAst
+                    id
+                    excerpt
+                  }
+                }
+              }
+            }
+          `
+        }
       }
     }
   ]

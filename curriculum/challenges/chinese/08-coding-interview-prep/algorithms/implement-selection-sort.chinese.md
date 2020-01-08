@@ -2,15 +2,19 @@
 id: 587d8259367417b2b2512c85
 title: Implement Selection Sort
 challengeType: 1
-videoUrl: ''
-localeTitle: 实施选择排序
+forumTopicId: 301616
 ---
 
 ## Description
-<section id="description">这里我们将实现选择排序。选择排序的工作原理是选择列表中的最小值并使用列表中的第一个值进行交换。然后它从第二个位置开始，选择剩余列表中的最小值，并将其与第二个元素交换。它继续遍历列表并交换元素，直到它到达列表的末尾。现在列表已排序。在所有情况下，选择排序都具有二次时间复杂度。 <strong>说明</strong> ：编写一个函数<code>selectionSort</code> ，它将一个整数数组作为输入，并按照从最小到最大的排序顺序返回这些整数的数组。 <strong>注意：</strong> <br>我们从幕后调用这个功能;我们使用的测试数组在编辑器中被注释掉了。尝试记录<code>array</code>以查看您的排序算法！ </section>
+<section id='description'>
+Here we will implement selection sort. Selection sort works by selecting the minimum value in a list and swapping it with the first value in the list. It then starts at the second position, selects the smallest value in the remaining list, and swaps it with the second element. It continues iterating through the list and swapping elements until it reaches the end of the list. Now the list is sorted. Selection sort has quadratic time complexity in all cases.
+<strong>Instructions</strong>: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.
+<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +22,14 @@ localeTitle: 实施选择排序
 
 ```yml
 tests:
-  - text: <code>selectionSort</code>是一个函数。
-    testString: 'assert(typeof selectionSort == "function", "<code>selectionSort</code> is a function.");'
-  - text: <code>selectionSort</code>返回一个排序数组（从最小到最大）。
-    testString: 'assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), "<code>selectionSort</code> returns a sorted array (least to greatest).");'
-  - text: <code>selectionSort</code>返回一个除订单外没有变化的数组。
-    testString: 'assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], "<code>selectionSort</code> returns an array that is unchanged except for order.");'
-  - text: <code>selectionSort</code>不应使用内置的<code>.sort()</code>方法。
-    testString: 'assert.strictEqual(code.search(/\.sort\(/), -1, "<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.");'
+  - text: <code>selectionSort</code> should be a function.
+    testString: assert(typeof selectionSort == 'function');
+  - text: <code>selectionSort</code> should return a sorted array (least to greatest).
+    testString: assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])));
+  - text: <code>selectionSort</code> should return an array that is unchanged except for order.
+    testString: assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]);
+  - text: <code>selectionSort</code> should not use the built-in <code>.sort()</code> method.
+    testString: assert.strictEqual(code.search(/\.sort\(/), -1);
 
 ```
 
@@ -39,14 +43,12 @@ tests:
 ```js
 function selectionSort(array) {
   // change code below this line
-
-  // change code above this line
   return array;
+  // change code above this line
 }
 
-// test array:
-// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]
 
+selectionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]);
 ```
 
 </div>
@@ -56,7 +58,10 @@ function selectionSort(array) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+function isSorted(arr) {
+  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
+  return check(0);
+};
 ```
 
 </div>
@@ -67,6 +72,20 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+function selectionSort(array) {
+  for (let i = 0; i < array.length-1; i++) {
+    let minimumIndex = i;
+    for (let j = i+1; j < array.length; j++){ 
+      if (array[j] < array[minimumIndex]) {
+        minimumIndex = j;
+      }
+    }
+    let value = array[minimumIndex];
+    array[minimumIndex] = array[i]; 
+    array[i] = value; 
+  } 
+    return array;
+} 
 ```
+
 </section>

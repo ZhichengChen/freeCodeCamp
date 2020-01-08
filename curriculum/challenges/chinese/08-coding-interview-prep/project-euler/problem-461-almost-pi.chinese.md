@@ -2,15 +2,23 @@
 id: 5900f53a1000cf542c51004c
 challengeType: 5
 title: 'Problem 461: Almost Pi'
-videoUrl: ''
-localeTitle: 问题461：几乎是Pi
+forumTopicId: 302136
 ---
 
 ## Description
-<section id="description">对于所有非负整数k，设fn（k）= ek / n-1。值得注意的是，f200（6）+ f200（75）+ f200（89）+ f200（226）= 3.141592644529 ...≈π。事实上，对于n = 200，它是fn（a）+ fn（b）+ fn（c）+ fn（d）形式的π的最佳近似值。设g（n）= a2 + b2 + c2 + d 2为a，b，c，d最小化错误：| fn（a）+ fn（b）+ fn（c）+ fn（d） - π| （其中| x |表示x的绝对值）。给出g（200）= 62 + 752 + 892 + 2262 = 64658.求g（10000）。 </section>
+<section id='description'>
+Let fn(k) = ek/n - 1, for all non-negative integers k.
+Remarkably, f200(6) + f200(75) + f200(89) + f200(226) = 3.141592644529… ≈ π.
+In fact, it is the best approximation of π of the form fn(a) + fn(b) + fn(c) + fn(d) for n = 200.
+Let g(n) = a2 + b2 + c2 + d 2 for a, b, c, d that minimize the error: | fn(a) + fn(b) + fn(c) + fn(d) - π|
+(where |x| denotes the absolute value of x).
+You are given g(200) = 62 + 752 + 892 + 2262 = 64658.
+Find g(10000).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +26,8 @@ localeTitle: 问题461：几乎是Pi
 
 ```yml
 tests:
-  - text: <code>euler461()</code>应该返回159820276。
-    testString: 'assert.strictEqual(euler461(), 159820276, "<code>euler461()</code> should return 159820276.");'
+  - text: <code>euler461()</code> should return 159820276.
+    testString: assert.strictEqual(euler461(), 159820276);
 
 ```
 
@@ -37,7 +45,6 @@ function euler461() {
 }
 
 euler461();
-
 ```
 
 </div>
@@ -52,4 +59,5 @@ euler461();
 ```js
 // solution required
 ```
+
 </section>

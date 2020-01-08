@@ -2,15 +2,25 @@
 id: 5900f3a51000cf542c50feb8
 challengeType: 5
 title: 'Problem 57: Square root convergents'
-videoUrl: ''
-localeTitle: 问题57：平方根收敛
+forumTopicId: 302168
 ---
 
 ## Description
-<section id="description">可以证明两个的平方根可以表示为无限连续分数。 √2= 1 + 1 /（2 + 1 /（2 + 1 /（2 + ...）））= 1.414213 ...通过扩展前四次迭代，得到：1 + 1/2 = 3 / 2 = 1.5 1 + 1 /（2 + 1/2）= 7/5 = 1.4 1 + 1 /（2 + 1 /（2 + 1/2））= 17/12 = 1.41666 ... 1 + 1 /（2 + 1 /（2 + 1 /（2 + 1/2）））= 41/29 = 1.41379 ...接下来的三次扩展是99 / 70,239 / 169和577/408，但是第八次扩展，1393/985，是分子中位数超过分母中位数的第一个例子。在前一千次扩展中，有多少分数包含一个数字比分母更多的分子？ </section>
+<section id='description'>
+It is possible to show that the square root of two can be expressed as an infinite continued fraction.
+√ 2 = 1 + 1/(2 + 1/(2 + 1/(2 + ... ))) = 1.414213...
+By expanding this for the first four iterations, we get:
+1 + 1/2 = 3/2 = 1.5
+1 + 1/(2 + 1/2) = 7/5 = 1.4
+1 + 1/(2 + 1/(2 + 1/2)) = 17/12 = 1.41666...
+1 + 1/(2 + 1/(2 + 1/(2 + 1/2))) = 41/29 = 1.41379...
+The next three expansions are 99/70, 239/169, and 577/408, but the eighth expansion, 1393/985, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator.
+In the first one-thousand expansions, how many fractions contain a numerator with more digits than denominator?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题57：平方根收敛
 
 ```yml
 tests:
-  - text: <code>euler57()</code>应返回153。
-    testString: 'assert.strictEqual(euler57(), 153, "<code>euler57()</code> should return 153.");'
+  - text: <code>euler57()</code> should return 153.
+    testString: assert.strictEqual(euler57(), 153);
 
 ```
 
@@ -37,7 +47,6 @@ function euler57() {
 }
 
 euler57();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler57();
 ```js
 // solution required
 ```
+
 </section>

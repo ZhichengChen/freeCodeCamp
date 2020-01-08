@@ -2,15 +2,27 @@
 id: 5900f5261000cf542c510038
 challengeType: 5
 title: 'Problem 441: The inverse summation of coprime couples'
-videoUrl: ''
-localeTitle: 问题441：互质夫妇的反向总和
+forumTopicId: 302113
 ---
 
 ## Description
-<section id="description">对于整数M，我们将R（M）定义为满足所有这些条件的所有整数对p和q的1 /（p·q）之和： <p> 1≤p&lt;q≤Mp +q≥Mp和q是互质的。 </p><p>我们还将S（N）定义为R（i）的总和为2≤i≤N。我们可以验证S（2）= R（2）= 1/2，S（10）≈6.9147和S（100） ）≈58.2962。 </p><p>找到S（107）。将您的答案四舍五入到小数点后四位。 </p></section>
+<section id='description'>
+For an integer M, we define R(M) as the sum of 1/(p·q) for all the integer pairs p and q which satisfy all of these conditions:
+
+ 1 ≤ p < q ≤ M
+ p + q ≥ M
+ p and q are coprime.
+
+We also define S(N) as the sum of R(i) for 2 ≤ i ≤ N.
+We can verify that S(2) = R(2) = 1/2, S(10) ≈ 6.9147 and S(100) ≈ 58.2962.
+
+
+Find S(107). Give your answer rounded to four decimal places.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +30,8 @@ localeTitle: 问题441：互质夫妇的反向总和
 
 ```yml
 tests:
-  - text: <code>euler441()</code>应返回5000088.8395。
-    testString: 'assert.strictEqual(euler441(), 5000088.8395, "<code>euler441()</code> should return 5000088.8395.");'
+  - text: <code>euler441()</code> should return 5000088.8395.
+    testString: assert.strictEqual(euler441(), 5000088.8395);
 
 ```
 
@@ -37,7 +49,6 @@ function euler441() {
 }
 
 euler441();
-
 ```
 
 </div>
@@ -52,4 +63,5 @@ euler441();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,35 @@
 id: 5900f4691000cf542c50ff7c
 challengeType: 5
 title: 'Problem 253: Tidying up'
-videoUrl: ''
-localeTitle: 问题253：整理
+forumTopicId: 301901
 ---
 
 ## Description
-<section id="description">一个小孩子有一个“数字毛毛虫”，由四十个拼图块组成，每个拼图上有一个数字，当它们连成一条线时，按顺序显示数字1到40。 <p>每天晚上，孩子的父亲必须拿起散落在游戏室的毛毛虫的碎片。他随机拿起碎片并按正确顺序放置。当毛虫以这种方式建立时，它形成了逐渐融合在一起的不同部分。段的数量从零开始（没有放置件），通常增加到大约十一或十二，然后在完成单个段（放置所有件）之前往往再次下降。 </p><p>例如： </p><p>片段放置所以Far121422936434554354 ...... </p><p>设M是毛虫随机整理过程中遇到的最大段数。对于十件毛毛虫来说，每个M的可能性是多少</p><p> M Possibilities1512 2250912 31815264 41418112 5144000 </p><p>所以M的最可能值是3，平均值是385643/113400 = 3.400732，四舍五入到小数点后六位。 </p><p>对于四十件毛毛虫而言，M最可能的价值是11;但是M的平均值是多少？将您的答案四舍五入到小数点后六位。 </p></section>
+<section id='description'>
+A small child has a “number caterpillar” consisting of forty jigsaw pieces, each with one number on it, which, when connected together in a line, reveal the numbers 1 to 40 in order.
+
+Every night, the child's father has to pick up the pieces of the caterpillar that have been scattered across the play room. He picks up the pieces at random and places them in the correct order. As the caterpillar is built up in this way, it forms distinct segments that gradually merge together. The number of segments starts at zero (no pieces placed), generally increases up to about eleven or twelve, then tends to drop again before finishing at a single segment (all pieces placed).
+
+For example:
+
+Piece Placed
+Segments So Far121422936434554354……
+
+Let M be the maximum number of segments encountered during a random tidy-up of the caterpillar.
+For a caterpillar of ten pieces, the number of possibilities for each M is
+
+M
+Possibilities1512      2250912      31815264      41418112      5144000      
+
+so the most likely value of M is 3 and the average value is 385643⁄113400 = 3.400732, rounded to six decimal places.
+
+The most likely value of M for a forty-piece caterpillar is 11; but what is the average value of M?
+Give your answer rounded to six decimal places.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +38,8 @@ localeTitle: 问题253：整理
 
 ```yml
 tests:
-  - text: <code>euler253()</code>应返回11.492847。
-    testString: 'assert.strictEqual(euler253(), 11.492847, "<code>euler253()</code> should return 11.492847.");'
+  - text: <code>euler253()</code> should return 11.492847.
+    testString: assert.strictEqual(euler253(), 11.492847);
 
 ```
 
@@ -37,7 +57,6 @@ function euler253() {
 }
 
 euler253();
-
 ```
 
 </div>
@@ -52,4 +71,5 @@ euler253();
 ```js
 // solution required
 ```
+
 </section>

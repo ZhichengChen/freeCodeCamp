@@ -1,19 +1,25 @@
 ---
 id: 587d7fb4367417b2b2512bfd
 title: Add Keywords to Your package.json
-localeTitle: 将关键字添加到package.json
 challengeType: 2
+forumTopicId: 301526
 ---
 
 ## Description
-<section id='description'> 
-keywords-field是您可以使用相关关键字描述项目的地方。 <code>0</code>示例
-<code>"keywords": [ "descriptive", "related", "words" ],</code> <code>0</code>如您所见，此字段的结构为双引号字符串数组。 <code>0</code>说明<code>0</code>将一组合适的字符串添加到Glitch项目的package.json中的keywords-field。 <code>0</code>其中一个关键字应该是freecodecamp。 
+<section id='description'>
+The <code>keywords</code> field is where you can describe your project using related keywords. Here's an example:
+
+```json
+"keywords": [ "descriptive", "related", "words" ],
+```
+
+As you can see, this field is structured as an array of double-quoted strings.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Add an array of suitable strings to the <code>keywords</code> field in the package.json file of your project.
+One of the keywords should be "freecodecamp".
 </section>
 
 ## Tests
@@ -21,11 +27,11 @@ keywords-field是您可以使用相关关键字描述项目的地方。 <code>0<
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“关键字”键
+  - text: package.json should have a valid "keywords" key
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.keywords, ''"keywords" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“keywords”字段应为Array'
+  - text: '"keywords" field should be an Array'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.isArray(packJson.keywords, ''"keywords" is not an array''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“关键字”应包含“freecodecamp”'
+  - text: '"keywords" should include "freecodecamp"'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data);     assert.include(packJson.keywords, ''freecodecamp'', ''"keywords" does not include "freecodecamp"''); },  xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -41,6 +47,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

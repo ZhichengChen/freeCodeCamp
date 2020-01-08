@@ -3,27 +3,34 @@ id: 5a24c314108439a4d4036178
 title: Create a Controlled Input
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 创建受控输入
+forumTopicId: 301385
 ---
 
 ## Description
-<section id="description">您的应用程序可能在<code>state</code>和呈现的UI之间进行更复杂的交互。例如，用于文本输入的表单控件元素（例如<code>input</code>和<code>textarea</code>在用户键入时在DOM中维护它们自己的状态。使用React，您可以将此可变状态移动到React组件的<code>state</code> 。用户的输入成为应用程序<code>state</code>一部分，因此React控制该输入字段的值。通常，如果React组件具有用户可以键入的输入字段，则它将是受控输入表单。 </section>
+<section id='description'>
+Your application may have more complex interactions between <code>state</code> and the rendered UI. For example, form control elements for text input, such as <code>input</code> and <code>textarea</code>, maintain their own state in the DOM as the user types. With React, you can move this mutable state into a React component's <code>state</code>. The user's input becomes part of the application <code>state</code>, so React controls the value of that input field. Typically, if you have React components with input fields the user can type into, it will be a controlled input form.
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器具有名为<code>ControlledInput</code>的组件的骨架，以创建受控<code>input</code>元素。组件的<code>state</code>已经使用包含空字符串的<code>input</code>属性进行初始化。此值表示用户在<code>input</code>字段中键入的文本。首先，创建一个名为<code>handleChange()</code>的方法，该方法具有一个名为<code>event</code>的参数。调用该方法时，它会接收一个<code>event</code>对象，该对象包含<code>input</code>元素中的一串文本。您可以使用方法内的<code>event.target.value</code>访问此字符串。使用此新字符串更新组件<code>state</code>的<code>input</code>属性。在render方法中，在<code>h4</code>标记上方创建<code>input</code>元素。添加一个<code>value</code>属性，该属性等于组件<code>state</code>的<code>input</code>属性。然后将<code>onChange()</code>事件处理程序集添加到<code>handleChange()</code>方法。当您在输入框中键入时，该文本由<code>handleChange()</code>方法处理，设置为本地<code>state</code>的<code>input</code>属性，并在页面的<code>input</code>框中呈现为值。组件<code>state</code>是关于输入数据的单一事实来源。最后但并非最不重要的是，不要忘记在构造函数中添加必要的绑定。 </section>
+<section id='instructions'>
+The code editor has the skeleton of a component called <code>ControlledInput</code> to create a controlled <code>input</code> element. The component's <code>state</code> is already initialized with an <code>input</code> property that holds an empty string. This value represents the text a user types into the <code>input</code> field.
+First, create a method called <code>handleChange()</code> that has a parameter called <code>event</code>. When the method is called, it receives an <code>event</code> object that contains a string of text from the <code>input</code> element. You can access this string with <code>event.target.value</code> inside the method. Update the <code>input</code> property of the component's <code>state</code> with this new string.
+In the render method, create the <code>input</code> element above the <code>h4</code> tag. Add a <code>value</code> attribute which is equal to the <code>input</code> property of the component's <code>state</code>. Then add an <code>onChange()</code> event handler set to the <code>handleChange()</code> method.
+When you type in the input box, that text is processed by the <code>handleChange()</code> method, set as the <code>input</code> property in the local <code>state</code>, and rendered as the value in the <code>input</code> box on the page. The component <code>state</code> is the single source of truth regarding the input data.
+Last but not least, don't forget to add the necessary bindings in the constructor.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>ControlledInput</code>应返回包含<code>input</code>和<code>p</code>标记的<code>div</code>元素。
-    testString: 'assert(Enzyme.mount(React.createElement(ControlledInput)).find("div").children().find("input").length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find("div").children().find("p").length === 1, "<code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.");'
-  - text: <code>ControlledInput</code>的状态应该初始化， <code>input</code>属性设置为空字符串。
-    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state("input"), "", "The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.");'
-  - text: 输入input元素应更新输入的状态和值， <code>p</code>元素应在键入时呈现此状态。
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(ControlledInput)); const _1 = () => { mockedComponent.setState({ input: "" }); return waitForIt(() => mockedComponent.state("input"))}; const _2 = () => { mockedComponent.find("input").simulate("change", { target: { value: "TestInput" }}); return waitForIt(() => ({ state: mockedComponent.state("input"), text: mockedComponent.find("p").text(), inputVal: mockedComponent.find("input").props().value }))}; const before = await _1(); const after = await _2(); assert(before === "" && after.state === "TestInput" && after.text === "TestInput" && after.inputVal === "TestInput", "Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type."); }; '
+  - text: <code>ControlledInput</code> should return a <code>div</code> element which contains an <code>input</code> and a <code>p</code> tag.
+    testString: assert(Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('input').length === 1 && Enzyme.mount(React.createElement(ControlledInput)).find('div').children().find('p').length === 1);
+  - text: The state of <code>ControlledInput</code> should initialize with an <code>input</code> property set to an empty string.
+    testString: assert.strictEqual(Enzyme.mount(React.createElement(ControlledInput)).state('input'), '');
+  - text: Typing in the input element should update the state and the value of the input, and the <code>p</code> element should render this state as you type.
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(ControlledInput)); const _1 = () => { mockedComponent.setState({ input: '''' }); return waitForIt(() => mockedComponent.state(''input''))}; const _2 = () => { mockedComponent.find(''input'').simulate(''change'', { target: { value: ''TestInput'' }}); return waitForIt(() => ({ state: mockedComponent.state(''input''), text: mockedComponent.find(''p'').text(), inputVal: mockedComponent.find(''input'').props().value }))}; const before = await _1(); const after = await _2(); assert(before === '''' && after.state === ''TestInput'' && after.text === ''TestInput'' && after.inputVal === ''TestInput''); }; '
 
 ```
 
@@ -39,7 +46,7 @@ class ControlledInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: "
+      input: ''
     };
     // change code below this line
 
@@ -60,7 +67,6 @@ class ControlledInput extends React.Component {
     );
   }
 };
-
 ```
 
 </div>
@@ -70,7 +76,7 @@ class ControlledInput extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ControlledInput />, document.getElementById('root'))
 ```
 
 </div>
@@ -80,7 +86,34 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+class ControlledInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+  render() {
+    return (
+      <div>
+        <input
+          value={this.state.input}
+          onChange={this.handleChange} />
+        <h4>Controlled Input:</h4>
+
+        <p>{this.state.input}</p>
+      </div>
+    );
+  }
+};
 ```
+
 </section>

@@ -2,15 +2,24 @@
 title: Y combinator
 id: 594810f028c0303b75339ad5
 challengeType: 5
-videoUrl: ''
-localeTitle: 和组合
+forumTopicId: 302345
 ---
 
 ## Description
-<section id="description"><p>在严格的<a href="https://en.wikipedia.org/wiki/Functional programming" title="wp：函数式编程">函数编程</a>和<a href="https://en.wikipedia.org/wiki/lambda calculus" title="wp：lambda演算">lambda演算中</a> ，函数（lambda表达式）没有状态，只允许引用封闭函数的参数。这排除了递归函数的通常定义，其中函数与变量的状态相关联，并且该变量的状态在函数体中使用。 </p><p> <a href="http://mvanier.livejournal.com/2897.html">Y组合</a>器本身是一个无状态函数，当应用于另一个无状态函数时，它返回函数的递归版本。 Y组合器是这类函数中最简单的一种，称为<a href="https://en.wikipedia.org/wiki/Fixed-point combinator" title="wp：定点组合器">定点组合器</a> 。 </p>任务： <pre> <code>Define the stateless Y combinator function and use it to compute &lt;a href=&quot;https://en.wikipedia.org/wiki/Factorial&quot; title=&quot;wp: factorial&quot;&gt;factorial&lt;/a&gt;.</code> </pre><p> <code>factorial(N)</code>功能已经给你了。另见<a href="http://vimeo.com/45140590">Jim Weirich：功能编程中的冒险</a> 。 </p></section>
+<section id='description'>
+
+In strict <a href="https://en.wikipedia.org/wiki/Functional programming" title="wp: functional programming" target="_blank">functional programming</a> and the <a href="https://en.wikipedia.org/wiki/lambda calculus" title="wp: lambda calculus" target="_blank">lambda calculus</a>, functions (lambda expressions) don't have state and are only allowed to refer to arguments of enclosing functions. This rules out the usual definition of a recursive function wherein a function is associated with the state of a variable and this variable's state is used in the body of the function.
+The <a href="https://mvanier.livejournal.com/2897.html" target="_blank">Y combinator</a> is itself a stateless function that, when applied to another stateless function, returns a recursive version of the function. The Y combinator is the simplest of the class of such functions, called <a href="https://en.wikipedia.org/wiki/Fixed-point combinator" title="wp: fixed-point combinator" target="_blank">fixed-point combinators</a>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
+Define the stateless Y combinator function and use it to compute <a href="https://en.wikipedia.org/wiki/Factorial" title="wp: factorial" target="_blank">factorial</a>. The <code>factorial(N)</code> function is already given to you.
+<strong>See also:</strong>
+<ul>
+  <li><a href="https://vimeo.com/45140590" target="_blank">Jim Weirich: Adventures in Functional Programming</a>.</li>
+</ul>
 </section>
 
 ## Tests
@@ -18,18 +27,18 @@ localeTitle: 和组合
 
 ```yml
 tests:
-  - text: Y必须返回一个函数
-    testString: 'assert.equal(typeof Y(f => n => n), "function", "Y must return a function");'
-  - text: factorial（1）必须返回1。
-    testString: 'assert.equal(factorial(1), 1, "factorial(1) must return 1.");'
-  - text: factorial（2）必须返回2。
-    testString: 'assert.equal(factorial(2), 2, "factorial(2) must return 2.");'
-  - text: factorial（3）必须返回6。
-    testString: 'assert.equal(factorial(3), 6, "factorial(3) must return 6.");'
-  - text: factorial（4）必须返回24。
-    testString: 'assert.equal(factorial(4), 24, "factorial(4) must return 24.");'
-  - text: factorial（10）必须返回3628800。
-    testString: 'assert.equal(factorial(10), 3628800, "factorial(10) must return 3628800.");'
+  - text: Y should return a function.
+    testString: assert.equal(typeof Y(f => n => n), 'function');
+  - text: factorial(1) should return 1.
+    testString: assert.equal(factorial(1), 1);
+  - text: factorial(2) should return 2.
+    testString: assert.equal(factorial(2), 2);
+  - text: factorial(3) should return 6.
+    testString: assert.equal(factorial(3), 6);
+  - text: factorial(4) should return 24.
+    testString: assert.equal(factorial(4), 24);
+  - text: factorial(10) should return 3628800.
+    testString: assert.equal(factorial(10), 3628800);
 
 ```
 
@@ -52,7 +61,6 @@ var factorial = Y(function(f) {
     return n > 1 ? n * f(n - 1) : 1;
   };
 });
-
 ```
 
 </div>
@@ -62,7 +70,7 @@ var factorial = Y(function(f) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));
 ```
 
 </div>
@@ -72,7 +80,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var Y = f => (x => x(x))(y => f(x => y(y)(x)));
+
 ```
+
 </section>

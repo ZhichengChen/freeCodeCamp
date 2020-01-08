@@ -2,17 +2,53 @@
 id: 587d7dbe367417b2b2512bb8
 title: Use @if and @else to Add Logic To Your Styles
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用@if和@else将逻辑添加到您的样式
+forumTopicId: 301463
 ---
 
 ## Description
-<section id="description"> Sass中的<code>@if</code>指令对于测试特定情况很有用 - 它就像JavaScript中的<code>if</code>语句一样。 <blockquote> @mixin make-bold（$ bool）{ <br> @if $ bool == true { <br> font-weight：bold; <br> } <br> } </blockquote>就像在JavaScript中一样， <code>@else if</code>和<code>@else</code>测试更多条件： <blockquote> @mixin text-effect（$ val）{ <br> @if $ val == danger { <br>红色; <br> } <br> @else if $ val == alert { <br>颜色：黄色; <br> } <br> @else if $ val == success { <br>颜色：绿色; <br> } <br> @else { <br>颜色：黑色; <br> } <br> } </blockquote></section>
+<section id='description'>
+The <code>@if</code> directive in Sass is useful to test for a specific case - it works just like the <code>if</code> statement in JavaScript</code>.
+
+```scss
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+```
+
+And just like in JavaScript, <code>@else if</code> and <code>@else</code> test for more conditions:
+
+```scss
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">创建一个名为<code>border-stroke</code>的<code>mixin</code> ，它接受一个参数<code>$val</code> 。 <code>mixin</code>应使用<code>@if</code> ， <code>@else if</code>和<code>@else</code>检查以下条件：
-<blockquote>光 - 1px纯黑色<br>中等 - 3px纯黑色<br>重 - 6px纯黑色 </blockquote>
-如果<code>$val</code>不是<code>light</ code>，<code>medium</code>，或者<code>heavy</code>，则边框应该设置为<code>none</code>。
+<section id='instructions'>
+Create a mixin called <code>border-stroke</code> that takes a parameter <code>$val</code>. The mixin should check for the following conditions using <code>@if</code>, <code>@else if</code>, and <code>@else</code>:
+
+```scss
+light - 1px solid black
+medium - 3px solid black
+heavy - 6px solid black
+```
+
+If <code>$val</code> is not <code>light</code>, <code>medium</code>, or <code>heavy</code>, the border should be set to <code>none</code>.
 </section>
 
 ## Tests
@@ -20,16 +56,16 @@ localeTitle: 使用@if和@else将逻辑添加到您的样式
 
 ```yml
 tests:
-  - text: 你的代码应该声明一个名为<code>border-stroke</code>的<code>mixin</code> ，它有一个名为<code>$val</code>的参数。
-    testString: 'assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi), "Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.");'
-  - text: 你的<code>mixin</code>应该有一个<code>@if</code>语句来检查<code>$val</code>是否很亮，并将<code>border</code>设置为1px纯黑色。
-    testString: 'assert(code.match(/@if\s+?\$val\s*?===?\s*?light\s*?{\s*?border\s*?:\s*?1px\s+?solid\s+?black\s*?;\s*?}/gi), "Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.");'
-  - text: 你的<code>mixin</code>应该有一个<code>@else if</code>语句来检查<code>$val</code>是否为中等，并将<code>border</code>设置为3px纯黑色。
-    testString: 'assert(code.match(/@else\s+?if\s+?\$val\s*?===?\s*?medium\s*?{\s*?border\s*?:\s*?3px\s+?solid\s+?black\s*?;\s*?}/gi), "Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.");'
-  - text: 你的<code>mixin</code>应该有一个<code>@else if</code>语句来检查<code>$val</code>是否很重，并将<code>border</code>设置为6px纯黑色。
-    testString: 'assert(code.match(/@else\s+?if\s+?\$val\s*?===?\s*?heavy\s*?{\s*?border\s*?:\s*?6px\s+?solid\s+?black\s*?;\s*?}/gi), "Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.");'
-  - text: 你的<code>mixin</code>应该有一个<code>@else</code>语句来设置<code>border</code>为none。
-    testString: 'assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi), "Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.");'
+  - text: Your code should declare a mixin named <code>border-stroke</code> which has a parameter named <code>$val</code>.
+    testString: assert(code.match(/@mixin\s+?border-stroke\s*?\(\s*?\$val\s*?\)\s*?{/gi));
+  - text: Your mixin should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.
+    testString: assert(code.match(/@if\s+?\$val\s*?===?\s*?light\s*?{\s*?border\s*?:\s*?1px\s+?solid\s+?black\s*?;\s*?}/gi));
+  - text: Your mixin should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.
+    testString: assert(code.match(/@else\s+?if\s+?\$val\s*?===?\s*?medium\s*?{\s*?border\s*?:\s*?3px\s+?solid\s+?black\s*?;\s*?}/gi));
+  - text: Your mixin should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.
+    testString: assert(code.match(/@else\s+?if\s+?\$val\s*?===?\s*?heavy\s*?{\s*?border\s*?:\s*?6px\s+?solid\s+?black\s*?;\s*?}/gi));
+  - text: Your mixin should have an <code>@else</code> statement to set the <code>border</code> to none.
+    testString: assert(code.match(/@else\s*?{\s*?border\s*?:\s*?none\s*?;\s*?}/gi));
 
 ```
 
@@ -54,7 +90,6 @@ tests:
 </style>
 
 <div id="box"></div>
-
 ```
 
 </div>
@@ -66,7 +101,33 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style type='text/sass'>
+  @mixin border-stroke($val) {
+    @if $val == light {
+      border: 1px solid black;
+    }
+    @else if $val == medium {
+      border: 3px solid black;
+    }
+    @else if $val == heavy {
+      border: 6px solid black;
+    }
+    @else {
+      border: none;
+    }
+  }
+
+
+  #box {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(medium);
+  }
+</style>
+
+<div id="box"></div>
 ```
+
 </section>

@@ -2,15 +2,19 @@
 title: Vector cross product
 id: 594810f028c0303b75339ad2
 challengeType: 5
-videoUrl: ''
-localeTitle: 矢量交叉产品
+forumTopicId: 302342
 ---
 
 ## Description
-<section id="description">矢量被定义为具有三个维度，由三个数字的有序集合表示：（X，Y，Z）。 <p>任务： </p><pre> <code>Write a function that takes two vectors (arrays) as input and computes their cross product.</code> </pre><p>您的函数应在无效输入（即不同长度的向量）上返回<code>null</code> 。 </p><p></p></section>
+<section id='description'>
+
+A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: (X, Y, Z).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
+Write a function that takes two vectors (arrays) as input and computes their cross product. Your function should return <code>null</code> on invalid inputs such as vectors of different lengths.
 </section>
 
 ## Tests
@@ -18,12 +22,12 @@ localeTitle: 矢量交叉产品
 
 ```yml
 tests:
-  - text: dotProduct必须是一个函数
-    testString: 'assert.equal(typeof crossProduct, "function", "dotProduct must be a function");'
-  - text: dotProduct（）必须返回null
-    testString: 'assert.equal(crossProduct(), null, "dotProduct() must return null");'
-  - text: 'crossProduct（[1,2,3]，[4,5,6]）必须返回[-3,6，-3]。'
-    testString: 'assert.deepEqual(res12, exp12, "crossProduct([1, 2, 3], [4, 5, 6]) must return [-3, 6, -3].");'
+  - text: dotProduct should be a function.
+    testString: assert.equal(typeof crossProduct, 'function');
+  - text: dotProduct() should return null.
+    testString: assert.equal(crossProduct(), null);
+  - text: crossProduct([1, 2, 3], [4, 5, 6]) should return [-3, 6, -3].
+    testString: assert.deepEqual(res12, exp12);
 
 ```
 
@@ -35,10 +39,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function crossProduct() {
+function crossProduct(a, b) {
     // Good luck!
 }
-
 ```
 
 </div>
@@ -48,7 +51,10 @@ function crossProduct() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const tv1 = [1, 2, 3];
+const tv2 = [4, 5, 6];
+const res12 = crossProduct(tv1, tv2);
+const exp12 = [-3, 6, -3];
 ```
 
 </div>
@@ -58,7 +64,25 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function crossProduct(a, b) {
+  if (!a || !b) {
+    return null;
+  }
+
+  // Check lengths
+  if (a.length !== 3 || b.length !== 3) {
+    return null;
+  }
+
+  return [
+    (a[1] * b[2]) - (a[2] * b[1]),
+    (a[2] * b[0]) - (a[0] * b[2]),
+    (a[0] * b[1]) - (a[1] * b[0])
+  ];
+}
+
 ```
+
 </section>

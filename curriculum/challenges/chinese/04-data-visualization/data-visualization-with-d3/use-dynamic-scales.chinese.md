@@ -2,27 +2,59 @@
 id: 587d7fac367417b2b2512bdd
 title: Use Dynamic Scales
 challengeType: 6
-videoUrl: ''
-localeTitle: 使用动态比例
+forumTopicId: 301495
 ---
 
 ## Description
-<section id="description"> D3 <code>min()</code>和<code>max()</code>方法可用于帮助设置比例。给定复杂的数据集，一个优先级是设置比例，以便可视化符合SVG容器的宽度和高度。您希望在SVG画布内绘制所有数据，以便在网页上显示。下面的示例设置散点图数据的x轴刻度。 <code>domain()</code>方法将信息传递给关于绘图的原始数据值的比例。 <code>range()</code>方法为其提供有关可视化的网页上的实际空间的信息。在该示例中，域从0变为集合中的最大值。它使用<code>max()</code>方法和基于数组中x值的回调函数。该范围使用SVG画布的宽度（ <code>w</code> ），但它也包含一些填充。这会在散点图点和SVG画布边缘之间留出空间。 <blockquote> const dataset = [ <br> [34,78]， <br> [109,280]， <br> [310,120]， <br> [79,411]， <br> [420,220]， <br> [233,145]， <br> [333,96]， <br> [222,333]， <br> [78,320]， <br> [21,123] <br> ]。 <br> const w = 500; <br> const h = 500; <br><br> //在SVG画布边界和绘图之间填充<br> const padding = 30; <br> const xScale = d3.scaleLinear（） <br> .domain（[0，d3.max（dataset，（d）=&gt; d [0]）]） <br> .range（[padding，w  -  padding]）; </blockquote>填充可能首先令人困惑。将x轴描绘为0到500的水平线（SVG画布的宽度值）。在<code>range()</code>方法中包含填充会强制绘图沿着该行（而不是0）从30开始，并以470（而不是500）结束。 </section>
+<section id='description'>
+The D3 <code>min()</code> and <code>max()</code> methods are useful to help set the scale.
+Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and height. You want all the data plotted inside the SVG canvas so it's visible on the web page.
+The example below sets the x-axis scale for scatter plot data. The <code>domain()</code> method passes information to the scale about the raw data values for the plot. The <code>range()</code> method gives it information about the actual space on the web page for the visualization.
+In the example, the domain goes from 0 to the maximum in the set. It uses the <code>max()</code> method with a callback function based on the x values in the arrays. The range uses the SVG canvas' width (<code>w</code>), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG canvas.
+
+```js
+const dataset = [
+  [ 34,    78 ],
+  [ 109,   280 ],
+  [ 310,   120 ],
+  [ 79,    411 ],
+  [ 420,   220 ],
+  [ 233,   145 ],
+  [ 333,   96 ],
+  [ 222,   333 ],
+  [ 78,    320 ],
+  [ 21,    123 ]
+];
+const w = 500;
+const h = 500;
+
+// Padding between the SVG canvas boundary and the plot
+const padding = 30;
+const xScale = d3.scaleLinear()
+  .domain([0, d3.max(dataset, (d) => d[0])])
+  .range([padding, w - padding]);
+```
+
+The padding may be confusing at first. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG canvas). Including the padding in the <code>range()</code> method forces the plot to start at 30 along that line (instead of 0), and end at 470 (instead of 500).
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>yScale</code>变量创建线性y轴刻度。域应该从零开始并转到集合中的最大y值。范围应使用SVG高度（ <code>h</code> ）并包括填充。 <strong>注意</strong> <br>记得保持情节正面朝上。设置y坐标的范围时，较高的值（高度减去填充）是第一个参数，较低的值是第二个参数。 </section>
+<section id='instructions'>
+Use the <code>yScale</code> variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (<code>h</code>) and include padding.
+<strong>Note</strong><br>Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>h2</code>的文本应为30。
-    testString: 'assert(output == 30 && $("h2").text() == "30", "The text in the <code>h2</code> should be 30.");'
-  - text: 'yScale的<code>domain()</code>应该等于<code>[0, 411]</code> 0,411 <code>[0, 411]</code> 。'
-    testString: 'assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), "The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.");'
-  - text: 'yScale的<code>range()</code>应相当于<code>[470, 30]</code> 470,30 <code>[470, 30]</code> 。'
-    testString: 'assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), "The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.");'
+  - text: The text in the <code>h2</code> should be 30.
+    testString: assert(output == 30 && $('h2').text() == '30');
+  - text: The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.
+    testString: assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]));
+  - text: The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.
+    testString: assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]));
 
 ```
 
@@ -74,7 +106,6 @@ tests:
       .text(output)
   </script>
 </body>
-
 ```
 
 </div>
@@ -89,4 +120,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

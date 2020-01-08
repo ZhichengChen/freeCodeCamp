@@ -2,15 +2,22 @@
 id: 5900f3c51000cf542c50fed8
 challengeType: 5
 title: 'Problem 87: Prime power triples'
-videoUrl: ''
-localeTitle: 问题87：Prime power三倍
+forumTopicId: 302201
 ---
 
 ## Description
-<section id="description">可表示为素数平方，素数立方和素数四次幂之和的最小数是28.事实上，正好有四个数字低于五十，可以用这样的方式表示：28 = 22 + 23 + 24 33 = 32 + 23 + 24 49 = 52 + 23 + 24 47 = 22 + 33 + 24五千万以下的数字可以表示为素数，素数和素数四次幂之和？ </section>
+<section id='description'>
+The smallest number expressible as the sum of a prime square, prime cube, and prime fourth power is 28. In fact, there are exactly four numbers below fifty that can be expressed in such a way:
+28 = 22 + 23 + 24
+33 = 32 + 23 + 24
+49 = 52 + 23 + 24
+47 = 22 + 33 + 24
+How many numbers below fifty million can be expressed as the sum of a prime square, prime cube, and prime fourth power?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题87：Prime power三倍
 
 ```yml
 tests:
-  - text: <code>euler87()</code>应该返回1097343。
-    testString: 'assert.strictEqual(euler87(), 1097343, "<code>euler87()</code> should return 1097343.");'
+  - text: <code>euler87()</code> should return 1097343.
+    testString: assert.strictEqual(euler87(), 1097343);
 
 ```
 
@@ -37,7 +44,6 @@ function euler87() {
 }
 
 euler87();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler87();
 ```js
 // solution required
 ```
+
 </section>

@@ -3,29 +3,34 @@ id: 5a24bbe0dba28a8d3cbd4c5f
 title: Render HTML Elements to the DOM
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 将HTML元素渲染到DOM
+forumTopicId: 301406
 ---
 
 ## Description
-<section id="description">到目前为止，您已经了解到JSX是一种在JavaScript中编写可读HTML的便捷工具。使用React，我们可以使用React的渲染API（称为ReactDOM）将此JSX直接渲染到HTML DOM。 ReactDOM提供了一种简单的方法来将React元素呈现给DOM，如下所示： <code>ReactDOM.render(componentToRender, targetNode)</code> ，其中第一个参数是要呈现的React元素或组件，第二个参数是DOM节点您想要将组件渲染到。正如您所料，必须在JSX元素声明之后调用<code>ReactDOM.render()</code> ，就像在使用它们之前必须声明变量一样。 </section>
+<section id='description'>
+So far, you've learned that JSX is a convenient tool to write readable HTML within JavaScript. With React, we can render this JSX directly to the HTML DOM using React's rendering API known as ReactDOM.
+ReactDOM offers a simple method to render React elements to the DOM which looks like this: <code>ReactDOM.render(componentToRender, targetNode)</code>, where the first argument is the React element or component that you want to render, and the second argument is the DOM node that you want to render the component to.
+As you would expect, <code>ReactDOM.render()</code> must be called after the JSX element declarations, just like how you must declare variables before using them.
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器有一个简单的JSX组件。使用<code>ReactDOM.render()</code>方法将此组件呈现给页面。您可以直接将定义的JSX元素作为第一个参数传递，并使用<code>document.getElementById()</code>来选择要将其渲染到的DOM节点。有一个<code>div</code> ， <code>id=&#39;challenge-node&#39;</code>可供您使用。确保不要更改<code>JSX</code>常量。 </section>
+<section id='instructions'>
+The code editor has a simple JSX component. Use the <code>ReactDOM.render()</code> method to render this component to the page. You can pass defined JSX elements directly in as the first argument and use <code>document.getElementById()</code> to select the DOM node to render them to. There is a <code>div</code> with <code>id='challenge-node'</code> available for you to use. Make sure you don't change the <code>JSX</code> constant.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
-  - text: <code>div</code>应包含一个<code>h1</code>标记作为第一个元素。
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
-  - text: <code>div</code>应该包含一个<code>p</code>标签作为第二个元素。
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
-  - text: 提供的JSX元素应该使用id <code>challenge-node</code>呈现给DOM <code>challenge-node</code> 。
-    testString: 'assert(document.getElementById("challenge-node").childNodes[0].innerHTML === "<h1>Hello World</h1><p>Lets render this to the DOM</p>", "The provided JSX element should render to the DOM node with id <code>challenge-node</code>.");'
+  - text: The constant <code>JSX</code> should return a <code>div</code> element.
+    testString: assert(JSX.type === 'div');
+  - text: The <code>div</code> should contain an <code>h1</code> tag as the first element.
+    testString: assert(JSX.props.children[0].type === 'h1');
+  - text: The <code>div</code> should contain a <code>p</code> tag as the second element.
+    testString: assert(JSX.props.children[1].type === 'p');
+  - text: The provided JSX element should render to the DOM node with id <code>challenge-node</code>.
+    testString: assert(document.getElementById('challenge-node').childNodes[0].innerHTML === '<h1>Hello World</h1><p>Lets render this to the DOM</p>');
 
 ```
 
@@ -56,7 +61,16 @@ const JSX = (
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const JSX = (
+<div>
+  <h1>Hello World</h1>
+  <p>Lets render this to the DOM</p>
+</div>
+);
+// change code below this line
+ReactDOM.render(JSX, document.getElementById('challenge-node'));
 ```
+
 </section>

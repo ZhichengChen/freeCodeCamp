@@ -2,25 +2,37 @@
 id: 587d781d367417b2b2512ac8
 title: Adjust the Hover State of an Anchor Tag
 challengeType: 0
-videoUrl: ''
-localeTitle: 调整锚标记的悬停状态
+videoUrl: 'https://scrimba.com/c/cakRGcm'
+forumTopicId: 301035
 ---
 
 ## Description
-<section id="description">这个挑战将涉及伪类的使用。伪类是可以添加到选择器的关键字，以便选择元素的特定状态。例如，可以使用<code>:hover</code>伪类选择器更改锚标记的样式以用于其悬停状态。这是用于在悬停状态期间将锚标记的<code>color</code>更改为红色的CSS： <blockquote> a：悬停{ <br>红色; <br> } </blockquote></section>
+<section id='description'>
+This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.
+For example, the styling of an anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's the CSS to change the <code>color</code> of the anchor tag to red during its hover state:
+
+```css
+a:hover {
+  color: red;
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">代码编辑器有一个CSS规则样式的所有<code>a</code>标签黑色。加入规则，以便当用户将鼠标悬停在<code>a</code>标签时， <code>color</code>是蓝色。 </section>
+<section id='instructions'>
+The code editor has a CSS rule to style all <code>a</code> tags black. Add a rule so that when the user hovers over the <code>a</code> tag, the <code>color</code> is blue.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '锚标记<code>color</code>应保持黑色，仅为<code>:hover</code>状态添加CSS规则。'
-    testString: 'assert($("a").css("color") == "rgb(0, 0, 0)", "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.");'
-  - text: 锚标签应该有一个<code>color</code>的蓝色悬停。
-    testString: 'assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), "The anchor tag should have a <code>color</code> of blue on hover.");'
+  - text: The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.
+    testString: assert($('a').css('color') == 'rgb(0, 0, 0)');
+  - text: The anchor tag should have a <code>color</code> of blue on hover.
+    testString: assert(code.match(/a:hover\s*?{\s*?color:\s*?(blue|rgba\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?,\s*?1\s*?\)|#00F|rgb\(\s*?0\s*?,\s*?0\s*?,\s*?255\s*?\))\s*?;\s*?}/gi));
 
 ```
 
@@ -41,7 +53,6 @@ tests:
 
 </style>
 <a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
-
 ```
 
 </div>
@@ -53,7 +64,16 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  a {
+    color: #000;
+  }
+  a:hover {
+    color: rgba(0,0,255,1);
+  }
+</style>
+<a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```
+
 </section>

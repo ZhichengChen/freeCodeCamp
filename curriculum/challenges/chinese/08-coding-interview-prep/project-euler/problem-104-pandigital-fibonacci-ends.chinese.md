@@ -2,15 +2,20 @@
 id: 5900f3d51000cf542c50fee6
 challengeType: 5
 title: 'Problem 104: Pandigital Fibonacci ends'
-videoUrl: ''
-localeTitle: 问题104：Pandigital Fibonacci结束
+forumTopicId: 301728
 ---
 
 ## Description
-<section id="description"> Fibonacci序列由递归关系定义：Fn = Fn-1 + Fn-2，其中F1 = 1且F2 = 1.事实证明，包含113位数字的F541是第一个斐波那契数字，其中最后九个数字是1-9 pandigital（包含所有数字1到9，但不一定按顺序）。 F2749包含575个数字，是第一个斐波那契数字，前九个数字是1-9 pandigital。鉴于Fk是第一个斐波纳契数，前九个数字和后九个数字是1-9 pandigital，找到k。 </section>
+<section id='description'>
+The Fibonacci sequence is defined by the recurrence relation:
+Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1.
+It turns out that F541, which contains 113 digits, is the first Fibonacci number for which the last nine digits are 1-9 pandigital (contain all the digits 1 to 9, but not necessarily in order). And F2749, which contains 575 digits, is the first Fibonacci number for which the first nine digits are 1-9 pandigital.
+Given that Fk is the first Fibonacci number for which the first nine digits AND the last nine digits are 1-9 pandigital, find k.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题104：Pandigital Fibonacci结束
 
 ```yml
 tests:
-  - text: <code>euler104()</code>应返回329468。
-    testString: 'assert.strictEqual(euler104(), 329468, "<code>euler104()</code> should return 329468.");'
+  - text: <code>euler104()</code> should return 329468.
+    testString: assert.strictEqual(euler104(), 329468);
 
 ```
 
@@ -37,7 +42,6 @@ function euler104() {
 }
 
 euler104();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler104();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,19 @@
 id: 587d8247367417b2b2512c38
 title: Mitigate the Risk of Clickjacking with helmet.frameguard()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.frameguard（）降低点击劫持的风险
+forumTopicId: 301582
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。未经您的同意，您的页面可以放在<code>&lt;frame&gt;</code>或<code>&lt;iframe&gt;</code> 。除其他外，这可能导致点击劫持攻击。点击劫持是一种欺骗用户与不同于用户认为的页面进行交互的技术。这可以通过iframing在恶意上下文中执行您的页面获得。在这种情况下，黑客可以在页面上放置隐藏层。隐藏按钮可用于运行错误的脚本。此中间件设置X-Frame-Options标头。它限制了谁可以将您的网站放在框架中。它有三种模式：DENY，SAMEORIGIN和ALLOW-FROM。我们不需要我们的应用程序框架。您应该使用配置对象<code>{action: &#39;deny&#39;}</code>传递的<code>helmet.frameguard()</code> 。 </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
+Your page could be put in a <code>&lt;frame&gt;</code> or <code>&lt;iframe&gt;</code> without your consent. This can result in clickjacking attacks, among other things. Clickjacking is a technique of tricking a user into interacting with a page different from what the user thinks it is. This can be obtained executing your page in a malicious context, by mean of iframing. In that context a hacker can put a hidden layer over your page. Hidden buttons can be used to run bad scripts. This middleware sets the X-Frame-Options header. It restricts who can put your site in a frame. It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.
+We don’t need our app to be framed.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Use <code>helmet.frameguard()</code> passing with the configuration object <code>{action: 'deny'}</code>.
 </section>
 
 ## Tests
@@ -18,10 +22,10 @@ localeTitle: 使用helmet.frameguard（）降低点击劫持的风险
 
 ```yml
 tests:
-  - text: helmet.frameguard（）中间件应正确安装
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "frameguard", "helmet.frameguard() middleware is not mounted correctly"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: helmet.frameguard（）'action'应该设置为'DENY'
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.property(data.headers, "x-frame-options"); assert.equal(data.headers["x-frame-options"], "DENY");}, xhr => { throw new Error(xhr.responseText); })'
+  - text: helmet.frameguard() middleware should be mounted correctly
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'frameguard', 'helmet.frameguard() middleware is not mounted correctly'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: helmet.frameguard() 'action' should be set to 'DENY'
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.property(data.headers, 'x-frame-options'); assert.equal(data.headers['x-frame-options'], 'DENY');}, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -36,6 +40,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

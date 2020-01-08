@@ -2,15 +2,20 @@
 id: 5900f3ef1000cf542c50ff01
 challengeType: 5
 title: 'Problem 129: Repunit divisibility'
-videoUrl: ''
-localeTitle: 问题129：重新划分可分性
+forumTopicId: 301756
 ---
 
 ## Description
-<section id="description">完全由1组成的数字称为repunit。我们将R（k）定义为长度k的重新定位;例如，R（6）= 111111.假设n是正整数且GCD（n，10）= 1，则可以证明总是存在一个值k，其中R（k）可被n整除让A（n）成为k的最小值;例如，A（7）= 6且A（41）= 5.A（n）首先超过10的n的最小值是17.求出A（n）首先超过1的n的最小值 - 百万。 </section>
+<section id='description'>
+A number consisting entirely of ones is called a repunit. We shall define R(k) to be a repunit of length k; for example, R(6) = 111111.
+Given that n is a positive integer and GCD(n, 10) = 1, it can be shown that there always exists a value, k, for which R(k) is divisible by n, and let A(n) be the least such value of k; for example, A(7) = 6 and A(41) = 5.
+The least value of n for which A(n) first exceeds ten is 17.
+Find the least value of n for which A(n) first exceeds one-million.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题129：重新划分可分性
 
 ```yml
 tests:
-  - text: <code>euler129()</code>应该返回1000023。
-    testString: 'assert.strictEqual(euler129(), 1000023, "<code>euler129()</code> should return 1000023.");'
+  - text: <code>euler129()</code> should return 1000023.
+    testString: assert.strictEqual(euler129(), 1000023);
 
 ```
 
@@ -37,7 +42,6 @@ function euler129() {
 }
 
 euler129();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler129();
 ```js
 // solution required
 ```
+
 </section>

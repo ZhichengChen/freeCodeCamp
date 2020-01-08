@@ -2,15 +2,22 @@
 id: 5900f3f71000cf542c50ff0a
 challengeType: 5
 title: 'Problem 139: Pythagorean tiles'
-videoUrl: ''
-localeTitle: 问题139：毕达哥拉斯瓷砖
+forumTopicId: 301767
 ---
 
 ## Description
-<section id="description">设（a，b，c）表示具有整数长边的直角三角形的三个边。可以将四个这样的三角形放在一起以形成长度为c的正方形。例如，（3,4,5）三角形可以放在一起形成一个5乘5的正方形，中间有一个1个洞，可以看到5乘5的正方形可以用二十五个平铺1个方格。 <p>但是，如果使用（5,12,13）三角形，则孔将按7乘7测量，并且这些不能用于平铺13乘13平方。鉴于直角三角形的周长小于一亿，有多少毕达哥拉斯三角形允许这样的平铺？ </p></section>
+<section id='description'>
+Let (a, b, c) represent the three sides of a right angle triangle with integral length sides. It is possible to place four such triangles together to form a square with length c.
+For example, (3, 4, 5) triangles can be placed together to form a 5 by 5 square with a 1 by 1 hole in the middle and it can be seen that the 5 by 5 square can be tiled with twenty-five 1 by 1 squares.
+
+
+However, if (5, 12, 13) triangles were used then the hole would measure 7 by 7 and these could not be used to tile the 13 by 13 square.
+Given that the perimeter of the right triangle is less than one-hundred million, how many Pythagorean triangles would allow such a tiling to take place?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题139：毕达哥拉斯瓷砖
 
 ```yml
 tests:
-  - text: <code>euler139()</code>应该返回10057761。
-    testString: 'assert.strictEqual(euler139(), 10057761, "<code>euler139()</code> should return 10057761.");'
+  - text: <code>euler139()</code> should return 10057761.
+    testString: assert.strictEqual(euler139(), 10057761);
 
 ```
 
@@ -37,7 +44,6 @@ function euler139() {
 }
 
 euler139();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler139();
 ```js
 // solution required
 ```
+
 </section>

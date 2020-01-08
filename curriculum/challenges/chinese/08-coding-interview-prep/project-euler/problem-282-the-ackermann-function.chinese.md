@@ -2,23 +2,33 @@
 id: 5900f4861000cf542c50ff99
 challengeType: 5
 title: 'Problem 282: The Ackermann function'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 301933
 ---
 
 ## Description
-undefined
+<section id='description'>
+For non-negative integers m, n, the Ackermann function A(m, n) is defined as follows:
+
+
+
+For example A(1, 0) = 2, A(2, 2) = 7 and A(3, 4) = 125.
+
+
+Find A(n, n) and give your answer mod 148.
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler282(), 1098988351, "<code>euler282()</code> should return 1098988351.");'
+  - text: <code>euler282()</code> should return 1098988351.
+    testString: assert.strictEqual(euler282(), 1098988351);
 
 ```
 
@@ -36,7 +46,6 @@ function euler282() {
 }
 
 euler282();
-
 ```
 
 </div>
@@ -51,4 +60,5 @@ euler282();
 ```js
 // solution required
 ```
+
 </section>

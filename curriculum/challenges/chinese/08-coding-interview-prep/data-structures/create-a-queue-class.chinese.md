@@ -2,15 +2,19 @@
 id: 587d8250367417b2b2512c60
 title: Create a Queue Class
 challengeType: 1
-videoUrl: ''
-localeTitle: 创建队列类
+forumTopicId: 301631
 ---
 
 ## Description
-<section id="description">与堆栈一样，队列是元素的集合。但与堆栈不同，队列遵循FIFO（先入先出）原则。添加到队列的元素将被推送到队列的尾部或末尾，并且只允许删除队列前面的元素。我们可以使用数组来表示队列，但就像堆栈一样，我们希望限制我们对队列的控制量。队列类的两个主要方法是enqueue和dequeue方法。 enqueue方法将元素推送到队列的尾部，dequeue方法移除并返回队列前面的元素。其他有用的方法是front，size和isEmpty方法。说明编写一个将元素推送到队列尾部的入队方法，一个删除并返回前面元素的出列方法，一个让我们看到前面元素的前方法，一个显示长度的大小方法，以及一个isEmpty方法检查队列是否为空。 </section>
+<section id='description'>
+Like stacks, queues are a collection of elements. But unlike stacks, queues follow the FIFO (First-In First-Out) principle. Elements added to a queue are pushed to the tail, or the end, of the queue, and only the element at the front of the queue is allowed to be removed.
+We could use an array to represent a queue, but just like stacks, we want to limit the amount of control we have over our queues.
+The two main methods of a queue class is the enqueue and the dequeue method. The enqueue method pushes an element to the tail of the queue, and the dequeue method removes and returns the element at the front of the queue. Other useful methods are the front, size, and isEmpty methods.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write an <code>enqueue</code> method that pushes an element to the tail of the queue, a <code>dequeue</code> method that removes and returns the front element, a <code>front</code> method that lets us see the front element, a <code>size</code> method that shows the length, and an <code>isEmpty</code> method to check if the queue is empty.
 </section>
 
 ## Tests
@@ -18,57 +22,80 @@ localeTitle: 创建队列类
 
 ```yml
 tests:
-  - text: 您的<code>Queue</code>类应该有一个<code>enqueue</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.enqueue === "function")}()), "Your <code>Queue</code> class should have a <code>enqueue</code> method.");'
-  - text: 您的<code>Queue</code>类应该有一个<code>dequeue</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.dequeue === "function")}()), "Your <code>Queue</code> class should have a <code>dequeue</code> method.");'
-  - text: 您的<code>Queue</code>类应该有一个<code>front</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.front === "function")}()), "Your <code>Queue</code> class should have a <code>front</code> method.");'
-  - text: 您的<code>Queue</code>类应该有一个<code>size</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.size === "function")}()), "Your <code>Queue</code> class should have a <code>size</code> method.");'
-  - text: 您的<code>Queue</code>类应该有一个<code>isEmpty</code>方法。
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.isEmpty === "function")}()), "Your <code>Queue</code> class should have an <code>isEmpty</code> method.");'
-  - text: <code>dequeue</code>方法应该删除并返回队列的前端元素
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return (test.dequeue() === "Smith")}()), "The <code>dequeue</code> method should remove and return the front element of the queue");'
-  - text: <code>front</code>方法应该返回队列的front元素的值
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); test.enqueue("John"); return (test.front() === "Smith")}()), "The <code>front</code> method should return value of the front element of the queue");'
-  - text: <code>size</code>方法应该返回队列的长度
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return (test.size() === 1)}()), "The <code>size</code> method should return the length of the queue");'
-  - text: 如果队列中有元素，则<code>isEmpty</code>方法应返回<code>false</code>
-    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return !(test.isEmpty())}()), "The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue");'
-
+  - text: Your <code>Queue</code> class should have a <code>enqueue</code> method.
+    testString: assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()));
+  - text: Your <code>Queue</code> class should have a <code>dequeue</code> method.
+    testString: assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()));
+  - text: Your <code>Queue</code> class should have a <code>front</code> method.
+    testString: assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()));
+  - text: Your <code>Queue</code> class should have a <code>size</code> method.
+    testString: assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()));
+  - text: Your <code>Queue</code> class should have an <code>isEmpty</code> method.
+    testString: assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()));
+  - text: The <code>dequeue</code> method should remove and return the front element of the queue
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.dequeue() === 'Smith')}()));
+  - text: The <code>front</code> method should return value of the front element of the queue
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()));
+  - text: The <code>size</code> method should return the length of the queue
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()));
+  - text: The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue
+    testString: assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()));
 ```
 
 </section>
 
 ## Challenge Seed
+
 <section id='challengeSeed'>
 
 <div id='js-seed'>
 
 ```js
-function Queue () {
-    var collection = [];
-    this.print = function() {
-        console.log(collection);
-    };
-    // Only change code below this line
+function Queue() {
+  var collection = [];
+  this.print = function() {
+    console.log(collection);
+  };
+  // Only change code below this line
 
-    // Only change code above this line
+  // Only change code above this line
 }
-
 ```
 
 </div>
-
-
-
 </section>
 
 ## Solution
 <section id='solution'>
 
 ```js
-// solution required
+function Queue () { 
+    var collection = [];
+    this.print = function() {
+        console.log(collection);
+    };
+    // Only change code below this line
+    this.enqueue = function(item) {
+        collection.push(item);
+    }
+
+    this.dequeue = function() {
+        return collection.shift();
+    }
+
+    this.front = function() {
+        return collection[0];
+    }
+
+    this.size = function(){
+        return collection.length;
+    }
+
+    this.isEmpty = function() {
+        return collection.length === 0 ? true : false;
+    }
+    // Only change code above this line
+}
 ```
+
 </section>

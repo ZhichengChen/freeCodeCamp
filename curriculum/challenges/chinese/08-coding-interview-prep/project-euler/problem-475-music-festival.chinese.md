@@ -2,15 +2,24 @@
 id: 5900f5481000cf542c51005a
 challengeType: 5
 title: 'Problem 475: Music festival'
-videoUrl: ''
-localeTitle: 问题475：音乐节
+forumTopicId: 302152
 ---
 
 ## Description
-<section id="description"> 12n音乐家参加音乐节。在第一天，他们形成3n四重奏并整日练习。这是一场灾难。在一天结束时，所有音乐家都决定再也不会同意与他们四重奏的任何成员一起玩。在第二天，他们形成4n三人组，每个音乐家都避开他以前的四重奏伙伴。 <p>设f（12n）是在12n音乐家中组织三人组合的方式。给出f（12）= 576和f（24）mod 1 000 000 007 = 509089824。 </p><p>求f（600）mod 1 000 000 007。 </p></section>
+<section id='description'>
+12n musicians participate at a music festival. On the first day, they form 3n quartets and practice all day.
+It is a disaster. At the end of the day, all musicians decide they will never again agree to play with any member of their quartet.
+On the second day, they form 4n trios, each musician avoiding his previous quartet partners.
+
+Let f(12n) be the number of ways to organize the trios amongst the 12n musicians.
+You are given f(12) = 576 and f(24) mod 1 000 000 007 = 509089824.
+
+Find f(600) mod 1 000 000 007.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题475：音乐节
 
 ```yml
 tests:
-  - text: <code>euler475()</code>应返回75780067。
-    testString: 'assert.strictEqual(euler475(), 75780067, "<code>euler475()</code> should return 75780067.");'
+  - text: <code>euler475()</code> should return 75780067.
+    testString: assert.strictEqual(euler475(), 75780067);
 
 ```
 
@@ -37,7 +46,6 @@ function euler475() {
 }
 
 euler475();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler475();
 ```js
 // solution required
 ```
+
 </section>

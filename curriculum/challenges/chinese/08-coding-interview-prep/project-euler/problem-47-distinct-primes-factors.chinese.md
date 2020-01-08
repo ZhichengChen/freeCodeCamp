@@ -2,15 +2,24 @@
 id: 5900f39c1000cf542c50feae
 challengeType: 5
 title: 'Problem 47: Distinct primes factors'
-videoUrl: ''
-localeTitle: 问题47：不同的素数因素
+forumTopicId: 302145
 ---
 
 ## Description
-<section id="description">前两个连续数字有两个不同的素数因子是： <div style="padding-left: 4em;"> 14 = 2×7 </div><div style="padding-left: 4em;"> 15 = 3×5 </div>前三个连续数字有三个不同的素因子： <div style="padding-left: 4em;"> 644 =2²×7×23 </div><div style="padding-left: 4em;"> 645 = 3×5×43 </div><div style="padding-left: 4em;"> 646 = 2×17×19 </div>找到前四个连续的整数，每个整数有四个不同的素数因子。这些数字中的第一个是什么？ </section>
+<section id='description'>
+The first two consecutive numbers to have two distinct prime factors are:
+<div style='padding-left: 4em;'>14 = 2 × 7</div>
+<div style='padding-left: 4em;'>15 = 3 × 5</div>
+The first three consecutive numbers to have three distinct prime factors are:
+<div style='padding-left: 4em;'>644 = 2² × 7 × 23</div>
+<div style='padding-left: 4em;'>645 = 3 × 5 × 43</div>
+<div style='padding-left: 4em;'>646 = 2 × 17 × 19</div>
+Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +27,12 @@ localeTitle: 问题47：不同的素数因素
 
 ```yml
 tests:
-  - text: '<code>distinctPrimeFactors(2, 2)</code>应该返回14。'
-    testString: 'assert.strictEqual(distinctPrimeFactors(2, 2), 14, "<code>distinctPrimeFactors(2, 2)</code> should return 14.");'
-  - text: '<code>distinctPrimeFactors(3, 3)</code>应该返回644。'
-    testString: 'assert.strictEqual(distinctPrimeFactors(3, 3), 644, "<code>distinctPrimeFactors(3, 3)</code> should return 644.");'
-  - text: '<code>distinctPrimeFactors(4, 4)</code>应该返回134043。'
-    testString: 'assert.strictEqual(distinctPrimeFactors(4, 4), 134043, "<code>distinctPrimeFactors(4, 4)</code> should return 134043.");'
+  - text: <code>distinctPrimeFactors(2, 2)</code> should return 14.
+    testString: assert.strictEqual(distinctPrimeFactors(2, 2), 14);
+  - text: <code>distinctPrimeFactors(3, 3)</code> should return 644.
+    testString: assert.strictEqual(distinctPrimeFactors(3, 3), 644);
+  - text: <code>distinctPrimeFactors(4, 4)</code> should return 134043.
+    testString: assert.strictEqual(distinctPrimeFactors(4, 4), 134043);
 
 ```
 
@@ -41,12 +50,9 @@ function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
 }
 
 distinctPrimeFactors(4, 4);
-
 ```
 
 </div>
-
-
 
 </section>
 
@@ -54,6 +60,49 @@ distinctPrimeFactors(4, 4);
 <section id='solution'>
 
 ```js
-// solution required
+function distinctPrimeFactors(targetNumPrimes, targetConsecutive) {
+  function numberOfPrimeFactors(n) {
+    let factors = 0;
+
+    //  Considering 2 as a special case
+    let firstFactor = true;
+    while (n % 2 == 0) {
+      n = n / 2;
+      if (firstFactor) {
+        factors++;
+        firstFactor = false;
+      }
+    }
+    // Adding other factors
+    for (let i = 3; i < Math.sqrt(n); i += 2) {
+      firstFactor = true;
+      while (n % i == 0) {
+        n = n / i;
+        if (firstFactor) {
+          factors++;
+          firstFactor = false;
+        }
+      }
+    }
+
+    if (n > 1) { factors++; }
+
+    return factors;
+  }
+
+  let number = 0;
+  let consecutive = 0;
+
+  while (consecutive < targetConsecutive) {
+    number++;
+    if (numberOfPrimeFactors(number) >= targetNumPrimes) {
+      consecutive++;
+    } else {
+      consecutive = 0;
+    }
+  }
+  return number - targetConsecutive + 1;
+}
 ```
+
 </section>

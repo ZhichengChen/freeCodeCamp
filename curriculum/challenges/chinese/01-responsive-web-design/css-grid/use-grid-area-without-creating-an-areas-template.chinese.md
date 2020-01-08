@@ -2,23 +2,39 @@
 id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
 challengeType: 0
-videoUrl: ''
-localeTitle: 在不创建网格区域模板的情况下使用网格区域
+videoUrl: 'https://scrimba.com/p/pByETK/c6N7VhK'
+forumTopicId: 301135
 ---
 
 ## Description
-<section id="description">您在上一次挑战中学习的<code>grid-area</code>属性可以以其他方式使用。如果您的网格没有可引用的网格区域模板，您可以当场创建一个网格区域来放置项目，例如： <blockquote> item1 {grid-area：1/1/2/4; } </blockquote>这个区域用了您之前刚学过的网格行号来定义项目的地点。上例中的数字的意思是： <blockquote>grid-area (网格区域)：水平线开始于/垂直线开始于/水平线结束于/垂直线结束于; </blockquote>因此，示例中的项目将使用第一个网格横线和第2个网格横线之间的网格行以及第一个网格纵线和第四个网格纵线之间的网格列。 </section>
+<section id='description'>
+The <code>grid-area</code> property you learned in the last challenge can be used in another way. If your grid doesn't have an areas template to reference, you can create an area on the fly for an item to be placed like this:
+
+```css
+item1 { grid-area: 1/1/2/4; }
+```
+
+This is using the line numbers you learned about earlier to define where the area for this item will be. The numbers in the example above represent these values:
+
+```css
+grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;
+```
+
+So the item in the example will consume the rows between lines 1 and 2, and the columns between lines 1 and 4.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>grid-area</code>属性，将带<code>item5</code>class的元素放置到第三和第四条网格横线之间以及第一条和第四条网格纵线之间。 </section>
+<section id='instructions'>
+Using the <code>grid-area</code> property, place the element with <code>item5</code> class between the third and fourth horizontal lines and between the first and fourth vertical lines.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>item5</code>类应具有<code>grid-area</code>属性，使其位于第三和第四水平线之间以及第一和第四垂直线之间。
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code>类应具有<code>grid-area</code>属性，使其位于第三和第四水平线之间以及第一和第四垂直线之间。");'
+  - text: <code>item5</code> class should have a <code>grid-area</code> property such that it is between the third and fourth horizontal lines and between the first and fourth vertical lines.
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?3\s*?\/\s*?1\s*?\/\s*?4\s*?\/\s*?4\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -63,7 +79,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -75,7 +90,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".item5 {grid-area: 3/1/4/4;}"
 ```
+
 </section>

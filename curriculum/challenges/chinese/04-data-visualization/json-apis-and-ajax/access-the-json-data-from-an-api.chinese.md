@@ -2,23 +2,40 @@
 id: 587d7fae367417b2b2512be4
 title: Access the JSON Data from an API
 challengeType: 6
-videoUrl: ''
-localeTitle: 从API访问JSON数据
+forumTopicId: 301499
 ---
 
 ## Description
-<section id="description">在之前的挑战中，您了解了如何从freeCodeCamp Cat Photo API获取JSON数据。现在，您将仔细查看返回的数据，以便更好地理解JSON格式。回想一下JavaScript中的一些表示法： <blockquote> []  - &gt;方括号代表一个数组<br> {}  - &gt;圆括号代表一个对象<br> “” - &gt;双引号代表一个字符串。它们还用于JSON中的键名</blockquote>了解API返回的数据结构非常重要，因为它会影响您检索所需值的方式。在右侧，单击“获取消息”按钮，将freeCodeCamp Cat Photo API JSON加载到HTML中。您在JSON数据中看到的第一个和最后一个字符是方括号<code>[ ]</code> 。这意味着返回的数据是一个数组。 JSON数据中的第二个字符是一个卷曲<code>{</code>括号，它启动一个对象。仔细观察，您可以看到有三个独立的对象。 JSON数据是一个包含三个对象的数组，其中每个对象都包含有关猫照片的信息。您之前了解到，对象包含以逗号分隔的“键值对”。在Cat Photo示例中，第一个对象具有<code>&quot;id&quot;:0</code>其中“id”是键，0是其对应值。类似地，有“imageLink”，“altText”和“codeNames”的键。每个猫照片对象具有相同的键，但具有不同的值。第一个对象中另一个有趣的“键值对”是<code>&quot;codeNames&quot;:[&quot;Juggernaut&quot;,&quot;Mrs. Wallace&quot;,&quot;ButterCup&quot;]</code> 。这里“codeNames”是键，它的值是三个字符串的数组。可以有对象数组以及带有数组作为值的键。记住如何访问数组和对象中的数据。数组使用括号表示法来访问项目的特定索引。对象使用括号或点表示法来访问给定属性的值。这是打印第一张猫照片的“altText”的示例 - 请注意编辑器中解析的JSON数据保存在名为<code>json</code>的变量中： <blockquote>的console.log（JSON [0] .altText）; <br> //打印“头上戴着绿色头盔形瓜的白猫。” </blockquote></section>
+<section id='description'>
+In the previous challenge, you saw how to get JSON data from the freeCodeCamp Cat Photo API.
+Now you'll take a closer look at the returned data to better understand the JSON format. Recall some notation in JavaScript:
+<blockquote>[ ] -> Square brackets represent an array<br>{ } -> Curly brackets represent an object<br>" " -> Double quotes represent a string. They are also used for key names in JSON</blockquote>
+Understanding the structure of the data that an API returns is important because it influences how you retrieve the values you need.
+On the right, click the "Get Message" button to load the freeCodeCamp Cat Photo API JSON into the HTML.
+The first and last character you see in the JSON data are square brackets <code>[ ]</code>. This means that the returned data is an array. The second character in the JSON data is a curly <code>{</code> bracket, which starts an object. Looking closely, you can see that there are three separate objects. The JSON data is an array of three objects, where each object contains information about a cat photo.
+You learned earlier that objects contain "key-value pairs" that are separated by commas. In the Cat Photo example, the first object has <code>"id":0</code> where "id" is a key and 0 is its corresponding value. Similarly, there are keys for "imageLink", "altText", and "codeNames". Each cat photo object has these same keys, but with different values.
+Another interesting "key-value pair" in the first object is <code>"codeNames":["Juggernaut","Mrs. Wallace","ButterCup"]</code>. Here "codeNames" is the key and its value is an array of three strings. It's possible to have arrays of objects as well as a key with an array as a value.
+Remember how to access data in arrays and objects. Arrays use bracket notation to access a specific index of an item. Objects use either bracket or dot notation to access the value of a given property. Here's an example that prints the "altText" of the first cat photo - note that the parsed JSON data in the editor is saved in a variable called <code>json</code>:
+
+```js
+console.log(json[0].altText);
+// Prints "A white cat wearing a green helmet shaped melon on its head."
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">对于“id”为2的cat，在<code>codeNames</code>数组中向控制台输出第二个值。您应该在对象上使用括号和点表示法（保存在变量<code>json</code> ）来访问该值。 </section>
+<section id='instructions'>
+For the cat with the "id" of 2, print to the console the second value in the <code>codeNames</code> array. You should use bracket and dot notation on the object (which is saved in the variable <code>json</code>) to access the value.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应使用括号和点符号来访问正确的代码名称，并将“Loki”打印到控制台。
-    testString: 'assert(code.match(/(?:json\[2\]\.codeNames\[1\]|json\[2\]\[("|")codeNames\1\]\[1\])/g), "Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.");'
+  - text: Your code should use bracket and dot notation to access the proper code name, and print "Loki" to the console.
+    testString: assert(code.match(/console\s*\.\s*log\s*\(\s*json\s*\[2\]\s*(\.\s*codeNames|\[\s*('|`|")codeNames\2\s*\])\s*\[\s*1\s*\]\s*\)/g));
 
 ```
 
@@ -31,22 +48,22 @@ tests:
 
 ```html
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    document.getElementById('getMessage').onclick=function(){
-      req=new XMLHttpRequest();
-      req.open("GET",'/json/cats.json',true);
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json', true);
       req.send();
       req.onload=function(){
-        json=JSON.parse(req.responseText);
-        document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);
+        const json = JSON.parse(req.responseText);
+        document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
         // Add your code below this line
-
 
         // Add your code above this line
       };
     };
   });
 </script>
+
 <style>
   body {
     text-align: center;
@@ -73,8 +90,9 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
+
 <h1>Cat Photo Finder</h1>
-<p class="message">
+<p class="message box">
   The message will go here
 </p>
 <p>
@@ -82,7 +100,6 @@ tests:
     Get Message
   </button>
 </p>
-
 ```
 
 </div>
@@ -94,7 +111,60 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('getMessage').onclick = function(){
+      const req = new XMLHttpRequest();
+      req.open("GET",'/json/cats.json', true);
+      req.send();
+      req.onload=function(){
+        const json = JSON.parse(req.responseText);
+        document.getElementsByClassName('message')[0].innerHTML = JSON.stringify(json);
+        // Add your code below this line
+        console.log(json[2].codeNames[1]);
+        // Add your code above this line
+      };
+    };
+  });
+</script>
+
+<style>
+  body {
+    text-align: center;
+    font-family: "Helvetica", sans-serif;
+  }
+  h1 {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #eee;
+    padding: 20px 5px;
+  }
+  button {
+    color: white;
+    background-color: #4791d0;
+    border-radius: 5px;
+    border: 1px solid #4791d0;
+    padding: 5px 10px 8px 10px;
+  }
+  button:hover {
+    background-color: #0F5897;
+    border: 1px solid #0F5897;
+  }
+</style>
+
+<h1>Cat Photo Finder</h1>
+<p class="message">
+  The message will go here
+</p>
+<p>
+  <button id="getMessage">
+    Get Message
+  </button>
+</p>
 ```
+
 </section>

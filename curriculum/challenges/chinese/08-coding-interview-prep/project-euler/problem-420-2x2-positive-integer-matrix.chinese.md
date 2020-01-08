@@ -2,23 +2,38 @@
 id: 5900f5111000cf542c510023
 challengeType: 5
 title: 'Problem 420: 2x2 positive integer matrix'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 302090
 ---
 
 ## Description
-undefined
+<section id='description'>
+A positive integer matrix is a matrix whose elements are all positive integers.
+Some positive integer matrices can be expressed as a square of a positive integer matrix in two different ways. Here is an example:
+
+
+
+
+
+We define F(N) as the number of the 2x2 positive integer matrices which have a trace less than N and which can be expressed as a square of a positive integer matrix in two different ways.
+We can verify that F(50) = 7 and F(1000) = 1019.
+
+
+
+Find F(107).
+</section>
 
 ## Instructions
-undefined
+<section id='instructions'>
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler420(), 145159332, "<code>euler420()</code> should return 145159332.");'
+  - text: <code>euler420()</code> should return 145159332.
+    testString: assert.strictEqual(euler420(), 145159332);
 
 ```
 
@@ -36,7 +51,6 @@ function euler420() {
 }
 
 euler420();
-
 ```
 
 </div>
@@ -51,4 +65,5 @@ euler420();
 ```js
 // solution required
 ```
+
 </section>

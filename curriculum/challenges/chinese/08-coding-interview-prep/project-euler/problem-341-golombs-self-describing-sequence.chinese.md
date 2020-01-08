@@ -1,16 +1,26 @@
 ---
 id: 5900f4c11000cf542c50ffd3
 challengeType: 5
-title: 'Problem 341: Golomb"s self-describing sequence'
-videoUrl: ''
-localeTitle: 问题341：Golomb的自我描述序列
+title: 'Problem 341: Golomb''s self-describing sequence'
+forumTopicId: 302000
 ---
 
 ## Description
-<section id="description"> Golomb的自描述序列{G（n）}是唯一的非递减自然数序列，因此n在序列中恰好出现G（n）次。前几个n的G（n）值是<p> n123456789101112131415 ... G（n）的122334445556666 ... </p><p>给出G（103）= 86，G（106）= 6137.对于1≤n&lt;103，还给出ΣG（n3）= 153506976。 </p><p>找到ΣG（n3）为1≤n&lt;106。 </p></section>
+<section id='description'>
+The Golomb's self-describing sequence {G(n)} is the only nondecreasing sequence of natural numbers such that n appears exactly G(n) times in the sequence. The values of G(n) for the first few n are
+
+
+n123456789101112131415…G(n)122334445556666…
+
+You are given that G(103) = 86, G(106) = 6137.
+You are also given that ΣG(n3) = 153506976 for 1 ≤ n < 103.
+
+Find ΣG(n3) for 1 ≤ n < 106.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题341：Golomb的自我描述序列
 
 ```yml
 tests:
-  - text: <code>euler341()</code>应该返回56098610614277016。
-    testString: 'assert.strictEqual(euler341(), 56098610614277016, "<code>euler341()</code> should return 56098610614277016.");'
+  - text: <code>euler341()</code> should return 56098610614277016.
+    testString: assert.strictEqual(euler341(), 56098610614277016);
 
 ```
 
@@ -37,7 +47,6 @@ function euler341() {
 }
 
 euler341();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler341();
 ```js
 // solution required
 ```
+
 </section>

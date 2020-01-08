@@ -2,15 +2,19 @@
 id: a7bf700cd123b9a54eef01d5
 title: No Repeats Please
 challengeType: 5
-videoUrl: ''
-localeTitle: 请不要重复
+forumTopicId: 16037
 ---
 
 ## Description
-<section id="description">返回没有重复连续字母的提供字符串的总排列数。假设提供的字符串中的所有字符都是唯一的。例如， <code>aab</code>应该返回2，因为它总共有6个排列（ <code>aab</code> ， <code>aab</code> ， <code>aba</code> ， <code>aba</code> ， <code>baa</code> ， <code>baa</code> ），但只有2个（ <code>aba</code>和<code>aba</code> ）没有相同的字母（在这种情况下为<code>a</code> ）重复。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。尝试配对程序。编写自己的代码。 </section>
+<section id='description'>
+Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+For example, <code>aab</code> should return 2 because it has 6 total permutations (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), but only 2 of them (<code>aba</code> and <code>aba</code>) don't have the same letter (in this case <code>a</code>) repeating.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,26 +22,26 @@ localeTitle: 请不要重复
 
 ```yml
 tests:
-  - text: <code>permAlone(&quot;aab&quot;)</code>应返回一个数字。
-    testString: 'assert.isNumber(permAlone("aab"), "<code>permAlone("aab")</code> should return a number.");'
-  - text: <code>permAlone(&quot;aab&quot;)</code>应返回2。
-    testString: 'assert.strictEqual(permAlone("aab"), 2, "<code>permAlone("aab")</code> should return 2.");'
-  - text: <code>permAlone(&quot;aaa&quot;)</code>应该返回0。
-    testString: 'assert.strictEqual(permAlone("aaa"), 0, "<code>permAlone("aaa")</code> should return 0.");'
-  - text: <code>permAlone(&quot;aabb&quot;)</code>应该返回8。
-    testString: 'assert.strictEqual(permAlone("aabb"), 8, "<code>permAlone("aabb")</code> should return 8.");'
-  - text: <code>permAlone(&quot;abcdefa&quot;)</code>应返回3600。
-    testString: 'assert.strictEqual(permAlone("abcdefa"), 3600, "<code>permAlone("abcdefa")</code> should return 3600.");'
-  - text: <code>permAlone(&quot;abfdefa&quot;)</code>应返回2640。
-    testString: 'assert.strictEqual(permAlone("abfdefa"), 2640, "<code>permAlone("abfdefa")</code> should return 2640.");'
-  - text: <code>permAlone(&quot;zzzzzzzz&quot;)</code>应该返回0。
-    testString: 'assert.strictEqual(permAlone("zzzzzzzz"), 0, "<code>permAlone("zzzzzzzz")</code> should return 0.");'
-  - text: <code>permAlone(&quot;a&quot;)</code>应返回1。
-    testString: 'assert.strictEqual(permAlone("a"), 1, "<code>permAlone("a")</code> should return 1.");'
-  - text: <code>permAlone(&quot;aaab&quot;)</code>应该返回0。
-    testString: 'assert.strictEqual(permAlone("aaab"), 0, "<code>permAlone("aaab")</code> should return 0.");'
-  - text: <code>permAlone(&quot;aaabb&quot;)</code>应该返回12。
-    testString: 'assert.strictEqual(permAlone("aaabb"), 12, "<code>permAlone("aaabb")</code> should return 12.");'
+  - text: <code>permAlone("aab")</code> should return a number.
+    testString: assert.isNumber(permAlone('aab'));
+  - text: <code>permAlone("aab")</code> should return 2.
+    testString: assert.strictEqual(permAlone('aab'), 2);
+  - text: <code>permAlone("aaa")</code> should return 0.
+    testString: assert.strictEqual(permAlone('aaa'), 0);
+  - text: <code>permAlone("aabb")</code> should return 8.
+    testString: assert.strictEqual(permAlone('aabb'), 8);
+  - text: <code>permAlone("abcdefa")</code> should return 3600.
+    testString: assert.strictEqual(permAlone('abcdefa'), 3600);
+  - text: <code>permAlone("abfdefa")</code> should return 2640.
+    testString: assert.strictEqual(permAlone('abfdefa'), 2640);
+  - text: <code>permAlone("zzzzzzzz")</code> should return 0.
+    testString: assert.strictEqual(permAlone('zzzzzzzz'), 0);
+  - text: <code>permAlone("a")</code> should return 1.
+    testString: assert.strictEqual(permAlone('a'), 1);
+  - text: <code>permAlone("aaab")</code> should return 0.
+    testString: assert.strictEqual(permAlone('aaab'), 0);
+  - text: <code>permAlone("aaabb")</code> should return 12.
+    testString: assert.strictEqual(permAlone('aaabb'), 12);
 
 ```
 
@@ -54,7 +58,6 @@ function permAlone(str) {
 }
 
 permAlone('aab');
-
 ```
 
 </div>
@@ -66,7 +69,43 @@ permAlone('aab');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function permAlone(str) {
+  return permutor(str).filter(function(perm) {
+    return !perm.match(/(.)\1/g);
+  }).length;
+}
+
+function permutor(str) {
+  // http://staff.roguecc.edu/JMiller/JavaScript/permute.html
+  //permArr: Global array which holds the list of permutations
+  //usedChars: Global utility array which holds a list of "currently-in-use" characters
+  var permArr = [], usedChars = [];
+  function permute(input) {
+    //convert input into a char array (one element for each character)
+    var i, ch, chars = input.split("");
+    for (i = 0; i < chars.length; i++) {
+      //get and remove character at index "i" from char array
+      ch = chars.splice(i, 1);
+      //add removed character to the end of used characters
+      usedChars.push(ch);
+      //when there are no more characters left in char array to add, add used chars to list of permutations
+      if (chars.length === 0) permArr[permArr.length] = usedChars.join("");
+      //send characters (minus the removed one from above) from char array to be permuted
+      permute(chars.join(""));
+      //add removed character back into char array in original position
+      chars.splice(i, 0, ch);
+      //remove the last character used off the end of used characters array
+      usedChars.pop();
+    }
+  }
+  permute(str);
+  return permArr;
+}
+
+permAlone('aab');
+
 ```
+
 </section>

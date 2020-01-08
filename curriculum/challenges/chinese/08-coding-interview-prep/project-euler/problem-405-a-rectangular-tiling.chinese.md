@@ -2,15 +2,38 @@
 id: 5900f5021000cf542c510014
 challengeType: 5
 title: 'Problem 405: A rectangular tiling'
-videoUrl: ''
-localeTitle: 问题405：矩形平铺
+forumTopicId: 302073
 ---
 
 ## Description
-<section id="description">我们希望平铺一个长度是其宽度两倍的矩形。设T（0）为由单个矩形组成的平铺。对于n&gt; 0，通过以下列方式替换所有瓦片，从T（n-1）获得T（n）： <p>以下动画演示了从0到5的n的倾斜T（n）： </p><p>设f（n）是四个瓦片在T（n）中相交的点数。例如，f（1）= 0，f（4）= 82并且f（109）mod 177 = 126897180。 </p><p>找到f（10k）为k = 1018，给出你的答案模数为177。 </p></section>
+<section id='description'>
+We wish to tile a rectangle whose length is twice its width.
+Let T(0) be the tiling consisting of a single rectangle.
+For n > 0, let T(n) be obtained from T(n-1) by replacing all tiles in the following manner:
+
+
+
+
+
+
+The following animation demonstrates the tilings T(n) for n from 0 to 5:
+
+
+
+
+
+
+Let f(n) be the number of points where four tiles meet in T(n).
+For example, f(1) = 0, f(4) = 82 and f(109) mod 177 = 126897180.
+
+
+
+Find f(10k) for k = 1018, give your answer modulo 177.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +41,8 @@ localeTitle: 问题405：矩形平铺
 
 ```yml
 tests:
-  - text: <code>euler405()</code>应返回237696125。
-    testString: 'assert.strictEqual(euler405(), 237696125, "<code>euler405()</code> should return 237696125.");'
+  - text: <code>euler405()</code> should return 237696125.
+    testString: assert.strictEqual(euler405(), 237696125);
 
 ```
 
@@ -37,7 +60,6 @@ function euler405() {
 }
 
 euler405();
-
 ```
 
 </div>
@@ -52,4 +74,5 @@ euler405();
 ```js
 // solution required
 ```
+
 </section>

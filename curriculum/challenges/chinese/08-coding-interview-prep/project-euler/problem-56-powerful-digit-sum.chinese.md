@@ -2,15 +2,18 @@
 id: 5900f3a41000cf542c50feb7
 challengeType: 5
 title: 'Problem 56: Powerful digit sum'
-videoUrl: ''
-localeTitle: 问题56：强大的数字总和
+forumTopicId: 302167
 ---
 
 ## Description
-<section id="description"> googol（10100）是一个庞大的数字：一个跟着一百个零; 100100几乎是难以想象的大：一个跟着两百个零。尽管它们的大小，每个数字的数字之和仅为1.考虑到形式的自然数，ab，其中a，b &lt;100，最大数字和是多少？ </section>
+<section id='description'>
+A googol (10100) is a massive number: one followed by one-hundred zeros; 100100 is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only 1.
+Considering natural numbers of the form, ab, where a, b < 100, what is the maximum digital sum?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 问题56：强大的数字总和
 
 ```yml
 tests:
-  - text: <code>euler56()</code>应返回972。
-    testString: 'assert.strictEqual(euler56(), 972, "<code>euler56()</code> should return 972.");'
+  - text: <code>euler56()</code> should return 972.
+    testString: assert.strictEqual(euler56(), 972);
 
 ```
 
@@ -37,7 +40,6 @@ function euler56() {
 }
 
 euler56();
-
 ```
 
 </div>
@@ -52,4 +54,5 @@ euler56();
 ```js
 // solution required
 ```
+
 </section>

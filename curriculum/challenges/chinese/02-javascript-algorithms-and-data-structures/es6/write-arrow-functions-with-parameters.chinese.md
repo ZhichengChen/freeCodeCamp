@@ -2,31 +2,54 @@
 id: 587d7b88367417b2b2512b44
 title: Write Arrow Functions with Parameters
 challengeType: 1
-videoUrl: ''
-localeTitle: 用参数写箭头函数
+forumTopicId: 301223
 ---
 
 ## Description
-<section id="description">就像普通函数一样，您可以将参数传递给箭头函数。 <blockquote> //将输入值加倍并返回<br> const doubler =（item）=&gt; item * 2; </blockquote>您也可以将多个参数传递给箭头函数。 </section>
+<section id='description'>
+Just like a regular function, you can pass arguments into an arrow function.
+
+```js
+// doubles input value and returns it
+const doubler = (item) => item * 2;
+```
+
+If an arrow function has a single argument, the parentheses enclosing the argument may be omitted.
+
+```js
+// the same function, without the argument parentheses
+const doubler = item => item * 2;
+```
+
+It is possible to pass more than one argument into an arrow function.
+
+```js
+// multiplies the first input value by the second and returns it
+const multiplier = (item, multi) => item * multi;
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">重写<code>myConcat</code>函数，该函数将<code>arr2</code>内容追加到<code>arr1</code>以便该函数使用箭头函数语法。 </section>
+<section id='instructions'>
+Rewrite the <code>myConcat</code> function which appends contents of <code>arr2</code> to <code>arr1</code> so that the function uses arrow function syntax.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 用户确实替换了<code>var</code>关键字。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g), "User did replace <code>var</code> keyword.");'
-  - text: <code>myConcat</code>应该是一个常量变量（使用<code>const</code> ）。
-    testString: 'getUserInput => assert(getUserInput("index").match(/const\s+myConcat/g), "<code>myConcat</code> should be a constant variable (by using <code>const</code>).");'
-  - text: <code>myConcat</code>应该是一个函数
-    testString: 'assert(typeof myConcat === "function", "<code>myConcat</code> should be a function");'
-  - text: <code>myConcat()</code>返回正确的<code>array</code>
-    testString: 'assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; }, "<code>myConcat()</code> returns the correct <code>array</code>");'
-  - text: <code>function</code>关键字未使用。
-    testString: 'getUserInput => assert(!getUserInput("index").match(/function/g), "<code>function</code> keyword was not used.");'
+  - text: You should replace the <code>var</code> keyword.
+    testString: getUserInput => assert(!getUserInput('index').match(/var/g));
+  - text: <code>myConcat</code> should be a constant variable (by using <code>const</code>).
+    testString: getUserInput => assert(getUserInput('index').match(/const\s+myConcat/g));
+  - text: <code>myConcat</code> should be a function.
+    testString: assert(typeof myConcat === 'function');
+  - text: <code>myConcat()</code> should return <code>[1, 2, 3, 4, 5]</code>.
+    testString: assert(() => { const a = myConcat([1], [2]); return a[0] == 1 && a[1] == 2; });
+  - text: <code>function</code> keyword should not be used.
+    testString: getUserInput => assert(!getUserInput('index').match(/function/g));
 
 ```
 
@@ -44,7 +67,6 @@ var myConcat = function(arr1, arr2) {
 };
 // test your code
 console.log(myConcat([1, 2], [3, 4, 5]));
-
 ```
 
 </div>
@@ -57,6 +79,12 @@ console.log(myConcat([1, 2], [3, 4, 5]));
 <section id='solution'>
 
 ```js
-// solution required
+const myConcat = (arr1, arr2) =>  {
+  "use strict";
+  return arr1.concat(arr2);
+};
+// test your code
+console.log(myConcat([1, 2], [3, 4, 5]));
 ```
+
 </section>

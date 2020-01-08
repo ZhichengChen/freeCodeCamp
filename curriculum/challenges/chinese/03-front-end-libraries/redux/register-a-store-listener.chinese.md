@@ -3,27 +3,30 @@ id: 5a24c314108439a4d4036153
 title: Register a Store Listener
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 注册商店监听器
+forumTopicId: 301446
 ---
 
 ## Description
-<section id="description">您可以在Redux <code>store</code>对象上访问的另一种方法是<code>store.subscribe()</code> 。这允许您将监听器函数订阅到商店，只要针对商店调度操作，就会调用这些函数。此方法的一个简单用途是为您的商店订阅一个功能，只需在每次收到操作并更新商店时记录消息。 </section>
+<section id='description'>
+Another method you have access to on the Redux <code>store</code> object is <code>store.subscribe()</code>. This allows you to subscribe listener functions to the store, which are called whenever an action is dispatched against the store. One simple use for this method is to subscribe a function to your store that simply logs a message every time an action is received and the store is updated.
+</section>
 
 ## Instructions
-<section id="instructions">编写一个回调函数，每次商店收到一个动作时，它会递增全局变量<code>count</code> ，并将此函数传递给<code>store.subscribe()</code>方法。您将看到<code>store.dispatch()</code>连续三次被调用，每次都直接传入一个操作对象。观察操作调度之间的控制台输出以查看更新。 </section>
+<section id='instructions'>
+Write a callback function that increments the global variable <code>count</code> every time the store receives an action, and pass this function in to the <code>store.subscribe()</code> method. You'll see that <code>store.dispatch()</code> is called three times in a row, each time directly passing in an action object. Watch the console output between the action dispatches to see the updates take place.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 在商店上调度<code>ADD</code>操作应该将状态增加<code>1</code> 。
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: "ADD" }); const newState = store.getState(); return newState === (initialState + 1); })(), "Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.");'
-  - text: 应该有一个使用<code>store.subscribe</code>订阅商店的监听器功能。
-    testString: 'getUserInput => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
-  - text: <code>store.subscribe</code>的回调还应该在存储更新时增加全局<code>count</code>变量。
-    testString: 'assert(store.getState() === count, "The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.");'
+  - text: Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.
+    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: ''ADD'' }); const newState = store.getState(); return newState === (initialState + 1); })());'
+  - text: There should be a listener function subscribed to the store using <code>store.subscribe</code>.
+    testString: getUserInput => assert(getUserInput('index').includes('store.subscribe('));
+  - text: The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.
+    testString: assert(store.getState() === count);
 
 ```
 
@@ -61,7 +64,6 @@ store.dispatch({type: ADD});
 console.log(count);
 store.dispatch({type: ADD});
 console.log(count);
-
 ```
 
 </div>
@@ -71,7 +73,6 @@ console.log(count);
 
 ```jsx
 count = 0;
-
 ```
 
 </div>
@@ -82,7 +83,34 @@ count = 0;
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const ADD = 'ADD';
+
+const reducer = (state = 0, action) => {
+  switch(action.type) {
+    case ADD:
+      return state + 1;
+    default:
+      return state;
+  }
+};
+
+const store = Redux.createStore(reducer);
+ let count = 0;
+// change code below this line
+
+store.subscribe( () =>
+ {
+ count++;
+ }
+);
+
+// change code above this line
+
+store.dispatch({type: ADD});
+store.dispatch({type: ADD});
+store.dispatch({type: ADD});
 ```
+
 </section>

@@ -2,15 +2,21 @@
 id: 5900f3fd1000cf542c50ff10
 challengeType: 5
 title: 'Problem 145: How many reversible numbers are there below one-billion?'
-videoUrl: ''
-localeTitle: 问题145：有多少可逆数字低于十亿？
+forumTopicId: 301774
 ---
 
 ## Description
-<section id="description">一些正整数n具有sum [n + reverse（n）]完全由奇数（十进制）数字组成的属性。例如，36 + 63 = 99和409 + 904 = 1313.我们将这些数字称为可逆的;所以36,63,409和904是可逆的。 n或反向（n）中不允许前导零。 <p>有一千个可逆数字低于一千。 </p><p>有多少可逆数字低于十亿（109）？ </p></section>
+<section id='description'>
+Some positive integers n have the property that the sum [ n + reverse(n) ] consists entirely of odd (decimal) digits. For instance, 36 + 63 = 99 and 409 + 904 = 1313. We will call such numbers reversible; so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either n or reverse(n).
+
+There are 120 reversible numbers below one-thousand.
+
+How many reversible numbers are there below one-billion (109)?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +24,8 @@ localeTitle: 问题145：有多少可逆数字低于十亿？
 
 ```yml
 tests:
-  - text: <code>euler145()</code>应该返回608720。
-    testString: 'assert.strictEqual(euler145(), 608720, "<code>euler145()</code> should return 608720.");'
+  - text: <code>euler145()</code> should return 608720.
+    testString: assert.strictEqual(euler145(), 608720);
 
 ```
 
@@ -37,7 +43,6 @@ function euler145() {
 }
 
 euler145();
-
 ```
 
 </div>
@@ -52,4 +57,5 @@ euler145();
 ```js
 // solution required
 ```
+
 </section>

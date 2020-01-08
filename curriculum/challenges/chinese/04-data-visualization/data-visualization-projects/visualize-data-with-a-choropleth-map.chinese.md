@@ -3,15 +3,34 @@ id: 587d7fa6367417b2b2512bbf
 title: Visualize Data with a Choropleth Map
 isRequired: true
 challengeType: 3
-videoUrl: ''
-localeTitle: 使用等值线图可视化数据
+forumTopicId: 301465
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/freeCodeCamp/full/EZKqza" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/EZKqza</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a>并通过所有测试。给它你自己的个人风格。您可以使用HTML，JavaScript，CSS和基于D3 svg的可视化库。在每次测试时查询必需（非虚拟）DOM元素。如果您使用前端框架（例如Vue），则测试结果可能对动态内容不准确。我们希望最终能够容纳它们，但D3项目目前不支持这些框架。 <strong>用户故事＃1：</strong>我的等值应该有一个带有相应<code>id=&quot;title&quot;</code> 。 <strong>用户故事＃2：</strong>我的等值应该有一个带有相应<code>id=&quot;description&quot;</code>的描述元素。 <strong>用户故事＃3：</strong>我的等值应该有具有代表数据的相应<code>class=&quot;county&quot;</code> 。 <strong>用户故事＃4：</strong>县应该至少使用4种不同的填充颜色。 <strong>用户故事＃5：</strong>我的县应该拥有包含相应的fips和教育价值的<code>data-fips</code>和<code>data-education</code>属性。 <strong>用户故事＃6：</strong>我的等值应该为每个提供的数据点设置一个县。 <strong>用户故事＃7：</strong>县应具有与样本数据匹配的数据fips和数据教育值。 <strong>用户故事＃8：</strong>我的等值应该有一个带有相应<code>id=&quot;legend&quot;</code> 。 <strong>用户故事＃9：</strong>图例应至少使用4种不同的填充颜色。 <strong>用户故事＃10：</strong>我可以将鼠标悬停在某个区域上，并查看带有相应<code>id=&quot;tooltip&quot;</code> ，其中显示有关该区域的更多信息。 <strong>用户故事＃11：</strong>我的工具提示应该具有与活动区域的<code>data-education</code>相对应的<code>data-education</code>属性。以下是完成此项目所需的数据集： <br><ul><li> <strong>美国教育数据：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json</code> <strong>：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json</code> </li><li> <strong>美国县数据：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json</code> <strong>：</strong> <code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json</code> </li></ul>您可以通过分叉<a href="https://codepen.io/freeCodeCamp/pen/MJjpwO" target="_blank">此CodePen笔</a>来构建项目。或者您可以使用此CDN链接在您喜欢的任何环境中运行测试： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code> ： <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>完成后，将URL提交给您的工作通过所有测试的项目。如果卡住，请记住使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a>方法。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/EZKqza' target='_blank'>https://codepen.io/freeCodeCamp/full/EZKqza</a>.
+Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.
+You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.
+<strong>User Story #1:</strong> My choropleth should have a title with a corresponding <code>id="title"</code>.
+<strong>User Story #2:</strong> My choropleth should have a description element with a corresponding <code>id="description"</code>.
+<strong>User Story #3:</strong> My choropleth should have counties with a corresponding <code>class="county"</code> that represent the data.
+<strong>User Story #4:</strong> There should be at least 4 different fill colors used for the counties.
+<strong>User Story #5:</strong> My counties should each have <code>data-fips</code> and <code>data-education</code> properties containing their corresponding fips and education values.
+<strong>User Story #6:</strong> My choropleth should have a county for each provided data point.
+<strong>User Story #7:</strong> The counties should have data-fips and data-education values that match the sample data.
+<strong>User Story #8:</strong> My choropleth should have a legend with a corresponding <code>id="legend"</code>.
+<strong>User Story #9:</strong> There should be at least 4 different fill colors used for the legend.
+<strong>User Story #10:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id="tooltip"</code> which displays more information about the area.
+<strong>User Story #11:</strong> My tooltip should have a <code>data-education</code> property that corresponds to the <code>data-education</code> of the active area.
+Here are the datasets you will need to complete this project:<br><ul><li><strong>US Education Data: </strong><code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json</code></li><li><strong>US County Data: </strong><code>https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json</code></li></ul>
+You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>
+Once you're done, submit the URL to your working project with all its tests passing.
+Remember to use the <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +54,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

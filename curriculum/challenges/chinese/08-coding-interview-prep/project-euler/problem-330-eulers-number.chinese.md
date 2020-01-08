@@ -1,16 +1,37 @@
 ---
 id: 5900f4b71000cf542c50ffc9
 challengeType: 5
-title: 'Problem 330: Euler"s Number'
-videoUrl: ''
-localeTitle: 问题330：欧拉数
+title: 'Problem 330: Euler''s Number'
+forumTopicId: 301988
 ---
 
 ## Description
-<section id="description">为所有整数n定义了无限的实数序列a（n），如下所示： <p>例如，a（0）= 11！ + 12！ + 13！ + ... = e  -  1 a（1）= e  -  11！ + 12！ + 13！ + ... = 2e  -  3 a（2）= 2e  -  31！ + e  -  12！ + 13！ + ... = 72 e  -  6 </p><p> e = 2.7182818 ......是欧拉常数。 </p><p>可以证明a（n）是形式</p><pre> <code>A(n) e + B(n)n! for integers A(n) and B(n).</code> </pre><p>例如a（10）= </p><pre> <code>328161643 e − 65269448610! .</code> </pre><p>求A（109）+ B（109）并给出答案mod 77 777 777。 </p></section>
+<section id='description'>
+
+An infinite sequence of real numbers a(n) is defined for all integers n as follows:
+<!-- TODO Use MathJax and re-write from projecteuler.net -->
+For example,a(0) = 11! + 12! + 13! + ... = e − 1
+a(1) = e − 11! + 12! + 13! + ... = 2e − 3
+a(2) = 2e − 31! + e − 12! + 13! + ... = 72 e − 6
+
+with e = 2.7182818... being Euler's constant.
+
+
+It can be shown that a(n) is of the form
+
+A(n) e + B(n)n!
+for integers A(n) and B(n).
+
+For example a(10) =
+
+328161643 e − 65269448610!.
+
+Find A(109) + B(109) and give your answer mod 77 777 777.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +39,8 @@ localeTitle: 问题330：欧拉数
 
 ```yml
 tests:
-  - text: <code>euler330()</code>应该返回15955822。
-    testString: 'assert.strictEqual(euler330(), 15955822, "<code>euler330()</code> should return 15955822.");'
+  - text: <code>euler330()</code> should return 15955822.
+    testString: assert.strictEqual(euler330(), 15955822);
 
 ```
 
@@ -37,7 +58,6 @@ function euler330() {
 }
 
 euler330();
-
 ```
 
 </div>
@@ -52,4 +72,5 @@ euler330();
 ```js
 // solution required
 ```
+
 </section>

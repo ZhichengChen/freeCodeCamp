@@ -2,26 +2,65 @@
 id: 587d7b7d367417b2b2512b1d
 title: 'Iterate Through the Keys of an Object with a for...in Statement'
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用for ... in Statement中的对象键迭代
+forumTopicId: 301162
 ---
 
 ## Description
-<section id="description">有时您可能需要遍历对象中的所有键。这需要JavaScript中的特定语法，称为<dfn>for ... in</dfn>语句。对于我们的<code>users</code>对象，这可能看起来像： <blockquote> for（让用户在用户中）{ <br>的console.log（用户）; <br> }; <br><br> //日志： <br>艾伦<br>杰夫<br>莎拉<br>瑞安</blockquote>在这个语句中，我们定义了一个变量<code>user</code> ，正如您所看到的，在每次迭代期间，当该语句循环遍历该对象时，该变量被重置为每个对象的键，从而导致每个用户的名称被打印到控制台。 <strong>注意：</strong> <br>对象不像数组那样保持对存储键的排序;因此，当引用或访问该密钥时，对象上的键位置或其出现的相对顺序是无关紧要的。 </section>
+<section id='description'>
+
+Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our <code>users</code> object, this could look like:
+
+```js
+for (let user in users) {
+  console.log(user);
+}
+
+// logs:
+Alan
+Jeff
+Sarah
+Ryan
+```
+
+In this statement, we defined a variable <code>user</code>, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console.
+<strong>NOTE:</strong> Objects do not maintain an ordering to stored keys like arrays do; thus a key's position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.
+</section>
 
 ## Instructions
-<section id="instructions">我们定义了一个函数<code>countOnline</code> ;在此函数中使用<dfn>for ... in</dfn>语句循环访问<code>users</code>对象中的<code>users</code>并返回其<code>online</code>属性设置为<code>true</code>的用户数。 </section>
+<section id='instructions'>
+
+We've defined a function <code>countOnline</code> which accepts one argument (a users object). Use a <dfn>for...in</dfn> statement within this function to loop through the users object passed into the function and return the number of users whose <code>online</code> property is set to <code>true</code>.  An example of a users object which could be passed to <code>countOnline</code> is shown below.  Each user will have an <code>online</code> property with either a <code>true</code> or <code>false</code> value.
+
+
+```js
+{
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+```
+
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>users</code>对象包含用户<code>Jeff</code>和<code>Ryan</code> ， <code>online</code>设置为<code>true</code> ，用户<code>Alan</code>和<code>Sarah</code> <code>online</code>设置为<code>false</code>
-    testString: 'assert(users.Alan.online === false && users.Jeff.online === true &&  users.Sarah.online === false &&  users.Ryan.online === true, "The <code>users</code> object contains users <code>Jeff</code> and <code>Ryan</code> with <code>online</code> set to <code>true</code> and users <code>Alan</code> and <code>Sarah</code> with <code>online</code> set to <code>false</code>");'
-  - text: 函数<code>countOnline</code>返回<code>online</code>属性设置为<code>true</code>的用户数
-    testString: 'assert((function() { users.Harry = {online: true}; users.Sam = {online: true}; users.Carl = {online: true}; return countOnline(users) })() === 5, "The function <code>countOnline</code> returns the number of users with the <code>online</code> property set to <code>true</code>");'
-
+  - text: The function <code>countOnline</code> should use a `for in` statement to iterate through the object keys of the object passed to it.
+    testString: assert(code.match(/for\s*\(\s*(var|let)\s+[a-zA-Z_$]\w*\s+in\s+[a-zA-Z_$]\w*\s*\)\s*{/));
+  - text: 'The function <code>countOnline</code> should return <code>1</code> when the object <code>{ Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } }</code> is passed to it'
+    testString: assert(countOnline(usersObj1) === 1);
+  - text: 'The function <code>countOnline</code> should return <code>2</code> when the object <code>{ Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } }</code> is passed to it'
+    testString: assert(countOnline(usersObj2) === 2);
+  - text: 'The function <code>countOnline</code> should return <code>0</code> when the object <code>{ Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } }</code> is passed to it'
+    testString: assert(countOnline(usersObj3) === 0);
 ```
 
 </section>
@@ -32,37 +71,58 @@ tests:
 <div id='js-seed'>
 
 ```js
-let users = {
-  Alan: {
-    age: 27,
-    online: false
-  },
-  Jeff: {
-    age: 32,
-    online: true
-  },
-  Sarah: {
-    age: 48,
-    online: false
-  },
-  Ryan: {
-    age: 19,
-    online: true
-  }
-};
-
-function countOnline(obj) {
+function countOnline(usersObj) {
   // change code below this line
 
   // change code above this line
 }
-
-console.log(countOnline(users));
-
 ```
 
 </div>
 
+### After Test
+<div id='js-teardown'>
+
+```js
+const usersObj1 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+const usersObj2 = {
+  Alan: {
+    online: true
+  },
+  Jeff: {
+    online: false
+  },
+  Sarah: {
+    online: true
+  }
+}
+
+
+const usersObj3 = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: false
+  },
+  Sarah: {
+    online: false
+  }
+}
+```
+
+</div>
 
 
 </section>
@@ -71,6 +131,17 @@ console.log(countOnline(users));
 <section id='solution'>
 
 ```js
-// solution required
+
+function countOnline(usersObj) {
+  let online = 0;
+  for(let user in usersObj){
+    if(usersObj[user].online) {
+      online++;
+    }
+  }
+  return online;
+}
+
 ```
+
 </section>

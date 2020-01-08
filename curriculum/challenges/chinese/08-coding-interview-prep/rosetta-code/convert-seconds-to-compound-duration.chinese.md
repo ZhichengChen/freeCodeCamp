@@ -2,15 +2,52 @@
 title: Convert seconds to compound duration
 id: 596fd036dc1ab896c5db98b1
 challengeType: 5
-videoUrl: ''
-localeTitle: 将秒转换为复合持续时间
+forumTopicId: 302236
 ---
 
 ## Description
-<section id="description">任务： <p>实现一个功能： </p>取一个表示以秒为单位的持续时间的正整数作为输入（例如， <code>100</code> ），并返回一个字符串，该字符串显示分解为周，日，小时，分钟和秒的相同持续时间，如下所述（例如，“ <code>1 min, 40 sec</code> “）。 <p>证明它通过以下三个测试用例： </p><p style="font-size:115%; margin:1em 0 0 0">测试用例</p><table><tbody><tr><th>输入号码</th><th>输出数量</th></tr><tr><td> 7259 </td><td> <code>2 hr, 59 sec</code> </td> </tr><tr><td> 86400 </td><td> <code>1 d</code> </td> </tr><tr><td> 6000000 </td><td> <code>9 wk, 6 d, 10 hr, 40 min</code> </td> </tr></tbody></table><p style="font-size:115%; margin:1em 0 0 0">细节</p>应使用以下五个单位： <table><tbody><tr><th>单元</th><th>输出中使用的后缀</th><th>转变</th></tr><tr><td>周</td><td> <code>wk</code> </td> <td> 1周= 7天</td></tr><tr><td>天</td><td> <code>d</code> </td> <td> 1天= 24小时</td></tr><tr><td>小时</td><td> <code>hr</code> </td> <td> 1小时= 60分钟</td></tr><tr><td>分钟</td><td> <code>min</code> </td> <td> 1分钟= 60秒</td></tr><tr><td>第二</td><td> <code>sec</code> </td> <td></td></tr></tbody></table>但是，仅包括输出中具有非零值的数量（例如，返回“ <code>1 d</code> ”而不是“ <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code> ”）。更大的单位优先于较小的单位尽可能（例如，返回<code>2 min, 10 sec</code>而不是<code>1 min, 70 sec</code>或<code>130 sec</code> ）模拟测试用例中显示的格式（从最大单位到最小单位的数量，以逗号+空格分隔;数值和单位每个数量用空格分隔）。 <p></p><hr style="margin:1em 0;"><p></p></section>
+<section id='description'>
+Implement a function which:
+<ul>
+  <li>takes a positive integer representing a duration in seconds as input (e.g., <code>100</code>), and</li>
+  <li>returns a string which shows the same duration decomposed into weeks, days, hours, minutes, and seconds as detailed below (e.g., <code>1 min, 40 sec</code>).</li>
+</ul>
+Demonstrate that it passes the following three test-cases:
+<div style="font-size:115%; font-weight: bold;">Test Cases</div>
+
+| Input number | Output number |
+| --- | --- |
+| 7259 | <code>2 hr, 59 sec</code> |
+| 728640059 | <code>1 d</code> |
+| 6000000 | <code>9 wk, 6 d, 10 hr, 40 min</code> |
+<div style="font-size:115%; font-weight: bold;">Details</div>
+<ul>
+  <li>
+    The following five units should be used:
+
+| Unit | Suffix used in Output | Conversion |
+| --- | --- | --- |
+| week | <code>wk</code> | 1 week = 7 days |
+| day | <code>d</code> | 1 day = 24 hours |
+| hour | <code>hr</code> | 1 hour = 60 minutes |
+| minute | <code>min</code> | 1 minute = 60 seconds |
+| second | <code>sec</code> | --- |
+  </li>
+  <li>
+    However, <strong>only</strong> include quantities with non-zero values in the output (e.g., return <code>1 d</code> and not <code>0 wk, 1 d, 0 hr, 0 min, 0 sec</code>).
+  </li>
+  <li>
+    Give larger units precedence over smaller ones as much as possible (e.g., return <code>2 min, 10 sec</code> and not <code>1 min, 70 sec</code> or <code>130 sec</code>).
+  </li>
+  <li>
+    Mimic the formatting shown in the test-cases (quantities sorted from largest unit to smallest and separated by comma+space; value and unit of each quantity separated by space).
+  </li>
+</ul>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +55,14 @@ localeTitle: 将秒转换为复合持续时间
 
 ```yml
 tests:
-  - text: <code>convertSeconds</code>是一个函数。
-    testString: 'assert(typeof convertSeconds === "function", "<code>convertSeconds</code> is a function.");'
-  - text: '<code>convertSeconds(7259)</code>应该返回<code>2 hr, 59 sec</code> 。'
-    testString: 'assert.equal(convertSeconds(testCases[0]), results[0], "<code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.");'
-  - text: <code>convertSeconds(86400)</code>应返回<code>1 d</code> 。
-    testString: 'assert.equal(convertSeconds(testCases[1]), results[1], "<code>convertSeconds(86400)</code> should return <code>1 d</code>.");'
-  - text: '<code>convertSeconds(6000000)</code>应该返回<code>9 wk, 6 d, 10 hr, 40 min</code> 。'
-    testString: 'assert.equal(convertSeconds(testCases[2]), results[2], "<code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.");'
+  - text: <code>convertSeconds</code> should be a function.
+    testString: assert(typeof convertSeconds === 'function');
+  - text: <code>convertSeconds(7259)</code> should return <code>2 hr, 59 sec</code>.
+    testString: assert.equal(convertSeconds(testCases[0]), results[0]);
+  - text: <code>convertSeconds(86400)</code> should return <code>1 d</code>.
+    testString: assert.equal(convertSeconds(testCases[1]), results[1]);
+  - text: <code>convertSeconds(6000000)</code> should return <code>9 wk, 6 d, 10 hr, 40 min</code>.
+    testString: assert.equal(convertSeconds(testCases[2]), results[2]);
 
 ```
 
@@ -37,11 +74,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function convertSeconds (sec) {
+function convertSeconds(sec) {
   // Good luck!
   return true;
 }
-
 ```
 
 </div>
@@ -51,7 +87,8 @@ function convertSeconds (sec) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [7259, 86400, 6000000];
+const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
 ```
 
 </div>
@@ -61,7 +98,38 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function convertSeconds(sec) {
+  const localNames = ['wk', 'd', 'hr', 'min', 'sec'];
+  // compoundDuration :: [String] -> Int -> String
+  const compoundDuration = (labels, intSeconds) =>
+    weekParts(intSeconds)
+    .map((v, i) => [v, labels[i]])
+    .reduce((a, x) =>
+      a.concat(x[0] ? [`${x[0]} ${x[1] || '?'}`] : []), []
+    )
+    .join(', ');
+
+    // weekParts :: Int -> [Int]
+  const weekParts = intSeconds => [0, 7, 24, 60, 60]
+    .reduceRight((a, x) => {
+      const r = a.rem;
+      const mod = x !== 0 ? r % x : r;
+
+      return {
+        rem: (r - mod) / (x || 1),
+        parts: [mod].concat(a.parts)
+      };
+    }, {
+      rem: intSeconds,
+      parts: []
+    })
+    .parts;
+
+  return compoundDuration(localNames, sec);
+}
+
 ```
+
 </section>

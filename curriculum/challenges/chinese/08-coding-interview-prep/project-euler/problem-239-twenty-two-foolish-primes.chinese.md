@@ -2,15 +2,22 @@
 id: 5900f45c1000cf542c50ff6e
 challengeType: 5
 title: 'Problem 239: Twenty-two Foolish Primes'
-videoUrl: ''
-localeTitle: 问题239：二十二个愚蠢的素数
+forumTopicId: 301884
 ---
 
 ## Description
-<section id="description">编号为1到100的一组磁盘以随机顺序排列成一行。 <p>我们有一个部分紊乱的概率是多少，这样才能确定22个素数盘远离它们的自然位置？ （任何数量的非主要磁盘也可以在其自然位置内或外找到。） </p><p>将答案四舍五入到小数点后面的12位，格式为0.abcdefghijkl。 </p></section>
+<section id='description'>
+A set of disks numbered 1 through 100 are placed in a line in random order.
+
+What is the probability that we have a partial derangement such that exactly 22 prime number discs are found away from their natural positions?
+(Any number of non-prime disks may also be found in or out of their natural positions.)
+
+Give your answer rounded to 12 places behind the decimal point in the form 0.abcdefghijkl.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题239：二十二个愚蠢的素数
 
 ```yml
 tests:
-  - text: <code>euler239()</code>应该返回0.001887854841。
-    testString: 'assert.strictEqual(euler239(), 0.001887854841, "<code>euler239()</code> should return 0.001887854841.");'
+  - text: <code>euler239()</code> should return 0.001887854841.
+    testString: assert.strictEqual(euler239(), 0.001887854841);
 
 ```
 
@@ -37,7 +44,6 @@ function euler239() {
 }
 
 euler239();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler239();
 ```js
 // solution required
 ```
+
 </section>

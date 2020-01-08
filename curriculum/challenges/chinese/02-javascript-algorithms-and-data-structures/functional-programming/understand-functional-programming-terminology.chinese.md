@@ -2,29 +2,39 @@
 id: 587d7b8e367417b2b2512b5c
 title: Understand Functional Programming Terminology
 challengeType: 1
-videoUrl: ''
-localeTitle: 理解功能编程术语
+forumTopicId: 301240
 ---
 
 ## Description
-<section id="description">联邦通信委员会团队有一种情绪波动，现在想要两种类型的茶：绿茶和红茶。一般事实：客户情绪波动很常见。有了这些信息，我们需要重新审视上次挑战中的<code>getTea</code>功能，以处理各种茶叶请求。我们可以修改<code>getTea</code>来接受一个函数作为参数，以便能够改变它准备的茶的类型。这使得<code>getTea</code>更加灵活，并且在客户端请求发生变化时为程序员提供更多控制。但首先，让我们介绍一些函数术语： <code>Callbacks</code>函数是滑动或传递给另一个函数来决定函数调用的函数。您可能已经看到它们传递给其他方法，例如在<code>filter</code> ，回调函数告诉JavaScript如何过滤数组的标准。可以分配给变量，传递到另一个函数或从其他函数返回的函数就像任何其他正常值一样，称为<code>first class</code>函数。在JavaScript中，所有函数都是<code>first class</code>函数。将函数作为参数或将函数作为返回值返回的函数称为<code>higher order</code>函数。当函数传递给另一个函数或从另一个函数返回时，那些传入或返回的函数可以称为<code>lambda</code> 。 </section>
+<section id='description'>
+The FCC Team had a mood swing and now wants two types of tea: green tea and black tea. General Fact: Client mood swings are pretty common.
+With that information, we'll need to revisit the <code>getTea</code> function from last challenge to handle various tea requests. We can modify <code>getTea</code> to accept a function as a parameter to be able to change the type of tea it prepares. This makes <code>getTea</code> more flexible, and gives the programmer more control when client requests change.
+But first, let's cover some functional terminology:
+<dfn>Callbacks</dfn> are the functions that are slipped or passed into another function to decide the invocation of that function. You may have seen them passed to other methods, for example in <code>filter</code>, the callback function tells JavaScript the criteria for how to filter an array.
+Functions that can be assigned to a variable, passed into another function, or returned from another function just like any other normal value, are called <dfn>first class</dfn> functions. In JavaScript, all functions are first class functions.
+The functions that take a function as an argument, or return a function as a return value are called <dfn>higher order</dfn> functions.
+When the functions are passed in to another function or returned from another function, then those functions which gets passed in or returned can be called a <dfn>lambda</dfn>.
+</section>
 
 ## Instructions
-<section id="instructions">准备27杯绿茶和13杯红茶，分别储存在<code>tea4GreenTeamFCC</code>和<code>tea4BlackTeamFCC</code>变量中。请注意， <code>getTea</code>函数已被修改，因此它现在将函数作为第一个参数。注意：数据（茶杯数量）作为最后一个参数提供。我们将在后面的课程中对此进行更多讨论。 </section>
+<section id='instructions'>
+Prepare 27 cups of green tea and 13 cups of black tea and store them in <code>tea4GreenTeamFCC</code> and <code>tea4BlackTeamFCC</code> variables, respectively. Note that the <code>getTea</code> function has been modified so it now takes a function as the first argument.
+Note: The data (the number of cups of tea) is supplied as the last argument. We'll discuss this more in later lessons.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>tea4GreenTeamFCC</code>变量应该为团队提供27杯绿茶。
-    testString: 'assert(tea4GreenTeamFCC.length === 27, "The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.");'
-  - text: <code>tea4GreenTeamFCC</code>变量应该拿着一杯绿茶。
-    testString: 'assert(tea4GreenTeamFCC[0] === "greenTea", "The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.");'
-  - text: <code>tea4BlackTeamFCC</code>变量应该可以容纳13杯红茶。
-    testString: 'assert(tea4BlackTeamFCC.length === 13, "The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.");'
-  - text: <code>tea4BlackTeamFCC</code>变量应该拿着一杯红茶。
-    testString: 'assert(tea4BlackTeamFCC[0] === "blackTea", "The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.");'
+  - text: The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.
+    testString: assert(tea4GreenTeamFCC.length === 27);
+  - text: The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.
+    testString: assert(tea4GreenTeamFCC[0] === 'greenTea');
+  - text: The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.
+    testString: assert(tea4BlackTeamFCC.length === 13);
+  - text: The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.
+    testString: assert(tea4BlackTeamFCC[0] === 'blackTea');
 
 ```
 
@@ -76,7 +86,6 @@ console.log(
   tea4GreenTeamFCC,
   tea4BlackTeamFCC
 );
-
 ```
 
 </div>
@@ -90,5 +99,21 @@ console.log(
 
 ```js
 // solution required
+const prepareGreenTea = () => 'greenTea';
+const prepareBlackTea = () => 'blackTea';
+
+const getTea = (prepareTea, numOfCups) => {
+  const teaCups = [];
+
+  for(let cups = 1; cups <= numOfCups; cups += 1) {
+    const teaCup = prepareTea();
+    teaCups.push(teaCup);
+  }
+  return teaCups;
+};
+
+const tea4BlackTeamFCC = getTea(prepareBlackTea, 13);
+const tea4GreenTeamFCC = getTea(prepareGreenTea, 27);
 ```
+
 </section>

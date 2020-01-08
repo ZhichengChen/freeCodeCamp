@@ -2,15 +2,19 @@
 id: 587d824e367417b2b2512c57
 title: Test if an Object is an Instance of a Constructor
 challengeType: 2
-videoUrl: ''
-localeTitle: 测试对象是否是构造函数的实例
+forumTopicId: 301605
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a>克隆的。 #instanceOf声明对象是构造函数的实例。在适当的地方使用#instanceOf或#notInstanceOf </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.
+<code>#instanceOf</code> asserts that an object is an instance of a constructor.
+
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Use <code>assert.instanceOf()</code> or <code>assert.notInstanceOf()</code> to make the tests pass. 
 </section>
 
 ## Tests
@@ -18,16 +22,16 @@ localeTitle: 测试对象是否是构造函数的实例
 
 ```yml
 tests:
-  - text: 所有测试都应该通过
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.state,"passed"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[0].method, "notInstanceOf", "myCar is not an instance of Plane"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[1].method, "instanceOf", "airlinePlane is an instance of Plane"); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[2].method, "instanceOf", "everything is an Object in JavaScript..."); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 选择正确的断言 -  instanceOf与notInstanceOf
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/get-tests?type=unit&n=17").then(data => { assert.equal(data.assertions[3].method, "notInstanceOf", "myCar.wheels is not an instance of String"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: All tests should pass.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.state,'passed'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - instanceOf vs. notInstanceOf.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[0].method, 'notInstanceOf', 'myCar is not an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - instanceOf vs. notInstanceOf.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[1].method, 'instanceOf', 'airlinePlane is an instance of Plane'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - instanceOf vs. notInstanceOf.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[2].method, 'instanceOf', 'everything is an Object in JavaScript...'); }, xhr => { throw new Error(xhr.responseText); })
+  - text: You should choose the right assertion - instanceOf vs. notInstanceOf.
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/get-tests?type=unit&n=17').then(data => { assert.equal(data.assertions[3].method, 'notInstanceOf', 'myCar.wheels is not an instance of String'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -42,6 +46,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -1,18 +1,26 @@
 ---
 id: 587d7fb5367417b2b2512c03
 title: Use the Caret-Character to Use the Latest Minor Version of a Dependency
-localeTitle: 使用插入符号来使用最新的次要版本的依赖项
 challengeType: 2
+forumTopicId: 301531
 ---
 
 ## Description
-<section id='description'> <code>0</code>类似于我们在上一次挑战中学到的波形符（〜）允许npm为依赖项安装最新的PATCH，插入符号（^）允许npm也安装将来的更新。不同之处在于插入符号将允许MINOR更新和PATCH。 <code>0</code>目前，您当前版本的时刻应为~2.10.2，允许npm安装到最新的2.10.x版本。如果我们改为使用插入符号（^）作为我们的版本前缀，则允许npm更新为任何2.xx版本。 <code>0</code>示例
-<code>"some-package-name": "^1.3.8" allows updates to any 1.xx version.</code> <code>0</code>使用说明<code>0</code>使用插入符（^）为依赖项中的时刻版本添加前缀，并允许npm将其更新为任何新的MINOR版本。 <code>0</code>请注意，不应更改版本号本身。 
+<section id='description'>
+Similar to how the tilde we learned about in the last challenge allows npm to install the latest PATCH for a dependency, the caret (<code>^</code>) allows npm to install future updates as well. The difference is that the caret will allow both MINOR updates and PATCHes.
+Your current version of moment should be "~2.10.2" which allows npm to install to the latest 2.10.x version. If you were to use the caret (^) as a version prefix instead, npm would be allowed to update to any 2.x.x version.
+
+```json
+"package": "^1.3.8"
+```
+
+This would allow updates to any 1.x.x version of the package.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Use the caret (<code>^</code>) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.
+<strong>Note:</strong> The version numbers themselves should not be changed.
 </section>
 
 ## Tests
@@ -20,9 +28,9 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: '“依赖”应该包括“时刻”'
+  - text: '"dependencies" should include "moment"'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''moment'', ''"dependencies" does not include "moment"''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: '“moment”版本应匹配“^ 2.x.x”'
+  - text: '"moment" version should match "^2.x.x"'
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert.match(packJson.dependencies.moment, /^\^2\./, ''Wrong version of "moment". It should be ^2.10.2''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -38,6 +46,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

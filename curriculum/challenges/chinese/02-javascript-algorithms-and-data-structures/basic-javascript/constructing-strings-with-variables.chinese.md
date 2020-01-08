@@ -2,25 +2,29 @@
 id: 56533eb9ac21ba0edf2244b9
 title: Constructing Strings with Variables
 challengeType: 1
-videoUrl: ''
-localeTitle: 用变量构造字符串
+videoUrl: 'https://scrimba.com/c/cqk8rf4'
+forumTopicId: 16805
 ---
 
 ## Description
-<section id="description">有时您需要构建一个字符串， <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a>样式。通过使用连接运算符（ <code>+</code> ），您可以将一个或多个变量插入到正在构建的字符串中。 </section>
+<section id='description'>
+Sometimes you will need to build a string, <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> style. By using the concatenation operator (<code>+</code>), you can insert one or more variables into a string you're building.
+</section>
 
 ## Instructions
-<section id="instructions">将<code>myName</code>设置为等于您的名字的字符串，并在字符串<code>&quot;My name is &quot;</code>和<code>&quot; and I am well!&quot;</code>之间用<code>myName</code>构建<code>myStr</code> <code>&quot; and I am well!&quot;</code> </section>
+<section id='instructions'>
+Set <code>myName</code> to a string equal to your name and build <code>myStr</code> with <code>myName</code> between the strings <code>"My name is "</code> and <code>" and I am well!"</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>myName</code>应设置为至少3个字符长的字符串
-    testString: 'assert(typeof myName !== "undefined" && myName.length > 2, "<code>myName</code> should be set to a string at least 3 characters long");'
-  - text: 使用两个<code>+</code>运算符在其中构建<code>myStr</code> with <code>myName</code>
-    testString: 'assert(code.match(/[""]\s*\+\s*myName\s*\+\s*[""]/g).length > 0, "Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it");'
+  - text: <code>myName</code> should be set to a string at least 3 characters long.
+    testString: assert(typeof myName !== 'undefined' && myName.length > 2);
+  - text: You should use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it.
+    testString: assert(code.match(/["']\s*\+\s*myName\s*\+\s*["']/g).length > 0);
 
 ```
 
@@ -40,6 +44,7 @@ var ourStr = "Hello, our name is " + ourName + ", how are you?";
 var myName;
 var myStr;
 
+
 ```
 
 </div>
@@ -49,7 +54,20 @@ var myStr;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof myName === 'string') {
+    output.push('myName = "' + myName + '"');
+  } else {
+    output.push('myName is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
 ```
 
 </div>
@@ -59,7 +77,10 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var myName = "Bob";
+var myStr = "My name is " + myName + " and I am well!";
 ```
+
 </section>

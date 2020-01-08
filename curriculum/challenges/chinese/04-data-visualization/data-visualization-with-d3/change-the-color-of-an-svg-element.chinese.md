@@ -2,23 +2,27 @@
 id: 587d7fa9367417b2b2512bd1
 title: Change the Color of an SVG Element
 challengeType: 6
-videoUrl: ''
-localeTitle: 更改SVG元素的颜色
+forumTopicId: 301480
 ---
 
 ## Description
-<section id="description">条形图位于正确的位置，但它们都是相同的黑色。 SVG有办法改变条形的颜色。在SVG中， <code>rect</code>形状使用<code>fill</code>属性着色。它支持十六进制代码，颜色名称和rgb值，以及更复杂的选项，如渐变和透明度。 </section>
+<section id='description'>
+The bars are in the right position, but they are all the same black color. SVG has a way to change the color of the bars.
+In SVG, a <code>rect</code> shape is colored with the <code>fill</code> attribute. It supports hex codes, color names, and rgb values, as well as more complex options like gradients and transparency.
+</section>
 
 ## Instructions
-<section id="instructions">添加<code>attr()</code>方法将所有条形的“填充”设置为颜色“海军蓝”。 </section>
+<section id='instructions'>
+Add an <code>attr()</code> method to set the "fill" of all the bars to the color "navy".
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 这些酒吧都应该有海军蓝的<code>fill</code>颜色。
-    testString: 'assert($("rect").css("fill") == "rgb(0, 0, 128)", "The bars should all have a <code>fill</code> color of navy.");'
+  - text: The bars should all have a <code>fill</code> color of navy.
+    testString: assert($('rect').css('fill') == "rgb(0, 0, 128)");
 
 ```
 
@@ -57,7 +61,6 @@ tests:
        // Add your code above this line
   </script>
 </body>
-
 ```
 
 </div>
@@ -72,4 +75,5 @@ tests:
 ```js
 // solution required
 ```
+
 </section>

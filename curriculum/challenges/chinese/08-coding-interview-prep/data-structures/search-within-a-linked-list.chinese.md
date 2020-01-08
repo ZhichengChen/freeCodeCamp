@@ -2,31 +2,36 @@
 id: 587d8251367417b2b2512c64
 title: Search within a Linked List
 challengeType: 1
-videoUrl: ''
-localeTitle: 在链接列表中搜索
+forumTopicId: 301715
 ---
 
 ## Description
-<section id="description">让我们为链表类添加一些更有用的方法。如果我们可以判断我们的列表是否为空，那么它是否有用，就像我们的<code>Stack</code>和<code>Queue</code>类一样？我们还应该能够在链表中找到特定元素。遍历数据结构是你想要进行大量练习的东西！让我们创建一个<code>indexOf</code>方法，该方法将<code>element</code>作为参数，并在链表中返回该元素的<code>index</code> 。如果在链接列表中找不到该元素，则返回<code>-1</code> 。让我们实现一个相反的方法：一个<code>elementAt</code>方法，它将<code>index</code>作为参数并返回给定<code>index</code>处的<code>element</code> 。如果未找到任何<code>element</code> ，则返回<code>undefined</code> 。 </section>
+<section id='description'>
+Let's add a few more useful methods to our linked list class. Wouldn't it be useful if we could tell if our list was empty or not, as with our <code>Stack</code> and <code>Queue</code> classes?
+We should also be able to find specific elements in our linked list. Traversing through data structures is something you'll want to get a lot of practice with! Let's create an <code>indexOf</code> method that takes an <code>element</code> as an argument, and returns that element's <code>index</code> in the linked list. If the element is not found in the linked list, return <code>-1</code>.
+Let's also implement a method that does the opposite: an <code>elementAt</code> method that takes an <code>index</code> as an argument and returns the <code>element</code> at the given <code>index</code>. If no <code>element</code> is found, return <code>undefined</code>.
+</section>
 
 ## Instructions
-<section id="instructions">编写一个检查链表是否为空的<code>isEmpty</code>方法，返回给定元素<code>index</code>的<code>indexOf</code>方法，以及返回给定<code>index.</code>处<code>element</code>的<code>elementAt</code> <code>index.</code> </section>
+<section id='instructions'>
+Write an <code>isEmpty</code> method that checks if the linked list is empty, an <code>indexOf</code> method that returns the <code>index</code> of a given element, and an <code>elementAt</code> that returns an <code>element</code> at a given <code>index.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的<code>LinkedList</code>类应该有一个<code>indexOf</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.indexOf === "function")}()), "Your <code>LinkedList</code> class should have a <code>indexOf</code> method.");'
-  - text: 您的<code>LinkedList</code>类应该有一个<code>elementAt</code>方法。
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.elementAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>elementAt</code> method.");'
-  - text: 您的<code>size</code>方法应返回链表的长度
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.size() === 3}()), "Your <code>size</code> method should return the length of the linked list");'
-  - text: <code>indexOf</code>方法应该返回给定元素的索引。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.indexOf("kitten") === 2}()), "Your <code>indexOf</code> method should return the index of the given element.");'
-  - text: 您的<code>elementAt</code>方法应该返回给定索引处的元素。
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.elementAt(1) === "dog"}()), "Your <code>elementAt</code> method should return at element at a given index.");'
+  - text: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()));
+  - text: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()));
+  - text: Your <code>size</code> method should return the length of the linked list
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()));
+  - text: Your <code>indexOf</code> method should return the index of the given element.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()));
+  - text: Your <code>elementAt</code> method should return at element at a given index.
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()));
 
 ```
 
@@ -93,12 +98,9 @@ function LinkedList() {
 
   // Only change code above this line
 }
-
 ```
 
 </div>
-
-
 
 </section>
 
@@ -108,4 +110,5 @@ function LinkedList() {
 ```js
 // solution required
 ```
+
 </section>

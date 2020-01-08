@@ -2,25 +2,33 @@
 id: 587d7b8e367417b2b2512b5e
 title: Avoid Mutations and Side Effects Using Functional Programming
 challengeType: 1
-videoUrl: ''
-localeTitle: 使用功能编程避免突变和副作用
+forumTopicId: 301228
 ---
 
 ## Description
-<section id="description">如果您还没有弄明白，上一次挑战中的问题是使用<code>tabClose()</code>函数中的<code>splice</code>调用。不幸的是， <code>splice</code>更改了它所调用的原始数组，因此对它的第二次调用使用了一个修改过的数组，并给出了意想不到的结果。这是一个更大模式的一个小例子 - 你在一个变量，数组或一个对象上调用一个函数，该函数改变了对象中的变量或其他东西。函数式编程的核心原则之一是不改变事物。变化导致错误。知道你的函数不会改变任何东西，包括函数参数或任何全局变量，更容易防止错误。前面的例子没有任何复杂的操作，但是<code>splice</code>方法改变了原始数组，并导致了一个bug。回想一下，在函数式编程中，改变或改变事物称为<code>mutation</code> ，结果称为<code>side effect</code> 。理想情况下，函数应该是<code>pure function</code> ，这意味着它不会产生任何副作用。让我们尝试掌握这门学科，不要改变代码中的任何变量或对象。 </section>
+<section id='description'>
+If you haven't already figured it out, the issue in the previous challenge was with the <code>splice</code> call in the <code>tabClose()</code> function. Unfortunately, <code>splice</code> changes the original array it is called on, so the second call to it used a modified array, and gave unexpected results.
+This is a small example of a much larger pattern - you call a function on a variable, array, or an object, and the function changes the variable or something in the object.
+One of the core principles of functional programming is to not change things. Changes lead to bugs. It's easier to prevent bugs knowing that your functions don't change anything, including the function arguments or any global variable.
+The previous example didn't have any complicated operations but the <code>splice</code> method changed the original array, and resulted in a bug.
+Recall that in functional programming, changing or altering things is called <dfn>mutation</dfn>, and the outcome is called a <dfn>side effect</dfn>. A function, ideally, should be a <dfn>pure function</dfn>, meaning that it does not cause any side effects.
+Let's try to master this discipline and not alter any variable or object in our code.
+</section>
 
 ## Instructions
-<section id="instructions">填写函数<code>incrementer</code>的代码，使其返回全局变量<code>fixedValue</code>的值增加1。 </section>
+<section id='instructions'>
+Fill in the code for the function <code>incrementer</code> so it returns the value of the global variable <code>fixedValue</code> increased by one.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的函数<code>incrementer</code>不应更改<code>fixedValue</code>的值。
-    testString: 'assert(fixedValue === 4, "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.");'
-  - text: 您的<code>incrementer</code>函数应返回一个大于<code>fixedValue</code>值的值。
-    testString: 'assert(newValue === 5, "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.");'
+  - text: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.
+    testString: assert(fixedValue === 4);
+  - text: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.
+    testString: assert(newValue === 5);
 
 ```
 
@@ -44,7 +52,6 @@ function incrementer () {
 
 var newValue = incrementer(); // Should equal 5
 console.log(fixedValue); // Should print 4
-
 ```
 
 </div>
@@ -57,6 +64,13 @@ console.log(fixedValue); // Should print 4
 <section id='solution'>
 
 ```js
-// solution required
+var fixedValue = 4
+
+function incrementer() {
+  return fixedValue + 1
+}
+
+var newValue = incrementer(); // Should equal 5
 ```
+
 </section>

@@ -2,15 +2,40 @@
 id: 5900f5021000cf542c510015
 challengeType: 5
 title: 'Problem 406: Guessing Game'
-videoUrl: ''
-localeTitle: 问题406：猜猜游戏
+forumTopicId: 302074
 ---
 
 ## Description
-<section id="description">我们试图通过提问来找到从整数集{1,2，...，n}中选择的隐藏数字。我们问的每个数字（问题），我们得到三个可能的答案之一：“你的猜测低于隐藏的数字”（并且你需要花费一个成本），或者“你的猜测高于隐藏的数字”（和你承担b）的费用，或“是的，就是这样！” （游戏结束）。给定n，a和b的值，最优策略最小化最坏情况下的总成本。 <p>例如，如果n = 5，a = 2，b = 3，那么我们可以先问“2”作为我们的第一个问题。 </p><p>如果我们被告知2高于隐藏号码（b = 3的成本），那么我们确定“1”是隐藏号码（总成本为3）。如果我们被告知2低于隐藏号码（a = 2的成本），那么我们的下一个问题将是“4”。如果我们被告知4高于隐藏号码（b = 3的成本），那么我们确定“3”是隐藏号码（总成本为2 + 3 = 5）。如果我们被告知4低于隐藏号码（a = 2的成本），那么我们确定“5”是隐藏号码（总成本为2 + 2 = 4）。因此，该策略实现的最坏情况成本为5.还可以证明这是可以实现的最低的最坏情况成本。所以，事实上，我们刚刚描述了给定n，a和b值的最优策略。 </p><p>设C（n，a，b）是针对给定n，a和b值的最优策略实现的最坏情况成本。 </p><p>以下是几个例子：C（5,2,3）= 5 C（500，√2，√3）= 13.22073197 ... C（20000,5,7）= 82 C（2000000，√5，√7 ）= 49.63755955 ...... </p><p>设Fk为斐波纳契数：Fk = Fk-1 + Fk-2，基本情况F1 = F2 =1.FindΣ1≤k≤30C（1012，√k，√Fk），并将答案四舍五入为8小数点后面的小数位数。 </p></section>
+<section id='description'>
+We are trying to find a hidden number selected from the set of integers {1, 2, ..., n} by asking questions.
+Each number (question) we ask, we get one of three possible answers: "Your guess is lower than the hidden number" (and you incur a cost of a), or
+ "Your guess is higher than the hidden number" (and you incur a cost of b), or
+ "Yes, that's it!" (and the game ends).
+Given the value of n, a, and b, an optimal strategy minimizes the total cost for the worst possible case.
+
+For example, if n = 5, a = 2, and b = 3, then we may begin by asking "2" as our first question.
+
+If we are told that 2 is higher than the hidden number (for a cost of b=3), then we are sure that "1" is the hidden number (for a total cost of 3).
+If we are told that 2 is lower than the hidden number (for a cost of a=2), then our next question will be "4".
+If we are told that 4 is higher than the hidden number (for a cost of b=3), then we are sure that "3" is the hidden number (for a total cost of 2+3=5).
+If we are told that 4 is lower than the hidden number (for a cost of a=2), then we are sure that "5" is the hidden number (for a total cost of 2+2=4).
+Thus, the worst-case cost achieved by this strategy is 5. It can also be shown that this is the lowest worst-case cost that can be achieved.
+So, in fact, we have just described an optimal strategy for the given values of n, a, and b.
+
+Let C(n, a, b) be the worst-case cost achieved by an optimal strategy for the given values of n, a, and b.
+
+Here are a few examples:
+C(5, 2, 3) = 5
+C(500, √2, √3) = 13.22073197...
+C(20000, 5, 7) = 82
+C(2000000, √5, √7) = 49.63755955...
+
+Let Fk be the Fibonacci numbers: Fk = Fk-1 + Fk-2 with base cases F1 = F2 = 1.Find ∑1≤k≤30 C(1012, √k, √Fk), and give your answer rounded to 8 decimal places behind the decimal point.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +43,8 @@ localeTitle: 问题406：猜猜游戏
 
 ```yml
 tests:
-  - text: <code>euler406()</code>应返回36813.12757207。
-    testString: 'assert.strictEqual(euler406(), 36813.12757207, "<code>euler406()</code> should return 36813.12757207.");'
+  - text: <code>euler406()</code> should return 36813.12757207.
+    testString: assert.strictEqual(euler406(), 36813.12757207);
 
 ```
 
@@ -37,7 +62,6 @@ function euler406() {
 }
 
 euler406();
-
 ```
 
 </div>
@@ -52,4 +76,5 @@ euler406();
 ```js
 // solution required
 ```
+
 </section>

@@ -2,15 +2,20 @@
 id: 5900f4551000cf542c50ff68
 challengeType: 5
 title: 'Problem 233: Lattice points on a circle'
-videoUrl: ''
-localeTitle: 问题233：圆上的格点
+forumTopicId: 301877
 ---
 
 ## Description
-<section id="description">令f（N）是在通过（0,0），（N，0），（0，N）和（N，N）的圆上具有整数坐标的点的数量。可以证明f（10000）= 36。 <p>所有正整数N≤1011的总和是多少，f（N）= 420？ </p></section>
+<section id='description'>
+Let f(N) be the number of points with integer coordinates that are on a circle passing through (0,0), (N,0),(0,N), and (N,N).
+It can be shown that f(10000) = 36.
+
+What is the sum of all positive integers N ≤ 1011 such that f(N) = 420 ?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题233：圆上的格点
 
 ```yml
 tests:
-  - text: <code>euler233()</code>应该返回271204031455541300。
-    testString: 'assert.strictEqual(euler233(), 271204031455541300, "<code>euler233()</code> should return 271204031455541300.");'
+  - text: <code>euler233()</code> should return 271204031455541300.
+    testString: assert.strictEqual(euler233(), 271204031455541300);
 
 ```
 
@@ -37,7 +42,6 @@ function euler233() {
 }
 
 euler233();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler233();
 ```js
 // solution required
 ```
+
 </section>

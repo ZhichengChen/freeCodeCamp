@@ -2,15 +2,18 @@
 id: bad87fee1348bd9aec908849
 title: Add Elements within Your Bootstrap Wells
 challengeType: 0
-videoUrl: ''
-localeTitle: 在Bootstrap Wells中添加元素
+forumTopicId: 16636
 ---
 
 ## Description
-<section id="description">现在，我们行的每一列都有几个<code>div</code>元素。这是我们需要去的深度。现在我们可以添加我们的<code>button</code>元素。在每个<code>well</code> <code>div</code>元素中嵌套三个<code>button</code>元素。 </section>
+<section id='description'>
+Now we're several <code>div</code> elements deep on each column of our row. This is as deep as we'll need to go. Now we can add our <code>button</code> elements.
+Nest three <code>button</code> elements within each of your <code>well</code> <code>div</code> elements.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +21,12 @@ localeTitle: 在Bootstrap Wells中添加元素
 
 ```yml
 tests:
-  - text: 在每个<code>div</code>元素中嵌入三个<code>button</code>元素，并且类<code>well</code> 。
-    testString: 'assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3, "Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.");'
-  - text: 你应该总共有6个<code>button</code>元素。
-    testString: 'assert($("button") && $("button").length > 5, "You should have a total of 6 <code>button</code> elements.");'
-  - text: 确保所有<code>button</code>元素都有结束标记。
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have closing tags.");'
+  - text: Three <code>button</code> elements should be nested within each of your <code>div</code> elements with class <code>well</code>.
+    testString: assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3);
+  - text: You should have a total of 6 <code>button</code> elements.
+    testString: assert($("button") && $("button").length > 5);
+  - text: All of your <code>button</code> elements should have closing tags.
+    testString: assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length);
 
 ```
 
@@ -54,7 +57,6 @@ tests:
     </div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -66,7 +68,26 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+  </div>
+</div>
 ```
+
 </section>

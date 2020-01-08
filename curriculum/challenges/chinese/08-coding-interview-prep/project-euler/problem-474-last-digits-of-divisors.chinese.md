@@ -2,15 +2,24 @@
 id: 5900f5471000cf542c510059
 challengeType: 5
 title: 'Problem 474: Last digits of divisors'
-videoUrl: ''
-localeTitle: 问题474：除数的最后数字
+forumTopicId: 302151
 ---
 
 ## Description
-<section id="description">对于正整数n和数字d，我们将F（n，d）定义为n的除数的数，其最后的数字等于d。例如，F（84,4）= 3.在84的除数中（1,2,3,4,6,7,12,14,21,28,42,84），其中三个（4,14） ，84）有最后一位数字4。 <p>我们还可以验证F（12！，12）= 11和F（50！，123）= 17888。 </p><p>找到F（106！，65432）modulo（1016 + 61）。 </p></section>
+<section id='description'>
+For a positive integer n and digits d, we define F(n, d) as the number of the divisors of n whose last digits equal d.
+For example, F(84, 4) = 3. Among the divisors of 84 (1, 2, 3, 4, 6, 7, 12, 14, 21, 28, 42, 84), three of them (4, 14, 84) have the last digit 4.
+
+
+We can also verify that F(12!, 12) = 11 and F(50!, 123) = 17888.
+
+
+Find F(106!, 65432) modulo (1016 + 61).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +27,8 @@ localeTitle: 问题474：除数的最后数字
 
 ```yml
 tests:
-  - text: <code>euler474()</code>应该返回9690646731515010。
-    testString: 'assert.strictEqual(euler474(), 9690646731515010, "<code>euler474()</code> should return 9690646731515010.");'
+  - text: <code>euler474()</code> should return 9690646731515010.
+    testString: assert.strictEqual(euler474(), 9690646731515010);
 
 ```
 
@@ -37,7 +46,6 @@ function euler474() {
 }
 
 euler474();
-
 ```
 
 </div>
@@ -52,4 +60,5 @@ euler474();
 ```js
 // solution required
 ```
+
 </section>

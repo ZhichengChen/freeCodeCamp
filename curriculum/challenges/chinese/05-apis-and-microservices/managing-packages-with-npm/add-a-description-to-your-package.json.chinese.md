@@ -1,18 +1,26 @@
 ---
 id: 587d7fb3367417b2b2512bfc
 title: Add a Description to Your package.json
-localeTitle: 在package.json中添加一个描述
 challengeType: 2
+forumTopicId: 301522
 ---
 
 ## Description
-<section id='description'> <code>0</code>一个好的package.json的下一部分是description-field，其中有关于您的项目的简短但信息丰富的描述。 <code>0</code>如果您有一天计划将软件包发布到npm，请记住这是一个字符串，当他们决定是否安装您的软件包时，应该将该想法卖给用户。然而，这并不是描述的唯一用例：这是总结项目工作的一种很好的方式，对于正常的Node.js项目来说，这对于帮助其他开发人员，未来的维护人员甚至是您未来的自我来理解项目同样重要很快。 <code>0</code>无论您对项目的计划是什么，都建议您使用说明。让我们添加类似的东西： 
-<code>"description": "A project that does something awesome",</code> <code>0</code>说明<code>0</code>在Glitch项目中向package.json添加一个描述。 <code>0</code>记住要使用双引号场名称（“）和逗号（，）分隔的字段。 
+<section id='description'>
+The next part of a good package.json file is the <code>description</code> field; where a short, but informative description about your project belongs.
+If you some day plan to publish a package to npm, this is the string that should sell your idea to the user when they decide whether to install your package or not. However, that’s not the only use case for the description, it’s a great way to summarize what a project does. It’s just as important in any Node.js project to help other developers, future maintainers or even your future self understand the project quickly.
+Regardless of what you plan for your project, a description is definitely recommended. Here's an example:
+
+```json
+"description": "A project that does something awesome",
+```
+
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Add a <code>description</code> to the package.json file of your project.
+<strong>Note:</strong> Remember to use double-quotes for field-names (") and commas (,) to separate fields.
 </section>
 
 ## Tests
@@ -20,7 +28,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: package.json应该有一个有效的“描述”键
+  - text: package.json should have a valid "description" key
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/package.json'').then(data => { var packJson = JSON.parse(data); assert(packJson.description, ''"description" is missing''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,6 +44,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

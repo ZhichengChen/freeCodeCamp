@@ -2,15 +2,21 @@
 id: 5900f37b1000cf542c50fe8e
 challengeType: 5
 title: 'Problem 15: Lattice paths'
-videoUrl: ''
-localeTitle: 问题15：格子路径
+forumTopicId: 301780
 ---
 
 ## Description
-<section id="description">从2×2网格的左上角开始，只能向右和向下移动，右下角有6条路线。 <img class="img-responsive center-block" alt="6 2乘2网格的图表显示了右下角的所有路线" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif"><p>通过给定的<code>gridSize</code>有多少这样的路由？ </p></section>
+<section id='description'>
+Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner.
+
+<img class="img-responsive center-block" alt="a diagram of 6 2 by 2 grids showing all the routes to the bottom right corner" src="https://cdn-media-1.freecodecamp.org/imgr/1Atixoj.gif">
+
+How many such routes are there through a given <code>gridSize</code>?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +24,12 @@ localeTitle: 问题15：格子路径
 
 ```yml
 tests:
-  - text: <code>latticePaths(4)</code>应该返回70。
-    testString: 'assert.strictEqual(latticePaths(4), 70, "<code>latticePaths(4)</code> should return 70.");'
-  - text: <code>latticePaths(9)</code>应该返回48620。
-    testString: 'assert.strictEqual(latticePaths(9), 48620, "<code>latticePaths(9)</code> should return 48620.");'
-  - text: <code>latticePaths(20)</code>应该返回137846528820。
-    testString: 'assert.strictEqual(latticePaths(20), 137846528820, "<code>latticePaths(20)</code> should return 137846528820.");'
+  - text: <code>latticePaths(4)</code> should return 70.
+    testString: assert.strictEqual(latticePaths(4), 70);
+  - text: <code>latticePaths(9)</code> should return 48620.
+    testString: assert.strictEqual(latticePaths(9), 48620);
+  - text: <code>latticePaths(20)</code> should return 137846528820.
+    testString: assert.strictEqual(latticePaths(20), 137846528820);
 
 ```
 
@@ -41,7 +47,6 @@ function latticePaths(gridSize) {
 }
 
 latticePaths(4);
-
 ```
 
 </div>
@@ -53,7 +58,17 @@ latticePaths(4);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function latticePaths(gridSize) {
+  let paths = 1;
+
+  for (let i = 0; i < gridSize; i++) {
+    paths *= (2 * gridSize) - i;
+    paths /= i + 1;
+  }
+  return paths;
+}
 ```
+
 </section>

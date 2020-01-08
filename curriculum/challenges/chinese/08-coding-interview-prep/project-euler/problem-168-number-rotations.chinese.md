@@ -2,15 +2,20 @@
 id: 5900f4151000cf542c50ff27
 challengeType: 5
 title: 'Problem 168: Number Rotations'
-videoUrl: ''
-localeTitle: 问题168：数字轮换
+forumTopicId: 301802
 ---
 
 ## Description
-<section id="description">考虑数字142857.我们可以通过将最后一个数字（7）移动到它的前面来右旋这个数字，给我们714285.可以验证714285 = 5×142857。这证明了142857的一个不寻常的属性：它是右旋的除数。找到具有此属性的所有整数n，10 &lt;n &lt;10100之和的最后5位数。 </section>
+<section id='description'>
+Consider the number 142857. We can right-rotate this number by moving the last digit (7) to the front of it, giving us 714285.
+It can be verified that 714285=5×142857.
+This demonstrates an unusual property of 142857: it is a divisor of its right-rotation.
+Find the last 5 digits of the sum of all integers n, 10 < n < 10100, that have this property.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题168：数字轮换
 
 ```yml
 tests:
-  - text: <code>euler168()</code>应返回<code>euler168()</code> 。
-    testString: 'assert.strictEqual(euler168(), 59206, "<code>euler168()</code> should return 59206.");'
+  - text: <code>euler168()</code> should return 59206.
+    testString: assert.strictEqual(euler168(), 59206);
 
 ```
 
@@ -37,7 +42,6 @@ function euler168() {
 }
 
 euler168();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler168();
 ```js
 // solution required
 ```
+
 </section>

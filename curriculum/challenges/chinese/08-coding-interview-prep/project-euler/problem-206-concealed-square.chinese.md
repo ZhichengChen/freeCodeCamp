@@ -2,15 +2,17 @@
 id: 5900f43a1000cf542c50ff4d
 challengeType: 5
 title: 'Problem 206: Concealed Square'
-videoUrl: ''
-localeTitle: 问题206：隐藏的广场
+forumTopicId: 301847
 ---
 
 ## Description
-<section id="description">找到唯一的正整数，其正方形的形式为1_2_3_4_5_6_7_8_9_0，其中每个“_”是一个数字。 </section>
+<section id='description'>
+Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0, where each “_” is a single digit.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +20,8 @@ localeTitle: 问题206：隐藏的广场
 
 ```yml
 tests:
-  - text: <code>euler206()</code>应该返回1389019170。
-    testString: 'assert.strictEqual(euler206(), 1389019170, "<code>euler206()</code> should return 1389019170.");'
+  - text: <code>euler206()</code> should return 1389019170.
+    testString: assert.strictEqual(euler206(), 1389019170);
 
 ```
 
@@ -37,7 +39,6 @@ function euler206() {
 }
 
 euler206();
-
 ```
 
 </div>
@@ -52,4 +53,5 @@ euler206();
 ```js
 // solution required
 ```
+
 </section>

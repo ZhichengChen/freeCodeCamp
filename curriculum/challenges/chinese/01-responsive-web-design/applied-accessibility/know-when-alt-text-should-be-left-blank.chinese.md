@@ -2,25 +2,33 @@
 id: 587d774c367417b2b2512a9d
 title: Know When Alt Text Should be Left Blank
 challengeType: 0
-videoUrl: ''
-localeTitle: 知道Alt文本应该留空
+videoUrl: 'https://scrimba.com/c/cM9P4t2'
+forumTopicId: 301019
 ---
 
 ## Description
-<section id="description">在上一个挑战中，您了解到在img标记上包含<code>alt</code>属性是必需的。但是，有时图像与已经描述它们的标题分组，或仅用于装饰。在这些情况下， <code>alt</code>文本可能看似多余或不必要。在已经使用文本内容解释图像或者没有为页面添加含义的情况下， <code>img</code>仍然需要<code>alt</code>属性，但可以将其设置为空字符串。这是一个例子： <code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>背景图片通常也属于“装饰”标签。但是，它们通常应用CSS规则，因此不是标记屏幕阅读器进程的一部分。 <strong>注意</strong> <br>对于带有标题的图像，您可能仍希望包含<code>alt</code>文本，因为它有助于搜索引擎对图像内容进行编目。 </section>
+<section id='description'>
+In the last challenge, you learned that including an <code>alt</code> attribute when using <code>img</code> tags is mandatory. However, sometimes images are grouped with a caption already describing them, or are used for decoration only. In these cases <code>alt</code> text may seem redundant or unnecessary.
+In situations when an image is already explained with text content, or does not add meaning to a page, the <code>img</code> still needs an <code>alt</code> attribute, but it can be set to an empty string. Here's an example:
+<code>&lt;img src=&quot;visualDecoration.jpeg&quot; alt=&quot;&quot;&gt;</code>
+Background images usually fall under the 'decorative' label as well. However, they are typically applied with CSS rules, and therefore not part of the markup screen readers process.
+<strong>Note:</strong> For images with a caption, you may still want to include <code>alt</code> text, since it helps search engines catalog the content of the image.
+</section>
 
 ## Instructions
-<section id="instructions"> Camper Cat已为其网站的博客部分编写了一个骨架页面。他计划在他的两篇文章之间用武士刀的装饰图像添加一个视觉中断。将<code>alt</code>属性添加到<code>img</code>标记并将其设置为空字符串。 （请注意，图像<code>src</code>不会链接到实际文件 - 不要担心显示屏中没有显示剑。） </section>
+<section id='instructions'>
+Camper Cat has coded a skeleton page for the blog part of his website. He's planning to add a visual break between his two articles with a decorative image of a samurai sword. Add an <code>alt</code> attribute to the <code>img</code> tag and set it to an empty string. (Note that the image <code>src</code> doesn't link to an actual file - don't worry that there are no swords showing in the display.)
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>img</code>标签应该有一个<code>alt</code>属性。
-    testString: 'assert(!($("img").attr("alt") == undefined), "Your <code>img</code> tag should have an <code>alt</code> attribute.");'
-  - text: <code>alt</code>属性应设置为空字符串。
-    testString: 'assert($("img").attr("alt") == "", "The <code>alt</code> attribute should be set to an empty string.");'
+  - text: Your <code>img</code> tag should have an <code>alt</code> attribute.
+    testString: assert(!($('img').attr('alt') == undefined));
+  - text: The <code>alt</code> attribute should be set to an empty string.
+    testString: assert($('img').attr('alt') == '');
 
 ```
 
@@ -44,7 +52,6 @@ tests:
   <h2>Is Chuck Norris a Cat Person?</h2>
   <p>To Come...</p>
 </article>
-
 ```
 
 </div>
@@ -56,7 +63,19 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<h1>Deep Thoughts with Master Camper Cat</h1>
+<article>
+  <h2>Defeating your Foe: the Red Dot is Ours!</h2>
+  <p>To Come...</p>
+</article>
+
+<img src="samuraiSwords.jpeg" alt="">
+
+<article>
+  <h2>Is Chuck Norris a Cat Person?</h2>
+  <p>To Come...</p>
+</article>
 ```
+
 </section>

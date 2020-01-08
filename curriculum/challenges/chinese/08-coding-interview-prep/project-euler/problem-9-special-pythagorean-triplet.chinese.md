@@ -2,15 +2,20 @@
 id: 5900f3761000cf542c50fe88
 challengeType: 5
 title: 'Problem 9: Special Pythagorean triplet'
-videoUrl: ''
-localeTitle: 问题9：特殊的毕达哥拉斯三重奏
+forumTopicId: 302205
 ---
 
 ## Description
-<section id="description">毕达哥拉斯三元组是一组三个自然数， <var>a</var> &lt; <var>b</var> &lt; <var>c</var> ，其中， <div style="text-align: center;"> <var>a</var> <sup>2</sup> + <var>b</var> <sup>2</sup> = <var>c</var> <sup>2</sup> </div>例如，3 <sup>2</sup> + 4 <sup>2</sup> = 9 + 16 = 25 = 5 <sup>2</sup> 。恰好存在一个毕达哥拉斯三元组，其中<var>a</var> + <var>b</var> + <var>c</var> = 1000.求产品<var>abc</var>使得<var>a</var> + <var>b</var> + <var>c</var> = <code>n</code> 。 </section>
+<section id='description'>
+A Pythagorean triplet is a set of three natural numbers, <var>a</var> < <var>b</var> < <var>c</var>, for which,
+<div style='text-align: center;'><var>a</var><sup>2</sup> + <var>b</var><sup>2</sup> = <var>c</var><sup>2</sup></div>
+For example, 3<sup>2</sup> + 4<sup>2</sup> = 9 + 16 = 25 = 5<sup>2</sup>.
+There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</var> + <var>c</var> = 1000. Find the product <var>abc</var> such that <var>a</var> + <var>b</var> + <var>c</var> = <code>n</code>.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,12 +23,12 @@ localeTitle: 问题9：特殊的毕达哥拉斯三重奏
 
 ```yml
 tests:
-  - text: <code>specialPythagoreanTriplet(1000)</code>应返回31875000。
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, "<code>specialPythagoreanTriplet(1000)</code> should return 31875000.");'
-  - text: <code>specialPythagoreanTriplet(24)</code>应该返回480。
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(24), 480, "<code>specialPythagoreanTriplet(24)</code> should return 480.");'
-  - text: <code>specialPythagoreanTriplet(120)</code>应该返回49920。
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(120), 49920, "<code>specialPythagoreanTriplet(120)</code> should return 49920.");'
+  - text: <code>specialPythagoreanTriplet(1000)</code> should return 31875000.
+    testString: assert.strictEqual(specialPythagoreanTriplet(1000), 31875000);
+  - text: <code>specialPythagoreanTriplet(24)</code> should return 480.
+    testString: assert.strictEqual(specialPythagoreanTriplet(24), 480);
+  - text: <code>specialPythagoreanTriplet(120)</code> should return 49920, 55080 or 60000
+    testString: assert([49920, 55080, 60000].includes(specialPythagoreanTriplet(120)));
 
 ```
 
@@ -42,7 +47,6 @@ function specialPythagoreanTriplet(n) {
 }
 
 specialPythagoreanTriplet(1000);
-
 ```
 
 </div>
@@ -54,7 +58,20 @@ specialPythagoreanTriplet(1000);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const specialPythagoreanTriplet = (n)=>{
+ let sumOfabc = n;
+ let a,b,c;
+ for(a = 1; a<=sumOfabc/3; a++){
+ for(b = a+1; b<=sumOfabc/2; b++){
+ c = Math.sqrt(a*a+b*b);
+ if((a+b+c) == sumOfabc){
+ return a*b*c;
+ }
+ }
+ }
+}
 ```
+
 </section>

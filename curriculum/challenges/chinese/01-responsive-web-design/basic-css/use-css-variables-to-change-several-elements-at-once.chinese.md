@@ -2,27 +2,32 @@
 id: 5a9d725e424fe3d0e10cad10
 title: Use CSS Variables to change several elements at once
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS变量一次更改多个元素
+videoUrl: 'https://scrimba.com/c/c6bDECm'
+forumTopicId: 301093
 ---
 
 ## Description
-<section id="description"> <dfn>CSS变量</dfn>是一种通过仅更改一个值来一次更改许多CSS样式属性的强大方法。按照以下说明查看如何仅更改三个值可以更改许多元素的样式。 </section>
+<section id='description'>
+<dfn>CSS Variables</dfn> are a powerful way to change many CSS style properties at once by changing only one value.
+Follow the instructions below to see how changing just three values can change the styling of many elements.
+</section>
 
 ## Instructions
-<section id="instructions">在<code>penguin</code>类中，将<code>black</code>值更改为<code>gray</code> ，将<code>gray</code>值更改为<code>white</code> ，将<code>yellow</code>值更改为<code>orange</code> 。 </section>
+<section id='instructions'>
+In the <code>penguin</code> class, change the <code>black</code> value to <code>gray</code>, the <code>gray</code> value to <code>white</code>, and the <code>yellow</code> value to <code>orange</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>penguin</code>类应声明<code>--penguin-skin</code>变量并将其指定为<code>gray</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.");'
-  - text: <code>penguin</code>类应声明<code>--penguin-belly</code>变量并将其指定为<code>white</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.");'
-  - text: <code>penguin</code>类应声明<code>--penguin-beak</code>变量并将其指定为<code>orange</code> 。
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi), "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.");'
+  - text: <code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-skin\s*?:\s*?gray\s*?;[\s\S]*}/gi));
+  - text: <code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi));
+  - text: <code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.
+    testString: assert(code.match(/.penguin\s*?{[\s\S]*--penguin-beak\s*?:\s*?orange\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -234,7 +239,6 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
-
 ```
 
 </div>
@@ -246,7 +250,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}"
 ```
+
 </section>

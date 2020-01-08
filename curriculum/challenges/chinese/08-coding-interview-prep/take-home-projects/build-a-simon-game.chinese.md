@@ -3,15 +3,30 @@ id: bd7158d8c442eddfaeb5bd1c
 title: Build a Simon Game
 challengeType: 3
 isRequired: false
-videoUrl: ''
-localeTitle: 建立一个西蒙游戏
+forumTopicId: 302357
 ---
 
 ## Description
-<section id="description"> <strong>目标：</strong>构建一个功能类似于此的<a href="https://codepen.io" target="_blank">CodePen.io</a>应用程序： <a href="https://codepen.io/Em-Ant/full/QbRyqq/" target="_blank">https</a> <strong>：</strong> <a href="https://codepen.io" target="_blank">//codepen.io/freeCodeCamp/full/obYBjE</a> 。完成以下<a href="https://en.wikipedia.org/wiki/User_story" target="_blank">用户故事</a> 。使用您需要的任何库或API。给它你自己的个人风格。 <strong>用户故事：</strong>我看到一系列随机按钮。 <strong>用户故事：</strong>每当我正确输入一系列按钮时，我会看到同一系列的按钮按下，但还有一个额外的步骤。 <strong>用户故事：</strong>当按下一系列按钮时，以及当我亲自按下按钮时，我都会听到与每个按钮相对应的声音。 <strong>用户故事：</strong>如果我按下了错误的按钮，我会收到通知，告知我已经这样做了，然后再按一系列按钮开始提醒我模式，这样我就可以再试一次。 <strong>用户故事：</strong>我可以看到当前按钮按下的步数。 <strong>用户故事：</strong>如果我想重新启动，我可以点击一个按钮来执行此操作，游戏将返回一个步骤。 <strong>用户故事：</strong>我可以在严格的模式下玩，如果我按下按钮错误，它会通知我我已经这样做了，并且游戏重新开始按下一系列按钮。 <strong>用户故事：</strong>我可以通过一系列正确的20个步骤来赢得游戏。我被告知我的胜利，然后比赛重新开始。 <strong>提示：</strong>在这里<strong>，</strong>您可以使用每个按钮的MP3： <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code> ， <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code> ， <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code> ， <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code> 。如果卡住，请记得使用<a href="https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514" target="_blank">Read-Search-Ask</a> 。完成后，单击“我已完成此挑战”按钮并包含指向CodePen的链接。您可以通过Facebook上的朋友分享您的项目反馈。 </section>
+<section id='description'>
+<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/Em-Ant/full/QbRyqq/' target='_blank'>https://codepen.io/freeCodeCamp/full/obYBjE</a>.
+Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a>. Use whichever libraries or APIs you need. Give it your own personal style.
+<strong>User Story:</strong> I am presented with a random series of button presses.
+<strong>User Story:</strong> Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.
+<strong>User Story:</strong> I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.
+<strong>User Story:</strong> If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.
+<strong>User Story:</strong> I can see how many steps are in the current series of button presses.
+<strong>User Story:</strong> If I want to restart, I can hit a button to do so, and the game will return to a single step.
+<strong>User Story:</strong> I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
+<strong>User Story:</strong> I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
+<strong>Hint:</strong> Here are mp3s you can use for each button: <code>https://s3.amazonaws.com/freecodecamp/simonSound1.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound2.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound3.mp3</code>, <code>https://s3.amazonaws.com/freecodecamp/simonSound4.mp3</code>.
+Remember to use <a href='https://www.freecodecamp.org/forum/t/how-to-get-help-when-you-are-stuck-coding/19514' target='_blank'>Read-Search-Ask</a> if you get stuck.
+When you are finished, click the "I've completed this challenge" button and include a link to your CodePen.
+You can get feedback on your project by sharing it with your friends on Facebook.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -35,4 +50,5 @@ tests: []
 ```js
 // solution required
 ```
+
 </section>

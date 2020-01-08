@@ -2,23 +2,46 @@
 id: 587d8254367417b2b2512c70
 title: Create and Add to Sets in ES6
 challengeType: 1
-videoUrl: ''
-localeTitle: 在ES6中创建和添加集
+forumTopicId: 301636
 ---
 
 ## Description
-<section id="description">既然您已经完成了ES5，那么您将在ES6中执行类似的操作。这将相当容易。 ES6包含一个内置的数据结构<code>Set</code>现在包含了您手动编写的许多操作。我们来看看：创建一个新的空集： <code>var set = new Set();</code>您可以使用值创建一个集合： <code>var set = new Set(1);</code>您可以使用数组创建一个集合： <code>var set = new Set([1, 2, 3]);</code>创建集合后，可以使用<code>add</code>方法添加所需的值： <blockquote> var set = new Set（[1,2,3]）; <br> set.add（[4,5,6]）; </blockquote>提醒一下，集合是一种不能包含重复值的数据结构： <blockquote> var set = new Set（[1,2,3,1,2,3]）; <br> // set仅包含[1,2,3] </blockquote></section>
+<section id='description'>
+Now that you have worked through ES5, you are going to perform something similar in ES6. This will be considerably easier. ES6 contains a built-in data structure <code>Set</code> so many of the operations you wrote by hand are now included for you. Let's take a look:
+To create a new empty set:
+<code>var set = new Set();</code>
+You can create a set with a value:
+<code>var set = new Set(1);</code>
+You can create a set with an array:
+<code>var set = new Set([1, 2, 3]);</code>
+Once you have created a set, you can add the values you wish using the <code>add</code> method:
+
+```js
+var set = new Set([1, 2, 3]);
+set.add([4, 5, 6]);
+```
+
+As a reminder, a set is a data structure that cannot contain duplicate values:
+
+```js
+var set = new Set([1, 2, 3, 1, 2, 3]);
+// set contains [1, 2, 3] only
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">在本练习中，返回一个具有以下值的集合： <code>1, 2, 3, &#39;Taco&#39;, &#39;Cat&#39;, &#39;Awesome&#39;</code> </section>
+<section id='instructions'>
+For this exercise, return a set with the following values: <code>1, 2, 3, 'Taco', 'Cat', 'Awesome'</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '您的<code>Set</code>应该只包含值<code>1, 2, 3, Taco, Cat, Awesome</code> 。'
-    testString: 'assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has("Taco") && test.has("Cat") && test.has("Awesome");})(), "Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.");'
+  - text: 'Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.'
+    testString: 'assert((function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has("Taco") && test.has("Cat") && test.has("Awesome");})());'
 
 ```
 
@@ -26,7 +49,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -35,12 +57,11 @@ function checkSet() {
   // change code below this line
 
   // change code above this line
-  console.log(set);
+  console.log(Array.from(set));
   return set;
 }
 
 checkSet();
-
 ```
 
 </div>
@@ -52,7 +73,10 @@ checkSet();
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);
+return set;}
 ```
+
 </section>

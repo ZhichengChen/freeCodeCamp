@@ -3,27 +3,34 @@ id: 5a24c314108439a4d4036161
 title: Learn About Self-Closing JSX Tags
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 了解自我关闭JSX标签
+forumTopicId: 301396
 ---
 
 ## Description
-<section id="description">到目前为止，您已经看到JSX与HTML的不同之处在于使用<code>className</code>与<code>class</code>来定义HTML类。 JSX与HTML的另一个重要方式是自闭标签。在HTML中，几乎所有标签都有开始和结束标签： <code>&lt;div&gt;&lt;/div&gt;</code> ;结束标记在您要关闭的标记名称之前始终具有正斜杠。但是，HTML中有一些称为“自闭标签”的特殊实例，或者在另一个标签可以启动之前不需要开始和结束标签的标签。例如，换行标记可以写成<code>&lt;br&gt;</code>或<code>&lt;br /&gt;</code> ，但不应该写为<code>&lt;br&gt;&lt;/br&gt;</code> ，因为它不包含任何内容。在JSX中，规则略有不同。任何JSX元素都可以使用自闭合标记编写，并且必须关闭每个元素。例如，换行标记必须始终写为<code>&lt;br /&gt;</code>才能成为可以转换的有效JSX。另一方面， <code>&lt;div&gt;</code>可以写为<code>&lt;div /&gt;</code>或<code>&lt;div&gt;&lt;/div&gt;</code> 。不同之处在于，在第一个语法版本中，无法在<code>&lt;div /&gt;</code>包含任何内容。您将在以后的挑战中看到，在呈现React组件时，此语法非常有用。 </section>
+<section id='description'>
+So far, you’ve seen how JSX differs from HTML in a key way with the use of <code>className</code> vs. <code>class</code> for defining HTML classes.
+Another important way in which JSX differs from HTML is in the idea of the self-closing tag.
+In HTML, almost all tags have both an opening and closing tag: <code>&lt;div&gt;&lt;/div&gt;</code>; the closing tag always has a forward slash before the tag name that you are closing. However, there are special instances in HTML called “self-closing tags”, or tags that don’t require both an opening and closing tag before another tag can start.
+For example the line-break tag can be written as <code>&lt;br&gt;</code> or as <code>&lt;br /&gt;</code>, but should never be written as <code>&lt;br&gt;&lt;/br&gt;</code>, since it doesn't contain any content.
+In JSX, the rules are a little different. Any JSX element can be written with a self-closing tag, and every element must be closed. The line-break tag, for example, must always be written as <code>&lt;br /&gt;</code> in order to be valid JSX that can be transpiled. A <code>&lt;div&gt;</code>, on the other hand, can be written as <code>&lt;div /&gt;</code> or <code>&lt;div&gt;&lt;/div&gt;</code>. The difference is that in the first syntax version there is no way to include anything in the <code>&lt;div /&gt;</code>. You will see in later challenges that this syntax is useful when rendering React components.
+</section>
 
 ## Instructions
-<section id="instructions">修复代码编辑器中的错误，使其成为有效的JSX并成功转换。确保您不更改任何内容 - 您只需要在需要的地方关闭标签。 </section>
+<section id='instructions'>
+Fix the errors in the code editor so that it is valid JSX and successfully transpiles. Make sure you don't change any of the content - you only need to close tags where they are needed.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
-    testString: 'assert.strictEqual(JSX.type, "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
-  - text: <code>div</code>应该包含一个<code>br</code>标签。
-    testString: 'assert(Enzyme.shallow(JSX).find("br").length === 1, "The <code>div</code> should contain a <code>br</code> tag.");'
-  - text: <code>div</code>应包含<code>hr</code>标记。
-    testString: 'assert(Enzyme.shallow(JSX).find("hr").length === 1, "The <code>div</code> should contain an <code>hr</code> tag.");'
+  - text: The constant <code>JSX</code> should return a <code>div</code> element.
+    testString: assert.strictEqual(JSX.type, 'div');
+  - text: The <code>div</code> should contain a <code>br</code> tag.
+    testString: assert(Enzyme.shallow(JSX).find('br').length === 1);
+  - text: The <code>div</code> should contain an <code>hr</code> tag.
+    testString: assert(Enzyme.shallow(JSX).find('hr').length === 1);
 
 ```
 
@@ -54,7 +61,7 @@ const JSX = (
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
 </div>
@@ -64,7 +71,17 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const JSX = (
+<div>
+  {/* change code below this line */}
+  <h2>Welcome to React!</h2> <br />
+  <p>Be sure to close all tags!</p>
+  <hr />
+  {/* change code above this line */}
+</div>
+);
 ```
+
 </section>

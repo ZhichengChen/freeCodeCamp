@@ -2,15 +2,28 @@
 id: 5900f4fd1000cf542c51000f
 challengeType: 5
 title: 'Problem 401: Sum of squares of divisors'
-videoUrl: ''
-localeTitle: 问题401：除数的平方和
+forumTopicId: 302069
 ---
 
 ## Description
-<section id="description"> 6的除数是1,2,3和6.这些数的平方和是1 + 4 + 9 + 36 = 50。 <p>设sigma2（n）代表n的除数的平方和。因此sigma2（6）= 50。 </p><p>设SIGMA2表示sigma2的和函数，即对于i = 1到n，SIGMA2（n）=Σsigma2（i）。 SIGMA2的前6个值是：1,6,16,37,63和113。 </p><p>找到SIGMA2（1015）modulo 109。 </p></section>
+<section id='description'>
+The divisors of 6 are 1,2,3 and 6.
+The sum of the squares of these numbers is 1+4+9+36=50.
+
+
+Let sigma2(n) represent the sum of the squares of the divisors of n.
+Thus sigma2(6)=50.
+
+Let SIGMA2 represent the summatory function of sigma2, that is SIGMA2(n)=∑sigma2(i) for i=1 to n.
+The first 6 values of SIGMA2 are: 1,6,16,37,63 and 113.
+
+
+Find SIGMA2(1015) modulo 109.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +31,8 @@ localeTitle: 问题401：除数的平方和
 
 ```yml
 tests:
-  - text: <code>euler401()</code>应该返回281632621。
-    testString: 'assert.strictEqual(euler401(), 281632621, "<code>euler401()</code> should return 281632621.");'
+  - text: <code>euler401()</code> should return 281632621.
+    testString: assert.strictEqual(euler401(), 281632621);
 
 ```
 
@@ -37,7 +50,6 @@ function euler401() {
 }
 
 euler401();
-
 ```
 
 </div>
@@ -52,4 +64,5 @@ euler401();
 ```js
 // solution required
 ```
+
 </section>

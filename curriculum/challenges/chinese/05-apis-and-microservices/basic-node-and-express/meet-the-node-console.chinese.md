@@ -1,16 +1,23 @@
 ---
 id: 587d7fb0367417b2b2512bed
 title: Meet the Node console
-localeTitle: 认识节点控制台
 challengeType: 2
+forumTopicId: 301515
 ---
 
 ## Description
-<section id='description'> <code>0</code>在开发过程中，能够检查代码中发生的情况非常重要。 Node只是一个JavaScript环境。与客户端JavaScript一样，您可以使用控制台显示有用的调试信息。在本地计算机上，您将在终端中看到控制台输出。在Glitch上，您可以打开屏幕下方的日志。您可以使用“日志”按钮切换日志面板（左上角，在应用名称下）。 <code>0</code>要开始使用，只需在控制台中打印经典的“Hello World”即可。我们建议在应对这些挑战时保持日志面板处于打开状态。阅读日志，您可以了解可能发生的错误的性质。 
+<section id='description'>
+During the development process, it is important to be able to check what’s going on in your code. Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see the console output in a terminal. On Glitch you can open the logs in the lower part of the screen. You can toggle the log panel with the button ‘Logs’ (lower-left, inside the tools menu).
+We recommend to keep the log panel open while working at these challenges. By reading the logs, you can be aware of the nature of errors that may occur.
 </section>
 
 ## Instructions
-<section id='instructions'> <code>0</code>修改<code>myApp.js</code>文件以将“Hello World”记录到控制台。 
+<section id='instructions'>
+
+If you have not already done so, please read the instructions in [the introduction](/learn/apis-and-microservices/basic-node-and-express/) and start a new project on Glitch using [this link](https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-express/).
+  
+Modify the <code>myApp.js</code> file to log "Hello World" to the console. 
+
 </section>
 
 ## Tests
@@ -18,7 +25,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: <code>"Hello World"</code>应该在控制台中
+  - text: <code>"Hello World"</code> should be in the console
     testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/hello-console'').then(data => { assert.isTrue(data.passed, ''"Hello World" is not in the server console''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -34,6 +41,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

@@ -2,15 +2,20 @@
 id: 5900f3cf1000cf542c50fee1
 challengeType: 5
 title: 'Problem 98: Anagramic squares'
-videoUrl: ''
-localeTitle: 问题98：Anagramic正方形
+forumTopicId: 302215
 ---
 
 ## Description
-<section id="description">通过分别用1,2,9和6替换单词CARE中的​​每个字母，我们形成一个正方形数字：1296 = 362.值得注意的是，通过使用相同的数字替换，anagram，RACE，形成一个正方形数字：9216 = 962.我们将CARE（和RACE）称为方形字谜字对，并进一步指定不允许前导零，不同的字母也不能与另一个字母具有相同的数字值。使用words.txt（右键单击和“保存链接/目标为...”），一个包含近两千个常用英语单词的16K文本文件，找到所有方形字谜词对（一个回文词不被认为是一个自己的字谜）。这种货币对的任何成员形成的最大平方数是多少？注意：形成的所有字谜必须包含在给定的文本文件中。 </section>
+<section id='description'>
+By replacing each of the letters in the word CARE with 1, 2, 9, and 6 respectively, we form a square number: 1296 = 362. What is remarkable is that, by using the same digital substitutions, the anagram, RACE, also forms a square number: 9216 = 962. We shall call CARE (and RACE) a square anagram word pair and specify further that leading zeroes are not permitted, neither may a different letter have the same digital value as another letter.
+Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, find all the square anagram word pairs (a palindromic word is NOT considered to be an anagram of itself).
+What is the largest square number formed by any member of such a pair?
+NOTE: All anagrams formed must be contained in the given text file.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题98：Anagramic正方形
 
 ```yml
 tests:
-  - text: <code>euler98()</code>应该返回18769。
-    testString: 'assert.strictEqual(euler98(), 18769, "<code>euler98()</code> should return 18769.");'
+  - text: <code>euler98()</code> should return 18769.
+    testString: assert.strictEqual(euler98(), 18769);
 
 ```
 
@@ -37,7 +42,6 @@ function euler98() {
 }
 
 euler98();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler98();
 ```js
 // solution required
 ```
+
 </section>

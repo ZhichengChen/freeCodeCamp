@@ -2,25 +2,30 @@
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
 challengeType: 0
-videoUrl: ''
-localeTitle: 在网格中创建网格
+videoUrl: 'https://scrimba.com/p/pByETK/c6N78Ap'
+forumTopicId: 301128
 ---
 
 ## Description
-<section id="description">将元素转换为网格只会影响其直接后代的行为。因此，通过将直接后代转换为网格，您在网格中有一个网格。例如，通过使用<code>item3</code>类设置元素的<code>display</code>和<code>grid-template-columns</code>属性，可以在网格中创建网格。 </section>
+<section id='description'>
+Turning an element into a grid only affects the behavior of its direct descendants. So by turning a direct descendant into a grid, you  have a grid within a grid.
+For example, by setting the <code>display</code> and <code>grid-template-columns</code> properties of the element with the <code>item3</code> class, you create a grid within your grid.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>item3</code>类将元素转换为网格，其中两列的宽度为<code>auto</code> ， <code>1fr</code>使用<code>display</code>和<code>grid-template-columns</code> 。 </section>
+<section id='instructions'>
+Turn the element with the <code>item3</code> class into a grid with two columns with a width of <code>auto</code> and <code>1fr</code> using <code>display</code> and <code>grid-template-columns</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>item3</code>类应该有一个<code>grid-template-columns</code>属性，其中<code>auto</code>和<code>1fr</code>作为值。
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.");'
-  - text: <code>item3</code>类应该具有<code>grid</code>值的<code>display</code>属性。
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.");'
+  - text: <code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.
+    testString: assert(code.match(/.item3\s*?{[\s\S]*grid-template-columns\s*?:\s*?auto\s*?1fr\s*?;[\s\S]*}/gi));
+  - text: <code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.
+    testString: assert(code.match(/.item3\s*?{[\s\S]*display\s*?:\s*?grid\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -90,7 +95,6 @@ tests:
   </div>
   <div class="item4">footer</div>
 </div>
-
 ```
 
 </div>
@@ -102,7 +106,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".item3 {grid-template-columns: auto 1fr; display: grid;}"
 ```
+
 </section>

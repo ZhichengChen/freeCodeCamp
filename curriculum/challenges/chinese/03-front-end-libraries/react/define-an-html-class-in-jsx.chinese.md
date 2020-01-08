@@ -3,25 +3,31 @@ id: 5a24c314108439a4d4036160
 title: Define an HTML Class in JSX
 challengeType: 6
 isRequired: false
-videoUrl: ''
-localeTitle: 在JSX中定义HTML类
+forumTopicId: 301393
 ---
 
 ## Description
-<section id="description">现在您已经开始编写JSX了，您可能想知道它与HTML的区别。到目前为止，似乎HTML和JSX完全相同。 JSX的一个关键区别是你不能再使用单词<code>class</code>来定义HTML类。这是因为<code>class</code>是JavaScript中的保留字。相反，JSX使用<code>className</code> 。事实上，JSX中所有HTML属性和事件引用的命名约定都变成了camelCase。例如，JSX中的单击事件是<code>onClick</code> ，而不是<code>onclick</code> 。同样， <code>onchange</code>变为<code>onChange</code> 。虽然这是一个微妙的差异，但重要的是要记住前进。 </section>
+<section id='description'>
+Now that you're getting comfortable writing JSX, you may be wondering how it differs from HTML.
+So far, it may seem that HTML and JSX are exactly the same.
+One key difference in JSX is that you can no longer use the word <code>class</code> to define HTML classes. This is because <code>class</code> is a reserved word in JavaScript. Instead, JSX uses <code>className</code>.
+In fact, the naming convention for all HTML attributes and event references in JSX become camelCase. For example, a click event in JSX is <code>onClick</code>, instead of <code>onclick</code>. Likewise, <code>onchange</code> becomes <code>onChange</code>. While this is a subtle difference, it is an important one to keep in mind moving forward.
+</section>
 
 ## Instructions
-<section id="instructions">将一个<code>myDiv</code>类<code>myDiv</code> JSX代码中提供的<code>div</code> 。 </section>
+<section id='instructions'>
+Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX code.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 常量<code>JSX</code>应该返回一个<code>div</code>元素。
-    testString: 'assert.strictEqual(JSX.type, "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
-  - text: <code>div</code>有一类<code>myDiv</code> 。
-    testString: 'assert.strictEqual(JSX.props.className, "myDiv", "The <code>div</code> has a class of <code>myDiv</code>.");'
+  - text: The constant <code>JSX</code> should return a <code>div</code> element.
+    testString: assert.strictEqual(JSX.type, 'div');
+  - text: The <code>div</code> should have a class of <code>myDiv</code>.
+    testString: assert.strictEqual(JSX.props.className, 'myDiv');
 
 ```
 
@@ -38,7 +44,6 @@ const JSX = (
     <h1>Add a class to this div</h1>
   </div>
 );
-
 ```
 
 </div>
@@ -48,7 +53,7 @@ const JSX = (
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(JSX, document.getElementById('root'))
 ```
 
 </div>
@@ -58,7 +63,12 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+const JSX = (
+<div className = 'myDiv'>
+  <h1>Add a class to this div</h1>
+</div>);
 ```
+
 </section>

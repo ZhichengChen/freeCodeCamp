@@ -2,15 +2,29 @@
 id: 5900f47f1000cf542c50ff91
 challengeType: 5
 title: 'Problem 274: Divisibility Multipliers'
-videoUrl: ''
-localeTitle: 问题274：可分性乘数
+forumTopicId: 301924
 ---
 
 ## Description
-<section id="description">对于每个整数p&gt; 1互质到10，有一个正的可分性乘数m &lt;p，它对任何正整数n的后续函数保持p的可除性。 <p> f（n）=（除了n的最后一位以外的所有数字）+（n的最后一位）* m </p><p>也就是说，如果m是p的可分数乘数，则当且仅当n可被p整除时，f（n）可被p整除。 </p><p> （当n远大于p时，f（n）将小于n，并且f的重复应用为p提供乘法可除性测试。） </p><p>例如，113的可分性乘数是34。 </p><p> f（76275）= 7627 + 5 <em>34 = 7797：76275和7797都可以被113f（12345）= 1234 + 5</em> 34 = 1404：12345和1404整除都不能被113整除</p><p>对于10和小于1000互质的素数的可除性乘数的总和是39517.对于10和小于107互质的素数的可除数乘数的总和是多少？ </p></section>
+<section id='description'>
+For each integer p > 1 coprime to 10 there is a positive divisibility multiplier m < p which preserves divisibility by p for the following function on any positive integer, n:
+
+f(n) = (all but the last digit of n) + (the last digit of n) * m
+
+That is, if m is the divisibility multiplier for p, then f(n) is divisible by p if and only if n is divisible by p.
+
+(When n is much larger than p, f(n) will be less than n and repeated application of f provides a multiplicative divisibility test for p.)
+
+For example, the divisibility multiplier for 113 is 34.
+
+f(76275) = 7627 + 5 * 34 = 7797 : 76275 and 7797 are both divisible by 113f(12345) = 1234 + 5 * 34 = 1404 : 12345 and 1404 are both not divisible by 113
+
+The sum of the divisibility multipliers for the primes that are coprime to 10 and less than 1000 is 39517. What is the sum of the divisibility multipliers for the primes that are coprime to 10 and less than 107?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +32,8 @@ localeTitle: 问题274：可分性乘数
 
 ```yml
 tests:
-  - text: <code>euler274()</code>应该返回1601912348822。
-    testString: 'assert.strictEqual(euler274(), 1601912348822, "<code>euler274()</code> should return 1601912348822.");'
+  - text: <code>euler274()</code> should return 1601912348822.
+    testString: assert.strictEqual(euler274(), 1601912348822);
 
 ```
 
@@ -37,7 +51,6 @@ function euler274() {
 }
 
 euler274();
-
 ```
 
 </div>
@@ -52,4 +65,5 @@ euler274();
 ```js
 // solution required
 ```
+
 </section>

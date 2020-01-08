@@ -2,27 +2,42 @@
 id: 587d7dac367417b2b2512b73
 title: Create a Basic JavaScript Object
 challengeType: 1
-videoUrl: ''
-localeTitle: 创建一个基本的JavaScript对象
+forumTopicId: 301317
 ---
 
 ## Description
-<section id="description">想想人们每天看到的东西，比如汽车，商店和鸟类。这些都是<code>objects</code> ：人们可以观察和互动的有形事物。这些<code>objects</code>一些特质是什么？一辆车有轮子。商店出售物品。鸟有翅膀。这些品质或<code>properties</code>定义了构成<code>object</code> 。请注意，类似<code>objects</code>共享相同的<code>properties</code> ，但这些<code>properties</code>可能具有不同的值。例如，所有汽车都有轮子，但并非所有汽车都有相同数量的轮子。 JavaScript中的<code>Objects</code>用于模拟现实世界的对象，为它们提供<code>properties</code>和行为，就像它们的真实对象一样。这是使用这些概念创建<code>duck</code> <code>object</code>的示例： <blockquote>让duck = { <br>名称：“Aflac”， <br> numLegs：2 <br> }; </blockquote>这个<code>duck</code> <code>object</code>有两个属性/值对： <code>name</code> “Aflac”和<code>numLegs</code>为2。 </section>
+<section id='description'>
+Think about things people see every day, like cars, shops, and birds. These are all <dfn>objects</dfn>: tangible things people can observe and interact with.
+What are some qualities of these objects? A car has wheels. Shops sell items. Birds have wings.
+These qualities, or <dfn>properties</dfn>, define what makes up an object. Note that similar objects share the same properties, but may have different values for those properties. For example, all cars have wheels, but not all cars have the same number of wheels.
+Objects in JavaScript are used to model real-world objects, giving them properties and behavior just like their real-world counterparts. Here's an example using these concepts to create a <code>duck</code> object:
+
+```js
+let duck = {
+  name: "Aflac",
+  numLegs: 2
+};
+```
+
+This <code>duck</code> object has two property/value pairs: a <code>name</code> of "Aflac" and a <code>numLegs</code> of 2.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>name</code>和<code>numLegs</code>属性创建一个<code>dog</code> <code>object</code> ，并将它们分别设置为字符串和数字。 </section>
+<section id='instructions'>
+Create a <code>dog</code> object with <code>name</code> and <code>numLegs</code> properties, and set them to a string and a number, respectively.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>dog</code>应该是一个<code>object</code> 。
-    testString: 'assert(typeof(dog) === "object", "<code>dog</code> should be an <code>object</code>.");'
-  - text: <code>dog</code>应该将<code>name</code>属性设置为<code>string</code> 。
-    testString: 'assert(typeof(dog.name) === "string", "<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.");'
-  - text: <code>dog</code>应该将<code>numLegs</code>属性设置为<code>number</code> 。
-    testString: 'assert(typeof(dog.numLegs) === "number", "<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.");'
+  - text: <code>dog</code> should be an object.
+    testString: assert(typeof(dog) === 'object');
+  - text: <code>dog</code> should have a <code>name</code> property set to a <code>string</code>.
+    testString: assert(typeof(dog.name) === 'string');
+  - text: <code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.
+    testString: assert(typeof(dog.numLegs) === 'number');
 
 ```
 
@@ -37,7 +52,6 @@ tests:
 let dog = {
 
 };
-
 ```
 
 </div>
@@ -49,7 +63,12 @@ let dog = {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+let dog = {
+  name: '',
+  numLegs: 4
+};
 ```
+
 </section>

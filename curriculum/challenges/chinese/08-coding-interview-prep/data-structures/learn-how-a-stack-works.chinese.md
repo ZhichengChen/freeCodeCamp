@@ -2,29 +2,37 @@
 id: 587d8250367417b2b2512c5e
 title: Learn how a Stack Works
 challengeType: 1
-videoUrl: ''
-localeTitle: 了解堆栈的工作原理
+forumTopicId: 301705
 ---
 
 ## Description
-<section id="description">你可能熟悉桌子上的一摞书。您可能已使用文本编辑器的撤消功能。您也可能习惯按手机上的后退按钮返回应用中的上一个视图。你知道他们都有什么共同之处吗？它们都以某种方式存储数据，以便您可以向后遍历。堆栈中最顶层的书是最后放在那里的书。如果您从堆栈的顶部删除该书，则会显示在最后一本书之前放置的书籍，依此类推。如果你考虑一下，在上面的所有例子中，你都会获得<dfn>Last-In-First-Out</dfn>服务。我们将尝试使用我们的代码来模仿它。该数据存储方案称为<dfn>堆栈</dfn> 。特别是，我们必须实现将JavaScript对象推送到堆栈顶部的<code>push()</code>方法;和<code>pop()</code>方法，它删除当前位于堆栈顶部的JavaScript对象。 </section>
+<section id='description'>
+You are probably familiar with stack of books on your table. You have likely used the undo feature of a text editor. You are also probably used to hitting the back button on your phone to go back to the previous view in your app.
+You know what they all have in common? They all store the data in a way so that you can traverse backwards.
+The topmost book in the stack was the one that was put there last. If you remove that book from your stack's top, you would expose the book that was put there before the last book and so on.
+If you think about it, in all the above examples, you are getting <dfn>Last-In-First-Out</dfn> type of service. We will try to mimic this with our code.
+This data storage scheme is called a <dfn>Stack</dfn>. In particular, we would have to implement the <code>push()</code> method that pushes JavaScript objects at the top of the stack; and <code>pop()</code> method, that removes the JavaScript object that's at the top of the stack at the current moment.
+</section>
 
 ## Instructions
-<section id="instructions">这里我们有一堆作为数组表示的家庭作业： <code>&quot;BIO12&quot;</code>位于基础， <code>&quot;PSY44&quot;</code>位于堆栈的顶部。修改给定的数组，并使用上面提到的JavaScript方法将其视为<code>stack</code> 。从堆栈中删除顶部元素<code>&quot;PSY44&quot;</code> 。然后添加<code>&quot;CS50&quot;</code>作为堆栈的新顶部元素。 </section>
+<section id='instructions'>
+Here we have a stack of homework assignments represented as an array: <code>"BIO12"</code> is at the base, and <code>"PSY44"</code> is at the top of the stack.
+Modify the given array and treat it like a <code>stack</code> using the JavaScript methods mentioned above. Remove the top element <code>"PSY44"</code> from the stack. Then add <code>"CS50"</code> to be the new top element of the stack.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>homeworkStack</code>应该只包含4个元素。
-    testString: 'assert(homeworkStack.length === 4, "<code>homeworkStack</code> should only contain 4 elements.");'
-  - text: <code>homeworkStack</code>的最后一个元素应该是<code>&quot;CS50&quot;</code> 。
-    testString: 'assert(homeworkStack[3] === "CS50", "The last element in <code>homeworkStack</code> should be <code>"CS50"</code>.");'
-  - text: <code>homeworkStack</code>不应包含<code>&quot;PSY44&quot;</code> 。
-    testString: 'assert(homeworkStack.indexOf("PSY44") === -1, "<code>homeworkStack</code> should not contain <code>"PSY44"</code>.");'
-  - text: 不应更改<code>homeworkStack</code>的初始声明。
-    testString: 'assert(code.match(/=/g).length === 1 && /homeworkStack\s*=\s*\["BIO12"\s*,\s*"HIS80"\s*,\s*"MAT122"\s*,\s*"PSY44"\]/.test(code), "The initial declaration of the <code>homeworkStack</code> should not be changed.");'
+  - text: <code>homeworkStack</code> should only contain 4 elements.
+    testString: assert(homeworkStack.length === 4);
+  - text: The last element in <code>homeworkStack</code> should be <code>"CS50"</code>.
+    testString: assert(homeworkStack[3] === 'CS50');
+  - text: <code>homeworkStack</code> should not contain <code>"PSY44"</code>.
+    testString: assert(homeworkStack.indexOf('PSY44') === -1);
+  - text: The initial declaration of the <code>homeworkStack</code> should not be changed.
+    testString: assert(code.match(/=/g).length === 1 && /homeworkStack\s*=\s*\["BIO12"\s*,\s*"HIS80"\s*,\s*"MAT122"\s*,\s*"PSY44"\]/.test(code));
 
 ```
 
@@ -32,7 +40,6 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
@@ -43,8 +50,6 @@ var homeworkStack = ["BIO12","HIS80","MAT122","PSY44"];
 
 </div>
 
-
-
 </section>
 
 ## Solution
@@ -53,4 +58,5 @@ var homeworkStack = ["BIO12","HIS80","MAT122","PSY44"];
 ```js
 // solution required
 ```
+
 </section>

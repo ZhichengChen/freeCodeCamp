@@ -20,26 +20,39 @@ exports.getChallengesForLang = function getChallengesForLang(lang) {
   let curriculum = {};
   return new Promise(resolve => {
     let running = 1;
+    let langArr = lang.split(',');
+    let i = 0;
     function done() {
       if (--running === 0) {
-        resolve(curriculum);
+        if (++i === langArr.length) {
+          resolve(curriculum);
+        } else {
+          running = 1;
+          readDir();
+        }
       }
     }
-    readDirP({ root: getChallengesDirForLang(lang) })
-      .on('data', file => {
-        running++;
-        buildCurriculum(file, curriculum).then(done);
-      })
-      .on('end', done);
+    function readDir() {
+      readDirP({ root: getChallengesDirForLang(langArr[i]) })
+        .on('data', file => {
+          running++;
+          buildCurriculum(file, curriculum, langArr[i]).then(done);
+        })
+        .on('end', done);
+    }
+    readDir();
   });
 };
 
-async function buildCurriculum(file, curriculum) {
+async function buildCurriculum(file, curriculum, lang) {
   const { name, depth, path: filePath, fullPath, stat } = file;
   if (depth === 1 && stat.isDirectory()) {
     // extract the superBlock info
     const { order, name: superBlock } = superBlockInfo(name);
-    curriculum[superBlock] = { superBlock, order, blocks: {} };
+
+    if (lang === 'english') {
+      curriculum[superBlock] = { superBlock, order, blocks: {} };
+    }
     return;
   }
   if (depth === 2 && stat.isDirectory()) {
@@ -50,7 +63,16 @@ async function buildCurriculum(file, curriculum) {
     );
     const blockMeta = require(metaPath);
     const { name: superBlock } = superBlockInfoFromPath(filePath);
-    const blockInfo = { meta: blockMeta, challenges: [] };
+    let blockInfo;
+    if (lang === 'english') {
+      blockInfo = { meta: blockMeta, challenges: [] };
+    } else {
+      blockInfo = {
+        meta: blockMeta,
+        challenges: curriculum[superBlock].blocks[name].challenges
+      };
+      blockInfo['challenges_' + lang] = [];
+    }
     curriculum[superBlock].blocks[name] = blockInfo;
     return;
   }
@@ -70,12 +92,19 @@ async function buildCurriculum(file, curriculum) {
   }
   const { meta } = challengeBlock;
 
-  const challenge = await createChallenge(fullPath, meta);
+  const challenge = await createChallenge(fullPath, meta, lang);
 
-  challengeBlock.challenges = [...challengeBlock.challenges, challenge];
+  if (lang === 'english') {
+    challengeBlock.challenges = [...challengeBlock.challenges, challenge];
+  } else {
+    challengeBlock['challenges_' + lang] = [
+      ...challengeBlock['challenges_' + lang],
+      challenge
+    ];
+  }
 }
 
-async function createChallenge(fullPath, maybeMeta) {
+async function createChallenge(fullPath, maybeMeta, lang) {
   let meta;
   if (maybeMeta) {
     meta = maybeMeta;
@@ -101,6 +130,9 @@ async function createChallenge(fullPath, maybeMeta) {
     template,
     time
   } = meta;
+
+  challenge.lang = lang;
+  challenge.id = challenge.id;
   challenge.block = blockName;
   challenge.dashedName = dasherize(challenge.title);
   challenge.order = order;

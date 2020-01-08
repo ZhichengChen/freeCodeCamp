@@ -2,33 +2,65 @@
 id: 587d7dbe367417b2b2512bb9
 title: Use @for to Create a Sass Loop
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用@for创建Sass循环
+forumTopicId: 301462
 ---
 
 ## Description
-<section id="description"> <code>@for</code>指令在循环中添加样式，非常类似于JavaScript中的<code>for</code>循环。 <code>@for</code>以两种方式使用：“ <code>@for</code> ”或“ <code>@for</code> ”。主要区别在于“从头到尾” <em>排除</em>了结束号码，“从头到尾” <em>包括</em>结束号码。这是一个开始<b>到</b>最后的例子： <blockquote> @for $ i从1到12 { <br> .col  - ＃{$ i} {width：100％/ 12 * $ i; } <br> } </blockquote> <code>#{$i}</code>部分是将变量（ <code>i</code> ）与文本组合成字符串的语法。当Sass文件转换为CSS时，它看起来像这样： <blockquote> .col-1 { <br>宽度：8.33333％; <br> } <br><br> .col-2 { <br>宽度：16.66667％; <br> } <br><br> ... <br><br> .col-12 { <br>宽度：100％; <br> } </blockquote>这是创建网格布局的有效方法。现在，您有12个可用作CSS类的列宽选项。 </section>
+<section id='description'>
+The <code>@for</code> directive adds styles in a loop, very similar to a <code>for</code> loop in JavaScript.
+<code>@for</code> is used in two ways: "start through end" or "start to end". The main difference is that the "start <b>to</b> end" <em>excludes</em> the end number as part of the count, and "start <b>through</b> end" <em>includes</em> the end number as part of the count.
+Here's a start <b>through</b> end example:
+
+```scss
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+```
+
+The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>) with text to make a string. When the Sass file is converted to CSS, it looks like this:
+
+```scss
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+...
+
+.col-12 {
+  width: 100%;
+}
+```
+
+This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.
+</section>
 
 ## Instructions
-<section id="instructions">写一个<code>@for</code>指令，它接受一个从1 <b>到</b> 6的变量<code>$j</code> 。它应该创建5个名为<code>.text-1</code>到<code>.text-5</code> ，其中每个类的<code>font-size</code>设置为10px乘以索引。 </section>
+<section id='instructions'>
+Write a <code>@for</code> directive that takes a variable <code>$j</code> that goes from 1 <b>to</b> 6.
+It should create 5 classes called <code>.text-1</code> to <code>.text-5</code> where each has a <code>font-size</code> set to 10px multiplied by the index.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应使用<code>@for</code>指令。
-    testString: 'assert(code.match(/@for /g), "Your code should use the <code>@for</code> directive.");'
-  - text: 您的<code>.text-1</code>类的<code>font-size</code>为10px。
-    testString: 'assert($(".text-1").css("font-size") == "10px", "Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.");'
-  - text: 您的<code>.text-2</code>类的<code>font-size</code>为20px。
-    testString: 'assert($(".text-2").css("font-size") == "20px", "Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.");'
-  - text: 您的<code>.text-3</code>类的<code>font-size</code>为30px。
-    testString: 'assert($(".text-3").css("font-size") == "30px", "Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.");'
-  - text: 您的<code>.text-4</code>类的<code>font-size</code>为40px。
-    testString: 'assert($(".text-4").css("font-size") == "40px", "Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.");'
-  - text: 您的<code>.text-5</code>类的<code>font-size</code>为50px。
-    testString: 'assert($(".text-5").css("font-size") == "50px", "Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.");'
+  - text: Your code should use the <code>@for</code> directive.
+    testString: assert(code.match(/@for /g));
+  - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 10px.
+    testString: assert($('.text-1').css('font-size') == '10px');
+  - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 20px.
+    testString: assert($('.text-2').css('font-size') == '20px');
+  - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 30px.
+    testString: assert($('.text-3').css('font-size') == '30px');
+  - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 40px.
+    testString: assert($('.text-4').css('font-size') == '40px');
+  - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 50px.
+    testString: assert($('.text-5').css('font-size') == '50px');
 
 ```
 
@@ -51,7 +83,6 @@ tests:
 <p class="text-3">Hello</p>
 <p class="text-4">Hello</p>
 <p class="text-5">Hello</p>
-
 ```
 
 </div>
@@ -63,7 +94,36 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style type='text/sass'>
+
+@for $i from 1 through 5 {
+  .text-#{$i} { font-size: 10px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
 ```
+
+```html
+<style type='text/sass'>
+
+@for $i from 1 to 6 {
+  .text-#{$i} { font-size: 10px * $i; }
+}
+
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+```
+
 </section>

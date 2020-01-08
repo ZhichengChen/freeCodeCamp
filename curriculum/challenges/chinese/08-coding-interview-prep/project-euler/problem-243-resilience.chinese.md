@@ -2,15 +2,25 @@
 id: 5900f4601000cf542c50ff73
 challengeType: 5
 title: 'Problem 243: Resilience'
-videoUrl: ''
-localeTitle: 问题243：恢复力
+forumTopicId: 301890
 ---
 
 ## Description
-<section id="description">分子小于其分母的正分数称为适当分数。对于任何分母，d，将有d-1个适当的分数;例如，d = 12：1 / 12,2 / 12,3 / 12,4 / 12,5 / 12,6 / 12,7 / 12,8 / 12,9 / 12,10 / 12,11 / 12。 <p>我们将称一个无法取消弹性部分的分数。此外，我们将分母R（d）的弹性定义为具有弹性的适当分数的比率;例如，R（12）= 4/11。事实上，d = 12是具有弹性R（d）&lt;4/10的最小分母。 </p><p>找到最小分母d，具有弹性R（d）&lt;15499/94744。 </p></section>
+<section id='description'>
+A positive fraction whose numerator is less than its denominator is called a proper fraction.
+For any denominator, d, there will be d−1 proper fractions; for example, with d = 12:1/12 , 2/12 , 3/12 , 4/12 , 5/12 , 6/12 , 7/12 , 8/12 , 9/12 , 10/12 , 11/12 .
+
+
+We shall call a fraction that cannot be cancelled down a resilient fraction.
+Furthermore we shall define the resilience of a denominator, R(d), to be the ratio of its proper fractions that are resilient; for example, R(12) = 4/11 .
+In fact, d = 12 is the smallest denominator having a resilience R(d) < 4/10 .
+
+Find the smallest denominator d, having a resilience R(d) < 15499/94744 .
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +28,8 @@ localeTitle: 问题243：恢复力
 
 ```yml
 tests:
-  - text: <code>euler243()</code>应该返回892371480。
-    testString: 'assert.strictEqual(euler243(), 892371480, "<code>euler243()</code> should return 892371480.");'
+  - text: <code>euler243()</code> should return 892371480.
+    testString: assert.strictEqual(euler243(), 892371480);
 
 ```
 
@@ -37,7 +47,6 @@ function euler243() {
 }
 
 euler243();
-
 ```
 
 </div>
@@ -52,4 +61,5 @@ euler243();
 ```js
 // solution required
 ```
+
 </section>

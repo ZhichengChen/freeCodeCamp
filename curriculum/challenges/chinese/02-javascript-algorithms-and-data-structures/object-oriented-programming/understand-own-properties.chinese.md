@@ -2,25 +2,57 @@
 id: 587d7dae367417b2b2512b7b
 title: Understand Own Properties
 challengeType: 1
-videoUrl: ''
-localeTitle: 了解自己的属性
+forumTopicId: 301326
 ---
 
 ## Description
-<section id="description">在以下示例中， <code>Bird</code>构造函数定义了两个属性： <code>name</code>和<code>numLegs</code> ： <blockquote> function Bird（name）{ <br> this.name = name; <br> this.numLegs = 2; <br> } <br><br>让鸭子=新鸟（“唐纳德”）; <br>让金丝雀=新鸟（“特威蒂”）; </blockquote> <code>name</code>和<code>numLegs</code>称为<code>own</code>属性，因为它们直接在实例对象上定义。这意味着<code>duck</code>和<code>canary</code>每个都有自己独立的这些属性的副本。事实上， <code>Bird</code>每个实例都有自己的这些属性的副本。下面的代码将所有的<code>own</code>的性质<code>duck</code>到阵列<code>ownProps</code> ： <blockquote>让ownProps = []; <br><br> for（let duck in duck）{ <br> if（duck.hasOwnProperty（property））{ <br> ownProps.push（属性）; <br> } <br> } <br><br>的console.log（ownProps）; //打印[“name”，“numLegs”] </blockquote></section>
+<section id='description'>
+In the following example, the <code>Bird</code> constructor defines two properties: <code>name</code> and <code>numLegs</code>:
+
+```js
+function Bird(name) {
+  this.name  = name;
+  this.numLegs = 2;
+}
+
+let duck = new Bird("Donald");
+let canary = new Bird("Tweety");
+```
+
+<code>name</code> and <code>numLegs</code> are called <code>own</code> properties, because they are defined directly on the instance object. That means that <code>duck</code> and <code>canary</code> each has its own separate copy of these properties.
+In fact every instance of <code>Bird</code> will have its own copy of these properties.
+The following code adds all of the <code>own</code> properties of <code>duck</code> to the array <code>ownProps</code>:
+
+```js
+let ownProps = [];
+
+for (let property in duck) {
+  if(duck.hasOwnProperty(property)) {
+    ownProps.push(property);
+  }
+}
+
+console.log(ownProps); // prints [ "name", "numLegs" ]
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">将<code>canary</code> <code>own</code>属性添加到数组<code>ownProps</code> 。 </section>
+<section id='instructions'>
+Add the <code>own</code> properties of <code>canary</code> to the array <code>ownProps</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>ownProps</code>应包含值<code>&quot;numLegs&quot;</code>和<code>&quot;name&quot;</code> 。
-    testString: 'assert(ownProps.indexOf("name") !== -1 && ownProps.indexOf("numLegs") !== -1, "<code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.");'
-  - text: 无需使用内置方法<code>Object.keys()</code>即可解决此挑战。
-    testString: 'assert(!/\Object.keys/.test(code), "Solve this challenge without using the built in method <code>Object.keys()</code>.");'
+  - text: <code>ownProps</code> should include the values <code>"numLegs"</code> and <code>"name"</code>.
+    testString: assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1);
+  - text: You should solve this challenge without using the built in method <code>Object.keys()</code>.
+    testString: assert(!/Object(\.keys|\[(['"`])keys\2\])/.test(code));
+  - text: You should solve this challenge without hardcoding the <code>ownProps</code> array.
+    testString: assert(!/\[\s*(?:'|")(?:name|numLegs)|(?:push|concat)\(\s*(?:'|")(?:name|numLegs)/.test(code));
 
 ```
 
@@ -41,6 +73,8 @@ let canary = new Bird("Tweety");
 let ownProps = [];
 // Add your code below this line
 
+
+
 ```
 
 </div>
@@ -52,7 +86,27 @@ let ownProps = [];
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function Bird(name) {
+  this.name = name;
+  this.numLegs = 2;
+}
+
+let canary = new Bird("Tweety");
+function getOwnProps (obj) {
+  const props = [];
+
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      props.push(prop);
+    }
+  }
+
+  return props;
+}
+
+const ownProps = getOwnProps(canary);
 ```
+
 </section>

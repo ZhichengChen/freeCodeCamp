@@ -2,15 +2,24 @@
 title: Deepcopy
 id: 596a8888ab7c01048de257d5
 challengeType: 5
-videoUrl: ''
-localeTitle: deepcopy的
+forumTopicId: 302247
 ---
 
 ## Description
-<section id="description">任务： <p>编写一个返回给定对象的深层副本的函数。 </p><p>副本不得与给定的对象相同。 </p><p>此任务不会测试： </p>具有属性属性的对象Date对象或具有Date对象属性的对象RegEx或具有RegEx对象属性的对象原型复制</section>
+<section id='description'>
+Write a function that returns a deep copy of a given object. The copy must not be the same object that was given.
+This task will not test for:
+<ul>
+  <li>Objects with properties that are functions</li>
+  <li>Date objects or object with properties that are Date objects</li>
+  <li>RegEx or object with properties that are RegEx objects</li>
+  <li>Prototype copying</li>
+</ul>
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,16 +27,16 @@ localeTitle: deepcopy的
 
 ```yml
 tests:
-  - text: <code>deepcopy</code>应该是一个功能。
-    testString: 'assert(typeof deepcopy === "function", "<code>deepcopy</code> should be a function.");'
-  - text: '<code>deepcopy({test: &quot;test&quot;})</code>应返回一个对象。'
-    testString: 'assert(typeof deepcopy(obj1) === "object", "<code>deepcopy({test: "test"})</code> should return an object.");'
-  - text: 不应该返回提供的相同对象。
-    testString: 'assert(deepcopy(obj2) != obj2, "Should not return the same object that was provided.");'
-  - text: 传递包含数组的对象时，应返回该对象的深层副本。
-    testString: 'assert.deepEqual(deepcopy(obj2), obj2, "When passed an object containing an array, should return a deep copy of the object.");'
-  - text: 传递包含另一个对象的对象时，应返回该对象的深层副本。
-    testString: 'assert.deepEqual(deepcopy(obj3), obj3, "When passed an object containing another object, should return a deep copy of the object.");'
+  - text: <code>deepcopy</code> should be a function.
+    testString: assert(typeof deepcopy === 'function');
+  - text: '<code>deepcopy({test: "test"})</code> should return an object.'
+    testString: 'assert(typeof deepcopy(obj1) === ''object'');'
+  - text: <code>deepcopy</code> should not return the same object that was provided.
+    testString: assert(deepcopy(obj2) != obj2);
+  - text: When passed an object containing an array, <code>deepcopy</code> should return a deep copy of the object.
+    testString: assert.deepEqual(deepcopy(obj2), obj2);
+  - text: When passed an object containing another object, <code>deepcopy</code>  should return a deep copy of the object.
+    testString: assert.deepEqual(deepcopy(obj3), obj3);
 
 ```
 
@@ -39,11 +48,10 @@ tests:
 <div id='js-seed'>
 
 ```js
-function deepcopy (obj) {
+function deepcopy(obj) {
   // Good luck!
   return true;
 }
-
 ```
 
 </div>
@@ -53,7 +61,15 @@ function deepcopy (obj) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const obj1 = { test: 'test' };
+const obj2 = {
+  t: 'test',
+  a: ['an', 'array']
+};
+const obj3 = {
+  t: 'try',
+  o: obj2
+};
 ```
 
 </div>
@@ -63,7 +79,13 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function deepcopy(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+
 ```
+
 </section>

@@ -2,27 +2,37 @@
 id: 5a9036ee38fddaf9a66b5d34
 title: Use CSS Grid units to Change the Size of Columns and Rows
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用CSS网格单位更改网格列和网格行的大小
+videoUrl: 'https://scrimba.com/p/pByETK/cvE8phd'
+forumTopicId: 301134
 ---
 
 ## Description
-<section id="description">您可以在CSS Grid中使用绝对性和相对性的单位（列如<code>px</code>和<code>em</code>）来定义网格行和网格列的大小。您也可以使用这些： 
-<code>fr</code> ：将网格列或网格行设置为可用空间的一小部分
-<code>auto</code> ：将网格列或网格行设置为其内容的宽度或高度 
-<code>%</code> ：将网格列或网格行调整为对应它的容器高宽度的百分比。
-这是输出下面预览的代码： <blockquote> grid-template-columns：auto 50px 10％2fr 1fr; </blockquote>此代码段创建了五个网格列。第一个网格列与其内容一样宽，第二个网格列是50px，第三个网格列是其容器的10％。到最后两个网格列时，剩下的空间被分为三个部分，两个部分配给第四个网格列，一个部分配配给第五个网格列。 </section>
+<section id='description'>
+You can use absolute and relative units like <code>px</code> and <code>em</code> in CSS Grid to define the size of rows and columns. You can use these as well:
+<code>fr</code>: sets the column or row to a fraction of the available space,
+<code>auto</code>: sets the column or row to the width or height of its content automatically,
+<code>%</code>: adjusts the column or row to the percent width of its container.
+Here's the code that generates the output in the preview:
+
+```css
+grid-template-columns: auto 50px 10% 2fr 1fr;
+```
+
+This snippet creates five columns. The first column is as wide as its content, the second column is 50px, the third column is 10% of its container, and for the last two columns; the remaining space is divided into three sections, two are allocated for the fourth column, and one for the fifth.
+</section>
 
 ## Instructions
-<section id="instructions">创建一个包含三列的网格，其宽度如下：1fr，100px和2fr。 </section>
+<section id='instructions'>
+Make a grid with three columns whose widths are as follows: 1fr, 100px, and 2fr.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>container</code>类应该有一个<code>grid-template-columns</code>属性，该属性有三列，宽度如下： <code>1fr, 100px, and 2fr</code> 。'
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.");'
+  - text: '<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi));'
 
 ```
 
@@ -62,7 +72,6 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
-
 ```
 
 </div>
@@ -74,7 +83,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".container {grid-template-columns: 1fr 100px 2fr;}"
 ```
+
 </section>

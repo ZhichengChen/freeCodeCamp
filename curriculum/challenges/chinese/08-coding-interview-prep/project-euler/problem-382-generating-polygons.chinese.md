@@ -2,15 +2,40 @@
 id: 5900f4eb1000cf542c50fffd
 challengeType: 5
 title: 'Problem 382: Generating polygons'
-videoUrl: ''
-localeTitle: 问题382：生成多边形
+forumTopicId: 302046
 ---
 
 ## Description
-<section id="description">多边形是由直线段组成的扁平形状，所述直线段连接以形成闭合链或电路。多边形由至少三个边组成，并且不自相交。 <p>如果：P的两边不是相同的长度，P的每一边的长度在S中，并且S不包含其他值，则称正数的集合S生成多边形P. </p><p>例如：集合{3,4,5}生成边3,4和5（三角形）的多边形。集合{6,9,11,24}生成具有边6,9,11和24（四边形）的多边形。集合{1,2,3}和{2,3,4,9}根本不生成任何多边形。 </p><p>考虑序列s，定义如下：s1 = 1，s2 = 2，s3 = 3 sn = sn-1 + sn-3，n&gt; 3。 </p><p>设Un为集合{s1，s2，...，sn}。例如，U10 = {1,2,3,4,6,9,13,19,28,41}。设f（n）是产生至少一个多边形的Un子集的数量。例如，f（5）= 7，f（10）= 501，f（25）= 18635853。 </p><p>找到f（1018）的最后9位数。 </p></section>
+<section id='description'>
+A polygon is a flat shape consisting of straight line segments that are joined to form a closed chain or circuit. A polygon consists of at least three sides and does not self-intersect.
+
+
+
+A set S of positive numbers is said to generate a polygon P if: no two sides of P are the same length,
+ the length of every side of P is in S, and
+ S contains no other value.
+
+For example:
+The set {3, 4, 5} generates a polygon with sides 3, 4, and 5 (a triangle).
+The set {6, 9, 11, 24} generates a polygon with sides 6, 9, 11, and 24 (a quadrilateral).
+The sets {1, 2, 3} and {2, 3, 4, 9} do not generate any polygon at all.
+
+
+Consider the sequence s, defined as follows:s1 = 1, s2 = 2, s3 = 3
+sn = sn-1 + sn-3 for n > 3.
+
+Let Un be the set {s1, s2, ..., sn}. For example, U10 = {1, 2, 3, 4, 6, 9, 13, 19, 28, 41}.
+Let f(n) be the number of subsets of Un which generate at least one polygon.
+For example, f(5) = 7, f(10) = 501 and f(25) = 18635853.
+
+
+
+Find the last 9 digits of f(1018).
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +43,8 @@ localeTitle: 问题382：生成多边形
 
 ```yml
 tests:
-  - text: <code>euler382()</code>应该返回697003956。
-    testString: 'assert.strictEqual(euler382(), 697003956, "<code>euler382()</code> should return 697003956.");'
+  - text: <code>euler382()</code> should return 697003956.
+    testString: assert.strictEqual(euler382(), 697003956);
 
 ```
 
@@ -37,7 +62,6 @@ function euler382() {
 }
 
 euler382();
-
 ```
 
 </div>
@@ -52,4 +76,5 @@ euler382();
 ```js
 // solution required
 ```
+
 </section>

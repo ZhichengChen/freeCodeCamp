@@ -2,25 +2,43 @@
 id: bad87fee1348bd9aede08718
 title: Use RGB values to Color Elements
 challengeType: 0
-videoUrl: ''
-localeTitle: 将RGB值用于颜色元素
+videoUrl: 'https://scrimba.com/c/cRkp2fr'
+forumTopicId: 18369
 ---
 
 ## Description
-<section id="description">另一种可以在CSS中表示颜色的方法是使用<code>RGB</code>值。黑色的RGB值如下所示： <code>rgb(0, 0, 0)</code>白色的RGB值如下所示： <code>rgb(255, 255, 255)</code>而不是像使用十六进制代码那样使用六个十六进制数字，使用<code>RGB</code>使用0到255之间的数字指定每种颜色的亮度。如果进行数学计算，一种颜色的两位数等于16乘以16，这总共得到256个值。因此，从零开始计数的<code>RGB</code>具有与十六进制代码完全相同的可能值。以下是使用RGB代码将身体背景更改为橙色的示例。 <blockquote>身体 { <br> background-color：rgb（255,165,0）; <br> } </blockquote></section>
+<section id='description'>
+Another way you can represent colors in CSS is by using <code>RGB</code> values.
+The RGB value for black looks like this:
+<code>rgb(0, 0, 0)</code>
+The RGB value for white looks like this:
+<code>rgb(255, 255, 255)</code>
+Instead of using six hexadecimal digits like you do with hex code, with <code>RGB</code> you specify the brightness of each color with a number between 0 and 255.
+If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So <code>RGB</code>, which starts counting from zero, has the exact same number of possible values as hex code.
+Here's an example of how you'd change the body background to orange using its RGB code.
+
+```css
+body {
+  background-color: rgb(255, 165, 0);
+}
+```
+
+</section>
 
 ## Instructions
-<section id="instructions">让我们用黑色的RGB值替换<code>body</code>元素背景颜色中的十六进制代码： <code>rgb(0, 0, 0)</code> </section>
+<section id='instructions'>
+Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 你的<code>body</code>元素应该有黑色背景。
-    testString: 'assert($("body").css("background-color") === "rgb(0, 0, 0)", "Your <code>body</code> element should have a black background.");'
-  - text: 使用<code>rgb</code>为您的<code>body</code>元素提供黑色。
-    testString: 'assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig), "Use <code>rgb</code> to give your <code>body</code> element a color of black.");'
+  - text: Your <code>body</code> element should have a black background.
+    testString: assert($("body").css("background-color") === "rgb(0, 0, 0)");
+  - text: You should use <code>rgb</code> to give your <code>body</code> element a color of black.
+    testString: assert(code.match(/rgb\s*\(\s*0\s*,\s*0\s*,\s*0\s*\)/ig));
 
 ```
 
@@ -37,7 +55,6 @@ tests:
     background-color: #F00;
   }
 </style>
-
 ```
 
 </div>
@@ -49,7 +66,12 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  body {
+    background-color: rgb(0, 0, 0);
+  }
+</style>
 ```
+
 </section>

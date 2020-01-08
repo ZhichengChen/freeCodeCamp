@@ -2,15 +2,24 @@
 title: Josephus problem
 id: 5a23c84252665b21eecc7ec5
 challengeType: 5
-videoUrl: ''
-localeTitle: 约瑟夫斯问题
+forumTopicId: 302294
 ---
 
 ## Description
-<section id="description"> <a href="https://en.wikipedia.org/wiki/Josephus problem">约瑟夫斯问题</a>是一个严峻描述的数学难题：$ n $囚犯站在一个圆圈上，顺序编号从$ 0 $到$ n-1 $。一名刽子手沿着圈子走，从囚犯$ 0 $开始，移走每个$ k $囚犯并杀死他。随着过程的继续，圆圈变得越来越小，直到只剩下一个囚犯，然后被释放。例如，如果$ n = 5 $囚犯和$ k = 2 $，囚犯被杀的命令（我们称之为“杀戮序列”）将是1,3,0和4，幸存者将是＃2。鉴于任何<big>$ n，k&gt; 0 $</big> ，找出哪个囚犯将成为最后的幸存者。在一个这样的事件中，有41个囚犯和每3 <sup>次</sup>囚犯被杀死<big>（$ K = 3 $）。</big>其中有一个聪明的名字约瑟夫斯，他解决了这个问题，站在幸存的位置，并继续讲述这个故事。他是哪个号码？写一个函数，以囚犯的初始数量和&#39;k&#39;作为参数，并返回幸存的囚犯的数量。 </section>
+<section id='description'>
+<a href="https://en.wikipedia.org/wiki/Josephus problem" target="_blank">Josephus problem</a> is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.
+An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.
+As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.
+For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the "killing sequence") will be 1, 3, 0, and 4, and the survivor will be #2.
+Given any  <big>$n, k > 0$</big>,  find out which prisoner will be the final survivor.
+In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed  (<big>$k=3$</big>).
+Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.
+Which number was he?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+Write a function that takes the initial number of prisoners and 'k' as parameter and returns the number of the prisoner that survives.
 </section>
 
 ## Tests
@@ -18,20 +27,20 @@ localeTitle: 约瑟夫斯问题
 
 ```yml
 tests:
-  - text: <code>josephus</code>应该是一个功能。
-    testString: 'assert(typeof josephus=="function","<code>josephus</code> should be a function.");'
-  - text: '<code>josephus(30,3)</code>应该返回一个数字。'
-    testString: 'assert(typeof josephus(30,3)=="number","<code>josephus(30,3)</code> should return a number.");'
-  - text: '<code>josephus(30,3)</code>应该回<code>29</code> 。'
-    testString: 'assert.equal(josephus(30,3),29,"<code>josephus(30,3)</code> should return <code>29</code>.");'
-  - text: '<code>josephus(30,5)</code>应该返回<code>3</code> 。'
-    testString: 'assert.equal(josephus(30,5),3,"<code>josephus(30,5)</code> should return <code>3</code>.");'
-  - text: '<code>josephus(20,2)</code>应该返回<code>9</code> 。'
-    testString: 'assert.equal(josephus(20,2),9,"<code>josephus(20,2)</code> should return <code>9</code>.");'
-  - text: '<code>josephus(17,6)</code>应该回归<code>2</code> 。'
-    testString: 'assert.equal(josephus(17,6),2,"<code>josephus(17,6)</code> should return <code>2</code>.");'
-  - text: '<code>josephus(29,4)</code>应该返回<code>2</code> 。'
-    testString: 'assert.equal(josephus(29,4),2,"<code>josephus(29,4)</code> should return <code>2</code>.");'
+  - text: <code>josephus</code> should be a function.
+    testString: assert(typeof josephus=='function');
+  - text: <code>josephus(30,3)</code> should return a number.
+    testString: assert(typeof josephus(30,3)=='number');
+  - text: <code>josephus(30,3)</code> should return <code>29</code>.
+    testString: assert.equal(josephus(30,3),29);
+  - text: <code>josephus(30,5)</code> should return <code>3</code>.
+    testString: assert.equal(josephus(30,5),3);
+  - text: <code>josephus(20,2)</code> should return <code>9</code>.
+    testString: assert.equal(josephus(20,2),9);
+  - text: <code>josephus(17,6)</code> should return <code>2</code>.
+    testString: assert.equal(josephus(17,6),2);
+  - text: <code>josephus(29,4)</code> should return <code>2</code>.
+    testString: assert.equal(josephus(29,4),2);
 
 ```
 
@@ -43,10 +52,9 @@ tests:
 <div id='js-seed'>
 
 ```js
-function josephus (init, kill) {
+function josephus(init, kill) {
   // Good luck!
 }
-
 ```
 
 </div>
@@ -58,7 +66,43 @@ function josephus (init, kill) {
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function josephus(init, kill) {
+  var Josephus = {
+    init: function(n) {
+      this.head = {};
+      var current = this.head;
+      for (var i = 0; i < n - 1; i++) {
+        current.label = i + 1;
+        current.next = {
+          prev: current
+        };
+        current = current.next;
+      }
+      current.label = n;
+      current.next = this.head;
+      this.head.prev = current;
+      return this;
+    },
+    kill: function(spacing) {
+      var current = this.head;
+      while (current.next !== current) {
+        for (var i = 0; i < spacing - 1; i++) {
+          current = current.next;
+        }
+        current.prev.next = current.next;
+        current.next.prev = current.prev;
+        current = current.next;
+      }
+      return current.label;
+    }
+  }
+
+  return Josephus.init(init).kill(kill)
+}
+
+
 ```
+
 </section>

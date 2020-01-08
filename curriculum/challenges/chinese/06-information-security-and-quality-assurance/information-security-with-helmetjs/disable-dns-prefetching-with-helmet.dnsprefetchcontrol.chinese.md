@@ -2,15 +2,18 @@
 id: 587d8248367417b2b2512c3d
 title: Disable DNS Prefetching with helmet.dnsPrefetchControl()
 challengeType: 2
-videoUrl: ''
-localeTitle: 使用helmet.dnsPrefetchControl（）禁用DNS预取
+forumTopicId: 301577
 ---
 
 ## Description
-<section id="description">提醒一下，这个项目是基于<a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a>的以下入门项目构建的，或者是从<a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a>克隆的。为了提高性能，大多数浏览器都会为页面中的链接预取DNS记录。以这种方式，当用户点击链接时，目标IP已知。这可能导致过度使用DNS服务（如果您拥有一个大网站，数百万人访问......），隐私问题（一个窃听者可能会推断您在某个页面上），或者页面统计信息更改（某些链接可能会即使他们不是，也会出现。）如果您有高安全性需求，则可以以性能损失为代价禁用DNS预取。 </section>
+<section id='description'>
+As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/edit/#!/remix/clone-from-repo?REPO_URL=https://github.com/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.
+To improve performance, most browsers prefetch DNS records for the links in a page. In that way the destination ip is already known when the user clicks on a link. This may lead to over-use of the DNS service (if you own a big website, visited by millions people…), privacy issues (one eavesdropper could infer that you are on a certain page), or page statistics alteration (some links may appear visited even if they are not). If you have high security needs you can disable DNS prefetching, at the cost of a performance penalty.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +21,8 @@ localeTitle: 使用helmet.dnsPrefetchControl（）禁用DNS预取
 
 ```yml
 tests:
-  - text: 应该正确安装helmet.dnsPrefetchControl（）中间件
-    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "dnsPrefetchControl"); assert.equal(data.headers["x-dns-prefetch-control"], "off"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: helmet.dnsPrefetchControl() middleware should be mounted correctly
+    testString: getUserInput => $.get(getUserInput('url') + '/_api/app-info').then(data => { assert.include(data.appStack, 'dnsPrefetchControl'); assert.equal(data.headers['x-dns-prefetch-control'], 'off'); }, xhr => { throw new Error(xhr.responseText); })
 
 ```
 
@@ -34,6 +37,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

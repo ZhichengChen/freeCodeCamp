@@ -2,15 +2,19 @@
 id: 5900f44e1000cf542c50ff5f
 challengeType: 5
 title: 'Problem 224: Almost right-angled triangles II'
-videoUrl: ''
-localeTitle: 问题224：几乎直角三角形II
+forumTopicId: 301867
 ---
 
 ## Description
-<section id="description">如果边满足a2 + b2 = c2  -  1，让我们称一个边长为a≤b≤c的整数边三角形，几乎不会钝。 <p>有多少个几乎没有钝角的三角形，周长≤75,000,000？ </p></section>
+<section id='description'>
+Let us call an integer sided triangle with sides a ≤ b ≤ c barely obtuse if the sides satisfy a2 + b2 = c2 - 1.
+
+How many barely obtuse triangles are there with perimeter ≤ 75,000,000?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题224：几乎直角三角形II
 
 ```yml
 tests:
-  - text: <code>euler224()</code>应返回4137330。
-    testString: 'assert.strictEqual(euler224(), 4137330, "<code>euler224()</code> should return 4137330.");'
+  - text: <code>euler224()</code> should return 4137330.
+    testString: assert.strictEqual(euler224(), 4137330);
 
 ```
 
@@ -37,7 +41,6 @@ function euler224() {
 }
 
 euler224();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler224();
 ```js
 // solution required
 ```
+
 </section>

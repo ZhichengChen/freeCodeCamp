@@ -2,15 +2,40 @@
 id: 5900f3a21000cf542c50feb5
 challengeType: 5
 title: 'Problem 54: Poker hands'
-videoUrl: ''
-localeTitle: 问题54：扑克手
+forumTopicId: 302165
 ---
 
 ## Description
-<section id="description">在纸牌游戏扑克牌中，一手牌由五张牌组成，并按以下方式从最低到最高排名：高牌：最高价值牌。一对：两张价值相同的牌。两对：两对不同。三种类型：三张相同价值的牌。直：所有卡都是连续值。同花顺：同一套牌的所有牌。满屋：三种和一对。四种：四张相同价值的牌。同花顺：所有牌都是同一套牌的连续值。皇家同花顺：十，杰克，女王，国王，王牌，同样的诉讼。卡的价值依次为：2,3,4,5,6,7,8,9,10，Jack，Queen，King，Ace。如果两个玩家拥有相同的排名牌，则排名由最高值赢得;例如，一对八个击打一对五（见下面的例子1）。但是，如果两个级别相关，例如，两个玩家都有一对皇后，则比较每手牌中的最高牌数（参见下面的例子4）;如果最高牌结合，则比较下一张最高牌，依此类推。考虑以下五手交给两名球员： <p>手牌1球员2冠军1 5H 5C 6S 7S KDPair of Fives 2C 3S 8S 8D TDPair of Eights Player 2 2 5D 8C 9S JS ACHighest card Ace 2C 5C 7D 8S QHHighest card Queen Player 1 3 2D 9C AS AH ACThree Aces 3D 6D 7D TD QDFlush与钻石玩家2 4 4D 6S 9H QH QCPair of Queens最高卡九3D 6D 7H QD QSPair皇后最高卡七人玩家1 5 2H 2D 4C 4D 4SFull HouseWith Three Fours 3C 3D 3S 9S 9DFull Housewith Three Threes Player 1 </p><p>文件poker.txt包含一千个随机发给两个玩家的牌。该文件的每一行包含十张牌（由一个空格分隔）：前五张是Player 1的牌，后五张是Player 2的牌。你可以假设所有的牌都是有效的（没有无效的角色或重复的牌），每个牌手的牌都没有特定的顺序，而且每手牌都有明显的赢家。玩家1赢了多少手牌？ </p></section>
+<section id='description'>
+In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+High Card: Highest value card.
+One Pair: Two cards of the same value.
+Two Pairs: Two different pairs.
+Three of a Kind: Three cards of the same value.
+Straight: All cards are consecutive values.
+Flush: All cards of the same suit.
+Full House: Three of a kind and a pair.
+Four of a Kind: Four cards of the same value.
+Straight Flush: All cards are consecutive values of same suit.
+Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
+The cards are valued in the order:2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next highest cards are compared, and so on.
+Consider the following five hands dealt to two players:
+
+Hand Player 1 Player 2 Winner
+1 5H 5C 6S 7S KDPair of Fives 2C 3S 8S 8D TDPair of Eights Player 2
+2 5D 8C 9S JS ACHighest card Ace 2C 5C 7D 8S QHHighest card Queen Player 1
+3 2D 9C AS AH ACThree Aces 3D 6D 7D TD QDFlush  with Diamonds Player 2
+4 4D 6S 9H QH QCPair of QueensHighest card Nine 3D 6D 7H QD QSPair of QueensHighest card Seven Player 1
+5 2H 2D 4C 4D 4SFull HouseWith Three Fours 3C 3D 3S 9S 9DFull Housewith Three Threes Player 1
+
+The file, poker.txt, contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in each hand there is a clear winner.
+How many hands does Player 1 win?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +43,8 @@ localeTitle: 问题54：扑克手
 
 ```yml
 tests:
-  - text: <code>euler54()</code>应该返回376。
-    testString: 'assert.strictEqual(euler54(), 376, "<code>euler54()</code> should return 376.");'
+  - text: <code>euler54()</code> should return 376.
+    testString: assert.strictEqual(euler54(), 376);
 
 ```
 
@@ -37,7 +62,6 @@ function euler54() {
 }
 
 euler54();
-
 ```
 
 </div>
@@ -52,4 +76,5 @@ euler54();
 ```js
 // solution required
 ```
+
 </section>

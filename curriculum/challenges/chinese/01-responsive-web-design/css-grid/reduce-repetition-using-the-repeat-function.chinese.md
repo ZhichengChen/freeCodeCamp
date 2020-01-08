@@ -2,23 +2,47 @@
 id: 5a94fe3669fb03452672e45f
 title: Reduce Repetition Using the repeat Function
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用重复功能减少重复
+videoUrl: 'https://scrimba.com/p/pByETK/cQvqyHR'
+forumTopicId: 301133
 ---
 
 ## Description
-<section id="description">使用<code>grid-template-columns</code>和<code>grid-template-rows</code>定义网格结构时，为所创建的每个行或列输入了一个值。让我们说你想要一个100行相同高度的网格。单独插入100个值是不太实际的。幸运的是，有一种更好的方法 - 使用<code>repeat</code>函数指定要重复列或行的次数，后跟逗号和要重复的值。这是一个创建100行网格的示例，每行高度为50px。 <blockquote> grid-template-rows：repeat（100,50px）; </blockquote>您还可以使用repeat函数重复多个值，并在定义网格结构时将该函数插入其他值中。这就是我的意思： <blockquote> grid-template-columns：repeat（2,1fr 50px）20px; </blockquote>这意味着： <blockquote> grid-template-columns：1fr 50px 1fr 50px 20px; </blockquote> <strong>注意</strong> <br> <code>1fr 50px</code>重复两次，然后是20px。 </section>
+<section id='description'>
+When you used <code>grid-template-columns</code> and <code>grid-template-rows</code> to define the structure of a grid, you entered a value for each row or column you created.
+Let's say you want a grid with 100 rows of the same height. It isn't very practical to insert 100 values individually. Fortunately, there's a better way - by using the <code>repeat</code> function to specify the number of times you want your column or row to be repeated, followed by a comma and the value you want to repeat.
+Here's an example that would create the 100 row grid, each row at 50px tall.
+
+```css
+grid-template-rows: repeat(100, 50px);
+```
+
+You can also repeat multiple values with the repeat function and insert the function amongst other values when defining a grid structure. Here's what that looks like:
+
+```css
+grid-template-columns: repeat(2, 1fr 50px) 20px;
+```
+
+This translates to:
+
+```css
+grid-template-columns: 1fr 50px 1fr 50px 20px;
+```
+
+<strong>Note:</strong> The <code>1fr 50px</code> is repeated twice followed by 20px.
+</section>
 
 ## Instructions
-<section id="instructions">使用<code>repeat</code>从<code>grid-template-columns</code>属性中删除重复。 </section>
+<section id='instructions'>
+Use <code>repeat</code> to remove repetition from the <code>grid-template-columns</code> property.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code>类应具有<code>grid-template-columns</code>属性，该属性设置为重复3列，宽度为<code>1fr</code> 。
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.");'
+  - text: <code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.
+    testString: assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -60,7 +84,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -72,7 +95,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".container {grid-template-columns: repeat(3, 1fr);}"
 ```
+
 </section>

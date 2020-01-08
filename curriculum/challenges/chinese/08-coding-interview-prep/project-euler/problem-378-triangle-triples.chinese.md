@@ -2,15 +2,35 @@
 id: 5900f4e61000cf542c50fff9
 challengeType: 5
 title: 'Problem 378: Triangle Triples'
-videoUrl: ''
-localeTitle: 问题378：三角形三元组
+forumTopicId: 302040
 ---
 
 ## Description
-<section id="description">设T（n）为第n个三角形数，因此T（n）= <p> n（n + 1）2 </p><p> 。 </p><p>设dT（n）为T（n）的除数。例如：T（7）= 28且dT（7）= 6。 </p><p>令Tr（n）为三元组数（i，j，k），使得1≤i&lt;j &lt;k≤n且dT（i）&gt; dT（j）&gt; dT（k）。 Tr（20）= 14，Tr（100）= 5772，Tr（1000）= 11174776。 </p><p>找Tr（60 000 000）。给出答案的最后18位数字。 </p></section>
+<section id='description'>
+Let T(n) be the nth triangle number, so T(n) =
+
+
+n (n+1)2
+
+.
+
+
+Let dT(n) be the number of divisors of T(n).
+E.g.:
+T(7) = 28 and dT(7) = 6.
+
+
+Let Tr(n) be the number of triples (i, j, k) such that 1 ≤ i < j < k ≤ n and dT(i) > dT(j) > dT(k).
+Tr(20) = 14, Tr(100) = 5772 and Tr(1000) = 11174776.
+
+
+Find Tr(60 000 000).
+Give the last 18 digits of your answer.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +38,8 @@ localeTitle: 问题378：三角形三元组
 
 ```yml
 tests:
-  - text: <code>euler378()</code>应该返回147534623725724700。
-    testString: 'assert.strictEqual(euler378(), 147534623725724700, "<code>euler378()</code> should return 147534623725724700.");'
+  - text: <code>euler378()</code> should return 147534623725724700.
+    testString: assert.strictEqual(euler378(), 147534623725724700);
 
 ```
 
@@ -37,7 +57,6 @@ function euler378() {
 }
 
 euler378();
-
 ```
 
 </div>
@@ -52,4 +71,5 @@ euler378();
 ```js
 // solution required
 ```
+
 </section>

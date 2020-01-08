@@ -1,18 +1,29 @@
 ---
 id: 587d7fb0367417b2b2512bee
 title: Start a Working Express Server
-localeTitle: 启动Working Express服务器
 challengeType: 2
+forumTopicId: 301519
 ---
 
 ## Description
-<section id='description'> <code>0</code>在myApp.js文件的前两行中，您可以看到如何轻松创建Express应用程序对象。这个对象有几种方法，我们将在这些挑战中学到很多方法。一个基本方法是<code>app.listen(port)</code> 。它告诉您的服务器侦听给定端口，使其处于运行状态。您可以在文件底部看到它。这是内部评论，因为出于测试原因，我们需要应用程序在后台运行。您可能想要添加的所有代码都介于这两个基本部分之间。 Glitch将端口号存储在环境变量<code>process.env.PORT</code> 。它的价值是<code>3000</code> 。 <code>0</code>让我们的第一个字符串！在Express中，路由采用以下结构： <code>app.METHOD(PATH, HANDLER)</code> 。 METHOD是小写的http方法。 PATH是服务器上的相对路径（它可以是字符串，甚至是正则表达式）。 HANDLER是Express匹配路由时调用的功能。 <code>0</code>处理程序采用表单<code>function(req, res) {...}</code> ，其中req是请求对象，res是响应对象。例如，处理程序
-<blockquote>function(req, res) {<br> res.send('Response String');<br>}</blockquote> <code>0</code>将提供字符串'Response String'。 <code>0</code>使用<code>app.get()</code>方法为字符串Hello Express提供服务，以匹配/ root路径的GET请求。通过查看日志确保您的代码正常工作，然后在浏览器中查看结果，单击Glitch UI中的“Show Live”按钮。 
+<section id='description'>
+In the first two lines of the file <code>myApp.js</code>, you can see how easy it is to create an Express app object. This object has several methods, and you will learn many of them in these challenges. One fundamental method is <code>app.listen(port)</code>. It tells your server to listen on a given port, putting it in running state. You can see it at the bottom of the file. It is inside comments because, for testing reasons, we need the app to be running in the background. All the code that you may want to add goes between these two fundamental parts. Glitch stores the port number in the environment variable <code>process.env.PORT</code>. Its value is <code>3000</code>.
+Let’s serve our first string! In Express, routes takes the following structure: <code>app.METHOD(PATH, HANDLER)</code>. METHOD is an http method in lowercase. PATH is a relative path on the server (it can be a string, or even a regular expression). HANDLER is a function that Express calls when the route is matched.
+Handlers take the form <code>function(req, res) {...}</code>, where req is the request object, and res is the response object. For example, the handler
+
+```js
+function(req, res) {
+  res.send('Response String');
+}
+```
+
+will serve the string 'Response String'.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Use the <code>app.get()</code> method to serve the string "Hello Express" to GET requests matching the <code>/</code> (root) path.
+<strong>Note:</strong> Be sure that your code works by looking at the logs, then see the results in your browser by clicking the ‘Show Live’ button if you are using Glitch.
 </section>
 
 ## Tests
@@ -20,7 +31,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: 您的应用应该提供字符串'Hello Express'
+  - text: Your app should serve the string 'Hello Express'
     testString: 'getUserInput => $.get(getUserInput(''url'')).then(data => { assert.equal(data, ''Hello Express'', ''Your app does not serve the text "Hello Express"''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -36,6 +47,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

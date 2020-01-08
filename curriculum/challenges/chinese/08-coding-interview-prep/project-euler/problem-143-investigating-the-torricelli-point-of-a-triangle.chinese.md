@@ -2,15 +2,22 @@
 id: 5900f3fc1000cf542c50ff0e
 challengeType: 5
 title: 'Problem 143: Investigating the Torricelli point of a triangle'
-videoUrl: ''
-localeTitle: 问题143：研究三角形的Torricelli点
+forumTopicId: 301772
 ---
 
 ## Description
-<section id="description">设ABC为三角形，所有内角均小于120度。设X为三角形内的任意点，并使XA = p，XC = q，XB = r。 Fermat挑战Torricelli找到X的位置，使p + q + r最小化。 Torricelli能够证明，如果在三角形ABC的每一侧构造等边三角形AOB，BNC和AMC，则AOB，BNC和AMC的外接圆将在三角形内的单个点T处相交。此外，他证明了T，称为Torricelli / Fermat点，最小化p + q + r。更值得注意的是，可以证明，当总和最小化时，AN = BM = CO = p + q + r，并且AN，BM和CO也在T处相交。 <p>如果总和最小化并且a，b，c，p，q和r都是正整数，我们将称三角形ABC为Torricelli三角形。例如，a = 399，b = 455，c = 511是Torricelli三角形的示例，其中p + q + r = 784.找到Torricelli三角形的p + q +r≤120000的所有不同值的总和。 </p></section>
+<section id='description'>
+Let ABC be a triangle with all interior angles being less than 120 degrees. Let X be any point inside the triangle and let XA = p, XC = q, and XB = r.
+Fermat challenged Torricelli to find the position of X such that p + q + r was minimised.
+Torricelli was able to prove that if equilateral triangles AOB, BNC and AMC are constructed on each side of triangle ABC, the circumscribed circles of AOB, BNC, and AMC will intersect at a single point, T, inside the triangle. Moreover he proved that T, called the Torricelli/Fermat point, minimises p + q + r. Even more remarkable, it can be shown that when the sum is minimised, AN = BM = CO = p + q + r and that AN, BM and CO also intersect at T.
+
+If the sum is minimised and a, b, c, p, q and r are all positive integers we shall call triangle ABC a Torricelli triangle. For example, a = 399, b = 455, c = 511 is an example of a Torricelli triangle, with p + q + r = 784.
+Find the sum of all distinct values of p + q + r ≤ 120000 for Torricelli triangles.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题143：研究三角形的Torricelli点
 
 ```yml
 tests:
-  - text: <code>euler143()</code>应返回30758397。
-    testString: 'assert.strictEqual(euler143(), 30758397, "<code>euler143()</code> should return 30758397.");'
+  - text: <code>euler143()</code> should return 30758397.
+    testString: assert.strictEqual(euler143(), 30758397);
 
 ```
 
@@ -37,7 +44,6 @@ function euler143() {
 }
 
 euler143();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler143();
 ```js
 // solution required
 ```
+
 </section>

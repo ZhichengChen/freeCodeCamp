@@ -2,31 +2,64 @@
 id: 587d8256367417b2b2512c79
 title: Incidence Matrix
 challengeType: 1
-videoUrl: ''
-localeTitle: 发生率矩阵
+forumTopicId: 301644
 ---
 
 ## Description
-<section id="description">表示图形的另一种方式是将其置于<dfn>关联矩阵中。</dfn> <dfn>入射矩阵</dfn>是二维（2D）阵列。一般而言，关联矩阵在其两个维度之间涉及两个不同类别的对象。这种矩阵类似于邻接矩阵。但是，行和列在这里意味着其他东西。在图表中，我们有边缘和节点。这些将是我们的“两类不同的对象”。该矩阵将使行为节点，列为边。这意味着我们可以拥有不均匀的行数和列数。每列将代表一个独特的边缘。此外，每个边连接两个节点。要显示两个节点之间存在边缘，您将在特定列的两行中放置1。下面是一个3节点图，节点1和节点3之间有一条边。 <blockquote> 1 <br> --- <br> 1 | 1 <br> 2 | 0 <br> 3 | 1 </blockquote>以下是具有4个边和4个节点的<code>incidence matrix</code>的示例。请记住，列是边，行是节点本身。 <blockquote> 1 2 3 4 <br> -------- <br> 1 | 0 1 1 1 <br> 2 | 1 1 0 0 <br> 3 | 1 0 0 1 <br> 4 | 0 0 1 0 </blockquote>下面是同一件事的JavaScript实现。 <blockquote> var incMat = [ <br> [0,1,1,1]， <br> [1,1,0,0]， <br> [1,0,0,1]， <br> [0,0,1,0] <br> ]。 </blockquote>要制作有向图，请使用<code>-1</code>表示离开特定节点的边，使用<code>1</code>作为边进入节点。 <blockquote> var incMatDirected = [ <br> [0，-1,1，-1]， <br> [-1,1,0,0]， <br> [1,0,0,1]， <br> [0,0，-1,0] <br> ]。 </blockquote>图形的边缘也可以有权<dfn>重</dfn> 。到目前为止，我们有<dfn>未加权的</dfn>边缘，只有存在和缺少边是二进制（ <code>0</code>或<code>1</code> ）。根据您的应用，您可以拥有不同的重量。不同的权重表示为大于1的数字。 </section>
+<section id='description'>
+Yet another way to represent a graph is to put it in an <dfn>incidence matrix.</dfn>
+An <dfn>incidence matrix</dfn> is a two-dimensional (2D) array. Generally speaking, an incidence matrix relates two different classes of objects between its two dimensions. This kind of matrix is similar to an adjacency matrix. However, the rows and columns mean something else here.
+In graphs, we have edges and nodes. These will be our "two different classes of objects". This matrix will have the rows be the nodes and columns be the edges. This means that we can have an uneven number of rows and columns.
+Each column will represent a unique edge. Also, each edge connects two nodes. To show that there is an edge between two nodes, you will put a 1 in the two rows of a particular column. Below is a 3 node graph with one edge between node 1 and node 3.
+<blockquote>    1<br>   ---<br>1 | 1<br>2 | 0<br>3 | 1</blockquote>
+Here is an example of an <code>incidence matrix</code> with 4 edges and 4 nodes. Remember, the columns are the edges and rows are the nodes themselves.
+<blockquote>    1 2 3 4<br>   --------<br>1 | 0 1 1 1<br>2 | 1 1 0 0<br>3 | 1 0 0 1<br>4 | 0 0 1 0</blockquote>
+Below is a JavaScript implementation of the same thing.
+
+```js
+var incMat = [
+  [0, 1, 1, 1],
+  [1, 1, 0, 0],
+  [1, 0, 0, 1],
+  [0, 0, 1, 0]
+];
+```
+
+To make a directed graph, use <code>-1</code> for an edge leaving a particular node and <code>1</code> for an edge entering a node.
+
+```js
+var incMatDirected = [
+  [ 0, -1,  1, -1],
+  [-1,  1,  0,  0],
+  [ 1,  0,  0,  1],
+  [ 0,  0, -1,  0]
+];
+```
+
+Graphs can also have <dfn>weights</dfn> on their edges. So far, we have <dfn>unweighted</dfn> edges where just the presence and lack of edge is binary (<code>0</code> or <code>1</code>). You can have different weights depending on your application. A different weight is represented as numbers greater than 1.
+</section>
 
 ## Instructions
-<section id="instructions">创建具有五个节点和四个边的无向图的关联矩阵。该矩阵应该是多维数组。这五个节点在关系之后具有关系。第一边缘在第一和第二节点之间。第二个边缘位于第二个和第三个节点之间。第三个边缘位于第三个和第五个节点之间。并且四个边缘在第四和第二节点之间。所有边权重均为1，边缘顺序很重要。 </section>
+<section id='instructions'>
+Create an incidence matrix of an undirected graph with five nodes and four edges. This matrix should be in a multi-dimensional array.
+These five nodes have the following relationships. The first edge is between the first and second node. The second edge is between the second and third node. The third edge is between the third and fifth node. The fourth edge is between the fourth and second node. All edge weights are one and the edge order matters.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>incMatUndirected</code>应该只包含五个节点。
-    testString: 'assert((incMatUndirected.length === 5) && incMatUndirected.map(function(x) { return x.length === 4 }).reduce(function(a, b) { return a && b }) , "<code>incMatUndirected</code> should only contain five nodes.");'
-  - text: 第一个和第二个节点之间应该有第一条边。
-    testString: 'assert((incMatUndirected[0][0] === 1) && (incMatUndirected[1][0] === 1), "There should be a first edge between the first and second node.");'
-  - text: 第二个和第三个节点之间应该有第二条边。
-    testString: 'assert((incMatUndirected[1][1] === 1) && (incMatUndirected[2][1] === 1), "There should be a second edge between the second and third node.");'
-  - text: 第三个和第五个节点之间应该有第三条边。
-    testString: 'assert((incMatUndirected[2][2] === 1) && (incMatUndirected[4][2] === 1), "There should be a third edge between the third and fifth node.");'
-  - text: 第二个和第四个节点之间应该有第四条边。
-    testString: 'assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1), "There should be a fourth edge between the second and fourth node.");'
+  - text: <code>incMatUndirected</code> should only contain five nodes.
+    testString: assert((incMatUndirected.length === 5) && incMatUndirected.map(function(x) { return x.length === 4 }).reduce(function(a, b) { return a && b }) );
+  - text: There should be a first edge between the first and second node.
+    testString: assert((incMatUndirected[0][0] === 1) && (incMatUndirected[1][0] === 1));
+  - text: There should be a second edge between the second and third node.
+    testString: assert((incMatUndirected[1][1] === 1) && (incMatUndirected[2][1] === 1));
+  - text: There should be a third edge between the third and fifth node.
+    testString: assert((incMatUndirected[2][2] === 1) && (incMatUndirected[4][2] === 1));
+  - text: There should be a fourth edge between the second and fourth node.
+    testString: assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1));
 
 ```
 
@@ -34,14 +67,12 @@ tests:
 
 ## Challenge Seed
 <section id='challengeSeed'>
-
 <div id='js-seed'>
 
 ```js
 var incMatUndirected = [
 
 ];
-
 ```
 
 </div>
@@ -53,7 +84,9 @@ var incMatUndirected = [
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var incMatUndirected = [[1, 0, 0, 0],[1, 1, 0, 1],[0, 1, 1, 0],[0, 0, 0, 1],[0, 0, 1, 0]];
 ```
+
 </section>

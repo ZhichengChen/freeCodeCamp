@@ -2,29 +2,41 @@
 id: 587d825c367417b2b2512c90
 title: Breadth-First Search
 challengeType: 1
-videoUrl: ''
-localeTitle: 广度优先搜索
+forumTopicId: 301622
 ---
 
 ## Description
-<section id="description">到目前为止，我们已经学会了创建图表表示的不同方法。现在怎么办？一个自然的问题是图中任何两个节点之间的距离是多少？输入<dfn>图遍历算法</dfn> 。 <dfn>遍历算法</dfn>是遍历或访问图中节点的算法。一种遍历算法是广度优先搜索算法。该算法从一个节点开始，首先访问一个边缘的所有邻居，然后继续访问它们的每个邻居。在视觉上，这就是算法正在做的事情。 <img class="img-responsive" src="https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966">要实现此算法，您需要输入图形结构和要启动的节点。首先，您需要了解距起始节点的距离。这个你想要开始你所有的距离最初一些大的数字，如<code>Infinity</code> 。这为从起始节点无法访问节点的情况提供了参考。接下来，您将要从开始节点转到其邻居。这些邻居是一个边缘，此时你应该添加一个距离单位到你要跟踪的距离。最后，有助于实现广度优先搜索算法的重要数据结构是队列。这是一个数组，您可以在其中添加元素到一端并从另一端删除元素。这也称为<dfn>FIFO</dfn>或<dfn>先进先出</dfn>数据结构。 </section>
+<section id='description'>
+So far, we've learned different ways of creating representations of graphs. What now? One natural question to have is what are the distances between any two nodes in the graph? Enter <dfn>graph traversal algorithms</dfn>.
+<dfn>Traversal algorithms</dfn> are algorithms to traverse or visit nodes in a graph. One type of traversal algorithm is the breadth-first search algorithm.
+This algorithm starts at one node, first visits all its neighbors that are one edge away, then goes on to visiting each of their neighbors and so on until all nodes have been reached.
+Visually, this is what the algorithm is doing.
+<img class='img-responsive' src='https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966'>
+To implement this algorithm, you'll need to input a graph structure and a node you want to start at.
+First, you'll want to be aware of the distances from the start node. This you'll want to start all your distances initially some large number, like <code>Infinity</code>. This gives a reference for the case where a node may not be reachable from your start node.
+Next, you'll want to go from the start node to its neighbors. These neighbors are one edge away and at this point you should add one unit of distance to the distances you're keeping track of.
+Last, an important data structure that will help implement the breadth-first search algorithm is the queue. This is an array where you can add elements to one end and remove elements from the other end. This is also known as a <dfn>FIFO</dfn> or <dfn>First-In-First-Out</dfn> data structure.
+</section>
 
 ## Instructions
-<section id="instructions">编写一个函数<code>bfs()</code> ，它将邻接矩阵图（二维数组）和节点标签根作为参数。节点标签只是<code>0</code>到<code>n - 1</code>之间节点的整数值，其中<code>n</code>是图中节点的总数。您的函数将输出JavaScript对象键值对与节点及其与根的距离。如果无法到达节点，则其距离应为<code>Infinity</code> 。 </section>
+<section id='instructions'>
+Write a function <code>bfs()</code> that takes an adjacency matrix graph (a two-dimensional array) and a node label root as parameters. The node label will just be the integer value of the node between <code>0</code> and <code>n - 1</code>, where <code>n</code> is the total number of nodes in the graph.
+Your function will output a JavaScript object key-value pairs with the node and its distance from the root. If the node could not be reached, it should have a distance of <code>Infinity</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '输入图<code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> ，起始节点为<code>1</code>应该返回<code>{0: 1, 1: 0, 2: 1, 3: 2}</code>'
-    testString: 'assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: 2})})(), "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: 2}</code>");'
-  - text: '输入图<code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> ，起始节点为<code>1</code>应该返回<code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>'
-    testString: 'assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: Infinity})})(), "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>");'
-  - text: '输入图<code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> ，起始节点为<code>0</code>应该返回<code>{0: 0, 1: 1, 2: 2, 3: 3}</code>'
-    testString: 'assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1, 2: 2, 3: 3})})(), "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1, 2: 2, 3: 3}</code>");'
-  - text: '起始节点为<code>0</code>的输入图<code>[[0, 1], [1, 0]]</code>应返回<code>{0: 0, 1: 1}</code>'
-    testString: 'assert((function() { var graph = [[0, 1], [1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1})})(), "The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>");'
+  - text: 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: 2}</code>'
+    testString: 'assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: 2})})());'
+  - text: 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>'
+    testString: 'assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: Infinity})})());'
+  - text: 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1, 2: 2, 3: 3}</code>'
+    testString: 'assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1, 2: 2, 3: 3})})());'
+  - text: 'The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>'
+    testString: 'assert((function() { var graph = [[0, 1], [1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1})})());'
 
 ```
 
@@ -50,7 +62,6 @@ var exBFSGraph = [
   [0, 0, 1, 0]
 ];
 console.log(bfs(exBFSGraph, 3));
-
 ```
 
 </div>
@@ -60,7 +71,28 @@ console.log(bfs(exBFSGraph, 3));
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+// Source: http://adripofjavascript.com/blog/drips/object-equality-in-javascript.html
+function isEquivalent(a, b) {
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
+    // If number of properties is different,
+    // objects are not equivalent
+    if (aProps.length != bProps.length) {
+        return false;
+    }
+    for (var i = 0; i < aProps.length; i++) {
+        var propName = aProps[i];
+        // If values of same property are not equal,
+        // objects are not equivalent
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+    // If we made it this far, objects
+    // are considered equivalent
+    return true;
+}
 ```
 
 </div>
@@ -70,7 +102,40 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function bfs(graph, root) {
+  // Distance object returned
+  var nodesLen = {};
+  // Set all distances to infinity
+  for (var i = 0; i < graph.length; i++) {
+    nodesLen[i] = Infinity;
+  }
+  nodesLen[root] = 0; // ...except root node
+  var queue = [root]; // Keep track of nodes to visit
+  var current; // Current node traversing
+  // Keep on going until no more nodes to traverse
+  while (queue.length !== 0) {
+    current = queue.shift();
+    // Get adjacent nodes from current node
+    var curConnected = graph[current]; // Get layer of edges from current
+    var neighborIdx = []; // List of nodes with edges
+    var idx = curConnected.indexOf(1); // Get first edge connection
+    while (idx !== -1) {
+      neighborIdx.push(idx); // Add to list of neighbors
+      idx = curConnected.indexOf(1, idx + 1); // Keep on searching
+    }
+    // Loop through neighbors and get lengths
+    for (var j = 0; j < neighborIdx.length; j++) {
+      // Increment distance for nodes traversed
+      if (nodesLen[neighborIdx[j]] === Infinity) {
+        nodesLen[neighborIdx[j]] = nodesLen[current] + 1;
+        queue.push(neighborIdx[j]); // Add new neighbors to queue
+      }
+    }
+  }
+  return nodesLen;
+}
 ```
-</section>
+
+</section>  

@@ -2,23 +2,27 @@
 id: 5a90375238fddaf9a66b5d3b
 title: Align an Item Vertically using align-self
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用align-self垂直对齐项目
+videoUrl: 'https://scrimba.com/p/pByETK/cmzd4fz'
+forumTopicId: 301123
 ---
 
 ## Description
-<section id="description">正如您可以水平对齐项目一样，也可以垂直对齐项目。为此，您可以在项目上使用<code>align-self</code>属性。此属性接受来自上一次挑战的所有与<code>justify-self</code>相同的值。 </section>
+<section id='description'>
+Just as you can align an item horizontally, there's a way to align an item vertically as well. To do this, you use the <code>align-self</code> property on an item. This property accepts all of the same values as <code>justify-self</code> from the last challenge.
+</section>
 
 ## Instructions
-<section id="instructions">对齐项目与类<code>item3</code>在垂直<code>end</code> 。 </section>
+<section id='instructions'>
+Align the item with the class <code>item3</code> vertically at the <code>end</code>.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>item3</code>类应该有一个<code>align-self</code>属性，其值为<code>end</code> 。
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.");'
+  - text: <code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.
+    testString: assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi));
 
 ```
 
@@ -64,7 +68,6 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
-
 ```
 
 </div>
@@ -76,7 +79,9 @@ tests:
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+var code = ".item3 {align-self: end;}"
 ```
+
 </section>

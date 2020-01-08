@@ -2,15 +2,28 @@
 id: 5900f4ea1000cf542c50fffc
 challengeType: 5
 title: 'Problem 381: (prime-k) factorial'
-videoUrl: ''
-localeTitle: 问题381：（prime-k）阶乘
+forumTopicId: 302045
 ---
 
 ## Description
-<section id="description">对于素数p，令S（p）=（Σ（pk）！）mod（p）1≤k≤5。 <p>例如，如果p = 7，（7-1）！ +（7-2）！ +（7-3）！ +（7-4）！ +（7-5）！ = 6！ + 5！ + 4！ + 3！ + 2！ = 720 + 120 + 24 + 6 + 2 = 872.当872 mod（7）= 4时，S（7）= 4。 </p><p>对于5≤p&lt;100，可以证实ΣS（p）= 480。 </p><p>求ΣS（p）为5≤p&lt;108。 </p></section>
+<section id='description'>
+For a prime p let S(p) = (∑(p-k)!) mod(p) for 1 ≤ k ≤ 5.
+
+
+For example, if p=7,
+(7-1)! + (7-2)! + (7-3)! + (7-4)! + (7-5)! = 6! + 5! + 4! + 3! + 2! = 720+120+24+6+2 = 872.
+As 872 mod(7) = 4, S(7) = 4.
+
+
+It can be verified that ∑S(p) = 480 for 5 ≤ p < 100.
+
+
+Find ∑S(p) for 5 ≤ p < 108.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +31,8 @@ localeTitle: 问题381：（prime-k）阶乘
 
 ```yml
 tests:
-  - text: <code>euler381()</code>应该返回139602943319822。
-    testString: 'assert.strictEqual(euler381(), 139602943319822, "<code>euler381()</code> should return 139602943319822.");'
+  - text: <code>euler381()</code> should return 139602943319822.
+    testString: assert.strictEqual(euler381(), 139602943319822);
 
 ```
 
@@ -37,7 +50,6 @@ function euler381() {
 }
 
 euler381();
-
 ```
 
 </div>
@@ -52,4 +64,5 @@ euler381();
 ```js
 // solution required
 ```
+
 </section>

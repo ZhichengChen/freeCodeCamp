@@ -2,15 +2,40 @@
 id: 5900f4511000cf542c50ff63
 challengeType: 5
 title: 'Problem 228: Minkowski Sums'
-videoUrl: ''
-localeTitle: 问题228：Minkowski Sums
+forumTopicId: 301871
 ---
 
 ## Description
-<section id="description">设Sn是常规的n边多边形 - 或形状 - 其顶点<p> vk（k = 1,2，...，n）有坐标： </p><pre> <code>xk   = cos( 2k-1/n ×180° ) yk   = sin( 2k-1/n ×180° )</code> </pre><p>每个Sn都被解释为由周边和内部的所有点组成的填充形状。 </p><p>两个形状S和T的Minkowski和S + T是结果</p><p>将S中的每个点添加到T中的每个点，其中以坐标方式执行点添加： </p><p> （u，v）+（x，y）=（u + x，v + y）。 </p><p>例如，S3和S4的总和是六边形，如下面粉红色所示： </p><p> S1864 + S1865 + ... + S1909有多少方面？ </p></section>
+<section id='description'>
+
+<!-- TODO Use MathJax and re-write from projecteuler.net -->
+Let Sn be the regular n-sided polygon – or shape – whose vertices
+
+vk (k = 1,2,…,n) have coordinates:
+
+xk = cos( 2k-1/n ×180° )
+
+yk  =  sin( 2k-1/n ×180° )
+
+Each Sn is to be interpreted as a filled shape consisting of all points on the perimeter and in the interior.
+
+The Minkowski sum, S+T, of two shapes S and T is the result of
+
+adding every point in S to every point in T, where point addition is performed coordinate-wise:
+
+(u, v) + (x, y) = (u+x, v+y).
+
+For example, the sum of S3 and S4 is the six-sided shape shown in pink below:
+
+
+
+
+How many sides does S1864 + S1865 + … + S1909 have?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +43,8 @@ localeTitle: 问题228：Minkowski Sums
 
 ```yml
 tests:
-  - text: <code>euler228()</code>应返回86226。
-    testString: 'assert.strictEqual(euler228(), 86226, "<code>euler228()</code> should return 86226.");'
+  - text: <code>euler228()</code> should return 86226.
+    testString: assert.strictEqual(euler228(), 86226);
 
 ```
 
@@ -37,7 +62,6 @@ function euler228() {
 }
 
 euler228();
-
 ```
 
 </div>
@@ -52,4 +76,5 @@ euler228();
 ```js
 // solution required
 ```
+
 </section>

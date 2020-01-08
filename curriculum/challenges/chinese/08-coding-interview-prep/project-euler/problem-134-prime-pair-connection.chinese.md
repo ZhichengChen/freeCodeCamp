@@ -2,15 +2,19 @@
 id: 5900f3f21000cf542c50ff05
 challengeType: 5
 title: 'Problem 134: Prime pair connection'
-videoUrl: ''
-localeTitle: 问题134：素对对连接
+forumTopicId: 301762
 ---
 
 ## Description
-<section id="description">考虑连续的素数p1 = 19和p2 = 23.可以证实1219是最小的数字，使得最后的数字由p1形成，同时也可以被p2整除。实际上，除了p1 = 3和p2 = 5之外，对于每对连续质数，p2&gt; p1，存在n的值，其中最后的数字由p1形成，n可以被p2整除。设S是n的这些值中最小的。找到每对连续质数的ΣS，其中5≤p1≤1000000。 </section>
+<section id='description'>
+Consider the consecutive primes p1 = 19 and p2 = 23. It can be verified that 1219 is the smallest number such that the last digits are formed by p1 whilst also being divisible by p2.
+In fact, with the exception of p1 = 3 and p2 = 5, for every pair of consecutive primes, p2 > p1, there exist values of n for which the last digits are formed by p1 and n is divisible by p2. Let S be the smallest of these values of n.
+Find ∑ S for every pair of consecutive primes with 5 ≤ p1 ≤ 1000000.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +22,8 @@ localeTitle: 问题134：素对对连接
 
 ```yml
 tests:
-  - text: <code>euler134()</code>应该返回18613426663617120。
-    testString: 'assert.strictEqual(euler134(), 18613426663617120, "<code>euler134()</code> should return 18613426663617120.");'
+  - text: <code>euler134()</code> should return 18613426663617120.
+    testString: assert.strictEqual(euler134(), 18613426663617120);
 
 ```
 
@@ -37,7 +41,6 @@ function euler134() {
 }
 
 euler134();
-
 ```
 
 </div>
@@ -52,4 +55,5 @@ euler134();
 ```js
 // solution required
 ```
+
 </section>

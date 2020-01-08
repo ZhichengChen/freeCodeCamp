@@ -2,15 +2,32 @@
 id: 5900f5311000cf542c510042
 challengeType: 5
 title: 'Problem 451: Modular inverses'
-videoUrl: ''
-localeTitle: ''
+forumTopicId: 302124
 ---
 
 ## Description
-<section id="description">考虑数字15.有八个正数小于15，它们与15：1,2,4,7,8,11,13,14相互作用。这些数模15的模数逆是：1,8,4 ，13,2,11,7,14因为1 * 1 mod 15 = 1 2 * 8 = 16 mod 15 = 1 4 * 4 = 16 mod 15 = 1 7 * 13 = 91 mod 15 = 1 11 * 11 = 121 mod 15 = 1 14 * 14 = 196 mod 15 = 1 <p>设I（n）是小于n-1的最大正数m，使得m modulo n的模逆与m本身相等。所以我（15）= 11。我（100）= 51和I（7）= 1。 </p><p>求3Σn≤2·107的ΣI（n） </p></section>
+<section id='description'>
+Consider the number 15.
+There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
+The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14
+because
+1*1 mod 15=1
+2*8=16 mod 15=1
+4*4=16 mod 15=1
+7*13=91 mod 15=1
+11*11=121 mod 15=1
+14*14=196 mod 15=1
+
+Let I(n) be the largest positive number m smaller than n-1 such that the modular inverse of m modulo n equals m itself.
+So I(15)=11.
+Also I(100)=51 and I(7)=1.
+
+Find ∑I(n) for 3≤n≤2·107
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +35,8 @@ localeTitle: ''
 
 ```yml
 tests:
-  - text: ''
-    testString: 'assert.strictEqual(euler451(), 153651073760956, "<code>euler451()</code> should return 153651073760956.");'
+  - text: <code>euler451()</code> should return 153651073760956.
+    testString: assert.strictEqual(euler451(), 153651073760956);
 
 ```
 
@@ -37,7 +54,6 @@ function euler451() {
 }
 
 euler451();
-
 ```
 
 </div>
@@ -52,4 +68,5 @@ euler451();
 ```js
 // solution required
 ```
+
 </section>

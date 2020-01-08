@@ -2,15 +2,27 @@
 id: 5900f3a11000cf542c50feb4
 challengeType: 5
 title: 'Problem 53: Combinatoric selections'
-videoUrl: ''
-localeTitle: 问题53：组合选择
+forumTopicId: 302164
 ---
 
 ## Description
-<section id="description">有十种方法从五种中选择三种，12345：123,124,125,134,135,145,234,235,245和345在组合学中，我们使用符号，5C3 = 10.一般来说， <p> nCr = n！r！（n-r）！ ，其中r≤n，n！ = n×（n-1）×...×3×2×1和0！ = 1。 </p><p>直到n = 23，一个值超过一百万：23C10 = 1144066.对于1≤n≤100，nCr的多少，不一定是不同的值大于一百万？ </p></section>
+<section id='description'>
+There are exactly ten ways of selecting three from five, 12345:
+123, 124, 125, 134, 135, 145, 234, 235, 245, and 345
+In combinatorics, we use the notation, 5C3 = 10.
+In general,
+
+nCr =
+n!r!(n−r)!
+,where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1.
+
+It is not until n = 23, that a value exceeds one-million: 23C10 = 1144066.
+How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are greater than one-million?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,14 +30,14 @@ localeTitle: 问题53：组合选择
 
 ```yml
 tests:
-  - text: <code>combinatoricSelections(1000)</code>应返回4626。
-    testString: 'assert.strictEqual(combinatoricSelections(1000), 4626, "<code>combinatoricSelections(1000)</code> should return 4626.");'
-  - text: <code>combinatoricSelections(10000)</code>应该返回4431。
-    testString: 'assert.strictEqual(combinatoricSelections(10000), 4431, "<code>combinatoricSelections(10000)</code> should return 4431.");'
-  - text: <code>combinatoricSelections(100000)</code>应返回4255。
-    testString: 'assert.strictEqual(combinatoricSelections(100000), 4255, "<code>combinatoricSelections(100000)</code> should return 4255.");'
-  - text: <code>combinatoricSelections(1000000)</code>应该返回4075。
-    testString: 'assert.strictEqual(combinatoricSelections(1000000), 4075, "<code>combinatoricSelections(1000000)</code> should return 4075.");'
+  - text: <code>combinatoricSelections(1000)</code> should return 4626.
+    testString: assert.strictEqual(combinatoricSelections(1000), 4626);
+  - text: <code>combinatoricSelections(10000)</code> should return 4431.
+    testString: assert.strictEqual(combinatoricSelections(10000), 4431);
+  - text: <code>combinatoricSelections(100000)</code> should return 4255.
+    testString: assert.strictEqual(combinatoricSelections(100000), 4255);
+  - text: <code>combinatoricSelections(1000000)</code> should return 4075.
+    testString: assert.strictEqual(combinatoricSelections(1000000), 4075);
 
 ```
 
@@ -43,7 +55,6 @@ function combinatoricSelections(limit) {
 }
 
 combinatoricSelections(1000000);
-
 ```
 
 </div>
@@ -55,7 +66,26 @@ combinatoricSelections(1000000);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function combinatoricSelections(limit) {
+    const factorial = n =>
+        Array.apply(null, { length: n })
+            .map((_, i) => i + 1)
+            .reduce((p, c) => p * c, 1);
+
+    let result = 0;
+    const nMax = 100;
+
+    for (let n = 1; n <= nMax; n++) {
+        for (let r = 0; r <= n; r++) {
+            if (factorial(n) / (factorial(r) * factorial(n - r)) >= limit)
+                result++;
+        }
+    }
+
+    return result;
+}
 ```
+
 </section>

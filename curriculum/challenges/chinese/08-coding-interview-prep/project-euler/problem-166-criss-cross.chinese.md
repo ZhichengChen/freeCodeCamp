@@ -2,15 +2,29 @@
 id: 5900f4131000cf542c50ff25
 challengeType: 5
 title: 'Problem 166: Criss Cross'
-videoUrl: ''
-localeTitle: 问题166：克里斯十字架
+forumTopicId: 301800
 ---
 
 ## Description
-<section id="description"> 4x4网格填充数字d，0≤d≤9。 <p>可以看出，在网格中</p><p> 6 3 3 0 5 0 4 3 0 7 1 4 1 2 4 5 </p><p>每行和每列的总和值为12.此外，每个对角线的总和也是12。 </p><p>在多少种方法中，您可以使用数字d，0≤d≤9填充4x4网格，以便每行，每列和两个对角线具有相同的总和？ </p></section>
+<section id='description'>
+A 4x4 grid is filled with digits d, 0 ≤ d ≤ 9.
+
+It can be seen that in the grid
+
+
+6 3 3 0
+5 0 4 3
+0 7 1 4
+1 2 4 5
+
+the sum of each row and each column has the value 12. Moreover the sum of each diagonal is also 12.
+
+In how many ways can you fill a 4x4 grid with the digits d, 0 ≤ d ≤ 9 so that each row, each column, and both diagonals have the same sum?
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +32,8 @@ localeTitle: 问题166：克里斯十字架
 
 ```yml
 tests:
-  - text: <code>euler166()</code>应返回7130034。
-    testString: 'assert.strictEqual(euler166(), 7130034, "<code>euler166()</code> should return 7130034.");'
+  - text: <code>euler166()</code> should return 7130034.
+    testString: assert.strictEqual(euler166(), 7130034);
 
 ```
 
@@ -37,7 +51,6 @@ function euler166() {
 }
 
 euler166();
-
 ```
 
 </div>
@@ -52,4 +65,5 @@ euler166();
 ```js
 // solution required
 ```
+
 </section>

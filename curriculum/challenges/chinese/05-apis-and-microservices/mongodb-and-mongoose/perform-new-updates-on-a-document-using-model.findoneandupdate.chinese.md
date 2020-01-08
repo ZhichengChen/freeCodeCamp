@@ -1,17 +1,19 @@
 ---
 id: 587d7fb8367417b2b2512c0f
 title: Perform New Updates on a Document Using model.findOneAndUpdate()
-localeTitle: 使用model.findOneAndUpdate（）对文档执行新更新
 challengeType: 2
+forumTopicId: 301542
 ---
 
 ## Description
-<section id='description'> <code>0</code>最新版本的mongoose具有简化文档更新的方法。一些更高级的功能（即前/后挂钩，验证）与此方法的行为不同，因此Classic方法在许多情况下仍然有用。在按Id搜索时可以使用findByIdAndUpdate（）。 <code>0</code>按名称查找人员并将其年龄设置为20.使用函数参数personName作为搜索关键字。 <code>0</code>提示：我们希望您返回更新的文档。为此，您需要将选项文档{new：true}作为findOneAndUpdate（）的第三个参数传递。默认情况下，这些方法返回未修改的对象。 
+<section id='description'>
+Recent versions of mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the Classic method is still useful in many situations. <code>findByIdAndUpdate()</code> can be used when searching by Id.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id='instructions'>
+Find a person by <code>Name</code> and set the person&apos;s age to 20. Use the function parameter <code>personName</code> as search key.
+<strong>Note:</strong> You should return the updated document. To do that you need to pass the options document <code>{ new: true }</code> as the 3rd argument to <code>findOneAndUpdate()</code>. By default these methods return the unmodified object.
 </section>
 
 ## Tests
@@ -19,7 +21,7 @@ challengeType: 2
 
 ```yml
 tests:
-  - text: findOneAndUpdate项应该成功
+  - text: findOneAndUpdate an item should succeed
     testString: 'getUserInput => $.post(getUserInput(''url'') + ''/_api/find-one-update'', {name:''Dorian Gray'', age: 35, favoriteFoods:[''unknown'']}).then(data => { assert.equal(data.name, ''Dorian Gray'', ''item.name is not what expected''); assert.equal(data.age, 20, ''item.age is not what expected''); assert.deepEqual(data.favoriteFoods, [''unknown''], ''item.favoriteFoods is not what expected''); assert.equal(data.__v, 0, ''findOneAndUpdate does not increment version by design !!!''); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
@@ -35,6 +37,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+/**
+  Backend challenges don't need solutions, 
+  because they would need to be tested against a full working project. 
+  Please check our contributing guidelines to learn more.
+*/
 ```
+
 </section>

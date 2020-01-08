@@ -2,15 +2,22 @@
 id: 5900f3f61000cf542c50ff09
 challengeType: 5
 title: 'Problem 138: Special isosceles triangles'
-videoUrl: ''
-localeTitle: 问题138：特殊的等腰三角形
+forumTopicId: 301766
 ---
 
 ## Description
-<section id="description">考虑具有基本长度，b = 16和腿，L = 17的等腰三角形。 <p>通过使用毕达哥拉斯定理，可以看出三角形的高度h =√（172-82）= 15，比基本长度小1。当b = 272且L = 305时，我们得到h = 273，这比基本长度多一个，这是第二个最小的等腰三角形，具有h = b±1的性质。找到12个最小等腰的ΣL h = b±1且b，L为正整数的三角形。 </p></section>
+<section id='description'>
+Consider the isosceles triangle with base length, b = 16, and legs, L = 17.
+
+
+By using the Pythagorean theorem it can be seen that the height of the triangle, h = √(172 − 82) = 15, which is one less than the base length.
+With b = 272 and L = 305, we get h = 273, which is one more than the base length, and this is the second smallest isosceles triangle with the property that h = b ± 1.
+Find ∑ L for the twelve smallest isosceles triangles for which h = b ± 1 and b, L are positive integers.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +25,8 @@ localeTitle: 问题138：特殊的等腰三角形
 
 ```yml
 tests:
-  - text: <code>euler138()</code>应该返回1118049290473932。
-    testString: 'assert.strictEqual(euler138(), 1118049290473932, "<code>euler138()</code> should return 1118049290473932.");'
+  - text: <code>euler138()</code> should return 1118049290473932.
+    testString: assert.strictEqual(euler138(), 1118049290473932);
 
 ```
 
@@ -37,7 +44,6 @@ function euler138() {
 }
 
 euler138();
-
 ```
 
 </div>
@@ -52,4 +58,5 @@ euler138();
 ```js
 // solution required
 ```
+
 </section>

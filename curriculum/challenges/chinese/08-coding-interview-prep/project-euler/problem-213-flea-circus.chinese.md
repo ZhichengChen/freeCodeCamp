@@ -2,15 +2,20 @@
 id: 5900f4411000cf542c50ff54
 challengeType: 5
 title: 'Problem 213: Flea Circus'
-videoUrl: ''
-localeTitle: 问题213：跳蚤马戏团
+forumTopicId: 301855
 ---
 
 ## Description
-<section id="description">一个30×30的正方形网格包含900个跳蚤，最初是每平方一个跳蚤。当响铃响起时，每个跳蚤随机跳到相邻的广场（通常有4种可能，除了网格边缘或角落处的跳蚤）。 <p>在响铃50次后，预计的未占用方格数量是多少？将您的答案四舍五入到小数点后六位。 </p></section>
+<section id='description'>
+A 30×30 grid of squares contains 900 fleas, initially one flea per square.
+When a bell is rung, each flea jumps to an adjacent square at random (usually 4 possibilities, except for fleas on the edge of the grid or at the corners).
+
+What is the expected number of unoccupied squares after 50 rings of the bell? Give your answer rounded to six decimal places.
+</section>
 
 ## Instructions
-<section id="instructions">
+<section id='instructions'>
+
 </section>
 
 ## Tests
@@ -18,8 +23,8 @@ localeTitle: 问题213：跳蚤马戏团
 
 ```yml
 tests:
-  - text: <code>euler213()</code>应返回330.721154。
-    testString: 'assert.strictEqual(euler213(), 330.721154, "<code>euler213()</code> should return 330.721154.");'
+  - text: <code>euler213()</code> should return 330.721154.
+    testString: assert.strictEqual(euler213(), 330.721154);
 
 ```
 
@@ -37,7 +42,6 @@ function euler213() {
 }
 
 euler213();
-
 ```
 
 </div>
@@ -52,4 +56,5 @@ euler213();
 ```js
 // solution required
 ```
+
 </section>

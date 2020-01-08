@@ -2,33 +2,50 @@
 id: 56533eb9ac21ba0edf2244c4
 title: Return Early Pattern for Functions
 challengeType: 1
-videoUrl: ''
-localeTitle: 返回函数的早期模式
+videoUrl: 'https://scrimba.com/c/cQe39Sq'
+forumTopicId: 18272
 ---
 
 ## Description
-<section id="description">当达到<code>return</code>语句时，当前函数的执行停止，控制返回到调用位置。 <strong>例</strong> <blockquote> function myFun（）{ <br>的console.log（ “你好”）; <br>回归“世界”; <br>的console.log（ “BYEBYE”） <br> } <br> myFun（）; </blockquote>上面输出“Hello”到控制台，返回“World”，但是<code>&quot;byebye&quot;</code>永远不输出，因为函数退出<code>return</code>语句。 </section>
+<section id='description'>
+When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.
+<strong>Example</strong>
+
+```js
+function myFun() {
+  console.log("Hello");
+  return "World";
+  console.log("byebye")
+}
+myFun();
+```
+
+The above outputs "Hello" to the console, returns "World", but <code>"byebye"</code> is never output, because the function exits at the <code>return</code> statement.
+</section>
 
 ## Instructions
-<section id="instructions">修改函数<code>abTest</code>以便如果<code>a</code>或<code>b</code>小于<code>0</code> ，函数将立即以<code>undefined</code>值退出。 <strong>暗示</strong> <br>请记住， <a href="http://www.freecodecamp.org/challenges/understanding-uninitialized-variables" target="_blank"><code>undefined</code>是一个关键字</a> ，而不是一个字符串。 </section>
+<section id='instructions'>
+Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.
+<strong>Hint</strong><br>Remember that <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> is a keyword</a>, not a string.
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: '<code>abTest(2,2)</code>应返回一个数字'
-    testString: 'assert(typeof abTest(2,2) === "number" , "<code>abTest(2,2)</code> should return a number");'
-  - text: '<code>abTest(2,2)</code>应该返回<code>8</code>'
-    testString: 'assert(abTest(2,2) === 8 , "<code>abTest(2,2)</code> should return <code>8</code>");'
-  - text: '<code>abTest(-2,2)</code>应返回<code>undefined</code>'
-    testString: 'assert(abTest(-2,2) === undefined , "<code>abTest(-2,2)</code> should return <code>undefined</code>");'
-  - text: '<code>abTest(2,-2)</code>应返回<code>undefined</code>'
-    testString: 'assert(abTest(2,-2) === undefined , "<code>abTest(2,-2)</code> should return <code>undefined</code>");'
-  - text: '<code>abTest(2,8)</code>应该返回<code>18</code>'
-    testString: 'assert(abTest(2,8) === 18 , "<code>abTest(2,8)</code> should return <code>18</code>");'
-  - text: '<code>abTest(3,3)</code>应该返回<code>12</code>'
-    testString: 'assert(abTest(3,3) === 12 , "<code>abTest(3,3)</code> should return <code>12</code>");'
+  - text: <code>abTest(2,2)</code> should return a number
+    testString: assert(typeof abTest(2,2) === 'number' );
+  - text: <code>abTest(2,2)</code> should return <code>8</code>
+    testString: assert(abTest(2,2) === 8 );
+  - text: <code>abTest(-2,2)</code> should return <code>undefined</code>
+    testString: assert(abTest(-2,2) === undefined );
+  - text: <code>abTest(2,-2)</code> should return <code>undefined</code>
+    testString: assert(abTest(2,-2) === undefined );
+  - text: <code>abTest(2,8)</code> should return <code>18</code>
+    testString: assert(abTest(2,8) === 18 );
+  - text: <code>abTest(3,3)</code> should return <code>12</code>
+    testString: assert(abTest(3,3) === 12 );
 
 ```
 
@@ -53,7 +70,6 @@ function abTest(a, b) {
 
 // Change values below to test your code
 abTest(2,2);
-
 ```
 
 </div>
@@ -65,7 +81,14 @@ abTest(2,2);
 ## Solution
 <section id='solution'>
 
+
 ```js
-// solution required
+function abTest(a, b) {
+  if(a < 0 || b < 0) {
+    return undefined;
+  }
+  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
+}
 ```
+
 </section>

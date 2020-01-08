@@ -2,37 +2,46 @@
 id: bad87fee1348bd9aedf08721
 title: Use Hex Code to Mix Colors
 challengeType: 0
-videoUrl: ''
-localeTitle: 使用十六进制代码混合颜色
+videoUrl: 'https://scrimba.com/c/cK89PhP'
+forumTopicId: 18359
 ---
 
 ## Description
-<section id="description">要查看，十六进制代码使用6个十六进制数字来表示颜色，红色（R），绿色（G）和蓝色（B）组件各有两个。从这三种纯色（红色，绿色和蓝色），我们可以改变每种颜色的数量，创造超过1600万种其他颜色！例如，橙色是纯红色，混合了一些绿色，没有蓝色。在十六进制代码中，这转换为<code>#FFA500</code> 。数字<code>0</code>是十六进制代码中的最小数字，表示完全没有颜色。数字<code>F</code>是十六进制代码中的最大数字，表示最大可能的亮度。 </section>
+<section id='description'>
+To review, hex codes use 6 hexadecimal digits to represent colors, two each for red (R), green (G), and blue (B) components.
+From these three pure colors (red, green, and blue), we can vary the amounts of each to create over 16 million other colors!
+For example, orange is pure red, mixed with some green, and no blue. In hex code, this translates to being <code>#FFA500</code>.
+The digit <code>0</code> is the lowest number in hex code, and represents a complete absence of color.
+The digit <code>F</code> is the highest number in hex code, and represents the maximum possible brightness.
+</section>
 
 ## Instructions
-<section id="instructions">将<code>style</code>元素中的颜色词替换为正确的十六进制代码。 <table class="table table-striped"><tbody><tr><th>颜色</th><th> Hex代码</th></tr><tr><td>道奇蓝</td><td> <code>#1E90FF</code> </td> </tr><tr><td>绿色</td><td> <code>#00FF00</code> </td> </tr><tr><td>橙子</td><td> <code>#FFA500</code> </td> </tr><tr><td>红</td><td> <code>#FF0000</code> </td> </tr></tbody></table></section>
+<section id='instructions'>
+Replace the color words in our <code>style</code> element with their correct hex codes.
+<table class='table table-striped'><tr><th>Color</th><th>Hex Code</th></tr><tr><td>Dodger Blue</td><td><code>#1E90FF</code></td></tr><tr><td>Green</td><td><code>#00FF00</code></td></tr><tr><td>Orange</td><td><code>#FFA500</code></td></tr><tr><td>Red</td><td><code>#FF0000</code></td></tr></table>
+</section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 给你的<code>h1</code>元素添加<code>I am red!</code>的文本<code>I am red!</code> <code>color</code>红色。
-    testString: 'assert($(".red-text").css("color") === "rgb(255, 0, 0)", "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.");'
-  - text: 使用<code>hex code</code>为红色而不是<code>red</code> 。
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color red instead of the word <code>red</code>.");'
-  - text: 给你的<code>h1</code>元素添加<code>I am green!</code>的文本<code>I am green!</code> <code>color</code>绿色。
-    testString: 'assert($(".green-text").css("color") === "rgb(0, 255, 0)", "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.");'
-  - text: 使用<code>hex code</code>表示绿色而不是<code>green</code> 。
-    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color green instead of the word <code>green</code>.");'
-  - text: 给你的<code>h1</code>元素提供<code>I am dodger blue!</code>的文字<code>I am dodger blue!</code> <code>color</code>道奇蓝色。
-    testString: 'assert($(".dodger-blue-text").css("color") === "rgb(30, 144, 255)", "Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.");'
-  - text: 使用颜色<code>dodgerblue</code>蓝色的<code>hex code</code>而不是单词<code>dodgerblue</code> 。
-    testString: 'assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.");'
-  - text: 给你的<code>h1</code>元素添加<code>I am orange!</code>的文本<code>I am orange!</code>在<code>color</code>为橙色。
-    testString: 'assert($(".orange-text").css("color") === "rgb(255, 165, 0)", "Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.");'
-  - text: 使用<code>hex code</code>表示橙色而不是<code>orange</code> 。
-    testString: 'assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi), "Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.");'
+  - text: Your <code>h1</code> element with the text <code>I am red!</code> should be given the <code>color</code> red.
+    testString: assert($('.red-text').css('color') === 'rgb(255, 0, 0)');
+  - text: The <code>hex code</code> for the color red should be used instead of the word <code>red</code>.
+    testString: assert(code.match(/\.red-text\s*?{\s*?color:\s*?#FF0000\s*?;\s*?}/gi));
+  - text: Your <code>h1</code> element with the text <code>I am green!</code> should be given the <code>color</code> green.
+    testString: assert($('.green-text').css('color') === 'rgb(0, 255, 0)');
+  - text: The <code>hex code</code> for the color green should be used instead of the word <code>green</code>.
+    testString: assert(code.match(/\.green-text\s*?{\s*?color:\s*?#00FF00\s*?;\s*?}/gi));
+  - text: Your <code>h1</code> element with the text <code>I am dodger blue!</code> should be given the <code>color</code> dodger blue.
+    testString: assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)');
+  - text: The <code>hex code</code> for the color dodger blue should be used instead of the word <code>dodgerblue</code>.
+    testString: assert(code.match(/\.dodger-blue-text\s*?{\s*?color:\s*?#1E90FF\s*?;\s*?}/gi));
+  - text: Your <code>h1</code> element with the text <code>I am orange!</code> should be given the <code>color</code> orange.
+    testString: assert($('.orange-text').css('color') === 'rgb(255, 165, 0)');
+  - text: The <code>hex code</code> for the color orange should be used instead of the word <code>orange</code>.
+    testString: assert(code.match(/\.orange-text\s*?{\s*?color:\s*?#FFA500\s*?;\s*?}/gi));
 
 ```
 
@@ -66,7 +75,6 @@ tests:
 <h1 class="dodger-blue-text">I am dodger blue!</h1>
 
 <h1 class="orange-text">I am orange!</h1>
-
 ```
 
 </div>
@@ -78,7 +86,29 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
+```html
+<style>
+  .red-text {
+    color: #FF0000;
+  }
+  .green-text {
+    color: #00FF00;
+  }
+  .dodger-blue-text {
+    color: #1E90FF;
+  }
+  .orange-text {
+    color: #FFA500;
+  }
+</style>
+
+<h1 class="red-text">I am red!</h1>
+
+<h1 class="green-text">I am green!</h1>
+
+<h1 class="dodger-blue-text">I am dodger blue!</h1>
+
+<h1 class="orange-text">I am orange!</h1>
 ```
+
 </section>
