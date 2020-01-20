@@ -86,7 +86,7 @@ exports.createChallengePages = createPage => ({ node }, index, thisArray) => {
         prevChallengePath: getPrevChallengePath(node, index, thisArray),
         id
       },
-      slug
+      slug: lang === 'chinese' ? '/zh' : '' + slug
     }
   });
 };

@@ -132,7 +132,7 @@ async function createChallenge(fullPath, maybeMeta, lang) {
   } = meta;
 
   challenge.lang = lang;
-  challenge.id = challenge.id;
+  challenge.id = (lang !== 'english' ? lang : '') + challenge.id;
   challenge.block = blockName;
   challenge.dashedName = dasherize(challenge.title);
   challenge.order = order;
